@@ -1,0 +1,637 @@
+<!doctype html>
+<html lang="ru-BY">
+  <!--begin::Head-->
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Admin-123 | Checker</title>
+
+    <!--begin::Accessibility Meta Tags-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#007bff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)" />
+    <!--end::Accessibility Meta Tags-->
+
+    <!--begin::Primary Meta Tags-->
+    <meta name="title" content="Admin123 | Checker" />
+    <meta name="author" content="1NS" />
+    <!--end::Primary Meta Tags-->
+
+    <!--begin::Accessibility Features-->
+    <!-- Skip links will be dynamically added by accessibility.js -->
+    <meta name="supported-color-schemes" content="light dark" />
+    <link rel="shortcut icon" href="../assets/img/favicon.png"/>
+    <link rel="preload" href="../css/adminlte.css" as="style" />
+    <!--end::Accessibility Features-->
+
+    <!--begin::Fonts-->
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fontsource/source-sans-3@5.0.12/index.css"
+      integrity="sha256-tXJfXfp6Ewt1ilPzLDtQnJV4hclT9XuaZUKyUvmyr+Q="
+      crossorigin="anonymous"
+      media="print"
+      onload="this.media = 'all'"
+    /> -->
+    <link rel="stylesheet" href="../fonts/fonts.css" />
+    <!--end::Fonts-->
+
+    <!--begin::Third Party Plugin(OverlayScrollbars)-->
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.11.0/styles/overlayscrollbars.min.css"
+      crossorigin="anonymous"
+    /> -->
+    <link rel="stylesheet" href="../css/overlayscrollbars.min.css" />
+    <!--end::Third Party Plugin(OverlayScrollbars)-->
+
+    <!--begin::Third Party Plugin(Bootstrap Icons)-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+      crossorigin="anonymous"
+    />
+    <!-- <link rel="stylesheet" href="fonts/bootstrap-icons.min.css" /> -->
+    <!--end::Third Party Plugin(Bootstrap Icons)-->
+
+    <!--begin::Required Plugin(AdminLTE)-->
+    <link rel="stylesheet" href="../css/adminlte.css" />
+    <!--end::Required Plugin(AdminLTE)-->
+
+    <!-- apexcharts
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/apexcharts@3.37.1/dist/apexcharts.css"
+      integrity="sha256-4MX+61mt9NVvvuPjUWdUdyfZfxSB1/Rf9WtqRHgG5S0="
+      crossorigin="anonymous"
+    /> -->
+
+    <!--begin::Custom-->
+    <link rel="stylesheet" href="../css/custom.css" />
+    <!--end::Custom-->
+  </head>
+  <!--end::Head-->
+  <!--begin::Body-->
+  <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
+    <!--begin::App Wrapper-->
+    <div class="app-wrapper">
+      <!--begin::Header-->
+      <nav class="app-header navbar navbar-expand bg-body">
+        <!--begin::Container-->
+        <div class="container-fluid">
+          <!--begin::Start Navbar Links-->
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" data-lte-toggle="sidebar" href="#" role="button">
+                <i class="bi bi-list"></i>
+              </a>
+            </li>
+
+            <!-- <li class="nav-item d-none d-md-block">
+              <a href="dashboard.html" class="nav-link">
+                <i class="bi bi-grid-1x2 me-1" aria-hidden="true"></i>
+                Главная
+              </a>
+            </li> -->
+
+          </ul>
+          <!--end::Start Navbar Links-->
+
+          <!--begin::End Navbar Links-->
+          <ul class="navbar-nav ms-auto">
+            <!--begin::Navbar Search-->
+            <li class="nav-item">
+              <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+                <i class="bi bi-search"></i>
+              </a>
+            </li>
+            <!--end::Navbar Search-->
+
+            <!--begin::Fullscreen Toggle-->
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-lte-toggle="fullscreen">
+                <i data-lte-icon="maximize" class="bi bi-arrows-fullscreen"></i>
+                <i data-lte-icon="minimize" class="bi bi-fullscreen-exit d-none"></i>
+              </a>
+            </li>
+            <!--end::Fullscreen Toggle-->
+
+            <!--begin::Color Mode Toggle (#6010)-->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link"
+                href="#"
+                id="bd-theme"
+                aria-label="Toggle color scheme"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="bi bi-sun-fill" data-lte-theme-icon="light"></i>
+                <i class="bi bi-moon-fill d-none" data-lte-theme-icon="dark"></i>
+                <i class="bi bi-circle-half d-none" data-lte-theme-icon="auto"></i>
+              </a>
+              <ul
+                class="dropdown-menu dropdown-menu-end"
+                aria-labelledby="bd-theme"
+                style="--bs-dropdown-min-width: 8rem"
+              >
+                <li>
+                  <button
+                    type="button"
+                    class="dropdown-item d-flex align-items-center"
+                    data-bs-theme-value="light"
+                    aria-pressed="false"
+                  >
+                    <i class="bi bi-sun-fill me-2"></i>
+                    Light
+                    <i class="bi bi-check-lg ms-auto d-none"></i>
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    class="dropdown-item d-flex align-items-center"
+                    data-bs-theme-value="dark"
+                    aria-pressed="false"
+                  >
+                    <i class="bi bi-moon-fill me-2"></i>
+                    Dark
+                    <i class="bi bi-check-lg ms-auto d-none"></i>
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    class="dropdown-item d-flex align-items-center active"
+                    data-bs-theme-value="auto"
+                    aria-pressed="true"
+                  >
+                    <i class="bi bi-circle-half me-2"></i>
+                    Auto
+                    <i class="bi bi-check-lg ms-auto d-none"></i>
+                  </button>
+                </li>
+              </ul>
+            </li>
+            <!--end::Color Mode Toggle-->
+          </ul>
+          <!--end::End Navbar Links-->
+        </div>
+        <!--end::Container-->
+      </nav>
+      <!--end::Header-->
+      <!--begin::Sidebar-->
+      <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
+        <!--begin::Sidebar Brand-->
+        <div class="sidebar-brand">
+          <!--begin::Brand Link-->
+          <a href="dashboard.html" class="brand-link">
+            <!--begin::Brand Image-->
+            <img
+              src="../assets/img/AdminLTELogo.png"
+              alt="AdminLTE Logo"
+              class="brand-image opacity-75 shadow"
+            />
+            <!--end::Brand Image-->
+            <!--begin::Brand Text-->
+            <span class="brand-text fw-light">Admin-123</span>
+            <!--end::Brand Text-->
+          </a>
+          <!--end::Brand Link-->
+        </div>
+        <!--end::Sidebar Brand-->
+        <!--begin::Sidebar Wrapper-->
+        <div class="sidebar-wrapper">
+          <nav class="mt-2">
+            <!--begin::Sidebar Menu-->
+            <ul
+              class="nav sidebar-menu flex-column"
+              data-lte-toggle="treeview"
+              role="navigation"
+              aria-label="Main navigation"
+              data-accordion="false"
+              id="navigation"
+            >
+
+            <li class="nav-item">
+              <a href="dashboard.html" class="nav-link">
+                <i class="nav-icon bi bi-grid-1x2 me-1" aria-hidden="true"></i>
+                <p>Главная</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="equipment.html" class="nav-link">
+                <i class="nav-icon bi bi-usb-fill"></i>
+                <p>Оборудование</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="quicksetup.html" class="nav-link">
+                <i class="nav-icon bi bi-box2"></i>
+                <p>Быстрая настройка</p>
+              </a>
+            </li>
+            
+            <li class="nav-item">
+              <a href="checker.html" class="nav-link">
+                <i class="nav-icon bi bi-globe2"></i>
+                <p>Ресурсы</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="#" class="nav-link active">
+                <i class="nav-icon bi bi-wifi"></i>
+                <p>
+                  Wi-fi
+                  <i class="nav-arrow bi bi-chevron-right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="wifi-advices.html" class="nav-link">
+                    <i class="nav-icon bi bi-arrow-right-short"></i>
+                    <p>Советы</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="wifi-theory.html" class="nav-link">
+                    <i class="nav-icon bi bi-arrow-right-short"></i>
+                    <p>Теория</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-header">Внешние</li>
+            <li class="nav-item">
+              <a href="https://github.com/ins1x/OLT/wiki" target="_blank" class="nav-link">
+                <i class="nav-icon bi bi-window"></i>
+                <p>OLT-commands</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="https://chat.datacenter.by/index.php/f/1476890" target="_blank" class="nav-link">
+                <i class="nav-icon bi bi-cloud"></i>
+                <p>Nextcloud-Disk</p>
+              </a>
+            </li>
+            <!--end::Sidebar Menu-->
+          </nav>
+        </div>
+        <!--end::Sidebar Wrapper-->
+      </aside>
+      <!--end::Sidebar-->
+      <!--begin::App Main-->
+      <main class="app-main">
+        <!--begin::App Content Header-->
+        <div class="app-content-header">
+          <!--begin::Container-->
+          <div class="container-fluid">
+            <!--begin::Row-->
+            <div class="row">
+              <div class="col-sm-6">
+                <h3 class="mb-0">Checker</h3>
+              </div>
+              <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-end">
+                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Checker</li>
+                </ol>
+              </div>
+            </div>
+            <!--end::Row-->
+          </div>
+          <!--end::Container-->
+        </div>
+        <!--end::App Content Header-->
+        <!--begin::App Content-->
+        <div class="app-content">
+          <!--begin::Container-->
+          <div class="container-fluid">
+            <!--begin::Row-->
+            <div class="container px-3 py-5" id="icon-grid">
+              <h2 class="pb-2 border-bottom">Online tools</h2>
+              <div
+                class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-3 py-5"
+              >
+                <div class="col d-flex align-items-start">
+                  <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
+                      <i class="nav-icon bi bi-info-circle"></i>
+                      Whois
+                    </h3>
+                    <p>
+                      Информация о IP и домене
+                    </p>
+                    <ul>
+                      <li><a href="https://who.is/">who.is</a></li>
+                      <li><a href="https://apps.db.ripe.net/db-web-ui/query">RIPE</a></li>
+                      <li><a href="https://whois.hoster.by/">hoster.by</a></li>
+                      <li><a href="https://www.reg.ru/whois/check_site">reg.ru</a></li>
+                      <li><a href="https://2ip.ru/site-availability/">2ip.ru</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                  <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
+                      <i class="nav-icon bi bi-bar-chart-steps"></i>
+                      Traceroute
+                    </h3>
+                    <p>
+                      Трассировка онлайн
+                    </p>
+                      <ul>
+                        <li><a href="https://traceroute-online.com">traceroute-online</a></li>
+                        <li><a href="https://mxtoolbox.com/TraceRouteLookup.aspx">ICMP-trace</a></li>
+                        <li><a href="https://tools.bunny.net/traceroute">tools.bunny.net</a></li>
+                        <li><a href="https://host-tracker.com/en/ic/check-trace">host-tracker</a></li>
+                      </ul>
+                  </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                  <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
+                      <i class="nav-icon bi bi-ethernet"></i>
+                      Ping
+                    </h3>
+                    <p>
+                      Пинг онлайн
+                    </p>
+                      <ul>
+                        <li><a href="https://ping.pe">ping.pe</a></li>
+                        <li><a href="https://ping.eu">ping.eu</a></li>
+                        <li><a href="https://dnschecker.org/ping-ipv4.php">IP-Pinger</a></li>
+                      </ul>
+                  </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                  <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
+                      <i class="nav-icon bi bi-envelope-slash"></i>
+                      Спам базы
+                    </h3>
+                    <p>
+                      Проверить IP в спам-базах
+                    </p>
+                    <ul>
+                      <li><a href="https://mxtoolbox.com/SuperTool.aspx?action=mx%3a93.85.82.1&run=toolpage#">MX Toolbox</a></li>
+                      <li><a href="https://2ip.ru/spam/">2ip.ru</a></li>
+                      <li><a href="https://portscaner.ru/ip-blacklist-checker">portscaner.ru</a></li>
+                      <li><a href="https://www.barracudacentral.org/lookups">barracudacentral.org</a></li>
+                      <li><a href="https://check.spamhaus.org/">spamhaus</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                  <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
+                      <i class="nav-icon bi bi-globe-americas"></i>
+                      Sites-available
+                    </h3>
+                    <p>
+                      Проверка доступности сайта
+                    </p>
+                    <ul>
+                      <li><a href="https://downdetector.com/">downdetector</a></li>
+                      <li><a href="https://www.reg.ru/whois/check_site">reg.ru</a></li>
+                      <li><a href="https://2ip.ru/site-availability/">2ip.ru</a></li>
+                      <li><a href="https://www.host-tracker.com">host-tracker</a></li>
+                      <li><a href="https://check-host.net/check-http">check-host</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                  <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
+                      <i class="nav-icon bi bi-database-fill-slash"></i>
+                      Blacklist
+                    </h3>
+                    <p>
+                      Проверка в заблокированных ресурсах
+                    </p>
+                    <ul>
+                      <li><a href="https://tools.zvelo.com/">zvelo</a></li>
+                      <li><a href="https://url.fortinet.net/rate/submit.php">fortinet</a></li>
+                      <li><a href="https://belgie.by/ru/other/info">БелГИЭ</a></li>
+                      <li><a href="https://multirbl.valli.org/lookup">MultiRBL</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                  <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
+                      <i class="nav-icon bi bi-diagram-3-fill"></i>
+                      Open ports
+                    </h3>
+                    <p>
+                      Проверка открытых портов
+                    </p>
+                    <ul>
+                      <li><a href="https://2ip.io/ru/check-port">2ip.io</a></li>
+                      <li><a href="https://www.reg.ru/web-tools/port-checker">reg.ru</a></li>
+                      <li><a href="https://tools.ivit.pro/setevye-utility/avail-services/">tools.ivit.pro</a></li>
+                      <li><a href="https://portchecker.co/">portchecker.co</a></li>
+                      <li><a href="https://dnsrobot.net/ru/port-checker">dnsrobot.net</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                  <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
+                      <i class="nav-icon bi bi-globe2"></i>
+                      DNS
+                    </h3>
+                    <p>
+                      Проверка DNS записей и субдоменов
+                    </p>
+                    <ul>
+                      <li><a href="https://dnschecker.org/all-dns-records-of-domain.php">dnschecker.org</a></li>
+                      <li><a href="https://www.abuseipdb.com/tools/dns-lookup">abuseipdb</a></li>
+                      <li><a href="https://rapiddns.io/">rapiddns.io</a></li>
+                      <li><a href="https://radar.cloudflare.com/dns">cloudflare DNS</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                  <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
+                      <i class="nav-icon bi bi-tools"></i>
+                      HTTP
+                    </h3>
+                    <p>
+                      Проверка HTTP запросов
+                    </p>
+                    <ul>
+                      <li><a href="https://httpbin.org/">httpbin</a></li>
+                      <li><a href="https://httpbun.com/">httpbun</a></li>
+                      <li><a href="https://mockhttp.org/">mockhttp</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                  <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
+                      <i class="nav-icon bi bi-pass"></i>
+                      SSL
+                    </h3>
+                    <p>
+                      Проверка SSL сертификатов
+                    </p>
+                    <ul>
+                      <li><a href="https://sslshopper.com/ssl-checker.html">sslshopper</a></li>
+                      <li><a href="https://ssl.org/">ssl.org</a></li>
+                      <li><a href="https://ssllabs.com/ssltest/">ssllabs</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                  <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
+                      <i class="nav-icon bi bi-map"></i>
+                      ASN Lookup
+                    </h3>
+                    <p>
+                      Информация об Автономной Системе (AS)
+                    </p>
+                    <ul>
+                      <li><a href="https://bgp.he.net/">bgp.he.net</a></li>
+                      <li><a href="https://www.peeringdb.com/">peeringdb</a></li>
+                      <li><a href="https://www.submarinecablemap.com/supplier/asn">submarinecablemap</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <h2 class="pb-2 border-bottom">Client-check</h2>
+              <div
+                class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-3 py-5"
+              >
+                <div class="col d-flex align-items-start">
+                  <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
+                      <i class="nav-icon bi bi-pc-display"></i>
+                      MAC-Vendor
+                    </h3>
+                    <p>
+                      Определение производителя по MAC-адресу
+                    </p>
+                      <ul>
+                        <li><a href="https://macvendors.com/">MAC vendors</a></li>
+                        <li><a href="https://maclookup.app/">MAC Address Lookup</a></li>
+                        <li><a href="https://metroethernet.ru/tools/oui">metroethernet</a></li>
+                        <li><a href="https://macaddresslookup.io/">macaddresslookup</a></li>
+                        <li><a href="https://wintelguy.com">wintelguy.com</a></li>
+                      </ul>
+                  </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                  <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
+                      <i class="nav-icon bi bi-building"></i>
+                      My IP
+                    </h3>
+                    <p>
+                      Проверить свой IP
+                    </p>
+                      <ul>
+                        <li><a href="https://www.whatismyip.com/">whatismyip</a></li>
+                        <li><a href="https://ipaddress.my/">ipaddress.my</a></li>
+                        <li><a href="https://test-ipv6.com/">test-ipv6</a></li>
+                      </ul>
+                  </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                  <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
+                      <i class="nav-icon bi bi-calculator"></i>
+                      Subnet-calc
+                    </h3>
+                    <p>
+                      Расчет подсетей
+                    </p>
+                      <ul>
+                        <li><a href="https://ipcalc.co/">ipcalc.co</a></li>
+                        <li><a href="https://edgecenter.ru/dev-tools/calc-net-ipv6">calc-net-ipv6</a></li>
+                        <li><a href="https://shootnick.ru/ip_calc/">ip-calc</a></li>
+                        <li><a href="https://ip-calculator.ru">ip-calculator.ru</a></li>
+                      </ul>
+                  </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                  <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
+                      <i class="nav-icon bi bi-cpu-fill"></i>
+                      Browser
+                    </h3>
+                    <p>
+                      Браузерные тесты
+                    </p>
+                      <ul>
+                        <li><a href="https://caniuse.com/">caniuse.com</a></li>
+                        <li><a href="https://get.webgl.org/">webGL</a></li>
+                        <li><a href="https://html5test.com/">html5test</a></li>
+                        <li><a href="https://browserleaks.com/">browserleaks.com</a></li>
+                      </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--end::Row-->
+          </div>
+          <!--end::Container-->
+        </div>
+        <!--end::App Content-->
+      </main>
+      <!--end::App Main-->
+      <!--begin::Footer-->
+      <footer class="app-footer">
+        <!--begin::To the end-->
+        <div class="float-end d-none d-sm-inline">&nbsp;2026 &#127866;</div>
+        <!--end::To the end-->
+          <!-- <a href="https://adminlte.io" class="text-decoration-none">AdminLTE.io</a>. -->
+      </footer>
+      <!--end::Footer-->
+    </div>
+    <!--end::App Wrapper-->
+    <!--begin::Script-->
+    <!--begin::Third Party Plugin(OverlayScrollbars)-->
+    <!-- <script
+      src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.11.0/browser/overlayscrollbars.browser.es6.min.js"
+      crossorigin="anonymous"
+    ></script> -->
+    <script src="../js/overlayscrollbars.browser.es6.min.js"></script>
+    <!--end::Third Party Plugin(OverlayScrollbars)--><!--begin::Required Plugin(popperjs for Bootstrap 5)-->
+    <!-- <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      crossorigin="anonymous"
+    ></script> -->
+    <script src="../js/popper.min.js"></script>
+    <!--end::Required Plugin(popperjs for Bootstrap 5)--><!--begin::Required Plugin(Bootstrap 5)-->
+    <!-- <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"
+      crossorigin="anonymous"
+    ></script> -->
+    <script src="../js/bootstrap.min.js"></script>
+    <!--end::Required Plugin(Bootstrap 5)--><!--begin::Required Plugin(AdminLTE)-->
+    <script src="../js/adminlte.js"></script>
+    <!--end::Required Plugin(AdminLTE)--><!--begin::OverlayScrollbars Configure-->
+    <script src="../js/color-modes.js"> </script>
+    <!--end::Color Mode Toggle-->
+
+    <!-- OPTIONAL SCRIPTS -->
+
+    <!-- sortablejs -->
+    <!-- <script
+      src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"
+      crossorigin="anonymous"
+    ></script> -->
+    <script src="../js/sortable.min.js"></script>
+
+    <!-- customjs -->
+    <script src="../js/custom.js"></script>
+
+  </body>
+  <!--end::Body-->
+</html>

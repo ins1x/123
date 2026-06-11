@@ -1,0 +1,683 @@
+<!doctype html>
+<html lang="ru-BY">
+  <!--begin::Head-->
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Admin-123 | Quick Setup</title>
+
+    <!--begin::Accessibility Meta Tags-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#007bff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)" />
+    <!--end::Accessibility Meta Tags-->
+
+    <!--begin::Primary Meta Tags-->
+    <meta name="title" content="Admin123 | Quick Setup" />
+    <meta name="author" content="1NS" />
+    <!--end::Primary Meta Tags-->
+
+    <!--begin::Accessibility Features-->
+    <!-- Skip links will be dynamically added by accessibility.js -->
+    <meta name="supported-color-schemes" content="light dark" />
+    <link rel="shortcut icon" href="../assets/img/favicon.png"/>
+    <link rel="preload" href="../css/adminlte.css" as="style" />
+    <!--end::Accessibility Features-->
+
+    <!--begin::Fonts-->
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fontsource/source-sans-3@5.0.12/index.css"
+      integrity="sha256-tXJfXfp6Ewt1ilPzLDtQnJV4hclT9XuaZUKyUvmyr+Q="
+      crossorigin="anonymous"
+      media="print"
+      onload="this.media = 'all'"
+    /> -->
+    <link rel="stylesheet" href="../fonts/fonts.css" />
+    <!--end::Fonts-->
+
+    <!--begin::Third Party Plugin(OverlayScrollbars)-->
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.11.0/styles/overlayscrollbars.min.css"
+      crossorigin="anonymous"
+    /> -->
+    <link rel="stylesheet" href="../css/overlayscrollbars.min.css" />
+    <!--end::Third Party Plugin(OverlayScrollbars)-->
+
+    <!--begin::Third Party Plugin(Bootstrap Icons)-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+      crossorigin="anonymous"
+    />
+    <!-- <link rel="stylesheet" href="fonts/bootstrap-icons.min.css" /> -->
+    <!--end::Third Party Plugin(Bootstrap Icons)-->
+
+    <!--begin::Required Plugin(AdminLTE)-->
+    <link rel="stylesheet" href="../css/adminlte.css" />
+    <!--end::Required Plugin(AdminLTE)-->
+
+    <!-- apexcharts
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/apexcharts@3.37.1/dist/apexcharts.css"
+      integrity="sha256-4MX+61mt9NVvvuPjUWdUdyfZfxSB1/Rf9WtqRHgG5S0="
+      crossorigin="anonymous"
+    /> -->
+    
+    <!--begin::Custom-->
+    <link rel="stylesheet" href="../css/custom.css" />
+    <!--end::Custom-->
+  </head>
+  <!--end::Head-->
+  <!--begin::Body-->
+  <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
+    <!--begin::App Wrapper-->
+    <div class="app-wrapper">
+      <!--begin::Header-->
+      <nav class="app-header navbar navbar-expand bg-body">
+        <!--begin::Container-->
+        <div class="container-fluid">
+          <!--begin::Start Navbar Links-->
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" data-lte-toggle="sidebar" href="#" role="button">
+                <i class="bi bi-list"></i>
+              </a>
+            </li>
+
+            <!-- <li class="nav-item d-none d-md-block">
+              <a href="dashboard.html" class="nav-link">
+                <i class="bi bi-grid-1x2 me-1" aria-hidden="true"></i>
+                Главная
+              </a>
+            </li> -->
+
+          </ul>
+          <!--end::Start Navbar Links-->
+
+          <!--begin::End Navbar Links-->
+          <ul class="navbar-nav ms-auto">
+            <!--begin::Navbar Search-->
+            <li class="nav-item">
+              <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+                <i class="bi bi-search"></i>
+              </a>
+            </li>
+            <!--end::Navbar Search-->
+
+            <!--begin::Fullscreen Toggle-->
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-lte-toggle="fullscreen">
+                <i data-lte-icon="maximize" class="bi bi-arrows-fullscreen"></i>
+                <i data-lte-icon="minimize" class="bi bi-fullscreen-exit d-none"></i>
+              </a>
+            </li>
+            <!--end::Fullscreen Toggle-->
+
+            <!--begin::Color Mode Toggle (#6010)-->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link"
+                href="#"
+                id="bd-theme"
+                aria-label="Toggle color scheme"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="bi bi-sun-fill" data-lte-theme-icon="light"></i>
+                <i class="bi bi-moon-fill d-none" data-lte-theme-icon="dark"></i>
+                <i class="bi bi-circle-half d-none" data-lte-theme-icon="auto"></i>
+              </a>
+              <ul
+                class="dropdown-menu dropdown-menu-end"
+                aria-labelledby="bd-theme"
+                style="--bs-dropdown-min-width: 8rem"
+              >
+                <li>
+                  <button
+                    type="button"
+                    class="dropdown-item d-flex align-items-center"
+                    data-bs-theme-value="light"
+                    aria-pressed="false"
+                  >
+                    <i class="bi bi-sun-fill me-2"></i>
+                    Light
+                    <i class="bi bi-check-lg ms-auto d-none"></i>
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    class="dropdown-item d-flex align-items-center"
+                    data-bs-theme-value="dark"
+                    aria-pressed="false"
+                  >
+                    <i class="bi bi-moon-fill me-2"></i>
+                    Dark
+                    <i class="bi bi-check-lg ms-auto d-none"></i>
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    class="dropdown-item d-flex align-items-center active"
+                    data-bs-theme-value="auto"
+                    aria-pressed="true"
+                  >
+                    <i class="bi bi-circle-half me-2"></i>
+                    Auto
+                    <i class="bi bi-check-lg ms-auto d-none"></i>
+                  </button>
+                </li>
+              </ul>
+            </li>
+            <!--end::Color Mode Toggle-->
+          </ul>
+          <!--end::End Navbar Links-->
+        </div>
+        <!--end::Container-->
+      </nav>
+      <!--end::Header-->
+      <!--begin::Sidebar-->
+      <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
+        <!--begin::Sidebar Brand-->
+        <div class="sidebar-brand">
+          <!--begin::Brand Link-->
+          <a href="dashboard.html" class="brand-link">
+            <!--begin::Brand Image-->
+            <img
+              src="../assets/img/AdminLTELogo.png"
+              alt="AdminLTE Logo"
+              class="brand-image opacity-75 shadow"
+            />
+            <!--end::Brand Image-->
+            <!--begin::Brand Text-->
+            <span class="brand-text fw-light">Admin-123</span>
+            <!--end::Brand Text-->
+          </a>
+          <!--end::Brand Link-->
+        </div>
+        <!--end::Sidebar Brand-->
+        <!--begin::Sidebar Wrapper-->
+        <div class="sidebar-wrapper">
+          <nav class="mt-2">
+            <!--begin::Sidebar Menu-->
+            <ul
+              class="nav sidebar-menu flex-column"
+              data-lte-toggle="treeview"
+              role="navigation"
+              aria-label="Main navigation"
+              data-accordion="false"
+              id="navigation"
+            >
+
+            <li class="nav-item">
+              <a href="dashboard.html" class="nav-link">
+                <i class="nav-icon bi bi-grid-1x2 me-1" aria-hidden="true"></i>
+                <p>Главная</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="equipment.html" class="nav-link">
+                <i class="nav-icon bi bi-usb-fill"></i>
+                <p>Оборудование</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="quicksetup.html" class="nav-link">
+                <i class="nav-icon bi bi-box2"></i>
+                <p>Быстрая настройка</p>
+              </a>
+            </li>
+            
+            <li class="nav-item">
+              <a href="checker.html" class="nav-link">
+                <i class="nav-icon bi bi-globe2"></i>
+                <p>Ресурсы</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="#" class="nav-link active">
+                <i class="nav-icon bi bi-wifi"></i>
+                <p>
+                  Wi-fi
+                  <i class="nav-arrow bi bi-chevron-right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="wifi-advices.html" class="nav-link">
+                    <i class="nav-icon bi bi-arrow-right-short"></i>
+                    <p>Советы</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="wifi-theory.html" class="nav-link">
+                    <i class="nav-icon bi bi-arrow-right-short"></i>
+                    <p>Теория</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-header">Внешние</li>
+            <li class="nav-item">
+              <a href="https://github.com/ins1x/OLT/wiki" target="_blank" class="nav-link">
+                <i class="nav-icon bi bi-window"></i>
+                <p>OLT-commands</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="https://chat.datacenter.by/index.php/f/1476890" target="_blank" class="nav-link">
+                <i class="nav-icon bi bi-cloud"></i>
+                <p>Nextcloud-Disk</p>
+              </a>
+            </li>
+            <!--end::Sidebar Menu-->
+          </nav>
+        </div>
+        <!--end::Sidebar Wrapper-->
+      </aside>
+      <!--end::Sidebar-->
+      <!--begin::App Main-->
+      <main class="app-main">
+        <!--begin::App Content Header-->
+        <div class="app-content-header">
+          <!--begin::Container-->
+          <div class="container-fluid">
+            <!--begin::Row-->
+            <div class="row">
+              <div class="col-sm-6">
+                <h3 class="mb-0">Быстрая настройка</h3>
+              </div>
+              <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-end">
+                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Quick Setup</li>
+                </ol>
+              </div>
+            </div>
+            <!--end::Row-->
+          </div>
+          <!--end::Container-->
+        </div>
+        <!--end::App Content Header-->
+        <!--begin::App Content-->
+        <div class="app-content">
+          <!--begin::Container-->
+          <div class="container-fluid">
+            <!--begin::Row-->
+            <div class="row">
+              <!-- <div class="col-sm-6 mb-3 mb-sm-3">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5></h5>
+                  </div>
+                </div>
+              </div> -->
+              <div class="col-sm-6 mb-3 mb-sm-3">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5>Подключение и вход в веб-интерфейс</h5>
+                    <p>
+                      <ul>
+                         <li>Подключите кабель от модема провайдера в WAN, питание - к роутеру</li>
+                         <li>Подключитесь к роутеру: по кабелю в порт <storng>LAN1</storng>, или к заводской Wi-Fi сети (имя/пароль на наклейке)</li>
+                         <li>Откройте браузер и зайдите на <a href="http://192.168.100.1" target="_blank">192.168.100.1</a> или <a href="http://192.168.100.1" target="_blank">192.168.1.1</a> в зависимости модели (точный адрес - на наклейке/в инструкции)</li>
+                      </ul>
+                    </p>
+                    <div class="card-footer">
+                      <p>Если не заходит в веб-интерфейс:</p>
+                      <ul>
+                        <li>Перезагрузите модем (некоторые модемы имеют защиту, и блокируют вход в админку после нескольких часов работы)</li> 
+                        <li>Проверьте что ваше устройство получило IP адрес из той же подсети что и сеть модема 192.168.1.x либо 192.168.100.x</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <h2 id="ppoe">Настройка роутера в PPPoE</h2>
+            <div class="row">
+              <div class="col-sm-6 mb-3 mb-sm-3">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5>Настройка роутера в PPPoE</h5>
+                    <p>
+                      Универсальная инструкция для большинства роутеров (TP-Link, Keenetic, ASUS, Tenda и другие). 
+                      Подходит для любого роутера с функцией подключения по PPPoE - пункты меню могут отличаться, ориентируйтесь на смысл.
+                    </p>
+                    <ul>
+                      <li>Тип подключения: PPPoE.</li>
+                      <li>Введите логин и пароль, выданные в договоре. Логин указывать с приставкой <b>@beltel.by</b></li>
+                      <li>Сохраните и нажмите Подключить / Connect.</li>
+                    </ul>
+                    Дополнительные параметры которы по-умолчанию не запрашивает но могут понадобиться для расширенной настройки:
+                    <ul>
+                      <li>MTU: 1492 (по умолчанию)</li>
+              <li>Type: PPPoE client
+                      <li>Поле Service Name - оставить пустым</li>
+              <li>Use Peer DNS - Enable</li>
+              <li>Add default route - Enable</li>
+              <li>Authentication type - PAP/CHAP (Поддерживает оба режима)</li>
+                    </ul>
+                  </div>
+                  <div class="card-footer">
+                    <ul>
+                      <li>PPPoE не подключается: проверьте логин/пароль, MTU 1492, кабель в WAN, перезапустите ONT/модем и роутер, убедитесь что модем переведен в bridge</li>
+                      <li>PPPoE подключается но выдает странный IP либо заглушку - неверный логин/пароль</li>
+                      <li>PPPoE подключается и сразу отваливается: обновите прошивку, проверьте кабель/питание, отключите сомнительные фильтры, проверьте логи на вашем оборудовании</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 mb-3 mb-sm-3">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5>Настройка PPPoE по бренду роутера</h5>
+                    <p>Ниже - быстрые ориентиры куда зайти в меню. Пункты могут называться чуть иначе, но логика одинаковая: Internet/WAN - PPPoE - логин/пароль - сохранить.</p>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">
+                        <strong>TP-Link / Mercusys</strong>
+                        <p>Advanced - Network - Internet (или WAN) - PPPoE. Введите логин/пароль, MTU 1492, Save/Connect</p>
+                      </li>
+                      <li class="list-group-item">
+                        <strong>Keenetic</strong>
+                        <p>Интернет - PPPoE/VPN (или Подключения) - создать/включить PPPoE. Логин/пароль - применить</p>
+                      </li>
+                      <li class="list-group-item">
+                        <strong>ASUS</strong>
+                        <p>WAN - Internet Connection - WAN Connection Type: PPPoE. Username/Password - Apply</p>
+                      </li>
+                      <li class="list-group-item">
+                        <strong>Xiaomi</strong>
+                        <p>Internet settings - Connection type: PPPoE. Введите логин/пароль - сохранить</p>
+                      </li>
+                      <li class="list-group-item">
+                        <strong>Tenda / D-Link</strong>
+                        <p>Internet/WAN - PPPoE. Логин/пароль - сохранить - подключить</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+            <h2 id="inet">Настройка сетевой карты</h2>
+            <div class="row">
+              <div class="col-sm-6 mb-3 mb-sm-3">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5>IP-адреса <a href="https://www.beltelecom.by/ip-adresa-serverov-dns-neobkhodimykh-dlya-nastroyki-podklyucheniya-k-internet">DNS-серверов</a></h5>
+                    <table class="table table-striped">
+                      <tbody>
+                        <tr>
+                          <td>&nbsp;</td>
+                          <td>Предпочитаемый</td>
+                          <td>Альтернативный</td>
+                        </tr>
+                        <tr>
+                          <td>Минск</td>
+                          <td>194.158.196.245</td>
+                          <td>86.57.255.149</td>
+                        </tr>
+                        <tr>
+                          <td>Минская область</td>
+                          <td>194.158.196.243</td>
+                          <td>86.57.255.147</td>
+                        </tr>
+                        <tr>
+                          <td>Брестская область</td>
+                          <td>194.158.196.246</td>
+                          <td>86.57.255.150</td>
+                        </tr>
+                        <tr>
+                          <td>Витебская область</td>
+                          <td>194.158.196.244</td>
+                          <td>86.57.255.148</td>
+                        </tr>
+                        <tr>
+                          <td>Гомельская область</td>
+                          <td>194.158.196.246</td>
+                          <td>86.57.255.150</td>
+                        </tr>
+                        <tr>
+                          <td>Гродненская область</td>
+                          <td>194.158.196.245</td>
+                          <td>86.57.255.149</td>
+                        </tr>
+                        <tr>
+                          <td>Могилевская область</td>
+                          <td>194.158.196.244</td>
+                          <td>86.57.255.148</td>
+                        </tr>
+                        <tr>
+                          <td>При подключенной услуге "Обеспечение безопасности сетевого трафика"</td>
+                          <td>194.158.196.137</td>
+                          <td>194.158.196.141</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <div class="card-footer">
+                      <ul>
+                        <li>Сайты открываются медленно или частично: проверьте DNS, отключите VPN/Proxy, фильтры/блокировщики рекламы, проверьте нагрузку на сеть</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 mb-3 mb-sm-3">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5>Настройка сетевой</h5>
+                    Настройка сетевой карты в системе Windows 10 при автоматических настройках подключения (DHCP).
+                    <ol>
+                      <li>Откройте меню Пуск (Start) - Панель управления(Control Panel) - Сеть и Интернет(Network and Internet) (если этот раздел отсутствует, см. следующий) - Центр управления сетями и общим доступом(Network and Sharing Center) - Изменение параметров адаптера(Change adapter settings) (в левой части окна).</li>
+                      <li>Щелкните правой кнопкой мыши на ярлык Подключение по локальной сети (Local Area Connection) и выберите Свойства (Properties).</li>
+                      <li>В появившемся окне снимите выделение (галочку) с пункта Протокол Интернета версии 6 (TCP/IPv6) (Internet Protocol version 6 (TCP/IPv6)), затем выделите пункт Протокол Интернета версии 4 (TCP/IPv4) (Internet Protocol version 4 (TCP/IPv4)) и нажмите левой кнопкой мыши по кнопке Свойства (Properties).</li>
+                      <li>Выберите пункт Использовать следующий IP-адрес (Use the following IP address). В строке IP-адрес (IP address) впишите значение (без кавычек) 192.168.1.2, в строке Маска подсети (Subnet mask)– значение 255.255.255.0, в строке Основной шлюз (Default gateway) – 192.168.1.1.</li>
+                      Выберите пункт Использовать следующие адреса DNS-серверов (Use the following DNS server addresses и введите в строке Предпочитаемый DNS-сервер (Preferred DNS server) и Альтернативный DNS-сервер (Alternate DNS server) значения ###.###.###.###. Далее нажмите ОК
+                      <li>Нажмите Закрыть (Close).</li>
+              <a href="https://www.beltelecom.by/tekstovaya-instrukciya-nastroyki-setevoy-karty-dlya-podklyucheniya-k-seti-internet-po-tekhnologii-2">Инструкция с сайта Белтелеком</a>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          <div class="row">
+              <div class="col mb-sm-3">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5>Настройка автосогласования</h5>
+                    <p>
+                      Панель управления - Центр управления сетями и общим доступом - Изменение параметров адаптера (слева) 
+                      - Нажмите правой кнопкой мыши на ваше сетевое подключение и выберите Свойства -
+                      Кликните на кнопку Настроить (рядом с названием сетевой карты) - Перейдите на вкладку Дополнительно - 
+                      Найдите пункт Скорость и дуплекс (Speed & Duplex) или Тип подключения - в выпадающем списке выберите 
+                      Автосогласование (Auto Negotiation) - Нажмите ОК.
+                    </p>
+                    <div class="card-footer">
+                      <ul>
+                        <li>
+                          Линк больше 100 Мбит-с может не подниматься из-за старого 4-х жильного кабеля, 
+                          неплотного контакта жил кабеля с коннектором, настроек сетевой и неккоректной работы сетевых драйверов.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+            <h2 id="wifi">Wi-fi</h2>
+            <div class="row">
+              <div class="col-sm-6 mb-3 mb-sm-3">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5>Имя сети и пароль</h5>
+                    <ul>
+                      <li>SSID: имя сети задайте понятное имя </li>
+                      <li>WLAN-KEY/WPA2 Key: пароль</li>
+                      <li>Безопасность: WPA2-PSK (совместимый режим)</li>
+                    </ul>
+                    <div class="card-footer">
+                      <ul>
+                        <li>Обратите внимание, что по умолчанию для частоты 5 ГГц название сети будет иметь префикс <strong>5G_</strong> , в то время как для частоты 2.4 ГГц префикс отсутствует</li>
+                        <li>Сети byfly-wifi, BELTELECOM_public, BELTELECOM-Wifi публичные, подключайтесь вместо них к вашей домашней сети wi-fi</li>
+                        <li>WPS по-умолчанию отключен в целях безопасности</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 mb-3 mb-sm-3">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5>Каналы и ширина</h5>
+                    <ul>
+                      <li>2.4 ГГц: ширина 20 МГц, канал 1/6/11 (авто или менее загруженный)</li>
+                      <li>5 ГГц: обычно 80 МГц. При обрывах/провалах попробуйте уйти с DFS-каналов или поставить авто</li>
+                      <li>6 ГГц (Wi-Fi 6E/7): используйте, если устройства поддерживают - там меньше помех</li>
+                    </ul>
+                    <div class="card-footer">
+                      <ul>
+                        <li>Сначала проверьте интернет на кабельном устройстве - так тест точнее</li>
+                        <li>Если по Wi-Fi скорость ниже - это нормально из-за радиосреды. Для максимума используйте кабель или Mesh</li>
+                        <li>При обрывах Wi-Fi: 2.4 ГГц - 20 МГц, смените канал; 5 ГГц - попробуйте другой канал (без DFS) и 80 МГц</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <h2 id="iptv">TV</h2>
+            <div class="row">
+              <div class="col-sm-6 mb-3 mb-sm-3">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5>IPTV</h5>
+                    <ul>
+                      <li>Нажмите кнопку SET на пульте от STB (Над желтой кнопкой)</li>
+                      <li>Настройки - OK - Введите пароль - 6321 - ОК</li>
+                      <li>В поле учетная запись пропишите логин из договора</li>
+                      <li>В поле пароль пропишите первоначальный пароль из договора</li>
+                    </ul>
+                    <div class="card-footer">
+                      <ul>
+                        <li>4-й порт по-умолчанию настроен под IPTV, через него подключение к интернету работать не будет</li>
+                        <li>Если подключить STB приставку в порт не настроенный под IPTV, возможен черный экран на любом канале либо ошибка 1302/1305</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 mb-3 mb-sm-3">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5>SMART</h5>
+                    <ul>
+                      <li><a href="https://fe.svc.ott.zala.by/">fe.svc.ott.zala.by</a></li>
+              <li><a href="https://tv.zala.by/">tv.zala.by</a></li>
+                    </ul>
+                    <div class="card-footer">
+                      <ul>
+                        <li>Для стабильности подключайте приставку/Smart TV по Ethernet. По Wi-Fi возможны помехи и снижение качества</li>
+                        <li>Если нужен свитч - подойдёт обычный неуправляемый на 4–8 портов</li>
+                        <li>SMART TV работает по unicast, обычно дополнительных настроек в роутере не требуется.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+            <div class="row">
+              <div class="col-sm-6 mb-3 mb-sm-3">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5>Эфирное ТВ</h5>
+                    <strong>Необходима антенна</strong>
+                    <p>
+                      Для приема эфирного цифрового телевидения нужна дециметровая антенна, работающая в диапазоне частот 470-862 МГц. 
+                      Рекомендуемые характеристики активной (комнатной) и пассивной (наружной) телевизионной антенны: 
+                    </p>
+                    <ul>
+                      <li>частотный диапазон ДМВ 470 МГц (21…69 каналы);</li>
+                      <li>коэффициент усиления 18 дБ и 15 дБ соответственно.</li>
+                    </ul>
+                    <strong>Проверка факта активации STB</strong>
+                    <p>
+                      Выберите закладку "Информация" на главной странице интерактивного меню. Выберите закладку "информация о СУД". 
+                      На экране телевизионного приемника в строке Pairing state должно стоять "Pairing ОК". 
+                      Эта запись свидетельствует о том, что привязка карты условного доступа к приставке
+                      прошла успешно и приставка готова для раскодирования телевизионного сигнала. 
+                      В случае, если "Pairing bad" необходио попробовать перезагрузить STB/Переаодключить Smart-карту. 
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>    
+            <!--end::Row-->
+          </div>
+          <!--end::Container-->
+        </div>
+        <!--end::App Content-->
+      </main>
+      <!--end::App Main-->
+      <!--begin::Footer-->
+      <footer class="app-footer">
+        <!--begin::To the end-->
+        <div class="float-end d-none d-sm-inline">&nbsp;2026 &#127866;</div>
+        <!--end::To the end-->
+          <!-- <a href="https://adminlte.io" class="text-decoration-none">AdminLTE.io</a>. -->
+      </footer>
+      <!--end::Footer-->
+    </div>
+    <!--end::App Wrapper-->
+    <!--begin::Script-->
+    <!--begin::Third Party Plugin(OverlayScrollbars)-->
+    <!-- <script
+      src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.11.0/browser/overlayscrollbars.browser.es6.min.js"
+      crossorigin="anonymous"
+    ></script> -->
+    <script src="../js/overlayscrollbars.browser.es6.min.js"></script>
+    <!--end::Third Party Plugin(OverlayScrollbars)--><!--begin::Required Plugin(popperjs for Bootstrap 5)-->
+    <!-- <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      crossorigin="anonymous"
+    ></script> -->
+    <script src="../js/popper.min.js"></script>
+    <!--end::Required Plugin(popperjs for Bootstrap 5)--><!--begin::Required Plugin(Bootstrap 5)-->
+    <!-- <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"
+      crossorigin="anonymous"
+    ></script> -->
+    <script src="../js/bootstrap.min.js"></script>
+    <!--end::Required Plugin(Bootstrap 5)--><!--begin::Required Plugin(AdminLTE)-->
+    <script src="../js/adminlte.js"></script>
+    <!--end::Required Plugin(AdminLTE)--><!--begin::OverlayScrollbars Configure-->
+    <script src="../js/color-modes.js"> </script>
+    <!--end::Color Mode Toggle-->
+
+    <!-- OPTIONAL SCRIPTS -->
+
+    <!-- sortablejs -->
+    <!-- <script
+      src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"
+      crossorigin="anonymous"
+    ></script> -->
+    <script src="../js/sortable.min.js"></script>
+
+    <!-- customjs -->
+    <script src="../js/custom.js"></script>
+
+  </body>
+  <!--end::Body-->
+</html>

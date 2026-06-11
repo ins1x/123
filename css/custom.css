@@ -1,0 +1,12 @@
+@charset "UTF-8";
+/*!
+ * Custom CSS styles
+*/
+
+blockquote {
+  border-left: 4px solid #0076ff;
+  padding-left: 15px;
+  margin-left: 0;    
+  font-style: italic;
+  color: #909090;
+}

@@ -1,0 +1,732 @@
+<!doctype html>
+<html lang="ru-BY">
+  <!--begin::Head-->
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Admin-123 | Equipment</title>
+
+    <!--begin::Accessibility Meta Tags-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#007bff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)" />
+    <!--end::Accessibility Meta Tags-->
+
+    <!--begin::Primary Meta Tags-->
+    <meta name="title" content="Admin123 | Equipment" />
+    <meta name="author" content="1NS" />
+    <!--end::Primary Meta Tags-->
+
+    <!--begin::Accessibility Features-->
+    <!-- Skip links will be dynamically added by accessibility.js -->
+    <meta name="supported-color-schemes" content="light dark" />
+    <link rel="shortcut icon" href="../assets/img/favicon.png"/>
+    <link rel="preload" href="../css/adminlte.css" as="style" />
+    <!--end::Accessibility Features-->
+
+    <!--begin::Fonts-->
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fontsource/source-sans-3@5.0.12/index.css"
+      integrity="sha256-tXJfXfp6Ewt1ilPzLDtQnJV4hclT9XuaZUKyUvmyr+Q="
+      crossorigin="anonymous"
+      media="print"
+      onload="this.media = 'all'"
+    /> -->
+    <link rel="stylesheet" href="../fonts/fonts.css" />
+    <!--end::Fonts-->
+
+    <!--begin::Third Party Plugin(OverlayScrollbars)-->
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.11.0/styles/overlayscrollbars.min.css"
+      crossorigin="anonymous"
+    /> -->
+    <link rel="stylesheet" href="../css/overlayscrollbars.min.css" />
+    <!--end::Third Party Plugin(OverlayScrollbars)-->
+
+    <!--begin::Third Party Plugin(Bootstrap Icons)-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+      crossorigin="anonymous"
+    />
+    <!-- <link rel="stylesheet" href="fonts/bootstrap-icons.min.css" /> -->
+    <!--end::Third Party Plugin(Bootstrap Icons)-->
+
+    <!--begin::Required Plugin(AdminLTE)-->
+    <link rel="stylesheet" href="../css/adminlte.css" />
+    <!--end::Required Plugin(AdminLTE)-->
+
+    <!-- apexcharts
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/apexcharts@3.37.1/dist/apexcharts.css"
+      integrity="sha256-4MX+61mt9NVvvuPjUWdUdyfZfxSB1/Rf9WtqRHgG5S0="
+      crossorigin="anonymous"
+    /> -->
+
+    <!--begin::Custom-->
+    <link rel="stylesheet" href="../css/custom.css" />
+    <!--end::Custom-->
+  </head>
+  <!--end::Head-->
+  <!--begin::Body-->
+  <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
+    <!--begin::App Wrapper-->
+    <div class="app-wrapper">
+      <!--begin::Header-->
+      <nav class="app-header navbar navbar-expand bg-body">
+        <!--begin::Container-->
+        <div class="container-fluid">
+          <!--begin::Start Navbar Links-->
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" data-lte-toggle="sidebar" href="#" role="button">
+                <i class="bi bi-list"></i>
+              </a>
+            </li>
+
+            <!-- <li class="nav-item d-none d-md-block">
+              <a href="dashboard.html" class="nav-link">
+                <i class="bi bi-grid-1x2 me-1" aria-hidden="true"></i>
+                Главная
+              </a>
+            </li> -->
+
+          </ul>
+          <!--end::Start Navbar Links-->
+
+          <!--begin::End Navbar Links-->
+          <ul class="navbar-nav ms-auto">
+            <!--begin::Navbar Search-->
+            <li class="nav-item">
+              <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+                <i class="bi bi-search"></i>
+              </a>
+            </li>
+            <!--end::Navbar Search-->
+
+            <!--begin::Fullscreen Toggle-->
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-lte-toggle="fullscreen">
+                <i data-lte-icon="maximize" class="bi bi-arrows-fullscreen"></i>
+                <i data-lte-icon="minimize" class="bi bi-fullscreen-exit d-none"></i>
+              </a>
+            </li>
+            <!--end::Fullscreen Toggle-->
+
+            <!--begin::Color Mode Toggle (#6010)-->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link"
+                href="#"
+                id="bd-theme"
+                aria-label="Toggle color scheme"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="bi bi-sun-fill" data-lte-theme-icon="light"></i>
+                <i class="bi bi-moon-fill d-none" data-lte-theme-icon="dark"></i>
+                <i class="bi bi-circle-half d-none" data-lte-theme-icon="auto"></i>
+              </a>
+              <ul
+                class="dropdown-menu dropdown-menu-end"
+                aria-labelledby="bd-theme"
+                style="--bs-dropdown-min-width: 8rem"
+              >
+                <li>
+                  <button
+                    type="button"
+                    class="dropdown-item d-flex align-items-center"
+                    data-bs-theme-value="light"
+                    aria-pressed="false"
+                  >
+                    <i class="bi bi-sun-fill me-2"></i>
+                    Light
+                    <i class="bi bi-check-lg ms-auto d-none"></i>
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    class="dropdown-item d-flex align-items-center"
+                    data-bs-theme-value="dark"
+                    aria-pressed="false"
+                  >
+                    <i class="bi bi-moon-fill me-2"></i>
+                    Dark
+                    <i class="bi bi-check-lg ms-auto d-none"></i>
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    class="dropdown-item d-flex align-items-center active"
+                    data-bs-theme-value="auto"
+                    aria-pressed="true"
+                  >
+                    <i class="bi bi-circle-half me-2"></i>
+                    Auto
+                    <i class="bi bi-check-lg ms-auto d-none"></i>
+                  </button>
+                </li>
+              </ul>
+            </li>
+            <!--end::Color Mode Toggle-->
+          </ul>
+          <!--end::End Navbar Links-->
+        </div>
+        <!--end::Container-->
+      </nav>
+      <!--end::Header-->
+      <!--begin::Sidebar-->
+      <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
+        <!--begin::Sidebar Brand-->
+        <div class="sidebar-brand">
+          <!--begin::Brand Link-->
+          <a href="dashboard.html" class="brand-link">
+            <!--begin::Brand Image-->
+            <img
+              src="../assets/img/AdminLTELogo.png"
+              alt="AdminLTE Logo"
+              class="brand-image opacity-75 shadow"
+            />
+            <!--end::Brand Image-->
+            <!--begin::Brand Text-->
+            <span class="brand-text fw-light">Admin-123</span>
+            <!--end::Brand Text-->
+          </a>
+          <!--end::Brand Link-->
+        </div>
+        <!--end::Sidebar Brand-->
+        <!--begin::Sidebar Wrapper-->
+        <div class="sidebar-wrapper">
+          <nav class="mt-2">
+            <!--begin::Sidebar Menu-->
+            <ul
+              class="nav sidebar-menu flex-column"
+              data-lte-toggle="treeview"
+              role="navigation"
+              aria-label="Main navigation"
+              data-accordion="false"
+              id="navigation"
+            >
+
+            <li class="nav-item">
+              <a href="dashboard.html" class="nav-link">
+                <i class="nav-icon bi bi-grid-1x2 me-1" aria-hidden="true"></i>
+                <p>Главная</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="equipment.html" class="nav-link">
+                <i class="nav-icon bi bi-usb-fill"></i>
+                <p>Оборудование</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="quicksetup.html" class="nav-link">
+                <i class="nav-icon bi bi-box2"></i>
+                <p>Быстрая настройка</p>
+              </a>
+            </li>
+            
+            <li class="nav-item">
+              <a href="checker.html" class="nav-link">
+                <i class="nav-icon bi bi-globe2"></i>
+                <p>Ресурсы</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="#" class="nav-link active">
+                <i class="nav-icon bi bi-wifi"></i>
+                <p>
+                  Wi-fi
+                  <i class="nav-arrow bi bi-chevron-right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="wifi-advices.html" class="nav-link">
+                    <i class="nav-icon bi bi-arrow-right-short"></i>
+                    <p>Советы</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="wifi-theory.html" class="nav-link">
+                    <i class="nav-icon bi bi-arrow-right-short"></i>
+                    <p>Теория</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-header">Внешние</li>
+            <li class="nav-item">
+              <a href="https://github.com/ins1x/OLT/wiki" target="_blank" class="nav-link">
+                <i class="nav-icon bi bi-window"></i>
+                <p>OLT-commands</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="https://chat.datacenter.by/index.php/f/1476890" target="_blank" class="nav-link">
+                <i class="nav-icon bi bi-cloud"></i>
+                <p>Nextcloud-Disk</p>
+              </a>
+            </li>
+            <!--end::Sidebar Menu-->
+          </nav>
+        </div>
+        <!--end::Sidebar Wrapper-->
+      </aside>
+      <!--end::Sidebar-->
+      <!--begin::App Main-->
+      <main class="app-main">
+        <!--begin::App Content Header-->
+        <div class="app-content-header">
+          <!--begin::Container-->
+          <div class="container-fluid">
+            <!--begin::Row-->
+            <div class="row">
+              <div class="col-sm-6">
+                <h3 class="mb-0">Информация по модемам</h3>
+              </div>
+              <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-end">
+                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Equipment</li>
+                </ol>
+              </div>
+            </div>
+            <!--end::Row-->
+          </div>
+          <!--end::Container-->
+        </div>
+        <!--end::App Content Header-->
+        <!--begin::App Content-->
+        <div class="app-content">
+          <!--begin::Container-->
+          <div class="container-fluid">
+            <!--begin::Row-->
+            <div class="row" id="inet">
+              <div class="col mb-sm-3">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h3>PON ONT/ONU</h3>
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>Модель модема</th>
+                          <th>IP-адрес</th>
+                          <th>Login / Пароль</th>
+                          <th>Тип</th>
+                          <th>Порты</th>
+                          <th>Wi-fi</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Huawei EchoLife HG8245A</td>
+                          <td><a href="http://192.168.100.1" target="_blank">192.168.100.1</a></td>
+                          <td>telecomadmin / admintelecom</td>
+                          <td><span class="badge bg-primary">SC/UPC</span></td>
+                          <td><span class="badge text-bg-warning">4 FE</span> <span class="badge bg-secondary">2 FXS</span></td>
+                          <td>802.11b/g/n</td>
+                        </tr>
+                        <tr>
+                          <td>Huawei EchoLife HG8245H, HG8245H-256M</td>
+                          <td><a href="http://192.168.100.1" target="_blank">192.168.100.1</a></td>
+                          <td>telecomadmin / admintelecom</td>
+                          <td><span class="badge bg-primary">SC/UPC</span></td>
+                          <td><span class="badge text-bg-warning">4 GE</span> <span class="badge bg-secondary">2 FXS</span></td>
+                          <td>802.11b/g/n</td>
+                        </tr>
+                        <tr>
+                          <td>Huawei EchoLife HG8245HV5</td>
+                          <td><a href="http://192.168.100.1" target="_blank">192.168.100.1</a></td>
+                          <td>telecomadmin / admintelecom</td>
+                          <td><span class="badge bg-primary">SC/UPC</span></td>
+                          <td><span class="badge text-bg-warning">1GE + 3FE</span> <span class="badge bg-secondary">1 FXS</span></td>
+                          <td>802.11b/g/n</td>
+                        </tr>
+                        <tr>
+                          <td>Huawei EchoLife HG8245H5</td>
+                          <td><a href="http://192.168.100.1" target="_blank">192.168.100.1</a></td>
+                          <td>telecomadmin / admintelecom</td>
+                          <td><span class="badge bg-primary">SC/UPC</span></td>
+                          <td><span class="badge text-bg-warning">4 GE</span> <span class="badge bg-secondary">2 FXS</span></td>
+                          <td>802.11b/g/n</td>
+                        </tr>
+                        <tr>
+                          <td>Huawei EchoLife HG8145</td>
+                          <td><a href="http://192.168.100.1" target="_blank">192.168.100.1</a></td>
+                          <td>telecomadmin / admintelecom</td>
+                          <td><span class="badge bg-primary">SC/UPC</span></td>
+                          <td><span class="badge text-bg-warning">4 GE</span> <span class="badge bg-secondary">1 FXS</span></td>
+                          <td>Dual-Band 802.11a/n/c</td>
+                        </tr>
+                        <tr>
+                          <td colspan="6">Вход с правами Администратора для серии Huawei EchoLife HG8245 логин: root пароль: admin</td>
+                        </tr>
+                        <tr>
+                          <td>ZTE ZXHN F660 AT4V2/AT3</td>
+                          <td><a href="http://192.168.100.1" target="_blank">192.168.100.1</a></td>
+                          <td>admin / admin</td>
+                          <td><span class="badge bg-success">SC/APC</span></td>
+                          <td><span class="badge text-bg-warning">4 FE</span> <span class="badge bg-secondary">2 FXS</span></td>
+                          <td>802.11b/g</td>
+                        </tr>
+                        <tr>
+                          <td>ZTE ZXHN F660V5</td>
+                          <td><a href="http://192.168.100.1" target="_blank">192.168.100.1</a></td>
+                          <td>admin / admin</td>
+                          <td><span class="badge bg-success">SC/APC</span></td>
+                          <td><span class="badge text-bg-warning">4 GE</span> <span class="badge bg-secondary">2 FXS</span></td>
+                          <td>802.11b/g/n</td>
+                        </tr>
+                        <tr>
+                          <td>ZTE ZXHN F609</td>
+                          <td><a href="http://192.168.100.1" target="_blank">192.168.100.1</a></td>
+                          <td>admin / admin</td>
+                          <td><span class="badge bg-success">SC/APC</span></td>
+                          <td><span class="badge text-bg-warning">4 GE</span> <span class="badge bg-secondary">2 FXS</span></td>
+                          <td>802.11b/g/n</td>
+                        </tr>
+                        <tr>
+                          <td>ZTE ZXHN F670L</td>
+                          <td><a href="http://192.168.100.1" target="_blank">192.168.100.1</a></td>
+                          <td>admin / admin</td>
+                          <td><span class="badge bg-success">SC/APC</span></td>
+                          <td><span class="badge text-bg-warning">4 GE</span> <span class="badge bg-secondary">1 FXS</span></td>
+                          <td>Dual-Band 802.11a/n/c</td>
+                        </tr>
+                        <tr>
+                          <td>MA670</td>
+                          <td><a href="http://192.168.1.1" target="_blank">192.168.1.1</a></td>
+                          <td>user / user</td>
+                          <td><span class="badge bg-success">SC/APC</span></td>
+                          <td><span class="badge text-bg-warning">4 GE</span> <span class="badge bg-success">1 FXS</span></td>
+                          <td>Dual-Band 802.11a/n/c</td>
+                        </tr>
+                        <tr>
+                          <td colspan="6">ZTE MA670V3 / Photonspeak MA670-H антенны сзади, MA670-U антенны сбоку + на подставке без креплений</td>
+                        </tr>
+                        <tr>
+                          <td>TS-4224</td>
+                          <td><a href="http://192.168.1.1" target="_blank">192.168.1.1</a></td>
+                          <td>admin / admin</td>
+                          <td><span class="badge bg-success">SC/APC</span></td>
+                          <td><span class="badge text-bg-warning">4 GE</span> <span class="badge bg-secondary">1 FXS</span></td>
+                          <td>Dual-Band 802.11a/n/c</td>
+                        </tr>
+                        <tr>
+                          <td colspan="6">Вход с правами Администратора для TS-4224 логин: Administrator пароль: qazwsx</td>
+                        </tr>
+                    </tbody>
+                    </table>
+                    
+                    <h3>DSL модемы</h3>
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>Модель модема</th>
+                          <th>IP-адрес</th>
+                          <th>Login / Пароль</th>
+                          <th>Тип</th>
+                          <th>Порты</th>
+                          <th>Wi-fi</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Промсвязь M100</td>
+                          <td><a href="http://192.168.1.1" target="_blank">192.168.1.1</a></td>
+                          <td>admin / admin</td>
+                          <td>ADSL2+</td>
+                          <td><span class="badge text-bg-warning">4 FE</span> <span class="badge bg-danger">No FXS</span></td>
+                          <td>Нет</td>
+                        </tr>
+                        <tr>
+                          <td>ZTE ZXV10 W300, Промсвязь M200</td>
+                          <td><a href="http://192.168.1.1" target="_blank">192.168.1.1</a></td>
+                          <td>admin / admin</td>
+                          <td>ADSL2+</td>
+                          <td><span class="badge text-bg-warning">4 FE</span> <span class="badge bg-danger">No FXS</span></td>
+                          <td>802.11g</td>
+                        </tr>
+                        <tr>
+                          <td>ZTE ZXHN H108N</td>
+                          <td><a href="http://192.168.1.1" target="_blank">192.168.1.1</a></td>
+                          <td>admin / admin</td>
+                          <td>ADSL2+</td>
+                          <td><span class="badge text-bg-warning">4 FE</span> <span class="badge bg-danger">No FXS</span></td>
+                          <td>802.11b/g/n</td>
+                        </tr>
+                        <tr>
+                          <td>ZXHN H208N, ZXHN H208L, ZXHN H201L</td>
+                          <td><a href="http://192.168.1.1" target="_blank">192.168.1.1</a></td>
+                          <td>admin / admin</td>
+                          <td>ADSL2+</td>
+                          <td><span class="badge text-bg-warning">4 FE</span> <span class="badge bg-success">1 FXS</span></td>
+                          <td>802.11b/g/n</td>
+                        </tr>
+                        <tr>
+                          <td>ZTE ZXHN H267N, YA-200</td>
+                          <td><a href="http://192.168.1.1" target="_blank">192.168.1.1</a></td>
+                          <td>admin / admin</td>
+                          <td>ADSL2+</td>
+                          <td><span class="badge text-bg-warning">4 FE</span> <span class="badge bg-success">2 FXS</span></td>
+                          <td>802.11b/g/n</td>
+                        </tr>
+                        <tr>
+                          <td>Huawei HG658, YA-200</td>
+                          <td><a href="http://192.168.1.1" target="_blank">192.168.1.1</a></td>
+                          <td>!!Huawei / @HuaweiHgw</td>
+                          <td>ADSL2+ / VDSL2</td>
+                          <td><span class="badge text-bg-warning">4 FE</span> <span class="badge bg-secondary">1 FXS</span></td>
+                          <td>802.11b/g/n</td>
+                        </tr>
+                        <tr>
+                          <td colspan="6">YA-200 (линия aDSL) на базе ZXHN H267N, YA-200 (линия vDSL) на базе Huawei HG658V2 (в V2 2 тел порта)</td>
+                        </tr>
+                        <tr>
+                          <td>Huawei HG552e, HG532e, HG552f-11, HG520</td>
+                          <td><a href="http://192.168.1.1" target="_blank">192.168.1.1</a></td>
+                          <td>admin / admin</td>
+                          <td>ADSL2+</td>
+                          <td><span class="badge text-bg-warning">4 FE</span> <span class="badge bg-secondary">1 FXS</span></td>
+                          <td>802.11b/g/n</td>
+                        </tr>
+                        <tr>
+                          <td colspan="6">Вход с правами Администратора для серии Huawei Huawei HG55XX логин: superadmin пароль: !@HuaweiHgw</td>
+                        </tr>
+                        <tr>
+                          <td>Huawei B311-221</td>
+                          <td><a href="http://192.168.8.1" target="_blank">192.168.8.1</a></td>
+                          <td>admin / admin</td>
+                          <td>4G LTE, 3G (UMTS)</td>
+                          <td><span class="badge text-bg-warning">1 GE</span> <span class="badge bg-secondary">1 FXS</span></td>
+                          <td>802.11b/g/n</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <p>Инструкции к оборудованию:
+                      <a href="https://howto.by/">howto.by</a>,
+                      <a href="https://https://lan1.by/ins/">lan1.by</a>,
+                      <a href="https://beltelecom.by/help/checklist-for-settings">beltelecom.by</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+            <div class="row" id="tv">
+              <div class="col mb-sm-3">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h3>Приставки</h3>
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>Модель</th>
+                          <th>Платформа</th>
+                          <th>Порты</th>
+                          <th>Wi-fi</th>
+                          <th width = "5%">Документы</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>МЭТА-901</td>
+                          <td>DVB-T, DVB-T2</td>
+                          <td><span class="badge bg-secondary">HDMI</span> <span class="badge bg-warning">RCA</span></td>
+                          <td>Нет</td>
+                          <td>
+                            <a class="navbar-brand" title="Инструкция по настройке"
+                            href="https://www.beltelecom.by/sites/default/files/content/zala/rukovodstvo_polzovatelia/manual_ZALA_efirnoe_meta-jun-2023.doc" aria-label="Up"
+                            >
+                              <i class="bi bi-file-earmark-text-fill"></i>
+                            </a>
+                            <a class="navbar-brand" title="Паспорт приставки"
+                            href="https://howto.by/files/manual_meta901.pdf" aria-label="Up"
+                            >
+                              <i class="bi bi-file-richtext-fill"></i>
+                            </a>
+                          </td>
+                        </tr>    
+                        <tr>
+                          <td>Витязь DTR-824HD</td>
+                          <td>DVB-T, DVB-T2</td>
+                          <td><span class="badge bg-secondary">HDMI</span> <span class="badge bg-warning">RCA</span> <span class="badge bg-secondary">RF-IN</span></td>
+                          <td>Нет</td>
+                          <td>
+                            <a class="navbar-brand" title="Инструкция по настройке"
+                            href="https://www.beltelecom.by/sites/default/files/content/zala/rukovodstvo_polzovatelia/Instruktciia-tiuner-Vitiaz.pdf" aria-label="Up"
+                            >
+                              <i class="bi bi-file-earmark-text-fill"></i>
+                            </a>
+                          </td>
+                        </tr>                  
+                        <tr>
+                          <td>STB B600</td>
+                          <td>IPTV</td>
+                          <td><span class="badge bg-secondary">WAN</span> <span class="badge bg-warning">RCA</span> <span class="badge bg-success">S-Video</span></td>
+                          <td>Нет</td>
+                          <td>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>STB B700V8</td>
+                          <td>IPTV</td>
+                          <td><span class="badge bg-secondary">WAN</span> <span class="badge bg-warning">RCA</span> <span class="badge bg-secondary">HDMI</span> <span class="badge bg-success">S-Video</span></td>
+                          <td>Нет</td>
+                          <td>
+                            <a class="navbar-brand" title="Инструкция по настройке"
+                            href="https://www.beltelecom.by/sites/default/files/content/zala/rukovodstvo_polzovatelia/rukovodstvo_polzovatelia_IPTV-2019.doc" aria-label="Up"
+                            >
+                              <i class="bi bi-file-earmark-text-fill"></i>
+                            </a>
+                            <a class="navbar-brand" title="Паспорт приставки"
+                            href="https://howto.by/files/manual_b700v8.pdf" aria-label="Up"
+                            >
+                              <i class="bi bi-file-richtext-fill"></i>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>STB B700V5S1</td>
+                          <td>IPTV</td>
+                          <td><span class="badge bg-secondary">WAN</span> <span class="badge bg-warning">RCA</span> <span class="badge bg-secondary">HDMI</span> <span class="badge bg-success">S-Video</span></td>
+                          <td>Нет</td>
+                          <td>
+                            <a class="navbar-brand" title="Инструкция по настройке"
+                            href="https://www.beltelecom.by/sites/default/files/content/zala/rukovodstvo_polzovatelia/rukovodstvo_polzovatelia_IPTV-2019.doc" aria-label="Up"
+                            >
+                              <i class="bi bi-file-earmark-text-fill"></i>
+                            </a>
+                            <a class="navbar-brand" title="Паспорт приставки"
+                            href="https://howto.by/files/manual_b700v5s1.pdf" aria-label="Up"
+                            >
+                              <i class="bi bi-file-richtext-fill"></i>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>STB B800, B860</a></td>
+                          <td>IPTV</td>
+                          <td><span class="badge bg-secondary">WAN</span> <span class="badge bg-secondary">HDMI</span> <span class="badge bg-danger">3.5mm AV</span></td>
+                          <td>Нет</td>
+                          <td>
+                            <a class="navbar-brand" title="Инструкция по настройке"
+                            href="https://www.beltelecom.by/sites/default/files/content/zala/rukovodstvo_polzovatelia/IPTV_rukovodstvo_polzovatelia_iptv%202022_B800_B860.pdf" aria-label="Up"
+                            >
+                              <i class="bi bi-file-earmark-text-fill"></i>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>SML-5050W</td>
+                          <td>OTT SmartZala</td>
+                          <td><span class="badge bg-secondary">WAN</span> <span class="badge bg-secondary">HDMI</span> <span class="badge bg-danger">3.5mm AV</span></td>
+                          <td>802.11b/g/n</td>
+                          <td>
+                            <a class="navbar-brand" title="Инструкция по настройке"
+                            href="https://www.beltelecom.by/tekstovaya-instrukciya-podklyuchenie-sml-5050-nastroyka-podklyucheniya-po-seti-wi-fi" aria-label="Up"
+                            >
+                              <i class="bi bi-file-earmark-text-fill"></i>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>SDMC DV9135</td>
+                          <td>IPTV SMART ZalaYasna</td>
+                          <td><span class="badge bg-secondary">WAN</span> <span class="badge bg-secondary">HDMI</span> <span class="badge bg-danger">3.5mm AV</span></td>
+                          <td>802.11a/n/c</td>
+                          <td>
+                            <a class="navbar-brand" title="Инструкция по настройке"
+                            href="https://www.beltelecom.by/tekstovaya-instrukciya-podklyuchenie-dv9135-etapy-zapuska-pervonachalnaya-nastroyka-podklyucheniya" aria-label="Up"
+                            >
+                              <i class="bi bi-file-earmark-text-fill"></i>
+                            </a>
+                          </td>
+                        </tr> 
+                        <tr>
+                          <td>SDMC DV9161</td>
+                          <td>IPTV SMART ZalaYasna</td>
+                          <td><span class="badge bg-secondary">WAN</span> <span class="badge bg-secondary">HDMI</span></td>
+                          <td>802.11a/n/c</td>
+                          <td>
+                            <a class="navbar-brand" title="Инструкция по настройке"
+                            href="https://www.beltelecom.by/tekstovaya-instrukciya-podklyuchenie-dv9135-etapy-zapuska-pervonachalnaya-nastroyka-podklyucheniya" aria-label="Up"
+                            >
+                              <i class="bi bi-file-earmark-text-fill"></i>
+                            </a> 
+                          </td>
+                        </tr> 
+                      </tbody>
+                    </table>
+      
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--end::Row-->
+          </div>
+          <!--end::Container-->
+        </div>
+        <!--end::App Content-->
+      </main>
+      <!--end::App Main-->
+      <!--begin::Footer-->
+      <footer class="app-footer">
+        <!--begin::To the end-->
+        <div class="float-end d-none d-sm-inline">&nbsp;2026 &#127866;</div>
+        <!--end::To the end-->
+          <!-- <a href="https://adminlte.io" class="text-decoration-none">AdminLTE.io</a>. -->
+      </footer>
+      <!--end::Footer-->
+    </div>
+    <!--end::App Wrapper-->
+    <!--begin::Script-->
+    <!--begin::Third Party Plugin(OverlayScrollbars)-->
+    <!-- <script
+      src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.11.0/browser/overlayscrollbars.browser.es6.min.js"
+      crossorigin="anonymous"
+    ></script> -->
+    <script src="../js/overlayscrollbars.browser.es6.min.js"></script>
+    <!--end::Third Party Plugin(OverlayScrollbars)--><!--begin::Required Plugin(popperjs for Bootstrap 5)-->
+    <!-- <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      crossorigin="anonymous"
+    ></script> -->
+    <script src="../js/popper.min.js"></script>
+    <!--end::Required Plugin(popperjs for Bootstrap 5)--><!--begin::Required Plugin(Bootstrap 5)-->
+    <!-- <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"
+      crossorigin="anonymous"
+    ></script> -->
+    <script src="../js/bootstrap.min.js"></script>
+    <!--end::Required Plugin(Bootstrap 5)--><!--begin::Required Plugin(AdminLTE)-->
+    <script src="../js/adminlte.js"></script>
+    <!--end::Required Plugin(AdminLTE)--><!--begin::OverlayScrollbars Configure-->
+    <script src="../js/color-modes.js"> </script>
+    <!--end::Color Mode Toggle-->
+
+    <!-- OPTIONAL SCRIPTS -->
+
+    <!-- sortablejs -->
+    <!-- <script
+      src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"
+      crossorigin="anonymous"
+    ></script> -->
+    <script src="../js/sortable.min.js"></script>
+
+    <!-- customjs -->
+    <script src="../js/custom.js"></script>
+
+  </body>
+  <!--end::Body-->
+</html>
