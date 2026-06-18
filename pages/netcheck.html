@@ -1,0 +1,1065 @@
+<!doctype html>
+<html lang="ru-BY">
+  <!--begin::Head-->
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Admin-123 | Net Check</title>
+
+    <!--begin::Accessibility Meta Tags-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#007bff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)" />
+    <!--end::Accessibility Meta Tags-->
+
+    <!--begin::Primary Meta Tags-->
+    <meta name="title" content="Admin123 | Net Check" />
+    <meta name="author" content="1NS" />
+    <!--end::Primary Meta Tags-->
+
+    <!--begin::Accessibility Features-->
+    <!-- Skip links will be dynamically added by accessibility.js -->
+    <meta name="supported-color-schemes" content="light dark" />
+    <link rel="shortcut icon" href="../assets/img/favicon.png"/>
+    <link rel="preload" href="../css/adminlte.css" as="style" />
+    <!--end::Accessibility Features-->
+
+    <!--begin::Fonts-->
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fontsource/source-sans-3@5.0.12/index.css"
+      integrity="sha256-tXJfXfp6Ewt1ilPzLDtQnJV4hclT9XuaZUKyUvmyr+Q="
+      crossorigin="anonymous"
+      media="print"
+      onload="this.media = 'all'"
+    /> -->
+    <link rel="stylesheet" href="../fonts/fonts.css" />
+    <!--end::Fonts-->
+
+    <!--begin::Third Party Plugin(OverlayScrollbars)-->
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.11.0/styles/overlayscrollbars.min.css"
+      crossorigin="anonymous"
+    /> -->
+    <link rel="stylesheet" href="../css/overlayscrollbars.min.css" />
+    <!--end::Third Party Plugin(OverlayScrollbars)-->
+
+    <!--begin::Third Party Plugin(Bootstrap Icons)-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+      crossorigin="anonymous"
+    />
+    <!-- <link rel="stylesheet" href="fonts/bootstrap-icons.min.css" /> -->
+    <!--end::Third Party Plugin(Bootstrap Icons)-->
+
+    <!--begin::Required Plugin(AdminLTE)-->
+    <link rel="stylesheet" href="../css/adminlte.css" />
+    <!--end::Required Plugin(AdminLTE)-->
+
+    <!-- apexcharts
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/apexcharts@3.37.1/dist/apexcharts.css"
+      integrity="sha256-4MX+61mt9NVvvuPjUWdUdyfZfxSB1/Rf9WtqRHgG5S0="
+      crossorigin="anonymous"
+    /> -->
+    
+    <!--begin::Custom-->
+    <link rel="stylesheet" href="../css/custom.css" />
+    <!--end::Custom-->
+  </head>
+  <!--end::Head-->
+  <!--begin::Body-->
+  <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
+    <!--begin::App Wrapper-->
+    <div class="app-wrapper">
+      <!--begin::Header-->
+      <nav class="app-header navbar navbar-expand bg-body">
+        <!--begin::Container-->
+        <div class="container-fluid">
+          <!--begin::Start Navbar Links-->
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" data-lte-toggle="sidebar" href="#" role="button">
+                <i class="bi bi-list"></i>
+              </a>
+            </li>
+
+            <!-- <li class="nav-item d-none d-md-block">
+              <a href="dashboard.html" class="nav-link">
+                <i class="bi bi-grid-1x2 me-1" aria-hidden="true"></i>
+                Главная
+              </a>
+            </li> -->
+
+          </ul>
+          <!--end::Start Navbar Links-->
+
+          <!--begin::End Navbar Links-->
+          <ul class="navbar-nav ms-auto">
+            <!--begin::Navbar Search-->
+            <li class="nav-item">
+              <a class="nav-link" data-widget="navbar-search" data-bs-toggle="popover" data-bs-title="Поиск" data-bs-content="Поисковый движок еще не добавлен. Используйте CTRL + F для поиска по странице" href="#" role="button">
+                <i class="bi bi-search"></i>
+              </a>
+            </li>
+            <!--end::Navbar Search-->
+
+            <!--begin::Fullscreen Toggle-->
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-lte-toggle="fullscreen">
+                <i data-lte-icon="maximize" class="bi bi-arrows-fullscreen"></i>
+                <i data-lte-icon="minimize" class="bi bi-fullscreen-exit d-none"></i>
+              </a>
+            </li>
+            <!--end::Fullscreen Toggle-->
+
+            <!--begin::Color Mode Toggle (#6010)-->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link"
+                href="#"
+                id="bd-theme"
+                aria-label="Toggle color scheme"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="bi bi-sun-fill" data-lte-theme-icon="light"></i>
+                <i class="bi bi-moon-fill d-none" data-lte-theme-icon="dark"></i>
+                <i class="bi bi-circle-half d-none" data-lte-theme-icon="auto"></i>
+              </a>
+              <ul
+                class="dropdown-menu dropdown-menu-end"
+                aria-labelledby="bd-theme"
+                style="--bs-dropdown-min-width: 8rem"
+              >
+                <li>
+                  <button
+                    type="button"
+                    class="dropdown-item d-flex align-items-center"
+                    data-bs-theme-value="light"
+                    aria-pressed="false"
+                  >
+                    <i class="bi bi-sun-fill me-2"></i>
+                    Light
+                    <i class="bi bi-check-lg ms-auto d-none"></i>
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    class="dropdown-item d-flex align-items-center"
+                    data-bs-theme-value="dark"
+                    aria-pressed="false"
+                  >
+                    <i class="bi bi-moon-fill me-2"></i>
+                    Dark
+                    <i class="bi bi-check-lg ms-auto d-none"></i>
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    class="dropdown-item d-flex align-items-center active"
+                    data-bs-theme-value="auto"
+                    aria-pressed="true"
+                  >
+                    <i class="bi bi-circle-half me-2"></i>
+                    Auto
+                    <i class="bi bi-check-lg ms-auto d-none"></i>
+                  </button>
+                </li>
+              </ul>
+            </li>
+            <!--end::Color Mode Toggle-->
+          </ul>
+          <!--end::End Navbar Links-->
+        </div>
+        <!--end::Container-->
+      </nav>
+      <!--end::Header-->
+      <!--begin::Sidebar-->
+      <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
+        <!--begin::Sidebar Brand-->
+        <div class="sidebar-brand">
+          <!--begin::Brand Link-->
+          <a href="dashboard.html" class="brand-link">
+            <!--begin::Brand Image-->
+            <img
+              src="../assets/img/AdminLTELogo.png"
+              alt="AdminLTE Logo"
+              class="brand-image opacity-75 shadow"
+            />
+            <!--end::Brand Image-->
+            <!--begin::Brand Text-->
+            <span class="brand-text fw-light">Admin-123</span>
+            <!--end::Brand Text-->
+          </a>
+          <!--end::Brand Link-->
+        </div>
+        <!--end::Sidebar Brand-->
+        <!--begin::Sidebar Wrapper-->
+        <div class="sidebar-wrapper">
+          <nav class="mt-2">
+            <!--begin::Sidebar Menu-->
+            <ul
+              class="nav sidebar-menu flex-column"
+              data-lte-toggle="treeview"
+              role="navigation"
+              aria-label="Main navigation"
+              data-accordion="false"
+              id="navigation"
+            >
+
+            <li class="nav-item">
+              <a href="dashboard.html" class="nav-link">
+                <i class="nav-icon bi bi-grid-1x2 me-1" aria-hidden="true"></i>
+                <p>Главная</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="equipment.html" class="nav-link">
+                <i class="nav-icon bi bi-usb-fill"></i>
+                <p>Оборудование</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="quicksetup.html" class="nav-link">
+                <i class="nav-icon bi bi-box2"></i>
+                <p>Быстрая настройка</p>
+              </a>
+            </li>
+            
+            <li class="nav-item">
+              <a href="netcheck.html" class="nav-link active">
+                <i class="nav-icon bi bi-terminal"></i>
+                <p>Диагностика</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="checker.html" class="nav-link">
+                <i class="nav-icon bi bi-globe2"></i>
+                <p>Ресурсы</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="wifi-advices.html" class="nav-link">
+                <i class="nav-icon bi bi-wifi"></i>
+                <p>Wi-Fi</p>
+              </a>
+            </li>
+            
+            <li class="nav-header">Внешние</li>
+            <li class="nav-item">
+              <a href="https://github.com/ins1x/OLT/wiki" target="_blank" class="nav-link">
+                <i class="nav-icon bi bi-window"></i>
+                <p>OLT-commands</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="https://chat.datacenter.by/index.php/f/1476890" target="_blank" class="nav-link">
+                <i class="nav-icon bi bi-cloud"></i>
+                <p>Nextcloud-Disk</p>
+              </a>
+            </li>
+            <!--end::Sidebar Menu-->
+          </nav>
+        </div>
+        <!--end::Sidebar Wrapper-->
+      </aside>
+      <!--end::Sidebar-->
+      <!--begin::App Main-->
+      <main class="app-main">
+        <!--begin::App Content Header-->
+        <div class="app-content-header">
+          <!--begin::Container-->
+          <div class="container-fluid">
+            <!--begin::Row-->
+            <div class="row">
+              <div class="col-sm-6">
+                <h3 class="mb-0">Диагностика</h3>
+              </div>
+              <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-end">
+                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Net Check</li>
+                </ol>
+              </div>
+            </div>
+            <!--end::Row-->
+          </div>
+          <!--end::Container-->
+        </div>
+        <!--end::App Content Header-->
+        <!--begin::App Content-->
+        <div class="app-content">
+          <!--begin::Container-->
+          <div class="container-fluid">
+            <!-- <h2 id="traceroute">Проброс портов</h2> -->
+
+            <!-- <div class="row">
+              <div class="col mb-sm-3">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5>Настройка сетевой</h5>
+                  </div>
+                  <div class="card-footer">
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
+            <div class="row">
+              <div class="col mb-sm-3">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <div class="card-header d-flex align-items-center">
+                      <i class="bi bi-shield-check fs-4 text-primary me-2" aria-hidden="true"></i>
+                      <h3 class="card-title mb-0">Проверка доступости ресурсов</h3>
+                    </div>
+                    <!--begin::Accordion-->
+                    <div class="accordion" id="accordionConnect">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseConnect_1"
+                            aria-expanded="false"
+                            aria-controls="collapseConnect_1"
+                          >
+                          Общие рекомендации
+                          </button>
+                        </h2>
+                        <div id="collapseConnect_1" class="accordion-collapse collapse" data-bs-parent="#accordionConnect">
+                          <div class="accordion-body">
+
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseConnect_2"
+                            aria-expanded="false"
+                            aria-controls="collapseConnect_2"
+                          >
+                          Проверка доступности сервиса (сайта)
+                          </button>
+                        </h2>
+                        <div id="collapseConnect_2" class="accordion-collapse collapse" data-bs-parent="#accordionConnect">
+                          <div class="accordion-body">
+                            <p>Необходимо запустить <a href="https://learn.microsoft.com/ru-ru/powershell/">PowerShell</a> чтобы использовать команды ниже для диагностики сети (<kbd>Win+R</kbd> и введите <code>powershell</code>)</p>
+
+                            <p>Проверка доступности ресурса: <code>Test-NetConnection google.com</code> </p>
+                            <code>
+                              <pre style="white-space: pre-line;">
+                              ComputerName           : google.com
+                              RemoteAddress          : 142.250.130.101
+                              InterfaceAlias         : Ethernet 3
+                              SourceAddress          : 100.111.112.1
+                              PingSucceeded          : True
+                              PingReplyDetails (RTT) : 27 ms
+                              </pre>
+                            </code>
+
+                            <p>Проверить коннект на определенный порт: <code>Test-NetConnection google.com -port 80</code></p>
+                            <code>
+                              <pre style="white-space: pre-line;">
+                              ComputerName     : google.com
+                              RemoteAddress    : 142.250.130.101
+                              RemotePort       : 80
+                              InterfaceAlias   : Ethernet 2
+                              SourceAddress    : 100.111.112.2
+                              TcpTestSucceeded : True
+                              </pre>
+                            </code>
+                            
+                            <p>Проверить коннект с определенным MTU и TTL: <code>Test-Connection -ComputerName server1 -MtuSize 1400 -Ttl 128</code></p>
+
+                            <p>Проверка коннекта к приложению через curl (Linux)</p>
+                            <code>
+                              <pre style="white-space: pre-line;">
+                                curl -w "time_connect: %{time_connect}\ntime_appconnect: %{time_appconnect}\ntime_starttransfer: %{time_starttransfer}\ntime_total: %{time_total}\n" \ 
+                                -o /dev/null -s https://apphost/cgi
+                              </pre>
+                            </code>
+
+                            <pre style="white-space: pre-line;">
+                              Output:
+                              time_connect: 0.016985
+                              time_appconnect: 0.075189
+                              time_starttransfer: 0.089458
+                            </pre>
+
+                            <p>Проверка HTTP-статус сервера через curl (Linux): <code>curl -Is example.com | head -n 1</code></p>
+                            <blockquote>(Статус код "200 OK" означает что запрос был успешно выполнен и сайт доступен, а "404" или "500" — ошибку). Подробнее <a href="https://developer.mozilla.org/ru/docs/Web/HTTP/Reference/Status">HTTP коды</a>.</blockquote>
+
+                            <ul>
+                              <li><a href="https://fasterdata.es.net/network-tuning/mtu-issues/debugging-mtu-problems/">Debugging MTU Problems</a></li>
+                              <li><a href="https://github.com/chubin/awesome-console-services">awesome-console-services</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                        <!--end::Accordion blocks-->  
+                      </div>
+
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseConnect_3"
+                            aria-expanded="false"
+                            aria-controls="collapseConnect_3"
+                          >
+                          Трассировка
+                          </button>
+                        </h2>
+                        <div id="collapseConnect_3" class="accordion-collapse collapse" data-bs-parent="#accordionConnect">
+                          <div class="accordion-body">
+                            <h3>Traceroute / Tracert</h3>
+                            <p>
+                              <strong>Traceroute</strong> или <strong>Tracert</strong> – это утилита, служащая для диагностики сети. Она отслеживает пути, по которым пакеты данных проходят от источника к хосту назначения, что позволяет администраторам оперативно решить проблемы с подключением.
+                              В Windows эта команда называется Tracert, а в Linux и MacOS – Traceroute.
+                            </p>
+                            <p>
+                              Traceroute и Tracert в основном работают одинаково – они предоставляют информацию о пути пакета данных из одной точки сети на конкретный IP-сервер. Когда данные передаются между двумя точками, они должны проходить через несколько устройств (например, маршрутизаторы).
+                              Traceroute сопоставляет каждый переход, предоставляет подробную информацию и время приёма-передачи (RTT), а также, по возможности, сообщает имя устройства и IP-адрес.
+                            </p>
+                            
+                            <p>Пример трассировки на DNS google: <code>tracert google.com</code></p>
+                            <code>
+                              <pre style="white-space: pre-line;">
+                              Трассировка маршрута к google.com
+                              с максимальным числом прыжков 30:
+                              
+                                1     1 ms     1 ms     1 ms  192.168.1.1 
+                                2     2 ms     2 ms     2 ms  10.100.0.1 
+                                3     5 ms     3 ms     3 ms  isp-gateway.msk.ru
+                                4     8 ms     6 ms     7 ms  core-router.Moscow.gldn.net
+                                5    15 ms    14 ms    13 ms  core-router.Frankfurt.gldn.net
+                                6    22 ms    22 ms    23 ms  72.14.209.18 
+                                7    23 ms    22 ms    23 ms  142.250.226.78 
+                                8    24 ms    23 ms    22 ms  fra16s50-in-f14.1e100.net
+                              
+                              Трассировка завершена.
+                              </pre>
+                            </code>
+
+                            <h4>Разница между Traceroute и Tracert</h4>
+                            <p>Принцип работы у Traceroute и Tracert один, однако разница между ними состоит не только в операционных системах.</p>
+                            <p>Напоминаем, что команда Tracert обслуживает Windows, а Traceroute работает на Linux и MacOS.</p>
+                            <p>
+                              <strong>Tracert</strong>
+                            </p>
+                            <ol>
+                              <li>Tracert, в отличие от своего Linux-двойника, реализован на основе протокола ICMP, а не UDP.</li>
+                              <li>Tracert отправляет эхо-запрос ICMP (ICMP Echo Request) с TTL=1.</li>
+                              <li>Первый маршрутизатор проверяет адрес назначения, чтобы выяснить был ли отправлен запрос именно ему.</li>
+                              <li>Узнав, что цель пакета другой хост, маршрутизатор отбрасывает его, и TTL становится равным 0.</li>
+                              <li>Затем маршрутизатор 1 отправляет ICMP-сообщение с указанием информации о себе и причине проблемы источнику пакета: Time-To-Live Exceeded или Time Exceeded in transit.</li>
+                              <li>Благодаря этому сообщению Tracert записывает маршрутизатор 1 как первый транзитный участок или, как его ещё называют, хоп, прыжок.</li>
+                            </ol>
+                            <p>Процесс передачи пакета между промежуточными маршрутизаторами продолжится, пока переменная (TTL ICMP-запроса), не станет равна количеству прыжков между узлом-отправителем и узлом-получателем, и пакет не будет получен хостом назначения или количество сетевых переходов не превысит максимальное значение для Tracert 30.</p>
+                            <ol>
+                              <li>Когда целевой хост проверит IP-адрес назначения и узнает, что запрос был направлен именно ему, он отправит эхо-ответ ICMP (ICMP Echo Request), что даст утилите понять, что процесс передачи завершён.</li>
+                            </ol>
+                            <p>
+                              <strong>Traceroute</strong>
+                            </p>
+                            <p>
+                              В чём ещё отличие Traceroute от Tracert? В Traceroute схема схожая, практически идентичная.
+                              Целевому хосту направляется фрагментированный UDP-запрос. Таким образом, отправляется сразу несколько пакетов с TTL: TTL=1, TTL=2 и TTL=3.
+                              В каждом пакете содержатся данные о порте отправителя (Source) и порте получателя (Destination). Destination порт по умолчанию закрытый (34434), 
+                              поэтому утилита Traceroute сразу понимает, что процесс передачи данных завершён, когда получает ответ с сообщением о недоступности порта 
+                              "Destination port unreachable" (Хост/Порт недостижим). Иными словами, запрос достиг целевого хоста.
+                            </p>
+
+                            <p>Источник: <a href="https://www.nic.ru/help/traceroute-i-tracert-utility-bliznecy-chto-takoe-trassirovka-seti_11102.html">nic.ru</a></p>
+
+                            <h3>Pathping</h3>
+
+                            <p>Альтернативный метод проверки через стандартную утилиту <a href="https://ab57.ru/cmdlist/pathping.html">pathping</a>: <code>pathping google.com</code></p>
+                            <code>
+                              <pre style="white-space: pre-line;">
+                                Трассировка маршрута к google.com [212.188.7.247]
+                                с максимальным числом прыжков 30:
+                                  0  COMP [192.168.1.23] 
+                                  1  192.168.1.1 [192.168.1.1] 
+                                  2  ppp71-76-112-1 [71.76.112.1] 
+                                  3  10.254.246.73 [10.254.246.73] 
+                                  4  ss-cr04-be12.51.msk.stream-internet.net [212.188.1.5] 
+                                  5  a197-cr04-be5.77.msk.stream-internet.net [195.34.59.106] 
+                                  6  212.188.55.30 
+                                  7  a197-cr03-xe-0-0-1.5.msk.stream-internet.net [212.188.55.101] 
+                                  8  a197-cr04-be19.10.msk.stream-internet.net [212.188.55.25] 
+                                  9  cache.google.com [212.188.7.247] 
+                                
+                                Подсчет статистики за: 225 сек. ...
+                                           Исходный узел     Маршрутный узел
+                                Прыжок  RTT   Утер./Отпр.   %   Утер./Отпр.  %   Адрес
+                                  0                                        COMP [192.168.1.23] 
+                                                                0/ 100 =  0%   |
+                                  1    4мс     0/ 100 =  0%     0/ 100 =  0%  192.168.1.1 [192.168.1.1] 
+                                                                0/ 100 =  0%   |
+                                  2    7мс     0/ 100 =  0%     0/ 100 =  0%  ppp71-76-112-1 [71.76.112.1] 
+                                                                0/ 100 =  0%   |
+                                  3  ---     100/ 100 =100%   100/ 100 =100%  10.254.246.73 [10.254.246.73] 
+                                                                0/ 100 =  0%   |
+                                  4   10мс     0/ 100 =  0%     0/ 100 =  0%  ss-cr04-be12.51.msk.stream-internet.net [212.188.1.5] 
+                                                                0/ 100 =  0%   |
+                                  5   10мс     0/ 100 =  0%     0/ 100 =  0%  a197-cr04-be5.77.msk.stream-internet.net [195.34.59.106] 
+                                                                0/ 100 =  0%   |
+                                  6    8мс     0/ 100 =  0%     0/ 100 =  0%  212.188.55.30 
+                                                                0/ 100 =  0%   |
+                                  7    8мс     0/ 100 =  0%     0/ 100 =  0%  a197-cr03-xe-0-0-1.5.msk.stream-internet.net [212.188.55.101] 
+                                                                0/ 100 =  0%   |
+                                  8   10мс     0/ 100 =  0%     0/ 100 =  0%  a197-cr04-be19.10.msk.stream-internet.net [212.188.55.25] 
+                                                                0/ 100 =  0%   |
+                                  9    9мс     0/ 100 =  0%     0/ 100 =  0%  cache.google.com [212.188.7.247] 
+                                
+                                Трассировка завершена.
+                              </pre>
+                            </code>
+                            <blockquote>
+                              Команда PATHPING объединяет в себе возможности команд трассировки маршрута TRACERT и опроса узла PING и позволяет оценить задержки при передаче данных и потери пакетов на каждом из участков маршрута к целевому узлу.
+                            </blockquote>
+
+                            <h3>Особенности работы</h3>
+                            <ul>
+                              <li>
+                                На некторых хопах в выводе могут отображаються звёздочки ( * либо "host not response"). 
+                                Это значит, что маршрутизатор не отправил ответ — пакет отфильтрован, истёк таймаут или узел не отвечает на запросы traceroute.
+                              </li>
+                              <li>
+                                На некоторых хопах может быть разный IP в строках и результаты запуска traceroute могут отличаться при повторной трассировке.
+                                Участок сети может иметь несколько возможных маршрутов. Ответы могут приходить от разных маршрутизаторов из-за балансировки нагрузки.
+                                Маршруты могут динамически меняться, пакеты могут балансироваться, а узлы — по-разному реагировать на нагрузку или фильтрацию.
+                              </li>
+                              <li>
+                                Для кириллического домена, его нужно сначала перевести в PUNY код любым конвертером (например через <a href="reg.ru/web-tools/punycode">reg.ru/web-tools/punycode</a>) 
+                                затем полученный код вставить в команду, вот так: tracert xn--1-7sb1a4ah.xn--p1ai
+                              </li>
+                              <li>
+                                Traceroute: Ключ -I включает ICMP-трассировку, -T — TCP. Это помогает обходить фильтрацию UDP или проверять доступность конкретных портов.
+                              </li>
+                            </ul>                            
+                          </div>
+                        </div>
+                        <!--end::Accordion blocks-->  
+                      </div>
+
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseConnect_4"
+                            aria-expanded="false"
+                            aria-controls="collapseConnect_4"
+                          >
+                          Проверить DNS
+                          </button>
+                        </h2>
+                        <div id="collapseConnect_4" class="accordion-collapse collapse" data-bs-parent="#accordionConnect">
+                          <div class="accordion-body">
+
+                            <h4>Проверить resolve DNS через nslookup</h4>
+                            <p><code>nslookup 8.8.4.4</code> - отобразить имя узла, соответствующее IP-адресу 8.8.4.4</p>
+                            
+                            <p>
+                              <code>nslookup -type=mx yandex.ru</code> - то же, что и в предыдущем примере, но с указанием типа запрашиваемой записи -type=mx. 
+                              Сервер DNS ответит на запрос утилиты nslookup перечислением почтовых серверов, обслуживающих домен yandex.ru 
+                            </p>
+
+                            <p>
+                              <code>nslookup odnoklassniki.ru 8.8.8.8</code> - определить IP-адрес узла odnokassniki.ru с использованием DNS-сервера 8.8.8.8 
+                              (публичный DNS-сервер Google), вместо DNS-сервера, заданного в настройках сетевого подключения. 
+                              <code>nslookup -type=mx -timeout=8 vk.com 208.67.220.220 - </code> отобразить запись MX для домена vk.com из базы данных сервера с IP-адресом 208.67.220.220 (сервер <a href="https://www.opendns.com/">OpenDNS</a>).
+                            </p> 
+                            
+                            <p><code>nslookup -type=any -timeout=8 vk.com 208.67.220.220</code> - то же, что и в предыдущем примере, но выполняется запрос на отображение любых типов записей.</p>
+
+                            <p>Альтернативный вариант проверить resolve DNS через powershell: <code>Resolve-DnsName onliner.by</code></p>
+                            <code>
+                              <pre style="white-space: pre-line;">
+                                Name                                           Type   TTL   Section    IPAddress
+                                ----                                           ----   ---   -------    ---------
+                                onliner.by                                     A      400   Answer     178.124.129.12
+                                onliner.by                                     A      400   Answer     178.124.129.14
+                              </pre>
+                            </code>
+                            </p>
+
+                          </div>
+                        </div>
+                        <!--end::Accordion blocks-->  
+                      </div>
+                      <!--end::Accordion-->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col mb-sm-3">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <div class="card-header d-flex align-items-center">
+                      <i class="bi bi-diagram-3-fill fs-4 text-primary me-2" aria-hidden="true"></i>
+                      <h3 class="card-title mb-0">Открытые порты</h3>
+                    </div>
+                    <!--begin::Accordion-->
+                    <div class="accordion" id="accordionPortForwarding">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapsePortForwarding_1"
+                            aria-expanded="false"
+                            aria-controls="collapsePortForwarding_1"
+                          >
+                            Проверить открыт ли порт
+                          </button>
+                        </h2>
+                        <div id="collapsePortForwarding_1" class="accordion-collapse collapse" data-bs-parent="#accordionPortForwarding">
+                          <div class="accordion-body">
+                            <p>Перед проверкой из внешней сети попробуйте подключиться к серверу используя его внутренний IP-адрес и порт из браузера находясь в той же локальной сети.</p>
+                          
+                            <h3>Проверка в Windows</h3>
+                            <p>Проверить доступность порта с помощью утилиты Telnet: <code>telnet 192.168.1.1 4000</code> (4000 заменить на нужный порт)</p>
+                            <blockquote>
+                              <ul>
+                                <li>Connected to IP ... Connection closed by foreign host - Порт открыт</li>
+                                <li>Protocol mismatch. Connection closed by foreign host - Порт открыт</li>
+                                <li>Trying IP...telnet: Unable to connect to remote host: Network is unreachable - Порт закрыт</li>
+                              </ul>
+                            </blockquote>
+                            <p>Самый простой способ проверить открытые порты — использовать встроенную утилиту netstat:</p>
+                            <ol>
+                              <li>Нажмите <kbd>Win+R</kbd>, введите <code>cmd</code> и нажмите Enter</li>
+                              <li>В появившемся окне введите команду: <code>netstat -an</code></li>
+                              <li>Для отображения программ, использующих порты: <code>netstat -ab</code> (требуются права администратора)</li>
+                              <li>Альтернативный вариант с PID процесса: <code>netstat -aon</code></p></li>
+                              <code>
+                                <pre style="white-space: pre-line;">
+                                Имя    Локальный адрес        Внешний адрес          Состояние
+                                TCP    0.0.0.0:135            0.0.0.0:0              LISTENING
+                                TCP    0.0.0.0:445            0.0.0.0:0              ESTABLISHED
+                                TCP    0.0.0.0:5040           0.0.0.0:0              TIME_WAIT
+                                TCP    0.0.0.0:5357           0.0.0.0:0              LISTENING
+                                TCP    0.0.0.0:7680           0.0.0.0:0              LISTENING
+                                </pre>
+                              </code>
+                            </ol>
+                            
+                            <p>После проверки вы увидите список портов со статусами:</p>
+                            <blockquote>
+                              <ul>
+                                <li>LISTENING — порт открыт и ожидает соединений</li>  
+                                <li>ESTABLISHED — активное соединение</li>  
+                                <li>CLOSE_WAIT — соединение закрывается</li>  
+                                <li>TIME_WAIT — соединение завершено, но порт временно занят</li>
+                              </ul>
+                            </blockquote>
+
+                            <p>Проверить коннект на определенный порт: <code>Test-NetConnection google.com -port 80</code></p>
+                            <code>
+                              <pre style="white-space: pre-line;">
+                              ComputerName     : google.com
+                              RemoteAddress    : 142.250.130.101
+                              RemotePort       : 80
+                              InterfaceAlias   : Ethernet 2
+                              SourceAddress    : 100.111.112.2
+                              TcpTestSucceeded : True
+                              </pre>
+                            </code>
+
+                            <p>Cписок всех портов, которые прослушивает процесс: <code>Get-NetTCPConnection -OwningProcess (Get-Process -name svchost).Id -State Listen</code></p>
+                            <code>
+                              <pre style="white-space: pre-line;">
+                                LocalAddress                        LocalPort RemoteAddress                       RemotePort State       AppliedSetting OwningProcess
+                                ------------                        --------- -------------                       ---------- -----       -------------- -------------
+                                ::                                  49672     ::                                  0          Listen                     3204         
+                                ::                                  49667     ::                                  0          Listen                     2024         
+                                ::                                  49666     ::                                  0          Listen                     1776         
+                                ::                                  135       ::                                  0          Listen                     1128         
+                                0.0.0.0                             49672     0.0.0.0                             0          Listen                     3204         
+                                0.0.0.0                             49667     0.0.0.0                             0          Listen                     2024         
+                                0.0.0.0                             49666     0.0.0.0                             0          Listen                     1776         
+                                0.0.0.0                             5040      0.0.0.0                             0          Listen                     6668         
+                                0.0.0.0                             135       0.0.0.0                             0          Listen                     1128  
+                              </pre>
+                            </code>
+
+                            <h3>Проверка в Linux и macOS</h3>
+                            
+                            <p>В системах Linux и macOS используйте терминал:</p>
+                            <ol>
+                              <li>Откройте терминал (<kbd>CTRL + SHIFT + T</kbd>)</li>
+                              <li>Введите: <code>sudo lsof -i -P -n | grep LISTEN</code></li>
+                            </ol>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapsePortForwarding_2"
+                            aria-expanded="false"
+                            aria-controls="collapsePortForwarding_2"
+                          >
+                          Возможные проблемы и дополнительные необходимые действия 
+                          </button>
+                        </h2>
+                        <div id="collapsePortForwarding_2" class="accordion-collapse collapse" data-bs-parent="#accordionPortForwarding">
+                          <div class="accordion-body">
+                            <ul>
+                              <li>
+                                <p>
+                                  <strong>Должен быть белый IP</strong>, за NAT работать не будет. При настройке переадресации портов необходимо наличие белого публичного IP-адреса
+                                   на WAN-интерфейсе через который осуществляется подключение к Интернету. 
+                                   Если же на WAN-интерфейсе роутера используется серый IP-адрес из частной подсети, проброс портов работать не будет.
+                                </p>
+                              </li>
+                              <li>
+                                <p>
+                                  Убедитесь, что клиент (на которого осуществляется проброс портов) отвечает на эхо-запросы ping к внешним ресурсам. 
+                                  Кроме того, основным шлюзом на данном устройстве должен быть локальный IP-адрес. В меню роутера найдите настройки проброса портов или Port Forwarding. 
+                                  Создайте новое правило в котором укажите требуемые номера портов и внутренний ip адрес компьютера 
+                                  (определить его возможно через панель управления в состоянии сетевого подключения). В завершение, сохраните правило и настройки устройства.
+                                </p>
+                              </li>
+                              <li>
+                                <p>
+                                  <strong>Сервис или приложение</strong>, на которое осуществляется переадресация портов, должно быть запущено, чтобы при проверке порт виделся как "открытый". 
+                                  Например, если FTP-сервер не запущен, а правило NAT для переадресации порта имеется, статус порта при проверке будет "закрыт".
+                                </p>
+                              </li>
+                              <li>
+                                <p>Роутеры имеют собственные функции <strong>файрволла/брандмауэра</strong> и порты может потребоваться открыть (пробросить) и в настройках роутера. 
+                                  В зависимости от марки и модели Wi-Fi роутера, это выполняется в разных разделах: перенаправление портов (port forwarding), брандмауэр (firewall),
+                                  межсетевой экран, виртуальные серверы. Логика настройки везде одна и та же - добавляются обычно совпадающие внешний порт и внутренний порт (нужный вам порт), 
+                                  указывается внутренний IP (локальный IP компьютера, к которому нужно пробросить порт), тип протокола TCP или UDP, 
+                                  иногда требуется указать интерфейс для соединений из внешней сети (WAN). </p>
+                              </li>
+                              <li>
+                                <p>
+                                  На компьютере возможно используется сетевой экран (брандмауэр, Firewall) или специальное ПО для защиты в Интернете. 
+                                  Необходимо временно отключите эти приложение и проверьте работоспособность переадресации портов.
+                                </p>
+                              </li>
+                              <li>
+                                <p>
+                                  Наличие сторонних файрволлов и антивирусов с функциями защиты сети также может влиять на возможность установки соединений по определенным портам: 
+                                  следует проверить их настройки, при наличии такого ПО, чтобы открыть соответствующие порты или отключить защиту для них.
+                                </p>
+                              </li>
+                              <li>
+                                <p>
+                                  <strong>VPN</strong> может влиять не возможность обмена данными по определенным портам. Решение: отключить VPN, либо посмотреть, есть ли возможность открыть порты в ПО для VPN.
+                                </p>
+                              </li>
+                              <li>
+                                <p>В правиле переадресации портов может быть неправильно выбран входящий интерфейс. В поле "Вход" нужно выбрать именно тот интерфейс, 
+                                  через который Роутер получает доступ в Интернет, и через который планируется удаленный доступ к устройству домашней сети.
+                                </p>
+                              </li>
+                              <li>
+                                <p>В сетевых настройках хоста, на который осуществляется проброс портов, необходимо, чтобы IP-адрес шлюза по умолчанию был равен локальному IP-адресу Роутера
+                                   (по умолчанию 192.168.1.1). Это актуально, если на хосте вы указываете вручную сетевые настройки подключения. Если же хост является DHCP-клиентом,
+                                   т.е. получает автоматически IP-адрес, маску подсети, шлюз по умолчанию и DNS-адреса, в этом случае шлюз по умолчанию будет равен локальному IP-адресу.
+                                </p>
+                              </li>
+                              <li>
+                                <p>При переадресации <strong>53-го порта на внутренний DNS-сервер</strong> необходимо учитывать, что при наличии компонентов группы Интернет-фильтры, 
+                                  происходит SNAT переадресованных пакетов, так что адресом источника становится ip-адрес Роутера в домашней сети. Из-за этого могут не синхронизироваться зоны DNS. 
+                                  При использовании локального DNS создать правила блокировки 53 порта по UDP и TCP на все адреса кроме локальной сети.
+                                </p>
+                              </li>
+                              <li>
+                                <p>
+                                  <strong>Не рекомендуется использовать проброс портов для публикации веб и почтовых серверов (80, 443 порты).</strong> 
+                                  Для их публикации воспользуйтесь <a href="https://docs.ideco.ru/v10/ru/ngfw/settings/services/reverse-proxy.html" rel="noopener noreferrer nofollow" data-text-el="text-only-link" data-md-href="https://docs.ideco.ru/v10/ru/ngfw/settings/services/reverse-proxy.html">обратным прокси-сервером</a>. 
+                                  Таким образом, ваши сервера будут лучше защищены от атак из сети Интернет.
+                                </p>
+                              </li>
+                              <li>
+                                <p>
+                                  Порт на внешнем интерфейсе сервера, с которого будут транслироваться запросы, может отличаться от публикуемого порта самой службы. 
+                                  Например, можно транслировать внешние запросы на порт 4489, а в локальную сеть на порт 3389, 
+                                  чтобы воспрепятствовать автоматическим попыткам подключения вредоносного ПО на популярный сервис.
+                                </p>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      <!--end::Accordion blocks-->  
+                      </div>
+                      <!--end::Accordion-->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--end::Row-->
+            </div>
+
+            <div class="row">
+              <div class="col mb-sm-3">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <div class="card-header d-flex align-items-center">
+                      <i class="bi bi-ethernet fs-4 text-primary me-2" aria-hidden="true"></i>
+                      <h3 class="card-title mb-0">Локальная сеть</h3>
+                    </div>
+                    <!--begin::Accordion-->
+                    <div class="accordion" id="accordionLAN">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseLAN_1"
+                            aria-expanded="false"
+                            aria-controls="collapseLAN_1"
+                          >
+                          Проверить настройки сетевой
+                          </button>
+                        </h2>
+                        <div id="collapseLAN_1" class="accordion-collapse collapse" data-bs-parent="#accordionLAN">
+                          <div class="accordion-body">                            
+                            
+                            <p>Быстрый способ открыть окно "Сетевые подключения" на любой версии Windows <kbd>Win + R</kbd> и введите <code>ncpa.cpl</code></p>
+
+                            <div class="alert alert-light" role="alert">
+                              Необходимо запустить <a href="https://learn.microsoft.com/ru-ru/powershell/">PowerShell</a> чтобы использовать команды ниже для диагностики сети (<kbd>Win+R</kbd> и введите <code>powershell</code>)
+                            </div>
+
+                            <p>Глобальные настройки IP: <code>Get-NetIPConfiguration</code></p>
+                            <code>
+                              <pre style="white-space: pre-line;">
+                                InterfaceAlias       : Ethernet 4
+                                InterfaceIndex       : 10
+                                InterfaceDescription : Intel(R) Ethernet Connection (17) I219-V
+                                NetProfile.Name      : Неопознанная сеть
+                                IPv4Address          : 192.168.100.2
+                                IPv4DefaultGateway   :
+                                DNSServer            : 8.8.8.8
+                                
+                                InterfaceAlias       : Ethernet 3
+                                InterfaceIndex       : 17
+                                InterfaceDescription : Intel(R) Ethernet Connection (17) I219-V
+                                NetProfile.Name      : Сеть 2
+                                IPv4Address          : 192.168.1.3
+                                IPv6DefaultGateway   :
+                                IPv4DefaultGateway   : 192.168.1.1
+                                DNSServer            : 194.158.196.245
+                                                       86.57.255.149
+                              </pre>
+                            </code>
+
+                            <p>Проверить LINK поднимается на скорости: <code>Get-NetAdapter</code></p>
+                            <code>
+                              <pre style="white-space: pre-line;">
+                              Name                      InterfaceDescription                    ifIndex Status       MacAddress             LinkSpeed
+                              ----                      --------------------                    ------- ------       ----------             ---------
+                              Ethernet 3                Intel(R) Ethernet Connection (17) I2...      17 Up           A8-A1-59-BB-93-16         1 Gbps
+                              Ethernet 2                Intel(R) Ethernet Connection (17) I2...      14 Up           A8-A1-59-BB-93-16       100 Mbps
+                              </pre>
+                            </code>
+                            
+                            <p>Маршруты IP из таблицы маршрутизации: <code>Get-NetRoute</code></p>
+                            <code>
+                              <pre style="white-space: pre-line;">
+                              ifIndex DestinationPrefix                              NextHop                                  RouteMetric ifMetric PolicyStore
+                              ------- -----------------                              -------                                  ----------- -------- -----------
+                              10      192.168.1.0/24                                 192.168.1.2                                        1 25       ActiveStore
+                              17      0.0.0.0/0                                      192.168.1.1                                      256 25       ActiveStore
+                              17      ff00::/8                                       ::                                               256 25       ActiveStore
+                              1       ff00::/8                                       ::                                               256 75       ActiveStore
+                              17      fe80::1ef7:b047:7bfd:9ddf/128                  ::                                               256 25       ActiveStore
+                              17      fe80::/64                                      ::                                               256 25       ActiveStore
+                              1       ::1/128                                        ::                                               256 75       ActiveStore
+                              </pre>
+                            </code>
+
+                            <p>Проверить настройки DNS: <code>Get-DnsClientServerAddress</code></p>
+                            <code>
+                              <pre style="white-space: pre-line;">
+                                InterfaceAlias               Interface Address ServerAddresses
+                                Index     Family
+                                --------------               --------- ------- ---------------
+                                Ethernet 3                          17 IPv4    {8.8.8.8}
+                                Ethernet 3                          17 IPv6    {}
+                                Ethernet 4                          10 IPv4    {194.158.196.245, 86.57.255.149}
+                                Ethernet 4                          10 IPv6    {}
+                                Loopback Pseudo-Interface 1          1 IPv4    {}
+                              </pre>
+                            </code>
+
+                            <p>Проверить Кэш Neigboor: <code>Get-NetNeighbor</code></p>
+                            <code>
+                              <pre style="white-space: pre-line;">
+                               ifIndex IPAddress                                          LinkLayerAddress      State       PolicyStore
+                               ------- ---------                                          ----------------      -----       -----------
+                               17      ff02::1:fffd:9ddf                                  33-33-FF-FD-9D-DF     Permanent   ActiveStore
+                               17      fe80::221:b7ff:fe15:71bc                           00-21-B7-15-71-BC     Stale       ActiveStore
+                               1       ff02::1:2                                                                Permanent   ActiveStore
+                               1       ff02::16                                                                 Permanent   ActiveStore
+                               1       ff02::c                                                                  Permanent   ActiveStore
+                               10      192.168.1.23                                       FF-FF-FF-FF-FF-FF     Permanent   ActiveStore
+                               17      192.168.1.112                                      A8-A1-59-22-0B-E9     Stale       ActiveStore
+                               17      192.168.1.97                                       00-00-00-00-00-00     Unreachable ActiveStore
+                              </pre>
+                            </code>
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseLAN_2"
+                            aria-expanded="false"
+                            aria-controls="collapseLAN_2"
+                          >
+                          Сброс сети
+                          </button>
+                        </h2>
+                        <div id="collapseLAN_2" class="accordion-collapse collapse" data-bs-parent="#accordionLAN">
+                          <div class="accordion-body">
+                            <p>
+                              Сброс сети через консоль (командную строку) в Windows. При сбросе сети в Windows будут потеряны все настройки:
+                              IP адреса, DNS сервера, статические маршруты, настройки сетевых драйверов, очищены сохраненные Wi-Fi сети и т.д. 
+                            </p>
+                            <code>
+                              <pre style="white-space: pre-line;">
+                              ipconfig /flushdns
+                              netsh winsock reset
+                              netsh int ip reset all
+                              ipconfig /release    
+                              netsh winhttp reset proxy 
+                              </pre>
+                              <div class="alert alert-danger" role="alert">
+                              ВНИМАНИЕ: Сбрасывает полностью все настройки сети! Перед сбросом сохраните текущие сетевые настройки 
+                              </div>
+                            </code>
+                            
+                            <p>Сброс всех правил Windows Defender Firewall: <code>netsh advfirewall reset</code></p>
+                            <p>Сброс расширенных настроек конкретного сетевого адаптера (PowerShell): <code>Reset-NetAdapterAdvancedProperty -Name Ethernet0</code></p>
+                            
+                            <h3>Сохранение текущих настроек сети</h3>
+                            <ul>
+                              <li>Сохранить настройки TCP/IP сетевой (IP-адрес и DNS): <code>netsh -c interface dump > C:\tcpip-backup.txt</code></li>
+                              <li>Сохранить настройки Winsock: <code>netsh winsock show catalog > c:\winsock-backup.txt</code></li>
+                              <li>Сохранение профилей WLAN: <code>netsh wlan export profile folder=. key=clear</code></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <!--end::Accordion blocks-->  
+                    </div>
+                    <!--end::Accordion-->
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- <div class="row">
+              <div class="col-sm-6 mb-3 mb-sm-3">
+                <div class="card h-100">
+                  <div class="card-body">
+                  </div>
+                  <div class="card-footer">
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 mb-3 mb-sm-3">
+                <div class="card h-100">
+                  <div class="card-body">
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
+            <!--end::Row-->
+            </div>
+          <!--end::Container-->
+        </div>
+        <!--end::App Content-->
+      </main>
+      <!--end::App Main-->
+      <!--begin::Footer-->
+      <footer class="app-footer">
+        <!--begin::To the end-->
+        <div class="float-end d-none d-sm-inline">&nbsp;2026 &#127866;</div>
+        <!--end::To the end-->
+          <!-- <a href="https://adminlte.io" class="text-decoration-none">AdminLTE.io</a>. -->
+      </footer>
+      <!--end::Footer-->
+    </div>
+    <!--end::App Wrapper-->
+    <!--begin::Script-->
+    <!--begin::Third Party Plugin(OverlayScrollbars)-->
+    <!-- <script
+      src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.11.0/browser/overlayscrollbars.browser.es6.min.js"
+      crossorigin="anonymous"
+    ></script> -->
+    <script src="../js/overlayscrollbars.browser.es6.min.js"></script>
+    <!--end::Third Party Plugin(OverlayScrollbars)--><!--begin::Required Plugin(popperjs for Bootstrap 5)-->
+    <!-- <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      crossorigin="anonymous"
+    ></script> -->
+    <script src="../js/popper.min.js"></script>
+    <!--end::Required Plugin(popperjs for Bootstrap 5)--><!--begin::Required Plugin(Bootstrap 5)-->
+    <!-- <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"
+      crossorigin="anonymous"
+    ></script> -->
+    <script src="../js/bootstrap.min.js"></script>
+    <!--end::Required Plugin(Bootstrap 5)--><!--begin::Required Plugin(AdminLTE)-->
+    <script src="../js/adminlte.js"></script>
+    <!--end::Required Plugin(AdminLTE)--><!--begin::OverlayScrollbars Configure-->
+    <script src="../js/color-modes.js"> </script>
+    <!--end::Color Mode Toggle-->
+
+    <!-- OPTIONAL SCRIPTS -->
+
+    <!-- sortablejs -->
+    <!-- <script
+      src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"
+      crossorigin="anonymous"
+    ></script> -->
+    <script src="../js/sortable.min.js"></script>
+    
+    <!-- customjs -->
+    <script src="../js/custom.js"></script>
+
+  </body>
+  <!--end::Body-->
+</html>
