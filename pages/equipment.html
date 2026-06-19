@@ -303,6 +303,52 @@
           <div class="container-fluid">
             <!--begin::Row-->
             <div class="row" id="inet">
+
+              <div class="row">
+                <div class="col-sm-6 mb-3 mb-sm-3">
+                  <div class="card card-outline card-primary collapsed-card">
+                    <div class="card-header">
+                      <h3 class="card-title">Статьи по настройке оборудования</h3>
+                      <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse">
+                          <i data-lte-icon="expand" class="bi bi-plus-lg"></i>
+                          <i data-lte-icon="collapse" class="bi bi-dash-lg"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="card-body" style="box-sizing: border-box; display: none;">
+                      <ul>
+                        <li><a target="_blank" href="https://www.beltelecom.by/private/other/vozmeshchenie-stoimosti-imushchestva-rup-beltelekom">Возмещение стоимости имущества (Белтелеком)</a></li>
+                        <li><a target="_blank" href="https://www.beltelecom.by/help/checklist-for-settings">Помощь по настройке на сайте (Белтелеком)</a></li>
+                        <li><a target="_blank" href="https://howto.by/">Список статей, руководств и FAQ (howto)</a></li>
+                        <li><a target="_blank" href="https://lan1.by/ins">Инструкции (LAN1)</a></li>
+                      </ul>
+                    </div>
+                    <!-- <div class="card-footer">
+                    </div> -->
+                  </div>
+                </div>
+  
+                <!-- <div class="col-sm-6 mb-3 mb-sm-3">
+                  <div class="card card-outline card-primary collapsed-card">
+                    <div class="card-header">
+                      <h3 class="card-title">TEXT</h3>
+                      <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse">
+                          <i data-lte-icon="expand" class="bi bi-plus-lg"></i>
+                          <i data-lte-icon="collapse" class="bi bi-dash-lg"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="card-body" style="box-sizing: border-box; display: none;">
+          
+                    </div>
+                    <div class="card-footer">
+                    </div>
+                  </div>
+                </div> -->
+              </div>
+
               <div class="col mb-sm-3">
                 <div class="card h-100">
                   <div class="card-body">
@@ -675,7 +721,11 @@
                         <tr>
                           <td>МЭТА-901</td>
                           <td>DVB-T, DVB-T2</td>
-                          <td>PVR</td>
+                          <td>
+                            <a href="#" data-bs-toggle="tooltip" data-bs-title="Personal Video Recorder - Позволяет записывать прямые эфиры телеканалов">
+                              <span class="badge text-bg-secondary">PVR</span>
+                            </a>
+                          </td>
                           <td><span class="badge bg-secondary">HDMI</span> <span class="badge bg-warning">RCA</span></td>
                           <td>Нет</td>
                           <td>
@@ -693,7 +743,11 @@
                         <tr>
                           <td>Витязь DTR-824HD</td>
                           <td>DVB-T, DVB-T2</td>
-                          <td>PVR</td>
+                          <td>
+                            <a href="#" data-bs-toggle="tooltip" data-bs-title="Personal Video Recorder - Позволяет записывать прямые эфиры телеканалов">
+                              <span class="badge text-bg-secondary">PVR</span>
+                            </a>
+                          </td>
                           <td><span class="badge bg-secondary">HDMI</span> <span class="badge bg-warning">RCA</span> <span class="badge bg-secondary">RF-IN</span></td>
                           <td>Нет</td>
                           <td>
@@ -706,7 +760,14 @@
                         <tr>
                           <td>STB B600</td>
                           <td>IPTV</td>
-                          <td>Timeshift, PVR</td>
+                          <td>
+                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="TimeShift (отложенный просмотр) позволяет ставить телеэфир на паузу, перематывать его назад или вперед.">
+                              <span class="badge text-bg-primary">TimeShift</span>
+                            </a>
+                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="Personal Video Recorder - Позволяет записывать прямые эфиры телеканалов">
+                              <span class="badge text-bg-secondary">PVR</span>
+                            </a>
+                          </td>
                           <td><span class="badge bg-secondary">WAN</span> <span class="badge bg-warning">RCA</span> <span class="badge bg-success">S-Video</span></td>
                           <td>Нет</td>
                           <td>
@@ -715,7 +776,14 @@
                         <tr>
                           <td>STB B700V8</td>
                           <td>IPTV</td>
-                          <td>Timeshift, PVR</td>
+                          <td>
+                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="TimeShift (отложенный просмотр) позволяет ставить телеэфир на паузу, перематывать его назад или вперед.">
+                              <span class="badge text-bg-primary">TimeShift</span>
+                            </a>
+                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="Personal Video Recorder - Позволяет записывать прямые эфиры телеканалов">
+                              <span class="badge text-bg-secondary">PVR</span>
+                            </a>
+                          </td>
                           <td><span class="badge bg-secondary">WAN</span> <span class="badge bg-warning">RCA</span> <span class="badge bg-secondary">HDMI</span> <span class="badge bg-success">S-Video</span></td>
                           <td>Нет</td>
                           <td>
@@ -733,7 +801,14 @@
                         <tr>
                           <td>STB B700V5S1</td>
                           <td>IPTV</td>
-                          <td>Timeshift, PVR</td>
+                          <td>
+                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="TimeShift (отложенный просмотр) позволяет ставить телеэфир на паузу, перематывать его назад или вперед.">
+                              <span class="badge text-bg-primary">TimeShift</span>
+                            </a>
+                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="Personal Video Recorder - Позволяет записывать прямые эфиры телеканалов">
+                              <span class="badge text-bg-secondary">PVR</span>
+                            </a>
+                          </td>
                           <td><span class="badge bg-secondary">WAN</span> <span class="badge bg-warning">RCA</span> <span class="badge bg-secondary">HDMI</span> <span class="badge bg-success">S-Video</span></td>
                           <td>Нет</td>
                           <td>
@@ -751,7 +826,17 @@
                         <tr>
                           <td>STB B800, B860</a></td>
                           <td>IPTV / SMART</td>
-                          <td>Timeshift, PVR, YouTube</td>
+                          <td>
+                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="TimeShift (отложенный просмотр) позволяет ставить телеэфир на паузу, перематывать его назад или вперед.">
+                              <span class="badge text-bg-primary">TimeShift</span>
+                            </a>
+                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="Personal Video Recorder - Позволяет записывать прямые эфиры телеканалов">
+                              <span class="badge text-bg-secondary">PVR</span>
+                            </a>
+                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="Сервис YouTube предустановлен">
+                              <span class="badge text-bg-danger">YouTube</span>
+                            </a>
+                          </td>
                           <td><span class="badge bg-secondary">WAN</span> <span class="badge bg-secondary">HDMI</span> <span class="badge bg-danger">3.5mm AV</span></td>
                           <td>Нет</td>
                           <td>
@@ -764,7 +849,14 @@
                         <tr>
                           <td>SML-5050W</td>
                           <td>OTT SmartZala</td>
-                          <td>Timeshift, PVR</td>
+                          <td>
+                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="TimeShift (отложенный просмотр) позволяет ставить телеэфир на паузу, перематывать его назад или вперед.">
+                              <span class="badge text-bg-primary">TimeShift</span>
+                            </a>
+                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="Personal Video Recorder - Позволяет записывать прямые эфиры телеканалов">
+                              <span class="badge text-bg-secondary">PVR</span>
+                            </a>
+                          </td>
                           <td><span class="badge bg-secondary">WAN</span> <span class="badge bg-secondary">HDMI</span> <span class="badge bg-danger">3.5mm AV</span></td>
                           <td>802.11b/g/n</td>
                           <td>
@@ -777,7 +869,17 @@
                         <tr>
                           <td>SDMC DV9135</td>
                           <td>SMART (ZalaYasna)</td>
-                          <td>Timeshift, PVR, YouTube</td>
+                          <td>
+                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="TimeShift (отложенный просмотр) позволяет ставить телеэфир на паузу, перематывать его назад или вперед.">
+                              <span class="badge text-bg-primary">TimeShift</span>
+                            </a>
+                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="Personal Video Recorder - Позволяет записывать прямые эфиры телеканалов">
+                              <span class="badge text-bg-secondary">PVR</span>
+                            </a>
+                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="Сервис YouTube предустановлен">
+                              <span class="badge text-bg-danger">YouTube</span>
+                            </a>
+                          </td>
                           <td><span class="badge bg-secondary">WAN</span> <span class="badge bg-secondary">HDMI</span> <span class="badge bg-danger">3.5mm AV</span></td>
                           <td>802.11a/n/c</td>
                           <td>
@@ -790,7 +892,17 @@
                         <tr>
                           <td>SDMC DV9161</td>
                           <td>SMART (ZalaYasna)</td>
-                          <td>Timeshift, PVR, YouTube</td>
+                          <td>
+                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="TimeShift (отложенный просмотр) позволяет ставить телеэфир на паузу, перематывать его назад или вперед.">
+                              <span class="badge text-bg-primary">TimeShift</span>
+                            </a>
+                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="Personal Video Recorder - Позволяет записывать прямые эфиры телеканалов">
+                              <span class="badge text-bg-secondary">PVR</span>
+                            </a>
+                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="Сервис YouTube предустановлен">
+                              <span class="badge text-bg-danger">YouTube</span>
+                            </a>
+                          </td>
                           <td><span class="badge bg-secondary">WAN</span> <span class="badge bg-secondary">HDMI</span></td>
                           <td>802.11a/n/c</td>
                           <td>
