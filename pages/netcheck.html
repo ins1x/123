@@ -320,99 +320,80 @@
                 <div class="card h-100">
                   <div class="card-body">
                     <div class="card-header d-flex align-items-center">
-                      <i class="bi bi-shield-check fs-4 text-primary me-2" aria-hidden="true"></i>
-                      <h3 class="card-title mb-0">Проверка доступости ресурсов</h3>
+                      <i class="bi bi-bar-chart-steps fs-4 text-primary me-2" aria-hidden="true"></i>
+                      <h3 class="card-title mb-0">Трассировка</h3>
                     </div>
                     <!--begin::Accordion-->
-                    <div class="accordion" id="accordionConnect">
+                    <div class="accordion" id="accordionTrace">
                       <div class="accordion-item">
                         <h2 class="accordion-header">
                           <button
                             class="accordion-button collapsed"
                             type="button"
                             data-bs-toggle="collapse"
-                            data-bs-target="#collapseConnect_1"
+                            data-bs-target="#collapseTrace_1"
                             aria-expanded="false"
-                            aria-controls="collapseConnect_1"
+                            aria-controls="collapseTrace_1"
                           >
-                          Общие рекомендации
+                          Общие рекомендации по анализу трассировки
                           </button>
                         </h2>
-                        <div id="collapseConnect_1" class="accordion-collapse collapse" data-bs-parent="#accordionConnect">
+                        <div id="collapseTrace_1" class="accordion-collapse collapse" data-bs-parent="#accordionTrace">
                           <div class="accordion-body">
+                            <h3>Анализ трассировки</h3>
+                            <p>Анализ трассировок пользователей входит в компетенцию Службы Поддержки, однако Вы всегда можете при желании самостоятельно определить наличие и место возникновение сетевых проблем. Проанализировать трассировку самому достаточно просто. Для этого необходимо запомнить несколько основных вещей:</p>
+                            <ol>
+                              <li>
+                                Самые главные показатели - показатели последнего узла. На протяжении всего маршрута показатели пинга и потерь могут скакать и прыгать из-за настроек оборудования провайдера,
+                                но если показатели последнего узла в норме, то все соединение также в норме. Фактически, пинг и потери последнего узла - это пинг и потери всего маршрута.
+                              </li>
+                              <li>
+                                Если мы видим большой пинг и\или потери пакетов на последнем узле, это вовсе не значит, что проблема появляется именно в нем. 
+                                Дело в том, что трассировка проходит дальше вне зависимости от показателя пинга и потерь на узле, соотвественно, показатели сохраняются и переносятся
+                                (зачастую нарастая, как снежный ком) на следующие узлы до самого последнего. 
+                                Что это значит? Это значит, что при плохих показателях последнего узла найти источник проблем можно, проследив обратно по трассировке до места возникновения такого высокого пинга или потерь пакетов.
+                              </li>
+                              <li>
+                                Потери пакетов в 100% при нормальных показателях последующих узлов являются нормой и указывают на соответствующую настройку данного узла сети - не отвечать на трассировочные запросы.
+                              </li>
+                              <li>
+                                Надпись No Response from the host или Превышен интервал ожидания для узла указывают либо на вышедший из строя узел сети, 
+                                либо на наличие блокирующего возможность трассировки файерволла или сетевого экрана. Подобная надпись уже с первого узла указывает на жесткие настройки 
+                                файерволла или брандмауэра на компьютере, сетевой экран или фильтрацию траффика на роутере или же сетевой экран или файерволл провайдера.
+                              </li>
+                              <li>
+                                Ключевая вещь, которую многие люди не понимают в MTR или traceroute, заключается в следующем: 
+                                если потеря пакетов или увеличение RTT не наблюдаются при каждом прыжке между данным прыжком и концом пути — это не проблема.
+                                RTT каждого прыжка — полезная метрика, потому что говорит нам, сколько времени потребовалось пакету, чтобы добраться до этого прыжка и обратно. 
+                                <blockquote>RTT (Round-Trip Time) — это время прохождения пакета данных от отправителя к получателю и обратно, измеряемое в миллисекундах.</blockquote>
+                              </li>
+                              <li>
+                                Понимание прямого и обратного пути. Путь, по которому пакет проходит между A и B, часто не совпадает с путем, по которому он проходит между B и A. Таким образом, если вы пингуете определенный IP-адрес, то ваш ping (echo request), скорее всего, будет идти по другому пути, нежели ответ (echo reply).
+                                Это означает, что когда вы используете MTR или traceroute и видите потерю пакетов, начиная с конкретного прыжка — это не обязательно тот прыжок, который привёл к проблеме.
+                              </li>
+                            </ol>
 
-
-                          </div>
-                        </div>
-                      </div>
-                      <div class="accordion-item">
-                        <h2 class="accordion-header">
-                          <button
-                            class="accordion-button collapsed"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#collapseConnect_2"
-                            aria-expanded="false"
-                            aria-controls="collapseConnect_2"
-                          >
-                          Проверка доступности сервиса (сайта)
-                          </button>
-                        </h2>
-                        <div id="collapseConnect_2" class="accordion-collapse collapse" data-bs-parent="#accordionConnect">
-                          <div class="accordion-body">
-                            <p>Необходимо запустить <a href="https://learn.microsoft.com/ru-ru/powershell/">PowerShell</a> чтобы использовать команды ниже для диагностики сети (<kbd>Win+R</kbd> и введите <code>powershell</code>)</p>
-
-                            <p>Проверка доступности ресурса: <code>Test-NetConnection google.com</code> </p>
-                            <code>
-                              <pre style="white-space: pre-line;">
-                              ComputerName           : google.com
-                              RemoteAddress          : 142.250.130.101
-                              InterfaceAlias         : Ethernet 3
-                              SourceAddress          : 100.111.112.1
-                              PingSucceeded          : True
-                              PingReplyDetails (RTT) : 27 ms
-                              </pre>
-                            </code>
-
-                            <p>Проверить коннект на определенный порт: <code>Test-NetConnection google.com -port 80</code></p>
-                            <code>
-                              <pre style="white-space: pre-line;">
-                              ComputerName     : google.com
-                              RemoteAddress    : 142.250.130.101
-                              RemotePort       : 80
-                              InterfaceAlias   : Ethernet 2
-                              SourceAddress    : 100.111.112.2
-                              TcpTestSucceeded : True
-                              </pre>
-                            </code>
-                            
-                            <p>Проверить коннект с определенным MTU и TTL: <code>Test-Connection -ComputerName server1 -MtuSize 1400 -Ttl 128</code></p>
-
-                            <p>Проверка коннекта к приложению через curl (Linux)</p>
-                            <code>
-                              <pre style="white-space: pre-line;">
-                                curl -w "time_connect: %{time_connect}\ntime_appconnect: %{time_appconnect}\ntime_starttransfer: %{time_starttransfer}\ntime_total: %{time_total}\n" \ 
-                                -o /dev/null -s https://apphost/cgi
-                              </pre>
-                            </code>
-
-                            <pre style="white-space: pre-line;">
-                              Output:
-                              time_connect: 0.016985
-                              time_appconnect: 0.075189
-                              time_starttransfer: 0.089458
-                            </pre>
-
-                            <p>Проверка HTTP-статус сервера через curl (Linux): <code>curl -Is example.com | head -n 1</code></p>
-                            <blockquote>(Статус код "200 OK" означает что запрос был успешно выполнен и сайт доступен, а "404" или "500" — ошибку). Подробнее <a href="https://developer.mozilla.org/ru/docs/Web/HTTP/Reference/Status">HTTP коды</a>.</blockquote>
-
+                            <h3>Особенности работы</h3>
                             <ul>
-                              <li><a href="https://fasterdata.es.net/network-tuning/mtu-issues/debugging-mtu-problems/">Debugging MTU Problems</a></li>
-                              <li><a href="https://github.com/chubin/awesome-console-services">awesome-console-services</a></li>
-                            </ul>
+                              <li>
+                                На некторых хопах в выводе могут отображаються звёздочки ( * либо "host not response"). 
+                                Это значит, что маршрутизатор не отправил ответ — пакет отфильтрован, истёк таймаут или узел не отвечает на запросы traceroute.
+                              </li>
+                              <li>
+                                На некоторых хопах может быть разный IP в строках и результаты запуска traceroute могут отличаться при повторной трассировке.
+                                Участок сети может иметь несколько возможных маршрутов. Ответы могут приходить от разных маршрутизаторов из-за балансировки нагрузки.
+                                Маршруты могут динамически меняться, пакеты могут балансироваться, а узлы — по-разному реагировать на нагрузку или фильтрацию.
+                              </li>
+                              <li>
+                                Для кириллического домена, его нужно сначала перевести в PUNY код любым конвертером (например через <a href="reg.ru/web-tools/punycode">reg.ru/web-tools/punycode</a>) 
+                                затем полученный код вставить в команду, вот так: <code>tracert xn--1-7sb1a4ah.xn--p1ai</code>
+                              </li>
+                              <li>
+                                Traceroute: Ключ -I включает ICMP-трассировку, -T — TCP. Это помогает обходить фильтрацию UDP или проверять доступность конкретных портов.
+                              </li>
+                            </ul>  
                           </div>
                         </div>
-                        <!--end::Accordion blocks-->  
                       </div>
 
                       <div class="accordion-item">
@@ -421,14 +402,14 @@
                             class="accordion-button collapsed"
                             type="button"
                             data-bs-toggle="collapse"
-                            data-bs-target="#collapseConnect_3"
+                            data-bs-target="#collapseTrace_3"
                             aria-expanded="false"
-                            aria-controls="collapseConnect_3"
+                            aria-controls="collapseTrace_3"
                           >
-                          Трассировка
+                          Трассировка через Traceroute и Tracert 
                           </button>
                         </h2>
-                        <div id="collapseConnect_3" class="accordion-collapse collapse" data-bs-parent="#accordionConnect">
+                        <div id="collapseTrace_3" class="accordion-collapse collapse" data-bs-parent="#accordionTrace">
                           <div class="accordion-body">
                             <h3>Traceroute / Tracert</h3>
                             <p>
@@ -490,7 +471,130 @@
 
                             <p>Источник: <a href="https://www.nic.ru/help/traceroute-i-tracert-utility-bliznecy-chto-takoe-trassirovka-seti_11102.html">nic.ru</a></p>
 
-                            <h3>Pathping</h3>
+                          </div>
+                        </div>
+                        <!--end::Accordion blocks-->  
+                      </div>
+
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseTrace_4"
+                            aria-expanded="false"
+                            aria-controls="collapseTrace_4"
+                          >
+                          MTR
+                          </button>
+                        </h2>
+                        <div id="collapseTrace_4" class="accordion-collapse collapse" data-bs-parent="#accordionTrace">
+                          <div class="accordion-body">
+                            <h3>WinMTR</h3>
+                            <ul>
+                              <li>Стандартная версия: <a href="https://archive.nichost.ru/winmtr-v092.zip">winmtr-v092.zip</a></li>
+                              <li>Расширенная версия (с поддержкой ipv6): <a href="https://github.com/White-Tiger/WinMTR/releases/download/v1.0/WinMTR-v100.zip">WinMTR Redux</a></li>
+                            </ul>
+                            <p>Проверка соединения с помощью утилиты WinMTR:</p>
+                            <ol>
+                              <li>
+                                Запустите программу от имени администратора, щёлкнув по иконке правой кнопкой и выбрав соответствующий пункт в контекстном меню.<br>
+                                В главном окне программы нажмите кнопку Опции (Options), чтобы перейти к настройкам программы.
+                              </li>
+                              <li>В открывшемся окне отключите параметр Разрешение имен (Resolve names).</li>
+                              <li>В поле Хост (Host) введите доменное имя проверяемого узла или его IP-адрес.</li>
+                              <li>Нажмите кнопку Старт (Start), спустя 2-3 минуты работы программы нажмите кнопку Стоп (Stop).</li>
+                              <li>Сохраните результат работы программы на своем компьютере, нажав кнопку Экспортировать текст (Export TEXT).</li>
+                            </ol>
+                        
+                            <p>Отчет программы содержит следующие данные:</p>
+                            <ul>
+                                <li>Hostname — IP-адрес или доменное имя узла. Значение "No response from host" может указывать на блокировку ICMP-пакетов на данном узле</li>
+                                <li>Nr — порядковый номер узла в маршруте</li>
+                                <li>Loss % — процент потерянных ответов от данного узла</li>
+                                <li>Sent — отправлено запросов данному узлу</li>
+                                <li>Recv — получено ответов от узла</li>
+                                <li>Best — наименьшее (наилучшее) время задержки в миллисекундах</li>
+                                <li>Avrg — среднее время задержки
+                                <li>Worst — наибольшее (наихудшее) время задержки</li>
+                                <li>Last — время задержки последнего полученного пакета</li>
+                            </ul>                                
+                            <p>Файл с отчетом программы отправьте в службу технической поддержки. В письме укажите на какой IP-адрес либо ресурс делали трассировку, и в какое время.</p>
+                            
+                            <h3>MTR</h3>
+                            <p>
+                              Мы найдем этот инструмент предустановлен в большинстве дистрибутивов Gnu / Linux и им довольно легко пользоваться. 
+                              Нам останется только открыть терминал (<kbd>Ctrl + Alt + T</kbd>)
+                            </p>
+                            <p>Стандартный вызов mtr: <code>mtr google.com</code></p>
+                            <code>
+                              <pre style="white-space: pre-line;">
+                                My traceroute  [v0.92]
+                                home (62.3.100.24)                                  2022-03-17T18:20:20+0000
+                                Keys:  Help   Display mode   Restart statistics   Order of fields   quit
+                                                                       Packets               Pings
+                                 Host                                Loss%   Snt   Last  Avg  Best  Wrst StDev
+                                 1. 62-3-100-30.dsl.in-addr.zen.co.u  0.0%    5    0.6   0.6   0.5   0.6   0.0
+                                 2. ???
+                                 3. lag-8.p2.thn-lon.zen.net.uk       0.0%    5   12.3  12.3  12.2  12.5   0.1
+                                 4. lag-2.br1.thn-lon.zen.net.uk      0.0%    5   12.3  12.3  12.0  12.5   0.2
+                                 5. 72.14.223.28                      0.0%    5   12.9  12.8  12.4  12.9   0.2
+                                 6. 209.85.249.149                    0.0%    5   13.4  13.7  13.3  14.2   0.4
+                                 7. 142.251.54.27                     0.0%    5   12.0  11.8  11.4  12.0   0.2
+                                 8. dns.google                        0.0%    4   12.1  11.8  11.6  12.1   0.2
+                              </pre>
+                            </code>
+
+                            <p>Расшифровка колонок:</p>
+                            <ul>
+                              <li>host — имя хоста</li>
+                              <li>Loss% — процент потерь пакетов</li>
+                              <li>Snt — количество отправленных пакетов</li>
+                              <li>Last — время задержки последнего отправленного пакета в миллисекундах</li>
+                              <li>Avg — среднее время задержки</li>
+                              <li>Best — минимальное время задержки</li>
+                              <li>Wrst — максимальное время задержки</li>
+                              <li>StDev — среднеквадратичное отклонение времени задержки</li>
+                            </ul>
+
+                            <p>Если нужно, чтобы команда не производила преобразование IP-адреса в имя хоста, при запуске команды mtr используйте ключ -n: <code>mtr -n 8.8.8.8</code></p>
+                            <p>Использование опции -b позволяет отображать как имена узлов, так и их IP-адреса: <code>mtr -b 8.8.8.8</code></p>
+                            <p>
+                              Чтобы задействовать TCP SYN-пакеты или UDP-датаграммы вместо стандартных ICMP-запросов используйте ключи –tcp, –udp:<br>
+                              <code>mtr --tcp google.com</code><br>
+                              <code>mtr --udp google.com</code>
+                            </p>
+
+                          </div>
+                        </div>
+                        <!--end::Accordion blocks-->  
+                      </div>
+
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseTrace_5"
+                            aria-expanded="false"
+                            aria-controls="collapseTrace_5"
+                          >
+                          Другие инструменты
+                          </button>
+                        </h2>
+                        <div id="collapseTrace_5" class="accordion-collapse collapse" data-bs-parent="#accordionTrace">
+                          <div class="accordion-body">
+                            <h4>Трассировка онлайн</h4>
+                            <ul>
+                              <li><a href="https://traceroute-online.com" target="_blank">traceroute-online</a></li>
+                              <li><a href="https://mxtoolbox.com/TraceRouteLookup.aspx" target="_blank">ICMP-trace</a></li>
+                              <li><a href="https://tools.bunny.net/traceroute" target="_blank">tools.bunny.net</a></li>
+                              <li><a href="https://host-tracker.com/en/ic/check-trace" target="_blank">host-tracker</a></li>
+                            </ul>
+
+                            <h4>Pathping</h4>
 
                             <p>Альтернативный метод проверки через стандартную утилиту <a href="https://ab57.ru/cmdlist/pathping.html">pathping</a>: <code>pathping google.com</code></p>
                             <code>
@@ -538,29 +642,153 @@
                               Команда PATHPING объединяет в себе возможности команд трассировки маршрута TRACERT и опроса узла PING и позволяет оценить задержки при передаче данных и потери пакетов на каждом из участков маршрута к целевому узлу.
                             </blockquote>
 
-                            <h3>Особенности работы</h3>
+                            <h3>Трассировка с мобильных устройств</h3>
                             <ul>
-                              <li>
-                                На некторых хопах в выводе могут отображаються звёздочки ( * либо "host not response"). 
-                                Это значит, что маршрутизатор не отправил ответ — пакет отфильтрован, истёк таймаут или узел не отвечает на запросы traceroute.
-                              </li>
-                              <li>
-                                На некоторых хопах может быть разный IP в строках и результаты запуска traceroute могут отличаться при повторной трассировке.
-                                Участок сети может иметь несколько возможных маршрутов. Ответы могут приходить от разных маршрутизаторов из-за балансировки нагрузки.
-                                Маршруты могут динамически меняться, пакеты могут балансироваться, а узлы — по-разному реагировать на нагрузку или фильтрацию.
-                              </li>
-                              <li>
-                                Для кириллического домена, его нужно сначала перевести в PUNY код любым конвертером (например через <a href="reg.ru/web-tools/punycode">reg.ru/web-tools/punycode</a>) 
-                                затем полученный код вставить в команду, вот так: tracert xn--1-7sb1a4ah.xn--p1ai
-                              </li>
-                              <li>
-                                Traceroute: Ключ -I включает ICMP-трассировку, -T — TCP. Это помогает обходить фильтрацию UDP или проверять доступность конкретных портов.
-                              </li>
-                            </ul>                            
+                              <li>Android: <a href="https://play.google.com/store/apps/details?id=com.ulfdittmer.android.ping" target="_blank">Ping & Net</a></li>
+                              <li>iOS: <a href="https://apps.apple.com/us/app/ip-tools-network-insights/id1446355714" target="_blank">IP Tools</a></li>
+                            </ul>                                     
                           </div>
                         </div>
                         <!--end::Accordion blocks-->  
                       </div>
+
+                      <!--end::Accordion-->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col mb-sm-3">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <div class="card-header d-flex align-items-center">
+                      <i class="bi bi-shield-check fs-4 text-primary me-2" aria-hidden="true"></i>
+                      <h3 class="card-title mb-0">Проверка доступости ресурсов</h3>
+                    </div>
+                    <!--begin::Accordion-->
+                    <div class="accordion" id="accordionConnect">
+                      <!-- <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseConnect_1"
+                            aria-expanded="false"
+                            aria-controls="collapseConnect_1"
+                          >
+                          Общие рекомендации
+                          </button>
+                        </h2>
+                        <div id="collapseConnect_1" class="accordion-collapse collapse" data-bs-parent="#accordionConnect">
+                          <div class="accordion-body">
+
+
+                          </div>
+                        </div>
+                      </div> -->
+                      
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseConnect_2"
+                            aria-expanded="false"
+                            aria-controls="collapseConnect_2"
+                          >
+                          Проверка доступности сервиса (сайта)
+                          </button>
+                        </h2>
+                        <div id="collapseConnect_2" class="accordion-collapse collapse" data-bs-parent="#accordionConnect">
+                          <div class="accordion-body">
+
+                            <h4>Проверить доступность сайта онлайн</h4>
+                            <ul>
+                              <li><a href="https://downdetector.com/" target="_blank">downdetector</a></li>
+                              <li><a href="https://2ip.ru/site-availability/" target="_blank">2ip.ru</a></li>
+                              <li><a href="https://www.host-tracker.com" target="_blank">host-tracker</a></li>
+                              <li><a href="https://check-host.net/check-http" target="_blank">check-host</a></li>
+                            </ul>
+
+                            <h4>Команды для проверки через PowerShell</h4>
+                            <p>Необходимо запустить <a href="https://learn.microsoft.com/ru-ru/powershell/">PowerShell</a> чтобы использовать команды ниже для диагностики сети (<kbd>Win+R</kbd> и введите <code>powershell</code>)</p>
+
+                            <p>Проверка доступности ресурса: <code>Test-NetConnection google.com</code> </p>
+                            <code>
+                              <pre style="white-space: pre-line;">
+                              ComputerName           : google.com
+                              RemoteAddress          : 142.250.130.101
+                              InterfaceAlias         : Ethernet 3
+                              SourceAddress          : 100.111.112.1
+                              PingSucceeded          : True
+                              PingReplyDetails (RTT) : 27 ms
+                              </pre>
+                            </code>
+
+                            <p>Проверить коннект на определенный порт: <code>Test-NetConnection google.com -port 80</code></p>
+                            <code>
+                              <pre style="white-space: pre-line;">
+                              ComputerName     : google.com
+                              RemoteAddress    : 142.250.130.101
+                              RemotePort       : 80
+                              InterfaceAlias   : Ethernet 2
+                              SourceAddress    : 100.111.112.2
+                              TcpTestSucceeded : True
+                              </pre>
+                            </code>
+                            
+                            <p>Проверить коннект с определенным MTU и TTL: <code>Test-Connection -ComputerName server1 -MtuSize 1400 -Ttl 128</code></p>
+
+                            <p>Проверка коннекта к приложению через curl (Linux)</p>
+                            <code>
+                              <pre style="white-space: pre-line;">
+                                curl -w "time_connect: %{time_connect}\ntime_appconnect: %{time_appconnect}\ntime_starttransfer: %{time_starttransfer}\ntime_total: %{time_total}\n" \ 
+                                -o /dev/null -s https://apphost/cgi
+                              </pre>
+                            </code>
+
+                            <pre style="white-space: pre-line;">
+                              Output:
+                              time_connect: 0.016985
+                              time_appconnect: 0.075189
+                              time_starttransfer: 0.089458
+                            </pre>
+
+                            <p>Проверка HTTP-статус сервера через curl (Linux): <code>curl -Is example.com | head -n 1</code></p>
+                            <blockquote>(Статус код "200 OK" означает что запрос был успешно выполнен и сайт доступен, а "404" или "500" — ошибку). Подробнее <a href="https://developer.mozilla.org/ru/docs/Web/HTTP/Reference/Status">HTTP коды</a>.</blockquote>
+
+                            <ul>
+                              <li><a href="https://fasterdata.es.net/network-tuning/mtu-issues/debugging-mtu-problems/">Debugging MTU Problems</a></li>
+                              <li><a href="https://github.com/chubin/awesome-console-services">awesome-console-services</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                        <!--end::Accordion blocks-->  
+                      </div>
+
+                      <!-- <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseConnect_3"
+                            aria-expanded="false"
+                            aria-controls="collapseConnect_3"
+                          >
+                          Text
+                          </button>
+                        </h2>
+                        <div id="collapseConnect_3" class="accordion-collapse collapse" data-bs-parent="#accordionConnect">
+                          <div class="accordion-body">
+                                          
+                          </div>
+                        </div>
+                      </div> -->
 
                       <div class="accordion-item">
                         <h2 class="accordion-header">
@@ -577,7 +805,12 @@
                         </h2>
                         <div id="collapseConnect_4" class="accordion-collapse collapse" data-bs-parent="#accordionConnect">
                           <div class="accordion-body">
-
+                            <h4>Проверить онлайн DNS записи</h4>
+                            <ul>
+                              <li><a href="https://dnschecker.org/all-dns-records-of-domain.php" target="_blank">dnschecker.org</a></li>
+                              <li><a href="https://www.abuseipdb.com/tools/dns-lookup" target="_blank">abuseipdb</a></li>
+                              <li><a href="https://rapiddns.io/" target="_blank">rapiddns.io</a></li>
+                            </ul>
                             <h4>Проверить resolve DNS через nslookup</h4>
                             <p><code>nslookup 8.8.4.4</code> - отобразить имя узла, соответствующее IP-адресу 8.8.4.4</p>
                             
@@ -604,6 +837,73 @@
                               </pre>
                             </code>
                             </p>
+
+                          </div>
+                        </div>
+                        <!--end::Accordion blocks-->  
+                      </div>
+
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseConnect_5"
+                            aria-expanded="false"
+                            aria-controls="collapseConnect_5"
+                          >
+                          Спам базы
+                          </button>
+                        </h2>
+                        <div id="collapseConnect_5" class="accordion-collapse collapse" data-bs-parent="#accordionConnect">
+                          <div class="accordion-body">
+                            <h4>Онлайн-сервисы проверки IP-адресов и доменов:</h4>
+                            <ul>
+                              <li>
+                                <a href="https://mxtoolbox.com/blacklists.aspx" target="_blank">MX toolbox</a> Один из самых популярных и функциональных инструментов. 
+                                Позволяет проверить IP-адрес, домен и почтовый сервер на предмет включения в различные спам-базы.
+                              </li>
+                              <li><a href="https://2ip.ru/spam/" target="_blank">2ip</a> Удобный но не точный инструмент для листинга</li>
+                              <li><a href="https://whatismyipaddress.com/blacklist-check" target="_blank">WhatIsMyIPAddress.com</a>  Предоставляет информацию об IP-адресе, включая возможность проверки на предмет включения в спам-базы.</li>
+                              <li><a href="https://multirbl.valli.org/" target="_blank">multirbl.valli.org</a> Простой и быстрый инструмент для проверки IP-адреса на предмет включения в несколько десятков спам-баз.</li>
+                            </ul>
+
+                            <h4>Факторы которые могут повлиять на попадание в черный лист</h4>
+                            <ul>
+                              <li>Отправка большого количества писем за короткий период времени.</li> 
+                              <li>Рассылка писем на несуществующие или неактивные адреса.</li> 
+                              <li>Отсутствие надлежащей аутентификации (SPF, DKIM, DMARC).</li> 
+                              <li>Использование общих или бесплатных IP-адресов.</li> 
+                              <li>Использование спам-слов в теме или тексте сообщения.</li> 
+                              <li>Высокий уровень жалоб на спам от получателей.</li> 
+                              <li>Плохая репутация IP-адреса или домена.</li> 
+                              <li>Наличие вредоносного ПО на компьютере или сервере.</li> 
+                            </ul>
+                            <p>
+                              Включение в спам-базу не всегда означает, что вы рассылаете спам. Ваш IP-адрес или домен мог быть внесен в список случайно или из-за действий злоумышленников. 
+                              Имейте ввиду, что удаление из спам-базы может занять как несколько часов, так и несколько дней.
+                            </p>
+
+                            <p>
+                              SpamHaus поддерживает несколько баз данных — SBL, XBL, PBL. Эти базы содержат информацию о доменных именах, IP адресах, подсетях и email адресах, 
+                              с которых шла или идет спам-рассылка. Эти базы активно используют почтовые сервисы и серверы, чтобы блокировать письма от нежелательных отправителей. 
+                            </p>
+                            <p>
+                              Но SpamHaus не ограничивается просто ведением баз, они уже давно активно работают с хостинг и интернет провайдерами, чтобы те блокировали и отключали сервера, 
+                              с которых по мнению SpamHaus идут спамерские рассылки. Авторитет и возможности организации сейчас настолько высоки, что все вынуждены к ним прислушиваться.  
+                              Так, если IP сервера попадает в их базу, то они требуют от регионального провайдера прекратить работу сайта или всего сервера по причине спам рассылки. 
+                              В случае отказа от регионального провайдера, они как правило обращаются к вышестоящему (магистральному) провайдеру с требованием отключить всю подсеть. 
+                              Поэтому практически всегда требования SpamHaus’a выполняются региональным провайдером.
+                            </p>
+
+                            <h4>Проверить через косноль (spamhaus)</h4>
+                            <p>Вы можете использовать команду dig или nslookup для проверки DNS-записей, связанных со спам-базами.</p> 
+                            <p>Например, как проверить домен на спам в Spamhaus: <code>dig +short IP-адрес.sbl.spamhaus.org</code></p>
+                            <blockquote>
+                              Если IP-адрес находится в базе данных Spamhaus SBL, команда вернет IP-адрес 127.0.0.2. или другой адрес из диапазона 127.0.0.x.  Если IP-адрес не найден, запрос ничего не вернет.
+                              Вместо sbl.spamhaus.org можно использовать другие спам-базы, в которых вы хотите выполнить проверку.
+                            </blockquote>
 
                           </div>
                         </div>
@@ -641,9 +941,18 @@
                         </h2>
                         <div id="collapsePortForwarding_1" class="accordion-collapse collapse" data-bs-parent="#accordionPortForwarding">
                           <div class="accordion-body">
+                            <h4>Проверка открытых портов онлайн</h4>
+                            <ul>
+                              <li><a href="https://2ip.io/ru/check-port" target="_blank">2ip.io</a></li>
+                              <li><a href="https://www.reg.ru/web-tools/port-checker" target="_blank">reg.ru</a></li>
+                              <li><a href="https://tools.ivit.pro/setevye-utility/avail-services/" target="_blank">tools.ivit.pro</a></li>
+                              <li><a href="https://portchecker.co/" target="_blank">portchecker.co</a></li>
+                              <li><a href="https://dnsrobot.net/ru/port-checker" target="_blank">dnsrobot.net</a></li>
+                            </ul>
+
                             <p>Перед проверкой из внешней сети попробуйте подключиться к серверу используя его внутренний IP-адрес и порт из браузера находясь в той же локальной сети.</p>
                           
-                            <h3>Проверка в Windows</h3>
+                            <h4>Проверка в Windows</h4>
                             <p>Проверить доступность порта с помощью утилиты Telnet: <code>telnet 192.168.1.1 4000</code> (4000 заменить на нужный порт)</p>
                             <blockquote>
                               <ul>
@@ -709,16 +1018,18 @@
                               </pre>
                             </code>
 
-                            <h3>Проверка в Linux и macOS</h3>
+                            <h4>Проверка в Linux и macOS</h4>
                             
                             <p>В системах Linux и macOS используйте терминал:</p>
                             <ol>
                               <li>Откройте терминал (<kbd>CTRL + SHIFT + T</kbd>)</li>
                               <li>Введите: <code>sudo lsof -i -P -n | grep LISTEN</code></li>
                             </ol>
+                            <p>Альтернативный вариант: <code>ss -tulpn</code> либо <code>ss -tulpn | grep :80</code></p>
                           </div>
                         </div>
                       </div>
+
                       <div class="accordion-item">
                         <h2 class="accordion-header">
                           <button
@@ -777,7 +1088,7 @@
                               </li>
                               <li>
                                 <p>
-                                  <strong>VPN</strong> может влиять не возможность обмена данными по определенным портам. Решение: отключить VPN, либо посмотреть, есть ли возможность открыть порты в ПО для VPN.
+                                  <strong>VPN</strong> может влиять на возможность обмена данными по определенным портам. Решение: отключить VPN, либо посмотреть, есть ли возможность открыть порты в ПО для VPN.
                                 </p>
                               </li>
                               <li>
@@ -815,6 +1126,111 @@
                           </div>
                         </div>
                       <!--end::Accordion blocks-->  
+                      </div>
+
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapsePortForwarding_3"
+                            aria-expanded="false"
+                            aria-controls="collapsePortForwarding_3"
+                          >
+                          Проброс портов (Port Forwarding)
+                          </button>
+                        </h2>
+                        <div id="collapsePortForwarding_3" class="accordion-collapse collapse" data-bs-parent="#accordionPortForwarding">
+                          <div class="accordion-body">
+                            <p>
+                              Проброс портов (Port Forwarding) — это настройка роутера, которая перенаправляет входящие запросы из интернета, пришедшие на определенный порт роутера,
+                               на конкретный порт заданного устройства в локальной сети. Без проброса портов роутер игнорирует такие запросы, потому что они считаются потенциально опасными.
+                            </p>
+
+                            <p>Самые очевидные сценарии, в которых нужен проброс портов:</p>
+                            <ul>
+                                <li>Подключение к домашнему серверу (игровому, камер видеонаблюдения, хранилища данных)</li>
+                                <li>Хостинг игровых серверов или веб-сайтов на домашнем ПК</li>
+                                <li>Доступ к удаленному рабочему столу</li>
+                                <li>Удаленное управление устройствами</li>
+                            </ul>
+
+                            <h4>Cоздание правила переадресации</h4>
+                            <p>
+                              Перейдите в раздел, отвечающий за перенаправление трафика. В зависимости от производителя роутера и его прошивки он может называться 
+                              "Переадресация портов", "Виртуальные серверы", "Port Forwarding" или "NAT". 
+                              Нажмите кнопку "Добавить новую запись" ("Создать") и заполните основные поля:
+                            </p>
+                            <ul>
+                              <li>Имя службы / Описание: любое понятное название (например, Minecraft_Server)</li>
+                              <li>Внешний порт (External Port): порт, на который будут приходить запросы из интернета</li>
+                              <li>Внутренний порт (Internal Port): порт, который слушает программа на самом компьютере (часто совпадает с внешним)</li>
+                              <li>Внутренний IP-адрес (Internal IP): статический локальный IP-адрес компьютера, который вы зафиксировали на первом шаге (например, 168.0.1.154)</li>
+                              <li>Протокол (Protocol): выберите TCP, UDP или оба сразу (All/Both), исходя из системных требований приложения</li>
+                              <li>Сохраните правило и перезагрузите роутер, если этого требует система.</li>
+                            </ul>
+    
+                            <p>Например, у вас есть домашний ПК с IP 192.168.0.164 и на нем запущена игра, которая слушает порт TCP 25565. Тогда вы настраиваете роутер так:<p>
+                            <code>
+                              <pre style="white-space: pre-line;">
+                              внешний порт: 25565
+                              внутренний IP: 192.168.0.164
+                              внутренний порт: 25565
+                              протокол: TCP
+                              </pre>
+                            </code>
+                            <p>Теперь любой запрос из Интернета на ваш внешний IP (роутер) и порт 25565 будет перенаправлен на порт 25565 вашего компьютера, на котором запущена игра.</p>
+
+                          </div>
+                        </div>
+                      <!--end::Accordion blocks-->  
+                      </div>
+
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapsePortForwarding_4"
+                            aria-expanded="false"
+                            aria-controls="collapsePortForwarding_4"
+                          >
+                          NAT (Network Address Translation)                          
+                          </button>
+                        </h2>
+                        <div id="collapsePortForwarding_4" class="accordion-collapse collapse" data-bs-parent="#accordionPortForwarding">
+                          <div class="accordion-body">
+                            <p>
+                              NAT (Network Address Translation) — это технология, позволяющая преобразовывать внешние запросы из глобальной сети во внутренние запросы в локальной сети и наоборот.
+                              Технически NAT подменяет IP-адреса и порты в пакетах данных. Однако важно понимать, что NAT — это не какая-то программная утилита, а своего рода подход или концепция.
+                            </p>
+                            <p>В зависимости от направления, NAT можно разделить на два типа:</p>
+                            <ul>
+                              <li>SNAT (Source NAT). Подмена IP-адреса в исходящих пакетах</li>
+                              <li>DNAT (Destination NAT). Подмена IP-адреса во входящих пакетах</li>
+                            </ul>
+                            <p>
+                              Серый IP-адрес принадлежит к диапазонам, выделенным для локальных сетей. Он не виден из глобального интернета. 
+                              Провайдеры используют технологию NAT (Network Address Translation), чтобы подключать тысячи абонентов к интернету через один общий белый IP-адрес. 
+                              Несмотря на то, что NAT защищает локальную сеть от внешнего доступа, он также требует проброса портов для всех входящих соединений.
+                            </p>
+
+                            <h4>Настройка динамического DNS (DDNS)</h4>
+                            <p>
+                              Если у вас белый, но динамический IP-адрес, он будет регулярно меняться. Чтобы не узнавать его заново перед каждым подключением, используется технология DDNS. 
+                              Она присваивает вашему роутеру постоянное доменное имя (например, myhome.keenetic.link или myhome.ddns.net). 
+                              Роутер автоматически сообщает серверу DDNS о смене своего IP-адреса, и доменное имя всегда указывает на актуальный адрес домашней сети.
+                              Для настройки DDNS зайдите в веб-интерфейс роутера в раздел «Динамический DNS» («DDNS»). Обратите внимание на встроенные бесплатные сервисы от производителя роутера.
+                            </p>
+                            <p>Подробнее:</p>
+                            <ul>
+                              <li><a href="https://habr.com/ru/articles/583172/">NAT (Network Address Translation) для новичков</a></li>
+                            </ul>
+                        </div>
+                      <!--end::Accordion blocks-->  
+
                       </div>
                       <!--end::Accordion-->
                     </div>

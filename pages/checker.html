@@ -330,10 +330,12 @@
                             </button>
                             <ul class="dropdown-menu" id="dropdown-search">
                               <li><h6 class="dropdown-header">Select service</h6></li>
+                              <li><a class="dropdown-item" href="#">Whois</a></li>
                               <li><a class="dropdown-item" href="#">Trace</a></li>
                               <li><a class="dropdown-item" href="#">Ping</a></li>
-                              <li><a class="dropdown-item" href="#">MAC</a></li>
-                              <li><a class="dropdown-item" href="#">DNS</a></li>
+                              <li><a class="dropdown-item" href="#">MAC-Vendor</a></li>
+                              <li><a class="dropdown-item" href="#">DNS-Records</a></li>
+                              <li><a class="dropdown-item" href="#">MX-Record</a></li>
                               <li><a class="dropdown-item" href="#">Spam-base</a></li>
                               <li><a class="dropdown-item" href="#">Check-host</a></li>
                             </ul>
@@ -409,7 +411,7 @@
                 </div>
               </div>
 
-              <h2 class="pb-2 border-bottom">Проверка домена DNS и AS</h2>
+              <h2 class="pb-2 border-bottom">Проверка домена DNS</h2>
               <div
                 class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-3 py-5"
               >
@@ -423,10 +425,11 @@
                       Информация о IP и домене
                     </p>
                     <ul>
+                      <li><a href="https://mxtoolbox.com/SuperTool.aspx?action=whois" target="_blank">MX toolbox (whois)</a></li>
                       <li><a href="https://who.is/" target="_blank">who.is</a></li>
                       <li><a href="https://apps.db.ripe.net/db-web-ui/query" target="_blank">RIPE</a></li>
                       <li><a href="https://whois.hoster.by/" target="_blank">hoster.by</a></li>
-                      <li><a href="https://www.reg.ru/whois/check_site" target="_blank">reg.ru</a></li>
+                      <li><a href="https://lookup.icann.org/en/lookup" target="_blank">lookup.icann.org</a></li>
                       <li><a href="https://2ip.ru/site-availability/" target="_blank">2ip.ru</a></li>
                     </ul>
                   </div>
@@ -445,28 +448,52 @@
                       <li><a href="https://www.abuseipdb.com/tools/dns-lookup" target="_blank">abuseipdb</a></li>
                       <li><a href="https://rapiddns.io/" target="_blank">rapiddns.io</a></li>
                       <li><a href="https://radar.cloudflare.com/dns" target="_blank">cloudflare DNS</a></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="col d-flex align-items-start">
-                  <div>
-                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
-                      <i class="nav-icon bi bi-map"></i>
-                      ASN Lookup
-                    </h3>
-                    <p>
-                      Информация об Автономной Системе (AS)
-                    </p>
-                    <ul>
-                      <li><a href="https://bgp.he.net/" target="_blank">bgp.he.net</a></li>
-                      <li><a href="https://www.peeringdb.com/" target="_blank">peeringdb</a></li>
-                      <li><a href="https://www.submarinecablemap.com/supplier/asn" target="_blank">submarinecablemap</a></li>
-                      <li><a href="https://hyperion-cs.github.io/dpi-checkers/ru/tcp-16-20/" target="_blank">tspu-tcp-16-20</a></li>
+                      <li><a href="https://www.whatsmydns.net/dns-lookup" target="_blank">whatsmydns.net</a></li>
                     </ul>
                   </div>
                 </div>
               </div>
-              
+
+              <h2 class="pb-2 border-bottom">Почтовые сервисы</h2>
+              <div
+                class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-3 py-5"
+              >
+              <div class="col d-flex align-items-start">
+                <div>
+                  <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
+                    <i class="nav-icon bi bi-envelope"></i>
+                    MX Lookup
+                  </h3>
+                  <p>
+                    MX записи и SMTP протокол
+                  </p>
+                  <ul>
+                    <li><a href="https://mxtoolbox.com/MXLookup.aspx" target="_blank">mxtoolbox (MXLookup)</a></li>
+                    <li><a href="https://uptimerobot.com/free-tools/mx-lookup/" target="_blank">uptimerobot.com</a></li>
+                    <li><a href="https://www.nslookup.io/mx-lookup/" target="_blank">nslookup.io</a></li>
+                    <li><a href="https://mockoon.com/tools/mx-lookup/" target="_blank">mockoon.com</a></li>
+                  </ul>
+                </div>
+              </div>
+                <div class="col d-flex align-items-start">
+                  <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
+                      <i class="nav-icon bi bi-globe-americas"></i>
+                      DMARC
+                    </h3>
+                    <p>
+                      Проверка почтовых рассылок
+                    </p>
+                    <ul>
+                      <li><a href="https://mxtoolbox.com/dmarc.aspx" target="_blank">mxtoolbox.com (dmarc)</a></li>
+                      <li><a href="https://whatismyipaddress.com/trace-email" target="_blank">whatismyipaddress.com (trace-email)</a></li>
+                      <li><a href="https://mxtoolbox.com/emailhealth" target="_blank">mxtoolbox.com (emailhealth)</a></li>
+                      <li><a href="https://mxtoolbox.com/diagnostic.aspx" target="_blank">mxtoolbox.com (SMTP Diagnostics)</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
               <h2 class="pb-2 border-bottom">Блокировки и спам базы</h2>
               <div
                 class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-3 py-5"
@@ -481,11 +508,12 @@
                       Проверить IP в спам-базах
                     </p>
                     <ul>
-                      <li><a href="https://mxtoolbox.com/SuperTool.aspx?action=mx%3a93.85.82.1&run=toolpage#" target="_blank">MX Toolbox</a></li>
+                      <li><a href="https://mxtoolbox.com/blacklists.aspx" target="_blank">MX Toolbox</a></li>
                       <li><a href="https://portscaner.ru/ip-blacklist-checker" target="_blank">portscaner.ru</a></li>
                       <li><a href="https://www.barracudacentral.org/lookups" target="_blank">barracudacentral.org</a></li>
                       <li><a href="https://check.spamhaus.org/" target="_blank">spamhaus.org</a></li>
                       <li><a href="https://www.uceprotect.net/en/rblcheck.php" target="_blank">uceprotect.net</a></li>
+                      <li><a href="https://multirbl.valli.org" target="_blank">multirbl.valli.org</a></li>
                     </ul>
                   </div>
                 </div>
@@ -581,7 +609,45 @@
                   </div>
                 </div>
               </div>
-  
+
+              <h2 class="pb-2 border-bottom">Прокси и VPN</h2>
+              <div
+                class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-3 py-5"
+              >
+                <div class="col d-flex align-items-start">
+                  <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
+                      <i class="nav-icon bi bi-building"></i>
+                      Proxy-Leak
+                    </h3>
+                    <p>
+                      Проверить использование прокси
+                    </p>
+                      <ul>
+                        <li><a href="https://whatismyipaddress.com/proxy-check" target="_blank">whatismyip</a></li>
+                        <li><a href="https://whatismyipaddress.com/webrtc-test" target="_blank">webrtc-test</a></li>
+                        <li><a href="https://checkproxy.org/webrtc-leak-test" target="_blank">checkproxy.org (webrtc-leak-test)</a></li>
+                      </ul>
+                  </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                  <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
+                      <i class="nav-icon bi bi-unlock2"></i>
+                      VPN-Leak
+                    </h3>
+                    <p>
+                      Проверка обнаружения VPN
+                    </p>
+                      <ul>
+                        <li><a href="https://vpntesting.com/" target="_blank">vpntesting.com</a></li>
+                        <li><a href="https://checkproxy.org/antidetect-check" target="_blank">checkproxy.org (antidetect-check)</a></li>
+                        <li><a href="https://hyperion-cs.github.io/dpi-checkers/ru/tcp-16-20/" target="_blank">tspu-tcp-16-20</a></li>
+                      </ul>
+                  </div>
+                </div>
+              </div>
+
               <h2 class="pb-2 border-bottom">Расчет сетей</h2>
               <div
                 class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-3 py-5"
@@ -622,7 +688,7 @@
                 <div class="col d-flex align-items-start">
                   <div>
                     <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
-                      <i class="nav-icon bi bi-calculator"></i>
+                      <i class="nav-icon bi bi-wifi"></i>
                       Wi-fi coverage 
                     </h3>
                     <p>
@@ -637,7 +703,47 @@
                 </div>
               </div>
 
-              <h2 class="pb-2 border-bottom">Прочее</h2>
+              <h2 class="pb-2 border-bottom">Автономные системы (AS)</h2>
+              <div
+                class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-3 py-5"
+               >
+                <div class="col d-flex align-items-start">
+                  <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
+                      <i class="nav-icon bi bi-map"></i>
+                      ASN Lookup
+                    </h3>
+                    <p>
+                      Информация об Автономной Системе (AS)
+                    </p>
+                    <ul>
+                      <li><a href="https://mxtoolbox.com/asn.aspx" target="_blank">mxtoolbox (ASN Lookup)</a></li>
+                      <li><a href="https://www.peeringdb.com/" target="_blank">peeringdb</a></li>
+                      <li><a href="https://www.submarinecablemap.com/supplier/asn" target="_blank">submarinecablemap</a></li>
+                      <li><a href="https://whoisfreaks.com/tools/asn-whois/lookup" target="_blank">whoisfreaks (ASN Whois)</a></li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="col d-flex align-items-start">
+                  <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
+                      <i class="nav-icon bi bi-signpost-split"></i>
+                      BGP 
+                    </h3>
+                    <p>
+                      Мониторинг глобальной сетевой маршрутизации
+                    </p>
+                    <ul>
+                      <li><a href="https://bgp.tools/" target="_blank">bgp.tools</a></li>
+                      <li><a href="https://bgp.he.net/" target="_blank">bgp.he.net</a></li>
+                      <li><a href="https://subnets.ru/wrapper.php?p=4" target="_blank">subnets.ru</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <h2 class="pb-2 border-bottom">Браузерные тесты</h2>
               <div
                 class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-3 py-5"
                >
@@ -727,7 +833,8 @@
       });
       
       const inputElement = document.getElementById('input-Go');
-      
+      const ciscoMacRegex = /^([0-9a-fA-F]{4}\.){2}[0-9a-fA-F]{4}$/;
+
       // Go search <URL>
       function GoSearch(query) {
         if (inputElement.value.trim() === '') {
@@ -737,19 +844,22 @@
           document.getElementById("card-text-secondary").innerText = 'Последний поиск: ' + inputElement.value.trim(); 
           switch (dropdownText) {
             case "Whois":
-              window.open("https://who.is/whois/" + query, "_blank");
+              window.open("https://mxtoolbox.com/SuperTool.aspx?action=whois%3a" + query, "_blank");
               break
             case "Ping":
               window.open("https://ping.pe/" + query, "_blank");
               break
-            case "MAC":
+            case "MAC-Vendor":
               window.open("https://maclookup.app/search/result?mac=" + query, "_blank");
               break
             case "Trace":
               window.open("https://tools.bunny.net/traceroute?query=" + query, "_blank");
               break
-            case "DNS":
+            case "DNS-Records":
               window.open("https://dnschecker.org/all-dns-records-of-domain.php?query=" + query, "_blank");
+              break
+            case "MX-Record":
+              window.open("https://mxtoolbox.com/SuperTool.aspx?action=mx%3a" + query, "_blank");
               break
             case "Spam-base":
               window.open("https://mxtoolbox.com/SuperTool.aspx?action=blacklist%3a" + query, "_blank");
@@ -778,6 +888,23 @@
           GoSearch(inputValue); 
         }
       });
+
+      // Input event
+      inputElement.addEventListener('input', (event) => {
+        // Regular expression remove "http://" or "http" at the beginning of a line (case insensitive)
+        event.target.value = event.target.value.replace(/^https?:\/\//i, '');
+        // Regular expression remove "www." at the beginning of a line (case insensitive)
+        event.target.value = event.target.value.replace(/^www\./i, '');
+        // Convert from cisco format dead.beef.1234 to common format de:ad:be:ef:12:34
+        const dropdownText = document.getElementById('button-dropdown').innerText.trim();
+        if (dropdownText === "MAC-Vendor"){
+          if (ciscoMacRegex.test(event.target.value)) {
+            const cleanMac = event.target.value.replace(/\./g, '');
+            event.target.value = cleanMac.match(/.{1,2}/g).join(':').toLowerCase();
+          }
+        }
+      });
+
     </script>
   <!--end::page scripts-->
   </body>
