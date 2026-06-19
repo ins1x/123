@@ -283,11 +283,11 @@
             <!--begin::Row-->
             <div class="row">
               <div class="col-sm-6">
-                <h3 class="mb-0">Checker</h3>
+                <!-- <h3 class="mb-0">Checker</h3> -->
               </div>
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-end">
-                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                  <li class="breadcrumb-item"><a href="dashboard.html">Home</a></li>
                   <li class="breadcrumb-item active" aria-current="page">Checker</li>
                 </ol>
               </div>
@@ -302,29 +302,60 @@
           <!--begin::Container-->
           <div class="container-fluid">
             <!--begin::Row-->
+
+            <div class="row">
+              <div class="card">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                  <!-- Add menu here-->
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <!-- <h5 class="card-title">Card title</h5> -->
+                      <!-- <h1 class="display-2 fw-bold">Online-checker</h1> -->
+                      <p class="card-text">
+                        <p class="col-md-8 fs-4">
+                          Проверка через онлайн-утилиты
+                        </p>
+                        <div class="input-group mb-3">
+                          <div class="dropdown">
+                            <button
+                              class="btn btn-primary dropdown-toggle"
+                              id="button-dropdown"
+                              type="button"
+                              data-bs-toggle="dropdown"
+                              aria-expanded="false"
+                            >
+                              Whois
+                            </button>
+                            <ul class="dropdown-menu" id="dropdown-search">
+                              <li><h6 class="dropdown-header">Select service</h6></li>
+                              <li><a class="dropdown-item" href="#">Trace</a></li>
+                              <li><a class="dropdown-item" href="#">Ping</a></li>
+                              <li><a class="dropdown-item" href="#">MAC</a></li>
+                              <li><a class="dropdown-item" href="#">DNS</a></li>
+                              <li><a class="dropdown-item" href="#">Spam-base</a></li>
+                              <li><a class="dropdown-item" href="#">Check-host</a></li>
+                            </ul>
+                          </div>
+                          <input type="text" class="form-control" placeholder="" aria-label="IP or site input" aria-describedby="button-addon1" id="input-Go">
+                          <button class="btn btn-outline-primary" type="button" id="button-Go">Go</button>
+                        </div>
+                      </p>
+                      <p class="card-text" id="card-text-secondary">
+                        <small class="text-body-secondary">Last updated 19/06/2026</small>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div class="container px-3 py-5" id="icon-grid">
-              <h2 class="pb-2 border-bottom">Online tools</h2>
+              <h2 class="pb-2 border-bottom">Диагностика сети</h2>
               <div
                 class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-3 py-5"
               >
-                <div class="col d-flex align-items-start">
-                  <div>
-                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
-                      <i class="nav-icon bi bi-info-circle"></i>
-                      Whois
-                    </h3>
-                    <p>
-                      Информация о IP и домене
-                    </p>
-                    <ul>
-                      <li><a href="https://who.is/">who.is</a></li>
-                      <li><a href="https://apps.db.ripe.net/db-web-ui/query">RIPE</a></li>
-                      <li><a href="https://whois.hoster.by/">hoster.by</a></li>
-                      <li><a href="https://www.reg.ru/whois/check_site">reg.ru</a></li>
-                      <li><a href="https://2ip.ru/site-availability/">2ip.ru</a></li>
-                    </ul>
-                  </div>
-                </div>
                 <div class="col d-flex align-items-start">
                   <div>
                     <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
@@ -335,10 +366,10 @@
                       Трассировка онлайн
                     </p>
                       <ul>
-                        <li><a href="https://traceroute-online.com">traceroute-online</a></li>
-                        <li><a href="https://mxtoolbox.com/TraceRouteLookup.aspx">ICMP-trace</a></li>
-                        <li><a href="https://tools.bunny.net/traceroute">tools.bunny.net</a></li>
-                        <li><a href="https://host-tracker.com/en/ic/check-trace">host-tracker</a></li>
+                        <li><a href="https://traceroute-online.com" target="_blank">traceroute-online</a></li>
+                        <li><a href="https://mxtoolbox.com/TraceRouteLookup.aspx" target="_blank">ICMP-trace</a></li>
+                        <li><a href="https://tools.bunny.net/traceroute" target="_blank">tools.bunny.net</a></li>
+                        <li><a href="https://host-tracker.com/en/ic/check-trace" target="_blank">host-tracker</a></li>
                       </ul>
                   </div>
                 </div>
@@ -352,80 +383,51 @@
                       Пинг онлайн
                     </p>
                       <ul>
-                        <li><a href="https://ping.pe">ping.pe</a></li>
-                        <li><a href="https://ping.eu">ping.eu</a></li>
-                        <li><a href="https://dnschecker.org/ping-ipv4.php">IP-Pinger</a></li>
+                        <li><a href="https://ping.pe" target="_blank">ping.pe</a></li>
+                        <li><a href="https://ping.eu" target="_blank">ping.eu</a></li>
+                        <li><a href="https://dnschecker.org/ping-ipv4.php" target="_blank">IP-Pinger</a></li>
                       </ul>
                   </div>
                 </div>
                 <div class="col d-flex align-items-start">
                   <div>
                     <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
-                      <i class="nav-icon bi bi-envelope-slash"></i>
-                      Спам базы
+                      <i class="nav-icon bi bi-pc-display"></i>
+                      MAC-Vendor
                     </h3>
                     <p>
-                      Проверить IP в спам-базах
+                      Определение производителя по MAC-адресу
                     </p>
-                    <ul>
-                      <li><a href="https://mxtoolbox.com/SuperTool.aspx?action=mx%3a93.85.82.1&run=toolpage#">MX Toolbox</a></li>
-                      <li><a href="https://2ip.ru/spam/">2ip.ru</a></li>
-                      <li><a href="https://portscaner.ru/ip-blacklist-checker">portscaner.ru</a></li>
-                      <li><a href="https://www.barracudacentral.org/lookups">barracudacentral.org</a></li>
-                      <li><a href="https://check.spamhaus.org/">spamhaus</a></li>
-                    </ul>
+                      <ul>
+                        <li><a href="https://macvendors.com/" target="_blank">MAC vendors</a></li>
+                        <li><a href="https://maclookup.app/" target="_blank">MAC Address Lookup</a></li>
+                        <li><a href="https://metroethernet.ru/tools/oui" target="_blank">metroethernet</a></li>
+                        <li><a href="https://macaddresslookup.io/" target="_blank">macaddresslookup</a></li>
+                        <li><a href="https://wintelguy.com" target="_blank">wintelguy.com</a></li>
+                      </ul>
                   </div>
                 </div>
+              </div>
+
+              <h2 class="pb-2 border-bottom">Проверка домена DNS и AS</h2>
+              <div
+                class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-3 py-5"
+              >
                 <div class="col d-flex align-items-start">
                   <div>
                     <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
-                      <i class="nav-icon bi bi-globe-americas"></i>
-                      Sites-available
+                      <i class="nav-icon bi bi-info-circle"></i>
+                      Whois
                     </h3>
                     <p>
-                      Проверка доступности сайта
+                      Информация о IP и домене
                     </p>
                     <ul>
-                      <li><a href="https://downdetector.com/">downdetector</a></li>
-                      <li><a href="https://www.reg.ru/whois/check_site">reg.ru</a></li>
-                      <li><a href="https://2ip.ru/site-availability/">2ip.ru</a></li>
-                      <li><a href="https://www.host-tracker.com">host-tracker</a></li>
-                      <li><a href="https://check-host.net/check-http">check-host</a></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="col d-flex align-items-start">
-                  <div>
-                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
-                      <i class="nav-icon bi bi-database-fill-slash"></i>
-                      Blacklist
-                    </h3>
-                    <p>
-                      Проверка в заблокированных ресурсах
-                    </p>
-                    <ul>
-                      <li><a href="https://tools.zvelo.com/">zvelo</a></li>
-                      <li><a href="https://url.fortinet.net/rate/submit.php">fortinet</a></li>
-                      <li><a href="https://belgie.by/ru/other/info">БелГИЭ</a></li>
-                      <li><a href="https://multirbl.valli.org/lookup">MultiRBL</a></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="col d-flex align-items-start">
-                  <div>
-                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
-                      <i class="nav-icon bi bi-diagram-3-fill"></i>
-                      Open ports
-                    </h3>
-                    <p>
-                      Проверка открытых портов
-                    </p>
-                    <ul>
-                      <li><a href="https://2ip.io/ru/check-port">2ip.io</a></li>
-                      <li><a href="https://www.reg.ru/web-tools/port-checker">reg.ru</a></li>
-                      <li><a href="https://tools.ivit.pro/setevye-utility/avail-services/">tools.ivit.pro</a></li>
-                      <li><a href="https://portchecker.co/">portchecker.co</a></li>
-                      <li><a href="https://dnsrobot.net/ru/port-checker">dnsrobot.net</a></li>
+                      <li><a href="https://who.is/" target="_blank">who.is</a></li>
+                      <li><a href="https://apps.db.ripe.net/db-web-ui/query" target="_blank">RIPE</a></li>
+                      <li><a href="https://whois.hoster.by/" target="_blank">hoster.by</a></li>
+                      <li><a href="https://www.reg.ru/whois/check_site" target="_blank">reg.ru</a></li>
+                      <li><a href="https://2ip.ru/site-availability/" target="_blank">2ip.ru</a></li>
                     </ul>
                   </div>
                 </div>
@@ -439,42 +441,10 @@
                       Проверка DNS записей и субдоменов
                     </p>
                     <ul>
-                      <li><a href="https://dnschecker.org/all-dns-records-of-domain.php">dnschecker.org</a></li>
-                      <li><a href="https://www.abuseipdb.com/tools/dns-lookup">abuseipdb</a></li>
-                      <li><a href="https://rapiddns.io/">rapiddns.io</a></li>
-                      <li><a href="https://radar.cloudflare.com/dns">cloudflare DNS</a></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="col d-flex align-items-start">
-                  <div>
-                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
-                      <i class="nav-icon bi bi-tools"></i>
-                      HTTP
-                    </h3>
-                    <p>
-                      Проверка HTTP запросов
-                    </p>
-                    <ul>
-                      <li><a href="https://httpbin.org/">httpbin</a></li>
-                      <li><a href="https://httpbun.com/">httpbun</a></li>
-                      <li><a href="https://mockhttp.org/">mockhttp</a></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="col d-flex align-items-start">
-                  <div>
-                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
-                      <i class="nav-icon bi bi-pass"></i>
-                      SSL
-                    </h3>
-                    <p>
-                      Проверка SSL сертификатов
-                    </p>
-                    <ul>
-                      <li><a href="https://sslshopper.com/ssl-checker.html">sslshopper</a></li>
-                      <li><a href="https://ssl.org/">ssl.org</a></li>
-                      <li><a href="https://ssllabs.com/ssltest/">ssllabs</a></li>
+                      <li><a href="https://dnschecker.org/all-dns-records-of-domain.php" target="_blank">dnschecker.org</a></li>
+                      <li><a href="https://www.abuseipdb.com/tools/dns-lookup" target="_blank">abuseipdb</a></li>
+                      <li><a href="https://rapiddns.io/" target="_blank">rapiddns.io</a></li>
+                      <li><a href="https://radar.cloudflare.com/dns" target="_blank">cloudflare DNS</a></li>
                     </ul>
                   </div>
                 </div>
@@ -488,35 +458,134 @@
                       Информация об Автономной Системе (AS)
                     </p>
                     <ul>
-                      <li><a href="https://bgp.he.net/">bgp.he.net</a></li>
-                      <li><a href="https://www.peeringdb.com/">peeringdb</a></li>
-                      <li><a href="https://www.submarinecablemap.com/supplier/asn">submarinecablemap</a></li>
+                      <li><a href="https://bgp.he.net/" target="_blank">bgp.he.net</a></li>
+                      <li><a href="https://www.peeringdb.com/" target="_blank">peeringdb</a></li>
+                      <li><a href="https://www.submarinecablemap.com/supplier/asn" target="_blank">submarinecablemap</a></li>
+                      <li><a href="https://hyperion-cs.github.io/dpi-checkers/ru/tcp-16-20/" target="_blank">tspu-tcp-16-20</a></li>
                     </ul>
                   </div>
                 </div>
               </div>
-              <h2 class="pb-2 border-bottom">Client-check</h2>
+              
+              <h2 class="pb-2 border-bottom">Блокировки и спам базы</h2>
               <div
                 class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-3 py-5"
               >
                 <div class="col d-flex align-items-start">
                   <div>
                     <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
-                      <i class="nav-icon bi bi-pc-display"></i>
-                      MAC-Vendor
+                      <i class="nav-icon bi bi-envelope-slash"></i>
+                      Спам базы
                     </h3>
                     <p>
-                      Определение производителя по MAC-адресу
+                      Проверить IP в спам-базах
                     </p>
-                      <ul>
-                        <li><a href="https://macvendors.com/">MAC vendors</a></li>
-                        <li><a href="https://maclookup.app/">MAC Address Lookup</a></li>
-                        <li><a href="https://metroethernet.ru/tools/oui">metroethernet</a></li>
-                        <li><a href="https://macaddresslookup.io/">macaddresslookup</a></li>
-                        <li><a href="https://wintelguy.com">wintelguy.com</a></li>
-                      </ul>
+                    <ul>
+                      <li><a href="https://mxtoolbox.com/SuperTool.aspx?action=mx%3a93.85.82.1&run=toolpage#" target="_blank">MX Toolbox</a></li>
+                      <li><a href="https://portscaner.ru/ip-blacklist-checker" target="_blank">portscaner.ru</a></li>
+                      <li><a href="https://www.barracudacentral.org/lookups" target="_blank">barracudacentral.org</a></li>
+                      <li><a href="https://check.spamhaus.org/" target="_blank">spamhaus.org</a></li>
+                      <li><a href="https://www.uceprotect.net/en/rblcheck.php" target="_blank">uceprotect.net</a></li>
+                    </ul>
                   </div>
                 </div>
+                <div class="col d-flex align-items-start">
+                  <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
+                      <i class="nav-icon bi bi-globe-americas"></i>
+                      Sites-available
+                    </h3>
+                    <p>
+                      Проверка доступности сайта
+                    </p>
+                    <ul>
+                      <li><a href="https://downdetector.com/" target="_blank">downdetector</a></li>
+                      <li><a href="https://www.reg.ru/whois/check_site" target="_blank">reg.ru</a></li>
+                      <li><a href="https://2ip.ru/site-availability/" target="_blank">2ip.ru</a></li>
+                      <li><a href="https://www.host-tracker.com" target="_blank">host-tracker</a></li>
+                      <li><a href="https://check-host.net/check-http" target="_blank">check-host</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                  <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
+                      <i class="nav-icon bi bi-database-fill-slash"></i>
+                      Blocklist
+                    </h3>
+                    <p>
+                      Проверка в заблокированных ресурсах
+                    </p>
+                    <ul>
+                      <li><a href="https://tools.zvelo.com/" target="_blank">zvelo</a></li>
+                      <li><a href="https://url.fortinet.net/rate/submit.php" target="_blank">fortinet</a></li>
+                      <li><a href="https://belgie.by/ru/other/info" target="_blank">БелГИЭ</a></li>
+                      <li><a href="https://multirbl.valli.org/lookup" target="_blank">MultiRBL</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+  
+              <h2 class="pb-2 border-bottom">Порты и протоколы</h2>
+              <div
+                class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-3 py-5"
+              >
+                <div class="col d-flex align-items-start">
+                  <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
+                      <i class="nav-icon bi bi-diagram-3-fill"></i>
+                      Open ports
+                    </h3>
+                    <p>
+                      Проверка открытых портов
+                    </p>
+                    <ul>
+                      <li><a href="https://2ip.io/ru/check-port" target="_blank">2ip.io</a></li>
+                      <li><a href="https://www.reg.ru/web-tools/port-checker" target="_blank">reg.ru</a></li>
+                      <li><a href="https://tools.ivit.pro/setevye-utility/avail-services/" target="_blank">tools.ivit.pro</a></li>
+                      <li><a href="https://portchecker.co/" target="_blank">portchecker.co</a></li>
+                      <li><a href="https://dnsrobot.net/ru/port-checker" target="_blank">dnsrobot.net</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                  <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
+                      <i class="nav-icon bi bi-tools"></i>
+                      HTTP
+                    </h3>
+                    <p>
+                      Проверка HTTP запросов
+                    </p>
+                    <ul>
+                      <li><a href="https://httpbin.org/" target="_blank">httpbin</a></li>
+                      <li><a href="https://httpbun.com/" target="_blank">httpbun</a></li>
+                      <li><a href="https://mockhttp.org/" target="_blank">mockhttp</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                  <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
+                      <i class="nav-icon bi bi-pass"></i>
+                      SSL
+                    </h3>
+                    <p>
+                      Проверка SSL сертификатов
+                    </p>
+                    <ul>
+                      <li><a href="https://sslshopper.com/ssl-checker.html" target="_blank">sslshopper</a></li>
+                      <li><a href="https://ssl.org/" target="_blank">ssl.org</a></li>
+                      <li><a href="https://ssllabs.com/ssltest/" target="_blank">ssllabs</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+  
+              <h2 class="pb-2 border-bottom">Расчет сетей</h2>
+              <div
+                class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-3 py-5"
+              >
                 <div class="col d-flex align-items-start">
                   <div>
                     <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
@@ -527,9 +596,9 @@
                       Проверить свой IP
                     </p>
                       <ul>
-                        <li><a href="https://www.whatismyip.com/">whatismyip</a></li>
-                        <li><a href="https://ipaddress.my/">ipaddress.my</a></li>
-                        <li><a href="https://test-ipv6.com/">test-ipv6</a></li>
+                        <li><a href="https://www.whatismyip.com/" target="_blank">whatismyip</a></li>
+                        <li><a href="https://ipaddress.my/" target="_blank">ipaddress.my</a></li>
+                        <li><a href="https://test-ipv6.com/" target="_blank">test-ipv6</a></li>
                       </ul>
                   </div>
                 </div>
@@ -543,13 +612,35 @@
                       Расчет подсетей
                     </p>
                       <ul>
-                        <li><a href="https://ipcalc.co/">ipcalc.co</a></li>
-                        <li><a href="https://edgecenter.ru/dev-tools/calc-net-ipv6">calc-net-ipv6</a></li>
-                        <li><a href="https://shootnick.ru/ip_calc/">ip-calc</a></li>
-                        <li><a href="https://ip-calculator.ru">ip-calculator.ru</a></li>
+                        <li><a href="https://ipcalc.co/" target="_blank">ipcalc.co</a></li>
+                        <li><a href="https://edgecenter.ru/dev-tools/calc-net-ipv6" target="_blank">calc-net-ipv6</a></li>
+                        <li><a href="https://shootnick.ru/ip_calc/" target="_blank">ip-calc</a></li>
+                        <li><a href="https://ip-calculator.ru" target="_blank">ip-calculator.ru</a></li>
                       </ul>
                   </div>
                 </div>
+                <div class="col d-flex align-items-start">
+                  <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
+                      <i class="nav-icon bi bi-calculator"></i>
+                      Wi-fi coverage 
+                    </h3>
+                    <p>
+                      Расчет сетей и точек вай-фай 
+                    </p>
+                      <ul>
+                        <li><a href="https://datix.uz/kalkulyator-zony-pokrytiya-wi-fi/" target="_blank">datix.uz</a></li>
+                        <li><a href="https://ispdesign.ui.com/" target="_blank">ispdesign.ui.com</a></li>
+                        <li><a href="https://lwcom.ru/wifi-calculator/" target="_blank">lwcom.ru</a></li>
+                      </ul>
+                  </div>
+                </div>
+              </div>
+
+              <h2 class="pb-2 border-bottom">Прочее</h2>
+              <div
+                class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-3 py-5"
+               >
                 <div class="col d-flex align-items-start">
                   <div>
                     <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
@@ -560,14 +651,15 @@
                       Браузерные тесты
                     </p>
                       <ul>
-                        <li><a href="https://caniuse.com/">caniuse.com</a></li>
-                        <li><a href="https://get.webgl.org/">webGL</a></li>
-                        <li><a href="https://html5test.com/">html5test</a></li>
-                        <li><a href="https://browserleaks.com/">browserleaks.com</a></li>
+                        <li><a href="https://caniuse.com/" target="_blank">caniuse.com</a></li>
+                        <li><a href="https://get.webgl.org/" target="_blank">webGL</a></li>
+                        <li><a href="https://html5test.com/" target="_blank">html5test</a></li>
+                        <li><a href="https://browserleaks.com/" target="_blank">browserleaks.com</a></li>
                       </ul>
                   </div>
                 </div>
               </div>
+
             </div>
             <!--end::Row-->
           </div>
@@ -623,6 +715,71 @@
     <!-- customjs -->
     <script src="../js/custom.js"></script>
 
+    <!-- only for this page-->
+    <script language="javascript">
+      // Dropdown menu select
+      document.querySelectorAll('#dropdown-search .dropdown-item').forEach(item => {
+        item.addEventListener('click', function(selDropdown) {
+          selDropdown.preventDefault();
+          const selectedText = this.innerText;
+          document.getElementById('button-dropdown').innerText = selectedText;
+        });
+      });
+      
+      const inputElement = document.getElementById('input-Go');
+      
+      // Go search <URL>
+      function GoSearch(query) {
+        if (inputElement.value.trim() === '') {
+          document.getElementById("card-text-secondary").innerText = 'Вы не указали значение для поиска. (IP, MAC либо название сайта)';
+        } else {
+          const dropdownText = document.getElementById('button-dropdown').innerText.trim();
+          document.getElementById("card-text-secondary").innerText = 'Последний поиск: ' + inputElement.value.trim(); 
+          switch (dropdownText) {
+            case "Whois":
+              window.open("https://who.is/whois/" + query, "_blank");
+              break
+            case "Ping":
+              window.open("https://ping.pe/" + query, "_blank");
+              break
+            case "MAC":
+              window.open("https://maclookup.app/search/result?mac=" + query, "_blank");
+              break
+            case "Trace":
+              window.open("https://tools.bunny.net/traceroute?query=" + query, "_blank");
+              break
+            case "DNS":
+              window.open("https://dnschecker.org/all-dns-records-of-domain.php?query=" + query, "_blank");
+              break
+            case "Spam-base":
+              window.open("https://mxtoolbox.com/SuperTool.aspx?action=blacklist%3a" + query, "_blank");
+              break
+            case "Check-host":
+              window.open("https://check-host.net/check-http?host=" + query, "_blank");
+              break
+            default:
+              // console.log(`OK: ${dropdownText}`);
+              document.getElementById("card-text-secondary").innerText = 'Что-то пошло не так, попробуйте перезагрузить страницу CTRL + R';
+          }
+        }
+      }
+      
+      // Search on press Go button
+      document.getElementById('button-Go').addEventListener('click', () => {
+        const textValue = inputElement.value;
+        GoSearch(textValue);
+      });
+      
+      // Search on pressed 'Enter' key
+      inputElement.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+          event.preventDefault(); 
+          const inputValue = event.target.value;
+          GoSearch(inputValue); 
+        }
+      });
+    </script>
+  <!--end::page scripts-->
   </body>
   <!--end::Body-->
 </html>
