@@ -302,124 +302,8 @@
           <!--begin::Container-->
           <div class="container-fluid">
             <!--begin::Row-->
-            <div class="row">
-              <div class="col-sm-6 mb-3 mb-sm-3">
-                <div class="card card-outline card-primary collapsed-card">
-                  <div class="card-header">
-                    <h3 class="card-title">Подключение и вход в веб-интерфейс</h3>
 
-                    <div class="card-tools">
-                      <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse">
-                        <i data-lte-icon="expand" class="bi bi-plus-lg"></i>
-                        <i data-lte-icon="collapse" class="bi bi-dash-lg"></i>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="card-body" style="box-sizing: border-box; display: none;">
-                    <ul>
-                      <li>Подключитесь к роутеру: по кабелю в порт <storng>LAN1</storng>, или к заводской Wi-Fi сети (имя/пароль на наклейке)</li>
-                       <li>Откройте браузер и зайдите на <a href="http://192.168.100.1" target="_blank">192.168.100.1</a> или <a href="http://192.168.100.1" target="_blank">192.168.1.1</a> в зависимости модели (точный адрес - на наклейке/в инструкции)</li>
-                    </ul>
-                  </div>
-                  <div class="card-footer">
-                    <p>Если не заходит в веб-интерфейс:</p>
-                    <ul>
-                      <li>Перезагрузите модем отключив по питанию на минуту (некоторые модемы имеют защиту, и блокируют вход в админку после нескольких часов работы)</li> 
-                      <li>Проверьте что ваше устройство получило IP адрес из той же подсети что и сеть модема 192.168.1.x либо 192.168.100.x</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <h2 id="ppoe">Настройка роутера в PPPoE</h2>
-            <div class="row">
-              <div class="col-sm-6 mb-3 mb-sm-3">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5>Настройка роутера в PPPoE</h5>
-                    <p>
-                      Универсальная инструкция для большинства роутеров (TP-Link, Keenetic, ASUS, Tenda и другие). 
-                      Подходит для любого роутера с функцией подключения по PPPoE - пункты меню могут отличаться, ориентируйтесь на смысл.
-                    </p>
-                    Дополнительные параметры которы по-умолчанию не запрашивает но могут понадобиться для расширенной настройки:
-                    <ul>
-                      <li>MTU: 1492 (по умолчанию)</li>
-                      <li>Type: PPPoE client
-                      <li>Поле Service Name - оставить пустым</li>
-                      <li>Use Peer DNS - Enable</li>
-                      <li>Add default route - Enable</li>
-                      <li>Authentication type - PAP/CHAP (Поддерживает оба режима)</li>
-                    </ul>
-                  </div>
-                  <div class="card-footer">
-                    <ul>
-                      <li>PPPoE не подключается: проверьте логин/пароль, MTU 1492, кабель в WAN, перезапустите ONT/модем и роутер, убедитесь что модем переведен в bridge</li>
-                      <li>PPPoE подключается но выдает странный IP либо заглушку - неверный логин/пароль</li>
-                      <li>PPPoE подключается и сразу отваливается: обновите прошивку, проверьте кабель/питание, отключите сомнительные фильтры, проверьте логи на вашем оборудовании</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 mb-3 mb-sm-3">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5>Настройка PPPoE по бренду роутера</h5>
-
-                    <p>Ниже - быстрые ориентиры куда зайти в меню. Пункты могут называться чуть иначе, но логика одинаковая: Internet/WAN - PPPoE - логин/пароль - сохранить.</p>
-                    <ul class="list-group list-group-flush">
-                      <li class="list-group-item">
-                        <strong>TP-Link / Mercusys</strong>
-                        <p>Advanced - Network - Internet (или WAN) - PPPoE. Введите логин/пароль, MTU 1492, Save/Connect</p>
-                      </li>
-                      <li class="list-group-item">
-                        <strong>Keenetic</strong>
-                        <p>Интернет - PPPoE/VPN (или Подключения) - создать/включить PPPoE. Логин/пароль - применить</p>
-                      </li>
-                      <li class="list-group-item">
-                        <strong>ASUS</strong>
-                        <p>WAN - Internet Connection - WAN Connection Type: PPPoE. Username/Password - Apply</p>
-                      </li>
-                      <li class="list-group-item">
-                        <strong>Xiaomi</strong>
-                        <p>Internet settings - Connection type: PPPoE. Введите логин/пароль - сохранить</p>
-                      </li>
-                      <li class="list-group-item">
-                        <strong>Tenda / D-Link</strong>
-                        <p>Internet/WAN - PPPoE. Логин/пароль - сохранить - подключить</p>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-      
-            <!-- <div class="row">
-              <div class="col-sm-6 mb-3 mb-sm-3">
-                <div class="card card-outline card-primary collapsed-card">
-                  <div class="card-header">
-                    <h3 class="card-title">NAME</h3>
-                    <div class="card-tools">
-                      <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse">
-                        <i data-lte-icon="expand" class="bi bi-plus-lg"></i>
-                        <i data-lte-icon="collapse" class="bi bi-dash-lg"></i>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="card-body" style="box-sizing: border-box; display: none;">
-                  </div>
-                  <div class="card-footer">
-                  </div>
-                </div>
-              </div> -->
-
-              <!-- <div class="card h-100">
-                <div class="card-body">
-                </div>
-              </div> -->
-            </div>
-
-            <h2 id="inet">Настройка сетевой карты</h2>
+            <h2 id="inet">ByFly</h2>
             <div class="row">
               <div class="col-sm-6 mb-3 mb-sm-3">
                 <div class="card card-outline card-primary collapsed-card">
@@ -490,35 +374,28 @@
                 </div>
               </div>
 
-              <!-- <div class="card h-100">
-                <div class="card-body">
-                </div>
-              </div> -->
-            </div>
-
-            <div class="row">
-              <div class="col mb-sm-3">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5>Настройка сетевой</h5>
-                    Настройка сетевой карты в системе Windows 10 при автоматических настройках подключения (DHCP).
-                    <ol>
-                      <li>Откройте меню Пуск (Start) - Панель управления(Control Panel) - Сеть и Интернет(Network and Internet) (если этот раздел отсутствует, см. следующий) - Центр управления сетями и общим доступом(Network and Sharing Center) - Изменение параметров адаптера(Change adapter settings) (в левой части окна).</li>
-                      <li>Щелкните правой кнопкой мыши на ярлык Подключение по локальной сети (Local Area Connection) и выберите Свойства (Properties).</li>
-                      <li>В появившемся окне выделите пункт Протокол Интернета версии 4 (TCP/IPv4) (Internet Protocol version 4 (TCP/IPv4)) и нажмите левой кнопкой мыши по кнопке Свойства (Properties).</li>
-                      <li>Выберите пункт Использовать следующий IP-адрес (Use the following IP address). В строке IP-адрес (IP address) впишите значение (без кавычек) 192.168.1.XX (вместо XX число от 10 до 254), в строке Маска подсети (Subnet mask)– значение 255.255.255.0, в строке Основной шлюз (Default gateway) – 192.168.1.1 либо 192.168.100.1 в зависимости от роутера</li>
-                      Выберите пункт Использовать следующие адреса DNS-серверов (Use the following DNS server addresses и введите в строке Предпочитаемый DNS-сервер (Preferred DNS server) 194.158.196.245 и Альтернативный DNS-сервер (Alternate DNS server) значения 86.57.255.149. Далее нажмите ОК
-                      <li>Нажмите Закрыть (Close).</li>
-                    </ol>
-                    <a href="https://www.beltelecom.by/tekstovaya-instrukciya-nastroyki-setevoy-karty-dlya-podklyucheniya-k-seti-internet-po-tekhnologii-2">Инструкция с сайта Белтелеком</a>
+              <div class="col-sm-6 mb-3 mb-sm-3">
+                <div class="card card-outline card-primary collapsed-card">
+                  <div class="card-header">
+                    <h3 class="card-title">Подключение и вход в веб-интерфейс</h3>
+                    <div class="card-tools">
+                      <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse">
+                        <i data-lte-icon="expand" class="bi bi-plus-lg"></i>
+                        <i data-lte-icon="collapse" class="bi bi-dash-lg"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="card-body" style="box-sizing: border-box; display: none;">
+                    <ul>
+                      <li>Подключитесь к роутеру: по кабелю в порт <storng>LAN1</storng>, или к заводской Wi-Fi сети (имя/пароль на наклейке)</li>
+                       <li>Откройте браузер и зайдите на <a href="http://192.168.100.1" target="_blank">192.168.100.1</a> или <a href="http://192.168.100.1" target="_blank">192.168.1.1</a> в зависимости модели (точный адрес - на наклейке/в инструкции)</li>
+                    </ul>
                   </div>
                   <div class="card-footer">
+                    <p>Если не заходит в веб-интерфейс:</p>
                     <ul>
-                      <li>В некоторых случаях настройки принимаются только после презагрузки</li>
-                      <li>Если при натсройке сети требует указать префикс подсети указывать /24</li>
-                      <li>Не рекомендуется отключать - "Протокол Интернета версии 6 (TCP/IPv6)" т.к. используется для внутренних служб Windows</li>
-                      <li>Ошибка - Конфигурация с несколькими основными шлюзами - это не ошибка а особенность настройки нескольких интерфейсов с одним шлюзом (Например Wi-Fi и Ethernet имеют общий шлюз)</li>
-                      <li>Если настройки сетевой слетают необходимо проверить/обновить сетевые драйвера, сделать сброс сети</li>
+                      <li>Перезагрузите модем отключив по питанию на минуту (некоторые модемы имеют защиту, и блокируют вход в админку после нескольких часов работы)</li> 
+                      <li>Проверьте что ваше устройство получило IP адрес из той же подсети что и сеть модема 192.168.1.x либо 192.168.100.x</li>
                     </ul>
                   </div>
                 </div>
@@ -529,65 +406,198 @@
               <div class="col mb-sm-3">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5>Настройка автосогласования</h5>
-                    <p>
-                      Панель управления - Центр управления сетями и общим доступом - Изменение параметров адаптера (слева) 
-                      - Нажмите правой кнопкой мыши на ваше сетевое подключение и выберите Свойства -
-                      Кликните на кнопку Настроить (рядом с названием сетевой карты) - Перейдите на вкладку Дополнительно - 
-                      Найдите пункт Скорость и дуплекс (Speed & Duplex) или Тип подключения - в выпадающем списке выберите 
-                      Автосогласование (Auto Negotiation) - Нажмите ОК.
-                    </p>
-                    <div class="card-footer">
-                      <ul>
-                        <li>
-                          Линк больше 100 Мбит-с может не подниматься из-за старого 4-х жильного кабеля, 
-                          неплотного контакта жил кабеля с коннектором, настроек сетевой и неккоректной работы сетевых драйверов.
-                        </li>
-                      </ul>
+
+                    <!--begin::Accordion-->
+                    <div class="accordion" id="accordionByfly">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseByfly_1"
+                            aria-expanded="false"
+                            aria-controls="collapseByfly_1"
+                          >
+                          Настройка сетевой
+                          </button>
+                        </h2>
+                        <div id="collapseByfly_1" class="accordion-collapse collapse" data-bs-parent="#accordionByfly">
+                          <div class="accordion-body">
+                            Настройка сетевой карты в системе Windows 10 при автоматических настройках подключения (DHCP).
+                            <ol>
+                              <li>Откройте меню Пуск (Start) - Панель управления(Control Panel) - Сеть и Интернет(Network and Internet) (если этот раздел отсутствует, см. следующий) - Центр управления сетями и общим доступом(Network and Sharing Center) - Изменение параметров адаптера(Change adapter settings) (в левой части окна).</li>
+                              <li>Щелкните правой кнопкой мыши на ярлык Подключение по локальной сети (Local Area Connection) и выберите Свойства (Properties).</li>
+                              <li>В появившемся окне выделите пункт Протокол Интернета версии 4 (TCP/IPv4) (Internet Protocol version 4 (TCP/IPv4)) и нажмите левой кнопкой мыши по кнопке Свойства (Properties).</li>
+                              <li>Выберите пункт Использовать следующий IP-адрес (Use the following IP address). В строке IP-адрес (IP address) впишите значение (без кавычек) <a href="">192.168.1.XX</a> (вместо XX число от 10 до 254), в строке Маска подсети (Subnet mask)– значение <a href="">255.255.255.0</a>, в строке Основной шлюз (Default gateway) – <a href="192.168.1.1">192.168.1.1</a> либо <a href="192.168.100.1">192.168.100.1</a> в зависимости от роутера</li>
+                              Выберите пункт Использовать следующие адреса DNS-серверов (Use the following DNS server addresses и введите в строке Предпочитаемый DNS-сервер (Preferred DNS server) <a href="">194.158.196.245</a> и Альтернативный DNS-сервер (Alternate DNS server) значения <a href="">86.57.255.149</a>. Далее нажмите ОК
+                              <li>Нажмите Закрыть (Close).</li>
+                            </ol>
+
+                            Возможные нюансы:
+                            <ul>
+                              <li>В некоторых случаях настройки принимаются только после презагрузки</li>
+                              <li>Если при настройке сети требует указать префикс подсети - указывать /24</li>
+                              <li>Не рекомендуется отключать - "Протокол Интернета версии 6 (TCP/IPv6)" т.к. используется для внутренних служб Windows</li>
+                              <li>"Конфигурация с несколькими основными шлюзами" - появляется если несколько интерфейсов настроено с одним шлюзом (Например Wi-Fi и Ethernet имеют одинаковый шлюз)</li>
+                              <li>Если настройки сетевой слетают необходимо проверить/обновить сетевые драйвера, сделать сброс сети</li>
+                            </ul>
+
+                            <a href="https://www.beltelecom.by/tekstovaya-instrukciya-nastroyki-setevoy-karty-dlya-podklyucheniya-k-seti-internet-po-tekhnologii-2">Инструкция с сайта Белтелеком</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseByfly_2"
+                            aria-expanded="false"
+                            aria-controls="collapseByfly_2"
+                          >
+                          Настройка автосогласования
+                          </button>
+                        </h2>
+                        <div id="collapseByfly_2" class="accordion-collapse collapse" data-bs-parent="#accordionByfly">
+                          <div class="accordion-body">
+                            <p>
+                              Панель управления - Центр управления сетями и общим доступом - Изменение параметров адаптера (слева) 
+                              - Нажмите правой кнопкой мыши на ваше сетевое подключение и выберите Свойства -
+                              Кликните на кнопку Настроить (рядом с названием сетевой карты) - Перейдите на вкладку Дополнительно - 
+                              Найдите пункт Скорость и дуплекс (Speed & Duplex) или Тип подключения - в выпадающем списке выберите 
+                              Автосогласование (Auto Negotiation) - Нажмите ОК.
+                            </p>
+                            <blockquote> 
+                              Линк больше 100 Мбит-с может не подниматься из-за старого 4-х жильного кабеля, 
+                              неплотного контакта жил кабеля с коннектором, настроек сетевой и неккоректной работы сетевых драйверов.
+                            </blockquote>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseByfly_3"
+                            aria-expanded="false"
+                            aria-controls="collapseByfly_3"
+                          >
+                          Настройка роутера в PPPoE
+                          </button>
+                        </h2>
+                        <div id="collapseByfly_3" class="accordion-collapse collapse" data-bs-parent="#accordionByfly">
+                          <div class="accordion-body">
+                            <p>
+                              Универсальная инструкция для большинства роутеров (TP-Link, Keenetic, ASUS, Tenda и другие). 
+                              Подходит для любого роутера с функцией подключения по PPPoE - пункты меню могут отличаться, ориентируйтесь на смысл.
+                            </p>
+                            Дополнительные параметры которы по-умолчанию не запрашивает но могут понадобиться для расширенной настройки:
+                            <ul>
+                              <li>MTU: 1492 (по умолчанию)</li>
+                              <li>Type: PPPoE client
+                              <li>Поле Service Name - оставить пустым</li>
+                              <li>Use Peer DNS - Enable</li>
+                              <li>Add default route - Enable</li>
+                              <li>Authentication type - PAP/CHAP (Поддерживает оба режима)</li>
+                            </ul>
+
+                            <h5>Настройка PPPoE по бренду роутера</h5>
+                            <p>Ниже - быстрые ориентиры куда зайти в меню. Пункты могут называться чуть иначе, но логика одинаковая: Internet/WAN - PPPoE - логин/пароль - сохранить.</p>
+                            <table class="table table-striped">
+                              <tbody>
+                                <tr>
+                                  <td>TP-Link / Mercusys</td>
+                                  <td>Advanced - Network - Internet (или WAN) - PPPoE. Введите логин/пароль, MTU 1492, Save/Connect</td>
+                                </tr>
+                                <tr>
+                                  <td>Keenetic</td>
+                                  <td>Интернет - PPPoE/VPN (или Подключения) - создать/включить PPPoE. Логин/пароль - применить</td>
+                                </tr>
+                                <tr>
+                                  <td>ASUS</td>
+                                  <td>WAN - Internet Connection - WAN Connection Type: PPPoE. Username/Password - Apply</td>
+                                </tr>
+                                <tr>
+                                  <td>Xiaomi</td>
+                                  <td>Internet settings - Connection type: PPPoE. Введите логин/пароль - сохранить</td>
+                                </tr>
+                                <tr>
+                                  <td>Tenda / D-Link</td>
+                                  <td>Internet/WAN - PPPoE. Логин/пароль - сохранить - подключить</td>
+                                </tr>
+                              </tbody>
+                            </table>
+
+                            Возможные проблемы:
+                            <ul>
+                              <li>PPPoE не подключается: проверьте логин/пароль, MTU 1492, кабель в WAN, перезапустите ONT/модем и роутер, убедитесь что модем переведен в bridge</li>
+                              <li>PPPoE подключается но выдает странный IP либо заглушку - неверный логин/пароль</li>
+                              <li>PPPoE подключается и сразу отваливается: обновите прошивку, проверьте кабель/питание, отключите сомнительные фильтры, проверьте логи на вашем оборудовании</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseByfly_4"
+                            aria-expanded="false"
+                            aria-controls="collapseByfly_4"
+                          >
+                            Подключение к Wi-fi
+                          </button>
+                        </h2>
+                        <div id="collapseByfly_4" class="accordion-collapse collapse" data-bs-parent="#accordionByfly">
+                          <div class="accordion-body">
+                            <h5>Имя сети и пароль</h5>
+                            <ul>
+                              <li>SSID: имя сети задайте понятное имя </li>
+                              <li>WLAN-KEY/WPA2 Key: пароль</li>
+                              <li>Безопасность: WPA2-PSK (совместимый режим)</li>
+                            </ul>
+                            <blockquote>
+                              <ul>
+                                <li>Обратите внимание, что по умолчанию для частоты 5 ГГц название сети будет иметь префикс <strong>5G_</strong> , в то время как для частоты 2.4 ГГц префикс отсутствует</li>
+                                <li>Сети byfly-wifi, BELTELECOM_public, BELTELECOM-Wifi публичные, подключайтесь вместо них к вашей домашней сети wi-fi</li>
+                                <li>WPS по-умолчанию отключен в целях безопасности</li>
+                                <li>При обрывах Wi-Fi: 2.4 ГГц - 20 МГц, смените канал на 1/6/11 (авто или менее загруженный), а на 5 ГГц - попробуйте другой канал (без DFS) и 80 МГц</li>
+                              </ul>
+                            </blockquote>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseByfly_5"
+                            aria-expanded="false"
+                            aria-controls="collapseByfly_5"
+                          >
+                            text
+                          </button>
+                        </h2>
+                        <div id="collapseByfly_5" class="accordion-collapse collapse" data-bs-parent="#accordionByfly">
+                          <div class="accordion-body">
+
+                          </div>
+                        </div>
+                      </div> -->
+                    <!--end::Accordion blocks-->  
                     </div>
+                    <!--end::Accordion-->
                   </div>
-                </div>
-              </div>
-            </div>
-          
-            <h2 id="wifi">Wi-fi</h2>
-            <div class="row">
-              <div class="col-sm-6 mb-3 mb-sm-3">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5>Имя сети и пароль</h5>
-                    <ul>
-                      <li>SSID: имя сети задайте понятное имя </li>
-                      <li>WLAN-KEY/WPA2 Key: пароль</li>
-                      <li>Безопасность: WPA2-PSK (совместимый режим)</li>
-                    </ul>
-                    <div class="card-footer">
-                      <ul>
-                        <li>Обратите внимание, что по умолчанию для частоты 5 ГГц название сети будет иметь префикс <strong>5G_</strong> , в то время как для частоты 2.4 ГГц префикс отсутствует</li>
-                        <li>Сети byfly-wifi, BELTELECOM_public, BELTELECOM-Wifi публичные, подключайтесь вместо них к вашей домашней сети wi-fi</li>
-                        <li>WPS по-умолчанию отключен в целях безопасности</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 mb-3 mb-sm-3">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5>Каналы и ширина</h5>
-                    <ul>
-                      <li>2.4 ГГц: ширина 20 МГц, канал 1/6/11 (авто или менее загруженный)</li>
-                      <li>5 ГГц: обычно 80 МГц. При обрывах/провалах попробуйте уйти с DFS-каналов или поставить авто</li>
-                      <li>6 ГГц (Wi-Fi 6E/7): используйте, если устройства поддерживают - там меньше помех</li>
-                    </ul>
-                    <div class="card-footer">
-                      <ul>
-                        <li>Сначала проверьте интернет на кабельном устройстве - так тест точнее</li>
-                        <li>Если по Wi-Fi скорость ниже - это нормально из-за радиосреды. Для максимума используйте кабель или Mesh</li>
-                        <li>При обрывах Wi-Fi: 2.4 ГГц - 20 МГц, смените канал; 5 ГГц - попробуйте другой канал (без DFS) и 80 МГц</li>
-                      </ul>
-                    </div>
-                  </div>
+                  <!-- <div class="card-footer">
+                  </div> -->
                 </div>
               </div>
             </div>
@@ -637,7 +647,7 @@
                         </h2>
                         <div id="collapseIPTV_1" class="accordion-collapse collapse" data-bs-parent="#accordionIPTV">
                           <div class="accordion-body">
-                            Нажать на кнопку «L/R» и выбрать в строке «Субтитры» желаемый вариант субтитров. 
+                            Нажать на кнопку <kbd>L/R</kbd> и выбрать в строке «Субтитры» желаемый вариант субтитров. 
                             Функция включения субтитров доступна для всех телеканалов, но просмотр субтитров возможен при условии их трансляции от телекомпаний. 
                           </div>
                         </div>
@@ -657,7 +667,7 @@
                         </h2>
                         <div id="collapseIPTV_2" class="accordion-collapse collapse" data-bs-parent="#accordionIPTV">
                           <div class="accordion-body">
-                            Открыть меню "Телевидение" - перейти стрелками вверх-вниз на заблокированный канал - нажать INFO на пульте - ввести пароль 1
+                            Открыть меню "Телевидение" - перейти стрелками вверх-вниз на заблокированный канал - нажать <kbd>INFO</kbd> на пульте - ввести пароль 1
                             <blockquote>Синий замок - блокировка стоит только на канал, черный замок - блокировка через родительский контроль по категориив настр стб</blockquote>
                           </div>
                         </div>
@@ -719,10 +729,12 @@
                         </h2>
                         <div id="collapseIPTV_5" class="accordion-collapse collapse" data-bs-parent="#accordionIPTV">
                           <div class="accordion-body">
-                            Для формирования избранного списка каналов необходимо в разделе «Телевидение», при нахождении курсора на интересующем канале, нажать кнопку «App». 
-                            Выбранный канал добавится в список избранных каналов. После этого требуется подтвердить выбор нажатием кнопки «Ok». 
-                            Переход к списку избранных каналов и обратно к основному списку осуществляется нажатием кнопки «<< >>» пульта дистанционного управления. 
-                            При этом изменение номеров каналов в списке не предусматривается.
+                            <p>
+                              Для формирования избранного списка каналов необходимо в разделе «Телевидение», при нахождении курсора на интересующем канале, нажать кнопку <kbd>App</kbd>. 
+                              После этого требуется подтвердить выбор нажатием кнопки <kbd>Ok</kbd>. Выбранный канал добавится в список избранных каналов. 
+                              Переход к списку избранных каналов и обратно к основному списку осуществляется нажатием кнопки <kbd><<</kbd> <kbd>>></kbd> пульта дистанционного управления.
+                            </p>
+                            <blockquote>При этом изменение номеров каналов в списке не предусматривается.</blockquote>
                           </div>
                         </div>
                       </div>
@@ -755,11 +767,11 @@
                     <ul>
                       <li>
                         Для подключения пульта дистанционного управления к приставке, необходимо с близкого
-                        расстояния (20 см.) нажать ОДНОВРЕМЕННО кнопку Громкости (минус) и кнопки "ОК"
+                        расстояния (20 см.) нажать ОДНОВРЕМЕННО кнопку <kbd>Громкости (минус)</kbd> и кнопку <kbd>ОК</kbd>
                         (круглая кнопка в центре пульта) и держать около 10 секунд.
                         Если Вы сделали всё верно, то на экране появится надпись «Успешно Подключен».
                       </li>
-                      <li>Выберите язык, подтверждая свой выбор пультом на OK (круглой кнопкой в центре).</li>
+                      <li>Выберите язык, подтверждая свой выбор пультом на <kbd>OK</kbd> (круглой кнопкой в центре).</li>
                       <li>"Настроить телевизор с помощью телефона Android" - Пропустить</li>
                       <li>В перечне сетей Wi-Fi найдите и выберите Вашу сеть</li>
                       <ul>
@@ -787,8 +799,8 @@
                       <li>Отобразится логотип загрузки SMART ZALA затем появится поле для ввода Логина и Пароля</li>
                       <ul>
                         Для ввода данных, нажмите на центральную круглую кнопку пульта отобразится виртуальная клавиатура.
-                        <li>1. Введите данные в "Имя пользователя", используя логин (15 цифр), далее сверните клавиатуру, нажав <- кнопку "Назад"</li>
-                        <li>2. Спуститесь на строку ввода пароля и введите Первоначальный пароль из Бланк-заказа услуги, сверните клавиатуру, нажав <- кнопку "Назад"</li>
+                        <li>1. Введите данные в "Имя пользователя", используя логин (15 цифр), далее сверните клавиатуру, нажав <kbd><-</kbd> кнопку "Назад"</li>
+                        <li>2. Спуститесь на строку ввода пароля и введите Первоначальный пароль из Бланк-заказа услуги, сверните клавиатуру, нажав <kbd><-</kbd> кнопку "Назад"</li>
                         <li>3. Спуститесь на кнопку «Вход». Нажмите на пульте центральную круглую кнопку</li>
                       </ul>
                       <li>Вход в приложение выполнен. Для просмотра ТВ-передач выберите раздел "Телевидение"</li>
@@ -818,25 +830,25 @@
                   <div class="card-body" style="box-sizing: border-box; display: none;">
                     <ul>
                       <li>В случае верного подключения на экране отображается логотип «ZALA». Пожалуйста, дождитесь завершения загрузки.</li>
-                      <li>Выберите язык и нажмите кнопку «ОК» на пульте управления</li>
+                      <li>Выберите язык и нажмите кнопку <kbd>ОК</kbd> на пульте управления</li>
                       <li>В открывшемся окне ожидайте отображения доступных сетей Wi-Fi.</li>
-                      <li>В перечне сетей Wi-Fi выберите Вашу сеть - нажмите кнопку «ОК» на пульте управления</li>
-                      <li>Введите пароль для Вашей сети Wi-Fi. Подтвердите ввод, выбрав кнопку «ОК»</li>
+                      <li>В перечне сетей Wi-Fi выберите Вашу сеть - нажмите кнопку <kbd>ОК</kbd> на пульте управления</li>
+                      <li>Введите пароль для Вашей сети Wi-Fi. Подтвердите ввод, выбрав кнопку <kbd>OK</kbd></li>
                       <li>
                         "Настройка беспроводного подключения", дождитесь завершения настройки подключения.
                         Приставка автоматически проверит настройки подключения и отобразит доступную скорость доступа в Интернет.
                       </li>
-                      <li>Выберите «Далее» и нажмите кнопку «ОК» на пульте управления</li>
+                      <li>Выберите «Далее» и нажмите кнопку <kbd>OK</kbd> на пульте управления</li>
                       <li>В появившейся форме в поле «Логин» вводим логин(15 цифр) и в поле «Пароль»
                         вводим Первоначальный пароль из бланка заказа услуги, нажимаем «Далее».
                       </li>
                       <li>
-                        Отобразится окно создания профиля пользователя. В открывшемся окне в поле задайте имя профиля: при нажатии на кнопку «Ок»
+                        Отобразится окно создания профиля пользователя. В открывшемся окне в поле задайте имя профиля: при нажатии на кнопку <kbd>OK</kbd>
                         пульта отобразится виртуальная клавиатура. Выберите тип профиля (мужской/женский/детский) и картинку профиля.
-                        Подтвердите кнопкой «Ок» на пульте.
+                        Подтвердите кнопкой <kbd>OK</kbd> на пульте.
                       </li>
-                      <li>Выбираем «Готово» и подтверждаем нажатием «ОК»</li>
-                      <li>Настройка и вход в профиль окончены. Для просмотра ТВ-передач выберите раздел «ТВ» кнопкой «Ок» на пульте</li>
+                      <li>Выбираем «Готово» и подтверждаем нажатием <kbd>OK</kbd></li>
+                      <li>Настройка и вход в профиль окончены. Для просмотра ТВ-передач выберите раздел «ТВ» кнопкой <kbd>OK</kbd> на пульте</li>
                     </ul>
                   </div>
                   <div class="card-footer">
@@ -892,7 +904,7 @@
                     В случае недоступности установки приложений «ZALA» через магазины приложений:
                     <ul>
                       <li>Проверить регион в настройках ТВ - должен стоять Беларусь</li>
-                      <li>Для ТВ на базе Anroid попробовать загрузить установочные файлы приложения через приложение "ATK Downloader" с сайта Белтелеком</li>
+                      <li>Для ТВ на базе Android попробовать загрузить <a href="https://www.beltelecom.by/programmnoe-obespechenie-po-usluge-smart-zala">установочные файлы APK</a> через приложение <a href="https://play.google.com/store/apps/details?id=com.esaba.downloader">Downloader</a> с сайта Белтелеком</li>
                     </ul>
                     <a href="https://www.beltelecom.by/programmnoe-obespechenie-po-usluge-smart-zala">Программное обеспечение по услуге "SMART ZALA"</a>
                     <blockquote>Оператор не гарантирует работу Услуги ИТ на приставках, купленных Абонентом самостоятельно и отдельных моделях телевизоров</blockquote>
@@ -924,27 +936,33 @@
                   </div>
                   <div class="card-body" style="box-sizing: border-box; display: none;">
                     <ol>
-                      <li>После загрузки приставки нажать кнопку «menu» на пульте приставки</li>
-                      <li>найти вкладку «Настройки», нажать на пульте кнопку «Ок»</li>
-                      <li>выбрать «Удалить все», нажать на пульте кнопку «Ок»</li>
+                      <li>После загрузки приставки нажать кнопку <kbd>menu</kbd> на пульте приставки</li>
+                      <li>найти вкладку «Настройки», нажать на пульте кнопку <kbd>Ок</kbd></li>
+                      <li>выбрать «Удалить все», нажать на пульте кнопку <kbd>Ок</kbd></li>
                       <li>подтвердить, что вы хотите удалить все каналы, нажав «Да»</li>
-                      <li>нажать кнопку «menu» на пульте приставки</li>
-                      <li>найти вкладку «настройки», нажать на пульте кнопку «ок»</li>
-                      <li>на странице «настройки» перейти на вкладку «сканирование каналов» и нажать на пульте кнопку «ок»</li>
+                      <li>нажать кнопку <kbd>menu</kbd> на пульте приставки</li>
+                      <li>найти вкладку «настройки», нажать на пульте кнопку <kbd>ок</kbd></li>
+                      <li>на странице «настройки» перейти на вкладку «сканирование каналов» и нажать на пульте кнопку </kbd>ок<kbd></li>
                       <li>на появившейся странице «Сканирование каналов» заполнить требуемые параметры:</li>
                       <ul>
                         <li>«Режим сканирование» - выбрать «по каналу»</li>
                         <li>«Диапазон» - выбрать «UHF»</li>
                         <li>«Номер канала» - выбрать номер канала(частота) исходя из <a href="https://www.beltelecom.by/coverage-maps-table">таблицы</a></li>
                       </ul>
-                      <li>после выбора номера канала на странице «Сканирование каналов» должно появиться стабильное значение интенсивности и качества сигнала 25-30% и более. Далее перейти на «Поиск» и нажать на пульте кнопку «ок». Начинается сканирование выбранного радиочастотного канала. По результатам сканирования появляется перечень телеканалов, входящих в отсканированный радиочастотный канал.</li>
+                      <li>
+                        после выбора номера канала на странице «Сканирование каналов» должно появиться стабильное значение интенсивности и качества сигнала 25-30% и более. 
+                        Далее перейти на «Поиск» и нажать на пульте кнопку <kbd>OK</kbd>. Начинается сканирование выбранного радиочастотного канала. 
+                        По результатам сканирования появляется перечень телеканалов, входящих в отсканированный радиочастотный канал.
+                      </li>
                       <li>повторить пункты 6-10 для сканирования радиочастотных каналов других мультиплексов, выбрав номер канала (частоту) исходя из <a href="https://www.beltelecom.by/coverage-maps-table">таблицы</a></li>
                     </ol>
                     <blockquote>Настройка будет успешной при условии что показатели интенсивности и качества принимаемого сигнала телеканалов стабильны и составляют 25-30% и более</blockquote>
                   </div>
                   <div class="card-footer">
-                    <li><a href="https://www.beltelecom.by/sites/default/files/content/zala/rukovodstvo_polzovatelia/manual_ZALA_efirnoe_meta-jun-2023.doc">Руководство пользователя эфирного телевидения ZALA (Мэта)</a></li>
-                    <li><a href="https://www.beltelecom.by/sites/default/files/content/zala/rukovodstvo_polzovatelia/Instruktciia-tiuner-Vitiaz.pdf">Руководство пользователя эфирного телевидения ZALA (Витязь)</a></li>
+                    <ul>
+                      <li><a href="https://www.beltelecom.by/sites/default/files/content/zala/rukovodstvo_polzovatelia/manual_ZALA_efirnoe_meta-jun-2023.doc">Руководство пользователя эфирного телевидения ZALA (Мэта)</a></li>
+                      <li><a href="https://www.beltelecom.by/sites/default/files/content/zala/rukovodstvo_polzovatelia/Instruktciia-tiuner-Vitiaz.pdf">Руководство пользователя эфирного телевидения ZALA (Витязь)</a></li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -1031,9 +1049,16 @@
               <div class="col-sm-6 mb-3 mb-sm-3">
                 <div class="card h-100">
                   <div class="card-body">
+                    Полезные ссылки:
                     <ul>
                       <li><a href="https://www.beltelecom.by/coverage-maps">Карты охвата телевизионными программами</a></li>
                       <li><a href="https://www.beltelecom.by/news/main/kak-samostoyatelno-nastroit-efirnoe-televidenie">Как самостоятельно настроить эфирное телевидение</a></li>
+                      <li><a href="https://lan1.by/qa/1859/">Как настроить эфирную залу через CAM модуль</a></li>
+                    </ul>
+                    Инструкции для приставок:
+                    <ul>
+                      <li><a href="https://www.beltelecom.by/sites/default/files/content/zala/rukovodstvo_polzovatelia/manual_ZALA_efirnoe_meta-jun-2023.doc">Руководство пользователя эфирного телевидения ZALA (Мэта)</a></li>
+                      <li><a href="https://www.beltelecom.by/sites/default/files/content/zala/rukovodstvo_polzovatelia/Instruktciia-tiuner-Vitiaz.pdf">Руководство пользователя эфирного телевидения ZALA (Витязь)</a></li>
                     </ul>
                   </div>
                 </div>
@@ -1065,7 +1090,7 @@
                                 Эта запись свидетельствует о том, что привязка карты условного доступа к приставке
                                 прошла успешно и приставка готова для раскодирования телевизионного сигнала. 
                               </li>
-                              <li>В случае, если "Pairing bad" необходио попробовать перезагрузить STB/Переаодключить Smart-карту.</li>
+                              <li>В случае, если "Pairing bad" необходио попробовать перезагрузить STB/Переподключить Smart-карту.</li>
                             </ul>
                           </div>
                         </div>
@@ -1112,17 +1137,39 @@
                         <div id="collapseDVB_3" class="accordion-collapse collapse" data-bs-parent="#accordionDVB">
                           <div class="accordion-body">
                             <ol>
-                              <li>нажать кнопку «menu» на пульте приставки</li>
-                              <li>найти вкладку «Избранное», нажать на пульте кнопку «Ок»</li>
-                              <li>на странице «Избранное» выбрать вкладку «Избранное», нажать кнопку «Ок»</li>
+                              <li>нажать кнопку <kbd>menu</kbd> на пульте приставки</li>
+                              <li>найти вкладку «Избранное», нажать на пульте кнопку <kbd>Ок</kbd></li>
+                              <li>на странице «Избранное» выбрать вкладку «Избранное», нажать кнопку <kbd>Ок</kbd></li>
                               <li>появилась страница «Список каналов», на которой отражаются все телепрограммы</li>
-                              <li>перемещением навигационными кнопками ↑ и ↓ пульта просматриваем изображения телепрограмм в верхней правой части малого экрана (для того чтобы появилось изображение, нужно при выбранной телепрограмме нажать кнопку «Ок»)</li>
-                              <li>при отсутствии изображения на выбранной телепрограмме (выбрали телепрограмму, нажали «Ок» и изображение не появилось) – нажимаем на пульте синюю кнопку 2 раза, далее нажимаем кнопку «Ок». На выбранной телепрограмме появится значок «х», т. е. телепрограмма подготовлена к удалению из общего списка, далее нажать на пульте  синюю кнопку 1 раз</li>
-                              <li>перемещением навигационными кнопками ↑ и ↓ пульта просматриваем изображения остальных телепрограмм в верхней правой части малого экрана (для того чтобы появилось изображение, нужно при выбранной телепрограмме нажать кнопку «Ок»)</li>
-                              <li>при отсутствии изображения на выбранной телепрограмме (выбрали телепрограмму, нажали «Ок» и изображение не появилось) – нажимаем на пульте синюю кнопку 1 раз, далее нажимаем кнопку «Ок». На выбранной телепрограмме появится значок «х», т. е. телепрограмма подготовлена к удалению из общего списка, нажать на пульте синюю кнопку 1 раз</li>
+                              <li>перемещением навигационными кнопками ↑ и ↓ пульта просматриваем изображения телепрограмм в верхней правой части малого экрана (для того чтобы появилось изображение, нужно при выбранной телепрограмме нажать кнопку <kbd>Ок</kbd>)</li>
+                              <li>при отсутствии изображения на выбранной телепрограмме (выбрали телепрограмму, нажали <kbd>OK</kbd> и изображение не появилось) – нажимаем на пульте синюю кнопку 2 раза, далее нажимаем кнопку <kbd>OK</kbd>. На выбранной телепрограмме появится значок «х», т. е. телепрограмма подготовлена к удалению из общего списка, далее нажать на пульте <kbd>синюю кнопку</kbd> 1 раз</li>
+                              <li>перемещением навигационными кнопками ↑ и ↓ пульта просматриваем изображения остальных телепрограмм в верхней правой части малого экрана (для того чтобы появилось изображение, нужно при выбранной телепрограмме нажать кнопку <kbd>Ок</kbd>)</li>
+                              <li>при отсутствии изображения на выбранной телепрограмме (выбрали телепрограмму, нажали <kbd>OK</kbd> и изображение не появилось) – нажимаем на пульте синюю кнопку 1 раз, далее нажимаем кнопку <kbd>OK</kbd>. На выбранной телепрограмме появится значок «х», т. е. телепрограмма подготовлена к удалению из общего списка, нажать на пульте <kbd>синюю кнопку</kbd> 1 раз</li>
                               <li>Далее пункты  7, 8  повторяем  для  остальных телепрограмм без  изображения</li>
-                              <li>после того как выбрали все неработающие телепрограммы, нажать кнопку «EXIT» на пульте. На экране появится вкладка с текстом «Вы действительно хотите сохранить?» – нажать «ДА». Список телеканалов обновится.</li>                          
+                              <li>после того как выбрали все неработающие телепрограммы, нажать кнопку <kbd>EXIT</kbd> на пульте. На экране появится вкладка с текстом «Вы действительно хотите сохранить?» – нажать <kbd>ДА</kbd>. Список телеканалов обновится.</li>                          
                             </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseDVB_4"
+                            aria-expanded="false"
+                            aria-controls="collapseDVB_4"
+                          >
+                          Переключение TV / Радио
+                          </button>
+                        </h2>
+                        <div id="collapseDVB_4" class="accordion-collapse collapse" data-bs-parent="#accordionDVB">
+                          <div class="accordion-body">
+                            <p>
+                              В состав стандартных пакетов включен Первый национальный канал Белорусского радио. Это крупнейший радиоканал Беларуси. 
+                              Для того, чтобы слушать радио необходимо настроить прием любого канала и перевести приставку в режим работы со звуковыми программами (для чего нажать на пульте приставки кнопку <kbd>TV/R</kbd>).
+                            </p>
                           </div>
                         </div>
                       </div>
@@ -1133,6 +1180,133 @@
               </div>
             </div>    
   
+            <h3>Videocontrol</h3>
+            <div class="row">
+              <div class="col-sm-6 mb-3 mb-sm-3">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <p>Веб-портал Видеоконтроль: <a href="https://myvideo.beltelecom.by">myvideo.beltelecom.by</a></p>
+                    <p>DNS для Видеоконтроля (АРМ) 10.1.17.6 10.1.17.7, Порты 8443 и 5001</p>
+                    Руководство пользователя:
+                    <ul>
+                      <li><a href="https://myvideo.beltelecom.by/s3/vms-store/downloads/documents/6a31357a74042/Руководство_Web-пользователя.pdf">Руководство пользователя веб-портала</a></li>
+                      <li><a href="https://myvideo.beltelecom.by/s3/vms-store/downloads/documents/6a3137b353675/Руководство_пользователя_Desktop_клиента.pdf">Руководство пользователя АРМ</a></li>
+                    </ul>
+                    Руководства для юрлиц:
+                    <ul>
+                      <li><a href="https://myvideo.beltelecom.by/s3/vms-store/downloads/documents/6732a7596cf6e/Руководство_по_обновлению_АРМ.pdf">Руководство по обновлению АРМ</a></li>
+                      <li><a href="https://myvideo.beltelecom.by/s3/vms-store/downloads/documents/6a31335953b42/Инструкция_wildberries.pdf">Руководство по созданию токена интеграции c wildberries</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 mb-3 mb-sm-3">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <!--begin::Accordion-->
+                    <div class="accordion" id="accordionVKS">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseVKS_1"
+                            aria-expanded="false"
+                            aria-controls="collapseVKS_1"
+                          >
+                          Завершить сессию
+                          </button>
+                        </h2>
+                        <div id="collapseVKS_1" class="accordion-collapse collapse" data-bs-parent="#accordionVKS">
+                          <div class="accordion-body">
+                            Через Web-версию: 
+                            <ul>
+                              <li>Выбрать управление - профиль - активные сессии. Откроется список сессии, и необходимо завершить лишние сессии. </li>
+                            </ul>
+                            Через мобильное приложение: 
+                            <ul>
+                              <li>Выбрать прочее - сессии - откроются активные сессии, выбрать сессию для завершения, и нажать внизу кнопку «завершить сессию». </li>
+                            </ul>
+                            <blockquote>По договору может быть только 2 активные сессии для физлиц, 1 для юрлиц</blockquote>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseVKS_2"
+                            aria-expanded="false"
+                            aria-controls="collapseVKS_2"
+                          >
+                          Настройка буфферизации в приложении
+                          </button>
+                        </h2>
+                        <div id="collapseVKS_2" class="accordion-collapse collapse" data-bs-parent="#accordionVKS">
+                          <div class="accordion-body">
+                            <ul>
+                              <li>Войти в приложение. Прочее -> Настройки -> Протокол проигрывания видео.</li>
+                              <li>2 варианта: «Минимальная задержка (RTSP-протокол)» и «Буферизация (HLS-протокол)»</li>
+                              <li>Выбрать второй, «Буферизация (HLS-протокол)» Сохранить изменения.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseVKS_3"
+                            aria-expanded="false"
+                            aria-controls="collapseVKS_3"
+                          >
+                          Архив
+                          </button>
+                        </h2>
+                        <div id="collapseVKS_3" class="accordion-collapse collapse" data-bs-parent="#accordionVKS">
+                          <div class="accordion-body">
+                            <p>С мобильной версии приложения выгрузить можно отрывок до 10 минут, с браузера до 2х часов</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseVKS_4"
+                            aria-expanded="false"
+                            aria-controls="collapseVKS_4"
+                          >
+                          Объединение логинов
+                          </button>
+                        </h2>
+                        <div id="collapseVKS_4" class="accordion-collapse collapse" data-bs-parent="#accordionVKS">
+                          <div class="accordion-body">
+                            <p>
+                              Увидеть все камеры если у вас два и более договора возможно через внешнюю авторизацию.
+                              <ul>
+                                <li>Сперва зарегистрируйтесь в «Мой Белтелеком», и добавьте ваши договора по услуге Видеоконтроль.</li> 
+                                <li>После добавления всех услуг, необходимо открыть приложение Видеоконтроль либо сайт myvideo.beltelecom.by</li> 
+                                <li>Далее выбрать внешнюю авторизацию (вход с помощью сайта в приложении) - Вас перенаправит на авторизацию в «Мой Белтелеком»</li> 
+                                <li>После успешной авторизации все камеры будут видны.</li>
+                              </ul>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!--end::Accordion-->
+                  </div>
+                </div>
+              </div>
+            </div> 
             <!--end::Row-->
           </div>
           <!--end::Container-->
