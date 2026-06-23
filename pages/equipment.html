@@ -301,54 +301,91 @@
         <div class="app-content">
           <!--begin::Container-->
           <div class="container-fluid">
-            <!--begin::Row-->
-            <div class="row" id="inet">
-
-              <div class="row">
-                <div class="col-sm-6 mb-3 mb-sm-3">
-                  <div class="card card-outline card-primary collapsed-card">
-                    <div class="card-header">
-                      <h3 class="card-title">Статьи по настройке оборудования</h3>
-                      <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse">
-                          <i data-lte-icon="expand" class="bi bi-plus-lg"></i>
-                          <i data-lte-icon="collapse" class="bi bi-dash-lg"></i>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="card-body" style="box-sizing: border-box; display: none;">
-                      <ul>
-                        <li><a target="_blank" href="https://www.beltelecom.by/private/other/vozmeshchenie-stoimosti-imushchestva-rup-beltelekom">Возмещение стоимости имущества (Белтелеком)</a></li>
-                        <li><a target="_blank" href="https://www.beltelecom.by/help/checklist-for-settings">Помощь по настройке на сайте (Белтелеком)</a></li>
-                        <li><a target="_blank" href="https://howto.by/">Список статей, руководств и FAQ (howto)</a></li>
-                        <li><a target="_blank" href="https://lan1.by/ins">Инструкции (LAN1)</a></li>
+            <!--begin::navbar table-->
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+              <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav me-auto mb-0 mb-lg-0">
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Полезные ресурсы</a>
+                      <ul class="dropdown-menu">
+                        <li>
+                          <a class="dropdown-item" target="_blank" href="https://www.beltelecom.by/private/other/vozmeshchenie-stoimosti-imushchestva-rup-beltelekom">Возмещение стоимости имущества (Белтелеком)</a>
+                        </li>
+                        <hr class="dropdown-divider">
+                        <li>
+                          <a class="dropdown-item" target="_blank" href="https://howto.by/">Список статей, руководств и FAQ (howto)</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" target="_blank" href="https://lan1.by/ins">Инструкции (LAN1)</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" target="_blank" href="https://netflow.by/blog/tweak-isp/promsvyaz">Инструкции для оборудования промсвязь</a>
+                        </li>
+                        <li>
+                          <hr class="dropdown-divider">
+                        </li>
+                        <li>
+                          <a class="dropdown-item" target="_blank" href="openmyip.com">PortForwarding for dummies</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" target="_blank" href="https://wikidevi.wi-cat.ru/Category:ZTE">ZTE Hardware info</a> 
+                          <a class="dropdown-item" target="_blank" href="https://wikidevi.wi-cat.ru/Category:Huawei">Huawei Hardware info</a>
+                        </li>
                       </ul>
-                    </div>
-                    <!-- <div class="card-footer">
-                    </div> -->
-                  </div>
-                </div>
-  
-                <!-- <div class="col-sm-6 mb-3 mb-sm-3">
-                  <div class="card card-outline card-primary collapsed-card">
-                    <div class="card-header">
-                      <h3 class="card-title">TEXT</h3>
-                      <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse">
-                          <i data-lte-icon="expand" class="bi bi-plus-lg"></i>
-                          <i data-lte-icon="collapse" class="bi bi-dash-lg"></i>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="card-body" style="box-sizing: border-box; display: none;">
-          
-                    </div>
-                    <div class="card-footer">
-                    </div>
-                  </div>
-                </div> -->
-              </div>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" aria-current="page" target="_blank" href="http://10.248.36.229"  
+                      data-bs-toggle="tooltip" data-bs-title="Список оборудования в наличии">
+                        <i class="bi bi-router"></i>  Оборудование в наличии
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" aria-current="page" target="_blank" href="https://www.beltelecom.by/help/checklist-for-settings" 
+                      data-bs-toggle="tooltip" data-bs-title="Памятки по настройкам на сайте Белтелеком">
+                        Памятки по настройкам
+                      </a>
+                    </li>
 
+                    <li class="nav-item">
+                      <a class="nav-link" aria-current="page" target="_blank" href="https://shop.beltelecom.by/catalog/kompyutery-i-seti/setevoe-oborudovanie/routery/" 
+                      data-bs-toggle="tooltip" data-bs-title="Сетевое оборудование в Beltelecom-shop">
+                        <i class="bi bi-bag-check"></i> Beltelecom-shop
+                      </a>
+                    </li>
+                  </ul>
+
+                  <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                      <a class="nav-link disabled" aria-disabled="true"> <i class="bi bi-arrow-right"></i> </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Выберите тип</a>
+                      <ul class="dropdown-menu">
+                        <li>
+                          <a class="dropdown-item" href="#onu">PON ONT/ONU</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#dsl">DSL</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#smarthome">Контроллеры</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#router">Роутеры</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#tv">TV-приставки</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+            <!--begin::Row-->
+            <div class="row" id="onu">
               <div class="col mb-sm-3">
                 <div class="card h-100">
                   <div class="card-body">
@@ -448,6 +485,11 @@
                           <td><span class="badge text-bg-warning">4 FE</span> <span class="badge bg-secondary">2 FXS</span></td>
                           <td>802.11b/g</td>
                           <td>
+                            <a class="navbar-brand" title="Инструкция по настройке" target="_blank"
+                            href="https://netflow.by/blog/tweak-isp/119-nastroika-wi-fi-on-pon-roter-promsvyaz" aria-label="Up">
+                              <i class="bi bi-info-square"></i>
+                            </a>
+                            &nbsp;&nbsp;
                             <a class="navbar-brand" title="Паспорт модема" target="_blank"
                             href="https://www.manualslib.com/manual/1500656/Zte-Zxhn-F660.html" aria-label="Up">
                               <i class="bi bi-file-richtext-fill"></i>
@@ -525,7 +567,7 @@
                     </div>
                     <br>
                     
-                    <h3>DSL модемы</h3>
+                    <h3 id="dsl">DSL модемы</h3>
                     <div class="table-responsive">
                       <table class="table table-striped">
                       <thead>
@@ -686,7 +728,7 @@
                     </div>
                     <br>
 
-                    <h3>Контроллеры</h3>
+                    <h3 id="smarthome">Контроллеры</h3>
                     <div class="table-responsive">
                       <table class="table table-striped">
                       <thead>
@@ -738,7 +780,7 @@
                     </div>
                     <br>
 
-                    <h3>Роутеры</h3>
+                    <h3 id="router">Роутеры</h3>
                     <div class="table-responsive">
                       <table class="table table-striped">
                       <thead>
