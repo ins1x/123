@@ -322,7 +322,7 @@
                       <!-- <h1 class="display-2 fw-bold">Online-checker</h1> -->
                       <p class="card-text">
                         <p class="col-md-8 fs-4">
-                          Проверка через онлайн-утилиты
+                          Проверка через <a href="#" class="text-decoration-none" style="color: grey;">онлайн-утилиты</a>  <i class="bi bi-globe"></i>
                         </p>
                         <div class="input-group mb-3">
                           <div class="dropdown">
@@ -509,7 +509,7 @@
                   <div>
                     <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
                       <i class="nav-icon bi bi-envelope-slash"></i>
-                      Спам базы
+                      Spam-base
                     </h3>
                     <p>
                       Проверить IP в спам-базах
@@ -837,7 +837,6 @@
       });
       
       const inputElement = document.getElementById('input-Go');
-      const ciscoMacRegex = /^([0-9a-fA-F]{4}\.){2}[0-9a-fA-F]{4}$/;
 
       // Go search <URL>
       function GoSearch(query) {
@@ -899,13 +898,21 @@
         event.target.value = event.target.value.replace(/^https?:\/\//i, '');
         // Regular expression remove "www." at the beginning of a line (case insensitive)
         event.target.value = event.target.value.replace(/^www\./i, '');
+        
         // Convert from cisco format dead.beef.1234 to common format de:ad:be:ef:12:34
         const dropdownText = document.getElementById('button-dropdown').innerText.trim();
-        if (dropdownText === "MAC-Vendor"){
-          if (ciscoMacRegex.test(event.target.value)) {
-            const cleanMac = event.target.value.replace(/\./g, '');
-            event.target.value = cleanMac.match(/.{1,2}/g).join(':').toLowerCase();
-          }
+        
+        const ciscoMacRegex = /^([0-9a-fA-F]{4}\.){2}[0-9a-fA-F]{4}$/;
+        if (ciscoMacRegex.test(event.target.value)) {
+          const cleanMac = event.target.value.replace(/\./g, '');
+          event.target.value = cleanMac.match(/.{1,2}/g).join(':').toLowerCase();
+          document.getElementById("button-dropdown").innerText = 'MAC-Vendor';
+        }
+        const huaweiMacRegex = /^([0-9a-fA-F]{4}\-){2}[0-9a-fA-F]{4}$/;
+        if (huaweiMacRegex.test(event.target.value)) {
+          const cleanMac = event.target.value.replace(/\-/g, '');
+          event.target.value = cleanMac.match(/.{1,2}/g).join(':').toLowerCase();
+          document.getElementById("button-dropdown").innerText = 'MAC-Vendor';
         }
       });
 
