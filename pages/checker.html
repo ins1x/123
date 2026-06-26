@@ -314,7 +314,10 @@
               <div class="card">
                 <div class="row g-0">
                   <div class="col-md-4">
-                  <!-- Add menu here-->
+                  <!-- IPAPI here-->
+                    <!-- <div class="editor">
+                       <textarea id="ipapi" class="form-control" rows="6" placeholder="Fetch ip data…" style="min-height: 10rem"></textarea>
+                    </div> -->
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
@@ -336,7 +339,7 @@
                               Whois
                             </button>
                             <ul class="dropdown-menu" id="dropdown-search">
-                              <li><h6 class="dropdown-header">Select service</h6></li>
+                              <!-- <li><h6 class="dropdown-header">Select service</h6></li> -->
                               <li><a class="dropdown-item" href="#">Whois</a></li>
                               <li><a class="dropdown-item" href="#">Trace</a></li>
                               <li><a class="dropdown-item" href="#">Ping</a></li>
@@ -395,6 +398,8 @@
                         <li><a href="https://ping.pe" target="_blank">ping.pe</a></li>
                         <li><a href="https://ping.eu" target="_blank">ping.eu</a></li>
                         <li><a href="https://dnschecker.org/ping-ipv4.php" target="_blank">IP-Pinger</a></li>
+                        <li><a href="https://globalping.io" target="_blank">globalping.io</a></li>
+                        <li><a href="https://centralops.net/CO/Ping" target="_blank">centralops.net</a></li>
                       </ul>
                   </div>
                 </div>
@@ -556,6 +561,8 @@
                       <li><a href="https://url.fortinet.net/rate/submit.php" target="_blank">fortinet</a></li>
                       <li><a href="https://belgie.by/ru/other/info" target="_blank">БелГИЭ</a></li>
                       <li><a href="https://multirbl.valli.org/lookup" target="_blank">MultiRBL</a></li>
+                      <li><a href="https://blockedin.org/ru/" target="_blank">Мониторинг реестров</a></li>
+                      <li><a href="https://applecensorship.com/app-store-monitor" target="_blank">app-store-monitor</a></li>
                     </ul>
                   </div>
                 </div>
@@ -728,6 +735,7 @@
                       <li><a href="https://www.peeringdb.com/" target="_blank">peeringdb</a></li>
                       <li><a href="https://www.submarinecablemap.com/supplier/asn" target="_blank">submarinecablemap</a></li>
                       <li><a href="https://whoisfreaks.com/tools/asn-whois/lookup" target="_blank">whoisfreaks (ASN Whois)</a></li>
+                      <li><a href="https://radar.qrator.net/as/62014" target="_blank">radar.qrator</a></li>
                     </ul>
                   </div>
                 </div>
@@ -750,7 +758,7 @@
                 </div>
               </div>
 
-              <h2 class="pb-2 border-bottom">Браузерные тесты</h2>
+              <h2 class="pb-2 border-bottom">Прочее</h2>
               <div
                 class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-3 py-5"
                >
@@ -771,7 +779,23 @@
                       </ul>
                   </div>
                 </div>
+
+                <div class="col d-flex align-items-start">
+                  <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
+                      <i class="nav-icon bi bi-patch-plus"></i>
+                      Etc
+                    </h3>
+                    <p>
+                      
+                    </p>
+                      <ul>
+                        <li><a href="https://www.lyngsat.com/providers/ru/RSCC.html" target="_blank">Мониторинг вещания RSCC</a></li>
+                      </ul>
+                  </div>
+                </div>
               </div>
+
 
             </div>
             <!--end::Row-->
@@ -899,15 +923,23 @@
         // Regular expression remove "www." at the beginning of a line (case insensitive)
         event.target.value = event.target.value.replace(/^www\./i, '');
         
-        // Convert from cisco format dead.beef.1234 to common format de:ad:be:ef:12:34
         const dropdownText = document.getElementById('button-dropdown').innerText.trim();
         
+        // Select dropdown MAC-Vendor item if find MAC 
+        const macRegex = /^(([0-9A-Fa-f]{2}[:]){5}|([0-9A-Fa-f]{2}[-]){5})([0-9A-Fa-f]{2})$/;
+        if (macRegex.test(event.target.value)) {
+          document.getElementById("button-dropdown").innerText = 'MAC-Vendor';
+        }
+        
+        // Convert from cisco format dead.beef.1234 to common format de:ad:be:ef:12:34
         const ciscoMacRegex = /^([0-9a-fA-F]{4}\.){2}[0-9a-fA-F]{4}$/;
         if (ciscoMacRegex.test(event.target.value)) {
           const cleanMac = event.target.value.replace(/\./g, '');
           event.target.value = cleanMac.match(/.{1,2}/g).join(':').toLowerCase();
           document.getElementById("button-dropdown").innerText = 'MAC-Vendor';
         }
+        
+        // Convert from huawei format dead-beef-1234 to common format de:ad:be:ef:12:34
         const huaweiMacRegex = /^([0-9a-fA-F]{4}\-){2}[0-9a-fA-F]{4}$/;
         if (huaweiMacRegex.test(event.target.value)) {
           const cleanMac = event.target.value.replace(/\-/g, '');
@@ -915,6 +947,25 @@
           document.getElementById("button-dropdown").innerText = 'MAC-Vendor';
         }
       });
+      
+      // Maybe add later IP-API requests
+      // async function getIpApiData() {
+      //   try {
+      //     const response = await fetch('http://ip-api.com/json/?fields=query,country,regionName,timezone,isp,org,as,asname,reverse');
+          
+      //     if (!response.ok) {
+      //       throw new Error(`HTTP error! Status: ${response.status}`);
+      //     }
+          
+      //     const data = await response.json(); 
+      //     const jsonToString = JSON.stringify(data, null, 2);
+      //     document.getElementById("ipapi").textContent = jsonToString;
+
+      //   } catch (error) {
+      //     console.error('Failed to fetch JSON:', error);
+      //   }
+      // }
+      // getIpApiData();
 
     </script>
   <!--end::page scripts-->
