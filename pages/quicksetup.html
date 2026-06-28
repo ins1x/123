@@ -283,7 +283,7 @@
             <!--begin::Row-->
             <div class="row">
               <div class="col-sm-6">
-                <h3 class="mb-0">Быстрая настройка</h3>
+                <!-- <h3 class="mb-0">Быстрая настройка</h3> -->
               </div>
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-end">
@@ -318,7 +318,7 @@
                     </div>
                   </div>
                   <div class="card-body" style="box-sizing: border-box; display: none;">
-                    <h5>IP-адреса <a href="https://www.beltelecom.by/ip-adresa-serverov-dns-neobkhodimykh-dlya-nastroyki-podklyucheniya-k-internet">DNS-серверов</a></h5>
+                    <h5>Все IP-адреса <a href="https://www.beltelecom.by/ip-adresa-serverov-dns-neobkhodimykh-dlya-nastroyki-podklyucheniya-k-internet">DNS-серверов</a></h5>
                     <table class="table table-striped">
                       <tbody>
                         <tr>
@@ -332,39 +332,14 @@
                           <td>86.57.255.149</td>
                         </tr>
                         <tr>
-                          <td>Минская область</td>
-                          <td>194.158.196.243</td>
-                          <td>86.57.255.147</td>
-                        </tr>
-                        <tr>
-                          <td>Брестская область</td>
-                          <td>194.158.196.246</td>
-                          <td>86.57.255.150</td>
-                        </tr>
-                        <tr>
-                          <td>Витебская область</td>
-                          <td>194.158.196.244</td>
-                          <td>86.57.255.148</td>
-                        </tr>
-                        <tr>
-                          <td>Гомельская область</td>
-                          <td>194.158.196.246</td>
-                          <td>86.57.255.150</td>
-                        </tr>
-                        <tr>
-                          <td>Гродненская область</td>
-                          <td>194.158.196.245</td>
-                          <td>86.57.255.149</td>
-                        </tr>
-                        <tr>
-                          <td>Могилевская область</td>
-                          <td>194.158.196.244</td>
-                          <td>86.57.255.148</td>
-                        </tr>
-                        <tr>
-                          <td>При подключенной услуге "Обеспечение безопасности сетевого трафика"</td>
+                          <td>Фильтрация</td>
                           <td>194.158.196.137</td>
                           <td>194.158.196.141</td>
+                        </tr>
+                        <tr>
+                          <td>DNS платформы IPTV</td>
+                          <td>82.209.237.230</td>
+                          <td></td>
                         </tr>
                       </tbody>
                     </table>
@@ -597,7 +572,7 @@
                     <!--end::Accordion-->
                   </div>
                   <div class="card-footer">
-                    <a href="https://chat.datacenter.by/index.php/f/1467921" target="_blank"><i class="bi bi-cloud"></i> Nextcloud - Интернет и сети передачи данных</a>
+                    <a href="https://chat.datacenter.by/index.php/f/1467921" target="_blank"><i class="bi bi-cloud"></i>Nextcloud - Интернет и сети передачи данных</a>
                   </div>
                 </div>
               </div>
@@ -608,32 +583,58 @@
               <div class="col-sm-6 mb-3 mb-sm-3">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5>Настройка STB</h5>
-                    <ul>
-                      <li>Нажмите кнопку SET на пульте от STB (Над желтой кнопкой)</li>
-                      <li>Настройки - OK - Введите пароль - 6321 - ОК</li>
-                      <li>В поле учетная запись пропишите логин из договора</li>
-                      <li>В поле пароль пропишите первоначальный пароль из договора</li>
-                      <li>Перейдите стрелкой вниз на OK внизу экрана - нажмите OK на пульте</li>
-                      <li>Перейдите стрелками на перезапуск - нажмите OK</li>
-                    </ul>
-                    <a href="https://www.beltelecom.by/sites/default/files/content/zala/rukovodstvo_polzovatelia/IPTV_rukovodstvo_polzovatelia_iptv%202022_B800_B860.pdf">Руководство пользователя ZALA (STB B800, STB B860)</a>
-                    <div class="card-footer">
-                      <ul>
-                        <li>4-й порт по-умолчанию настроен под IPTV, через него подключение к интернету работать не будет</li>
-                        <li>Если подключить STB приставку в порт не настроенный под IPTV, возможен черный экран на любом канале либо ошибка 1302/1305</li>
-                      </ul>
+                    <div class="accordion" id="accordionIPTVSTB">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseIPTVSTB_1"
+                            aria-expanded="false"
+                            aria-controls="collapseIPTVSTB_1"
+                          >
+                          Настройка приставки STB
+                          </button>
+                        </h2>
+                        <div id="collapseIPTVSTB_1" class="accordion-collapse collapse" data-bs-parent="#accordionIPTVSTB">
+                          <div class="accordion-body">
+                            <ul>
+                              <li>Нажмите кнопку <kbd>SET</kbd> на пульте от STB (Над желтой кнопкой)</li>
+                              <li>Настройки - <kbd>OK</kbd> - Введите пароль - 6321 - <kbd>ОК</kbd></li>
+                              <li>В поле учетная запись пропишите логин из договора</li>
+                              <li>В поле пароль пропишите первоначальный пароль из договора</li>
+                              <li>Перейдите <kbd>стрелкой вниз</kbd> на <kbd>OK</kbd> внизу экрана - нажмите <kbd>OK</kbd> на пульте</li>
+                              <li>Перейдите стрелками на перезапуск - нажмите <kbd>OK</kbd></li>
+                            </ul>
+                            <blockquote>
+                              <ul>
+                                <li>4-й порт по-умолчанию настроен под IPTV, через него подключение к интернету работать не будет</li>
+                                <li>Если подключить STB приставку в порт не настроенный под IPTV, возможен черный экран на любом канале либо ошибка 1302/1305</li>
+                              </ul>
+                            </blockquote>
+                          </div>
+                        </div>
+                      </div>
                     </div>
+                    <br>
+                    <h5>Руководство пользователя:</h5>
+                    <ul>
+                      <li><a href="https://www.beltelecom.by/sites/default/files/content/zala/rukovodstvo_polzovatelia/IPTV_rukovodstvo_polzovatelia_iptv%202022_B800_B860.pdf" target="_blank">Руководство пользователя ZALA (STB B800, STB B860)</a></li>
+                      <li><a href="https://www.beltelecom.by/sites/default/files/content/zala/rukovodstvo_polzovatelia/rukovodstvo_polzovatelia_IPTV-2019.doc" target="_blank">Руководство пользователя интерактивного телевидения ZALA</a></li>
+                    </ul>
+                    <!-- <div class="card-footer">
+                    </div> -->
                   </div>
                   <div class="card-footer">
-                    <a href="https://chat.datacenter.by/index.php/f/1464959" target="_blank"><i class="bi bi-cloud"></i> Nextcloud - Интерактивное ТВ</a>
+                    <a href="https://chat.datacenter.by/index.php/f/1464959" target="_blank"><i class="bi bi-cloud"></i>Nextcloud - Интерактивное ТВ</a>
                   </div>
                 </div>
               </div>
               <div class="col-sm-6 mb-3 mb-sm-3">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5>Прочие настройки STB</h5>
+                    <h5>Прочие настройки</h5>
                     <!--begin::Accordion-->
                     <div class="accordion" id="accordionIPTV">
                       <div class="accordion-item">
@@ -746,9 +747,8 @@
                     </div>
                     <!--end::Accordion-->
                   </div>
-                  <div class="card-footer">
-                    <a href="https://www.beltelecom.by/sites/default/files/content/zala/rukovodstvo_polzovatelia/rukovodstvo_polzovatelia_IPTV-2019.doc" target="_blank">Руководство пользователя интерактивного телевидения ZALA</a>
-                  </div>
+                  <!-- <div class="card-footer">
+                  </div> -->
                 </div>
               </div>
             </div>
@@ -759,7 +759,7 @@
               <div class="col mb-sm-3">
                 <div class="card card-outline card-primary collapsed-card">
                   <div class="card-header">
-                    <h3 class="card-title">Настройка приставки DV</h3>
+                    <h3 class="card-title">Настройка SMART приставок</h3>
                     <div class="card-tools">
                       <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse">
                         <i data-lte-icon="expand" class="bi bi-plus-lg"></i>
@@ -768,97 +768,185 @@
                     </div>
                   </div>
                   <div class="card-body" style="box-sizing: border-box; display: none;">
-                    <ul>
-                      <li>
-                        Для подключения пульта дистанционного управления к приставке, необходимо с близкого
-                        расстояния (20 см.) нажать ОДНОВРЕМЕННО кнопку <kbd>Громкости (минус)</kbd> и кнопку <kbd>ОК</kbd>
-                        (круглая кнопка в центре пульта) и держать около 10 секунд.
-                        Если Вы сделали всё верно, то на экране появится надпись «Успешно Подключен».
-                      </li>
-                      <li>Выберите язык, подтверждая свой выбор пультом на <kbd>OK</kbd> (круглой кнопкой в центре).</li>
-                      <li>"Настроить телевизор с помощью телефона Android" - Пропустить</li>
-                      <li>В перечне сетей Wi-Fi найдите и выберите Вашу сеть</li>
-                      <ul>
-                        <li>
-                          "Введите пароль для Вашей сети Wi-Fi" - Перейдите на поле для ввода пароля. 
-                          При нажатии на центральную круглую кнопку пульта отобразится виртуальная клавиатура:
-                          введите пароль и подтвердите ввод, нажав кнопку на экранной клавиатуре с «галочкой».
-                        </li>
-                        <li>
-                          При успешном подключении к сети Wi-Fi, на экране отобразится сообщение: «Установлено подключение к Интернету»
-                          Далее ожидайте проверку обновлений - это займет некоторое время
-                        </li>
-                      </ul>
-                      <li>"Используйте все возможности телевизора" - Пропустить (Войти в гугл аккаунт можно позже при необходимости)</li>
-                      <ul>
-                        <li>"Условия использования" - нажать Принять</li>
-                        <li>"Сервисы Google" - нажать Принять</li>
-                        <li>"Google Ассистент" - нажать Пропустить</li>
-                        <li>"Не забудьте настроить Ассистента" - нажать Продолжить</li>
-                      </ul>
-                      <li>"Выберите название для устройства" - нажать на первый пункт "ZALA_SmartBox_DV9135"</li>
-                      <li>"Установка дополнительных приложений" - нажать Далее (ничего не выбирать)</li>
-                      <li>"Познакомиться с возможностями своего нового устройства" - нажимать вправо чтобы пролистать 4 слайда (правую сторону круглой кнопки в центре)</li>
-                      <li>"Разрешить приложению ZalaYasna доступ к фото и мультимедия на устройстве" - Разрешить</li>
-                      <li>Отобразится логотип загрузки SMART ZALA затем появится поле для ввода Логина и Пароля</li>
-                      <ul>
-                        Для ввода данных, нажмите на центральную круглую кнопку пульта отобразится виртуальная клавиатура.
-                        <li>1. Введите данные в "Имя пользователя", используя логин (15 цифр), далее сверните клавиатуру, нажав <kbd><-</kbd> кнопку "Назад"</li>
-                        <li>2. Спуститесь на строку ввода пароля и введите Первоначальный пароль из Бланк-заказа услуги, сверните клавиатуру, нажав <kbd><-</kbd> кнопку "Назад"</li>
-                        <li>3. Спуститесь на кнопку «Вход». Нажмите на пульте центральную круглую кнопку</li>
-                      </ul>
-                      <li>Вход в приложение выполнен. Для просмотра ТВ-передач выберите раздел "Телевидение"</li>
-                    </ul>
-                  </div>
-                  <div class="card-footer">
-                    <a href="https://www.beltelecom.by/tekstovaya-instrukciya-podklyuchenie-dv9135-etapy-zapuska-pervonachalnaya-nastroyka-podklyucheniya" target="_blank">
-                      Подключение DV9135 – этапы запуска, первоначальная настройка подключения по сети Wi-Fi
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col mb-sm-3">
-                <div class="card card-outline card-primary collapsed-card">
-                  <div class="card-header">
-                    <h3 class="card-title">Настройка приставки SML</h3>
-                    <div class="card-tools">
-                      <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse">
-                        <i data-lte-icon="expand" class="bi bi-plus-lg"></i>
-                        <i data-lte-icon="collapse" class="bi bi-dash-lg"></i>
-                      </button>
+                    <!--begin::Accordion-->
+                    <div class="accordion" id="accordionSMARTSTB">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseSMARTSTB_1"
+                            aria-expanded="false"
+                            aria-controls="collapseSMARTSTB_1"
+                          >
+                          Настройка DV приставки
+                          </button>
+                        </h2>
+                        <div id="collapseSMARTSTB_1" class="accordion-collapse collapse" data-bs-parent="#accordionSMARTSTB">
+                          <div class="accordion-body">
+                            <ul>
+                              <li>
+                                Для подключения пульта дистанционного управления к приставке, необходимо с близкого
+                                расстояния (20 см.) нажать ОДНОВРЕМЕННО кнопку <kbd>Громкости (минус)</kbd> и кнопку <kbd>ОК</kbd>
+                                (круглая кнопка в центре пульта) и держать около 10 секунд.
+                                Если Вы сделали всё верно, то на экране появится надпись «Успешно Подключен».
+                              </li>
+                              <li>Выберите язык, подтверждая свой выбор пультом на <kbd>OK</kbd> (круглой кнопкой в центре).</li>
+                              <li>"Настроить телевизор с помощью телефона Android" - Пропустить</li>
+                              <li>В перечне сетей Wi-Fi найдите и выберите Вашу сеть</li>
+                              <ul>
+                                <li>
+                                  "Введите пароль для Вашей сети Wi-Fi" - Перейдите на поле для ввода пароля. 
+                                  При нажатии на центральную круглую кнопку пульта отобразится виртуальная клавиатура:
+                                  введите пароль и подтвердите ввод, нажав кнопку на экранной клавиатуре с «галочкой».
+                                </li>
+                                <li>
+                                  При успешном подключении к сети Wi-Fi, на экране отобразится сообщение: «Установлено подключение к Интернету»
+                                  Далее ожидайте проверку обновлений - это займет некоторое время
+                                </li>
+                              </ul>
+                              <li>"Используйте все возможности телевизора" - Пропустить (Войти в гугл аккаунт можно позже при необходимости)</li>
+                              <ul>
+                                <li>"Условия использования" - нажать Принять</li>
+                                <li>"Сервисы Google" - нажать Принять</li>
+                                <li>"Google Ассистент" - нажать Пропустить</li>
+                                <li>"Не забудьте настроить Ассистента" - нажать Продолжить</li>
+                              </ul>
+                              <li>"Выберите название для устройства" - нажать на первый пункт "ZALA_SmartBox_DV9135"</li>
+                              <li>"Установка дополнительных приложений" - нажать Далее (ничего не выбирать)</li>
+                              <li>"Познакомиться с возможностями своего нового устройства" - нажимать вправо чтобы пролистать 4 слайда (правую сторону круглой кнопки в центре)</li>
+                              <li>"Разрешить приложению ZalaYasna доступ к фото и мультимедия на устройстве" - Разрешить</li>
+                              <li>Отобразится логотип загрузки SMART ZALA затем появится поле для ввода Логина и Пароля</li>
+                              <ul>
+                                Для ввода данных, нажмите на центральную круглую кнопку пульта отобразится виртуальная клавиатура.
+                                <li>1. Введите данные в "Имя пользователя", используя логин (15 цифр), далее сверните клавиатуру, нажав <kbd><-</kbd> кнопку "Назад"</li>
+                                <li>2. Спуститесь на строку ввода пароля и введите Первоначальный пароль из Бланк-заказа услуги, сверните клавиатуру, нажав <kbd><-</kbd> кнопку "Назад"</li>
+                                <li>3. Спуститесь на кнопку «Вход». Нажмите на пульте центральную круглую кнопку</li>
+                              </ul>
+                              <li>Вход в приложение выполнен. Для просмотра ТВ-передач выберите раздел "Телевидение"</li>
+                            </ul>
+                          
+                            <blockquote>
+                              <ul>
+                                <li>
+                                  <a href="https://www.beltelecom.by/tekstovaya-instrukciya-podklyuchenie-dv9135-etapy-zapuska-pervonachalnaya-nastroyka-podklyucheniya" target="_blank">
+                                    Подключение DV9135 – этапы запуска, первоначальная настройка подключения по сети Wi-Fi
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="https://chat.datacenter.by/index.php/f/1464576" target="_blank">
+                                    <i class="bi bi-cloud"></i>Nextcloud - STB DV9135
+                                  </a>
+                                </li>
+                              </ul>
+                            </blockquote>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseSMARTSTB_2"
+                            aria-expanded="false"
+                            aria-controls="collapseSMARTSTB_2"
+                          >
+                          Настройка SML приставки
+                          </button>
+                        </h2>
+                        <div id="collapseSMARTSTB_2" class="accordion-collapse collapse" data-bs-parent="#accordionSMARTSTB">
+                          <div class="accordion-body">
+                            <ul>
+                              <li>В случае верного подключения на экране отображается логотип «ZALA». Пожалуйста, дождитесь завершения загрузки.</li>
+                              <li>Выберите язык и нажмите кнопку <kbd>ОК</kbd> на пульте управления</li>
+                              <li>В открывшемся окне ожидайте отображения доступных сетей Wi-Fi.</li>
+                              <li>В перечне сетей Wi-Fi выберите Вашу сеть - нажмите кнопку <kbd>ОК</kbd> на пульте управления</li>
+                              <li>Введите пароль для Вашей сети Wi-Fi. Подтвердите ввод, выбрав кнопку <kbd>OK</kbd></li>
+                              <li>
+                                "Настройка беспроводного подключения", дождитесь завершения настройки подключения.
+                                Приставка автоматически проверит настройки подключения и отобразит доступную скорость доступа в Интернет.
+                              </li>
+                              <li>Выберите «Далее» и нажмите кнопку <kbd>OK</kbd> на пульте управления</li>
+                              <li>В появившейся форме в поле «Логин» вводим логин(15 цифр) и в поле «Пароль»
+                                вводим Первоначальный пароль из бланка заказа услуги, нажимаем «Далее».
+                              </li>
+                              <li>
+                                Отобразится окно создания профиля пользователя. В открывшемся окне в поле задайте имя профиля: при нажатии на кнопку <kbd>OK</kbd>
+                                пульта отобразится виртуальная клавиатура. Выберите тип профиля (мужской/женский/детский) и картинку профиля.
+                                Подтвердите кнопкой <kbd>OK</kbd> на пульте.
+                              </li>
+                              <li>Выбираем «Готово» и подтверждаем нажатием <kbd>OK</kbd></li>
+                              <li>Настройка и вход в профиль окончены. Для просмотра ТВ-передач выберите раздел «ТВ» кнопкой <kbd>OK</kbd> на пульте</li>
+                            </ul>
+                            <blockquote>
+                              <ul>
+                                <li>
+                                  <a href="https://www.beltelecom.by/tekstovaya-instrukciya-podklyuchenie-sml-5050-nastroyka-podklyucheniya-po-seti-wi-fi" target="_blank">
+                                  Подключение SML 5050 - настройка подключения по сети Wi-Fi
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="https://chat.datacenter.by/index.php/f/1464735" target="_blank">
+                                    <i class="bi bi-cloud"></i>Nextcloud - STB SML 5050
+                                  </a>
+                                </li>
+                              </ul>
+                            </blockquote>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseSMARTSTB_3"
+                            aria-expanded="false"
+                            aria-controls="collapseSMARTSTB_3"
+                          >
+                          Особенности подключения приставок
+                          </button>
+                        </h2>
+                        <div id="collapseSMARTSTB_3" class="accordion-collapse collapse" data-bs-parent="#accordionSMARTSTB">
+                          <div class="accordion-body">
+                            <h5>Общие рекомендации</h5>
+                            <ul>
+                              <li>Для стабильности подключайте приставку/Smart TV по Ethernet. По Wi-Fi возможны помехи и снижение качества</li>
+                              <li>Если нужен свитч - подойдёт обычный неуправляемый на 4–8 портов</li>
+                              <li>SMART TV работает по unicast, обычно дополнительных настроек в роутере не требуется.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseSMARTSTB_4"
+                            aria-expanded="false"
+                            aria-controls="collapseSMARSTBT_4"
+                          >
+                          Сброс настроек на приставках
+                          </button>
+                        </h2>
+                        <div id="collapseSMARTSTB_4" class="accordion-collapse collapse" data-bs-parent="#accordionSMARTSTB">
+                          <div class="accordion-body">
+                            <h5>Сброс настроек на SML приставке:</h5>
+                            <p>Поддержка - О продукте - Сброс настроек</p>
+                            <h5>Сброс настроек на DV приставке:</h5>
+                            <p>Настройки - Настройки устройства - Об устройстве - Сброс настроек</p>
+                          </div>
+                        </div>
+                      </div>
+                      
                     </div>
-                  </div>
-                  <div class="card-body" style="box-sizing: border-box; display: none;">
-                    <ul>
-                      <li>В случае верного подключения на экране отображается логотип «ZALA». Пожалуйста, дождитесь завершения загрузки.</li>
-                      <li>Выберите язык и нажмите кнопку <kbd>ОК</kbd> на пульте управления</li>
-                      <li>В открывшемся окне ожидайте отображения доступных сетей Wi-Fi.</li>
-                      <li>В перечне сетей Wi-Fi выберите Вашу сеть - нажмите кнопку <kbd>ОК</kbd> на пульте управления</li>
-                      <li>Введите пароль для Вашей сети Wi-Fi. Подтвердите ввод, выбрав кнопку <kbd>OK</kbd></li>
-                      <li>
-                        "Настройка беспроводного подключения", дождитесь завершения настройки подключения.
-                        Приставка автоматически проверит настройки подключения и отобразит доступную скорость доступа в Интернет.
-                      </li>
-                      <li>Выберите «Далее» и нажмите кнопку <kbd>OK</kbd> на пульте управления</li>
-                      <li>В появившейся форме в поле «Логин» вводим логин(15 цифр) и в поле «Пароль»
-                        вводим Первоначальный пароль из бланка заказа услуги, нажимаем «Далее».
-                      </li>
-                      <li>
-                        Отобразится окно создания профиля пользователя. В открывшемся окне в поле задайте имя профиля: при нажатии на кнопку <kbd>OK</kbd>
-                        пульта отобразится виртуальная клавиатура. Выберите тип профиля (мужской/женский/детский) и картинку профиля.
-                        Подтвердите кнопкой <kbd>OK</kbd> на пульте.
-                      </li>
-                      <li>Выбираем «Готово» и подтверждаем нажатием <kbd>OK</kbd></li>
-                      <li>Настройка и вход в профиль окончены. Для просмотра ТВ-передач выберите раздел «ТВ» кнопкой <kbd>OK</kbd> на пульте</li>
-                    </ul>
-                  </div>
-                  <div class="card-footer">
-                    <a href="https://www.beltelecom.by/tekstovaya-instrukciya-podklyuchenie-sml-5050-nastroyka-podklyucheniya-po-seti-wi-fi" target="_blank">
-                      Подключение SML 5050 - настройка подключения по сети Wi-Fi
-                    </a>
+                    <!--end::Accordion-->
                   </div>
                 </div>
               </div>
@@ -935,18 +1023,10 @@
                       <li><a href="https://beltelecom.by/sites/default/files/content/zala/rukovodstvo_polzovatelia/manual_SMART_ZALA_Android.pdf">Руководство пользователя SMART ZALA на устройствах Android</a></li>
                       <li><a href="https://beltelecom.by/sites/default/files/content/zala/rukovodstvo_polzovatelia/manual_SMART_ZALA_iOS.pdf">Руководство пользователя SMART ZALA на устройствах iOS</a></li>
                       <li><a href="https://beltelecom.by/sites/default/files/content/zala/rukovodstvo_polzovatelia/manual_SMART_ZALA_LG_Samsung.pdf">Руководство пользователя SMART ZALA на телевизорах LG и Samsung</a></li>
-                      <li><a href="https://beltelecom.by/sites/default/files/content/zala/rukovodstvo_polzovatelia/manual_SMART_ZALA_pristavki_2021.DOC">Руководство пользователя услуги телевидения Smart ZALA c использованием приставок (STB 5050w)</a></li>
-                      <li><a href="https://beltelecom.by/sites/default/files/content/zala/rukovodstvo_polzovatelia/IPTV_rukovodstvo_polzovatelia_iptv%202022_B800_B860.pdf">Руководство пользователя услуги телевидения Smart ZALA c использованием приставок (STB B800, STB B860)</a></li>
-                    </ul>
-                    <h5>Общие рекомендации</h5>
-                    <ul>
-                      <li>Для стабильности подключайте приставку/Smart TV по Ethernet. По Wi-Fi возможны помехи и снижение качества</li>
-                      <li>Если нужен свитч - подойдёт обычный неуправляемый на 4–8 портов</li>
-                      <li>SMART TV работает по unicast, обычно дополнительных настроек в роутере не требуется.</li>
                     </ul>
                   </div>
                   <div class="card-footer">
-                    <a href="https://chat.datacenter.by/index.php/f/1464471" target="_blank"><i class="bi bi-cloud"></i> Nextcloud - SMART TV</a>
+                    <a href="https://chat.datacenter.by/index.php/f/1464471" target="_blank"><i class="bi bi-cloud"></i>Nextcloud - SMART TV</a>
                   </div>
                 </div>
               </div>
@@ -996,18 +1076,42 @@
                         </h2>
                         <div id="collapseSMART_2" class="accordion-collapse collapse" data-bs-parent="#accordionSMART">
                           <div class="accordion-body">
+                            <h5>Когда требуется очистка кэша?</h5>
                             <ul>
-                              <li>для Android - Настройки — Приложения — SMART ZALA — Очистить кэш</li>
-                              <li>для iOS - приложение нужно будет переустановить, удалив его через хранилище (Настройки — Основные — Хранилище iPhone - SMART ZALA).</li>
-                              <li>
-                                для ПК - Нажать на иконку приложения на рабочем столе правой кнопкой мыши - свойства - ярлык. 
-                                Внизу слева нажать кнопку Расположения файла. Открылся каталог где установлена зала. 
-                                Далее открыть папки webview_window_WebView2 > EBWebView > Default > Cache и в папке Cache удалить 2 папки с кэшем (cache-data и no_vary_search).
-                              </li>
-                              <li>
-                                для DV приставки - Навести курсор на приложение — нажать и удерживать ОК пока не появится меню на экране — выбрать о приложении в самом низу. Справа появится меню , в нем выбрать очистить кэш приложения
-                              </li>
+                              <li>приложение стало загружаться медленно, долго переключается по элементам интерфейса</li>
+                              <li>видео постоянно «буферизируется» при хорошем подключении, часто зависает и вылетает</li>
+                              <li>появляются нестандартные ошибки (например token ring и ????)</li>
                             </ul>
+
+                            <h5>Android</h5>
+                            <p>Настройки — Приложения — SMART ZALA — Очистить кэш</p>
+                            
+                            <h5>iOS</h5>
+                            <p>приложение нужно будет переустановить, удалив его через хранилище (Настройки — Основные — Хранилище iPhone - SMART ZALA).</p>
+                            
+                            <h5>PC</h5>
+                            <p>
+                              Нажать на иконку приложения на рабочем столе правой кнопкой мыши - свойства - ярлык. 
+                              Внизу слева нажать кнопку Расположения файла. Открылся каталог где установлена зала. 
+                              Далее открыть папки webview_window_WebView2 > EBWebView > Default > Cache и в папке Cache удалить 2 папки с кэшем (cache-data и no_vary_search).
+                            <p>
+                            
+                              <h5>DV приставка</h5>
+                            <p>
+                              Навести курсор на приложение — нажать и удерживать <kbd>ОК</kbd> пока не появится меню на экране — выбрать о приложении в самом низу. Справа появится меню , в нем выбрать очистить кэш приложения
+                            </p>
+
+                            <h4>Телевизоры</h4>
+                            
+                            <h5>ТВ SAMSUNG</h5>
+                            <p>Настройки - Приложения - выберите приложение ZALA - Очистить кэш</p>
+                            
+                            <h5>ТВ LG</h5>
+                            <p>Не имеют функцию сброса кэша приложения. Отключите ТВ по питанию минут на 15-20 для сброса. Крайняя мера переустановка приложения.</p>
+                            
+                            <h5>ТВ Sony</h5>
+                            <p>Приложения - Просмотреть все приложения - выберите нужное - Очистить кэш.</p>
+
                           </div>
                         </div>
                       </div>
@@ -1026,11 +1130,35 @@
                         </h2>
                         <div id="collapseSMART_3" class="accordion-collapse collapse" data-bs-parent="#accordionSMART">
                           <div class="accordion-body">
-                            <p>5.17 Мультирум - функция Услуги ИТ, обеспечивающая просмотр Контента на двух устройствах одновременно для Абонентов, использующих приложение «ZALA», и на трех устройствах одновременно для Абонентов, использующих приложение «ZALA yasna».</p>
+                            <p>Мультирум - функция обеспечивающая просмотр Контента на двух устройствах одновременно для Абонентов, использующих приложение «ZALA», и на трех устройствах одновременно для Абонентов, использующих приложение «ZALA yasna».</p>
+                            <h5>Выйти с устройства:</h5>
+                            <p>Настройки - устройства - Выбрать устр-во и нажать покинуть группу. (Удалить из группы можно только подключенное устр-ва к данной учетной записи)</p>
                           </div>
                         </div>
                       </div>
-                      
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseSMART_4"
+                            aria-expanded="false"
+                            aria-controls="collapseSMART_4"
+                          >
+                          Разрешение на запуск
+                          </button>
+                        </h2>
+                        <div id="collapseSMART_4" class="accordion-collapse collapse" data-bs-parent="#accordionSMART">
+                          <div class="accordion-body">
+                            <p>
+                              Приложения - Выбрать из списка приложение ZALA - Разрешения - Файлы и медиафайлы - Разрешить только во время работы
+                            </p>
+                            <blockquote>Некоторые ТВ на базе Android периодически отзывают разрешение на запуск у неиспользуемых приложений</blockquote>
+                          </div>
+                        </div>
+                      </div>
+
                     </div>
                     <!--end::Accordion-->
                   </div>
@@ -1183,7 +1311,7 @@
                     </ul>
                   </div>
                   <div class="card-footer">
-                    <a href="https://chat.datacenter.by/index.php/f/1465307" target="_blank"><i class="bi bi-cloud"></i> Nextcloud - Эфирное ТВ</a>
+                    <a href="https://chat.datacenter.by/index.php/f/1465307" target="_blank"><i class="bi bi-cloud"></i>Nextcloud - Эфирное ТВ</a>
                   </div>
                 </div>
               </div>
@@ -1309,7 +1437,7 @@
               <div class="col-sm-6 mb-3 mb-sm-3">
                 <div class="card h-100">
                   <div class="card-body">
-                    <p>Веб-портал Видеоконтроль: <a href="https://myvideo.beltelecom.by">myvideo.beltelecom.by</a></p>
+                    <p>Веб-портал Видеоконтроль: <a href="https://myvideo.beltelecom.by" target="_blank">myvideo.beltelecom.by</a></p>
                     Руководство пользователя:
                     <ul>
                       <li><a href="https://myvideo.beltelecom.by/s3/vms-store/downloads/documents/6a31357a74042/Руководство_Web-пользователя.pdf">Руководство пользователя веб-портала</a></li>
@@ -1322,7 +1450,7 @@
                     </ul>
                   </div>
                   <div class="card-footer">
-                    <a href="https://chat.datacenter.by/index.php/f/1465448" target="_blank"><i class="bi bi-cloud"></i> Nextcloud - Видеоконтроль</a>
+                    <a href="https://chat.datacenter.by/index.php/f/1465448" target="_blank"><i class="bi bi-cloud"></i>Nextcloud - Видеоконтроль</a>
                   </div>
                 </div>
               </div>
@@ -1424,6 +1552,148 @@
                                 <li>После успешной авторизации все камеры будут видны.</li>
                               </ul>
                             </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!--end::Accordion-->
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <h3><i class="bi bi-cloud-arrow-down"></i> Облачная АТС</h3>
+            <div class="row">
+              <div class="col-sm-6 mb-3 mb-sm-3">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <p>Веб-портал облачной АТС: <a href="https://myvideo.beltelecom.by" target="_blank">pbx.beltelecom.by</a></p>
+                    <ul class="list-unstyled">
+                      <li><a href="https://chat.datacenter.by/index.php/f/1466979" target="_blank"><i class="bi bi-cloud"></i>Руководство пользователя PBX</a></li>
+                      <li><a href="https://chat.datacenter.by/index.php/f/1465589" target="_blank"><i class="bi bi-cloud"></i>SIP телефоны</a></li>
+                      <li><a href="https://chat.datacenter.by/index.php/f/1465728" target="_blank"><i class="bi bi-cloud"></i>Виртуальная АТС (Centrex)</a></li>
+                    </ul>
+                  </div>
+                  <div class="card-footer">
+                    <a href="https://chat.datacenter.by/index.php/f/1465513" target="_blank"><i class="bi bi-cloud"></i>Nextcloud - Облачная АТС</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 mb-3 mb-sm-3">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <!--begin::Accordion-->
+                    <div class="accordion" id="accordionPBX">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapsePBX_1"
+                            aria-expanded="false"
+                            aria-controls="collapsePBX_1"
+                          >
+                          Расписание
+                          </button>
+                        </h2>
+                        <div id="collapsePBX_1" class="accordion-collapse collapse" data-bs-parent="#accordionPBX">
+                          <div class="accordion-body">
+                            <p>Поставить номер в расписание добавить субботу в расписание через портал (Облачная АТС - Маршрутизация - выбрать номер - специальный день - добавить)</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapsePBX_2"
+                            aria-expanded="false"
+                            aria-controls="collapsePBX_2"
+                          >
+                          Подключение SIP аппарата
+                          </button>
+                        </h2>
+                        <div id="collapsePBX_2" class="accordion-collapse collapse" data-bs-parent="#accordionPBX">
+                          <div class="accordion-body">
+                            <p>
+                              Все телефоны объединяются в общую сеть портом WAN с помощью коммутатора(ов) или роутера. Каждому телефону присваивается IP-адрес по DHCP (при наличии)
+                              или вручную, например из диапазона 192.168.100.0/24. Последний октет адреса будет внутренним номером телефона по по-умолчанию, например: 
+                              если IP-адрес телефона 192.168.100.101, то позвонить на него можно будет по номеру #101#.
+                              В настройках WEB-интерфейса телефона необходимо указать  - сервер, порт, короткий номер домен.
+                            </p>
+                            <h5>Особенности и тонкие настройки</h5>
+                            <ul>
+                              <li>SIP Аппарат может работать по протоколу TCP или UDP,  если аппарат поддерживает работу обоих протоколов, что лучше использовать UDP</li>
+                              <li>На аппарате должен быть отключен STUN-сервер, так как из-за этого могут возникнуть проблемы с прохождением трафика через NAT, что приводит к обрывам разговоров через аппарат. Должны быть выключены опции NAT Traversal и прокси-серверы</li> 
+                              <li>В настройках роутера (маршрутизатора), который раздает интернет в вашем офисе, должна быть отключена опция SIP - ALG. Если опция включена, она также приводит к обрывам разговоров через аппарат. (В роутере тоже должна быть выключена опция SIP ALG, по-умолчанию выключена)</li>
+                              <li>В настройках SIP-оборудования необходимо включить опцию keep alive либо уменьшить время регистрации до 180 (по умолчанию обычно 3600)</li>
+                              <li>Кодеки. Если есть возможность, указать приоритет использования: PCMA (G711a, G711 a-law), PCMU (G711u, G711 u-law), G729, RTP Packet size (время пакетизации) 20 мс</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapsePBX_3"
+                            aria-expanded="false"
+                            aria-controls="collapsePBX_3"
+                          >
+                          Сервисы
+                          </button>
+                        </h2>
+                        <div id="collapsePBX_3" class="accordion-collapse collapse" data-bs-parent="#accordionPBX">
+                          <div class="accordion-body">
+                            <h5>Аудиофайлы</h5>
+                            <p>
+                              Облачная АТС может проигрывать аудиофайлы только формата WAV. Запись аудиофайла может быть выполнена стандартными программами Windows. 
+                              В случае если записанный аудиофайл имеет формат отличающийся от WAV, то производится конвертация файла с помощью любого конвертера форматов. 
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapsePBX_4"
+                            aria-expanded="false"
+                            aria-controls="collapsePBX_4"
+                          >
+                          Переадресация
+                          </button>
+                        </h2>
+                        <div id="collapsePBX_4" class="accordion-collapse collapse" data-bs-parent="#accordionPBX">
+                          <div class="accordion-body">
+                            <p>
+                              Настройку переадресации можно выполнить средствами телефонного аппарата, используя сервисные номера из списка, указанного на странице Номера сервисов. 
+                              Настройка переадресации средствами телефонного аппарата осуществляется только на номера (городские, мобильные, внутренние). 
+                              Переадресация на услугу Голосовая почта и на сервис Интеллектуальная переадресация настраивается на веб-интерфейсе ОАТС в разделе Профиль пользователя. 
+                            </p>
+
+                            <p>Список сервисных номеров для установки разных типов переадресации:</p>
+                            <ul>
+                              <li>Безусловная переадресация (активация) – *174+номер телефона;</li>
+                              <li>Безусловная переадресация (деактивация) – *174;</li>
+                              <li>Переадресация по недоступности (активация) – *173+номер телефона;</li>
+                              <li>Переадресация по недоступности (деактивация) – *173;</li>
+                              <li>Переадресация по неответу (активация) – *172+номер телефона;</li>
+                              <li>Переадресация по неответу (деактивация) – *172;</li>
+                              <li>Переадресация по занятости (активация) – *171+номер телефона;</li>
+                              <li>Переадресация по занятости (деактивация) – *171.</li>
+                            </ul>
+                            <blockquote>
+                              Формат набора: *174+375295623225 либо *173 + 3660 Программы SIP отличаются друг от друга, и при активации сервиса для некоторых необходимо
+                              в конце набора дополнительно добавлять # (например *151#). Сервис Ожидающий вызов не работает с настроенной услугой Интеллектуальная переадресация
+                            </blockquote>
                           </div>
                         </div>
                       </div>
