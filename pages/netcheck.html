@@ -909,6 +909,7 @@
                         </div>
                         <!--end::Accordion blocks-->  
                       </div>
+                      
                       <!--end::Accordion-->
                     </div>
                   </div>
@@ -1234,6 +1235,168 @@
                       </div>
                       <!--end::Accordion-->
                       </div>
+
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapsePortForwarding_5"
+                            aria-expanded="false"
+                            aria-controls="collapsePortForwarding_5"
+                          >
+                          Фильтрация (Обеспечение безопасности сетевого трафика)
+                          </button>
+                        </h2>
+                        <div id="collapsePortForwarding_5" class="accordion-collapse collapse" data-bs-parent="#accordionPortForwarding">
+                          <div class="accordion-body">
+                            <div class="row">
+                              <div class="col-sm-6 mb-2 mb-sm-2">
+                                <div class="card">
+                                  <div class="card-body">
+                                    <h5>DNS для профилей фильтрации</h5>
+                                    <ul>
+                                      <li>DNS БелГИЭ - <code>194.158.196.137, 194.158.196.141</code></li>
+                                      <li>DNS ОРД (9 профиль) - <code>86.57.159.36, 86.57.159.37</code></li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>
+  
+                              <div class="col-sm-6 mb-2 mb-sm-2">
+                                <div class="card">
+                                  <div class="card-body">
+                                    <h5>Проверка нахождения ресурса в списке фильтрации</h5>
+                                    <ul>
+                                      <li>Услуга "Родительский котнтроль" - <a href="https://tools.zvelo.com/" target="_blank">tools.zvelo.com</a></li>
+                                      <li>Услуга "Обеспечение безопасности сетевого трафика" - <a href="https://url.fortinet.net/rate/submit.php" target="_blank">url.fortinet.net</a></li>
+                                      <li>Ограничение доступа к информации РУП «БелГИЭ» - <a href="https://belgie.by/ru/other/info" target="_blank">belgie.by</a></li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            
+                            <h5>Описание <a href="https://beltelecom.by/obespechenie-bezopasnosti-setevogo-trafika">профилей фильтрации</a></h5>
+                            <table class="table table-striped table-hover">
+                              <tbody>
+                                <tr>
+                                  <td>№</td>
+                                  <td>Фильтр</td>
+                                  <td>Порты</td>
+                                </tr>
+                                <tr>
+                                  <td>0</td>
+                                  <td>Нет - Без ограничения доступа</td>
+                                  <td>-</td>
+                                </tr>
+                                <tr>
+                                  <td>1</td>
+                                  <td>
+                                    Фильтр оператора + DNS + БелГИЭ<br>
+                                    Без фильтрации социальных сетей и мессенджеров
+                                  </td>
+                                  <td>-</td>
+                                </tr>
+                                <tr>
+                                  <td>2</td>
+                                  <td>
+                                    Фильтр оператора + БелГИЭ + DNS + AV + IPS + Anti-DDoS
+                                  </td>
+                                  <td>
+                                    Произвольный набор портов протоколов транспортного уровня<br>
+                                    (функцию самостоятельной настройки)
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>3</td>
+                                  <td>
+                                    Фильтр оператора + РК без блокировки соц.сетей<br>
+                                    <a href="https://beltelecom.by/business/internet/additional-service/parental-control">Родительский контроль</a> легкий в КП
+                                  </td>
+                                  <td>-</td>
+                                </tr>
+                                <tr>
+                                  <td>4</td>
+                                  <td>
+                                    Фильтр оператора + РК блокировка соц.сетей<br>
+                                    <a href="https://beltelecom.by/business/internet/additional-service/parental-control">Родительский контроль</a> стандартный в КП
+                                  </td>
+                                  <td>-</td>
+                                </tr>
+                                <tr>
+                                  <td>5</td>
+                                  <td>
+                                    Фильтр оператора + БелГИЭ + FW1 + DNS + AV + IPS + Anti-DDoS<br>
+                                    Госсекреты - Разреш. Web + Mail
+                                  </td>
+                                  <td>
+                                    ТСP: 25, 53, 80, 110, 119, 123, 443, 465, 587, 993, 995, 1080, 8080, 3128, 8020, 18020; <br>
+                                    UDP: 53, 8020, 18020.
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>6</td>
+                                  <td>
+                                    Фильтр оператора + БелГИЭ + FW2 + DNS + AV + IPS + Anti-DDoS<br>
+                                    Госсекреты - Разреш. Web + Mail + Сообщ
+                                  </td>
+                                  <td>
+                                    ТСP: 25, 53, 80, 110, 119, 123, 443, 465, 587, 993, 995, >1024. <br>
+                                    UDP: 53, >1024.
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>7</td>
+                                  <td>
+                                    Фильтр оператора + БелГИЭ + FW3 + DNS + AV + IPS + Anti-DDoS<br>
+                                    Госсекреты - Разреш. Web+Mail + FTP + Сообщ
+                                  </td>
+                                  <td>
+                                    ТСP: 20, 21, 22, 23, 25, 53, 69, 80, 81, 110, 119, 123, 443, 444, 465, 500, 587, 990, 993, 995,>1024; <br>
+                                    UDP: 53, 69, 123, 444, 443, 465, 500, 990, 993, >1024.
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>8</td>
+                                  <td>БелГИЭ + FW3 + DNS + AV + IPS + Anti-DDoS + Род. контроль стандарт</td>
+                                  <td>
+                                      ТСP: 20, 21, 22, 23, 25, 53, 69, 80, 81, 110, 119, 123, 443, 444, 465, 500, 587, 990, 993, 995,>1024; <br>
+                                      UDP: 53, 69, 123, 444, 443, 465, 500, 990, 993, >1024.
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>9</td>
+                                  <td>Защищенный ОРД + AV + IPS + Род. контроль стандарт</td>
+                                  <td>
+                                    ТСP: 20, 21, 22, 23, 25, 53, 69, 80, 81, 110, 119, 123, 443, 444, 465, 500, 587, 990, 993, 995,>1024; <br>
+                                    UDP: 53, 69, 123, 444, 443, 465, 500, 990, 993, >1024.
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+
+                            <blockquote>
+                              Расшифровка сокращений:
+                              <ul>
+                                <li>AV - (antivirus) - фильтрация трафика от вредоносного программного обеспечения;</li>
+                                <li>Anti-DDoS - защита от различных типов распределённых атак (DDoS-атак);</li>
+                                <li>DNS - доступ к информации, размещенной в сети Интернет, осуществляется с использованием специализированной системы DNS серверов;</li>
+                                <li>IPS - (intrusion prevention system) - обнаружение уязвимостей систем защиты информации;</li>
+                                <li>FW - (firewall) – межсетевое экранирование по портам протоколов транспортного уровня;</li>
+                                <li>FW 1 - Доступ в Интернет + электронная почта;</li>
+                                <li>FW 2 - Доступ в Интернет + электронная почта + Мгновенные сообщения (Месседжеры);</li>
+                                <li>FW 3 - Доступ в Интернет + электронная почта + Мгновенные сообщения (Месседжеры) + FTP;</li>
+                                <li>БелГИЭ - (web filtering) - web-фильтрация, ограничение доступа к информации с использованием списков, формируемых РУП «БелГИЭ»;</li>
+                                <li>Фильтр оператора - (web filtering) - web-фильтрация, ограничение доступа к информации с использованием списка РУП «Белтелеком»;</li>
+                              </ul>
+                            </blockquote>
+                          </div>
+                        </div>
+                        <!--end::Accordion blocks-->  
+                      </div>
+
                     </div>
                   </div>
                 </div>
