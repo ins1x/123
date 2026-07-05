@@ -341,6 +341,7 @@
                               <li><a class="dropdown-item" href="#">MX-Record</a></li>
                               <li><a class="dropdown-item" href="#">Spam-base</a></li>
                               <li><a class="dropdown-item" href="#">Check-host</a></li>
+                              <li><a class="dropdown-item" href="#">Open-ports</a></li>
                             </ul>
                           </div>
                           <input type="text" class="form-control" placeholder="" aria-label="IP, MAC, URL site input" aria-describedby="button-addon1" id="input-Go">
@@ -577,11 +578,11 @@
                       Проверка открытых портов
                     </p>
                     <ul>
-                      <li><a href="https://2ip.io/ru/check-port" target="_blank">2ip.io</a></li>
-                      <li><a href="https://www.reg.ru/web-tools/port-checker" target="_blank">reg.ru</a></li>
+                      <li><a href="https://dnschecker.org/port-scanner.php" target="_blank">dnschecker.org</a></li>
                       <li><a href="https://tools.ivit.pro/setevye-utility/avail-services/" target="_blank">tools.ivit.pro</a></li>
                       <li><a href="https://portchecker.co/" target="_blank">portchecker.co</a></li>
                       <li><a href="https://dnsrobot.net/ru/port-checker" target="_blank">dnsrobot.net</a></li>
+                      <li><a href="https://accesschecker.net/ru/tools/port-lookup" target="_blank">accesschecker.net</a></li>
                     </ul>
                   </div>
                 </div>
@@ -909,6 +910,8 @@
             case "Check-host":
               window.open("https://check-host.net/check-http?host=" + query, "_blank");
               break
+            case "Open-ports":
+              window.open("https://dnschecker.org/port-scanner.php?query=" + query + "&ptype=server", "_blank");
             default:
               // console.log(`OK: ${dropdownText}`);
               document.getElementById("card-text-secondary").innerText = 'Что-то пошло не так, попробуйте перезагрузить страницу CTRL + R';
