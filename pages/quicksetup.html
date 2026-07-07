@@ -319,7 +319,7 @@
                   </div>
                   <div class="card-body" style="box-sizing: border-box; display: none;">
                     <h5>Все IP-адреса <a href="https://www.beltelecom.by/ip-adresa-serverov-dns-neobkhodimykh-dlya-nastroyki-podklyucheniya-k-internet">DNS-серверов</a></h5>
-                    <table class="table table-striped">
+                    <table class="table table-bordered table-striped">
                       <tbody>
                         <tr>
                           <td>&nbsp;</td>
@@ -343,6 +343,18 @@
                         </tr>
                       </tbody>
                     </table>
+
+                    <br>
+                    <h5>DSL VPI-VCI</h5>
+                    <table class="table table-bordered table-striped-columns">
+                      <tbody>
+                        <tr>
+                          <td>Byfly - <strong>VPI 0 VCI 33</strong></td>
+                          <td>IPTV  - <strong>VPI 1 VCI 34</strong></td>
+                        </tr>
+                      </tbody>
+                    </table>
+
                   </div>
                   <div class="card-footer">
                   </div>
@@ -409,14 +421,16 @@
                               <li>Нажмите Закрыть (Close).</li>
                             </ol>
 
-                            Возможные нюансы:
-                            <ul>
-                              <li>В некоторых случаях настройки принимаются только после презагрузки</li>
-                              <li>Если при настройке сети требует указать префикс подсети - указывать /24</li>
-                              <li>Не рекомендуется отключать - "Протокол Интернета версии 6 (TCP/IPv6)" т.к. используется для внутренних служб Windows</li>
-                              <li>"Конфигурация с несколькими основными шлюзами" - появляется если несколько интерфейсов настроено с одним шлюзом (Например Wi-Fi и Ethernet имеют одинаковый шлюз)</li>
-                              <li>Если настройки сетевой слетают необходимо проверить/обновить сетевые драйвера, сделать сброс сети</li>
-                            </ul>
+                            <div class="alert alert-light" role="alert">
+                              Возможные нюансы:
+                              <ul>
+                                <li>В некоторых случаях настройки принимаются только после презагрузки</li>
+                                <li>Если при настройке сети требует указать префикс подсети - указывать /24</li>
+                                <li>Не рекомендуется отключать - "Протокол Интернета версии 6 (TCP/IPv6)" т.к. используется для внутренних служб Windows</li>
+                                <li>"Конфигурация с несколькими основными шлюзами" - появляется если несколько интерфейсов настроено с одним шлюзом (Например Wi-Fi и Ethernet имеют одинаковый шлюз)</li>
+                                <li>Если настройки сетевой слетают необходимо проверить/обновить сетевые драйвера, сделать сброс сети</li>
+                              </ul>
+                            </div>
 
                             <a href="https://www.beltelecom.by/tekstovaya-instrukciya-nastroyki-setevoy-karty-dlya-podklyucheniya-k-seti-internet-po-tekhnologii-2">Инструкция с сайта Белтелеком</a>
                           </div>
