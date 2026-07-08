@@ -327,21 +327,26 @@
                       placeholder="Введите ключевые слова для поиска"
                       aria-label="Search the FAQ"
                     />
-                    <!-- <button class="btn btn-outline-secondary dropdown-toggle" id="button-dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">123</button>
+                    <button class="btn btn-outline-secondary dropdown-toggle" id="button-dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">Nextcloud</button>
                     <ul class="dropdown-menu dropdown-menu-end" id="dropdown-search">
-                      <li><a class="dropdown-item" href="#">123-Wiki</a></li>
-                      <li><a class="dropdown-item" href="#">Белтелеком</a></li>
-                    </ul> -->
-                    <a href="#" class="btn" onclick="showPortalBoxes()" data-bs-toggle="tooltip" data-bs-title="Показать рабочие порталы">
+                      <li><a class="dropdown-item" href="#">Nextcloud</a></li>
+                      <li><a class="dropdown-item" href="#">123 Wiki</a></li>
+                      <li><a class="dropdown-item" href="#">Beltelecom</a></li>
+                    </ul>
+                    <small class="card-text-secondary">&nbsp;</small>
+
+                    <!-- <a href="#" class="btn" onclick="showPortalBoxes()" data-bs-toggle="tooltip" data-bs-title="Показать рабочие порталы">
                       <i class="nav-icon bi bi-table"></i>
-                    </a>
+                    </a> -->
                   </div>
                 </div>
                 
               </form>
             </div>
+            <!-- end container -->
           </div>
 
+          <!--begin::Container-->
           <div class="container-fluid">
 
             <div class="row">
@@ -455,902 +460,355 @@
             </div> 
             <!-- end container -->
           </div>
+          
+          <div class="text-center mb-4">
+            <h3>Рабочие порталы</h3>
+          </div>
 
-          <div class="container-fluid" id="portals-boxes" style="display: none">
-            <!-- Small Box (Stat card) -->
-            <h5 class="mb-2">Рабочие порталы</h5>
-            <!-- Small boxes (Stat box) -->
-            <div class="row">
-              <div class="col-lg-3 col-6">
-                <div class="small-box" style="background-color: RebeccaPurple;">
-                 <div class="inner">
-                   <h5>АСТУП</h5>
-                 </div>
-                 <svg
-                   class="small-box-icon"
-                   fill="currentColor"
-                   viewBox="0 0 32 32"
-                   xmlns="http://www.w3.org/2000/svg"
-                   aria-hidden="true"
-                 >
-                   <path d="M2.5 4a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1m2-.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m1 .5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1"/>
-                   <path d="M2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2zm12 1a1 1 0 0 1 1 1v2H1V3a1 1 0 0 1 1-1zM1 13V6h4v8H2a1 1 0 0 1-1-1m5 1V6h9v7a1 1 0 0 1-1 1z"/>
-                 </svg>
-
-                 <a
-                   href="http://10.247.12.121:8080/ASTUP_WEB/" target="_blank"
-                   class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover"
-                 >
-                 10.247.12.121
-                 </a>
-               </div>
-              </div>
-
-              <div class="col-lg-3 col-6">
-                <div class="small-box" style="background-color: RebeccaPurple;">
-                  <div class="inner">
-                    <h5>Абсолют</h5>
-                  </div>
-                  <svg
-                    class="small-box-icon"
-                    fill="currentColor"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path d="M4.5 6a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1M6 6a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1m2-.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0"/>
-                    <path d="M12 1a2 2 0 0 1 2 2 2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2 2 2 0 0 1-2-2V3a2 2 0 0 1 2-2zM2 12V5a2 2 0 0 1 2-2h9a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1m1-4v5a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V8zm12-1V5a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v2z"/>
-                  </svg>
-  
-                  <a
-                    href="http://172.26.251.93:8010/ps/sbms/shell.html" target="_blank"
-                    class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover"
-                  >
-                  172.26.251.93
-                  </a>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-6">
-                <div class="small-box" style="background-color: indigo;">
-                  <div class="inner">
-                    <h5>АССОМИ</h5>
-                  </div>
-                  <svg
-                    class="small-box-icon"
-                    fill="currentColor"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5"/>
-                    <path d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z"/>
-                  </svg>
-  
-                  <a
-                    href="http://10.247.207.33/up/index.aspx" target="_blank"
-                    class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover"
-                  >
-                  10.247.207.33
-                  </a>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-6">
-                <div class="small-box text-bg-success">
-                  <div class="inner">
-                    <h5>Vortex</h5>
-                  </div>
-                  <svg
-                    class="small-box-icon"
-                    fill="currentColor"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-				        	<path d="M1.5 3A1.5 1.5 0 0 0 0 4.5V6a.5.5 0 0 0 .5.5 1.5 1.5 0 1 1 0 3 .5.5 0 0 0-.5.5v1.5A1.5 1.5 0 0 0 1.5 13h13a1.5 1.5 0 0 0 1.5-1.5V10a.5.5 0 0 0-.5-.5 1.5 1.5 0 0 1 0-3A.5.5 0 0 0 16 6V4.5A1.5 1.5 0 0 0 14.5 3zM1 4.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v1.05a2.5 2.5 0 0 0 0 4.9v1.05a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-1.05a2.5 2.5 0 0 0 0-4.9z"/>
-                  </svg>
-                  <a
-                    href="https://vortex.beltelecom.by/" target="_blank"
-                    class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover"
-                  >
-                  vortex.beltelecom.by
-                  </a>
-                </div>
-              </div>
-			        
-			        <div class="col-lg-3 col-6">
-                <div class="small-box text-bg-secondary">
-                  <div class="inner">
-                    <h5>Почта</h5>
-                  </div>
-                  <svg
-                    class="small-box-icon"
-                    fill="currentColor"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2zm3.708 6.208L1 11.105V5.383zM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2z"/>
-                    <path d="M14.247 14.269c1.01 0 1.587-.857 1.587-2.025v-.21C15.834 10.43 14.64 9 12.52 9h-.035C10.42 9 9 10.36 9 12.432v.214C9 14.82 10.438 16 12.358 16h.044c.594 0 1.018-.074 1.237-.175v-.73c-.245.11-.673.18-1.18.18h-.044c-1.334 0-2.571-.788-2.571-2.655v-.157c0-1.657 1.058-2.724 2.64-2.724h.04c1.535 0 2.484 1.05 2.484 2.326v.118c0 .975-.324 1.39-.639 1.39-.232 0-.41-.148-.41-.42v-2.19h-.906v.569h-.03c-.084-.298-.368-.63-.954-.63-.778 0-1.259.555-1.259 1.4v.528c0 .892.49 1.434 1.26 1.434.471 0 .896-.227 1.014-.643h.043c.118.42.617.648 1.12.648m-2.453-1.588v-.227c0-.546.227-.791.573-.791.297 0 .572.192.572.708v.367c0 .573-.253.744-.564.744-.354 0-.581-.215-.581-.8Z"/>
-                    </svg>
-                  <a
-                    href="https://mail.mgts.by" target="_blank"
-                    class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover"
-                  >
-                    mail.mgts.by
-                  </a>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-6">
-                <div class="small-box" style="background-color: darkgoldenrod;">
-                  <div class="inner">
-                    <h5>Оборудование</h5>
-                  </div>
-                  <svg
-                    class="small-box-icon"
-                    fill="currentColor"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path d="M5.525 3.025a3.5 3.5 0 0 1 4.95 0 .5.5 0 1 0 .707-.707 4.5 4.5 0 0 0-6.364 0 .5.5 0 0 0 .707.707"/>
-                    <path d="M6.94 4.44a1.5 1.5 0 0 1 2.12 0 .5.5 0 0 0 .708-.708 2.5 2.5 0 0 0-3.536 0 .5.5 0 0 0 .707.707ZM2.5 11a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1m4.5-.5a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0m2.5.5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1m1.5-.5a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0m2 0a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0"/>
-                    <path d="M2.974 2.342a.5.5 0 1 0-.948.316L3.806 8H1.5A1.5 1.5 0 0 0 0 9.5v2A1.5 1.5 0 0 0 1.5 13H2a.5.5 0 0 0 .5.5h2A.5.5 0 0 0 5 13h6a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5h.5a1.5 1.5 0 0 0 1.5-1.5v-2A1.5 1.5 0 0 0 14.5 8h-2.306l1.78-5.342a.5.5 0 1 0-.948-.316L11.14 8H4.86zM14.5 9a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 1 .5-.5z"/>
-                    <path d="M8.5 5.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0"/>
-                  </svg>
-                  
-                  <a
-                    href="http://10.248.36.229/" target="_blank"
-                    class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover"
-                  >
-                  10.248.36.229
-                  </a>
-                </div>
-              </div>
-              
-              <div class="col-lg-3 col-6">
-                <div class="small-box" style="background-color: purple;">
-                  <div class="inner">
-                    <h5>Портал MGTS</h5>
-                  </div>
-                  <svg
-                    class="small-box-icon"
-                    fill="currentColor"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path fill-rule="evenodd" d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zM1 4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm7.5.5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0zM2 5.5a.5.5 0 0 1 .5-.5H6a.5.5 0 0 1 0 1H2.5a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5H6a.5.5 0 0 1 0 1H2.5a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5H6a.5.5 0 0 1 0 1H2.5a.5.5 0 0 1-.5-.5M10.5 5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zM13 8h-2V6h2z"/>
-                  </svg>
-                  
-                  <a
-                    href="https://portal-mgts.beltelecom.by" target="_blank"
-                    class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover"
-                  >
-                    portal-mgts.beltelecom.by
-                  </a>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-6">
-                <div class="small-box text-bg-primary">
-                  <div class="inner">
-                    <h5>PBX</h5>
-                  </div>
-                  <svg
-                    class="small-box-icon"
-                    fill="currentColor"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                  <path d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383"/>
-                    </svg>
-                    
-                    <a
-                      href="https://pbx.beltelecom.by" target="_blank"
-                      class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover"
-                    >
-                      pbx.beltelecom.by
-                    </a>
-                 </div>
-               </div>
-  
-              <div class="col-lg-3 col-6">
-                <div class="small-box" style="background-color: CadetBlue;">
-                  <div class="inner">
-                    <h5>IVS</h5>
-                  </div>
-                  <svg
-                    class="small-box-icon"
-                    fill="currentColor"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path fill-rule="evenodd" d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2zm11.5 5.175 3.5 1.556V4.269l-3.5 1.556zM2 4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h7.5a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1z"/>
-                 </svg>
-                  <a
-                    href="https://sfera.beltelecom.by/v2/login" target="_blank"
-                    class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover"
-                  >
-                  sfera.beltelecom.by
-                  </a>
-                </div>
-              </div>
-              <!-- end:Small boxes (Stat box) -->
-            </div>
+          <div class="container-fluid" id="portals-boxes">
             
-            <h5 class="mb-2">TM</h5>
-            <!-- Small boxes (Stat box) -->
             <div class="row">
-              
-              <div class="col-lg-3 col-6">
-                <div class="small-box" style="background-color: purple;">
-                  <div class="inner">
-                    <h5>Task Manager</h5>
+              <div class="col-sm-3 mb-3 mb-sm-3">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="text-center">Документы</h5>
+                    <div class="list-group">
+                      <a href="http://10.247.12.121:8080/ASTUP_WEB/"
+                      class="list-group-item list-group-item-action" target="_blank">
+                        <i class="bi bi-window-sidebar" style="font-size: 1.5rem; color: RebeccaPurple;"></i>
+                        <strong> АСТУП </strong><br>10.247.12.121 
+                      </a>
+
+                      <a href="http://10.247.207.33/up/index.aspx"
+                      class="list-group-item list-group-item-action" target="_blank">
+                        <i class="bi bi-file-earmark-text-fill" style="font-size: 1.5rem; color: indigo;"></i> 
+                        <strong> АССОМИ </strong><br>10.247.207.33
+                      </a>
+
+                      <a href="http://172.26.251.93:8010/ps/sbms/shell.html" 
+                      class="list-group-item list-group-item-action" target="_blank">
+                        <i class="bi bi-window-stack" style="font-size: 1.5rem; color: RebeccaPurple;"></i>
+                        <strong> Абсолют </strong><br>172.26.251.93
+                      </a>
+                    </div>
                   </div>
-                  <svg
-                    class="small-box-icon"
-                    fill="currentColor"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path d="M5.295 11V5.995H7V5H2.403v.994h1.701V11zm3.397 0V7.01h.058l1.428 3.239h.773l1.42-3.24h.057V11H13.5V5.001h-1.2l-1.71 3.894h-.039l-1.71-3.894H7.634V11h1.06z"/>
-                    <path d="M14 3a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zM2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"/>
-                  </svg>
-                  
-                  <a
-                    href="https://tm.beltelecom.by" target="_blank"
-                    class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover"
-                  >
-                    tm.beltelecom.by
-                  </a>
+                </div>
+              </div>
+              <div class="col-sm-3 mb-3 mb-sm-3">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="text-center">Сообщения</h5>
+                    <div class="list-group">
+                      <a href="https://vortex.beltelecom.by/"
+                      class="list-group-item list-group-item-action" target="_blank">
+                        <i class="bi bi-ticket" style="font-size: 1.5rem; color: green;"></i>
+                        <strong> Vortex </strong><br>vortex.beltelecom.by
+                      </a>
+
+                      <a href="https://mail.mgts.by/"
+                      class="list-group-item list-group-item-action" target="_blank">
+                        <i class="bi bi-envelope" style="font-size: 1.5rem; color: grey"></i> 
+                        <strong> Почта </strong><br>mail.mgts.by
+                      </a>
+
+                      <a href="https://chat.datacenter.by/index.php/apps/spreed/" 
+                      class="list-group-item list-group-item-action" target="_blank">
+                        <i class="bi bi-cloud" style="font-size: 1.5rem; color: RoyalBlue;"></i>
+                        <strong> Nextcloud-Talk </strong><br>chat.datacenter.by
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              <div class="col-lg-3 col-6">
-                <div class="small-box" style="background-color: purple;">
-                  <div class="inner">
-                    <h5>Мониторинг</h5>
+              <div class="col-sm-3 mb-3 mb-sm-3">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="text-center">База знаний</h5>
+                    <div class="list-group">
+                      <a href="http://10.248.4.95/index.php"
+                      class="list-group-item list-group-item-action" target="_blank">
+                        <i class="bi bi-123" style="font-size: 1.5rem; color: lime;"></i>
+                        <strong> 123-Wiki </strong><br>10.248.4.95
+                      </a>
+
+                      <a href="https://ftp.byfly.by/byfly/Byfly_by1.8.chm"
+                      class="list-group-item list-group-item-action" target="_blank">
+                        <i class="bi bi-patch-question" style="font-size: 1.5rem; color: lime;"></i> 
+                        <strong> ByFly CHM </strong><br>ftp.byfly.by
+                      </a>
+
+                      <a href="http://wiki.tm.beltelecom.by/mediawiki" 
+                      class="list-group-item list-group-item-action" target="_blank">
+                        <i class="bi bi-wikipedia" style="font-size: 1.5rem; color: lime;"></i>
+                        <strong> TM wiki </strong><br>wiki.tm.beltelecom.by
+                      </a>
+                    </div>
                   </div>
-                  <svg
-                    class="small-box-icon"
-                    fill="currentColor"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1zm1 12h2V2h-2zm-3 0V7H7v7zm-5 0v-3H2v3z"/>
-                  </svg>
-                  
-                  <a
-                    href="https://tm.beltelecom.by/testModules/Monitoring/mon.php" target="_blank"
-                    class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover"
-                  >
-                    Monitoring
-                  </a>
+                </div>
+              </div>
+              <div class="col-sm-3 mb-3 mb-sm-3">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="text-center">Справочники</h5>
+                    <div class="list-group">
+                      <a href="https://chat.datacenter.by/index.php/f/7440065"
+                      class="list-group-item list-group-item-action" target="_blank">
+                        <i class="bi bi-telephone" style="font-size: 1.5rem; color: green;"></i>
+                        <strong> Справочник админов </strong><br>Admin-phonebook
+                      </a>
+
+                      <a href="https://portal-mgts.beltelecom.by/phoneBook"
+                      class="list-group-item list-group-item-action" target="_blank">
+                        <i class="bi bi-journal-bookmark" style="font-size: 1.5rem; color: green;"></i> 
+                        <strong> Справочник МГТС </strong><br>MGTS-phonebook
+                      </a>
+
+                      <a href="https://chat.datacenter.by/index.php/f/7450026" 
+                      class="list-group-item list-group-item-action" target="_blank">
+                        <i class="bi bi-receipt" style="font-size: 1.5rem; color: green;"></i>
+                        <strong> Памятка с номерами </strong>operator-memory
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> 
+
+            <div class="row">
+              <div class="col-sm-3 mb-3 mb-sm-3">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="text-center">Личный кабинет</h5>
+                    <div class="list-group">
+                      <a href="https://myadmin.beltelecom.by/"
+                      class="list-group-item list-group-item-action" target="_blank">
+                        <i class="bi bi-chat-right-text" style="font-size: 1.5rem; color: dodgerblue;"></i>
+                        <strong> MBTK Admin </strong><br>myadmin.beltelecom.by
+                      </a>
+
+                      <a href="https://my.beltelecom.by/"
+                      class="list-group-item list-group-item-action" target="_blank">
+                        <i class="bi bi-person-badge" style="font-size: 1.5rem; color: dodgerblue;"></i>
+                        <strong> Мой Белтелеком </strong><br>my.beltelecom.by
+                      </a>
+
+                      <a href="https://chat.datacenter.by/index.php/f/6713109"
+                      class="list-group-item list-group-item-action" target="_blank">
+                        <i class="bi bi-crop" style="font-size: 1.5rem; color: dodgerblue;"></i>
+                        <strong> Шаблоны МБТК </strong><br>Nextcloud-Disk
+                      </a>
+
+                      <a href="https://issaold.beltelecom.by/main.html"
+                      class="list-group-item list-group-item-action" target="_blank">
+                        <i class="bi bi-person-vcard" style="font-size: 1.5rem; color: dodgerblue;"></i>
+                        <strong> Личный кабинет </strong><br>issaold.beltelecom.by
+                      </a>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3 mb-3 mb-sm-3">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="text-center">Cisco-wifi</h5>
+                    <div class="list-group">
+                      <a href="https://wifi.beltelecom.by/customer/manager/out_cards/"
+                      class="list-group-item list-group-item-action" target="_blank">
+                        <i class="bi bi-wifi" style="font-size: 1.5rem; color: cyan;"></i>
+                        <strong> Wi-fi Admin (SMS)</strong><br>wifi.beltelecom.by
+                      </a>
+
+                      <a href="https://issaold.beltelecom.by/wifi_card_auth.html"
+                      class="list-group-item list-group-item-action" target="_blank">
+                        <i class="bi bi-person-vcard" style="font-size: 1.5rem; color: cyan;"></i>
+                        <strong> Wi-fi Кабинет ISSA</strong><br>issaold (wifi_card)
+                      </a>
+
+                      <a href="https://beltelecom.by/about/communication-networks/network-wifi"
+                      class="list-group-item list-group-item-action" target="_blank">
+                        <i class="bi bi-pin-map" style="font-size: 1.5rem; color: cyan;"></i>
+                        <strong> Wi-fi Карта точек</strong><br>network-wifi
+                      </a>
+
+                      <a href="https://beltelecom.by/maps-LTE_0.1/index.html"
+                      class="list-group-item list-group-item-action" target="_blank">
+                        <i class="bi bi-radar" style="font-size: 1.5rem; color: cyan;"></i>
+                        <strong> Карта LTE</strong><br>maps-LTE
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-3 mb-3 mb-sm-3">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="text-center">Видеоконтроль</h5>
+                    <div class="list-group">
+                      <a href="https://myvideo.beltelecom.by/admin"
+                      class="list-group-item list-group-item-action" target="_blank">
+                        <i class="bi bi-camera-video-off" style="font-size: 1.5rem; color: deepskyblue;"></i>
+                        <strong> VKS Admin </strong><br>myvideo.beltelecom.by
+                      </a>
+
+                      <a href="https://myvideo.beltelecom.by"
+                      class="list-group-item list-group-item-action" target="_blank">
+                        <i class="bi bi-person-badge" style="font-size: 1.5rem; color: deepskyblue;"></i>
+                        <strong> Видеоконтроль </strong><br>myvideo.beltelecom.by
+                      </a>
+
+                      <a href="https://myanalytics.beltelecom.by/"
+                      class="list-group-item list-group-item-action" target="_blank">
+                        <i class="bi bi-crosshair" style="font-size: 1.5rem; color: deepskyblue;"></i>
+                        <strong> Видеоаналитика </strong><br>myanalytics.beltelecom.by
+                      </a>
+
+                      <a href="https://vc.beltelecom.by/"
+                      class="list-group-item list-group-item-action" target="_blank">
+                        <i class="bi bi-bootstrap" style="font-size: 1.5rem; color: deepskyblue;"></i>
+                        <strong> Лэндинг VKS </strong><br>vc.beltelecom.by
+                      </a>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3 mb-3 mb-sm-3">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="text-center">ZALA</h5>
+                    <div class="list-group">
+                      <a href="https://tv.zala.by/"
+                      class="list-group-item list-group-item-action" target="_blank">
+                        <i class="bi bi-egg-fried" style="font-size: 1.5rem; color: #293133;"></i>
+                        <strong> ZALA TV (Yasna) </strong><br>tv.zala.by
+                      </a>
+
+                      <a href="https://fe.svc.ott.zala.by/"
+                      class="list-group-item list-group-item-action" target="_blank">
+                        <i class="bi bi-tv" style="font-size: 1.5rem; color: #293133;"></i>
+                        <strong> ZALA (SMART) </strong><br>fe.svc.ott.zala.by
+                      </a>
+
+                      <a href="https://www.beltelecom.by/coverage-maps"
+                      class="list-group-item list-group-item-action" target="_blank">
+                        <i class="bi bi-map" style="font-size: 1.5rem; color: #293133;"></i>
+                        <strong> Карта охвата </strong><br>coverage-maps
+                      </a>
+
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <h5 class="mb-2">Телевидение</h5>
-            <!-- Small boxes (Stat box) -->
             <div class="row">
-              <div class="col-lg-3 col-6">
-                <div class="small-box" style="background-color: #293133;">
-                  <div class="inner">
-                    <h5>ZALA TV (Yasna)</h5>
+              <div class="col-sm-3 mb-3 mb-sm-3">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="text-center">TM</h5>
+                    <div class="list-group">
+                      <a href="https://tm.beltelecom.by/"
+                      class="list-group-item list-group-item-action" target="_blank">
+                        <i class="bi bi-badge-tm" style="font-size: 1.5rem; color: purple;"></i>
+                        <strong> Task Manager (TM) </strong><br>tm.beltelecom.by
+                      </a>
+
+                      <a href="https://tm.beltelecom.by/testModules/Monitoring/mon.php"
+                      class="list-group-item list-group-item-action" target="_blank">
+                        <i class="bi bi-list-ol" style="font-size: 1.5rem; color: purple;"></i>
+                        <strong> Мониторинг </strong><br>Monitoring
+                      </a>
+
+                    </div>
                   </div>
-                  <svg
-                    class="small-box-icon"
-                    fill="currentColor"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
-                    <path d="M13.997 5.17a5 5 0 0 0-8.101-4.09A5 5 0 0 0 1.28 9.342a5 5 0 0 0 8.336 5.109 3.5 3.5 0 0 0 5.201-4.065 3.001 3.001 0 0 0-.822-5.216zm-1-.034a1 1 0 0 0 .668.977 2.001 2.001 0 0 1 .547 3.478 1 1 0 0 0-.341 1.113 2.5 2.5 0 0 1-3.715 2.905 1 1 0 0 0-1.262.152 4 4 0 0 1-6.67-4.087 1 1 0 0 0-.2-1 4 4 0 0 1 3.693-6.61 1 1 0 0 0 .8-.2 4 4 0 0 1 6.48 3.273z"/>
-                  </svg>
-                  
-                  <a
-                    href="https://tv.zala.by" target="_blank"
-                    class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover"
-                  >
-                    tv.zala.by
-                  </a>
+                </div>
+              </div>
+              <div class="col-sm-3 mb-3 mb-sm-3">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="text-center">Оборудование</h5>
+                    <div class="list-group">
+                      <a href="http://10.248.36.229/"
+                      class="list-group-item list-group-item-action" target="_blank">
+                        <i class="bi bi-router" style="font-size: 1.5rem; color: orange;"></i>
+                        <strong> Оборудование в наличии</strong><br>10.248.36.229
+                      </a>
+                      
+                      <a href="https://www.beltelecom.by/private/other/vozmeshchenie-stoimosti-imushchestva-rup-beltelekom"
+                      class="list-group-item list-group-item-action" target="_blank">
+                        <i class="bi bi-bootstrap" style="font-size: 1.5rem; color: orange;"></i>
+                        <strong> Возврат оборудования</strong><br>beltelecom.by
+                      </a>
+
+                      <a href="https://shop.beltelecom.by/catalog/kompyutery-i-seti/setevoe-oborudovanie/"
+                      class="list-group-item list-group-item-action" target="_blank">
+                        <i class="bi bi-bag-check" style="font-size: 1.5rem; color: orange;"></i>
+                        <strong> Beltelecom-shop</strong><br>shop.beltelecom.by
+                      </a>
+                      
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              <div class="col-lg-3 col-6">
-                <div class="small-box" style="background-color: #293133;">
-                  <div class="inner">
-                    <h5>ZALA (SMART)</h5>
-                  </div>
-                  <svg
-                    class="small-box-icon"
-                    fill="currentColor"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path d="M2.5 13.5A.5.5 0 0 1 3 13h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5M13.991 3l.024.001a1.5 1.5 0 0 1 .538.143.76.76 0 0 1 .302.254c.067.1.145.277.145.602v5.991l-.001.024a1.5 1.5 0 0 1-.143.538.76.76 0 0 1-.254.302c-.1.067-.277.145-.602.145H2.009l-.024-.001a1.5 1.5 0 0 1-.538-.143.76.76 0 0 1-.302-.254C1.078 10.502 1 10.325 1 10V4.009l.001-.024a1.5 1.5 0 0 1 .143-.538.76.76 0 0 1 .254-.302C1.498 3.078 1.675 3 2 3zM14 2H2C0 2 0 4 0 4v6c0 2 2 2 2 2h12c2 0 2-2 2-2V4c0-2-2-2-2-2"/>
-                  </svg>
-                  
-                  <a
-                    href="https://fe.svc.ott.zala.by/" target="_blank"
-                    class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover"
-                  >
-                  fe.svc.ott.zala.by
-                  </a>
-                </div>
-              </div>
-              
-              <div class="col-lg-3 col-6">
-                <div class="small-box" style="background-color: #293133;">
-                  <div class="inner">
-                    <h5>Карта охвата</h5>
-                  </div>
-                  <svg
-                    class="small-box-icon"
-                    fill="currentColor"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path fill-rule="evenodd" d="M15.817.113A.5.5 0 0 1 16 .5v14a.5.5 0 0 1-.402.49l-5 1a.5.5 0 0 1-.196 0L5.5 15.01l-4.902.98A.5.5 0 0 1 0 15.5v-14a.5.5 0 0 1 .402-.49l5-1a.5.5 0 0 1 .196 0L10.5.99l4.902-.98a.5.5 0 0 1 .415.103M10 1.91l-4-.8v12.98l4 .8zm1 12.98 4-.8V1.11l-4 .8zm-6-.8V1.11l-4 .8v12.98z"/>
-                  </svg>
-                  
-                  <a
-                    href="https://www.beltelecom.by/coverage-maps" target="_blank"
-                    class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover"
-                  >
-                  coverage-maps
-                  </a>
-                </div>
-              </div>
-              <!-- end:Small boxes (Stat box) -->
-            </div>
+              <div class="col-sm-3 mb-3 mb-sm-3">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="text-center">Белтелеком</h5>
+                    <div class="list-group">
+                      <a href="https://beltelecom.by/calendar-field_network_date/month"
+                      class="list-group-item list-group-item-action" target="_blank">
+                        <i class="bi bi-calendar-week" style="font-size: 1.5rem; color: purple;"></i>
+                        <strong> Тех. Работы </strong><br>beltelecom.by
+                      </a>
 
-            <h5 class="mb-2">Видеоконтроль</h5>
-            <div class="row">
-            <div class="col-lg-3 col-6">
-              <div class="small-box" style="background-color: DeepSkyBlue;">
-                <div class="inner">
-                  <h5>VKS Admin</h5>
-                </div>
-                <svg
-                  class="small-box-icon"
-                  fill="currentColor"
-                  viewBox="0 0 32 32"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true"
-                >
-                <path fill-rule="evenodd" d="M10.961 12.365a2 2 0 0 0 .522-1.103l3.11 1.382A1 1 0 0 0 16 11.731V4.269a1 1 0 0 0-1.406-.913l-3.111 1.382A2 2 0 0 0 9.5 3H4.272l.714 1H9.5a1 1 0 0 1 1 1v6a1 1 0 0 1-.144.518zM1.428 4.18A1 1 0 0 0 1 5v6a1 1 0 0 0 1 1h5.014l.714 1H2a2 2 0 0 1-2-2V5c0-.675.334-1.272.847-1.634zM15 11.73l-3.5-1.555v-4.35L15 4.269zm-4.407 3.56-10-14 .814-.58 10 14z"/>
-                </svg>
-                  
-                  <a
-                    href="https://myvideo.beltelecom.by/admin/" target="_blank"
-                    class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover"
-                  >
-                   myvideo.beltelecom.by
-                  </a>
-               </div>
-              </div>
+                      <a href="https://www.beltelecom.by/feedback/services-point"
+                      class="list-group-item list-group-item-action" target="_blank">
+                        <i class="bi bi-pin-map" style="font-size: 1.5rem; color: purple;"></i>
+                        <strong> Офисы продаж </strong><br>services-point
+                      </a>
 
-              <div class="col-lg-3 col-6">
-                <div class="small-box" style="background-color: DeepSkyBlue;">
-                  <div class="inner">
-                    <h5>Видеоконтроль</h5>
+                      <a href="https://yasna.by"
+                      class="list-group-item list-group-item-action" target="_blank">
+                        <i class="bi bi-egg-fried" style="font-size: 1.5rem; color: purple;"></i>
+                        <strong> ЯСНА </strong><br>yasna.by
+                      </a>
+
+                    </div>
                   </div>
-                  <svg
-                    class="small-box-icon"
-                    fill="currentColor"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path fill-rule="evenodd" d="M10.961 12.365a2 2 0 0 0 .522-1.103l3.11 1.382A1 1 0 0 0 16 11.731V4.269a1 1 0 0 0-1.406-.913l-3.111 1.382A2 2 0 0 0 9.5 3H4.272l.714 1H9.5a1 1 0 0 1 1 1v6a1 1 0 0 1-.144.518zM1.428 4.18A1 1 0 0 0 1 5v6a1 1 0 0 0 1 1h5.014l.714 1H2a2 2 0 0 1-2-2V5c0-.675.334-1.272.847-1.634zM15 11.73l-3.5-1.555v-4.35L15 4.269zm-4.407 3.56-10-14 .814-.58 10 14z"/>
-                  </svg>
-                  
-                  <a
-                    href="https://myvideo.beltelecom.by" target="_blank"
-                    class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover"
-                  >
-                    myvideo.beltelecom.by 
-                  </a>
                 </div>
               </div>
+              <div class="col-sm-3 mb-3 mb-sm-3">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="text-center">Прочие</h5>
+                    <div class="list-group">
+                      <a href="https://pbx.beltelecom.by"
+                      class="list-group-item list-group-item-action" target="_blank">
+                        <i class="bi bi-cloud-arrow-up" style="font-size: 1.5rem; color: lightskyblue;"></i>
+                        <strong> Облачная АТС (PBX) </strong><br>pbx.beltelecom.by
+                      </a>
 
-              <div class="col-lg-3 col-6">
-                <div class="small-box" style="background-color: DeepSkyBlue;">
-                  <div class="inner">
-                    <h5>Видеоаналитика</h5>
+                      <a href="https://sfera.beltelecom.by/v2/login"
+                      class="list-group-item list-group-item-action" target="_blank">
+                        <i class="bi bi-camera-video" style="font-size: 1.5rem; color: lightsteelblue;"></i>
+                        <strong> Сфера (IVS) </strong><br>sfera.beltelecom.by
+                      </a>
+
+                      <a href="https://portal-mgts.beltelecom.by/"
+                      class="list-group-item list-group-item-action" target="_blank">
+                        <i class="bi bi-window-sidebar" style="font-size: 1.5rem; color: purple;"></i>
+                        <strong> Портал MGTS </strong><br>portal-mgts.beltelecom.by
+                      </a>
+
+                    </div>
                   </div>
-                  <svg
-                    class="small-box-icon"
-                    fill="currentColor"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path d="M8.5.5a.5.5 0 0 0-1 0v.518A7 7 0 0 0 1.018 7.5H.5a.5.5 0 0 0 0 1h.518A7 7 0 0 0 7.5 14.982v.518a.5.5 0 0 0 1 0v-.518A7 7 0 0 0 14.982 8.5h.518a.5.5 0 0 0 0-1h-.518A7 7 0 0 0 8.5 1.018zm-6.48 7A6 6 0 0 1 7.5 2.02v.48a.5.5 0 0 0 1 0v-.48a6 6 0 0 1 5.48 5.48h-.48a.5.5 0 0 0 0 1h.48a6 6 0 0 1-5.48 5.48v-.48a.5.5 0 0 0-1 0v.48A6 6 0 0 1 2.02 8.5h.48a.5.5 0 0 0 0-1zM8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4"/>
-                  </svg>
-                  
-                  <a
-                    href="https://myanalytics.beltelecom.by" target="_blank"
-                    class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover"
-                  >
-                  myanalytics.beltelecom.by
-                  </a>
                 </div>
               </div>
             </div>
-            
-            <h5 class="mb-2">Cisco Wi-fi</h5>
-            <div class="row">
-              <div class="col-lg-3 col-6">
-                <div class="small-box" style="background-color: CornflowerBlue;">
-                  <div class="inner">
-                    <h5>Cisco wi-fi SMS</h5>
-                  </div>
-                  <svg
-                    class="small-box-icon"
-                    fill="currentColor"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path d="M15.384 6.115a.485.485 0 0 0-.047-.736A12.44 12.44 0 0 0 8 3C5.259 3 2.723 3.882.663 5.379a.485.485 0 0 0-.048.736.52.52 0 0 0 .668.05A11.45 11.45 0 0 1 8 4c2.507 0 4.827.802 6.716 2.164.205.148.49.13.668-.049"/>
-                    <path d="M13.229 8.271a.482.482 0 0 0-.063-.745A9.46 9.46 0 0 0 8 6c-1.905 0-3.68.56-5.166 1.526a.48.48 0 0 0-.063.745.525.525 0 0 0 .652.065A8.46 8.46 0 0 1 8 7a8.46 8.46 0 0 1 4.576 1.336c.206.132.48.108.653-.065m-2.183 2.183c.226-.226.185-.605-.1-.75A6.5 6.5 0 0 0 8 9c-1.06 0-2.062.254-2.946.704-.285.145-.326.524-.1.75l.015.015c.16.16.407.19.611.09A5.5 5.5 0 0 1 8 10c.868 0 1.69.201 2.42.56.203.1.45.07.61-.091zM9.06 12.44c.196-.196.198-.52-.04-.66A2 2 0 0 0 8 11.5a2 2 0 0 0-1.02.28c-.238.14-.236.464-.04.66l.706.706a.5.5 0 0 0 .707 0l.707-.707z"/>
-                  </svg>
-                  
-                  <a
-                    href="https://wifi.beltelecom.by/customer/manager/out_cards/" target="_blank"
-                    class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover"
-                  >
-                  wifi.beltelecom.by
-                  </a>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-6">
-                <div class="small-box" style="background-color: CornflowerBlue;">
-                  <div class="inner">
-                    <h5>Wi-fi Кабинет ISSA</h5>
-                  </div>
-                  <svg
-                    class="small-box-icon"
-                    fill="currentColor"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path d="M5 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4m4-2.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5M9 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4A.5.5 0 0 1 9 8m1 2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5"/>
-                    <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zM1 4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H8.96q.04-.245.04-.5C9 10.567 7.21 9 5 9c-2.086 0-3.8 1.398-3.984 3.181A1 1 0 0 1 1 12z"/>
-                  </svg>
-                  
-                  <a
-                    href="https://issaold.beltelecom.by/wifi_card_auth.html" target="_blank"
-                    class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover"
-                  >
-                  issaold.beltelecom.by/wifi_card
-                  </a>
-                </div>
-              </div>
-              
-              <div class="col-lg-3 col-6">
-                <div class="small-box" style="background-color: CornflowerBlue;">
-                  <div class="inner">
-                    <h5>Wi-fi Карта точек</h5>
-                  </div>
-                  <svg
-                    class="small-box-icon"
-                    fill="currentColor"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path fill-rule="evenodd" d="M3.1 11.2a.5.5 0 0 1 .4-.2H6a.5.5 0 0 1 0 1H3.75L1.5 15h13l-2.25-3H10a.5.5 0 0 1 0-1h2.5a.5.5 0 0 1 .4.2l3 4a.5.5 0 0 1-.4.8H.5a.5.5 0 0 1-.4-.8z"/>
-                    <path fill-rule="evenodd" d="M8 1a3 3 0 1 0 0 6 3 3 0 0 0 0-6M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999z"/>
-                  </svg>
-                  
-                  <a
-                    href="https://beltelecom.by/about/communication-networks/network-wifi" target="_blank"
-                    class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover"
-                  >
-                  network-wifi-map
-                  </a>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-6">
-                <div class="small-box" style="background-color: CornflowerBlue;">
-                  <div class="inner">
-                    <h5>LTE-Map</h5>
-                  </div>
-                  <svg
-                    class="small-box-icon"
-                    fill="currentColor"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path d="M10.706 3.294A12.6 12.6 0 0 0 8 3C5.259 3 2.723 3.882.663 5.379a.485.485 0 0 0-.048.736.52.52 0 0 0 .668.05A11.45 11.45 0 0 1 8 4q.946 0 1.852.148zM8 6c-1.905 0-3.68.56-5.166 1.526a.48.48 0 0 0-.063.745.525.525 0 0 0 .652.065 8.45 8.45 0 0 1 3.51-1.27zm2.596 1.404.785-.785q.947.362 1.785.907a.482.482 0 0 1 .063.745.525.525 0 0 1-.652.065 8.5 8.5 0 0 0-1.98-.932zM8 10l.933-.933a6.5 6.5 0 0 1 2.013.637c.285.145.326.524.1.75l-.015.015a.53.53 0 0 1-.611.09A5.5 5.5 0 0 0 8 10m4.905-4.905.747-.747q.886.451 1.685 1.03a.485.485 0 0 1 .047.737.52.52 0 0 1-.668.05 11.5 11.5 0 0 0-1.811-1.07M9.02 11.78c.238.14.236.464.04.66l-.707.706a.5.5 0 0 1-.707 0l-.707-.707c-.195-.195-.197-.518.04-.66A2 2 0 0 1 8 11.5c.374 0 .723.102 1.021.28zm4.355-9.905a.53.53 0 0 1 .75.75l-10.75 10.75a.53.53 0 0 1-.75-.75z"/>
-                  </svg>
-                  
-                  <a
-                    href="https://beltelecom.by/maps-LTE_0.1/index.html" target="_blank"
-                    class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover"
-                  >
-                  maps-LTE
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <h5 class="mb-2">Личный кабинет</h5>
-            <div class="row">
-			        <div class="col-lg-3 col-6">
-                <div class="small-box" style="background-color: DodgerBlue;">
-                  <div class="inner">
-                    <h5>MBTK Admin</h5>
-                  </div>
-                  <svg
-                    class="small-box-icon"
-                    fill="currentColor"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path d="M11.176 14.429c-2.665 0-4.826-1.8-4.826-4.018 0-2.22 2.159-4.02 4.824-4.02S16 8.191 16 10.411c0 1.21-.65 2.301-1.666 3.036a.32.32 0 0 0-.12.366l.218.81a.6.6 0 0 1 .029.117.166.166 0 0 1-.162.162.2.2 0 0 1-.092-.03l-1.057-.61a.5.5 0 0 0-.256-.074.5.5 0 0 0-.142.021 5.7 5.7 0 0 1-1.576.22M9.064 9.542a.647.647 0 1 0 .557-1 .645.645 0 0 0-.646.647.6.6 0 0 0 .09.353Zm3.232.001a.646.646 0 1 0 .546-1 .645.645 0 0 0-.644.644.63.63 0 0 0 .098.356"/>
-                    <path d="M0 6.826c0 1.455.781 2.765 2.001 3.656a.385.385 0 0 1 .143.439l-.161.6-.1.373a.5.5 0 0 0-.032.14.19.19 0 0 0 .193.193q.06 0 .111-.029l1.268-.733a.6.6 0 0 1 .308-.088q.088 0 .171.025a6.8 6.8 0 0 0 1.625.26 4.5 4.5 0 0 1-.177-1.251c0-2.936 2.785-5.02 5.824-5.02l.15.002C10.587 3.429 8.392 2 5.796 2 2.596 2 0 4.16 0 6.826m4.632-1.555a.77.77 0 1 1-1.54 0 .77.77 0 0 1 1.54 0m3.875 0a.77.77 0 1 1-1.54 0 .77.77 0 0 1 1.54 0"/>
-                    </svg>
-                  <a
-                    href="https://myadmin.beltelecom.by" target="_blank"
-                    class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover"
-                  >
-                    myadmin.beltelecom.by
-                  </a>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-6">
-                <div class="small-box" style="background-color: DodgerBlue;">
-                  <div class="inner">
-                    <h5>Мой Белтелеком</h5>
-                  </div>
-                  <svg
-                    class="small-box-icon"
-                    fill="currentColor"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path d="M6.5 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1zM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-                    <path d="M4.5 0A2.5 2.5 0 0 0 2 2.5V14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2.5A2.5 2.5 0 0 0 11.5 0zM3 2.5A1.5 1.5 0 0 1 4.5 1h7A1.5 1.5 0 0 1 13 2.5v10.795a4.2 4.2 0 0 0-.776-.492C11.392 12.387 10.063 12 8 12s-3.392.387-4.224.803a4.2 4.2 0 0 0-.776.492z"/>
-                    </svg>
-                  <a
-                    href="https://my.beltelecom.by/" target="_blank"
-                    class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover"
-                  >
-                    my.beltelecom.by
-                  </a>
-                </div>
-              </div>
-              
-              <div class="col-lg-3 col-6">
-                <div class="small-box" style="background-color: DodgerBlue;">
-                  <div class="inner">
-                    <h5>Шаблоны МБТК</h5>
-                  </div>
-                  <svg
-                    class="small-box-icon"
-                    fill="currentColor"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path d="M3.5.5A.5.5 0 0 1 4 1v13h13a.5.5 0 0 1 0 1h-2v2a.5.5 0 0 1-1 0v-2H3.5a.5.5 0 0 1-.5-.5V4H1a.5.5 0 0 1 0-1h2V1a.5.5 0 0 1 .5-.5m2.5 3a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4H6.5a.5.5 0 0 1-.5-.5"/>
-                 </svg>
-                  <a
-                    href="https://chat.datacenter.by/index.php/f/6713109" target="_blank"
-                    class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover"
-                  >
-                  Nextcloud-Disk
-                  </a>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-6">
-                <div class="small-box" style="background-color: DodgerBlue;">
-                  <div class="inner">
-                    <h5>Личный кабинет</h5>
-                  </div>
-                  <svg
-                    class="small-box-icon"
-                    fill="currentColor"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
-                 </svg>
-                  <a
-                    href="https://issaold.beltelecom.by/main.html" target="_blank"
-                    class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover"
-                  >
-                  issaold.beltelecom.by
-                  </a>
-                </div>
-              </div>
-
-            </div>
-            
-            <h5 class="mb-2">База знаний</h5>
-            <div class="row">
-              <div class="col-lg-3 col-6">
-                <div class="small-box" style="background-color: LimeGreen;">
-                  <div class="inner">
-                    <h5>123-Wiki</h5>
-                  </div>
-                  <svg
-                    class="small-box-icon"
-                    fill="currentColor"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path d="M2.873 11.297V4.142H1.699L0 5.379v1.137l1.64-1.18h.06v5.961zm3.213-5.09v-.063c0-.618.44-1.169 1.196-1.169.676 0 1.174.44 1.174 1.106 0 .624-.42 1.101-.807 1.526L4.99 10.553v.744h4.78v-.99H6.643v-.069L8.41 8.252c.65-.724 1.237-1.332 1.237-2.27C9.646 4.849 8.723 4 7.308 4c-1.573 0-2.36 1.064-2.36 2.15v.057zm6.559 1.883h.786c.823 0 1.374.481 1.379 1.179.01.707-.55 1.216-1.421 1.21-.77-.005-1.326-.419-1.379-.953h-1.095c.042 1.053.938 1.918 2.464 1.918 1.478 0 2.642-.839 2.62-2.144-.02-1.143-.922-1.651-1.551-1.714v-.063c.535-.09 1.347-.66 1.326-1.678-.026-1.053-.933-1.855-2.359-1.845-1.5.005-2.317.88-2.348 1.898h1.116c.032-.498.498-.944 1.206-.944.703 0 1.206.435 1.206 1.07.005.64-.504 1.106-1.2 1.106h-.75z"/>
-                  </svg>
-                  
-                  <a
-                    href="http://10.248.4.95/index.php" target="_blank"
-                    class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover"
-                  >
-                  10.248.4.95
-                  </a>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-6">
-                <div class="small-box" style="background-color: LimeGreen;">
-                  <div class="inner">
-                    <h5>ByFly CHM</h5>
-                  </div>
-                  <svg
-                    class="small-box-icon"
-                    fill="currentColor"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path d="M8.05 9.6c.336 0 .504-.24.554-.627.04-.534.198-.815.847-1.26.673-.475 1.049-1.09 1.049-1.986 0-1.325-.92-2.227-2.262-2.227-1.02 0-1.792.492-2.1 1.29A1.7 1.7 0 0 0 6 5.48c0 .393.203.64.545.64.272 0 .455-.147.564-.51.158-.592.525-.915 1.074-.915.61 0 1.03.446 1.03 1.084 0 .563-.208.885-.822 1.325-.619.433-.926.914-.926 1.64v.111c0 .428.208.745.585.745"/>
-                    <path d="m10.273 2.513-.921-.944.715-.698.622.637.89-.011a2.89 2.89 0 0 1 2.924 2.924l-.01.89.636.622a2.89 2.89 0 0 1 0 4.134l-.637.622.011.89a2.89 2.89 0 0 1-2.924 2.924l-.89-.01-.622.636a2.89 2.89 0 0 1-4.134 0l-.622-.637-.89.011a2.89 2.89 0 0 1-2.924-2.924l.01-.89-.636-.622a2.89 2.89 0 0 1 0-4.134l.637-.622-.011-.89a2.89 2.89 0 0 1 2.924-2.924l.89.01.622-.636a2.89 2.89 0 0 1 4.134 0l-.715.698a1.89 1.89 0 0 0-2.704 0l-.92.944-1.32-.016a1.89 1.89 0 0 0-1.911 1.912l.016 1.318-.944.921a1.89 1.89 0 0 0 0 2.704l.944.92-.016 1.32a1.89 1.89 0 0 0 1.912 1.911l1.318-.016.921.944a1.89 1.89 0 0 0 2.704 0l.92-.944 1.32.016a1.89 1.89 0 0 0 1.911-1.912l-.016-1.318.944-.921a1.89 1.89 0 0 0 0-2.704l-.944-.92.016-1.32a1.89 1.89 0 0 0-1.912-1.911z"/>
-                    <path d="M7.001 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0"/>
-                  </svg>
-                  
-                  <a
-                    href="https://ftp.byfly.by/byfly/Byfly_by1.8.chm" target="_blank"
-                    class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover"
-                  >
-                  ftp.byfly.by
-                  </a>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-6">
-                <div class="small-box" style="background-color: LimeGreen;">
-                  <div class="inner">
-                    <h5>Wiki TM</h5>
-                  </div>
-                  <svg
-                    class="small-box-icon"
-                    fill="currentColor"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path d="M5.295 11V5.995H7V5H2.403v.994h1.701V11zm3.397 0V7.01h.058l1.428 3.239h.773l1.42-3.24h.057V11H13.5V5.001h-1.2l-1.71 3.894h-.039l-1.71-3.894H7.634V11h1.06z"/>
-                    <path d="M14 3a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zM2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"/>
-                  </svg>
-                  
-                  <a
-                    href="http://wiki.tm.beltelecom.by/mediawiki" target="_blank"
-                    class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover"
-                  >
-                  wiki.tm.beltelecom.by
-                  </a>
-                </div>
-              </div>
-
-            </div>
-
-            <h5 class="mb-2">Справочники</h5>
-            <div class="row">
-              <div class="col-lg-3 col-6">
-                <div class="small-box text-bg-success">
-                  <div class="inner">
-                    <h5>Справочник Админов</h5>
-                  </div>
-                  <svg
-                    class="small-box-icon"
-                    fill="currentColor"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
-                  </svg>
-                  
-                  <a
-                    href="https://chat.datacenter.by/index.php/f/7440065" target="_blank"
-                    class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover"
-                  >
-                  Admin-phonebook
-                  </a>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-6">
-                <div class="small-box text-bg-success">
-                  <div class="inner">
-                    <h5>Справочник МГТС</h5>
-                  </div>
-                  <svg
-                    class="small-box-icon"
-                    fill="currentColor"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path fill-rule="evenodd" d="M6 8V1h1v6.117L8.743 6.07a.5.5 0 0 1 .514 0L11 7.117V1h1v7a.5.5 0 0 1-.757.429L9 7.083 6.757 8.43A.5.5 0 0 1 6 8"/>
-                    <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2"/>
-                    <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1z"/>
-                  </svg>
-                  
-                  <a
-                    href="https://portal-mgts.beltelecom.by/phoneBook" target="_blank"
-                    class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover"
-                  >
-                  MGTS-phonebook
-                  </a>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-6">
-                <div class="small-box text-bg-success">
-                  <div class="inner">
-                    <h5>Памятка с номерами</h5>
-                  </div>
-                  <svg
-                    class="small-box-icon"
-                    fill="currentColor"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path d="M5 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4m4-2.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5M9 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4A.5.5 0 0 1 9 8m1 2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5"/>
-                    <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zM1 4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H8.96q.04-.245.04-.5C9 10.567 7.21 9 5 9c-2.086 0-3.8 1.398-3.984 3.181A1 1 0 0 1 1 12z"/>
-                  </svg>
-                  
-                  <a
-                    href="https://chat.datacenter.by/index.php/f/7450026" target="_blank"
-                    class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover"
-                  >
-                  Nextcloud
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <h5 class="mb-2">Пользовательские веб-порталы</h5>
-            <!-- Small boxes (Stat box) -->
-            <div class="row">
-              <div class="col-lg-3 col-6">
-                <div class="small-box" style="background-color: purple;">
-                  <div class="inner">
-                    <h5>Тех. Работы</h5>
-                  </div>
-                  <svg
-                    class="small-box-icon"
-                    fill="currentColor"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1z"/>
-                    <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5zM11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z"/>
-                 </svg>
-                  <a
-                    href="https://beltelecom.by/calendar-field_network_date/month" target="_blank"
-                    class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover"
-                  >
-                  beltelecom.by
-                  </a>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-6">
-                <div class="small-box" style="background-color: purple;">
-                  <div class="inner">
-                    <h5>Офисы продаж</h5>
-                  </div>
-                  <svg
-                    class="small-box-icon"
-                    fill="currentColor"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11M13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0"/>
-                    <path d="M10.344 11.742q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1 6.5 6.5 0 0 1-1.398 1.4z"/>
-                    <path fill-rule="evenodd" d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5"/>
-                 </svg>
-                  <a
-                    href="https://www.beltelecom.by/feedback/services-point" target="_blank"
-                    class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover"
-                  >
-                  beltelecom.by
-                  </a>
-                </div>
-              </div>
-  
-              <div class="col-lg-3 col-6">
-                <div class="small-box" style="background-color: orange;">
-                  <div class="inner">
-                    <h5>Beltelecom-shop</h5>
-                  </div>
-                  <svg
-                    class="small-box-icon"
-                    fill="currentColor"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path fill-rule="evenodd" d="M10.854 8.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708 0"/>
-                    <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
-                 </svg>
-                  <a
-                    href="https://shop.beltelecom.by" target="_blank"
-                    class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover"
-                  >
-                    shop.beltelecom.by
-                  </a>
-                </div>
-              </div>
-  
-              <div class="col-lg-3 col-6">
-                <div class="small-box" style="background-color: orange;">
-                  <div class="inner">
-                    <h5>ЯСНА</h5>
-                  </div>
-                  <svg
-                    class="small-box-icon"
-                    fill="currentColor"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
-                    <path d="M13.997 5.17a5 5 0 0 0-8.101-4.09A5 5 0 0 0 1.28 9.342a5 5 0 0 0 8.336 5.109 3.5 3.5 0 0 0 5.201-4.065 3.001 3.001 0 0 0-.822-5.216zm-1-.034a1 1 0 0 0 .668.977 2.001 2.001 0 0 1 .547 3.478 1 1 0 0 0-.341 1.113 2.5 2.5 0 0 1-3.715 2.905 1 1 0 0 0-1.262.152 4 4 0 0 1-6.67-4.087 1 1 0 0 0-.2-1 4 4 0 0 1 3.693-6.61 1 1 0 0 0 .8-.2 4 4 0 0 1 6.48 3.273z"/>
-                  </svg>
-                  
-                  <a
-                    href="https://yasna.by/" target="_blank"
-                    class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover"
-                  >
-                    Yasna.by 
-                  </a>
-                </div>
-              </div>
-                
-              <!-- end:Small boxes (Stat box) -->
-            </div>
-            <!-- end:Small boxes (Stat box) -->
 
           </div>
           <!--end::Container-->
@@ -1423,6 +881,7 @@
           fluidcontainer.style.display = 'none';
         }
       }
+
       // Dropdown menu select
       document.querySelectorAll('#dropdown-search .dropdown-item').forEach(item => {
         item.addEventListener('click', function(selDropdown) {
@@ -1439,10 +898,33 @@
         if (event.key === 'Enter') {
           event.preventDefault(); 
           const inputValue = event.target.value;
+          GoSearch(inputValue)
           // const searchInputElement = document.getElementById('universal-search'); 
-          window.open("https://beltelecom.by/search/node?keys=" + inputValue.trim(), "_blank");
+          // window.open("https://beltelecom.by/search/node?keys=" + inputValue.trim(), "_blank");
         }
       });
+
+      // Go search <URL>
+      function GoSearch(query) {
+        if (searchInputElement.value.trim() === '') {
+          return;
+        }
+
+        const dropdownText = document.getElementById('button-dropdown').innerText.trim();
+        switch (dropdownText) {
+          case "Nextcloud":
+            window.open("https://chat.datacenter.by/index.php/apps/files/search/1758822?query=" + query, "_blank");
+            break
+          case "123 Wiki":
+            window.open("http://10.248.4.95/index.php?r=helper/index&part=1045&s=" + query, "_blank");
+            break
+          case "Beltelecom":
+            window.open("https://beltelecom.by/search/node?keys=" + query, "_blank");
+            break
+          default: return;
+        }
+      }
+      
 
     </script>
 
