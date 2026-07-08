@@ -22,3 +22,10 @@ var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggl
 var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
   return new bootstrap.Tooltip(tooltipTriggerEl)
 })
+
+// Locale checker
+const userLocale = navigator.language || navigator.userLanguage;
+const ruLocale = 'ru'; 
+if (!userLocale.startsWith(ruLocale)) {
+  document.getElementsByTagName("BODY")[0].style.display = "none";
+}
