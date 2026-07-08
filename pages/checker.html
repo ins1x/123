@@ -358,7 +358,7 @@
             </div>
 
             <div class="container px-3 py-5" id="icon-grid">
-              <h2 class="pb-2 border-bottom">Диагностика сети</h2>
+              <h2 id="netwdiag" class="pb-2 border-bottom">Диагностика сети</h2>
               <div
                 class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-3 py-5"
               >
@@ -394,6 +394,7 @@
                         <li><a href="https://dnschecker.org/ping-ipv4.php" target="_blank">IP-Pinger</a></li>
                         <li><a href="https://globalping.io" target="_blank">globalping.io</a></li>
                         <li><a href="https://centralops.net/CO/Ping" target="_blank">centralops.net</a></li>
+                        <li><a href="https://geopinger.net" target="_blank">geopinger.net</a></li>
                       </ul>
                   </div>
                 </div>
@@ -417,10 +418,8 @@
                 </div>
               </div>
 
-              <h2 class="pb-2 border-bottom">Проверка домена DNS</h2>
-              <div
-                class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-3 py-5"
-              >
+              <h2 id="dns" class="pb-2 border-bottom">Проверка домена DNS</h2>
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-3 py-5">
                 <div class="col d-flex align-items-start">
                   <div>
                     <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
@@ -461,10 +460,8 @@
                 </div>
               </div>
 
-              <h2 class="pb-2 border-bottom">Почтовые сервисы</h2>
-              <div
-                class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-3 py-5"
-              >
+              <h2 id="mail" class="pb-2 border-bottom">Почтовые сервисы</h2>
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-3 py-5">
               <div class="col d-flex align-items-start">
                 <div>
                   <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
@@ -502,10 +499,8 @@
                 </div>
               </div>
 
-              <h2 class="pb-2 border-bottom">Блокировки и спам базы</h2>
-              <div
-                class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-3 py-5"
-              >
+              <h2 id="spambase" class="pb-2 border-bottom">Блокировки и спам базы</h2>
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-3 py-5">
                 <div class="col d-flex align-items-start">
                   <div>
                     <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
@@ -564,10 +559,8 @@
                 </div>
               </div>
   
-              <h2 class="pb-2 border-bottom">Порты и протоколы</h2>
-              <div
-                class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-3 py-5"
-              >
+              <h2 id="ports" class="pb-2 border-bottom">Порты и протоколы</h2>
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-3 py-5">
                 <div class="col d-flex align-items-start">
                   <div>
                     <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
@@ -620,10 +613,8 @@
                 </div>
               </div>
 
-              <h2 class="pb-2 border-bottom">Прокси и VPN</h2>
-              <div
-                class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-3 py-5"
-              >
+              <h2 id="proxy" class="pb-2 border-bottom">Прокси и VPN</h2>
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-3 py-5">
                 <div class="col d-flex align-items-start">
                   <div>
                     <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
@@ -658,10 +649,8 @@
                 </div>
               </div>
 
-              <h2 class="pb-2 border-bottom">Расчет сетей</h2>
-              <div
-                class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-3 py-5"
-              >
+              <h2 id="netplan" class="pb-2 border-bottom">Расчет сетей</h2>
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-3 py-5">
                 <div class="col d-flex align-items-start">
                   <div>
                     <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
@@ -714,7 +703,7 @@
                 </div>
               </div>
 
-              <h2 class="pb-2 border-bottom">Глобальная маршрутизация</h2>
+              <h2 id="global" class="pb-2 border-bottom">Глобальная маршрутизация</h2>
               <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-3 py-5">
                 <div class="col d-flex align-items-start">
                   <div>
@@ -723,7 +712,7 @@
                       Global 
                     </h3>
                     <p>
-                      Мониторинг глобальной сетевой маршрутизации
+                      Анализ глобальной сетевой маршрутизации
                     </p>
                     <ul>
                       <li><a href="https://www.ihr.live/en/" target="_blank">Internet Health Report</a></li>
@@ -773,10 +762,30 @@
 
               </div>
 
-              <h2 class="pb-2 border-bottom">Прочее</h2>
-              <div
-                class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-3 py-5"
-               >
+              <h2 id="mon" class="pb-2 border-bottom">Мониторинг</h2>
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-3 py-5">
+                <div class="col d-flex align-items-start">
+                  <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
+                      <i class="bi bi-graph-down-arrow"></i>
+                      Monitoring 
+                    </h3>
+                    <p>
+                      Мониторинг сбоев
+                    </p>
+                    <ul>
+                      <li><a href="https://detector404.by/" target="_blank">detector404</a></li>
+                      <li><a href="https://cdnmon.net/rtt" target="_blank">cdnmon.net</a></li>
+                      <li><a href="https://downdetector.com" target="_blank">downdetector</a></li>
+                      <li><a href="https://www.lyngsat.com/providers/ru/RSCC.html" target="_blank">Мониторинг вещания RSCC</a></li>
+                    </ul>
+                  </div>
+                </div>
+
+              </div>
+
+              <h2 id="etc" class="pb-2 border-bottom">Прочее</h2>
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-3 py-5">
                 <div class="col d-flex align-items-start">
                   <div>
                     <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
@@ -795,7 +804,7 @@
                   </div>
                 </div>
 
-                <div class="col d-flex align-items-start">
+                <!-- <div class="col d-flex align-items-start">
                   <div>
                     <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
                       <i class="nav-icon bi bi-patch-plus"></i>
@@ -805,10 +814,10 @@
                       
                     </p>
                       <ul>
-                        <li><a href="https://www.lyngsat.com/providers/ru/RSCC.html" target="_blank">Мониторинг вещания RSCC</a></li>
+                        
                       </ul>
                   </div>
-                </div>
+                </div> -->
               </div>
 
 
