@@ -361,7 +361,7 @@
                 </div>
               </div>
 
-              <div class="col-sm-6 mb-3 mb-sm-3">
+              <!-- <div class="col-sm-6 mb-3 mb-sm-3">
                 <div class="card card-outline card-primary collapsed-card">
                   <div class="card-header">
                     <h3 class="card-title">Подключение и вход в веб-интерфейс</h3>
@@ -373,26 +373,174 @@
                     </div>
                   </div>
                   <div class="card-body" style="box-sizing: border-box; display: none;">
-                    <ul>
-                      <li>Подключитесь к роутеру: по кабелю в порт <storng>LAN1</storng>, или к заводской Wi-Fi сети (имя/пароль на наклейке)</li>
-                       <li>Откройте браузер и зайдите на <a href="http://192.168.100.1" target="_blank">192.168.100.1</a> или <a href="http://192.168.100.1" target="_blank">192.168.1.1</a> в зависимости модели (точный адрес - на наклейке/в инструкции)</li>
-                    </ul>
+
                   </div>
                   <div class="card-footer">
-                    <p>Если не заходит в веб-интерфейс:</p>
-                    <ul>
-                      <li>Перезагрузите модем отключив по питанию на минуту (некоторые модемы имеют защиту, и блокируют вход в админку после нескольких часов работы)</li> 
-                      <li>Проверьте что ваше устройство получило IP адрес из той же подсети что и сеть модема 192.168.1.x либо 192.168.100.x</li>
-                    </ul>
                   </div>
                 </div>
-              </div>
+              </div> -->
             </div>
 
             <div class="row">
               <div class="col mb-sm-3">
                 <div class="card h-100">
                   <div class="card-body">
+
+                    <div class="row">
+                      <div class="col-sm-6 mb-3 mb-sm-3">
+                        <div class="card h-100">
+                          <div class="card-body">
+                            <p>Памятки по настройкам на <a href="https://www.beltelecom.by/help/checklist-for-settings" target="_blank">beltelecom.by</a></p>
+                            
+                            <p>
+                              <i class="bi bi-cloud"></i> По технологии предоставления:
+                              <a href="https://chat.datacenter.by/index.php/f/1468777" target="_blank">Wi-fi</a>
+                              <a href="https://chat.datacenter.by/index.php/f/1468455" target="_blank">DSL</a>
+                              <a href="https://chat.datacenter.by/index.php/f/1468566" target="_blank">PON</a>
+                              <a href="https://chat.datacenter.by/index.php/f/1468434" target="_blank">LTE</a>
+                              <a href="https://chat.datacenter.by/index.php/f/1465469" target="_blank">VPN</a>
+                            </p>
+
+                            <ul class="list-unstyled">Прочие настройки (Nextcloud):
+                              <li><a href="https://chat.datacenter.by/index.php/f/1468878" target="_blank"><i class="bi bi-cloud"></i>Статический IP и IPv6</a></li>
+                              <li><a href="https://chat.datacenter.by/index.php/f/1468818" target="_blank"><i class="bi bi-cloud"></i>Кабели и коннекторы</a></li>
+                            </ul>
+                            
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 mb-3 mb-sm-3">
+                        <div class="card h-100">
+                          <div class="card-body">
+                            <!--begin::Accordion-->
+                            <div class="accordion" id="accordionByflymin">
+                              <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                  <button
+                                    class="accordion-button collapsed"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapseByflymin_1"
+                                    aria-expanded="false"
+                                    aria-controls="collapseByflymin_1"
+                                  >
+                                  Подключение и вход в веб-интерфейс
+                                  </button>
+                                </h2>
+                                <div id="collapseByflymin_1" class="accordion-collapse collapse" data-bs-parent="#accordionByflymin">
+                                  <div class="accordion-body">
+                                    <div class="card-body">
+                                      <ul>
+                                        <li>Подключитесь к роутеру: по кабелю в порт <storng>LAN1</storng>, или к заводской Wi-Fi сети (имя/пароль на наклейке)</li>
+                                         <li>Откройте браузер и зайдите на <a href="http://192.168.100.1" target="_blank">192.168.100.1</a> или <a href="http://192.168.100.1" target="_blank">192.168.1.1</a> в зависимости модели (точный адрес - на наклейке/в инструкции)</li>
+                                      </ul>
+                                    </div>
+                                    <div class="card-footer">
+                                      <p>Если не заходит в веб-интерфейс:</p>
+                                      <ul>
+                                        <li>Перезагрузите модем отключив по питанию на минуту (некоторые модемы имеют защиту, и блокируют вход в админку после нескольких часов работы)</li> 
+                                        <li>Проверьте что ваше устройство получило IP адрес из той же подсети что и сеть модема 192.168.1.x либо 192.168.100.x</li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                  <button
+                                    class="accordion-button collapsed"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapseByflymin_2"
+                                    aria-expanded="false"
+                                    aria-controls="collapseByflymin_2"
+                                  >
+                                  Настройка авто-согласования (дуплекс)
+                                  </button>
+                                </h2>
+                                <div id="collapseByflymin_2" class="accordion-collapse collapse" data-bs-parent="#accordionByflymin">
+                                  <div class="accordion-body">
+                                    <p>
+                                      Панель управления - Центр управления сетями и общим доступом - Изменение параметров адаптера (слева) 
+                                      - Нажмите правой кнопкой мыши на ваше сетевое подключение и выберите <strong>Свойства</strong> -
+                                      Кликните на кнопку <strong>Настроить</strong> (рядом с названием сетевой карты) - Перейдите на вкладку <strong>Дополнительно</strong> - 
+                                      Найдите пункт <strong>Скорость и дуплекс (Speed & Duplex)</strong> или Тип подключения - в выпадающем списке выберите 
+                                      Автосогласование (Auto Negotiation) - Нажмите ОК.
+                                      <br>
+                                      <a href="https://help-wifi.com/reshenie-problem-i-oshibok/nizkaya-skorost-interneta-po-kabelyu-skorost-linii-priem-peredacha-100-mbit-s-v-windows-kak-izmenit-i-uvelichit/">Пример настройки дуплекса для сетевой карты</a>
+                                    </p>
+                                    <blockquote> 
+                                      Линк больше 100 Мбит-с может не подниматься из-за старого 4-х жильного кабеля, 
+                                      неплотного контакта жил кабеля с коннектором, настроек сетевой и неккоректной работы сетевых драйверов.
+                                    </blockquote>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                  <button
+                                    class="accordion-button collapsed"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapseByflymin_3"
+                                    aria-expanded="false"
+                                    aria-controls="collapseByflymin_3"
+                                  >
+                                  Забыть сеть Wi-fi
+                                  </button>
+                                </h2>
+                                <div id="collapseByflymin_3" class="accordion-collapse collapse" data-bs-parent="#accordionByflymin">
+                                  <div class="accordion-body">                                  
+                                    <h4 class="text-center">На смартфонах и планшетах</h4>
+                                    
+                                    <h5>Android</h5>
+                                    <ul>
+                                      <li>Откройте Настройки и перейдите в раздел Wi-Fi (или «Сеть и интернет» → «Интернет»).</li>
+                                      <li>Найдите нужную сеть в списке доступных или сохраненных.</li>
+                                      <li>Нажмите на иконку шестеренки (или стрелки) рядом с названием сети.</li>
+                                      <li>Внизу экрана нажмите кнопку «Удалить» (или «Забыть»).</li>
+                                    </ul>
+                                    
+                                    <h5>iPhone / iPad</h5>
+                                    <ul>
+                                      <li>Зайдите в Настройки и выберите Wi-Fi.</li>
+                                      <li>Если вы подключены к этой сети, нажмите на синюю иконку «i» справа от неё.</li>
+                                      <li>Если сеть неактивна, нажмите «Изменить» в верхнем углу (потребуется Face ID/Touch ID).</li>
+                                      <li>Нажмите «Забыть эту сеть» и подтвердите действие.</li>
+                                    </ul>
+                                    
+                                    <h4 class="text-center">На компьютерах и ноутбуках</h4>
+                                    <h5>Windows 10 и Windows 11</h5>
+                                    <ul>
+                                      <li>Нажмите на значок Wi-Fi в правом нижнем углу экрана (на панели задач).</li>
+                                      <li>Выберите «Параметры сети и Интернета».</li>
+                                      <li>Перейдите во вкладку Wi-Fi, а затем выберите «Управление известными сетями».</li>
+                                      <li>Найдите нужную сеть в списке, кликните по ней и нажмите кнопку «Забыть».</li>
+                                    </ul>
+                                    
+                                    <h5>macOS</h5>
+                                    <ul>
+                                      <li>Откройте Системные настройки (через значок <i class="bi bi-apple"></i> Apple в углу экрана).</li>
+                                      <li>Перейдите в раздел Wi-Fi в боковом меню.Прокрутите страницу вниз и нажмите кнопку «Дополнительно...».</li>
+                                      <li>Найдите нужную сеть в списке, нажмите на три точки (...) рядом с ней и выберите «Удалить из списка».</li>
+                                    </ul>
+
+                                    <p>
+                                      <a href="https://remontka.pro/forget-wi-fi-network/">Как забыть Wi-Fi сеть в Windows, MacOS, iOS и Android</a>
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+
+                            </div>
+                            <!--end::Accordion-->
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
 
                     <!--begin::Accordion-->
                     <div class="accordion" id="accordionByfly">
@@ -411,7 +559,38 @@
                         </h2>
                         <div id="collapseByfly_1" class="accordion-collapse collapse" data-bs-parent="#accordionByfly">
                           <div class="accordion-body">
-                            Настройка сетевой карты в системе Windows 10 при автоматических настройках подключения (DHCP).
+                            <h5>Открыть настройки сетевой</h5>
+                            <ul>
+                              <li>
+                                <strong><i class="bi bi-windows"></i>Windows 10</strong>
+                                Параметры» → "Сеть и Интернет" → Ethernet → "Параметров адаптера" → "Ethernet (свойства)" → IPv4 (свойства)
+                              </li>
+                              <li>
+                                <strong><i class="bi bi-windows"></i>Windows 11</strong>
+                                Параметры» - "Сеть и Интернет" →
+                                <ol>
+                                  <li>Ethernet- Назначение IP (редактировать) → IPv4</li>
+                                  <li>Дополнительные сетевые параметры → "Ethernet (свойства)" → IPv4 (свойство)</li>
+                                </ol>
+                              </li>
+                              <li>
+                                <strong><i class="bi bi-windows"></i>Windows 7</strong>
+                                "Панель управления" → "Сеть и Интернет (Центр управления)" → "Подключение по локальной сети" → IPv4 (свойства)
+                              </li>
+                              <li>
+                                <strong><i class="bi bi-windows"></i>Windows 8</strong>
+                                "Центр управления сетями и общим доступом"
+                                <ol>
+                                  <li>Win+W (Центр управления) → "Изменение параметров адаптера" → "Ethernet (свойства)" → IPv4 (свойства)</li>
+                                  <li>Правой клавишей по значку монитора → "Изменение параметров адаптера" → Ethernet (свойства) → IPv4 (свойства)</li>
+                                </ol>
+                              </li>
+                            </ul>
+                            <p>
+                              <a href="https://chat.datacenter.by/index.php/f/1468860" target="_blank"><i class="bi bi-cloud"></i>Настройка сетевой</a>
+                            </p>
+
+                            <h5>Настройка сетевой карты в системе Windows 10 при автоматических настройках подключения (DHCP).</h5>
                             <ol>
                               <li>Откройте меню Пуск (Start) - Панель управления(Control Panel) - Сеть и Интернет(Network and Internet) (если этот раздел отсутствует, см. следующий) - Центр управления сетями и общим доступом(Network and Sharing Center) - Изменение параметров адаптера(Change adapter settings) (в левой части окна).</li>
                               <li>Щелкните правой кнопкой мыши на ярлык Подключение по локальной сети (Local Area Connection) и выберите Свойства (Properties).</li>
@@ -420,6 +599,50 @@
                               Выберите пункт Использовать следующие адреса DNS-серверов (Use the following DNS server addresses и введите в строке Предпочитаемый DNS-сервер (Preferred DNS server) <a href="">194.158.196.245</a> и Альтернативный DNS-сервер (Alternate DNS server) значения <a href="">86.57.255.149</a>. Далее нажмите ОК
                               <li>Нажмите Закрыть (Close).</li>
                             </ol>
+                            
+                            <h5>Android TV / Google TV / Яндекс.ТВ (Xiaomi, Sony, Haier, TCL, Philips)</h5>
+                            <ul>
+                               <li>Зайдите в «Настройки» (шестеренка вверху справа) - «Сеть и интернет».</li>
+                               <li>Выберите подкллючение "Ethernet" либо "Wifi" для последующей настройки</li>
+                               <li>Спуститесь вниз в «Расширенные настройки» (или «Параметры IP»).</li>
+                               <li>Вместо DHCP выберите вариант «Статический» (или «Статический IP»).</li>
+                               <li>Шаг за шагом подтверждайте текущие настройки (IP-адрес, шлюз, длина префикса сети), нажимая стрелку «Далее», пока не дойдете до пунктов DNS 1 и DNS 2.</li>
+                               <li>В строке «DNS 1» укажите <a href="">8.8.8.8</a> либо <a href="">194.158.196.245</a> и завершите подключение.</li>
+                               <blockquote>
+                                Важно: на чистом Android TV для смены DNS по Wi-Fi нужно «переподключить» сеть.
+                               </blockquote>
+                            </ul>
+
+                            <h5>Samsung (ОС Tizen)</h5>
+                            <ul>
+                              <li>Нажмите кнопку «Home» (Домик) или «Menu» на пульте и зайдите в «Настройки»</li>
+                              <li>Перейдите по пути: «Общие» (или «Все настройки») - «Сеть». Выберите пункт «Состояние сети»</li> 
+                              <li>В открывшемся окне нажмите на кнопку «Настройки IP» (внизу экрана). Найдите строку «Настройки DNS» и переключите её в режим «Вводить вручную».</li>
+                              <li>Кликните на строку «Сервер DNS», введите цифры (<a href="">8.8.8.8</a> либо <a href="">194.158.196.245</a>) и нажмите «ОК».</li>
+                            </ul>
+                            
+                            <h5>LG (ОС webOS)</h5>
+                            <ul>
+                              <li>Нажмите кнопку «Settings» (шестеренка) на пульте - выберите пункт «Все настройки».</li>
+                              <li>Перейдите в раздел «Сеть». </li>
+                              <li>Выберите ваше текущее подключение: «Подключение к сети Wi-Fi» или «Проводное подключение (Ethernet)».</li>
+                              <li>Нажмите на пункт «Продвинутые настройки Wi-Fi» (или «Дополнительные настройки связи» в зависимости от года выпуска ТВ).</li>
+                              <li>Нажмите кнопку «Изменить» (под списком сетевых параметров).</li>
+                              <li>Снимите галочку с пункта «Автоматически».</li>
+                              <li>Спуститесь к строке «DNS», сотрите старые цифры, введите <a href="">8.8.8.8</a> либо <a href="">194.158.196.245</a> и нажмите «Подключить».</li>
+                            </ul>
+
+                            <h5>Hisense (ОС VIDAA)</h5>
+                            <ul>
+                              <li>Откройте «Настройки» (шестеренка) - раздел «Сеть».</li>
+                              <li>Выберите «Сетевая конфигурация».</li>
+                              <li>Переключите тип настройки IP с «Автоматически» на «Вручную».</li>
+                              <li>Пролистайте список параметров вниз до строки «Первичный DNS» (или DNS 1).Введите адрес <a href="">8.8.8.8</a> либо <a href="">194.158.196.245</a> и сохраните изменения.</li>
+                            </ul>
+
+                            <p>
+                              <a href="https://chat.datacenter.by/index.php/f/1464947" target="_blank"><i class="bi bi-cloud"></i>Настройка подкл. на TV</a>
+                            </p>
 
                             <div class="alert alert-light" role="alert">
                               Возможные нюансы:
@@ -436,7 +659,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="accordion-item">
+                      <!-- <div class="accordion-item">
                         <h2 class="accordion-header">
                           <button
                             class="accordion-button collapsed"
@@ -446,25 +669,15 @@
                             aria-expanded="false"
                             aria-controls="collapseByfly_2"
                           >
-                          Настройка автосогласования
+                          текст
                           </button>
                         </h2>
                         <div id="collapseByfly_2" class="accordion-collapse collapse" data-bs-parent="#accordionByfly">
                           <div class="accordion-body">
-                            <p>
-                              Панель управления - Центр управления сетями и общим доступом - Изменение параметров адаптера (слева) 
-                              - Нажмите правой кнопкой мыши на ваше сетевое подключение и выберите Свойства -
-                              Кликните на кнопку Настроить (рядом с названием сетевой карты) - Перейдите на вкладку Дополнительно - 
-                              Найдите пункт Скорость и дуплекс (Speed & Duplex) или Тип подключения - в выпадающем списке выберите 
-                              Автосогласование (Auto Negotiation) - Нажмите ОК.
-                            </p>
-                            <blockquote> 
-                              Линк больше 100 Мбит-с может не подниматься из-за старого 4-х жильного кабеля, 
-                              неплотного контакта жил кабеля с коннектором, настроек сетевой и неккоректной работы сетевых драйверов.
-                            </blockquote>
+                            
                           </div>
                         </div>
-                      </div>
+                      </div> -->
                       <div class="accordion-item">
                         <h2 class="accordion-header">
                           <button
