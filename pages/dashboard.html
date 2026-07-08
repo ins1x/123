@@ -332,6 +332,9 @@
                       <li><a class="dropdown-item" href="#">123-Wiki</a></li>
                       <li><a class="dropdown-item" href="#">Белтелеком</a></li>
                     </ul> -->
+                    <a href="#" class="btn" onclick="showPortalBoxes()" data-bs-toggle="tooltip" data-bs-title="Показать рабочие порталы">
+                      <i class="nav-icon bi bi-table"></i>
+                    </a>
                   </div>
                 </div>
                 
@@ -450,7 +453,10 @@
                 </div>
               </div>
             </div> 
+            <!-- end container -->
+          </div>
 
+          <div class="container-fluid" id="portals-boxes" style="display: none">
             <!-- Small Box (Stat card) -->
             <h5 class="mb-2">Рабочие порталы</h5>
             <!-- Small boxes (Stat box) -->
@@ -1407,7 +1413,16 @@
 
     <!-- only for this page-->
     <script language="javascript">
-
+      // Toggle portals-boxes container visiblity
+      function showPortalBoxes(){
+        const fluidcontainer = document.getElementById("portals-boxes");
+        const actualDisplay = getComputedStyle(fluidcontainer).display;
+        if (actualDisplay == 'none') {
+          fluidcontainer.style.display = 'block';
+        } else {
+          fluidcontainer.style.display = 'none';
+        }
+      }
       // Dropdown menu select
       document.querySelectorAll('#dropdown-search .dropdown-item').forEach(item => {
         item.addEventListener('click', function(selDropdown) {
