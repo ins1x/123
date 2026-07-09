@@ -10,3 +10,13 @@ blockquote {
   font-style: italic;
   color: #909090;
 }
+
+#btn-back-to-top {
+  padding: 10px;
+  position: fixed;
+  bottom: 25px;
+  right: 5px;
+  display: none;
+  color: #909090;
+}
+
