@@ -20,3 +20,6 @@ blockquote {
   color: #909090;
 }
 
+body.font-large {
+  font-size: 1.2rem;
+}
