@@ -53,3 +53,11 @@ function backToTop() {
   document.documentElement.scrollTop = 0;
 }
 // End:Back to top button
+
+
+// Toggle large font 
+const largeFontBtn = document.getElementById('toggleLargeFontBtn');
+largeFontBtn.addEventListener('click', () => {
+  document.body.classList.toggle('font-large');
+});
+// End: Toggle Large font
