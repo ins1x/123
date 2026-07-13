@@ -3,6 +3,7 @@
  * Custom CSS styles
 */
 
+/* Custom blockquote style */
 blockquote {
   border-left: 4px solid #0076ff;
   padding-left: 15px;
@@ -11,6 +12,7 @@ blockquote {
   color: #909090;
 }
 
+/* Back to Top button */
 #btn-back-to-top {
   padding: 10px;
   position: fixed;
@@ -20,6 +22,12 @@ blockquote {
   color: #909090;
 }
 
+/* For large font tooggle button */
 body.font-large {
   font-size: 1.2rem;
+}
+
+/* Fix user header size */
+.navbar-nav > .user-menu > .dropdown-menu > li.user-header {
+  min-height: 25px;
 }
