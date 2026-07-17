@@ -317,7 +317,7 @@
             <li class="nav-item">
               <a href="checker.html" class="nav-link active">
                 <i class="nav-icon bi bi-terminal"></i>
-                <p>OLT &nbsp;<span class="badge bg-danger">New</span></p>
+                <p>OLT cli &nbsp;<span class="badge bg-danger">New</span></p>
               </a>
             </li>
             
@@ -385,9 +385,16 @@
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Полезные ресурсы</a>
                 <ul class="dropdown-menu">
-                  <li>
-                    <a class="dropdown-item" href="#onu">Add Later</a>
-                  </li>
+                  <h6 class="dropdown-header">HUAWEI</h6>
+                  <li><a class="dropdown-item" target="_blank" href="https://forum.huawei.com/enterprise/intl/en/thread/list-of-useful-command-for-huawei-olts/802625518766481408?blogId=802625518766481408">List of useful command for Huawei OLTs</a></li>
+                  <li><a class="dropdown-item" target="_blank" href="https://truenetwork.ru/community/tutorials/sample-base-configuration-olt-for-equipment-huawei-ma5608t">Первые шаги по настройке Huawei SmartAX OLT MA5608T</a></li>
+                  <li><a class="dropdown-item" target="_blank" href="https://nag.wiki/pages/viewpage.action?pageId=32249069">GPON. Huawei. Первичная настройка OLT & ONT</a></li>
+                  <h6 class="dropdown-header">ZTE</h6>
+                  <li><a class="dropdown-item" target="_blank" href="https://pdfcoffee.com/cli-commands-list-for-zte-routets-pdf-free.html" aria-current="true">ZTE CLI Commands Reference</a></li>
+                  <li><a class="dropdown-item" target="_blank" href="https://noname.com.ua/mediawiki/index.php/ZTE_320_OLT_Settings_Config_Snippets" aria-current="true">ZTE320 OL Settings Snippets</a></li>
+                  <li><a class="dropdown-item" target="_blank" href="https://github.com/randifilan/zte-c320" aria-current="true">ZTE c320 OLT examples</a></li>
+                  <li><a class="dropdown-item" target="_blank" href="https://itsolution.drinia.tech/category/gpon/olt/zte-olt/" aria-current="true">ZTE OLT configuration solutions</a></li>
+                  <li><a class="dropdown-item" target="_blank" href="https://truenetwork.ru/community/tutorials/sample-base-configuration-olt-for-equipment-zte-c320" aria-current="true">Первые шаги по настройке ZTE GPON OLT ZXA10 C320 </a></li>
                 </ul>
               </li>
             </ul>
@@ -446,7 +453,28 @@
                               <tr>
                                 <td><code>display ont version 11 1</code></td>
                               </tr>
-    
+
+                              <tr>
+                                <td>Оптические параметры ONT</td>
+                              </tr>
+                              <tr>
+                                <td><code>(config-if-gpon-0/4)#display ont optical-info 9 2</code></td>
+                              </tr>
+                              
+                              <tr>
+                                <td>Настройки WAN на ONT (Маршрутизация)</td>
+                              </tr>
+                              <tr>
+                                <td><code>(config-if-gpon-0/4)#display ont wan-info 10 23</code></td>
+                              </tr>
+
+                              <tr>
+                                <td>Статус WLAN</td>
+                              </tr>
+                              <tr>
+                                <td><code>(config-if-gpon-0/13)#display ont wlan-info 11 2</code></td>
+                              </tr>
+                              
                             </tbody>
                           </table>
                         </div>
