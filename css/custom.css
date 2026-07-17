@@ -31,3 +31,9 @@ body.font-large {
 .navbar-nav > .user-menu > .dropdown-menu > li.user-header {
   min-height: 25px;
 }
+
+/* Custom code tag style*/
+code {
+  color: DodgerBlue; 
+  font-family: Consolas, 'Courier New', monospace;
+}
