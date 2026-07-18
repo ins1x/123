@@ -416,14 +416,14 @@
                                 <td>Подробная информация о ONT</td>
                               </tr>
                               <tr>
-                                <td><code>display ont info 10 23</code></td>
+                                <td><code>(config-if-gpon-0/9)#display ont info 10 23</code></td>
                               </tr>
     
                               <tr>
                                 <td>Статистика отключений</td>
                               </tr>
                               <tr>
-                                <td><code>(config-if-gpon-0/9) display ont register info 6 8</code></td>
+                                <td><code>(config-if-gpon-0/9)#display ont register info 6 8</code></td>
                               </tr>
     
                               <tr>
@@ -469,17 +469,45 @@
                               </tr>
 
                               <tr>
-                                <td>Статус WLAN</td>
+                                <td>Порт-маппинг по таблице роутинга</td>
                               </tr>
                               <tr>
-                                <td><code>(config-if-gpon-0/13)#display ont wlan-info 11 2</code></td>
+                                <td><code>(config-if-gpon-0/13)#display ont routing-table policy-route 11 2</code></td>
                               </tr>
                               
                             </tbody>
                           </table>
                         </div>
                       </div>
+  
+                      <div class="card-header">
+                        <h3 class="card-title">Wi-fi</h3>
+                      </div>
     
+                      <div class="card-body" style="box-sizing: border-box; display: block;">
+                        <div class="table-responsive">
+                          <table class="table table-hover table-striped table-borderless">
+                            <tbody>
+
+                              <tr>
+                                <td>Статус WLAN</td>
+                              </tr>
+                              <tr>
+                                <td><code>(config-if-gpon-0/13)#display ont wlan-info 11 2</code></td>
+                              </tr>
+
+                              <tr>
+                                <td>Состояние каналов wi-fi и кол-во подключенных</td>
+                              </tr>
+                              <tr>
+                                <td><code>(config-if-gpon-0/13)#display ont wlan-status 11 2</code></td>
+                              </tr>
+                              
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+
                       <div class="card-header">
                         <h3 class="card-title">Информация о статусе ONT по блоку</h3>
                       </div>
@@ -643,6 +671,16 @@
                               <tr>
                                 <td><code>display ont autofind all</code></td>
                               </tr>
+
+                              <tr>
+                                <td>Поиск по определенному MAC</td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <code>display location 4cf9-5dd3-1aaa</code>
+                                </td>
+                              </tr>
+
                             </tbody>
                           </table>
     
@@ -725,7 +763,18 @@
                                   </code>
                                 </td>
                               </tr>
-    
+
+                              <tr>
+                                <td>Информация о сервисе по индексу</td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <code>
+                                    display service-port 11348
+                                  </code>
+                                </td>
+                              </tr>
+
                               <tr>
                                 <td>Отключить "зависший" сервис</td>
                               </tr>
@@ -882,7 +931,7 @@
                           <table class="table table-hover table-striped table-borderless">
                             <tbody>
                               <tr>
-                                <td>Подробная инормация и статистика отключений</td>
+                                <td>Подробная информация и статистика отключений</td>
                               </tr>
                               <tr>
                                 <td><code>show gpon onu detail-info gpon-onu_1/8/1:17</code></td>
@@ -1042,19 +1091,10 @@
                                 <td>
                                   <code style="white-space: pre-line;">conf t
                                     (config)#pon-onu-mng gpon-onu_1/7/4:18
-                                    (gpon-onu-mng)#vlan port eth_0/4 mode tag vlan 20 
+                                    (gpon-onu-mng)#vlan port eth_0/4 mode tag vlan 20 либо (gpon-onu-mng)#vlan port eth_0/4 vlan 1000
                                     (gpon-onu-mng)#vlan port eth_0/4 mode hybrid def-vlan 1000 def-prio 4
                                     (gpon-onu-mng)#dhcp-ip ethuni eth_0/4 from-internet
                                     (gpon-onu-mng)#multicast vlan tag-strip port eth_0/4 enable
-                                    end
-                                  </code>
-
-                                  <p>Вариант 2:</p>
-
-                                  <code style="white-space: pre-line;">conf t
-                                    (config)#pon-onu-mng gpon-onu_1/7/4:18
-                                    (gpon-onu-mng)#vlan port eth_0/4 mode tag vlan 20 либо (gpon-onu-mng)#vlan port eth_0/4 vlan 1000
-                                    (gpon-onu-mng)#vlan port eth_0/4 mode hybrid def-vlan 1000 def-prio 4
                                     end
                                   </code>
                                 </td>
@@ -1073,7 +1113,46 @@
                                   </code>
                                 </td>
                               </tr>
-                              
+                      
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+
+                      <div class="card-header">
+                        <h3 class="card-title">DHCP</h3>
+                      </div>
+    
+                      <div class="card-body" style="box-sizing: border-box; display: block;">
+                        <div class="table-responsive">
+                          <table class="table table-hover table-striped table-borderless">
+                            <tbody>
+                              <tr>
+                                <td>Снять DHCP с 4-го порта</td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <code style="white-space: pre-line;">conf t
+                                    (config)#pon-onu-mng gpon-onu_1/7/4:18
+                                    dhcp-ip ethuni eth_0/4 from-internet
+                                    end
+                                  </code>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <td>Вернуть DHCP на 4-й порт</td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <code style="white-space: pre-line;">conf t
+                                    (config)#pon-onu-mng gpon-onu_1/7/4:18
+                                    dhcp-ip ethuni eth_0/4 from-onu
+                                    end
+                                  </code>
+                                </td>
+                              </tr>
+
                             </tbody>
                           </table>
                         </div>
@@ -1169,6 +1248,15 @@
                               <tr>
                                 <td><code>show gpon onu uncfg</code></td>
                               </tr>
+
+                              <tr>
+                                <td>Поиск по MACх</td>
+                              </tr>
+                              <tr>
+                                <td><code>show mac 9813.33f8.AAAA</code></td>
+                              </tr>
+
+                              
                             </tbody>
                           </table>
     
@@ -1223,6 +1311,52 @@
                                   </code>
                                 </td>
                               </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+
+                      <div class="card-header">
+                        <h3 class="card-title">Режимы работы</h3>
+                      </div>
+                      <div class="card-body" style="box-sizing: border-box; display: block;">
+                        <div class="table-responsive"> 
+                          <table class="table table-hover table-striped table-borderless">
+                            <tbody>
+                              <tr>
+                                <td>router</td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <code style="white-space: pre-line;">conf t
+                                    (config)#pon-onu-mng gpon-onu_1/6/7:25
+                                    (gpon-onu-mng)#switchport-bind switch_0/1 iphost 1
+                                    (gpon-onu-mng)#pppoe 1 nat enable user 176000999990001@beltel.by password 123123123
+                                    (gpon-onu-mng)#vlan-filter-mode iphost 1 tag-filter prio-vid-filter untag-filter discard
+                                    (gpon-onu-mng)#vlan-filter iphost 1 priority 0 vid 3114
+                                  </code>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+    
+                          <table class="table table-hover table-striped table-borderless">
+                            <tbody>
+                              <tr>
+                                <td>bridge</td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <code style="white-space: pre-line;">conf t
+                                    (config)#pon-onu-mng gpon-onu_1/6/7:25
+                                    (gpon-onu-mng)#no switchport-bind iphost 1
+                                    (gpon-onu-mng)#no pppoe 1
+                                    (gpon-onu-mng)#no vlan-filter-mode iphost 1
+                                    (gpon-onu-mng)#no vlan-filter iphost 1 priority 0 vid 3114
+                                  </code>
+                                </td>
+                              </tr>
+                              
                             </tbody>
                           </table>
                         </div>
