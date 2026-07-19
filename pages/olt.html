@@ -375,12 +375,20 @@
                 <a class="nav-link disabled" aria-disabled="true"> &nbsp; </a>
               </li>
 
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a class="nav-link" aria-current="page" target="_blank" href="https://github.com/ins1x/OLT/wiki" 
                 data-bs-toggle="tooltip" data-bs-title="Wiki по командам OLT для HUAWEI и ZTE с примерами">
                 <i class="nav-icon bi bi-window"></i>
                   OLT-Commands (git-wiki)
                 </a>
+              </li> -->
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-title="Wiki по командам OLT для HUAWEI и ZTE с примерами"><i class="nav-icon bi bi-window"></i> OLT-Commands (git-wiki)</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" target="_blank" href="https://github.com/ins1x/OLT/wiki/HUAWEI">HUAWEI</a></li>
+                  <li><a class="dropdown-item" target="_blank" href="https://github.com/ins1x/OLT/wiki/ZTE">ZTE</a></li>
+                </ul>
               </li>
 
               <li class="nav-item dropdown">
@@ -1251,7 +1259,7 @@
                               </tr>
 
                               <tr>
-                                <td>Поиск по MACх</td>
+                                <td>Поиск по MAC</td>
                               </tr>
                               <tr>
                                 <td><code>show mac 9813.33f8.AAAA</code></td>
