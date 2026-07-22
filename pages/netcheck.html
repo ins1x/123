@@ -1061,6 +1061,271 @@
                 <div class="card h-100">
                   <div class="card-body" style="text-align: justify;">
                     <div class="card-header d-flex align-items-center">
+                      <i class="bi bi-speedometer2 fs-4 text-primary me-2" aria-hidden="true"></i>
+                      <h3 id="quality" class="card-title mb-0">Качество соединения</h3>
+                    </div>
+                    <!--begin::Accordion-->
+                    <div class="accordion" id="accordionQuality">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseQuality_1"
+                            aria-expanded="false"
+                            aria-controls="collapseQuality_1"
+                          >
+                            Тест скорости
+                          </button>
+                        </h2>
+                        <div id="collapseQuality_1" class="accordion-collapse collapse" data-bs-parent="#accordionQuality">
+                          <div class="accordion-body">
+                          <h4>Проверка скорости интернета</h4>
+                          Для того, чтобы проверить скорость интернет соединения необходимо убедиться:
+                          <ul>
+                            <li>устройство подключено сетевым кабелем напрямую к модему;</li>
+                            <li>все остальные устройства отключены от сети;</li>
+                            <li>отключены все программы, которые могут использовать Интернет;</li>
+                            <li>отключены все загрузки, торренты, обновления, VPN;</li>
+                            <li>закрыть все вкладки в браузере с фоновой загрузкой;</li>
+                            <li>во время тестирования нет 100% нагрузки на ЦПУ, диск или ОЗУ;</li>
+                          </ul>
+
+                          <h4>Тестирование через Speedtest</h4>
+                          <ul>
+                            <li>Откройте в браузере сайт speedtest.net</li>
+                            <li>На открывшейся странице нажмите кнопку «BEGIN TEST» на измерителе</li>
+                            <li>убедитесь что выбран сервер «ByFly» и ждать, пока появится результат.</li>
+                            <li>Дождитесь завершения процедуры тестирования — анимация на измерителе должна прекратиться, индикатор со стрелкой скроется, а вверху измерителя слева и справа будут отображены результаты</li>
+                          </ul>
+                          Значения теста:
+                          <ul>
+                            <li>Значение DOWNLOAD отражает результат тестирования входящей скорости (от сервера к абоненту).</li>
+                            <li>Значение UPLOAD отражает результат тестирования исходящей скорости (от абонента к серверу).</li>
+                            <li>Единица измерения — Mbps (мегабит в секунду).</li>
+                          </ul>
+
+                          <h4>Единицы измерения</h4>
+                          <p>Мегабит (Мб / Мбит / Mpbs) - единица, которую используют интернет-провайдеры для измерения скорости передачи данных.</p>
+                          <p>Мегабайт (МБ) -  единица, которую используют программы, торрент клиенты, игры и браузеры для показа размера загружаемых файлов и обновлений.</p>
+                        
+                          <blockquote>
+                            Чтобы перевести мегабиты в мегабайты, разделите значение в мегабитах на 8, так как в одном байте ровно 8 бит. 
+                            Например, 100 мегабит делим на 8 и получаем 12,5 мегабайта. Примеры перевода скорости 8 Мбит/с = 1 МБ/с, 100 Мбит/с = 12,5 МБ/с, 500 Мбит/с = 62,5 МБ/с.
+                          </blockquote>
+
+                          <h4>Джиттер (jitter)</h4>
+                          <p>
+                          Джиттер (jitter) — это вариация задержки в передаче данных по сети. Если представить интернет как дорогу, по которой перемещаются пакеты данных,
+                          то ping (задержка) — это время, которое занимает путешествие от точки A до точки B. Джиттер же показывает, насколько стабильно это время от пакета к пакету.
+                          Технически джиттер измеряется как разница между наибольшей и наименьшей задержкой в определенный промежуток времени. Чем ниже этот показатель, тем стабильнее соединение.
+                          </p>
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseQuality_2"
+                            aria-expanded="false"
+                            aria-controls="collapseQuality_2"
+                          >
+                            Нормативные документы
+                          </button>
+                        </h2>
+                        <div id="collapseQuality_2" class="accordion-collapse collapse" data-bs-parent="#accordionQuality">
+                          <div class="accordion-body">
+                            <h4>Качество предоставления услуг регламентируются следующими документами:</h4>
+                            <ul>
+                              <li>
+                                В соответствии с Правилами оказания услуг электросвязи, утвержденными постановлением Совета Министров Республики Беларусь от 17 августа 2006 г. № 1055 
+                                (в редакции постановления Совета Министров Республики Беларусь от 26.09.2022 №645) подлежат ежеквартальному опубликованию показатели качества услуг электросвязи и обслуживания абонентов.
+                              </li>
+                              <li>
+                                Контроль показателей качества услуг передачи данных с использованием сети стационарной электросвязи производится согласно СТБ 1962-2012 
+                                «Услуги передачи данных. Требования к качеству. Нормы и методы контроля».
+                              </li>
+                              <li>
+                                Контроль показателей качества услуг телефонной связи с использованием сети стационарной электросвязи производится согласно СТБ 2431-2015
+                                «Услуги телефонной связи. Требования к качеству. Нормы и методы контроля».
+                              </li>
+                              <li>
+                                Контроль показателей качества услуг передачи данных сотовой (подвижной) электросвязи c использованием технологии LTE производится согласно 
+                                СТБ 1904-2022 «Услуги сотовой подвижной электросвязи. Требования к качеству и методы контроля».
+                              </li>
+                              <li>
+                                Контроль параметров (показателей) качества услуги эфирного наземного цифрового телевизионного вещания стандарта DVB-T/T2 производится согласно СТБ 1660-2006
+                                 «Передатчики радиовещательные стационарные диапазона ОВЧ. Основные параметры, технические требования и методы измерений», 
+                                 СТБ 1697-2010 «Радиопередатчики телевизионные цифровые. Основные параметры, технические требования и методы измерений».
+                              </li>
+                            </ul>
+                            <a href="https://beltelecom.by/about/quality-reports">Белтелеком - Отчеты о качестве</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseQuality_3"
+                            aria-expanded="false"
+                            aria-controls="collapseQuality_3"
+                          >
+                          Параметры качества услуг
+                          </button>
+                        </h2>
+                        <div id="collapseQuality_3" class="accordion-collapse collapse" data-bs-parent="#accordionQuality">
+                          <div class="accordion-body">
+                            <div class="table-responsive">
+                              <table class="table table-striped">
+                                <thead>
+                                  <tr>
+                                    <th style="width:38px;">
+                                      <p>
+                                        <strong>&nbsp;№</strong>
+                                      </p>
+                                      <p>
+                                        <strong>п.п.</strong>
+                                      </p>
+                                    </th>
+                                    <th style="width:463px;">
+                                      <p>
+                                        <strong>Параметр качества Услуг</strong>
+                                      </p>
+                                      <p>&nbsp;</p>
+                                    </th>
+                                    <th style="width:189px;">
+                                      <strong>Значение</strong>
+                                    </th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td style="width:38px;">1</td>
+                                    <td style="width:463px;">Скорость передачи данных, кбит/с</td>
+                                    <td style="width:189px;">&nbsp;</td>
+                                  </tr>
+                                  <tr>
+                                    <td style="width:38px;">1.1</td>
+                                    <td style="width:463px;">&nbsp; максимальная</td>
+                                    <td style="width:189px;">в соответствии с тарифным планом</td>
+                                  </tr>
+                                  <tr>
+                                    <td style="width:38px;">1.2</td>
+                                    <td style="width:463px;">&nbsp; минимальная</td>
+                                    <td style="width:189px;">не менее 70% от значения максимальной величины <a href="#part1">[1]</a>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td style="width:38px;">2</td>
+                                    <td style="width:463px;">Время задержки передачи IP-пакетов, мс</td>
+                                    <td style="width:189px;">не более 400</td>
+                                  </tr>
+                                  <tr>
+                                    <td style="width:38px;">3</td>
+                                    <td style="width:463px;">Коэффициент потери IP-пакетов, %</td>
+                                    <td style="width:189px;">не более 1</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+
+                            <div class="table-responsive">
+                              <table class="table table-striped">
+                                <thead>
+                                  <tr>
+                                    <th style="width:38px;">
+                                      <p>
+                                        <strong>№</strong>
+                                      </p>
+                                      <p>
+                                        <strong>п.п.</strong>
+                                      </p>
+                                    </th>
+                                    <th style="width:539px;">
+                                      <p>
+                                        <strong>Показатель качества Услуг</strong>
+                                      </p>
+                                      <p>&nbsp;</p>
+                                    </th>
+                                    <th style="width:113px;">
+                                      <strong>Значение</strong>
+                                    </th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td style="width:38px;">1</td>
+                                    <td style="width:539px;">Коэффициент готовности соединения с сетью Интернет, %,</td>
+                                    <td style="width:113px;">не менее 98</td>
+                                  </tr>
+                                  <tr>
+                                    <td style="width:38px;">2</td>
+                                    <td style="width:539px;">Доля успешных попыток соединения от общего количества соединений, %,</td>
+                                    <td style="width:113px;">не менее 90</td>
+                                  </tr>
+                                  <tr>
+                                    <td style="width:38px;">3</td>
+                                    <td style="width:539px;">Доля соединений, окончившихся преждевременным разъединением, %,</td>
+                                    <td style="width:113px;">не более 5</td>
+                                  </tr>
+                                  <tr>
+                                    <td style="width:38px;">4</td>
+                                    <td style="width:539px;">Доля соединений, соответствующих нормам по скорости передачи данных, %</td>
+                                    <td style="width:113px;">не менее 90</td>
+                                  </tr>
+                                  <tr>
+                                    <td style="width:38px;">5</td>
+                                    <td style="width:539px;">Доля соединений, соответствующих нормам по времени задержки передачи IP-пакетов, %</td>
+                                    <td style="width:113px;">не менее 90</td>
+                                  </tr>
+                                  <tr>
+                                    <td style="width:38px;">6</td>
+                                    <td style="width:539px;">Доля соединений, соответствующих нормам по потерям IP-пакетов, %</td>
+                                    <td style="width:113px;">не менее 90</td>
+                                  </tr>
+                                  <tr>
+                                    <td style="width:38px;">7</td>
+                                    <td style="width:539px;">Доля договоров, по которым доступ к услуге организован в срок, не превышающий количество дней (со дня регистрации заявления либо подписания договора), указанных в договоре либо порядке (правилах) предоставления услуги, %</td>
+                                    <td style="width:113px;">не менее 99</td>
+                                  </tr>
+                                  <tr>
+                                    <td style="width:38px;">8</td>
+                                    <td style="width:539px;">Коэффициент доступности службы технической поддержки (при нормативном значении времени ответа специалиста службы не более 180&nbsp;с), %</td>
+                                    <td style="width:113px;">не менее 90</td>
+                                  </tr>
+                                  <tr>
+                                    <td style="width:38px;">9</td>
+                                    <td style="width:539px;">Коэффициент восстановления связи, %</td>
+                                    <td style="width:113px;">не менее 95</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+
+                            <a href="https://beltelecom.by/private/internet/poryadok">Порядок оказания услуг</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!--end::Accordion-->
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col mb-sm-3">
+                <div class="card h-100">
+                  <div class="card-body" style="text-align: justify;">
+                    <div class="card-header d-flex align-items-center">
                       <i class="bi bi-diagram-3-fill fs-4 text-primary me-2" aria-hidden="true"></i>
                       <h3 id="openports" class="card-title mb-0">Открытые порты</h3>
                     </div>
