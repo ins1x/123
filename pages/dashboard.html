@@ -350,15 +350,6 @@
                   <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
                 </ol>
               </div> -->
-              <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-end">
-                  <li id="datetime" class="breadcrumb-item active" aria-current="page"></li>
-                  <li class="breadcrumb-item active" aria-current="page">
-                    Ресурс обновлен:
-                    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/ins1x/123?style=flat-square&label=%20&color=grey">
-                  </li>
-                </ol>
-              </div>
             </div>
             <!--end::Row-->
           </div>
@@ -367,48 +358,6 @@
         <!--end::App Content Header-->
         <!--begin::App Content-->
         <div class="app-content">
-          <!--begin::Container-->
-          <div class="container-fluid">
-            <!-- Headline + search -->
-            <div class="text-center mb-4">
-              <!-- <p class="text-secondary mb-3">
-                Универсальный поиск по корпоративным порталам
-              </p> -->
-              <form
-                class="row g-2 justify-content-center"
-                role="search"
-                onsubmit="event.preventDefault()"
-              >
-                <div class="col-md-8 col-lg-8">
-                  <div class="input-group input-group-lg">
-                    <span class="input-group-text bg-body">
-                      <i class="bi bi-search" aria-hidden="true"></i>
-                    </span>
-                    <input
-                      type="search"
-                      id="universal-search"
-                      class="form-control"
-                      placeholder="Введите ключевые слова для поиска"
-                      aria-label="Search the FAQ"
-                    />
-                    <button class="btn btn-outline-secondary dropdown-toggle" id="button-dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">Nextcloud</button>
-                    <ul class="dropdown-menu dropdown-menu-end" id="dropdown-search">
-                      <li><a class="dropdown-item" href="#">Nextcloud</a></li>
-                      <li><a class="dropdown-item" href="#">123 Wiki</a></li>
-                      <li><a class="dropdown-item" href="#">Beltelecom</a></li>
-                    </ul>
-                    <small class="card-text-secondary">&nbsp;</small>
-
-                    <!-- <a href="#" class="btn" onclick="showPortalBoxes()" data-bs-toggle="tooltip" data-bs-title="Показать рабочие порталы">
-                      <i class="nav-icon bi bi-table"></i>
-                    </a> -->
-                  </div>
-                </div>
-                
-              </form>
-            </div>
-            <!-- end container -->
-          </div>
 
           <!--begin::Container-->
           <div class="container-fluid">
@@ -1146,71 +1095,11 @@
     <!-- customjs -->
     <script src="../js/custom.js"></script>
 
-    <!-- datetime -->
-    <script>
-      const date = new Date();
-      
-      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
-      document.getElementById("datetime").innerText = date.toLocaleString('ru-BY', options); 
-    </script>
-
     <!-- only for this page-->
-    <script language="javascript">
-      // Toggle portals-boxes container visiblity
-      function showPortalBoxes(){
-        const fluidcontainer = document.getElementById("portals-boxes");
-        const actualDisplay = getComputedStyle(fluidcontainer).display;
-        if (actualDisplay == 'none') {
-          fluidcontainer.style.display = 'block';
-        } else {
-          fluidcontainer.style.display = 'none';
-        }
-      }
-
-      // Dropdown menu select
-      document.querySelectorAll('#dropdown-search .dropdown-item').forEach(item => {
-        item.addEventListener('click', function(selDropdown) {
-          selDropdown.preventDefault();
-          const selectedText = this.innerText;
-          document.getElementById('button-dropdown').innerText = selectedText;
-        });
-      });
-
-      const searchInputElement = document.getElementById('universal-search'); 
-
-      // Search on pressed 'Enter' key
-      searchInputElement.addEventListener('keydown', function(event) {
-        if (event.key === 'Enter') {
-          event.preventDefault(); 
-          const inputValue = event.target.value;
-          GoSearch(inputValue)
-          // const searchInputElement = document.getElementById('universal-search'); 
-          // window.open("https://beltelecom.by/search/node?keys=" + inputValue.trim(), "_blank");
-        }
-      });
-
-      // Go search <URL>
-      function GoSearch(query) {
-        if (searchInputElement.value.trim() === '') {
-          return;
-        }
-
-        const dropdownText = document.getElementById('button-dropdown').innerText.trim();
-        switch (dropdownText) {
-          case "Nextcloud":
-            window.open("https://chat.datacenter.by/index.php/apps/files/search/1758822?query=" + query, "_blank");
-            break
-          case "123 Wiki":
-            window.open("http://10.248.4.95/index.php?r=helper/index&part=1045&s=" + query, "_blank");
-            break
-          case "Beltelecom":
-            window.open("https://beltelecom.by/search/node?keys=" + query, "_blank");
-            break
-          default: return;
-        }
-      }
-
-    </script>
+    <!-- 
+      <script language="javascript">
+      </script>
+    -->
 
   </body>
   <!--end::Body-->
