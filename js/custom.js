@@ -42,9 +42,11 @@ largeFontBtn.addEventListener('click', () => {
 });
 // End: Toggle Large font
 
-// Simple page search
+// Simple keywords highlight at page search
 const searchBar = document.getElementById('searchBar'); 
 const searchBtn = document.getElementById('searchBtn'); 
+const searchClearBtn = document.getElementById('searchClearBtn'); 
+var markContext, markInstance;
 
 // Search on pressed 'Enter' key
 searchBar.addEventListener('keydown', function(event) {
@@ -52,24 +54,46 @@ searchBar.addEventListener('keydown', function(event) {
     event.preventDefault(); 
     const searchValue = event.target.value;
     if (searchValue.trim() === '') {
+      searchBar.focus();
       return;
     }
     find(searchValue)
+    markContext = document.querySelector(".app-wrapper");
+    markInstance = new Mark(markContext);
+    markInstance.unmark();
+    markInstance.mark(searchBar.value);
   }
 });
 
-// searchBar.addEventListener('input', function(event) {
-//   const searchValue = event.target.value; 
-//   if (searchValue.trim() === '') {
-//     return;
-//   }
-//   find(searchValue)
-// });
+// Unmark search on ESC
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    markContext = document.querySelector(".app-wrapper");
+    markInstance = new Mark(markContext);
+    markInstance.unmark();
+  }
+});
 
+// If search input is empty - unmark context
+searchBar.addEventListener('input', function(event) {
+  const searchValue = event.target.value; 
+  if (searchValue.trim() === '') {
+    markContext = document.querySelector(".app-wrapper");
+    markInstance = new Mark(markContext);
+    markInstance.unmark();
+  }
+});
+
+// Search on press search button 
 searchBtn.addEventListener("click", ()=>{
   if (searchBar.value.trim() === '') {
+    searchBar.focus();
     return;
   }
   find(searchBar.value)
+  markContext = document.querySelector(".app-wrapper");
+  markInstance = new Mark(markContext);
+  markInstance.unmark();
+  markInstance.mark(searchBar.value); 
 });
 // End: Page search
