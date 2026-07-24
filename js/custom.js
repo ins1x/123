@@ -2,17 +2,6 @@
  * Custom scripts
  */
 
-// <!-- sortablejs -->
-// new Sortable(document.querySelector('.connectedSortable'), {
-//   group: 'shared',
-//   handle: '.card-header',
-// });
-// const cardHeaders = document.querySelectorAll('.connectedSortable .card-header');
-// cardHeaders.forEach((cardHeader) => {
-//   cardHeader.style.cursor = 'move';
-// });
-
-
 // Enable Bootstrap popovers
 const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
 const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
@@ -23,14 +12,6 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
   return new bootstrap.Tooltip(tooltipTriggerEl)
 })
 // End: Bootstrap utils
-
-// Locale checker
-const userLocale = navigator.language || navigator.userLanguage;
-const ruLocale = 'ru'; 
-if (!userLocale.startsWith(ruLocale)) {
-  document.getElementsByTagName("BODY")[0].style.display = "none";
-}
-// End:Local checker
 
 // Back to top button
 let backToTopBtn = document.getElementById("btn-back-to-top");
@@ -54,10 +35,41 @@ function backToTop() {
 }
 // End:Back to top button
 
-
 // Toggle large font 
 const largeFontBtn = document.getElementById('toggleLargeFontBtn');
 largeFontBtn.addEventListener('click', () => {
   document.body.classList.toggle('font-large');
 });
 // End: Toggle Large font
+
+// Simple page search
+const searchBar = document.getElementById('searchBar'); 
+const searchBtn = document.getElementById('searchBtn'); 
+
+// Search on pressed 'Enter' key
+searchBar.addEventListener('keydown', function(event) {
+  if (event.key === 'Enter') {
+    event.preventDefault(); 
+    const searchValue = event.target.value;
+    if (searchValue.trim() === '') {
+      return;
+    }
+    find(searchValue)
+  }
+});
+
+// searchBar.addEventListener('input', function(event) {
+//   const searchValue = event.target.value; 
+//   if (searchValue.trim() === '') {
+//     return;
+//   }
+//   find(searchValue)
+// });
+
+searchBtn.addEventListener("click", ()=>{
+  if (searchBar.value.trim() === '') {
+    return;
+  }
+  find(searchBar.value)
+});
+// End: Page search

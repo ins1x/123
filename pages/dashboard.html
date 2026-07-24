@@ -70,6 +70,14 @@
     <!--begin::Custom-->
     <link rel="stylesheet" href="../css/custom.css" />
     <!--end::Custom-->
+
+    <!--begin::Color Mode Toggle-->
+    <script src="../js/color-modes.js"></script>
+    <!--end::Color Mode Toggle-->
+
+    <!--begin::Locale-->
+    <script src="../js/locale.js"></script>
+    <!--end::Locale-->
   </head>
   <!--end::Head-->
   <!--begin::Body-->
@@ -101,7 +109,24 @@
           <!--begin::End Navbar Links-->
           <ul class="navbar-nav ms-auto">
             <!--begin::Navbar Search-->
-            <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" data-bs-title="Поиск (CTRL + F)">
+            <div class="input-group input-group-sm">
+              <input
+                id="searchBar"
+                type="search"
+                class="form-control"
+                placeholder="Поиск по странице"
+                aria-label="Search on page"
+              />
+              <button 
+                class="btn btn-outline-secondary" 
+                type="submit"
+                id="searchBtn"
+                >
+                <i class="bi bi-search" aria-hidden="true"></i>
+              </button>
+            </div>
+
+            <!-- <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" data-bs-title="Поиск (CTRL + F)">
               <li class="nav-item">
                 <a 
                   class="nav-link" 
@@ -114,7 +139,7 @@
                   <i class="bi bi-search"></i>
                 </a>
               </li>
-            </span>
+            </span> -->
             <!--end::Navbar Search-->
 
             <!--begin::Large font-->
@@ -1080,8 +1105,6 @@
     <!--end::Required Plugin(Bootstrap 5)--><!--begin::Required Plugin(AdminLTE)-->
     <script src="../js/adminlte.js"></script>
     <!--end::Required Plugin(AdminLTE)--><!--begin::OverlayScrollbars Configure-->
-    <script src="../js/color-modes.js"> </script>
-    <!--end::Color Mode Toggle-->
 
     <!-- OPTIONAL SCRIPTS -->
 

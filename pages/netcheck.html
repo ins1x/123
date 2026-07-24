@@ -70,6 +70,14 @@
     <!--begin::Custom-->
     <link rel="stylesheet" href="../css/custom.css" />
     <!--end::Custom-->
+
+    <!--begin::Color Mode Toggle-->
+    <script src="../js/color-modes.js"></script>
+    <!--end::Color Mode Toggle-->
+    
+    <!--begin::Locale-->
+    <script src="../js/locale.js"></script>
+    <!--end::Locale-->
   </head>
   <!--end::Head-->
   <!--begin::Body-->
@@ -336,7 +344,7 @@
             <!--begin::Row-->
             <div class="row">
               <div class="col-sm-6">
-                <h3 class="mb-0">Диагностика</h3>
+                <h3 class="mb-0 text-secondary"><i class="nav-icon bi bi-browser-safari"></i> Диагностика</h3>
               </div>
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-end">
@@ -1718,6 +1726,8 @@
                               <li>в онлайн-играх критичны задержка (пинг) и потери пакетов данных;</li>
                               <li>при скачивании файлов важна средняя скорость, а короткие провалы по этому показателю и единичные потери пакетов не имеют большого значения.</li>
                             </ul>
+
+                            Смотри так же:
                             <ul>
                               <li><a href="https://consumer.huawei.com/by/support/content/ru-ru15773163/" target="_blank">HUAWEI - Почему фактическая скорость передачи данных по сети Wi-Fi роутера ниже заявленной?</a></li>
                             </ul>
@@ -1766,18 +1776,16 @@
                                         <p>
                                           <strong>&nbsp;№</strong>
                                         </p>
-                                        <p>
-                                          <strong>п.п.</strong>
-                                        </p>
                                       </th>
                                       <th style="width:463px;">
                                         <p>
                                           <strong>Параметр качества Услуг</strong>
                                         </p>
-                                        <p>&nbsp;</p>
                                       </th>
                                       <th style="width:189px;">
-                                        <strong>Значение</strong>
+                                        <p>
+                                          <strong>Значение</strong>
+                                        </p>
                                       </th>
                                     </tr>
                                   </thead>
@@ -1820,18 +1828,16 @@
                                         <p>
                                           <strong>№</strong>
                                         </p>
-                                        <p>
-                                          <strong>п.п.</strong>
-                                        </p>
                                       </th>
                                       <th style="width:539px;">
                                         <p>
                                           <strong>Показатель качества Услуг</strong>
                                         </p>
-                                        <p>&nbsp;</p>
                                       </th>
                                       <th style="width:113px;">
-                                        <strong>Значение</strong>
+                                        <p>
+                                          <strong>Значение</strong>
+                                        </p>
                                       </th>
                                     </tr>
                                   </thead>
@@ -1886,6 +1892,16 @@
                               </div>
   
                               <a href="https://beltelecom.by/private/internet/poryadok">Порядок оказания услуг</a>
+                              <br>
+
+                              <blockquote>
+                                Скорость передачи данных в соответствии с  тарифным планом обеспечивается только для случаев оказания услуги с применением проводных технологий
+                                (Услуга ADSL, Услуга PON). При использовании Абонентом технологии беспроводного доступа Wi-Fi или WLL для подключения абонентского устройства 
+                                (компьютер, смартфон и т.п.) к Оконечному оборудованию скорость передачи данных будет ограничена факторами, влияющими на распространение радиосигнала:
+                                удалённости от точки доступа, наличия помех и препятствий, технических характеристик подключаемого абонентского устройства (ПК, ноутбук, планшет и др.),
+                                зашумленности радиоэфира, и не может превышать технически обоснованного предела скорости стандарта IEEE 802.11b/g/n/ас (54 Мбит/с для версий b/g
+                                и 100 Мбит/с для версии n, 867Мбит/с для версии ас).
+                              </blockquote>
   
                               <h4>Качество предоставления услуг регламентируются следующими документами</h4>
                               <ul>
@@ -1912,7 +1928,7 @@
                                 </li>
                               </ul>
                               <a href="https://beltelecom.by/about/quality-reports">Белтелеком - Отчеты о качестве</a>
-  
+
                             </div>
                           </div>
                         </div>
@@ -3236,8 +3252,6 @@
     <!--end::Required Plugin(Bootstrap 5)--><!--begin::Required Plugin(AdminLTE)-->
     <script src="../js/adminlte.js"></script>
     <!--end::Required Plugin(AdminLTE)--><!--begin::OverlayScrollbars Configure-->
-    <script src="../js/color-modes.js"> </script>
-    <!--end::Color Mode Toggle-->
 
     <!-- OPTIONAL SCRIPTS -->
 
