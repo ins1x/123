@@ -1084,7 +1084,7 @@
               <div class="col-sm-6 mb-3 mb-sm-3">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5>Прочие настройки</h5>
+                    <!-- <h5>Прочие настройки</h5> -->
                     <!--begin::Accordion-->
                     <div class="accordion" id="accordionIPTV">
                       <div class="accordion-item">
@@ -1203,10 +1203,72 @@
                             aria-expanded="false"
                             aria-controls="collapseIPTV_6"
                           >
-                            Нестандартные ошибки
+                            Программирование пульта
                           </button>
                         </h2>
                         <div id="collapseIPTV_6" class="accordion-collapse collapse" data-bs-parent="#accordionIPTV">
+                          <div class="accordion-body">
+                            <p>
+                              Оба варианта похожи, основное отличие в порядке нажатия клавиш при программировании. 
+                              В первом варианте (старые пульты) находясь в режиме программирования сперва нажимается клавиша на пульте от ТВ затем на пульте ZALA, а во втором (новые и покупные) сперва нажимается на пульте от ZALA затем на пульте от ТВ.
+                            </p>
+                            1 Вариант (старые пульты):
+                            <ul>
+                              <li>Подносим пульты друг напротив друга, пульт от ТВ напротив пульта от ZALA</li>
+                              <li>Зажимаем кнопку <kbd>SET</kbd> сверху на пульте ZALA на пару секунд, смотрим за индикацией.</li>
+                              <li>Загорится индикатор над SET и изменит цвет (с зеленого на красный или цвет будет тот же, но изменится яркость индикатора)</li>
+                              <li>Нажимаем на пульте от ТВ кнопку которую мы хотим настроить (Например вкл-выкл ТВ <i class="bi bi-power text-danger"></i>)</li>
+                              <li>На пульте от ZALA изменится цвет над SET на красный либо станет гореть ярче - значит сигнал он принял. </li>
+                              <li>Нажимаем на пульте от ZALA кнопку которую хотим запрограммировать (Например синюю кнопку включения <i class="bi bi-power text-info"></i>).</li>
+                              <li>Нажимаем <kbd>SET</kbd> чтобы выйти с настройки пульта - индикатор погаснет</li>
+                            </ul>  
+                            2 Вариант (новые пульты и покупные):
+                            <ul>
+                              <li>Подносим пульты друг напротив друга, пульт от ТВ напротив пульта от ZALA</li>
+                              <li>Зажимаем кнопку <kbd>SET</kbd> сверху на пульте ZALA на пару секунд, смотрим за индикацией.</li>
+                              <li>Загорится индикатор над SET и изменит цвет (с зеленого на красный или цвет будет тот же, но изменится яркость индикатора)</li>
+                              <li>Нажимаем на пульте от ZALA кнопку которую хотим запрограммировать (Например синюю кнопку включения <i class="bi bi-power text-info"></i>).</li>
+                              <li>Индикатор на пульте ZALA начнет моргать или изменит яркость</li>
+                              <li>Нажимаем на пульте от ТВ кнопку которую мы хотим настроить (Например вкл-выкл ТВ <i class="bi bi-power text-danger"></i>)</li>
+                              <li>Индикатор перестанет мигать</li>
+                              <li>Нажимаем <kbd>SET</kbd> чтобы выйти с настройки пульта - индикатор погаснет</li>
+                            </ul>
+                            Привязка универсального пульта 4-in-1:
+                            <ul>
+                              <li>Универсальный пульт 4-in-1 переключается согласно инструкции-вкладыша в нужный режим клавишей <kbd>standby (Включение)</kbd></li>
+                              <li>Зажмите одновременно кнопку <kbd>Standby (Включение)</kbd> и цифру 1.</li>
+                              <li>Удерживайте их, пока индикатор не моргнет 3 раза.</li>
+                              <li>Попробуйте поуправлять приставкой. Если приставка не реагирует, повторите процедуру, но уже с комбинациями кнопок <kbd>Standby</kbd> + 2, <kbd>Standby</kbd> + 3 или <kbd>Standby</kbd> + 4.</li>
+                              <li>Одна из этих комбинаций переключит пульт на частоту вашей модели приставки (B600, B700, Витязь и др.).</li>
+                            </ul>
+                            <blockquote> 
+                              Если при настройке и нажатии с пульта от ТВ на пульте ZALA индикация не меняется - пробуем вариант 2. 
+                              Цвета и нидикация пульта от ZALA может отличаться в зависимотси от сборки пульта, ориентируйтесь на порядок действий а не цвета.
+                              Не все пульты можно запрограммировать, это обусловлено аппаратными отличиями в кодировании сигнала. 
+                              На пульте ZALA 2 кнопки SET, для программирования используется кнопка в верхнем ряду. 
+                            </blockquote>
+                            <ul class="list-unstyled">
+                              <li><a href="https://www.youtube.com/watch?v=ZJ2rXxWyV10">Пример настройки различных пультов ZALA - YouTube</a></li>
+                              <li><a href="https://lan1.by/qa/5322/">Привязка универсального пульта - LAN1.by</a></li>
+                              <li><a href="https://chat.datacenter.by/index.php/f/1465079" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i>Nextcloud - Пульты ZALA и инструкции</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseIPTV_7"
+                            aria-expanded="false"
+                            aria-controls="collapseIPTV_7"
+                          >
+                            Нестандартные ошибки
+                          </button>
+                        </h2>
+                        <div id="collapseIPTV_7" class="accordion-collapse collapse" data-bs-parent="#accordionIPTV">
                           <div class="accordion-body">
                             <ul>
                             <li>Ошибка IPTV 1005, 1018, 1006 (Сигнал прерван) - Проверить физическое подключение.</li>
@@ -1310,9 +1372,7 @@
                                   </a>
                                 </li>
                                 <li>
-                                  <a href="https://chat.datacenter.by/index.php/f/1464576" target="_blank">
-                                    <i class="bi bi-cloud"></i>Nextcloud - STB DV9135
-                                  </a>
+                                  <a href="https://chat.datacenter.by/index.php/f/1464576" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i>Nextcloud - STB DV9135</a>
                                 </li>
                               </ul>
                             </blockquote>
@@ -1364,9 +1424,7 @@
                                   </a>
                                 </li>
                                 <li>
-                                  <a href="https://chat.datacenter.by/index.php/f/1464735" target="_blank">
-                                    <i class="bi bi-cloud"></i>Nextcloud - STB SML 5050
-                                  </a>
+                                  <a href="https://chat.datacenter.by/index.php/f/1464735" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i>Nextcloud - STB SML 5050</a>
                                 </li>
                               </ul>
                             </blockquote>
