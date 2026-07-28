@@ -435,7 +435,7 @@
                                 <td>Подробная информация о ONT</td>
                               </tr>
                               <tr>
-                                <td><code>(config-if-gpon-0/9)#display ont info 10 23</code></td>
+                                <td><code>(config-if-gpon-0/9)#display ont info 10 23</td>
                               </tr>
     
                               <tr>
@@ -574,9 +574,7 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <code style="white-space: pre-line;">ping 10.165.107.163
-                                    ping -c 10 10.164.197.139 ,где -c 10 кол-во пакетов
-                                  </code>
+                                  <code>ping -c 5 10.164.197.139</code>
                                 </td>
                               </tr>
 
@@ -592,12 +590,11 @@
                               </tr>
           
                               <tr>
-                                <td>ARP</td>
+                                <td>Таблица ARP</td>
                               </tr>
                               <tr>
                                 <td>
-                                  <code>display arp all либо display arp 10.165.107.163
-                                  </code>
+                                  <code>display arp all</code>
                                 </td>
                               </tr>
 
@@ -606,9 +603,7 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <code style="white-space: pre-line;">tracert -q 5 10.10.0.10
-                                    tracert ipv6 -q 5 2001:db8:100::3 
-                                  </code>
+                                  <code>tracert -q 5 10.10.0.10</code>
                                 </td>
                               </tr>
                               
@@ -745,7 +740,7 @@
                               <tr>
                                 <td>
                                   <code style="white-space: pre-line;">interface gpon 0/0
-                                    ont modify 'port' 'ont-id' sn 'new-sn'
+                                    (config-if-gpon-0/0)#ont modify 'port' 'ont-id' sn 'new-sn'
                                   </code>
                                 </td>
                               </tr>
@@ -829,16 +824,23 @@
                           <table class="table table-hover table-striped table-borderless">
                             <tbody>
                               <tr>
-                                <td>Активировать/деактивировать ONT на порту</td>
+                                <td>Активировать ONT на порту</td>
                               </tr>
                               <tr>
                                 <td>
-                                  <code style="white-space: pre-line;">(config-interface-gpon-0/0)#ont activate 1 2 - Активировать  
-                                    (config-interface-gpon-0/0)#ont deactivate 1 2 - Деактивировать  
-                                  </code>
+                                  <code style="white-space: pre-line;">(config-interface-gpon-0/0)#ont activate 1 2</code>
                                 </td>
                               </tr>
                               
+                              <tr>
+                                <td>Деактивировать ONT на порту</td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <code style="white-space: pre-line;">(config-interface-gpon-0/0)#ont deactivate 1 2</code>
+                                </td>
+                              </tr>
+
                             </tbody>
                           </table>
                         </div>
@@ -886,9 +888,7 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <code style="white-space: pre-line;">display service-port port 0/14/13 ont 2
-                                    display igmp user service-port 11911
-                                  </code>
+                                  <code>display igmp user service-port 11911</code>
                                 </td>
                               </tr>
                               
@@ -997,23 +997,39 @@
                               <tr>
                                 <td><code>show gpon remote-onu pppoe gpon-onu_1/4/7:18</code></td>
                               </tr>
-                              
-                              <tr>
-                                <td>Посмотреть конфигурацию ONU </td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <code style="white-space: pre-line;">show onu running config gpon-onu_1/8/6:17
-                                  show run interface gpon-onu_1/8/6:17
-                                  </code>
-                                </td>
-                              </tr>
 
                             </tbody>
                           </table>
                         </div>
                       </div>
+
+                      <div class="card-header">
+                        <h3 class="card-title">Посмотреть конфигурацию ONU</h3>
+                      </div>
     
+                      <div class="card-body" style="box-sizing: border-box; display: block;">
+                        <div class="table-responsive">
+                          <table class="table table-hover table-striped table-borderless">
+                            <tbody>
+                              <tr>
+                                <td>Активная конфигурация ONU</td>
+                              </tr>
+                              <tr>
+                                <td><code>show onu running config gpon-onu_1/8/6:17</code></td>
+                              </tr>
+          
+                              <tr>
+                                <td>Активная конфигурация сервисов на порту</td>
+                              </tr>
+                              <tr>
+                                <td><code>show run interface gpon-onu_1/8/6:17</code></td>
+                              </tr>
+                              
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+
                       <div class="card-header">
                         <h3 class="card-title">Информация о статусе ONT по блоку</h3>
                       </div>
@@ -1064,10 +1080,10 @@
                               </tr>
           
                               <tr>
-                                <td>ARP</td>
+                                <td>Таблица ARP</td>
                               </tr>
                               <tr>
-                                <td><code>show arp либо show arp 10.65.0.1</code></td>
+                                <td><code>show arp</code></td>
                               </tr>
       
                               <tr>
@@ -1204,7 +1220,14 @@
                                     no sip-user pots_0/1
                                     sip-user pots_0/1 sip-agent 2 user-aor +375172421200 username +375172421200@ims.beltel.by password 12345678
                                   </code>
-                                  <p>либо второй вариант:</p>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <td>Настроить телефонию на порт (Вариант 2)</td>
+                              </tr>
+                              <tr>
+                                <td>
                                   <code>
                                     sip-service pots_0/1 profile VOIP-SIP1 userid +375172421202 username +375172421202@ims.beltel.by password 12345678
                                   </code>
@@ -1343,7 +1366,7 @@
                           <table class="table table-hover table-striped table-borderless">
                             <tbody>
                               <tr>
-                                <td>router</td>
+                                <td>Перевести в router</td>
                               </tr>
                               <tr>
                                 <td>
@@ -1362,7 +1385,7 @@
                           <table class="table table-hover table-striped table-borderless">
                             <tbody>
                               <tr>
-                                <td>bridge</td>
+                                <td>Перевести в bridge</td>
                               </tr>
                               <tr>
                                 <td>
@@ -1409,7 +1432,18 @@
                                   <code style="white-space: pre-line;">conf t
                                     pon-onu-mng gpon-onu_1/3/1:1
                                     no sip-user pots_0/1
-                                    no sip-service pots_0/1 - если первый вариант не отработал
+                                  </code>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <td>Снять IMS (Вариант 2)</td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <code style="white-space: pre-line;">conf t
+                                    pon-onu-mng gpon-onu_1/3/1:1
+                                    no sip-service pots_0/1
                                   </code>
                                 </td>
                               </tr>
@@ -1511,13 +1545,20 @@
                           <table class="table table-hover table-striped table-borderless">
                             <tbody>
                               <tr>
-                                <td>Проверить мультикаст</td>
+                                <td>Проверить мультикаст на порту</td>
                               </tr>
                               <tr>
                                 <td>
-                                  <code style="white-space: pre-line;">show gpon remote-onu multicast vlan gpon-onu_1/9/3:18 
-                                    либо show igmp mvlan 1000 и искать в списке
-                                  </code>
+                                  <code>show gpon remote-onu multicast vlan gpon-onu_1/9/3:18</code>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <td>Проверить мультикаст (искать в списке)</td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <code>show igmp mvlan 1000</code>
                                 </td>
                               </tr>
     
@@ -1647,8 +1688,49 @@
     <!-- customjs -->
     <script src="../js/custom.js"></script>
 
-    <!-- only for this page-->
+    <!-- javascript only for this page-->
     <script language="javascript">
+      // Copy to clipboard function for table cells
+      let onSelection = false;
+
+      // Get all bootstrap selectable tables
+      const elements = document.querySelectorAll('.table-hover');
+      elements.forEach(table => {
+        // Events to track mouse selection
+        table.addEventListener('selectstart', () => {
+          onSelection = true;
+        });
+
+        table.addEventListener('mousedown', () => {
+          onSelection = false;
+        });
+
+        // On click event for table cells
+        table.addEventListener('click', function(event) {
+          if (onSelection) return;
+          const td = event.target.closest('td');
+          if (!td) return;
+          // if stardwith RU symbols ignore it
+          if (/^[а-яё]/i.test(td.innerText.trim())) return;
+          
+          // Store srctext with HTML formatting, copiedText without formatting
+          const srctext = td.innerText.replace(/\n/g, '<br>');
+          let copiedText = td.innerText.trim().split('#').pop();
+          
+          // If text copied succesfully add notify, and restore cell formatting after 
+          navigator.clipboard.writeText(copiedText)
+            .then(() => {
+              td.innerHTML = `${copiedText} <i class="bi bi-check text-success"></i> Copied to <i class="bi bi-clipboard"></i>`;
+              setTimeout(() => {
+                td.innerHTML = `<code>${srctext}</code>`;
+              }, 1500);
+            })
+            .catch(err => {
+              console.error('clipboard copy error: ', err);
+          });
+        });
+      });
+      // End copy to clipboard function
     </script>
   <!--end::page scripts-->
   </body>
