@@ -305,6 +305,13 @@
             </li>
 
             <li class="nav-item">
+              <a href="portals.html" class="nav-link">
+                <i class="nav-icon bi bi-grid-3x3-gap-fill me-1" aria-hidden="true"></i>
+                <p>Рабочие порталы</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
               <a href="equipment.html" class="nav-link">
                 <i class="nav-icon bi bi-router"></i>
                 <p>Оборудование</p>
@@ -387,6 +394,34 @@
 
           <!--begin::Container-->
           <div class="container-fluid">
+            <div class="row">
+              
+              <div class="col-sm-6 mb-3 mb-sm-3">
+                <div class="card h-100">
+                  <div class="alert alert-dismissible fade show" role="alert">
+                    &nbsp;<span class="badge bg-danger">New</span> Список рабочих порталов теперь расположен на отдельной вкладке<br>
+                    <small class="text-secondary text-end">29/07/2026</small>
+                    <a href="portals.html" class="icon-link icon-link-hover">
+                      <i class="bi bi-arrow-return-right"></i> Перейти
+                    </a>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-6 mb-3 mb-sm-3">
+                <div class="card h-100">
+                  <div class="alert alert-dismissible fade show" role="alert">
+                    &nbsp;<span class="badge bg-danger">New</span> На странице OLT CLI при нажатии на команду автоматически скопирует текст в буффер обмена<br>
+                    <small class="text-secondary text-end">28/07/2026</small>
+                    <a href="olt.html" class="icon-link icon-link-hover">
+                      <i class="bi bi-arrow-return-right"></i> Перейти
+                    </a>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+                </div>
+              </div>
+            </div>
 
             <div class="row">
               <div class="col-sm-4 mb-3 mb-sm-3">
@@ -395,9 +430,9 @@
                     <h3 class="card-title"><i class="bi bi-router"></i> Оборудование</h3>
                   </div>
                   <div class="card-body">
-                      <div class="alert alert-light" role="alert">
-                        Список оборудования по категориям
-                      </div>
+                    <div class="alert alert-light" role="alert">
+                      Список оборудования по категориям
+                    </div>
                     <div class="list-group">
                       <a href="equipment.html#onu" class="list-group-item list-group-item-action"><i class="bi bi-router-fill"></i> PON ONT/ONU</a>
                       <a href="equipment.html#dsl" class="list-group-item list-group-item-action"><i class="bi bi-ethernet"></i> DSL</a>
@@ -562,509 +597,6 @@
             <!-- end container -->
           </div>
           
-          <div class="text-center mb-4">
-            <h3>Рабочие порталы</h3>
-          </div>
-
-          <div class="container-fluid" id="portals-boxes">
-            
-            <div class="row">
-              <div class="col-sm-3 mb-3 mb-sm-3">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="text-center">CRM</h5>
-                    <div class="list-group">
-                      <a href="http://10.247.12.121:8080/ASTUP_WEB/"
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-window-sidebar" style="font-size: 1.5rem; color: RebeccaPurple;"></i>
-                        <strong> АСТУП </strong><br>10.247.12.121 
-                      </a>
-
-                      <a href="http://10.247.207.33/up/index.aspx"
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-file-earmark-text-fill" style="font-size: 1.5rem; color: indigo;"></i> 
-                        <strong> АССОМИ </strong><br>10.247.207.33
-                      </a>
-
-                      <a href="http://172.26.251.93:8010/ps/sbms/shell.html" 
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-window-stack" style="font-size: 1.5rem; color: RebeccaPurple;"></i>
-                        <strong> Абсолют </strong><br>172.26.251.93
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-3 mb-3 mb-sm-3">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="text-center">Сообщения</h5>
-                    <div class="list-group">
-                      <a href="https://vortex.beltelecom.by/"
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-ticket" style="font-size: 1.5rem; color: green;"></i>
-                        <strong> Vortex </strong><br>vortex.beltelecom.by
-                      </a>
-
-                      <a href="https://mail.mgts.by/"
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-envelope" style="font-size: 1.5rem; color: grey"></i> 
-                        <strong> Почта </strong><br>mail.mgts.by
-                      </a>
-
-                      <a href="https://chat.datacenter.by/index.php/apps/spreed/" 
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-cloud" style="font-size: 1.5rem; color: RoyalBlue;"></i>
-                        <strong> Nextcloud-Talk </strong><br>chat.datacenter.by
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-sm-3 mb-3 mb-sm-3">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="text-center">База знаний</h5>
-                    <div class="list-group">
-                      <a href="http://10.248.4.95/index.php"
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-123" style="font-size: 1.5rem; color: lime;"></i>
-                        <strong> 123-Wiki </strong><br>10.248.4.95
-                      </a>
-
-                      <a href="https://ftp.byfly.by/byfly/Byfly_by1.8.chm"
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-patch-question" style="font-size: 1.5rem; color: lime;"></i> 
-                        <strong> ByFly CHM </strong><br>ftp.byfly.by
-                      </a>
-
-                      <a href="http://wiki.tm.beltelecom.by/mediawiki" 
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-wikipedia" style="font-size: 1.5rem; color: lime;"></i>
-                        <strong> TM wiki </strong><br>wiki.tm.beltelecom.by
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-3 mb-3 mb-sm-3">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="text-center">Справочники</h5>
-                    <div class="list-group">
-                      <a href="https://chat.datacenter.by/index.php/f/7440065"
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-telephone" style="font-size: 1.5rem; color: green;"></i>
-                        <strong> Справочник админов </strong><br>Admin-phonebook
-                      </a>
-
-                      <a href="https://portal-mgts.beltelecom.by/phoneBook"
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-journal-bookmark" style="font-size: 1.5rem; color: green;"></i> 
-                        <strong> Справочник МГТС </strong><br>MGTS-phonebook
-                      </a>
-
-                      <a href="https://chat.datacenter.by/index.php/f/7450026" 
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-receipt" style="font-size: 1.5rem; color: green;"></i>
-                        <strong> Памятка с номерами </strong><br>operator-memory
-                      </a>
-                      
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> 
-
-            <div class="row">
-              <div class="col-sm-3 mb-3 mb-sm-3">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="text-center">Личный кабинет</h5>
-                    <div class="list-group">
-                      <a href="https://myadmin.beltelecom.by/"
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-chat-right-text" style="font-size: 1.5rem; color: dodgerblue;"></i>
-                        <strong> MBTK Admin </strong><br>myadmin.beltelecom.by
-                      </a>
-
-                      <a href="https://my.beltelecom.by/"
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-person-badge" style="font-size: 1.5rem; color: dodgerblue;"></i>
-                        <strong> Мой Белтелеком </strong><br>my.beltelecom.by
-                      </a>
-
-                      <a href="https://chat.datacenter.by/index.php/f/6713109"
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-crop" style="font-size: 1.5rem; color: dodgerblue;"></i>
-                        <strong> Шаблоны МБТК </strong><br>Nextcloud-Disk
-                      </a>
-
-                      <a href="https://issaold.beltelecom.by/main.html"
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-person-vcard" style="font-size: 1.5rem; color: dodgerblue;"></i>
-                        <strong> Личный кабинет </strong><br>issaold.beltelecom.by
-                      </a>
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-3 mb-3 mb-sm-3">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="text-center">Cisco-wifi</h5>
-                    <div class="list-group">
-                      <a href="https://wifi.beltelecom.by/customer/manager/out_cards/"
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-wifi" style="font-size: 1.5rem; color: cyan;"></i>
-                        <strong> Wi-fi Admin (SMS)</strong><br>wifi.beltelecom.by
-                      </a>
-
-                      <a href="https://issaold.beltelecom.by/wifi_card_auth.html"
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-person-vcard" style="font-size: 1.5rem; color: cyan;"></i>
-                        <strong> Wi-fi Кабинет ISSA</strong><br>issaold (wifi_card)
-                      </a>
-
-                      <a href="https://beltelecom.by/about/communication-networks/network-wifi"
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-pin-map" style="font-size: 1.5rem; color: cyan;"></i>
-                        <strong> Wi-fi Карта точек</strong><br>network-wifi
-                      </a>
-
-                      <a href="https://beltelecom.by/maps-LTE_0.1/index.html"
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-radar" style="font-size: 1.5rem; color: cyan;"></i>
-                        <strong> Карта LTE</strong><br>maps-LTE
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-sm-3 mb-3 mb-sm-3">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="text-center">Видеоконтроль</h5>
-                    <div class="list-group">
-                      <a href="https://myvideo.beltelecom.by/admin"
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-camera-video-off" style="font-size: 1.5rem; color: deepskyblue;"></i>
-                        <strong> VKS Admin </strong><br>myvideo.beltelecom.by
-                      </a>
-
-                      <a href="https://myvideo.beltelecom.by"
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-person-badge" style="font-size: 1.5rem; color: deepskyblue;"></i>
-                        <strong> Видеоконтроль </strong><br>myvideo.beltelecom.by
-                      </a>
-
-                      <a href="https://myanalytics.beltelecom.by/"
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-crosshair" style="font-size: 1.5rem; color: deepskyblue;"></i>
-                        <strong> Видеоаналитика </strong><br>myanalytics.beltelecom.by
-                      </a>
-
-                      <a href="https://vc.beltelecom.by/"
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-bootstrap" style="font-size: 1.5rem; color: deepskyblue;"></i>
-                        <strong> VC лендинг </strong><br>vc.beltelecom.by
-                      </a>
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-3 mb-3 mb-sm-3">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="text-center">ZALA</h5>
-                    <div class="list-group">
-                      <a href="https://tv.zala.by/"
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-egg-fried" style="font-size: 1.5rem; color: #293133;"></i>
-                        <strong> ZALA TV (Yasna) </strong><br>tv.zala.by
-                      </a>
-
-                      <a href="https://fe.svc.ott.zala.by/"
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-tv" style="font-size: 1.5rem; color: #293133;"></i>
-                        <strong> ZALA (SMART) </strong><br>fe.svc.ott.zala.by
-                      </a>
-
-                      <a href="https://www.beltelecom.by/coverage-maps"
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-map" style="font-size: 1.5rem; color: #293133;"></i>
-                        <strong> Карта охвата </strong><br>coverage-maps
-                      </a>
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-sm-3 mb-3 mb-sm-3">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="text-center">TM</h5>
-                    <div class="list-group">
-                      <a href="https://tm.beltelecom.by/"
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-badge-tm" style="font-size: 1.5rem; color: purple;"></i>
-                        <strong> Task Manager (TM) </strong><br>tm.beltelecom.by
-                      </a>
-
-                      <a href="https://tm.beltelecom.by/testModules/Monitoring/mon.php"
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-list-ol" style="font-size: 1.5rem; color: purple;"></i>
-                        <strong> Мониторинг </strong><br>Monitoring
-                      </a>
-
-                      <a href="https://tm.beltelecom.by/report_load.php"
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-graph-up" style="font-size: 1.5rem; color: purple;"></i>
-                        <strong> Статистика по 123 </strong><br>report_load
-                      </a>
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-3 mb-3 mb-sm-3">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="text-center">Оборудование</h5>
-                    <div class="list-group">
-                      <a href="http://10.248.36.229/"
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-router" style="font-size: 1.5rem; color: orange;"></i>
-                        <strong> Оборудование в наличии</strong><br>10.248.36.229
-                      </a>
-                      
-                      <a href="https://www.beltelecom.by/private/other/vozmeshchenie-stoimosti-imushchestva-rup-beltelekom"
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-bootstrap" style="font-size: 1.5rem; color: orange;"></i>
-                        <strong> Возврат оборудования</strong><br>beltelecom.by
-                      </a>
-
-                      <a href="https://shop.beltelecom.by/catalog/kompyutery-i-seti/setevoe-oborudovanie/"
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-bag-check" style="font-size: 1.5rem; color: orange;"></i>
-                        <strong> Beltelecom-shop</strong><br>shop.beltelecom.by
-                      </a>
-                      
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-sm-3 mb-3 mb-sm-3">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="text-center">Белтелеком</h5>
-                    <div class="list-group">
-                      <a href="https://beltelecom.by/calendar-field_network_date/month"
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-calendar-week" style="font-size: 1.5rem; color: purple;"></i>
-                        <strong> Тех. Работы </strong><br>beltelecom.by
-                      </a>
-
-                      <a href="https://www.beltelecom.by/feedback/services-point"
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-pin-map" style="font-size: 1.5rem; color: purple;"></i>
-                        <strong> Офисы продаж </strong><br>services-point
-                      </a>
-
-                      <a href="https://beltelecom.by/private/telephony/additional-services/drugie-dopolnitelnye-vidy-uslug"
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-currency-exchange" style="font-size: 1.5rem; color: purple;"></i>
-                        <strong> Доп. услуги </strong><br>additional-services
-                      </a>
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-3 mb-3 mb-sm-3">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="text-center">Информационные</h5>
-                    <div class="list-group">
-                      <a href="https://portal-mgts.beltelecom.by/"
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-window-sidebar" style="font-size: 1.5rem; color: purple;"></i>
-                        <strong> Портал MGTS </strong><br>portal-mgts.beltelecom.by
-                      </a>
-
-                      <a href="http://10.248.4.89"
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-people" style="font-size: 1.5rem; color: greenyellow;"></i>
-                        <strong> Охрана труда </strong><br>10.248.4.89
-                      </a>
-
-                      <a href="https://education.beltelecom.by"
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-question-diamond" style="font-size: 1.5rem; color: purple;"></i>
-                        <strong> Образовательный </strong><br>education.beltelecom.by
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-            <div class="row">
-              <div class="col-sm-3 mb-3 mb-sm-3">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="text-center">Облачные</h5>
-                    <div class="list-group">
-                      <a href="https://pbx.beltelecom.by"
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-cloud-arrow-up" style="font-size: 1.5rem; color: lightskyblue;"></i>
-                        <strong> Облачная АТС (PBX) </strong><br>pbx.beltelecom.by
-                      </a>
-
-                      <a href="https://sfera.beltelecom.by/v2/login"
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-camera-video" style="font-size: 1.5rem; color: lightsteelblue;"></i>
-                        <strong> Сфера (IVS) </strong><br>sfera.beltelecom.by
-                      </a>
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-sm-3 mb-3 mb-sm-3">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="text-center">Обзвонка</h5>
-                    <div class="list-group">
-                      <a href="http://10.248.4.14/csp/work/php_arm/ASOArhiv/"
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-telephone-outbound" style="font-size: 1.5rem; color: Khaki;"></i>
-                        <strong> АСО</strong><br>10.248.4.14
-                      </a>
-                      
-                      <a href="http://10.248.36.174"
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-telephone-outbound" style="font-size: 1.5rem; color: LightYellow;"></i>
-                        <strong> ЦОВ</strong><br>10.248.36.174
-                      </a>
-                      
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-sm-3 mb-3 mb-sm-3">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="text-center">SMS Рассылки</h5>
-                    <div class="list-group">
-                      
-                      <a href="https://sms.beltelecom.by/"
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-envelope" style="font-size: 1.5rem; color: DarkSlateBlue;"></i>
-                        <strong> SMS</strong><br>sms.beltelecom.by
-                      </a>
-                      
-                      <a href="https://wifi.beltelecom.by/customer/manager/out_cards/"
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-wifi" style="font-size: 1.5rem; color: cyan;"></i>
-                        <strong> Cisco Wi-fi SMS</strong><br>wifi.beltelecom.by
-                      </a>
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-sm-3 mb-3 mb-sm-3">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="text-center">Журналы</h5>
-                    <div class="list-group">
-                      <a href="http://10.248.4.95/index.php?r=ajournal%2Findex"
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-journal" style="font-size: 1.5rem; color: Chartreuse;"></i>
-                        <strong> РНР/РВР</strong><br>10.248.4.95
-                      </a>
-                      
-                      <a href="https://tm.beltelecom.by/handbook.php"
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-journal" style="font-size: 1.5rem; color: indigo"></i>
-                        <strong> Журналы в TM</strong><br>handbook
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-            <div class="row">
-              
-              <div class="col-sm-3 mb-3 mb-sm-3">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="text-center">ЯСНА</h5>
-                    <div class="list-group">
-
-                      <a href="https://yasna.by"
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-egg-fried" style="font-size: 1.5rem; color: orange;"></i>
-                        <strong> ЯСНА </strong><br>yasna.by
-                      </a>
-
-                      <a href="https://www.beltelecom.by/yasnae.tv"
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-egg-fried" style="font-size: 1.5rem; color: orange;"></i>
-                        <strong> ЯСНАе ТВ </strong><br>yasnaetv
-                      </a>
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-sm-3 mb-3 mb-sm-3">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="text-center">Прочие</h5>
-                    <div class="list-group">
-                      <a href="https://evika.by/"
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-ev-station" style="font-size: 1.5rem; color: blueviolet;"></i>
-                        <strong> Зарядные станции </strong><br>evika.by
-                      </a>
-
-                      <a href="https://security.beltelecom.by/"
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-database-fill-lock" style="font-size: 1.5rem; color: purple;"></i>
-                        <strong> Инф. Безопасность</strong><br>security.beltelecom.by
-                      </a>
-
-                      <!-- <a href="https://shop.beltelecom.by/"
-                      class="list-group-item list-group-item-action" target="_blank">
-                        <i class="bi bi-bag-check" style="font-size: 1.5rem; color: orange;"></i>
-                        <strong> Beltelecom-shop</strong><br>shop.beltelecom.by
-                      </a> -->
-
-                    </div>
-                  </div>
-                </div>
-              </div>
- 
-            </div>
-          </div>
-          <!--end::Container-->
         </div>
 
         <!-- Back to top button -->
