@@ -990,43 +990,37 @@
 
       // Go search <URL>
       function GoSearch(query) {
-        if (inputElement.value.trim() === '') {
-          document.getElementById("card-text-secondary").innerText = 'Вы не указали значение для поиска. (IP, MAC либо название сайта)';
-        } else {
-          const dropdownText = document.getElementById('button-dropdown').innerText.trim();
-          document.getElementById("card-text-secondary").innerText = 'Последний поиск: ' + inputElement.value.trim(); 
-          switch (dropdownText) {
-            case "Whois":
-              window.open("https://mxtoolbox.com/SuperTool.aspx?action=whois%3a" + query, "_blank");
-              break
-            case "Ping":
-              window.open("https://ping.pe/" + query, "_blank");
-              break
-            case "MAC-Vendor":
-              window.open("https://maclookup.app/search/result?mac=" + query, "_blank");
-              break
-            case "Trace":
-              window.open("https://tools.bunny.net/traceroute?query=" + query, "_blank");
-              break
-            case "DNS-Records":
-              window.open("https://dnschecker.org/all-dns-records-of-domain.php?query=" + query, "_blank");
-              break
-            case "MX-Record":
-              window.open("https://mxtoolbox.com/SuperTool.aspx?action=mx%3a" + query, "_blank");
-              break
-            case "Spam-base":
-              window.open("https://mxtoolbox.com/SuperTool.aspx?action=blacklist%3a" + query, "_blank");
-              break
-            case "Check-host":
-              window.open("https://check-host.net/check-http?host=" + query, "_blank");
-              break
-            case "Open-ports":
-              window.open("https://dnschecker.org/port-scanner.php?query=" + query + "&ptype=server", "_blank");
-            default:
-              // console.log(`OK: ${dropdownText}`);
-              document.getElementById("card-text-secondary").innerText = 'Что-то пошло не так, попробуйте перезагрузить страницу CTRL + R';
-          }
+        const searchQuery = inputElement.value.trim();
+        const statusElement = document.getElementById("card-text-secondary");
+
+        if (!searchQuery) {
+          statusElement.innerHTML = `<small>Вы не указали значение для поиска. (IP, MAC либо название сайта)</small>`;
+          return;
         }
+      
+        const dropdownText = document.getElementById('button-dropdown').innerText.trim();
+        
+        const searchSources = {
+          "Whois": `https://mxtoolbox.com/SuperTool.aspx?action=whois%3a${query}`,
+          "Ping": `https://ping.pe/${query}`,
+          "MAC-Vendor": `https://maclookup.app/search/result?mac=${query}`,
+          "Trace": `https://tools.bunny.net/traceroute?query=${query}`,
+          "DNS-Records": `https://dnschecker.org/all-dns-records-of-domain.php?query=${query}`,
+          "MX-Record": `https://mxtoolbox.com/SuperTool.aspx?action=mx%3a${query}`,
+          "Spam-base": `https://mxtoolbox.com/SuperTool.aspx?action=blacklist%3a${query}`,
+          "Check-host": `https://check-host.net/check-http?host=${query}`,
+          "Open-ports": `https://dnschecker.org/port-scanner.php?query=${query}&ptype=server`
+        };
+      
+        const targetUrl = searchSources[dropdownText];
+      
+        if (targetUrl) {
+          statusElement.innerHTML = `<small>Последний поиск: ${searchQuery}</small>`;
+          window.open(targetUrl, "_blank");
+        } else {
+          statusElement.innerHTML = `<small>Что-то пошло не так, попробуйте перезагрузить страницу <kbd>CTRL + R</kbd></small>`;
+        }
+
       }
       
       // Search on press Go button
