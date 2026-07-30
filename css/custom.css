@@ -1,7 +1,34 @@
 @charset "UTF-8";
-/*!
- * Custom CSS styles
-*/
+
+/* Begin: Print styles */
+/* Hide interface elements that are not needed on print version */
+@media print {
+  .app-header, .app-sidebar, footer, a[href]:after, #btn-back-to-top, .skip-links, .navbar, .noprint {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+
+  .app-main {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1, h2, h3 {
+    page-break-after: avoid; 
+  }
+
+  .page-break {
+    page-break-before: always; 
+  }
+}
+/* End: Print styles */
 
 /* Custom blockquote style */
 blockquote {
@@ -38,7 +65,7 @@ code {
   font-family: Consolas, 'Courier New', monospace;
 }
 
-mark{
+mark {
   background: DodgerBlue;
   color: black;
 }
