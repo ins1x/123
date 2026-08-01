@@ -334,7 +334,7 @@
             <li class="nav-item">
               <a href="olt.html" class="nav-link active">
                 <i class="nav-icon bi bi-terminal"></i>
-                <p>OLT cli &nbsp;<span class="badge bg-danger">New</span></p>
+                <p>OLT cli</p>
               </a>
             </li>
             
@@ -442,7 +442,11 @@
                                 <td>Подробная информация о ONT</td>
                               </tr>
                               <tr>
-                                <td><code>(config-if-gpon-0/9)#display ont info 10 23</td>
+                                <td>
+                                  <code>
+                                    (config-if-gpon-0/9)#display ont info 10 23
+                                  </code>
+                                </td>
                               </tr>
     
                               <tr>
@@ -611,6 +615,17 @@
                               <tr>
                                 <td>
                                   <code>tracert -q 5 10.10.0.10</code>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <td>Поиск двойной регистрации IMS</td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <code style="white-space: pre-line;">ping 10.164.197.139
+                                    display arp 10.164.197.139
+                                  </code>
                                 </td>
                               </tr>
                               
@@ -1100,6 +1115,17 @@
                                 <td><code>traceroute 192.168.5.50</code></td>
                               </tr>
                               
+                              <tr>
+                                <td>Поиск двойной регистрации IMS</td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <code style="white-space: pre-line;">ping 10.164.197.139
+                                    show arp 10.164.197.139
+                                  </code>
+                                </td>
+                              </tr>
+
                             </tbody>
                           </table>
                         </div>
