@@ -887,6 +887,7 @@
                                 <li>После сброса в бридж не отключается DHCP! Снять DHCP с модема. LAN - DHCP - DHCP Mode выставить NONE и нажать Apply Changes.</li>
                                 <li>Нет меню отключения (на ночь) ярких светодиодов индикаторной панели</li>
                                 <li>Падает скорость/разрывы/нестабильная работа в режиме моста</li>
+                                <li>Беспричинно начинает разрывать соединение по закольцовке - необходима перерегистрация, ресет</li>
                               </ul>
                             </div>
                           </td>
@@ -931,12 +932,18 @@
                                 <li>Вход с правами Администратора логин: Administrator пароль: qazwsx</li>
                                 <li>MA670-U антенны сбоку + на подставке без креплений.</li>
                                 <li>Возможно подключение на блоки ZTE и Huawei</li>
-                                <li>Включение WI-fi осуществляется путем ОДНОКРАТНОГО нажатия кнопки WLAN. </li>
+                                <li>Включение WI-fi осуществляется путем ОДНОКРАТНОГО нажатия кнопки WLAN. (индикаторы загораются с небольшой задержкой). Пароль соответствует SN.</li>
                                 <li>Установка только на горизонтальной поверхности. Данная модель комплектуется подставкой</li>
                                 <il>Важно! Модем после перезагрузки по питанию загружается порядка 1 минуты (полная индикация).</il>
                                 <li>Reset расположен на задней панели между портом USB и Lan 1 - удерживать кнопку в течении длительного времени (не менее 10 секунд)</il>
                                 <li>Серийный номер отображается в формате DPDPXXXXXXXX либо 44504450AAAAAAAA</li>
                               </ul>
+                              Известные проблемы:
+                              <ul>
+                                <li>Включение callerID на Photonspeak  -  VOIP/Advance/callerID mode - выставить DTMF</li>
+                                <li>После сброса в бридж не отключается DHCP! Снять DHCP с модема. LAN - DHCP - DHCP Mode выставить NONE и нажать Apply Changes.</li>
+                                <li>Нет меню отключения (на ночь) ярких светодиодов индикаторной панели</li>
+                                <li>Падает скорость/разрывы/нестабильная работа в режиме моста</li>
                             </div>
                           </td>
                         </tr>
@@ -1044,7 +1051,7 @@
                         <tr>
                           <td>
                             <a class="nav-link" data-bs-toggle="collapse" href="#collapseZXG412D" role="button" aria-expanded="false" aria-controls="collapseZXG412D">
-                              <i class="bi bi-chevron-down"></i> <span class="badge bg-danger">New</span> Промсвязь AT4 ZXG412D
+                              <i class="bi bi-chevron-down"></i> <span class="badge bg-danger">New</span> Промсвязь AT4 ZXG412D (ПЮРК)
                             </a>
                           </td>
                           <td><a href="http://192.168.1.1" target="_blank"><small>192.168.1.1</small></a></td>
@@ -1062,6 +1069,9 @@
                             <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="Wi-fi 5 - 802.11a/n/c - 5Ghz">
                               <span class="badge" style="background-color: SteelBlue;"><i class="bi bi-wifi"></i> Wi-fi 5</span>
                             </a>
+                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="WPA3 (Wi-Fi Protected Access 3) метод аутенфикации SAE ">
+                              <span class="badge" style="background-color: gray;">WPA3</span>
+                            </a>
                           </td>
                           <td>
                             <a class="navbar-brand" title="Nextcloud информация по оборудованию" target="_blank"
@@ -1077,12 +1087,13 @@
                                 <li>MT-PON-AT-4 ПЮРК.465614.006-17, возможно подключение на блоки ZTE и Huawei</li>
                                 <li>При первом входе в настройки модема требуется обязательная смена стандартного пароля. Интерфейс модема схож с TS4224 но более урезанный.</li>
                                 <li>В отверстии RST расположена кнопка сброса к заводским настройкам (боковая панель). Для сброса следует удерживать кнопку не менее 10 секунд</li>
-                                <li>Включение Wifi - однократное нажатие кнопки Wlan (боковая панель). Название стандартной сети и пароль указаны на наклейке.</li>
-                                <li>Серийный номер отображается в формате HWTCXXXXXXXX</li>
+                                <li>Включение Wifi - однократное нажатие кнопки Wlan (боковая панель). Название стандартной сети и пароль указаны на наклейке(GPON-2.4G-XXXXXX, GPON-5G-XXXXXX).</li>
+                                <li>Серийный номер для блока ZTE отображается в формате HWTCXXXXXXXX, для HUAWEI в обычном 4857XXXXXXXXXX</li>
                               </ul>
                               Известные проблемы:
                               <ul>
                                 <li>Проблемы с неработающей IPTV ZALA на С300 v.1.2.5 пробовать перерегистрировать. После перерегистрации проверять меняется ли VLAN 20 на 1000 для IPTV.</li>
+                                <li>Нет возможности настроить DHCP сервер под учеткой user</li>
                               </ul>
                             </div>
                           </td>
@@ -1808,7 +1819,11 @@
                       </thead>
                       <tbody>
                         <tr>
-                          <td>Huawei B311-221</td>
+                          <td>
+                            <a class="nav-link" data-bs-toggle="collapse" href="#collapseB311-221" role="button" aria-expanded="false" aria-controls="collapseB311-221">
+                              <i class="bi bi-chevron-down"></i> Huawei B311-221
+                            </a>
+                          </td>
                           <td><a href="http://192.168.8.1" target="_blank"><small>192.168.8.1</small></a></td>
                           <td><small>admin / admin</small></td>
                           <td>4G LTE, 3G (UMTS)</td>
@@ -1838,7 +1853,44 @@
                           </td>
                         </tr>
                         <tr>
-                          <td>Huawei E173 (USB)</td>
+                          <td colspan="7">
+                            <div class="collapse" id="collapseB311-221">
+                              <ul>
+                                <li>
+                                  Настройка Wi-Fi на модеме осуществляется на странице «Настройки Wi-Fi».
+                                  По умолчанию модем транслирует сеть Wi-Fi с именем сети (SSID) вида
+                                  «HUAWEI-B311-хххх». Конкретный SSID и пароль сети Wi-Fi указан на нижней
+                                  стороне терминала.
+                                </li>
+                                <li>
+                                  Индикатор статуса сети:
+                                  <ul>
+                                    <li><span class="badge text-bg-info">голубой</span>: подключено к сети LTE</li> 
+                                    <li><span class="badge text-bg-danger">красный</span>: SIM-карта не установлена или не определена; терминал не зарегистрирован в сети LTE (SIM-карта не активирована на стороне партнера).</li>
+                                  </ul>
+                                </li>
+                                <li>DHCP работает в пуле 192.168.8.x</li>
+                                <li>
+                                  Обязательным условием для оказания Услуги является нахождение абонента в зоне уверенного приема сети LTE (4G) компании ООО «Белорусские облачные технологии». 
+                                  Карта: <a href="https://becloud.by/customers/ob-lte-advanced/">becloud.by</a> или <a href="https://www.beltelecom.by/maps-LTE/index.html">maps-LTE beltelecom.by</a>
+                                </li>
+                              </ul>
+                              Недостатки:
+                              <ul>
+                                <li>Модем передается абоненту в настроенном для получения услуг состоянии. В
+                                  случае осуществления абонентом сброса модема к заводским настройкам, их
+                                  восстановление возможно только после ручной настройки
+                                </li>
+                              </ul>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <a class="nav-link" data-bs-toggle="collapse" href="#collapseHuaweiE173" role="button" aria-expanded="false" aria-controls="collapseHuaweiE173">
+                              <i class="bi bi-chevron-down"></i> Huawei E173 (USB)
+                            </a>
+                          </td>
                           <td>Нет</td>
                           <td>Нет</td>
                           <td>2G / 3G (UMTS)</td>
@@ -1857,7 +1909,25 @@
                           </td>
                         </tr>
                         <tr>
-                          <td>Huawei BM338 (USB)</td>
+                          <td colspan="7">
+                            <div class="collapse" id="collapseHuaweiE173">
+                              <ul>
+                                <li>USB модем приобретается абонентом с условием пользования услугами на год, в аренду не выдается.</li>
+                              </ul>
+                              Недостатки:
+                              <ul>
+                                <li>Не работает на новых ОS. Поддержка драйверов заявлена только для Windows XP</li>
+                                <li>Не держит режим only-3G, перекидывает между разными режимами в зависимости от сигнала</li>
+                              </ul>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <a class="nav-link" data-bs-toggle="collapse" href="#collapseHuaweiBM338" role="button" aria-expanded="false" aria-controls="collapseHuaweiBM338">
+                              <i class="bi bi-chevron-down"></i> Huawei BM338 (USB)
+                            </a>
+                          </td>
                           <td>Нет</td>
                           <td>Нет</td>
                           <td>WiMax</td>
@@ -1873,6 +1943,23 @@
                             href="https://chat.datacenter.by/index.php/f/6349084" aria-label="Up">
                               <i class="bi bi-cloud"></i>
                             </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colspan="7">
+                            <div class="collapse" id="collapseHuaweiBM338">
+                              <ul>
+                                <li>
+                                  Белтелеком полностью прекратил предоставление коммерческого доступа в интернет по технологии WiMAX с 1 мая 2017 года. 
+                                </li>
+                              </ul>
+                              Недостатки:
+                              <ul>
+                                <li>
+                                  Не работает на новых ОS. Поддержка драйверов заявлена только для 32-bit version of Windows XP SP2, Windows Vista, Windows 7
+                                </li>
+                              </ul>
+                            </div>
                           </td>
                         </tr>
                         
