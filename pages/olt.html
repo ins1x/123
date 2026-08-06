@@ -392,37 +392,19 @@
                 <a class="nav-link disabled" aria-disabled="true"> &nbsp; </a>
               </li>
 
-              <!-- <li class="nav-item">
-                <a class="nav-link" aria-current="page" target="_blank" href="https://github.com/ins1x/OLT/wiki" 
-                data-bs-toggle="tooltip" data-bs-title="Wiki по командам OLT для HUAWEI и ZTE с примерами">
-                <i class="nav-icon bi bi-window"></i>
-                  OLT-Commands (git-wiki)
-                </a>
-              </li> -->
-
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-title="Wiki по командам OLT для HUAWEI и ZTE с примерами"><i class="nav-icon bi bi-window"></i> OLT-Commands (git-wiki)</a>
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-title="Wiki по командам OLT для HUAWEI и ZTE с примерами"><i class="nav-icon bi bi-github"></i> OLT-Commands</a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" target="_blank" href="https://github.com/ins1x/OLT/wiki/HUAWEI">HUAWEI</a></li>
-                  <li><a class="dropdown-item" target="_blank" href="https://github.com/ins1x/OLT/wiki/ZTE">ZTE</a></li>
+                  <li><a class="dropdown-item" target="_blank" href="https://github.com/ins1x/OLT/wiki/HUAWEI">Команды для HUAWEI</a></li>
+                  <li><a class="dropdown-item" target="_blank" href="https://github.com/ins1x/OLT/wiki/ZTE">Команды для ZTE</a></li>
                 </ul>
               </li>
 
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Полезные ресурсы</a>
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-title="Примеры конфигов"><i class="nav-icon bi bi-cloud"></i> Configs</a>
                 <ul class="dropdown-menu">
-                  <h6 id="huaweiolt" class="dropdown-header">HUAWEI</h6>
                   <li><a class="dropdown-item" target="_blank" href="https://chat.datacenter.by/index.php/f/5030766" aria-current="true">Nextcloud - примеры конфигов HUAWEI</a></li>
-                  <li><a class="dropdown-item" target="_blank" href="https://forum.huawei.com/enterprise/intl/en/thread/list-of-useful-command-for-huawei-olts/802625518766481408?blogId=802625518766481408">List of useful command for Huawei OLTs</a></li>
-                  <li><a class="dropdown-item" target="_blank" href="https://truenetwork.ru/community/tutorials/sample-base-configuration-olt-for-equipment-huawei-ma5608t">Первые шаги по настройке Huawei SmartAX OLT MA5608T</a></li>
-                  <li><a class="dropdown-item" target="_blank" href="https://nag.wiki/pages/viewpage.action?pageId=32249069">GPON Huawei. Первичная настройка OLT & ONT</a></li>
-                  <h6 id="zteolt" class="dropdown-header">ZTE</h6>
                   <li><a class="dropdown-item" target="_blank" href="https://chat.datacenter.by/index.php/f/7289753" aria-current="true">Nextcloud - примеры конфигов ZTE</a></li>
-                  <li><a class="dropdown-item" target="_blank" href="https://pdfcoffee.com/cli-commands-list-for-zte-routets-pdf-free.html" aria-current="true">ZTE CLI Commands Reference</a></li>
-                  <li><a class="dropdown-item" target="_blank" href="https://noname.com.ua/mediawiki/index.php/ZTE_320_OLT_Settings_Config_Snippets" aria-current="true">ZTE320 OLT Settings Snippets</a></li>
-                  <li><a class="dropdown-item" target="_blank" href="https://github.com/randifilan/zte-c320" aria-current="true">ZTE c320 OLT examples</a></li>
-                  <li><a class="dropdown-item" target="_blank" href="https://itsolution.drinia.tech/category/gpon/olt/zte-olt/" aria-current="true">ZTE OLT configuration solutions</a></li>
-                  <li><a class="dropdown-item" target="_blank" href="https://truenetwork.ru/community/tutorials/sample-base-configuration-olt-for-equipment-zte-c320" aria-current="true">Первые шаги по настройке ZTE GPON OLT ZXA10 C320 </a></li>
                 </ul>
               </li>
             </ul>
@@ -445,8 +427,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>
                                     (config-if-gpon-0/9)#display ont info 10 23
@@ -459,8 +441,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>(config-if-gpon-0/9)#display ont register info 6 8</code>
                                 </td>
@@ -471,8 +453,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>display mac-address port 0/5/4 ont 9</code>
                                 </td>
@@ -483,8 +465,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>(config-if-gpon-0/9)#display ont port state 1 13 eth-port all</code>
                                 </td>
@@ -495,8 +477,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>(config-if-gpon-0/2)#display ont traffic 9 12</code>
                                 </td>
@@ -507,8 +489,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>display ont version 11 1</code>
                                 </td>
@@ -519,8 +501,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>(config-if-gpon-0/4)#display ont optical-info 9 2</code>
                                 </td>
@@ -531,8 +513,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>(config-if-gpon-0/4)#display ont wan-info 10 23</code>
                                 </td>
@@ -543,8 +525,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>(config-if-gpon-0/13)#display ont routing-table policy-route 11 2</code>
                                 </td>
@@ -569,8 +551,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>(config-if-gpon-0/13)#display ont wlan-info 11 2</code>
                                 </td>
@@ -581,8 +563,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>(config-if-gpon-0/13)#display ont wlan-status 11 2</code>
                                 </td>
@@ -606,8 +588,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>display ont info summary 0/1/7</code>
                                 </td>
@@ -618,8 +600,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>display ont info 0 16 3 all</code>
                                 </td>
@@ -630,8 +612,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>(config-if-gpon-0/5)#display ont optical-info 14 all</code>
                                 </td>
@@ -655,8 +637,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>ping -c 5 10.164.197.139</code>
                                 </td>
@@ -667,8 +649,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>
                                     (config-if-gpon-0/1)#ont remote-ping 0 4 ip-address 10.10.8.8
@@ -681,8 +663,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>display arp all</code>
                                 </td>
@@ -693,8 +675,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>tracert -q 5 10.10.0.10</code>
                                 </td>
@@ -705,8 +687,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code style="white-space: pre-line;">ping 10.164.197.139
                                     display arp 10.164.197.139
@@ -732,8 +714,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>(config-if-gpon-0/9)#display ont port state 1 13 pots-port all</code>
                                 </td>
@@ -744,8 +726,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>
                                     display ont pots state 0/14/2
@@ -794,8 +776,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>display ont info by-sn 44504450AAAAAAAA</code>
                                 </td>
@@ -806,8 +788,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>display ont autofind all</code>
                                 </td>
@@ -818,8 +800,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>display location 4cf9-5dd3-1aaa</code>
                                 </td>
@@ -843,8 +825,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code style="white-space: pre-line;">interface gpon 0/1
                                     (config-if-gpon-0/12)#ont delete 3 4
@@ -861,8 +843,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code style="white-space: pre-line;">interface gpon 0/0
                                     (config-if-gpon-0/0)#ont add 2 3 sn-auth 4857544AAAAAAA omci ont-lineprofile-id 2001 ont-srvprofile-id 1001 desc "ONT_NO_DESCRIPTION"
@@ -875,8 +857,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code style="white-space: pre-line;">interface gpon 0/0
                                     (config-if-gpon-0/0)#ont modify 'port' 'ont-id' sn 'new-sn'
@@ -900,8 +882,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>
                                     display service-port port 0/1/2 ont 3
@@ -914,8 +896,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>
                                     undo service-port 578
@@ -928,8 +910,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>
                                     display service-port 11348
@@ -942,8 +924,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code style="white-space: pre-line;">btv
                                     igmp user delete service-port 578
@@ -958,8 +940,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>(config-if-gpon-0/1)#ont ipconfig 0 4 dhcp reset</code>
                                 </td>
@@ -982,8 +964,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code style="white-space: pre-line;">(config-interface-gpon-0/0)#ont activate 1 2</code>
                                 </td>
@@ -994,8 +976,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code style="white-space: pre-line;">(config-interface-gpon-0/0)#ont deactivate 1 2</code>
                                 </td>
@@ -1018,8 +1000,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>(config-if-gpon-0/13)#ont reset 2 1</code>
                                 </td>
@@ -1030,8 +1012,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>(config-if-gpon-0/13)#ont factory-setting-restore 2 1</code>
                                 </td>
@@ -1054,8 +1036,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>display igmp user service-port 11911</code>
                                 </td>
@@ -1066,8 +1048,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code style="white-space: pre-line;">btv
                                     (config-btv)#igmp user add service-port 642 no-auth
@@ -1080,8 +1062,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code style="white-space: pre-line;">btv
                                     (config-btv)#igmp user modify service-port 642 max-program 4
@@ -1094,8 +1076,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code style="white-space: pre-line;">btv
                                     (config-btv)#igmp user delete service-port 642
@@ -1132,8 +1114,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>show gpon onu detail-info gpon-onu_1/8/1:17</code>
                                 </td>
@@ -1144,8 +1126,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>show mac gpon onu gpon-onu_1/6/3:25</code>
                                 </td>
@@ -1156,8 +1138,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>show gpon remote-onu interface eth gpon-onu_1/4/7:18</code>
                                 </td>
@@ -1168,8 +1150,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>show interface gpon-onu_1/4/2:9</code>
                                 </td>
@@ -1180,8 +1162,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>show pon power attenuation gpon-onu_1/15/7:2</code>
                                 </td>
@@ -1192,8 +1174,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>show gpon remote-onu equip gpon-onu_1/2/2:17</code>
                                 </td>
@@ -1204,8 +1186,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>show gpon remote-onu pppoe gpon-onu_1/4/7:18</code>
                                 </td>
@@ -1229,8 +1211,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>show onu running config gpon-onu_1/8/6:17</code>
                                 </td>
@@ -1241,8 +1223,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>show run interface gpon-onu_1/8/6:17</code>
                                 </td>
@@ -1266,8 +1248,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>show gpon onu state gpon-olt_1/6/3</code>
                                 </td>
@@ -1278,8 +1260,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>show gpon onu baseinfo gpon-olt_1/14/11</code>
                                 </td>
@@ -1290,8 +1272,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>show pon power onu-rx gpon-olt_1/2/4</code>
                                 </td>
@@ -1315,8 +1297,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>ping 10.23.11.101</code>
                                 </td>
@@ -1327,8 +1309,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>show arp</code>
                                 </td>
@@ -1339,8 +1321,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>traceroute 192.168.5.50</code>
                                 </td>
@@ -1351,8 +1333,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code style="white-space: pre-line;">ping 10.164.197.139
                                     show arp 10.164.197.139
@@ -1378,8 +1360,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code style="white-space: pre-line;">conf t
                                     (config)#pon-onu-mng gpon-onu_1/7/4:18
@@ -1394,8 +1376,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code style="white-space: pre-line;">conf t
                                     (config)#pon-onu-mng gpon-onu_1/7/4:18
@@ -1413,8 +1395,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code style="white-space: pre-line;">conf t
                                     (config)#pon-onu-mng gpon-onu_1/7/4:18
@@ -1443,8 +1425,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code style="white-space: pre-line;">conf t
                                     (config)#pon-onu-mng gpon-onu_1/7/4:18
@@ -1459,8 +1441,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code style="white-space: pre-line;">conf t
                                     (config)#pon-onu-mng gpon-onu_1/7/4:18
@@ -1488,8 +1470,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>show gpon remote-onu voip-linestatus gpon-onu_1/9/3:18</code>
                                 </td>
@@ -1500,8 +1482,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code style="white-space: pre-line;">conf t
                                     pon-onu-mng gpon-onu_1/7/4:20
@@ -1516,8 +1498,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>
                                     sip-service pots_0/1 profile VOIP-SIP1 userid +375172421202 username +375172421202@ims.beltel.by password 12345678
@@ -1530,8 +1512,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code style="white-space: pre-line;">conf t
                                     pon-onu-mng gpon-onu_1/7/4:20
@@ -1582,8 +1564,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>show gpon onu by sn ZTEGC1B3AAAA</code>
                                 </td>
@@ -1594,8 +1576,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>show gpon onu uncfg</code>
                                 </td>
@@ -1606,8 +1588,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>show mac 9813.33f8.AAAA</code>
                                 </td>
@@ -1632,8 +1614,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code style="white-space: pre-line;">conf t
                                     interface gpon-olt_1/12/7
@@ -1651,8 +1633,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code style="white-space: pre-line;">conf t
                                     interface gpon-olt_1/2/2
@@ -1667,8 +1649,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code style="white-space: pre-line;">conf t
                                     interface gpon-onu_x/y/z:a
@@ -1694,8 +1676,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code style="white-space: pre-line;">conf t
                                     (config)#pon-onu-mng gpon-onu_1/6/7:25
@@ -1716,8 +1698,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code style="white-space: pre-line;">conf t
                                     (config)#pon-onu-mng gpon-onu_1/6/7:25
@@ -1746,8 +1728,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code style="white-space: pre-line;">conf t
                                     pon-onu-mng gpon-onu_1/6/7:25
@@ -1762,8 +1744,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code style="white-space: pre-line;">conf t
                                     pon-onu-mng gpon-onu_1/3/1:1
@@ -1777,8 +1759,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code style="white-space: pre-line;">conf t
                                     pon-onu-mng gpon-onu_1/3/1:1
@@ -1792,8 +1774,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code style="white-space: pre-line;">conf t
                                     no vlan port eth_0/2 mode
@@ -1819,8 +1801,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code style="white-space: pre-line;">conf t
                                     (config)#interface gpon-onu_1/8/7:1
@@ -1834,8 +1816,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code style="white-space: pre-line;">conf t
                                     (config)#interface gpon-onu_1/8/7:1
@@ -1861,8 +1843,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code style="white-space: pre-line;">conf t
                                     (config)# pon-onu-mng gpon-onu_1/1/8:5  
@@ -1876,8 +1858,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code style="white-space: pre-line;">conf t
                                     (config)# pon-onu-mng gpon-onu_1/1/8:5  
@@ -1903,8 +1885,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>show gpon remote-onu multicast vlan gpon-onu_1/9/3:18</code>
                                 </td>
@@ -1915,8 +1897,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code>show igmp mvlan 1000</code>
                                 </td>
@@ -1927,8 +1909,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code style="white-space: pre-line;">conf t
                                     (config)#igmp mvlan 1000 receive-port gpon-onu_1/4/5:1 vport 2
@@ -1941,8 +1923,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code style="white-space: pre-line;">conf t
                                     (config)#no igmp mvlan 1000 receive-port gpon-onu_1/4/5:1 vport 2
@@ -1967,8 +1949,8 @@
                               </tr>
                               <tr>
                                 <td>
-                                  <button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()">
-                                    <i class="bi bi-clipboard"></i>
+                                  <button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()">
+                                    <i class="bi bi-copy"></i>
                                   </button>
                                   <code style="white-space: pre-line;">conf t
                                     (config)#pon-onu-mng gpon-onu_1/7/4:18
@@ -2073,12 +2055,12 @@
         // Store srctext with HTML formatting, copiedText without formatting
         const srctext = td.innerText.replace(/\n/g, '<br>');
         let copiedText = td.innerText.trim().split('#').pop();
-        let copyBtn= `<button class="btn btn-sm btn-outline-secondary copy-btn" onclick="copyCodeToClipboard()"><i class="bi bi-clipboard"></i></button>`
+        let copyBtn= `<button class="btn btn-sm btn-link copy-btn text-secondary" title="Копировать в буфер обмена" onclick="copyCodeToClipboard()"><i class="bi bi-copy"></i></button>`
         
         // If text copied succesfully add notify, and restore cell formatting after 
         navigator.clipboard.writeText(copiedText)
           .then(() => {
-            td.innerHTML = `${copiedText} <i class="bi bi-check text-success"></i> Copied to <i class="bi bi-clipboard"></i>`;
+            td.innerHTML = `${copiedText} <i class="bi bi-check text-success"></i> Скопировано`;
             setTimeout(() => {
               td.innerHTML = `${copyBtn}<code>${srctext}</code>`;
             }, 1500);
