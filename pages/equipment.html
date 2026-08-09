@@ -687,6 +687,7 @@
                                 <li>Пользовательский логин и пароль для входа в настройки модема указан на наклейке модема. Логин: <strong class="text-danger">root</strong> пароль: <strong class="text-danger">admin</strong>.</li>
                                 <li><strong class="text-primary">Reset</strong> и <strong class="text-primary">WLAN</strong> расположены на боковой панели модема.</li>
                                 <li>Комплектуется только блоком питания (12В, 1А) и оптическим кабелем (телефонного кабеля и витой пары нет).</li>
+                                <li>Сброс в бридж через админку. WAN - WAN Configuration - Выбрать в таблице 4_INTERNET_B_VID_10 - WAN Mode - Bridge WAN - Apply</li>
                               </ul>
                               Недостатки:
                               <ul>
@@ -832,6 +833,14 @@
                                 <li>Для включения или выключения <i class="bi bi-wifi"></i>Wi-Fi необходимо коротко нажать кнопку <strong class="text-primary">Wi-Fi</strong> без удержания.</li>
                                 <li>AT4V2 ZTE (c красной полосой на корпусе) <strong class="text-primary">WLАN</strong> и <strong class="text-primary">СБРОС</strong> распологаются на боковой панели.</li>
                                 <li>AT4V3 ZTE (c черной полосой на корпусе) <strong class="text-primary">WLАN</strong> и <strong class="text-primary">СБРОС</strong> распологаются на задней панели рядом с подключением блока питания.</li>
+                                <li>Данные для telnet для MT-PON-AT-4</li>
+                                <ul>
+                                  <li>Логин: root, Пароль: Zte521 (буква Z большая)</li>
+                                  <li>
+                                    Посмотреть пароль на вход в веб-интерфейс MT-PON-AT-4
+                                    <code>sendcmd 1 DB p DevAuthInfo (подробнее)</code>
+                                  </li>
+                                </ul>
                               </ul>
                               Известные проблемы:
                               <ul>
@@ -1348,7 +1357,58 @@
                       </thead>
                       <tbody>
                         <tr>
-                          <td>ZyXEL Prestige 841C</td>
+                          <td>
+                            <a class="nav-link" data-bs-toggle="collapse" href="#collapsePrestigeP660" role="button" aria-expanded="false" aria-controls="collapsePrestigeP660">
+                              <i class="bi bi-chevron-down"></i> ZyXEL Prestige P645 / 650 / 660R-T1
+                            </a>
+                          </td>
+                          <td><a href="http://192.168.1.1" target="_blank"><small>192.168.1.1</small></a></td>
+                          <td><small>admin / 1234</small></td>
+                          <td>VDSL</td>
+                          <td>
+                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="1 LAN порт до 100 Мбит/с (FE - Fast Ethernet)">
+                              <span class="badge text-bg-warning"><i class="bi bi-ethernet"></i>LAN 1 FE</span>  
+                            </a>
+                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="FXS-порт (Foreign Exchange Station) аналоговый телефонный порт (под подключение RJ-11) предоставляет сервис POTS (Plain Old Telephone Service)">
+                              <span class="badge bg-secondary">1 FXS<i class="bi bi-telephone-inbound"></i></span> 
+                            </a>
+                            <span class="badge bg-danger"><i class="bi bi-usb-symbol"></i>no USB</span>
+                          </td>
+                          <td>Нет</td>
+                          <td>
+                            <a class="navbar-brand" title="Паспорт модема" target="_blank"
+                            href="http://www.vrn123.ru/wiki/services/xdsl/manuals/zyxel/660" aria-label="Up">
+                              <i class="bi bi-file-richtext-fill"></i>
+                            </a>
+                            &nbsp;&nbsp;
+                            <a class="navbar-brand" title="Nextcloud информация по оборудованию" target="_blank"
+                            href="https://chat.datacenter.by/index.php/f/7438226" aria-label="Up">
+                              <i class="bi bi-cloud"></i>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colspan="7">
+                            <div class="collapse" id="collapsePrestigeP660">
+                              <ul>
+                                <li>Вход с правами Администратора под логином: <strong class="text-danger">admin</strong>, пароль: <strong class="text-danger">1234</strong> (для telnet аналогично)</li>
+                                <li>При первоначальном входе в админку предложит сменить пароль, можно не менять пропустить нажав Ignore</li>
+                                <li><strong class="text-primary">Reset</strong> расположен на задней панели рядом с подключением блока питания. Удерживать 10 секунд</li>
+                              </ul>
+                              Недостатки:
+                              <ul>
+                                <li>Устарело и больше не выдается</li>
+                                <li>Нет Wi-Fi модуля</li>
+                              </ul>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <a class="nav-link" data-bs-toggle="collapse" href="#collapsePrestige841C" role="button" aria-expanded="false" aria-controls="collapsePrestige841C">
+                              <i class="bi bi-chevron-down"></i> ZyXEL Prestige 841C
+                            </a>
+                          </td>
                           <td><a href="http://192.168.1.1" target="_blank"><small>192.168.1.1</small></a></td>
                           <td><small>admin / 1234</small></td>
                           <td>VDSL</td>
@@ -1375,7 +1435,26 @@
                           </td>
                         </tr>
                         <tr>
-                          <td>ZTE ZXHN 831, Промсвязь M101A</td>
+                          <td colspan="7">
+                            <div class="collapse" id="collapsePrestige841C">
+                              <ul>
+                                <li>Данный VDSL модем используется как шлюз для центральной телефонной станции/мини АТС</li>
+                                <li>Настройка только через telnet: <strong class="text-danger">admin</strong>, пароль: <strong class="text-danger">1234</strong></li>
+                                <li>Имеет 9-пиновый консольный порт RS-232 </li>
+                              </ul>
+                              Недостатки:
+                              <ul>
+                                <li>Нет Wi-Fi модуля</li>
+                              </ul>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <a class="nav-link" data-bs-toggle="collapse" href="#collapseZXHN831" role="button" aria-expanded="false" aria-controls="collapseZXHN831">
+                              <i class="bi bi-chevron-down"></i> ZTE ZXHN 831, Промсвязь M101A
+                            </a>
+                          </td>
                           <td><a href="http://192.168.1.1" target="_blank"><small>192.168.1.1</small></a></td>
                           <td><small>admin / admin</small></td>
                           <td>ADSL2+</td>
@@ -1402,7 +1481,26 @@
                           </td>
                         </tr>
                         <tr>
-                          <td>ZTE ZXV10 W300, Промсвязь M200</td>
+                          <td colspan="7">
+                            <div class="collapse" id="collapseZXHN831">
+                              <ul>
+                                <li>Устарело и больше не выдается</li>
+                                <li><strong class="text-primary">RESET</strong> расположен в отверстии возле ножки модема на донышке (не подписан).</li>
+                              </ul>
+                              Недостатки:
+                              <ul>
+                                <li>Нет Wi-Fi модуля</li>
+                                <li>После сброса модема. Модем по умолчанию настроен в "Bridge" и также настроен для услуги IPTV</li>
+                              </ul>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <a class="nav-link" data-bs-toggle="collapse" href="#collapseW300" role="button" aria-expanded="false" aria-controls="collapseW300">
+                              <i class="bi bi-chevron-down"></i> ZTE ZXV10 W300, Промсвязь M200
+                            </a>
+                          </td>
                           <td><a href="http://192.168.1.1" target="_blank"><small>192.168.1.1</small></a></td>
                           <td><small>admin / admin</small></td>
                           <td>ADSL2+</td>
@@ -1436,7 +1534,23 @@
                           </td>
                         </tr>
                         <tr>
-                          <td>ZTE ZXHN H108N</td>
+                          <td colspan="7">
+                            <div class="collapse" id="collapseW300">
+                              <ul>
+                                <li>Модемы <strong class="text-primary">M200A и M200B</strong> отличаются лишь поддержкой модуляции Annex A или Annex B. M200B ставили под охранную сигнализацию.</li>
+                                <li><strong class="text-primary">RESET</strong> расположен в отверстии возле ножки модема на донышке (не подписан).</li>
+                                <li>Черная кнопка <strong class="text-primary">WLAN</strong> расположена на задней панели рядом с белой кнопкой включения</li>
+                                <li>После сброса модема. Модем по умолчанию настроен в "Bridge" и так же настроен для услуги IPTV</li>
+                              </ul>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <a class="nav-link" data-bs-toggle="collapse" href="#collapseH108N" role="button" aria-expanded="false" aria-controls="collapseH108N">
+                              <i class="bi bi-chevron-down"></i> ZTE ZXHN H108N
+                            </a>
+                          </td>
                           <td><a href="http://192.168.1.1" target="_blank"><small>192.168.1.1</small></a></td>
                           <td><small>admin / admin</small></td>
                           <td>ADSL2+</td>
@@ -1470,7 +1584,22 @@
                           </td>
                         </tr>
                         <tr>
-                          <td>ZTE ZXHN H208N</td>
+                          <td colspan="7">
+                            <div class="collapse" id="collapseH108N">
+                              <ul>
+                                <li>Вход с правами Администратора под логином <strong class="text-danger">admin</strong>, пароль: <strong class="text-danger">admin</strong></li>
+                                <li><strong class="text-primary">Reset</strong> расположен на задней панели рядом с подключением блока питания. Удерживать 10 секунд</li>
+                                <li>Белая пластиковая кнопка <strong class="text-primary">WLAN</strong> похожа на заглушку, и расположена на боковой панели рядом с красной кнопкой включения</li>
+                              </ul>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <a class="nav-link" data-bs-toggle="collapse" href="#collapseH208N" role="button" aria-expanded="false" aria-controls="collapseH208N">
+                              <i class="bi bi-chevron-down"></i> ZTE ZXHN H208N
+                            </a>
+                          </td>
                           <td><a href="http://192.168.1.1" target="_blank"><small>192.168.1.1</small></a></td>
                           <td><small>admin / admin</small></td>
                           <td>ADSL2+</td>
@@ -1504,7 +1633,45 @@
                           </td>
                         </tr>
                         <tr>
-                          <td>ZTE ZXHN H208L, H201L</td>
+                          <td colspan="7">
+                            <div class="collapse" id="collapseH208N">
+                              <ul>
+                                <li>Вход с правами Администратора под логином <strong class="text-danger">admin</strong>, пароль: <strong class="text-danger">admin</strong></li>
+                                <li><strong class="text-primary">Reset</strong> расположен на задней панели над подключением блока питания. Удерживать 10 секунд</li>
+                                <li>Черная кнопка <strong class="text-primary">WLAN</strong> расположена на задней панели рядом с подключением блока питания</li>
+                                <li>Данные для telnet для H208N Логин: <strong class="text-danger">root</strong> Пароль: <strong class="text-danger">root</strong></li>
+                                <ul>
+                                  <li>Включение второй точки доступа Wi-Fi на модеме H208N через telnet:
+                                    <code>sendcmd 3 webd setconfig publicSSIDDisp y</code>
+                                  </li>
+                                  <li>
+                                    Вывод всех команд в telnet для H208N:
+                                    <code>sendcmd 1 DB all</code>
+                                  </li>
+                                  <li>
+                                    Обращение к конкретной таблице в telnet для H208N
+                                    <code>sendcmd 1 DB p WANC</code>
+                                  </li>
+                                  <li>
+                                    Как посмотреть пароль на вход в веб-интерфейс H208N/H108N/H208L
+                                    <code>sendcmd 1 DB p DevAuthInfo</code>
+                                  </li>
+                                </ul>
+                              </ul>
+                              Недостатки:
+                              <ul>
+                                <li>Кнопка WLAN на боковой панели работает только на выключение! Обрантное включение сети wi-fi только через настройки модема</li>
+                                <li>Услуга «Передача вызова» не работает на следующих моделях оконечного оборудования, устанавливаемого у абонента: ZXV10 H201Lb; ZXV10 H201L; ZXV10 H208Lb; ZXV10 H208L.</li>
+                              </ul>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <a class="nav-link" data-bs-toggle="collapse" href="#collapseH208L" role="button" aria-expanded="false" aria-controls="collapseH208L">
+                              <i class="bi bi-chevron-down"></i> ZTE ZXHN H208L, H201L
+                            </a>
+                          </td>
                           <td><a href="http://192.168.1.1" target="_blank"><small>192.168.1.1</small></a></td>
                           <td><small>admin / admin</small></td>
                           <td>ADSL2+</td>
@@ -1532,7 +1699,27 @@
                           </td>
                         </tr>
                         <tr>
-                          <td>ZTE ZXHN H267N (YA-200)</td>
+                          <td colspan="7">
+                            <div class="collapse" id="collapseH208L">
+                              <ul>
+                                <li>Вход с правами Администратора под логином <strong class="text-danger">admin</strong>, пароль: <strong class="text-danger">admin</strong></li>
+                              </ul>
+                              Недостатки:
+                              <ul>
+                                <li>Белая пластиковая кнопка <strong class="text-primary">WLAN</strong> похожа на заглушку, и расположена на боковой панели рядом с красной кнопкой включения</li>
+                                <li>Кнопка WLAN на боковой панели работает только на выключение! Обрантное включение сети wi-fi только через настройки модема!</li>
+                                <li>Услуга «Передача вызова» не работает на следующих моделях оконечного оборудования, устанавливаемого у абонента: ZXV10 H201Lb; ZXV10 H201L; ZXV10 H208Lb; ZXV10 H208L.</li>
+                                <li>На старых прошивках функция Wi-fi Isolation приводила к тормозам с интернетом, хотя должна по просту изолировать клиентов друг от друга. Network - WLAN - Basic и снимаем галочку Enable Isolation - Сохраняем на Submit.</li>
+                              </ul>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <a class="nav-link" data-bs-toggle="collapse" href="#collapseH267N" role="button" aria-expanded="false" aria-controls="collapseH267N">
+                              <i class="bi bi-chevron-down"></i> ZTE ZXHN H267N (YA-200)
+                            </a>
+                          </td>
                           <td><a href="http://192.168.1.1" target="_blank"><small>192.168.1.1</small></a></td>
                           <td><small>admin / admin</small></td>
                           <td>ADSL2+</td>
@@ -1566,7 +1753,23 @@
                           </td>
                         </tr>
                         <tr>
-                          <td>ZTE ZXHN H168N</td>
+                          <td colspan="7">
+                            <div class="collapse" id="collapseH267N">
+                              <ul>
+                                <li>Вход с правами Администратора под логином <strong class="text-danger">admin</strong>, пароль: <strong class="text-danger">admin</strong></li>
+                                <li>Промсвязь YA-200 (линия aDSL) на базе ZXHN H267N</li>
+                                <li><strong class="text-primary">Reset</strong> расположен на задней панели над подключением блока питания. Удерживать 10 секунд</li>
+                                <li>Черная кнопка <strong class="text-primary">WLAN</strong> расположена на задней панели над зелеными портами подключения телефона Phone1, включать нажатием (около 2-3 секунды)</li>
+                              </ul>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <a class="nav-link" data-bs-toggle="collapse" href="#collapseH168N" role="button" aria-expanded="false" aria-controls="collapseH168N">
+                              <i class="bi bi-chevron-down"></i> ZTE ZXHN H168N
+                            </a>
+                          </td>
                           <td><a href="http://192.168.1.1" target="_blank"><small>192.168.1.1</small></a></td>
                           <td><small>admin / admin</small></td>
                           <td>VDSL2</td>
@@ -1600,7 +1803,22 @@
                           </td>
                         </tr>
                         <tr>
-                          <td>Huawei HG658 (YA-200)</td>
+                          <td colspan="7">
+                            <div class="collapse" id="collapseH168N">
+                              <ul>
+                                <li>Вход с правами Администратора под логином <strong class="text-danger">admin</strong>, пароль: <strong class="text-danger">admin</strong></li>
+                                <li><strong class="text-primary">Reset</strong> расположен на задней панели над подключением блока питания рядом с кнопкой включения. Удерживать 10 секунд</li>
+                                <li>Черная пластиковая кнопка <strong class="text-primary">WLAN</strong>, расположена на боковой панели рядом с USB портом</li>
+                              </ul>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <a class="nav-link" data-bs-toggle="collapse" href="#collapseHG658" role="button" aria-expanded="false" aria-controls="collapseHG658">
+                              <i class="bi bi-chevron-down"></i> Huawei HG658 (YA-200)
+                            </a>
+                          </td>
                           <td><a href="http://192.168.1.1" target="_blank"><small>192.168.1.1</small></a></td>
                           <td><small>!!Huawei / @HuaweiHgw</small></td>
                           <td>ADSL2+ / VDSL2</td>
@@ -1634,44 +1852,26 @@
                           </td>
                         </tr>
                         <tr>
-                          <td>Huawei HG658V2 (YA-200)</td>
-                          <td><a href="http://192.168.1.1" target="_blank"><small>192.168.1.1</small></a></td>
-                          <td><small>!!Huawei / @HuaweiHgw</small></td>
-                          <td>ADSL2+ / VDSL2</td>
-                          <td>
-                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="Все LAN порты до 100 Мбит/с (FE - Fast Ethernet)">
-                              <span class="badge text-bg-warning"><i class="bi bi-ethernet"></i>LAN 1-4 FE</span>  
-                            </a>   
-                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="2 FXS-порта (Foreign Exchange Station) аналоговые телефонные порты (под подключение RJ-11) предоставляют сервис POTS (Plain Old Telephone Service)">
-                              <span class="badge bg-secondary">2 FXS<i class="bi bi-telephone-inbound"></i></span> 
-                            </a> 
-                            <span class="badge bg-success"><i class="bi bi-usb-symbol"></i>USB</span>
-                          </td>
-                          <td>
-                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="Wi-fi 4 - 802.11b/g/n - 2.4Ghz">
-                              <span class="badge" style="background-color: SteelBlue;"><i class="bi bi-wifi"></i> Wi-fi 4</span>
-                            </a>
-                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="WPA 2 (Wi-Fi Protected Access 2) также известный как WPA2-Personal, тип шифрования PSK (Pre-Shared Key)">
-                              <span class="badge" style="background-color: gray;">WPA2</span>
-                            </a>
-                          </td>
-                          <td>
-                            <a class="navbar-brand" title="Паспорт модема" target="_blank"
-                            href="https://www.manualslib.com/manual/676149/Huawei-Hg658.html" aria-label="Up">
-                              <i class="bi bi-file-richtext-fill"></i>
-                            </a>
-                            &nbsp;&nbsp;
-                            <a class="navbar-brand" title="Nextcloud информация по оборудованию" target="_blank"
-                            href="https://chat.datacenter.by/index.php/f/1468515" aria-label="Up">
-                              <i class="bi bi-cloud"></i>
-                            </a>
+                          <td colspan="7">
+                            <div class="collapse" id="collapseHG658">
+                              <ul>
+                                <li>Вход с правами Администратора логин: <strong class="text-danger">!!Huawei</strong>, пароль: <strong class="text-danger">@HuaweiHgw</strong></li>
+                                <li>Пользовательский логин и пароль для входа в настройки модема - Логин <strong class="text-danger">user</strong>, <strong class="text-danger">@User1234</strong></li>
+                                <li><strong class="text-primary">Reset</strong> расположен на задней панели с правой стороны рядом с серым портом Phone 1. Удерживать 10 секунд</li>
+                                <li>Белая пластиковая кнопка <strong class="text-primary">WLAN</strong> похожа на заглушку, и расположена на боковой панели рядом с белой кнопкой включения</li>
+                                <li>Промсвязь YA-200 (линия vDSL) на базе Huawei HG658</li>
+                                <li>В Huawei HG658V2 стоит 2 FXS порта для аналоговой телефонии</li>
+                                <li>Только вертикальная установка без креплений на стену</li>
+                              </ul>
+                            </div>
                           </td>
                         </tr>
                         <tr>
-                          <td colspan="7"><small>YA-200 (линия aDSL) на базе ZXHN H267N, YA-200 (линия vDSL) на базе Huawei HG658V2 (в V2 2 тел порта)</small></td>
-                        </tr>
-                        <tr>
-                          <td>Huawei MT880</td>
+                          <td>
+                            <a class="nav-link" data-bs-toggle="collapse" href="#collapseMT880" role="button" aria-expanded="false" aria-controls="collapseMT880">
+                              <i class="bi bi-chevron-down"></i> Huawei MT880
+                            </a>
+                          </td>
                           <td><a href="http://192.168.1.1" target="_blank"><small>192.168.1.1</small></a></td>
                           <td><small>admin / admin</small></td>
                           <td>ADSL2+</td>
@@ -1698,7 +1898,22 @@
                           </td>
                         </tr>
                         <tr>
-                          <td>Huawei HG510</td>
+                          <td colspan="7">
+                            <div class="collapse" id="collapseMT880">
+                              <ul>
+                                <li><strong class="text-primary">Reset</strong> расположен на задней панели рядом с кнопкой включения. Удерживать 10 секунд</li>
+                                <li>Устарело и больше не выдается</li>
+                                <li>Нет Wi-Fi модуля</li>
+                              </ul>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <a class="nav-link" data-bs-toggle="collapse" href="#collapseHG510" role="button" aria-expanded="false" aria-controls="collapseHG510">
+                              <i class="bi bi-chevron-down"></i> Huawei HG510
+                            </a>
+                          </td>
                           <td><a href="http://192.168.1.1" target="_blank"><small>192.168.1.1</small></a></td>
                           <td><small>admin / admin</small></td>
                           <td>ADSL2+</td>
@@ -1725,7 +1940,24 @@
                           </td>
                         </tr>
                         <tr>
-                          <td>Huawei HG520</td>
+                          <td colspan="7">
+                            <div class="collapse" id="collapseHG510">
+                              <ul>
+                                <li>Устарело и больше не выдается</li>
+                                <li>Вход с правами Администратора для серии Huawei HG5XXX логин: <strong class="text-danger">superadmin</strong>, пароль: <strong class="text-danger">!@HuaweiHgw</strong></li>
+                                <li>Пользовательский логин и пароль для входа в настройки модема - Логин <strong class="text-danger">admin</strong>, <strong class="text-danger">admin</strong></li>
+                                <li><strong class="text-primary">Reset</strong> расположен на задней панели рядом с подключением блока питания и кнопкой включения. Удерживать 10 секунд</li>
+                                <li>Нет Wi-Fi модуля</li>
+                              </ul>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <a class="nav-link" data-bs-toggle="collapse" href="#collapseHG520" role="button" aria-expanded="false" aria-controls="collapseHG520">
+                              <i class="bi bi-chevron-down"></i> Huawei HG520
+                            </a>
+                          </td>
                           <td><a href="http://192.168.1.1" target="_blank"><small>192.168.1.1</small></a></td>
                           <td><small>admin / admin</small></td>
                           <td>ADSL2+</td>
@@ -1759,7 +1991,24 @@
                           </td>
                         </tr>
                         <tr>
-                          <td>Huawei HG532</td>
+                          <td colspan="7">
+                            <div class="collapse" id="collapseHG520">
+                              <ul>
+                                <li>Вход с правами Администратора для серии Huawei HG5XXX логин: <strong class="text-danger">superadmin</strong>, пароль: <strong class="text-danger">!@HuaweiHgw</strong></li>
+                                <li>Пользовательский логин и пароль для входа в настройки модема - Логин <strong class="text-danger">admin</strong>, <strong class="text-danger">admin</strong></li>
+                                <li>Не имееет креплений на стену, только вертикальная утсановка на встроенной подставке</li>
+                                <li><strong class="text-primary">Reset</strong> расположен на задней панели между LAN4 и LINE. Удерживать 10 секунд</li>
+                                <li>Белая пластиковая кнопка <strong class="text-primary">WLAN</strong> похожа на заглушку, и расположена на боковой панели рядом с белой кнопкой включения</li>
+                              </ul>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <a class="nav-link" data-bs-toggle="collapse" href="#collapseHG532" role="button" aria-expanded="false" aria-controls="collapseHG532">
+                              <i class="bi bi-chevron-down"></i> Huawei HG532
+                            </a>
+                          </td>
                           <td><a href="http://192.168.1.1" target="_blank"><small>192.168.1.1</small></a></td>
                           <td><small>admin / admin</small></td>
                           <td>ADSL2+</td>
@@ -1793,7 +2042,23 @@
                           </td>
                         </tr>
                         <tr>
-                          <td>Huawei HG552e</td>
+                          <td colspan="7">
+                            <div class="collapse" id="collapseHG532">
+                              <ul>
+                                <li>Вход с правами Администратора для серии Huawei HG5XXX логин: <strong class="text-danger">superadmin</strong>, пароль: <strong class="text-danger">!@HuaweiHgw</strong></li>
+                                <li>Пользовательский логин и пароль для входа в настройки модема - Логин <strong class="text-danger">admin</strong>, <strong class="text-danger">admin</strong></li>
+                                <li><strong class="text-primary">Reset</strong> расположен на задней панели рядом с подключением блока питания. Удерживать 10 секунд</li>
+                                <li>Белая пластиковая кнопка <strong class="text-primary">WLAN</strong> похожа на заглушку, и расположена на боковой панели рядом с белой кнопкой включения</li>
+                              </ul>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <a class="nav-link" data-bs-toggle="collapse" href="#collapseHG552e" role="button" aria-expanded="false" aria-controls="collapseHG552e">
+                              <i class="bi bi-chevron-down"></i> Huawei HG552e
+                            </a>
+                          </td>
                           <td><a href="http://192.168.1.1" target="_blank"><small>192.168.1.1</small></a></td>
                           <td><small>admin / admin</small></td>
                           <td>ADSL2+</td>
@@ -1827,7 +2092,24 @@
                           </td>
                         </tr>
                         <tr>
-                          <td>Huawei HG552f-11</td>
+                          <td colspan="7">
+                            <div class="collapse" id="collapseHG552e">
+                              <ul>
+                                <li>Вход с правами Администратора для серии Huawei HG5XXX логин: <strong class="text-danger">superadmin</strong>, пароль: <strong class="text-danger">!@HuaweiHgw</strong></li>
+                                <li>Пользовательский логин и пароль для входа в настройки модема - Логин <strong class="text-danger">admin</strong>, <strong class="text-danger">admin</strong></li>
+                                <li><strong class="text-primary">Reset</strong> расположен на задней панели рядом с подключением блока питания. Удерживать 10 секунд</li>
+                                <li>Белая пластиковая кнопка <strong class="text-primary">WLAN</strong> похожа на заглушку, и расположена на боковой панели рядом с белой кнопкой включения</li>
+                                <li>По-умолчанию устанавливается вертикально, но есть крепляния для фиксации на стене. HG552d не имеет креплений на стену!</li>
+                              </ul>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <a class="nav-link" data-bs-toggle="collapse" href="#collapseHG552f-11" role="button" aria-expanded="false" aria-controls="collapseHG552f-11">
+                              <i class="bi bi-chevron-down"></i> Huawei HG552f-11
+                            </a>
+                          </td>
                           <td><a href="http://192.168.1.1" target="_blank"><small>192.168.1.1</small></a></td>
                           <td><small>admin / admin</small></td>
                           <td>ADSL2+</td>
@@ -1861,10 +2143,24 @@
                           </td>
                         </tr>
                         <tr>
-                          <td colspan="7"><small>Вход с правами Администратора для серии Huawei HG5XXX логин: superadmin пароль: !@HuaweiHgw</small></td>
+                          <td colspan="7">
+                            <div class="collapse" id="collapseHG552f-11">
+                              <ul>
+                                <li>Вход с правами Администратора для серии Huawei HG5XXX логин: <strong class="text-danger">superadmin</strong>, пароль: <strong class="text-danger">!@HuaweiHgw</strong></li>
+                                <li>Пользовательский логин и пароль для входа в настройки модема - Логин <strong class="text-danger">admin</strong>, <strong class="text-danger">admin</strong></li>
+                                <li><strong class="text-primary">Reset</strong> расположен на задней панели рядом с подключением блока питания. Удерживать 10 секунд</li>
+                                <li>Белая пластиковая кнопка <strong class="text-primary">WLAN</strong> похожа на заглушку, и расположена на боковой панели рядом с белой кнопкой включения</li>
+                                <li>По-умолчанию устанавливается вертикально, но есть крепляния для фиксации на стене</li>
+                              </ul>
+                            </div>
+                          </td>
                         </tr>
                         <tr>
-                          <td>Billion BiPAC 5200G</td>
+                          <td>
+                            <a class="nav-link" data-bs-toggle="collapse" href="#collapse5200G" role="button" aria-expanded="false" aria-controls="collapse5200G">
+                              <i class="bi bi-chevron-down"></i> Billion BiPAC 5200G
+                            </a>
+                          </td>
                           <td><a href="http://192.168.1.254" target="_blank"><small>192.168.1.254</small></a></td>
                           <td><small>admin / admin</small></td>
                           <td>ADSL2+</td>
@@ -1898,7 +2194,21 @@
                           </td>
                         </tr>
                         <tr>
-                          <td>Billion BiPAC 5102S</td>
+                          <td colspan="7">
+                            <div class="collapse" id="collapse5200G">
+                              <ul>
+                                <li>Модем по умолчанию имеет шлюз 192.168.1.254, нужно учитывать данную особенность при настройке сетевой</li>
+                                <li><strong class="text-primary">Reset</strong> расположен на задней панели рядом с подключением блока питания. Удерживать 10 секунд</li>
+                              </ul>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <a class="nav-link" data-bs-toggle="collapse" href="#collapse5102S" role="button" aria-expanded="false" aria-controls="collapse5102S">
+                              <i class="bi bi-chevron-down"></i> Billion BiPAC 5102S
+                            </a>
+                          </td>
                           <td><a href="http://192.168.1.254" target="_blank"><small>192.168.1.254</small></a></td>
                           <td><small>admin / admin</small></td>
                           <td>ADSL2+</td>
@@ -1932,7 +2242,21 @@
                           </td>
                         </tr>
                         <tr>
-                          <td>Siemens CL-010</td>
+                          <td colspan="7">
+                            <div class="collapse" id="collapse5102S">
+                              <ul>
+                                <li>Модем по умолчанию имеет шлюз 192.168.1.254, нужно учитывать данную особенность при настройке сетевой</li>
+                                <li><strong class="text-primary">Reset</strong> расположен на задней панели рядом с подключением блока питания. Удерживать 10 секунд</li>
+                              </ul>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <a class="nav-link" data-bs-toggle="collapse" href="#collapseCL-010" role="button" aria-expanded="false" aria-controls="collapseCL-010">
+                              <i class="bi bi-chevron-down"></i> Siemens CL-010
+                            </a>
+                          </td>
                           <td><a href="http://192.168.1.1" target="_blank"><small>192.168.1.1</small></a></td>
                           <td><small>admin / admin</small></td>
                           <td>ADSL2+</td>
@@ -1956,6 +2280,60 @@
                             href="https://chat.datacenter.by/index.php/f/7473348" aria-label="Up">
                               <i class="bi bi-cloud"></i>
                             </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colspan="7">
+                            <div class="collapse" id="collapseCL-010">
+                              <ul>
+                                <li>Устарело и больше не выдается</li>
+                                <li><strong class="text-primary">Reset</strong> расположен на задней панели рядом с подключением блока питания. Удерживать 10 секунд</li>
+                                <li>Нет Wi-Fi модуля</li>
+                              </ul>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <a class="nav-link" data-bs-toggle="collapse" href="#collapseDSL-2540U" role="button" aria-expanded="false" aria-controls="collapseDSL-2540U">
+                              <i class="bi bi-chevron-down"></i> DSL-2540U
+                            </a>
+                          </td>
+                          <td><a href="http://192.168.1.1" target="_blank"><small>192.168.1.1</small></a></td>
+                          <td><small>admin / admin</small></td>
+                          <td>ADSL2+</td>
+                          <td>
+                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="Все LAN порты до 100 Мбит/с (FE - Fast Ethernet)">
+                              <span class="badge text-bg-warning"><i class="bi bi-ethernet"></i>LAN 1-4 FE</span>  
+                            </a> 
+                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="Нет аналоговых телефонных FXS-портов (под подключение RJ-11)">
+                              <span class="badge text-bg-danger">no FXS<i class="bi bi-telephone-inbound"></i></span> 
+                            </a>
+                            <span class="badge bg-danger"><i class="bi bi-usb-symbol"></i>no USB</span>
+                          </td>
+                          <td>Нет</td>
+                          <td>
+                            <a class="navbar-brand" title="Паспорт модема" target="_blank"
+                            href="https://ftp.dlink.ru/pub/ADSL/DSL-2540U_BRU_C2/Description/NRU/DSL-2540UBRUC2_User%20Manual_v.1.1_RU.pdf" aria-label="Up">
+                              <i class="bi bi-file-richtext-fill"></i>
+                            </a>
+                            &nbsp;&nbsp;
+                            <a class="navbar-brand" title="Nextcloud информация по оборудованию" target="_blank"
+                            href="https://chat.datacenter.by/index.php/f/7473331" aria-label="Up">
+                              <i class="bi bi-cloud"></i>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colspan="7">
+                            <div class="collapse" id="collapseDSL-2540U">
+                              <ul>
+                                <li>Устарело и больше не выдается</li>
+                                <li>Нет Wi-Fi модуля</li>
+                                <li><strong class="text-primary">Reset</strong> расположен на задней панели рядом с подключением блока питания. Удерживать 10 секунд</li>
+                                <li>При выключении питания или перезагрузке маршрутизатора происходит сброс даты и времени устройства. Нужно настраивать NTP на автоматическую синхронизацию</li>
+                              </ul>
+                            </div>
                           </td>
                         </tr>
                       </tbody>
@@ -2031,7 +2409,7 @@
                                 <li>Контроллер черный KA-001, ZigBee внешний подключается в USB.</li>
                                 <li>Пользовательский логин и пароль для входа в настройки модема указан на наклейке модема. Логин <strong class="text-danger">root</strong>, пароль <strong class="text-danger">admin</strong>.</li>
                                 <li>Название сети Wi-Fi и её ключ (пароль) указаны в паспорте к контроллеру, и на наклейке снизу (формат Huawei-IAVY)</li>
-                                <li><strong class="text-primary">Reset</strong> расположен снизу, левее наклейки на донышке подставки. Удерживать 10 секунд</li>
+                                <li><strong class="text-primary">Reset</strong> расположен снизу, левее наклейки на донышке подставки. Удерживать 10 секунд. Через админку 192.168.8.1 - systools -> restore default settings</li>
                               </ul>
                               Недостатки:
                               <ul>
@@ -2090,8 +2468,9 @@
                                 <li>Контроллер белый KA-001, ZigBee встроенный.</li>
                                 <li>Пользовательский логин и пароль для входа в настройки модема указан на наклейке модема. Логин root, пароль admin.</li>
                                 <li>Название сети и пароль указаны на наклейке модема. У точек разное название и одинаковый пароль. (Huawei-K3aB и Huawei-K3aB-5G)</li>
-                                <li><strong class="text-primary">Reset</strong> расположен сбоку на панели с кнопками WPS и WLAN</li>
-                                <li>Выдается в комплекте с подставкой, подставку можно крепить на стене к ушкам контроллера сзади</li>
+                                <li><strong class="text-primary">Reset</strong> расположен сбоку на панели с кнопками <strong class="text-primary">WPS и WLAN</strong></li>
+                                <li>2 USB-разъема для подключения внешних накопителей, 3G USB-модемов, USB-радиопередатчиков и др (по паспорту).</li>
+                                <li>Выдается в комплекте с подставкой, подставку можно крепить на стене к ушкам контроллера сзади (Рекомендована вертикальная установка)</li>
                               </ul>
                             </div>
                           </td>
@@ -2186,6 +2565,7 @@
                                   Обязательным условием для оказания Услуги является нахождение абонента в зоне уверенного приема сети LTE (4G) компании ООО «Белорусские облачные технологии». 
                                   Карта: <a href="https://becloud.by/customers/ob-lte-advanced/">becloud.by</a> или <a href="https://www.beltelecom.by/maps-LTE/index.html">maps-LTE beltelecom.by</a>
                                 </li>
+                                <li><strong class="text-primary">RESET</strong> расположен сзади терминала рядом c подключением блока питания - для сброса необходимо удерживать кнопку в течении длительного времени (не менее 10 секунд)</li>
                               </ul>
                               Недостатки:
                               <ul>
@@ -2871,7 +3251,10 @@
                               </ul>
                               Недостатки:
                               <ul>
-                                <li>Подключение только через RCA, HDMI отстуствует</li>
+                                <li>
+                                  Подключение только через RCA, HDMI отстуствует. При подключении через RCA качество резко падает – очертания теряют четкость, а цвета становятся размытыми. 
+                                  Максимальное разрешение видеосигнала составляет 720х576. Т.е. видео высокой четкости по нему передавать нельзя. Для этого надо использовать разъём HDMI.
+                                </li>
                               </ul>
                             </div>
                           </td>
