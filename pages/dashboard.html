@@ -213,7 +213,7 @@
             <!--end::Color Mode Toggle-->
 
             <!--begin::User Menu Dropdown-->
-            <li class="nav-item dropdown user-menu">
+            <li class="d-none d-sm-block nav-item dropdown user-menu">
               <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                 <i class="bi bi-person-fill"></i>
                 <span class="d-md-inline">Admin</span>
@@ -225,6 +225,7 @@
                     <span class="badge text-bg-danger">Default</span> <strong>Admin-123</strong> 
                     <i class="bi bi-person-fill"></i>
                     <small>Read-Only account</small>
+                    <small id="timezone">&nbsp;</small>
                   </p>
                 </li>
                 <!--end::User Image-->
@@ -682,11 +683,12 @@
     <!-- customjs -->
     <script src="../js/custom.js"></script>
 
-    <!-- only for this page-->
-    <!-- 
-      <script language="javascript">
-      </script>
-    -->
+    <!-- only for this page-->    
+    <script language="javascript">
+      const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      const timezoneElement = document.getElementById('timezone');
+      timezoneElement.innerHTML = `${userTimeZone}`;
+    </script>
 
   </body>
   <!--end::Body-->

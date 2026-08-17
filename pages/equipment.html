@@ -202,7 +202,7 @@
             <!--end::Color Mode Toggle-->
             
             <!--begin::User Menu Dropdown-->
-            <li class="nav-item dropdown user-menu">
+            <li class="d-none d-sm-block nav-item dropdown user-menu">
               <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                 <i class="bi bi-person-fill"></i>
                 <span class="d-md-inline">Admin</span>
@@ -481,6 +481,15 @@
                       </ul>
                     </li>
                   </ul>
+
+                  <ul class="navbar-nav me-auto">
+                    <li>
+                      <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="switch-old-equipment" checked>
+                        <label class="form-check-label" for="switch-old-equipment" data-bs-toggle="tooltip" data-bs-title="Показывать устаревшее оборудование в таблице">Устаревшие</label>
+                      </div>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </nav>
@@ -506,7 +515,7 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
+                        <tr class="old-equipment">
                           <td>
                             <a class="nav-link" data-bs-toggle="collapse" href="#collapseHG8240" role="button" aria-expanded="false" aria-controls="collapseHG8240">
                               <i class="bi bi-chevron-down"></i> Huawei EchoLife HG8240 (AT1-AT2)
@@ -539,7 +548,7 @@
                             </a>
                           </td>
                         </tr>
-                        <tr>
+                        <tr class="old-equipment">
                           <td colspan="7">
                             <div class="collapse" id="collapseHG8240">
                               <ul>
@@ -766,7 +775,7 @@
                             </div>
                           </td>
                         </tr>
-                        <tr>
+                        <tr class="old-equipment">
                           <td>
                             <a class="nav-link" data-bs-toggle="collapse" href="#collapseZTEF620AT3" role="button" aria-expanded="false" aria-controls="collapseZTEF620AT3">
                               <i class="bi bi-chevron-down"></i> ZTE ZXHN F620 AT3
@@ -792,7 +801,7 @@
                             </a>
                           </td>
                         </tr>
-                        <tr>
+                        <tr class="old-equipment">
                           <td colspan="7">
                             <div class="collapse" id="collapseZTEF620AT3">
                               <ul>
@@ -1373,7 +1382,7 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
+                        <tr class="old-equipment">
                           <td>
                             <a class="nav-link" data-bs-toggle="collapse" href="#collapseZXHN831" role="button" aria-expanded="false" aria-controls="collapseZXHN831">
                               <i class="bi bi-chevron-down"></i> ZTE ZXHN 831, Промсвязь M101A
@@ -1404,7 +1413,7 @@
                             </a>
                           </td>
                         </tr>
-                        <tr>
+                        <tr class="old-equipment">
                           <td colspan="7">
                             <div class="collapse" id="collapseZXHN831">
                               <ul>
@@ -1419,7 +1428,7 @@
                             </div>
                           </td>
                         </tr>
-                        <tr>
+                        <tr class="old-equipment">
                           <td>
                             <a class="nav-link" data-bs-toggle="collapse" href="#collapseW300" role="button" aria-expanded="false" aria-controls="collapseW300">
                               <i class="bi bi-chevron-down"></i> ZTE ZXV10 W300, Промсвязь M200
@@ -1457,7 +1466,7 @@
                             </a>
                           </td>
                         </tr>
-                        <tr>
+                        <tr class="old-equipment">
                           <td colspan="7">
                             <div class="collapse" id="collapseW300">
                               <ul>
@@ -1469,7 +1478,7 @@
                             </div>
                           </td>
                         </tr>
-                        <tr>
+                        <tr class="old-equipment">
                           <td>
                             <a class="nav-link" data-bs-toggle="collapse" href="#collapseH108N" role="button" aria-expanded="false" aria-controls="collapseH108N">
                               <i class="bi bi-chevron-down"></i> ZTE ZXHN H108N
@@ -1507,7 +1516,7 @@
                             </a>
                           </td>
                         </tr>
-                        <tr>
+                        <tr class="old-equipment">
                           <td colspan="7">
                             <div class="collapse" id="collapseH108N">
                               <ul>
@@ -1638,7 +1647,7 @@
                             </div>
                           </td>
                         </tr>
-                        <tr>
+                        <tr class="old-equipment">
                           <td>
                             <a class="nav-link" data-bs-toggle="collapse" href="#collapseMT880" role="button" aria-expanded="false" aria-controls="collapseMT880">
                               <i class="bi bi-chevron-down"></i> Huawei MT880
@@ -1669,7 +1678,7 @@
                             </a>
                           </td>
                         </tr>
-                        <tr>
+                        <tr class="old-equipment">
                           <td colspan="7">
                             <div class="collapse" id="collapseMT880">
                               <ul>
@@ -1680,7 +1689,7 @@
                             </div>
                           </td>
                         </tr>
-                        <tr>
+                        <tr class="old-equipment">
                           <td>
                             <a class="nav-link" data-bs-toggle="collapse" href="#collapseHG510" role="button" aria-expanded="false" aria-controls="collapseHG510">
                               <i class="bi bi-chevron-down"></i> Huawei HG510
@@ -1711,7 +1720,7 @@
                             </a>
                           </td>
                         </tr>
-                        <tr>
+                        <tr class="old-equipment">
                           <td colspan="7">
                             <div class="collapse" id="collapseHG510">
                               <ul>
@@ -1927,7 +1936,7 @@
                             </div>
                           </td>
                         </tr>
-                        <tr>
+                        <tr class="old-equipment">
                           <td>
                             <a class="nav-link" data-bs-toggle="collapse" href="#collapse5200G" role="button" aria-expanded="false" aria-controls="collapse5200G">
                               <i class="bi bi-chevron-down"></i> Billion BiPAC 5200G
@@ -1965,7 +1974,7 @@
                             </a>
                           </td>
                         </tr>
-                        <tr>
+                        <tr class="old-equipment">
                           <td colspan="7">
                             <div class="collapse" id="collapse5200G">
                               <ul>
@@ -1975,7 +1984,7 @@
                             </div>
                           </td>
                         </tr>
-                        <tr>
+                        <tr class="old-equipment">
                           <td>
                             <a class="nav-link" data-bs-toggle="collapse" href="#collapse5102S" role="button" aria-expanded="false" aria-controls="collapse5102S">
                               <i class="bi bi-chevron-down"></i> Billion BiPAC 5102S
@@ -2013,7 +2022,7 @@
                             </a>
                           </td>
                         </tr>
-                        <tr>
+                        <tr class="old-equipment">
                           <td colspan="7">
                             <div class="collapse" id="collapse5102S">
                               <ul>
@@ -2023,7 +2032,7 @@
                             </div>
                           </td>
                         </tr>
-                        <tr>
+                        <tr class="old-equipment">
                           <td>
                             <a class="nav-link" data-bs-toggle="collapse" href="#collapseCL-010" role="button" aria-expanded="false" aria-controls="collapseCL-010">
                               <i class="bi bi-chevron-down"></i> Siemens CL-010
@@ -2054,7 +2063,7 @@
                             </a>
                           </td>
                         </tr>
-                        <tr>
+                        <tr class="old-equipment">
                           <td colspan="7">
                             <div class="collapse" id="collapseCL-010">
                               <ul>
@@ -2065,7 +2074,7 @@
                             </div>
                           </td>
                         </tr>
-                        <tr>
+                        <tr class="old-equipment">
                           <td>
                             <a class="nav-link" data-bs-toggle="collapse" href="#collapseDSL-2540U" role="button" aria-expanded="false" aria-controls="collapseDSL-2540U">
                               <i class="bi bi-chevron-down"></i> D-link DSL-2540U
@@ -2096,7 +2105,7 @@
                             </a>
                           </td>
                         </tr>
-                        <tr>
+                        <tr class="old-equipment">
                           <td colspan="7">
                             <div class="collapse" id="collapseDSL-2540U">
                               <ul>
@@ -2126,7 +2135,7 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
+                        <tr class="old-equipment">
                           <td>
                             <a class="nav-link" data-bs-toggle="collapse" href="#collapsePrestigeP660" role="button" aria-expanded="false" aria-controls="collapsePrestigeP660">
                               <i class="bi bi-chevron-down"></i> ZyXEL Prestige P645 / 650 / 660R-T1
@@ -2157,7 +2166,7 @@
                             </a>
                           </td>
                         </tr>
-                        <tr>
+                        <tr class="old-equipment">
                           <td colspan="7">
                             <div class="collapse" id="collapsePrestigeP660">
                               <ul>
@@ -2174,7 +2183,7 @@
                           </td>
                         </tr>
                         
-                        <tr>
+                        <tr class="old-equipment">
                           <td>
                             <a class="nav-link" data-bs-toggle="collapse" href="#collapsePrestige841C" role="button" aria-expanded="false" aria-controls="collapsePrestige841C">
                               <i class="bi bi-chevron-down"></i> ZyXEL Prestige 841C
@@ -2205,7 +2214,7 @@
                             </a>
                           </td>
                         </tr>
-                        <tr>
+                        <tr class="old-equipment">
                           <td colspan="7">
                             <div class="collapse" id="collapsePrestige841C">
                               <ul>
@@ -2415,7 +2424,7 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
+                        <tr class="old-equipment">
                           <td>
                             <a class="nav-link" data-bs-toggle="collapse" href="#collapseHS3025" role="button" aria-expanded="false" aria-controls="collapseHS3025">
                               <i class="bi bi-chevron-down"></i> Huawei HS3025
@@ -2451,7 +2460,7 @@
                             </a>
                           </td>
                         </tr>
-                        <tr>
+                        <tr class="old-equipment">
                           <td colspan="7">
                             <div class="collapse" id="collapseHS3025">
                               <ul>
@@ -2626,7 +2635,7 @@
                             </div>
                           </td>
                         </tr>
-                        <tr>
+                        <tr class="old-equipment">
                           <td>
                             <a class="nav-link" data-bs-toggle="collapse" href="#collapseHuaweiE173" role="button" aria-expanded="false" aria-controls="collapseHuaweiE173">
                               <i class="bi bi-chevron-down"></i> Huawei E173 (USB)
@@ -2649,7 +2658,7 @@
                             </a>
                           </td>
                         </tr>
-                        <tr>
+                        <tr class="old-equipment">
                           <td colspan="7">
                             <div class="collapse" id="collapseHuaweiE173">
                               <ul>
@@ -2663,7 +2672,7 @@
                             </div>
                           </td>
                         </tr>
-                        <tr>
+                        <tr class="old-equipment">
                           <td>
                             <a class="nav-link" data-bs-toggle="collapse" href="#collapseHuaweiBM338" role="button" aria-expanded="false" aria-controls="collapseHuaweiBM338">
                               <i class="bi bi-chevron-down"></i> Huawei BM338 (USB)
@@ -2686,7 +2695,7 @@
                             </a>
                           </td>
                         </tr>
-                        <tr>
+                        <tr class="old-equipment">
                           <td colspan="7">
                             <div class="collapse" id="collapseHuaweiBM338">
                               <ul>
@@ -3820,6 +3829,19 @@
 
     <!-- customjs -->
     <script src="../js/custom.js"></script>
+
+    <!-- only for this page-->    
+    <script language="javascript">
+      // Switch old equipment
+      const checkboxSwitchOldEquipment = document.getElementById('switch-old-equipment');
+      document.getElementById('switch-old-equipment').addEventListener('click', () => {
+        if (checkboxSwitchOldEquipment.checked) {
+          document.querySelectorAll('.old-equipment').forEach(el => el.hidden = false);
+        } else {
+          document.querySelectorAll('.old-equipment').forEach(el => el.hidden = true);
+        }
+      });
+    </script>
 
   </body>
   <!--end::Body-->
