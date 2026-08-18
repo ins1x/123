@@ -81,7 +81,7 @@
   </head>
   <!--end::Head-->
   <!--begin::Body-->
-  <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
+  <body class="fixed-header layout-fixed sidebar-expand-lg bg-body-tertiary">
     <!--begin::App Wrapper-->
     <div class="app-wrapper">
       <!--begin::Header-->
@@ -258,7 +258,7 @@
             <!--begin::Brand Image-->
             <img
               src="../assets/img/AdminLTELogo.png"
-              alt="AdminLTE Logo"
+              height="24"
               class="brand-image opacity-75 shadow"
             />
             <!--end::Brand Image-->
@@ -394,7 +394,7 @@
                 <div class="row">
                   <div class="col-sm-6 mb-3 mb-sm-3">
                     <div class="card">
-                      <div class="card-header text-bg-secondary">
+                      <div class="card-header text-bg-gray py-2">
                         <h3 class="card-title"> Базовые настройки сети</h3>
                       </div>
                       <div class="card-body">
@@ -434,7 +434,41 @@
                             </div>
                             <br>
         
-                            <h5>DSL VPI-VCI</h5>
+                            <h5>Параметры для IPv6</h5>
+                            <div class="table-responsive">
+                              <table class="table table-bordered table-striped">
+                                <tbody>
+                                  <tr>
+                                    <td>&nbsp;</td>
+                                    <td>Предпочитаемый</td>
+                                    <td>Альтернативный</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Минск</td>
+                                    <td>2a02:2208:0:240::245/64</td>
+                                    <td>2a02:2208:0:144::149/64</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Google DNS</td>
+                                    <td>2001:4860:4860::8888</td>
+                                    <td>2001:4860:4860::8844</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Google DNS64 (NAT64 ipv6-to-ipv4)</td>
+                                    <td>2001:4860:4860::6464</td>
+                                    <td></td>
+                                  </tr>
+                                  <tr>
+                                    <td>Шлюз по-умолчанию</td>
+                                    <td>fe80::1/128</td>
+                                    <td></td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                            <br>
+
+                            <h5>xDSL VPI-VCI</h5>
                             <table class="table table-bordered table-striped-columns">
                               <tbody>
                                 <tr>
@@ -448,15 +482,61 @@
                         </span>
 
                         <span class="d-block">
-                          <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseModemWebInterface" role="button" aria-expanded="false" aria-controls="collapseModemWebInterface">
-                            <i class="bi bi-chevron-down"></i> Если не заходит в веб-интерфейс
+                          <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseNetworkPrefix" role="button" aria-expanded="false" aria-controls="collapseNetworkPrefix">
+                            <i class="bi bi-chevron-down"></i> Префиксы сети
                           </a>
-                          <div class="collapse" id="collapseModemWebInterface">
+                          <div class="collapse" id="collapseNetworkPrefix">
+                            <p>Префикс сети (нотация CIDR) показывает число единичных бит в маске подсети (от /0 до /32 для IPv4). Например, префикс /24 означает маску 255.255.255.0, где 24 бита отведены под сеть, а 8 бит — под устройства.</p>
+                            Основные маски подсетей IPv4:
+                            <ul class="list-group">
+                              <li class="list-group-item"><strong class="text-primary">/32</strong> — 255.255.255.255 (1 полезных адреса)</li>
+                              <li class="list-group-item"><strong class="text-primary">/31</strong> — 255.255.255.254 (2 полезных адреса)</li>
+                              <li class="list-group-item"><strong class="text-primary">/30</strong> — 255.255.255.252 (2 полезных адреса)</li>
+                              <li class="list-group-item"><strong class="text-primary">/29</strong> — 255.255.255.248 (6 полезных адресов)</li>
+                              <li class="list-group-item"><strong class="text-primary">/28</strong> — 255.255.255.240 (14 полезных адресов)</li>
+                              <li class="list-group-item"><strong class="text-primary">/27</strong> — 255.255.255.224 (30 полезных адресов)</li>
+                              <li class="list-group-item"><strong class="text-primary">/26</strong> — 255.255.255.192 (62 полезных адреса)</li>
+                              <li class="list-group-item"><strong class="text-primary">/25</strong> — 255.255.255.128 (126 полезных адресов)</li>
+                              <li class="list-group-item"><strong class="text-primary">/24</strong> — 255.255.255.0 (254 полезных адреса)</li>
+                            </ul>
+                            <p><a href="https://net-config.com/general-network/ip-subnet-architect/" target="_blank">Расчет сети по префиксу (онлайн)</a></p>
+                          </div>
+                        </span>
+
+                        <span class="d-block">
+                          <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseNetworkIpv6set" role="button" aria-expanded="false" aria-controls="collapseNetworkIpv6set">
+                            <i class="bi bi-chevron-down"></i> Настройка для IPv6
+                          </a>
+                          <div class="collapse" id="collapseNetworkIpv6set">
+                            <p>При использовании IPv6-адреса в URL необходимо заключать адрес в квадратные скобки:<br><a href="http://[2001:0db8:11a3:09d7:1f34:8a2e:07a0:765d]/" target="_blank">http://[2001:0db8:11a3:09d7:1f34:8a2e:07a0:765d]/</a></p>
+                            <p>Если необходимо указать порт, то он пишется после скобок:<br><a href="http://[2001:0db8:11a3:09d7:1f34:8a2e:07a0:765d]:8080/" target="_blank">http://[2001:0db8:11a3:09d7:1f34:8a2e:07a0:765d]:8080/</a></p>
+                              
+                            Посмотреть полный IPv6 адрес можно через <code>ipconfig</code>:
+                            <code>
+                              <pre style="white-space: pre-line;">
+                              IPv6-адрес. . . . . . . . . . : 2a06:b800:1c00:0:c934:bb77:84:6752(Основной)
+                              Локальный IPv6-адрес канала . : fe80::c934:bb77:84:6752%23(Основной)
+                              Основной шлюз. . . . . . . . .: fe80::223:33ff:fe87:cb19%23
+                              </pre>
+                            </code>
+                            <blockquote>IPv6-адрес - это глобальный IPv6 адрес,  Локальный IPv6-адрес канала - это локальный IPv6 адрес внутри ЛВС</blockquote>
+                            
+                            <p>Калькулятор ipv6: <a href="https://edgecenter.ru/dev-tools/calc-net-ipv6" target="_blank">https://edgecenter.ru/dev-tools/calc-net-ipv6</a></p>
+
+                            Особенности работы IPv6:
                             <ul>
-                              <li>Перезагрузите модем отключив по питанию на минуту (некоторые модемы имеют защиту, и блокируют вход в админку после нескольких часов работы)</li> 
-                              <li>Проверьте подключение к модему по кабелю в порт <storng>LAN1</storng>, или к заводской Wi-Fi сети (имя/пароль на наклейке)</li>
-                              <li>Проверьте что ваше устройство получило IP адрес из той же подсети что и сеть модема 192.168.1.x либо 192.168.100.x</li>
-                              <li>Откройте через другой браузер. Браузер может кэшировать старую ошибку или пытаться принудительно открыть страницу через защищенный протокол <i>https://</i> который не поддерживается в данном режиме.</li>
+                              <li>
+                                При подключении услуги «Статический IPv6 адрес» выделяется статическая подсеть IPv6 с префиксом /56, в которую можно подключить до 2 в 72 степени устройств (4 секстиллиона), 
+                                каждое из которых будет иметь выделенные статические IPv6-адреса в интернете. Абонентам будет доступно использование одновременно протоколов IPv4 и IPv6, по технологии DualStack.
+                              </li>
+                              <li>
+                                Настройка DHCP в IPv6 отличается от старого IPv4 тем, что в нем нет привычного NAT, адреса состоят из 128 бит (8 групп шестнадцатеричных чисел), 
+                                а устройства умеют настраиваться сами с помощью автоконфигурации (SLAAC) или DHCPv6. 
+                                Для корректной работы удаленных сервисов необходимо вручную задать адрес из пула, иначе после перезагрузки оно получит другой IPv6 адрес.
+                              </li>
+                              <li>
+                                В IPv6 не нужно пробрасывать порты на роутере, такого явления в IPv6 нет. Все IPv6 адреса, которые получают устройства в локальной сети глобально маршрутизируемы. 
+                                Однако необходимые для работы порты должны быть открыты на вашем клиентском устройстве (могут быть заблокированны брандмаузером либо firewall)</li>
                             </ul>
                           </div>
                         </span>
@@ -508,11 +588,204 @@
                             </blockquote>
                           </div>
                         </span>
+
+                        <span class="d-block">
+                          <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseConfigureNetworkAdapter" role="button" aria-expanded="false" aria-controls="collapseConfigureNetworkAdapter">
+                            <i class="bi bi-chevron-down"></i> Настройка сетевой на PC
+                          </a>
+                          <div class="collapse" id="collapseConfigureNetworkAdapter">
+                            <h5>Открыть настройки сетевой</h5>
+                            <ul class="list-unstyled">
+                              <li>
+                                <strong><i class="bi bi-windows"></i>Windows 10</strong><br>
+                                Параметры» → "Сеть и Интернет" → Ethernet → "Параметров адаптера" → "Ethernet (свойства)" → IPv4 (свойства)
+                              </li>
+                              <li>
+                                <strong><i class="bi bi-windows"></i>Windows 11</strong><br>
+                                Параметры» - "Сеть и Интернет" →
+                                <ol>
+                                  <li>Ethernet- Назначение IP (редактировать) → IPv4</li>
+                                  <li>Дополнительные сетевые параметры → "Ethernet (свойства)" → IPv4 (свойство)</li>
+                                </ol>
+                              </li>
+                              <li>
+                                <strong><i class="bi bi-windows"></i>Windows 7</strong><br>
+                                "Панель управления" → "Сеть и Интернет (Центр управления)" → "Подключение по локальной сети" → IPv4 (свойства)
+                              </li>
+                              <li>
+                                <strong><i class="bi bi-windows"></i>Windows 8</strong><br>
+                                "Центр управления сетями и общим доступом" - 
+                                <ol>
+                                  <li>Win+W (Центр управления) → "Изменение параметров адаптера" → "Ethernet (свойства)" → IPv4 (свойства)</li>
+                                  <li>Правой клавишей по значку монитора → "Изменение параметров адаптера" → Ethernet (свойства) → IPv4 (свойства)</li>
+                                </ol>
+                              </li>
+                            </ul>
+                            <p>
+                              <a href="https://chat.datacenter.by/index.php/f/1468860" target="_blank"><i class="bi bi-cloud"></i>Настройка сетевой</a>
+                            </p>
+                            <h5>Настройка сетевой карты в системе Windows 10 при автоматических настройках подключения (DHCP).</h5>
+                            <ol>
+                              <li>Откройте меню Пуск (Start) - Панель управления(Control Panel) - Сеть и Интернет(Network and Internet) (если этот раздел отсутствует, см. следующий) - Центр управления сетями и общим доступом(Network and Sharing Center) - Изменение параметров адаптера(Change adapter settings) (в левой части окна).</li>
+                              <li>Щелкните правой кнопкой мыши на ярлык Подключение по локальной сети (Local Area Connection) и выберите Свойства (Properties).</li>
+                              <li>В появившемся окне выделите пункт Протокол Интернета версии 4 (TCP/IPv4) (Internet Protocol version 4 (TCP/IPv4)) и нажмите левой кнопкой мыши по кнопке Свойства (Properties).</li>
+                              <li>Выберите пункт Использовать следующий IP-адрес (Use the following IP address). В строке IP-адрес (IP address) впишите значение (без кавычек) <a href="">192.168.1.XX</a> (вместо XX число от 10 до 254), в строке Маска подсети (Subnet mask)– значение <a href="">255.255.255.0</a>, в строке Основной шлюз (Default gateway) – <a href="192.168.1.1">192.168.1.1</a> либо <a href="192.168.100.1">192.168.100.1</a> в зависимости от роутера</li>
+                              Выберите пункт Использовать следующие адреса DNS-серверов (Use the following DNS server addresses и введите в строке Предпочитаемый DNS-сервер (Preferred DNS server) <a href="">194.158.196.245</a> и Альтернативный DNS-сервер (Alternate DNS server) значения <a href="">86.57.255.149</a>. Далее нажмите ОК
+                              <li>Нажмите Закрыть (Close).</li>
+                            </ol>
+                            <div class="alert alert-light" role="alert">
+                              Возможные нюансы:
+                              <ul>
+                                <li>В некоторых случаях настройки принимаются только после презагрузки</li>
+                                <li>Если при настройке сети требует указать префикс подсети - указывать /24</li>
+                                <li>Не рекомендуется отключать - "Протокол Интернета версии 6 (TCP/IPv6)" т.к. используется для внутренних служб Windows</li>
+                                <li>"Конфигурация с несколькими основными шлюзами" - появляется если несколько интерфейсов настроено с одним шлюзом (Например Wi-Fi и Ethernet имеют одинаковый шлюз)</li>
+                                <li>Если настройки сетевой слетают необходимо проверить/обновить сетевые драйвера, сделать сброс сети</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </span>
+    
+                        <span class="d-block">
+                          <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseConfigureNetworkAdapterTV" role="button" aria-expanded="false" aria-controls="collapseConfigureNetworkAdapterTV">
+                            <i class="bi bi-chevron-down"></i> Настройка сети на TV
+                          </a>
+                          <div class="collapse" id="collapseConfigureNetworkAdapterTV">
+                                                    
+                            <h5>Android TV / Google TV / Яндекс.ТВ (Xiaomi, Sony, Haier, TCL, Philips)</h5>
+                            <ul>
+                               <li>Зайдите в «Настройки» (шестеренка вверху справа) - «Сеть и интернет».</li>
+                               <li>Выберите подкллючение "Ethernet" либо "Wifi" для последующей настройки</li>
+                               <li>Спуститесь вниз в «Расширенные настройки» (или «Параметры IP»).</li>
+                               <li>Вместо DHCP выберите вариант «Статический» (или «Статический IP»).</li>
+                               <li>Шаг за шагом подтверждайте текущие настройки (IP-адрес, шлюз, длина префикса сети), нажимая стрелку «Далее», пока не дойдете до пунктов DNS 1 и DNS 2.</li>
+                               <li>В строке «DNS 1» укажите <a href="">8.8.8.8</a> либо <a href="">194.158.196.245</a> и завершите подключение.</li>
+                               <blockquote>
+                                Важно: на чистом Android TV для смены DNS по Wi-Fi нужно «переподключить» сеть.
+                               </blockquote>
+                            </ul>
+                            <h5>Samsung (ОС Tizen)</h5>
+                            <ul>
+                              <li>Нажмите кнопку «Home» (Домик) или «Menu» на пульте и зайдите в «Настройки»</li>
+                              <li>Перейдите по пути: «Общие» (или «Все настройки») - «Сеть». Выберите пункт «Состояние сети»</li> 
+                              <li>В открывшемся окне нажмите на кнопку «Настройки IP» (внизу экрана). Найдите строку «Настройки DNS» и переключите её в режим «Вводить вручную».</li>
+                              <li>Кликните на строку «Сервер DNS», введите цифры (<a href="">8.8.8.8</a> либо <a href="">194.158.196.245</a>) и нажмите «ОК».</li>
+                            </ul>
+                            
+                            <h5>LG (ОС webOS)</h5>
+                            <ul>
+                              <li>Нажмите кнопку «Settings» (шестеренка) на пульте - выберите пункт «Все настройки».</li>
+                              <li>Перейдите в раздел «Сеть». </li>
+                              <li>Выберите ваше текущее подключение: «Подключение к сети Wi-Fi» или «Проводное подключение (Ethernet)».</li>
+                              <li>Нажмите на пункт «Продвинутые настройки Wi-Fi» (или «Дополнительные настройки связи» в зависимости от года выпуска ТВ).</li>
+                              <li>Нажмите кнопку «Изменить» (под списком сетевых параметров).</li>
+                              <li>Снимите галочку с пункта «Автоматически».</li>
+                              <li>Спуститесь к строке «DNS», сотрите старые цифры, введите <a href="">8.8.8.8</a> либо <a href="">194.158.196.245</a> и нажмите «Подключить».</li>
+                            </ul>
+                            <h5>Hisense (ОС VIDAA)</h5>
+                            <ul>
+                              <li>Откройте «Настройки» (шестеренка) - раздел «Сеть».</li>
+                              <li>Выберите «Сетевая конфигурация».</li>
+                              <li>Переключите тип настройки IP с «Автоматически» на «Вручную».</li>
+                              <li>Пролистайте список параметров вниз до строки «Первичный DNS» (или DNS 1).Введите адрес <a href="">8.8.8.8</a> либо <a href="">194.158.196.245</a> и сохраните изменения.</li>
+                            </ul>
+                            <p>
+                              <a href="https://chat.datacenter.by/index.php/f/1464947" target="_blank"><i class="bi bi-cloud"></i> Настройка подкл. на TV</a>
+                            </p>
+                            <div class="alert alert-light" role="alert">
+                              Возможные нюансы:
+                              <ul>
+                                <li>В некоторых случаях настройки принимаются только после презагрузки</li>
+                                <li>Если при настройке сети требует указать префикс подсети - указывать /24</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </span>
+    
+                        <span class="d-block">
+                          <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseNetworkNetworkPPPoEconf" role="button" aria-expanded="false" aria-controls="collapseNetworkPPPoEconf">
+                            <i class="bi bi-chevron-down"></i> Настройка PPPoE
+                          </a>
+                          <div class="collapse" id="collapseNetworkNetworkPPPoEconf">
+                            <p>
+                              Универсальная инструкция для большинства роутеров (TP-Link, Keenetic, ASUS, Tenda и другие). 
+                              Подходит для любого роутера с функцией подключения по PPPoE - пункты меню могут отличаться, ориентируйтесь на смысл.
+                            </p>
+                            Дополнительные параметры которы по-умолчанию не запрашивает но могут понадобиться для расширенной настройки:
+                            <ul>
+                              <li>MTU: 1492 (по умолчанию)</li>
+                              <li>Type: PPPoE client
+                              <li>Поле Service Name - оставить пустым</li>
+                              <li>Use Peer DNS - Enable</li>
+                              <li>Add default route - Enable</li>
+                              <li>Authentication type - PAP/CHAP (Поддерживает оба режима)</li>
+                            </ul>
+    
+                            <h5>Настройка PPPoE по бренду роутера</h5>
+                            <p>Ниже - быстрые ориентиры куда зайти в меню. Пункты могут называться чуть иначе, но логика одинаковая: Internet/WAN - PPPoE - логин/пароль - сохранить.</p>
+                            <div class="table-responsive">
+                              <table class="table table-striped">
+                                <tbody>
+                                  <tr>
+                                    <td>TP-Link / Mercusys</td>
+                                    <td>Advanced - Network - Internet (или WAN) - PPPoE. Введите логин/пароль, MTU 1492, Save/Connect</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Keenetic</td>
+                                    <td>Интернет - PPPoE/VPN (или Подключения) - создать/включить PPPoE. Логин/пароль - применить</td>
+                                  </tr>
+                                  <tr>
+                                    <td>ASUS</td>
+                                    <td>WAN - Internet Connection - WAN Connection Type: PPPoE. Username/Password - Apply</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Xiaomi</td>
+                                    <td>Internet settings - Connection type: PPPoE. Введите логин/пароль - сохранить</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Tenda / D-Link</td>
+                                    <td>Internet/WAN - PPPoE. Логин/пароль - сохранить - подключить</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+    
+                            <h5>Краткая инструкция по созданию PPPoE подключения с компьютера</h5>
+                            в <i class="bi bi-windows"></i>Windows 10:
+                            <ul>
+                              Нажмите <kbd>Win + I</kbd> → откройте «Сеть и Интернет». 
+                              Слева выберите «Набор номера» → нажмите «Настройка нового подключения». 
+                              Выберите «Подключение к Интернету» → нажмите «Далее».
+                              Выберите «Высокоскоростное (с PPPoE)».
+                              Введите логин и пароль из договора.
+                              Поставьте галочку «Запомнить этот пароль» → нажмите «Подключить».
+                            </ul>
+    
+                            в <i class="bi bi-windows"></i>Windows 7:
+                            <ul>
+                              Нажмите <kbd><i class="bi bi-windows"></i> Пуск</kbd> → откройте «Панель управления».
+                              Выберите «Центр управления сетями и общим доступом».
+                              Нажмите «Настройка нового подключения или сети».
+                              Выберите «Подключение к Интернету» → нажмите «Далее».
+                              Выберите тип подключения «Высокоскоростное (с PPPoE)».
+                              Введите логин и пароль из договора с провайдером.
+                              Поставьте галочку «Запомнить этот пароль» → нажмите «Подключить».
+                            </ul>
+    
+                            Возможные проблемы:
+                            <ul>
+                              <li>PPPoE не подключается: проверьте логин/пароль, MTU 1492, кабель в WAN, перезапустите ONT/модем и роутер, убедитесь что модем переведен в bridge</li>
+                              <li>PPPoE подключается но выдает странный IP либо заглушку - неверный логин/пароль</li>
+                              <li>PPPoE подключается и сразу отваливается: обновите прошивку, проверьте кабель/питание, отключите сомнительные фильтры, проверьте логи на вашем оборудовании</li>
+                            </ul>
+                          </div>
+                        </span>
+
                       </div>
                     </div>
 
                     <div class="card">
-                      <div class="card-header text-bg-secondary">
+                      <div class="card-header text-bg-gray py-2">
                         <h3 class="card-title"> Прочие настройки сети</h3>
                       </div>
                       <div class="card-body">
@@ -521,16 +794,16 @@
                           <li><a href="https://chat.datacenter.by/index.php/f/1465469" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> Настройка VPN (БТК)</a></li>
                           <li><a href="https://chat.datacenter.by/index.php/f/1468777" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> Настройка wi-fi +(Общедоступные точки)</a></li>
                           <li><a href="https://chat.datacenter.by/index.php/f/1468840" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> Настройка подключения и сервисов</a></li>
+                          <li><a href="https://chat.datacenter.by/index.php/f/1467921" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> Nextcloud - Интернет и сети передачи данных</a></li>
                         </ul>
                       </div>
                     </div>
                   </div>
+                  
                   <div class="col-sm-6 mb-3 mb-sm-3">
-
-
                     <div class="card">
-                      <div class="card-header text-bg-secondary">
-                        <h3 class="card-title"> Сети Wi-fi</h3>
+                      <div class="card-header text-bg-gray py-2">
+                        <h3 class="card-title"><i class="bi bi-wifi"></i> Сети Wi-fi</h3>
                       </div>
                       <div class="card-body">
                         <span class="d-block">
@@ -616,13 +889,13 @@
                     </div>
 
                     <div class="card">
-                      <div class="card-header text-bg-secondary">
-                        <h3 class="card-title"> Физика подключения</h3>
+                      <div class="card-header text-bg-gray py-2">
+                        <h3 class="card-title"><i class="bi bi-ethernet"></i> Физика подключения</h3>
                       </div>
                       <div class="card-body">
                         <span class="d-block">
                           <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseCableConnectors" role="button" aria-expanded="false" aria-controls="collapseCableConnectors">
-                            <i class="bi bi-chevron-down"></i> Кабели и коннекторы
+                            <i class="bi bi-chevron-down"></i> Кабели и коннекторы RJ45 и RJ11
                           </a>
                           <div class="collapse" id="collapseCableConnectors">
                             <h4 class="text-center">Сетевой кабель (RJ-45)</h4>
@@ -648,7 +921,24 @@
                                 <li>4 жилы (разъем RJ-14, 6P4C): задействуются четыре центральных контакта (со второго по пятый), жилы раскладываются по порядку слева направо зеркально на обоих концах кабеля.</li>
                               </ul>
                             </p>
-  
+                            
+                            При маркировке кабелей используют следующие обозначения:
+                            <ul>
+                              <li>TP (Twisted Pair) – тип скрутки, витая пара.</li>
+                              <li>U (Unshielded) – защитный экран отсутствует.</li>
+                              <li>F (Foiled) – в качестве экрана используется фольга.</li>
+                              <li>S (Shielded) – в качестве экрана используется проволочная оплетка.</li>
+                            </ul>
+
+                            <a href="https://chat.datacenter.by/index.php/f/1468818" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> Кабели и коннекторы</a>
+                          </div>
+                        </span>
+
+                        <span class="d-block">
+                          <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseCableConnectorsPON" role="button" aria-expanded="false" aria-controls="collapseCableConnectorsPON">
+                            <i class="bi bi-chevron-down"></i> Кабели и коннекторы (SC/APC - SC/UPC)
+                          </a>
+                          <div class="collapse" id="collapseCableConnectorsPON">
                             <h4 class="text-center">Оптоволоконный кабель (SC/APC - SC/UPC)</h4>
                             <p>
                               Основная разница между оптическими коннекторами SC UPC и SC APC заключается в типе полировки торца оптоволокна, определяющей величину отраженного сигнала. 
@@ -699,331 +989,356 @@
                         </span>
 
                       </div>
-
                     </div>
-                  </div>
 
+                    <div class="card">
+                      <div class="card-header text-bg-gray py-2">
+                        <h3 class="card-title"><i class="bi bi-wrench-adjustable"></i> Решение проблем с подключением</h3>
+                      </div>
+                      <div class="card-body">
+                        <span class="d-block">
+                          <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseModemWebInterface" role="button" aria-expanded="false" aria-controls="collapseModemWebInterface">
+                            <i class="bi bi-chevron-down"></i> Если не заходит в веб-интерфейс
+                          </a>
+                          <div class="collapse" id="collapseModemWebInterface">
+                            <ul>
+                              <li>Перезагрузите модем отключив по питанию на минуту (некоторые модемы имеют защиту, и блокируют вход в админку после нескольких часов работы)</li> 
+                              <li>Проверьте подключение к модему по кабелю в порт <storng>LAN1</storng>, или к заводской Wi-Fi сети (имя/пароль на наклейке)</li>
+                              <li>Проверьте что ваше устройство получило IP адрес из той же подсети что и сеть модема 192.168.1.x либо 192.168.100.x</li>
+                              <li>Откройте через другой браузер. Браузер может кэшировать старую ошибку или пытаться принудительно открыть страницу через защищенный протокол <i>https://</i> который не поддерживается в данном режиме.</li>
+                            </ul>
+                          </div>
+                        </span>
+
+                        <span class="d-block">  
+                          <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseNetworkLTEtrouble" role="button" aria-expanded="false" aria-controls="collapseNetworkLTEtrouble">
+                            <i class="bi bi-chevron-down"></i> Решение проблем с подключением к LTE
+                          </a>
+                          <div class="collapse" id="collapseNetworkLTEtrouble">
+                            <ul>
+                              <li>
+                                Проверьте, какой сетевой режим установлен, и включите самый высокий из тех, которые поддерживает ваше мобильное устройство (4G или LTE). 
+                                Если проблема наблюдается при режиме сети «4G» или «авто», то выберите тип сети 3G/WCDMA.
+                                (E означает 2G, H означает 3G, LTE означает 4G ) 
+                              </li>
+                              
+                              <li>
+                                Режим сети <i class="bi bi-apple"></i>iPhone: Настройки – Сотовая связь – Параметры данных – Голос и данные – 3G.<br> 
+                                Режим сети <i class="bi bi-android"></i>Android: Настройки – Сотовая связь – Параметры данных – Голос и данные – 3G.<br>
+                                Внимание: Путь может несколько отличаться в зависимости от модели телефона.
+                              </li>
+  
+                              <li>
+                                Восстановите настройки Интернета по умолчанию на вашем устройстве, выполнив следующие действия:<br>
+                                Для устройств на ОС <i class="bi bi-android"></i>Android: Настройки – SIM-карты и мобильные сети. Далее выбираем нужную SIM-карту и нажимаем на нее. Затем открываем Точки доступа APN – Сбросить.<br>
+                                * Путь в настройках может немного отличаться в зависимости от модели телефона.
+                              </li>
+                            </ul>
+                          </div>
+                        </span>
+
+                        <span class="d-block">  
+                          <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseNetworkTroubleshooting" role="button" aria-expanded="false" aria-controls="collapseNetworkTroubleshooting">
+                            <i class="bi bi-chevron-down"></i> Решение возможных проблем при сетевом подключении
+                          </a>
+                          <div class="collapse" id="collapseNetworkTroubleshooting">
+                            <p>
+                              Перезагрузите компьютер и роутер, отключите и подключите сетевой кабель. Возможно, это поможет, и не нужно будет проверять настройки на вашем устройстве.
+                              При наличии других компьютеров, попробуйте подключить интернет к ним. Убедитесь что подключены напрямую кабелем к оборудованию провайдера. 
+                              Обязательно проверьте работу интернета на другом устройстве! 
+                            </p>
+                            <h4>Сетевой кабель не подключен. Красный крестик и нет доступных подключений</h4>
+                            <ul>
+                              <li>Проверьте подклчюение сетевого кабеля, переподключите кабель с двух сторон, попробуйте подключить в другой LAN разъем на роутере.</li>
+                              <li>
+                                Необходимо <a href="https://help-wifi.com/sovety-po-nastrojke/proverka-nastroek-lokalnoj-i-besprovodnoj-seti-v-windows-pered-nastrojkoj-wi-fi-routera/">открыть сетевые подключения</a>
+                                 и проверить наличие "Подключение по локальной сети", или "Ethernet" (в Windows 10). Если он в статусе "Отключено", то нажмите на него правой кнопкой мыши, и выберите "Включить".
+                              </li>
+                              <li>Если в сетевых подключениях адаптер отсутствует - значит не установлены сетевые драйвера, либо <a href="https://remontka.pro/windows-not-detecting-network-adapter/">сетевой адаптер отключен в BIOS/EFI</a></li>
+                            </ul>
+                            
+                            <h4>Ошибки "Непознанная сеть", "Идентификация", и "Без доступа к интернету" в Windows</h4>
+                            <ul>
+                              <li>Проверить порт подключения сетевого кабеля к модему, либо имя сети вай-фай если подклчюаетесь по wif-fi сети</li>
+                              <li>В таком случае, нам нужно <a href="https://help-wifi.com/reshenie-problem-i-oshibok/podklyuchenie-ogranicheno-v-windows-10-po-wi-fi-i-setevomu-kabelyu/">проверить настройки IP и DNS</a>. Выставить их автоматическое получение.</li>
+                              <li><a href="https://help-wifi.com/raznye-sovety-dlya-windows/kak-otklyuchit-proksi-server-v-windows/">Отключить VPN/Proxy</a> и другие приложения которые могут влиять на сетевые адаптеры. Если у вас есть что-то подобное, попробуйте удалить такой софт с компьютера, перезагрузить его и проверить работу Интернета.</li>
+                              <li>
+                                В диспетчере устройств Windows попробуйте <a href="https://help-wifi.com/reshenie-problem-i-oshibok/ne-rabotaet-internet-v-windows-10-posle-podklyucheniya-setevogo-kabelya/">удалить ваш сетевой адаптер</a>,
+                                после чего в меню выбрать «Действие» — «Обновление конфигурации оборудования». Произойдет переустановка адаптера, иногда это срабатывает.
+                              </li>
+                            </ul>
+    
+                            <h4>Подключение по локальной сети активно, но Интернета нет (без доступа к Интернету)</h4>
+                            <p>
+                              <ul>
+                                <li>
+                                  Убедиться что проблема не в браузере. Проверить другими браузерами, а лучше другими приложениями. 
+                                  Если страницы не открываются в каком-то одном браузере, попробуйте отключить в нем все расширения, блокирующие рекламу, а также функции VPN или Proxy, если вы их используете.
+                                </li>
+                                <li>Возможно проблемы с параметрами сетевого подключения (доступ к DNS, параметры прокси-сервера, параметры TCP/IP). Необходимо проверить натсройки сетевой.</li>
+                                <li>Доступ может быть ограничен антивирусом либо брандмаузером. Отключите их на момент проверки. </li>
+                                <li>
+                                  Проблемы с сертификатами. Актуально для старых ОС Windows 8/7/XP/2003 и.т.д. Если в системе установлены просроченные корневые сертификаты безопасности, многие сайты не будут загружаться. 
+                                  Нужно <a href="https://winitpro.ru/index.php/2017/03/20/obnovlenie-kornevyx-sertifikatov-v-windows/">привести корневый сертификаты в актуальное состояние</a> для исправления проблемы.
+                                </li>
+                                <li>
+                                  Неправильные дата и время на компьютере. Система всегда синхронизирует время сети с временем, установленным на компьютере. Если эти значения разные - интернет работать не будет.
+                                </li>
+                                <li>
+                                  Если рекомендации выше не помогли. Попробуйте сделать полный сброс сети через консоль <kbd>Win + R</kbd> -> <code>cmd</code>.
+                                  <code class="language-shell" data-lang="shell">
+                                    <pre style="white-space: pre-line;">
+                                    ipconfig /flushdns
+                                    ipconfig /registerdns
+                                    ipconfig /renew
+                                    ipconfig /release
+                                    </pre>
+                                  </code>
+                                </li>
+                              </ul>
+                            </p>
+                          </div>
+                        </span>
+
+                      </div>
+                    </div>  
+
+                  </div>
                 </div>
 
-                <div class="card">
-                  <div class="card-header text-bg-secondary">
-                    <h3 class="card-title"> Расширенные настройки</h3>
-                  </div>
-                  <div class="card-body">
-                    <span class="d-block">
-                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseConfigureNetworkAdapter" role="button" aria-expanded="false" aria-controls="collapseConfigureNetworkAdapter">
-                        <i class="bi bi-chevron-down"></i> Настройка сетевой
-                      </a>
-                      <div class="collapse" id="collapseConfigureNetworkAdapter">
-                        <h5>Открыть настройки сетевой</h5>
-                        <ul>
-                          <li>
-                            <strong><i class="bi bi-windows"></i>Windows 10</strong>
-                            Параметры» → "Сеть и Интернет" → Ethernet → "Параметров адаптера" → "Ethernet (свойства)" → IPv4 (свойства)
-                          </li>
-                          <li>
-                            <strong><i class="bi bi-windows"></i>Windows 11</strong>
-                            Параметры» - "Сеть и Интернет" →
-                            <ol>
-                              <li>Ethernet- Назначение IP (редактировать) → IPv4</li>
-                              <li>Дополнительные сетевые параметры → "Ethernet (свойства)" → IPv4 (свойство)</li>
-                            </ol>
-                          </li>
-                          <li>
-                            <strong><i class="bi bi-windows"></i>Windows 7</strong>
-                            "Панель управления" → "Сеть и Интернет (Центр управления)" → "Подключение по локальной сети" → IPv4 (свойства)
-                          </li>
-                          <li>
-                            <strong><i class="bi bi-windows"></i>Windows 8</strong>
-                            "Центр управления сетями и общим доступом"
-                            <ol>
-                              <li>Win+W (Центр управления) → "Изменение параметров адаптера" → "Ethernet (свойства)" → IPv4 (свойства)</li>
-                              <li>Правой клавишей по значку монитора → "Изменение параметров адаптера" → Ethernet (свойства) → IPv4 (свойства)</li>
-                            </ol>
-                          </li>
-                        </ul>
-                        <p>
-                          <a href="https://chat.datacenter.by/index.php/f/1468860" target="_blank"><i class="bi bi-cloud"></i>Настройка сетевой</a>
-                        </p>
-                        <h5>Настройка сетевой карты в системе Windows 10 при автоматических настройках подключения (DHCP).</h5>
-                        <ol>
-                          <li>Откройте меню Пуск (Start) - Панель управления(Control Panel) - Сеть и Интернет(Network and Internet) (если этот раздел отсутствует, см. следующий) - Центр управления сетями и общим доступом(Network and Sharing Center) - Изменение параметров адаптера(Change adapter settings) (в левой части окна).</li>
-                          <li>Щелкните правой кнопкой мыши на ярлык Подключение по локальной сети (Local Area Connection) и выберите Свойства (Properties).</li>
-                          <li>В появившемся окне выделите пункт Протокол Интернета версии 4 (TCP/IPv4) (Internet Protocol version 4 (TCP/IPv4)) и нажмите левой кнопкой мыши по кнопке Свойства (Properties).</li>
-                          <li>Выберите пункт Использовать следующий IP-адрес (Use the following IP address). В строке IP-адрес (IP address) впишите значение (без кавычек) <a href="">192.168.1.XX</a> (вместо XX число от 10 до 254), в строке Маска подсети (Subnet mask)– значение <a href="">255.255.255.0</a>, в строке Основной шлюз (Default gateway) – <a href="192.168.1.1">192.168.1.1</a> либо <a href="192.168.100.1">192.168.100.1</a> в зависимости от роутера</li>
-                          Выберите пункт Использовать следующие адреса DNS-серверов (Use the following DNS server addresses и введите в строке Предпочитаемый DNS-сервер (Preferred DNS server) <a href="">194.158.196.245</a> и Альтернативный DNS-сервер (Alternate DNS server) значения <a href="">86.57.255.149</a>. Далее нажмите ОК
-                          <li>Нажмите Закрыть (Close).</li>
-                        </ol>
-                        
-                        <h5>Android TV / Google TV / Яндекс.ТВ (Xiaomi, Sony, Haier, TCL, Philips)</h5>
-                        <ul>
-                           <li>Зайдите в «Настройки» (шестеренка вверху справа) - «Сеть и интернет».</li>
-                           <li>Выберите подкллючение "Ethernet" либо "Wifi" для последующей настройки</li>
-                           <li>Спуститесь вниз в «Расширенные настройки» (или «Параметры IP»).</li>
-                           <li>Вместо DHCP выберите вариант «Статический» (или «Статический IP»).</li>
-                           <li>Шаг за шагом подтверждайте текущие настройки (IP-адрес, шлюз, длина префикса сети), нажимая стрелку «Далее», пока не дойдете до пунктов DNS 1 и DNS 2.</li>
-                           <li>В строке «DNS 1» укажите <a href="">8.8.8.8</a> либо <a href="">194.158.196.245</a> и завершите подключение.</li>
-                           <blockquote>
-                            Важно: на чистом Android TV для смены DNS по Wi-Fi нужно «переподключить» сеть.
-                           </blockquote>
-                        </ul>
-                        <h5>Samsung (ОС Tizen)</h5>
-                        <ul>
-                          <li>Нажмите кнопку «Home» (Домик) или «Menu» на пульте и зайдите в «Настройки»</li>
-                          <li>Перейдите по пути: «Общие» (или «Все настройки») - «Сеть». Выберите пункт «Состояние сети»</li> 
-                          <li>В открывшемся окне нажмите на кнопку «Настройки IP» (внизу экрана). Найдите строку «Настройки DNS» и переключите её в режим «Вводить вручную».</li>
-                          <li>Кликните на строку «Сервер DNS», введите цифры (<a href="">8.8.8.8</a> либо <a href="">194.158.196.245</a>) и нажмите «ОК».</li>
-                        </ul>
-                        
-                        <h5>LG (ОС webOS)</h5>
-                        <ul>
-                          <li>Нажмите кнопку «Settings» (шестеренка) на пульте - выберите пункт «Все настройки».</li>
-                          <li>Перейдите в раздел «Сеть». </li>
-                          <li>Выберите ваше текущее подключение: «Подключение к сети Wi-Fi» или «Проводное подключение (Ethernet)».</li>
-                          <li>Нажмите на пункт «Продвинутые настройки Wi-Fi» (или «Дополнительные настройки связи» в зависимости от года выпуска ТВ).</li>
-                          <li>Нажмите кнопку «Изменить» (под списком сетевых параметров).</li>
-                          <li>Снимите галочку с пункта «Автоматически».</li>
-                          <li>Спуститесь к строке «DNS», сотрите старые цифры, введите <a href="">8.8.8.8</a> либо <a href="">194.158.196.245</a> и нажмите «Подключить».</li>
-                        </ul>
-                        <h5>Hisense (ОС VIDAA)</h5>
-                        <ul>
-                          <li>Откройте «Настройки» (шестеренка) - раздел «Сеть».</li>
-                          <li>Выберите «Сетевая конфигурация».</li>
-                          <li>Переключите тип настройки IP с «Автоматически» на «Вручную».</li>
-                          <li>Пролистайте список параметров вниз до строки «Первичный DNS» (или DNS 1).Введите адрес <a href="">8.8.8.8</a> либо <a href="">194.158.196.245</a> и сохраните изменения.</li>
-                        </ul>
-                        <p>
-                          <a href="https://chat.datacenter.by/index.php/f/1464947" target="_blank"><i class="bi bi-cloud"></i>Настройка подкл. на TV</a>
-                        </p>
-                        <div class="alert alert-light" role="alert">
-                          Возможные нюансы:
-                          <ul>
-                            <li>В некоторых случаях настройки принимаются только после презагрузки</li>
-                            <li>Если при настройке сети требует указать префикс подсети - указывать /24</li>
-                            <li>Не рекомендуется отключать - "Протокол Интернета версии 6 (TCP/IPv6)" т.к. используется для внутренних служб Windows</li>
-                            <li>"Конфигурация с несколькими основными шлюзами" - появляется если несколько интерфейсов настроено с одним шлюзом (Например Wi-Fi и Ethernet имеют одинаковый шлюз)</li>
-                            <li>Если настройки сетевой слетают необходимо проверить/обновить сетевые драйвера, сделать сброс сети</li>
-                          </ul>
-                        </div>
-                        <a href="https://www.beltelecom.by/tekstovaya-instrukciya-nastroyki-setevoy-karty-dlya-podklyucheniya-k-seti-internet-po-tekhnologii-2">Инструкция с сайта Белтелеком</a>
-                      </div>
-                    </span>
-
-                    <span class="d-block">  
-                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseNetworkTroubleshooting" role="button" aria-expanded="false" aria-controls="collapseNetworkTroubleshooting">
-                        <i class="bi bi-chevron-down"></i> Решение возможных проблем при подключении
-                      </a>
-                      <div class="collapse" id="collapseNetworkTroubleshooting">
-                        <p>
-                          Перезагрузите компьютер и роутер, отключите и подключите сетевой кабель. Возможно, это поможет, и не нужно будет проверять настройки на вашем устройстве.
-                          При наличии других компьютеров, попробуйте подключить интернет к ним. Убедитесь что подключены напрямую кабелем к оборудованию провайдера. 
-                          Обязательно проверьте работу интернета на другом устройстве! 
-                        </p>
-                        <h4>Сетевой кабель не подключен. Красный крестик и нет доступных подключений</h4>
-                        <ul>
-                          <li>Проверьте подклчюение сетевого кабеля, переподключите кабель с двух сторон, попробуйте подключить в другой LAN разъем на роутере.</li>
-                          <li>
-                            Необходимо <a href="https://help-wifi.com/sovety-po-nastrojke/proverka-nastroek-lokalnoj-i-besprovodnoj-seti-v-windows-pered-nastrojkoj-wi-fi-routera/">открыть сетевые подключения</a>
-                             и проверить наличие "Подключение по локальной сети", или "Ethernet" (в Windows 10). Если он в статусе "Отключено", то нажмите на него правой кнопкой мыши, и выберите "Включить".
-                          </li>
-                          <li>Если в сетевых подключениях адаптер отсутствует - значит не установлены сетевые драйвера, либо <a href="https://remontka.pro/windows-not-detecting-network-adapter/">сетевой адаптер отключен в BIOS/EFI</a></li>
-                        </ul>
-                        
-                        <h4>Ошибки "Непознанная сеть", "Идентификация", и "Без доступа к интернету" в Windows</h4>
-                        <ul>
-                          <li>Проверить порт подключения сетевого кабеля к модему, либо имя сети вай-фай если подклчюаетесь по wif-fi сети</li>
-                          <li>В таком случае, нам нужно <a href="https://help-wifi.com/reshenie-problem-i-oshibok/podklyuchenie-ogranicheno-v-windows-10-po-wi-fi-i-setevomu-kabelyu/">проверить настройки IP и DNS</a>. Выставить их автоматическое получение.</li>
-                          <li><a href="https://help-wifi.com/raznye-sovety-dlya-windows/kak-otklyuchit-proksi-server-v-windows/">Отключить VPN/Proxy</a> и другие приложения которые могут влиять на сетевые адаптеры. Если у вас есть что-то подобное, попробуйте удалить такой софт с компьютера, перезагрузить его и проверить работу Интернета.</li>
-                          <li>
-                            В диспетчере устройств Windows попробуйте <a href="https://help-wifi.com/reshenie-problem-i-oshibok/ne-rabotaet-internet-v-windows-10-posle-podklyucheniya-setevogo-kabelya/">удалить ваш сетевой адаптер</a>,
-                            после чего в меню выбрать «Действие» — «Обновление конфигурации оборудования». Произойдет переустановка адаптера, иногда это срабатывает.
-                          </li>
-                        </ul>
-
-                        <h4>Подключение по локальной сети активно, но Интернета нет (без доступа к Интернету)</h4>
-                        <p>
-                          <ul>
-                            <li>
-                              Убедиться что проблема не в браузере. Проверить другими браузерами, а лучше другими приложениями. 
-                              Если страницы не открываются в каком-то одном браузере, попробуйте отключить в нем все расширения, блокирующие рекламу, а также функции VPN или Proxy, если вы их используете.
-                            </li>
-                            <li>Возможно проблемы с параметрами сетевого подключения (доступ к DNS, параметры прокси-сервера, параметры TCP/IP). Необходимо проверить натсройки сетевой.</li>
-                            <li>Доступ может быть ограничен антивирусом либо брандмаузером. Отключите их на момент проверки. </li>
-                            <li>
-                              Проблемы с сертификатами. Актуально для старых ОС Windows 8/7/XP/2003 и.т.д. Если в системе установлены просроченные корневые сертификаты безопасности, многие сайты не будут загружаться. 
-                              Нужно <a href="https://winitpro.ru/index.php/2017/03/20/obnovlenie-kornevyx-sertifikatov-v-windows/">привести корневый сертификаты в актуальное состояние</a> для исправления проблемы.
-                            </li>
-                            <li>
-                              Неправильные дата и время на компьютере. Система всегда синхронизирует время сети с временем, установленным на компьютере. Если эти значения разные - интернет работать не будет.
-                            </li>
-                            <li>
-                              Если рекомендации выше не помогли. Попробуйте сделать полный сброс сети через консоль <kbd>Win + R</kbd> -> <code>cmd</code>.
-                              <code class="language-shell" data-lang="shell">
-                                <pre style="white-space: pre-line;">
-                                ipconfig /flushdns
-                                ipconfig /registerdns
-                                ipconfig /renew
-                                ipconfig /release
-                                </pre>
-                              </code>
-                            </li>
-                          </ul>
-                        </p>
-                      </div>
-                    </span>
-
-                    <span class="d-block">
-                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseNetworkNetworkPPPoEconf" role="button" aria-expanded="false" aria-controls="collapseNetworkPPPoEconf">
-                        <i class="bi bi-chevron-down"></i> Настройка PPPoE
-                      </a>
-                      <div class="collapse" id="collapseNetworkNetworkPPPoEconf">
-                        <p>
-                          Универсальная инструкция для большинства роутеров (TP-Link, Keenetic, ASUS, Tenda и другие). 
-                          Подходит для любого роутера с функцией подключения по PPPoE - пункты меню могут отличаться, ориентируйтесь на смысл.
-                        </p>
-                        Дополнительные параметры которы по-умолчанию не запрашивает но могут понадобиться для расширенной настройки:
-                        <ul>
-                          <li>MTU: 1492 (по умолчанию)</li>
-                          <li>Type: PPPoE client
-                          <li>Поле Service Name - оставить пустым</li>
-                          <li>Use Peer DNS - Enable</li>
-                          <li>Add default route - Enable</li>
-                          <li>Authentication type - PAP/CHAP (Поддерживает оба режима)</li>
-                        </ul>
-
-                        <h5>Настройка PPPoE по бренду роутера</h5>
-                        <p>Ниже - быстрые ориентиры куда зайти в меню. Пункты могут называться чуть иначе, но логика одинаковая: Internet/WAN - PPPoE - логин/пароль - сохранить.</p>
-                        <div class="table-responsive">
-                          <table class="table table-striped">
-                            <tbody>
-                              <tr>
-                                <td>TP-Link / Mercusys</td>
-                                <td>Advanced - Network - Internet (или WAN) - PPPoE. Введите логин/пароль, MTU 1492, Save/Connect</td>
-                              </tr>
-                              <tr>
-                                <td>Keenetic</td>
-                                <td>Интернет - PPPoE/VPN (или Подключения) - создать/включить PPPoE. Логин/пароль - применить</td>
-                              </tr>
-                              <tr>
-                                <td>ASUS</td>
-                                <td>WAN - Internet Connection - WAN Connection Type: PPPoE. Username/Password - Apply</td>
-                              </tr>
-                              <tr>
-                                <td>Xiaomi</td>
-                                <td>Internet settings - Connection type: PPPoE. Введите логин/пароль - сохранить</td>
-                              </tr>
-                              <tr>
-                                <td>Tenda / D-Link</td>
-                                <td>Internet/WAN - PPPoE. Логин/пароль - сохранить - подключить</td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-
-                        <h5>Краткая инструкция по созданию PPPoE подключения с компьютера</h5>
-                        в Windows 10:
-                        <ul>
-                        Нажмите <kbd>Win + I</kbd> → откройте «Сеть и Интернет». 
-                        Слева выберите «Набор номера» → нажмите «Настройка нового подключения». 
-                        Выберите «Подключение к Интернету» → нажмите «Далее».
-                        Выберите «Высокоскоростное (с PPPoE)».
-                        Введите логин и пароль из договора.
-                        Поставьте галочку «Запомнить этот пароль» → нажмите «Подключить».
-                        </ul>
-
-                        в Windows 7:
-                        <ul>
-                        Нажмите <kbd><i class="bi bi-windows"></i> Пуск</kbd> → откройте «Панель управления».
-                        Выберите «Центр управления сетями и общим доступом».
-                        Нажмите «Настройка нового подключения или сети».
-                        Выберите «Подключение к Интернету» → нажмите «Далее».
-                        Выберите тип подключения «Высокоскоростное (с PPPoE)».
-                        Введите логин и пароль из договора с провайдером.
-                        Поставьте галочку «Запомнить этот пароль» → нажмите «Подключить».
-                        </ul>
-
-                        Возможные проблемы:
-                        <ul>
-                          <li>PPPoE не подключается: проверьте логин/пароль, MTU 1492, кабель в WAN, перезапустите ONT/модем и роутер, убедитесь что модем переведен в bridge</li>
-                          <li>PPPoE подключается но выдает странный IP либо заглушку - неверный логин/пароль</li>
-                          <li>PPPoE подключается и сразу отваливается: обновите прошивку, проверьте кабель/питание, отключите сомнительные фильтры, проверьте логи на вашем оборудовании</li>
-                        </ul>
-                      </div>
-                    </span>
-                  </div>
-                  <div class="card-footer">
-                    <a href="https://chat.datacenter.by/index.php/f/1467921" target="_blank" class="icon-link icon-link-hover">
-                      <i class="bi bi-cloud"></i> Nextcloud - Интернет и сети передачи данных
-                    </a>
-                  </div>
-                </div>
               </div>
             </div>
-            
-            <h2 id="iptv"><i class="bi bi-usb-c"></i> IPTV</h2>
+
+            <h2 id="ZALA"><i class="bi bi-tv"></i> ZALA</h2>
             <div class="row">
               <div class="col-sm-6 mb-3 mb-sm-3">
-                <div class="card h-100">
+                <div class="card">
+                  <div class="card-header text-bg-gray py-2">
+                    <h3 class="card-title"> Руководства пользователя</h3>
+                  </div>
                   <div class="card-body">
-                    <div class="accordion" id="accordionIPTVSTB">
-                      <div class="accordion-item">
-                        <h2 class="accordion-header">
-                          <button
-                            class="accordion-button collapsed"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#collapseIPTVSTB_1"
-                            aria-expanded="false"
-                            aria-controls="collapseIPTVSTB_1"
-                          >
-                          Настройка STB приставки 
-                          </button>
-                        </h2>
-                        <div id="collapseIPTVSTB_1" class="accordion-collapse collapse" data-bs-parent="#accordionIPTVSTB">
-                          <div class="accordion-body">
-                            <ul>
-                              <li>Нажмите кнопку <kbd>SET</kbd> на пульте от STB (Над желтой кнопкой)</li>
-                              <li>Настройки - <kbd>OK</kbd> - Введите пароль - 6321 - <kbd>ОК</kbd></li>
-                              <li>В поле учетная запись пропишите логин из договора</li>
-                              <li>В поле пароль пропишите первоначальный пароль из договора</li>
-                              <li>Перейдите <kbd>стрелкой вниз</kbd> на <kbd>OK</kbd> внизу экрана - нажмите <kbd>OK</kbd> на пульте</li>
-                              <li>Перейдите стрелками на перезапуск - нажмите <kbd>OK</kbd></li>
-                            </ul>
-                            <blockquote>
-                              <ul>
-                                <li>4-й порт по-умолчанию настроен под IPTV, через него подключение к интернету работать не будет</li>
-                                <li>Если подключить STB приставку в порт не настроенный под IPTV, возможен черный экран на любом канале либо ошибка 1302/1305</li>
-                              </ul>
-                            </blockquote>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <br>
-                    <h5>Руководство пользователя:</h5>
+                    <h5>Руководство пользователя IPTV:</h5>
                     <ul>
                       <li><a href="https://www.beltelecom.by/sites/default/files/content/zala/rukovodstvo_polzovatelia/IPTV_rukovodstvo_polzovatelia_iptv%202022_B800_B860.pdf" target="_blank">Руководство пользователя ZALA (STB B800, STB B860)</a></li>
                       <li><a href="https://www.beltelecom.by/sites/default/files/content/zala/rukovodstvo_polzovatelia/rukovodstvo_polzovatelia_IPTV-2019.doc" target="_blank">Руководство пользователя интерактивного телевидения ZALA</a></li>
                     </ul>
-                    <!-- <h5>Прочие настройки (Nextcloud):</h5> -->
+
+                    <h5>Руководства пользователя SMART:</h5>
+                    <ul>
+                      <li><a href="https://beltelecom.by/sites/default/files/content/zala/rukovodstvo_polzovatelia/manual_SMART_ZALA_MacOS_Windows.pdf">Руководство пользователя SMART ZALA на компьютерах c Windows и MacOS</a></li>
+                      <li><a href="https://beltelecom.by/sites/default/files/content/zala/rukovodstvo_polzovatelia/manual_SMART_ZALA_Android.pdf">Руководство пользователя SMART ZALA на устройствах Android</a></li>
+                      <li><a href="https://beltelecom.by/sites/default/files/content/zala/rukovodstvo_polzovatelia/manual_SMART_ZALA_iOS.pdf">Руководство пользователя SMART ZALA на устройствах iOS</a></li>
+                      <li><a href="https://beltelecom.by/sites/default/files/content/zala/rukovodstvo_polzovatelia/manual_SMART_ZALA_LG_Samsung.pdf">Руководство пользователя SMART ZALA на телевизорах LG и Samsung</a></li>
+                    </ul>
+
+                    <h5>Руководства пользователя Эфирного ТВ:</h5>
+                    <ul>
+                      <li><a href="https://www.beltelecom.by/sites/default/files/content/zala/rukovodstvo_polzovatelia/manual_ZALA_efirnoe_meta-jun-2023.doc">Руководство пользователя эфирного телевидения ZALA (Мэта)</a></li>
+                      <li><a href="https://www.beltelecom.by/sites/default/files/content/zala/rukovodstvo_polzovatelia/Instruktciia-tiuner-Vitiaz.pdf">Руководство пользователя эфирного телевидения ZALA (Витязь)</a></li>
+                    </ul>
+                    <ul>
+                      <li><a href="https://www.beltelecom.by/coverage-maps">Карты охвата телевизионными программами</a></li>
+                      <li><a href="https://www.beltelecom.by/news/main/kak-samostoyatelno-nastroit-efirnoe-televidenie">Как самостоятельно настроить эфирное телевидение</a></li>
+                      <li><a href="https://lan1.by/qa/1859/">Как настроить эфирную залу через CAM модуль</a></li>
+                    </ul>
+
+                    <ul class="list-unstyled">
+                      <li><a href="https://chat.datacenter.by/index.php/f/1464959" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i>Nextcloud - Интерактивное ТВ</a></li>
+                      <li><a href="https://chat.datacenter.by/index.php/f/1464471" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i>Nextcloud - SMART TV</a></li>
+                      <li><a href="https://chat.datacenter.by/index.php/f/1465307" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i>Nextcloud - Эфирное ТВ</a></li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card-header text-bg-gray py-2">
+                    <h3 class="card-title"> Базовая настройка приставки</h3>
+                  </div>
+                  <div class="card-body">
+                    <span class="d-block">
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseSTBiptvsetup" role="button" aria-expanded="false" aria-controls="collapseSTBiptvsetup">
+                        <i class="bi bi-chevron-down"></i> Настройка STB приставки интерактивного ТВ
+                      </a>
+                      <div class="collapse" id="collapseSTBiptvsetup">
+                        <ul>
+                          <li>Нажмите кнопку <kbd>SET</kbd> на пульте от STB (Над желтой кнопкой)</li>
+                          <li>Настройки - <kbd>OK</kbd> - Введите пароль - 6321 - <kbd>ОК</kbd></li>
+                          <li>В поле учетная запись пропишите логин из договора</li>
+                          <li>В поле пароль пропишите первоначальный пароль из договора</li>
+                          <li>Перейдите <kbd>стрелкой вниз</kbd> на <kbd>OK</kbd> внизу экрана - нажмите <kbd>OK</kbd> на пульте</li>
+                          <li>Перейдите стрелками на перезапуск - нажмите <kbd>OK</kbd></li>
+                        </ul>
+                        <blockquote>
+                          <ul>
+                            <li>4-й порт по-умолчанию настроен под IPTV, через него подключение к интернету работать не будет</li>
+                            <li>Если подключить STB приставку в порт не настроенный под IPTV, возможен черный экран на любом канале либо ошибка 1302/1305</li>
+                          </ul>
+                        </blockquote>
+                      </div>
+                    </span>
+
+                    <span class="d-block">
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseSTBsmartDVsetup" role="button" aria-expanded="false" aria-controls="collapseSTBsmartDVsetup">
+                        <i class="bi bi-chevron-down"></i> Настройка DV приставки
+                      </a>
+                      <div class="collapse" id="collapseSTBsmartDVsetup">
+                        <ul>
+                          <li>
+                            Для подключения пульта дистанционного управления к приставке, необходимо с близкого
+                            расстояния (20 см.) нажать ОДНОВРЕМЕННО кнопку <kbd>Громкости (минус)</kbd> и кнопку <kbd>ОК</kbd>
+                            (круглая кнопка в центре пульта) и держать около 10 секунд.
+                            Если Вы сделали всё верно, то на экране появится надпись «Успешно Подключен».
+                          </li>
+                          <li>Выберите язык, подтверждая свой выбор пультом на <kbd>OK</kbd> (круглой кнопкой в центре).</li>
+                          <li>"Настроить телевизор с помощью телефона Android" - Пропустить</li>
+                          <li>В перечне сетей Wi-Fi найдите и выберите Вашу сеть</li>
+                          <ul>
+                            <li>
+                              "Введите пароль для Вашей сети Wi-Fi" - Перейдите на поле для ввода пароля. 
+                              При нажатии на центральную круглую кнопку пульта отобразится виртуальная клавиатура:
+                              введите пароль и подтвердите ввод, нажав кнопку на экранной клавиатуре с «галочкой».
+                            </li>
+                            <li>
+                              При успешном подключении к сети Wi-Fi, на экране отобразится сообщение: «Установлено подключение к Интернету»
+                              Далее ожидайте проверку обновлений - это займет некоторое время
+                            </li>
+                          </ul>
+                          <li>"Используйте все возможности телевизора" - Пропустить (Войти в гугл аккаунт можно позже при необходимости)</li>
+                          <ul>
+                            <li>"Условия использования" - нажать Принять</li>
+                            <li>"Сервисы Google" - нажать Принять</li>
+                            <li>"Google Ассистент" - нажать Пропустить</li>
+                            <li>"Не забудьте настроить Ассистента" - нажать Продолжить</li>
+                          </ul>
+                          <li>"Выберите название для устройства" - нажать на первый пункт "ZALA_SmartBox_DV9135"</li>
+                          <li>"Установка дополнительных приложений" - нажать Далее (ничего не выбирать)</li>
+                          <li>"Познакомиться с возможностями своего нового устройства" - нажимать вправо чтобы пролистать 4 слайда (правую сторону круглой кнопки в центре)</li>
+                          <li>"Разрешить приложению ZalaYasna доступ к фото и мультимедия на устройстве" - Разрешить</li>
+                          <li>Отобразится логотип загрузки SMART ZALA затем появится поле для ввода Логина и Пароля</li>
+                          <ul>
+                            Для ввода данных, нажмите на центральную круглую кнопку пульта отобразится виртуальная клавиатура.
+                            <li>1. Введите данные в "Имя пользователя", используя логин (15 цифр), далее сверните клавиатуру, нажав <kbd><-</kbd> кнопку "Назад"</li>
+                            <li>2. Спуститесь на строку ввода пароля и введите Первоначальный пароль из Бланк-заказа услуги, сверните клавиатуру, нажав <kbd><-</kbd> кнопку "Назад"</li>
+                            <li>3. Спуститесь на кнопку «Вход». Нажмите на пульте центральную круглую кнопку</li>
+                          </ul>
+                          <li>Вход в приложение выполнен. Для просмотра ТВ-передач выберите раздел "Телевидение"</li>
+                        </ul>
+
+                        <blockquote>
+                          <ul class="list-unstyled">
+                            <li>
+                              <a href="https://www.beltelecom.by/tekstovaya-instrukciya-podklyuchenie-dv9135-etapy-zapuska-pervonachalnaya-nastroyka-podklyucheniya" target="_blank">
+                                Подключение DV9135 – этапы запуска, первоначальная настройка подключения по сети Wi-Fi
+                              </a>
+                            </li>
+                            <li>
+                              <a href="https://chat.datacenter.by/index.php/f/1464576" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i>Nextcloud - STB DV9135</a>
+                            </li>
+                          </ul>
+                        </blockquote>
+                      </div>
+                    </span>
+
+                    <span class="d-block">
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseSTBsmartSMLsetup" role="button" aria-expanded="false" aria-controls="collapseSTBsmartSMLsetup">
+                        <i class="bi bi-chevron-down"></i> Настройка SML приставки
+                      </a>
+                      <div class="collapse" id="collapseSTBsmartSMLsetup">
+                        <ul>
+                          <li>В случае верного подключения на экране отображается логотип «ZALA». Пожалуйста, дождитесь завершения загрузки.</li>
+                          <li>Выберите язык и нажмите кнопку <kbd>ОК</kbd> на пульте управления</li>
+                          <li>В открывшемся окне ожидайте отображения доступных сетей Wi-Fi.</li>
+                          <li>В перечне сетей Wi-Fi выберите Вашу сеть - нажмите кнопку <kbd>ОК</kbd> на пульте управления</li>
+                          <li>Введите пароль для Вашей сети Wi-Fi. Подтвердите ввод, выбрав кнопку <kbd>OK</kbd></li>
+                          <li>
+                            "Настройка беспроводного подключения", дождитесь завершения настройки подключения.
+                            Приставка автоматически проверит настройки подключения и отобразит доступную скорость доступа в Интернет.
+                          </li>
+                          <li>Выберите «Далее» и нажмите кнопку <kbd>OK</kbd> на пульте управления</li>
+                          <li>В появившейся форме в поле «Логин» вводим логин(15 цифр) и в поле «Пароль»
+                            вводим Первоначальный пароль из бланка заказа услуги, нажимаем «Далее».
+                          </li>
+                          <li>
+                            Отобразится окно создания профиля пользователя. В открывшемся окне в поле задайте имя профиля: при нажатии на кнопку <kbd>OK</kbd>
+                            пульта отобразится виртуальная клавиатура. Выберите тип профиля (мужской/женский/детский) и картинку профиля.
+                            Подтвердите кнопкой <kbd>OK</kbd> на пульте.
+                          </li>
+                          <li>Выбираем «Готово» и подтверждаем нажатием <kbd>OK</kbd></li>
+                          <li>Настройка и вход в профиль окончены. Для просмотра ТВ-передач выберите раздел «ТВ» кнопкой <kbd>OK</kbd> на пульте</li>
+                        </ul>
+                        <blockquote>
+                          <ul>
+                            <li>
+                              <a href="https://www.beltelecom.by/tekstovaya-instrukciya-podklyuchenie-sml-5050-nastroyka-podklyucheniya-po-seti-wi-fi" target="_blank">
+                              Подключение SML 5050 - настройка подключения по сети Wi-Fi
+                              </a>
+                            </li>
+                            <li>
+                              <a href="https://chat.datacenter.by/index.php/f/1464735" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i>Nextcloud - STB SML 5050</a>
+                            </li>
+                          </ul>
+                        </blockquote>
+                      </div>
+                    </span>
+
+                    <span class="d-block">
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseSTBDVBTsetup" role="button" aria-expanded="false" aria-controls="collapseSTBDVBTsetup">
+                        <i class="bi bi-chevron-down"></i> Настройка DVB-T приставки эфирного ТВ
+                      </a>
+                      <div class="collapse" id="collapseSTBDVBTsetup">
+                        <ol>
+                          <li>После загрузки приставки нажать кнопку <kbd>menu</kbd> на пульте приставки</li>
+                          <li>найти вкладку «Настройки», нажать на пульте кнопку <kbd>Ок</kbd></li>
+                          <li>выбрать «Удалить все», нажать на пульте кнопку <kbd>Ок</kbd></li>
+                          <li>подтвердить, что вы хотите удалить все каналы, нажав «Да»</li>
+                          <li>нажать кнопку <kbd>menu</kbd> на пульте приставки</li>
+                          <li>найти вкладку «настройки», нажать на пульте кнопку <kbd>ок</kbd></li>
+                          <li>на странице «настройки» перейти на вкладку «сканирование каналов» и нажать на пульте кнопку </kbd>ок<kbd></li>
+                          <li>на появившейся странице «Сканирование каналов» заполнить требуемые параметры:</li>
+                          <ul>
+                            <li>«Режим сканирование» - выбрать «по каналу»</li>
+                            <li>«Диапазон» - выбрать «UHF»</li>
+                            <li>«Номер канала» - выбрать номер канала(частота) исходя из <a href="https://www.beltelecom.by/coverage-maps-table">таблицы</a></li>
+                          </ul>
+                          <li>
+                            после выбора номера канала на странице «Сканирование каналов» должно появиться стабильное значение интенсивности и качества сигнала 25-30% и более. 
+                            Далее перейти на «Поиск» и нажать на пульте кнопку <kbd>OK</kbd>. Начинается сканирование выбранного радиочастотного канала. 
+                            По результатам сканирования появляется перечень телеканалов, входящих в отсканированный радиочастотный канал.
+                          </li>
+                          <li>повторить пункты 6-10 для сканирования радиочастотных каналов других мультиплексов, выбрав номер канала (частоту) исходя из <a href="https://www.beltelecom.by/coverage-maps-table">таблицы</a></li>
+                        </ol>
+                        <blockquote>Настройка будет успешной при условии что показатели интенсивности и качества принимаемого сигнала телеканалов стабильны и составляют 25-30% и более</blockquote>
+                      </div>
+                    </span>
+
+                    <span class="d-block">
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseSTBreset" role="button" aria-expanded="false" aria-controls="collapseSTBreset">
+                        <i class="bi bi-chevron-down"></i> Сброс настроек на приставках
+                      </a>
+                      <div class="collapse" id="collapseSTBreset">
+                        <h5>Сброс настроек на SML приставке:</h5>
+                        <p>На пульте ZALA нажать Настройки <i class="bi bi-gear-fill"></i>. Поддержка - О продукте - Сброс настроек</p>
+                        <h5>Сброс настроек на DV приставке:</h5>
+                        <p>На пульте ZALA нажать <i class="bi bi-gear-fill"></i>. Настройки - Настройки устройства - Об устройстве - Сброс настроек</p>
+                      </div>
+                    </span>
+
+                    <br>
                     <ul class="list-unstyled">
                       <li><a href="https://chat.datacenter.by/index.php/f/1464626" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> OTT и IPTV по тарифам</a></li>
                       <li><a href="https://chat.datacenter.by/index.php/f/1465142" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> Прочие сервисы</a></li>
-                      <li><a href="https://chat.datacenter.by/index.php/f/2266615" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> Нумерация каналов</a></li>
                       <li><a href="https://chat.datacenter.by/index.php/f/1520039" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> Приставки</a></li>
                     </ul>
-                    <!-- <div class="card-footer">
-                    </div> -->
-                  </div>
-                  <div class="card-footer">
-                    <a href="https://chat.datacenter.by/index.php/f/1464959" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i>Nextcloud - Интерактивное ТВ</a>
+                    
                   </div>
                 </div>
+
               </div>
+
               <div class="col-sm-6 mb-3 mb-sm-3">
-                <div class="card h-100">
-                  <div class="card-header text-bg-secondary">
-                    <h3 class="card-title"> Настройки STB приставки</h3>
+                <div class="card">
+                  <div class="card-header text-bg-gray py-2">
+                    <h3 class="card-title" id="iptv"><i class="bi bi-usb-c"></i> IPTV</h3>
                   </div>
                   <div class="card-body">
                     <span class="d-block">
@@ -1151,293 +1466,47 @@
                     </span>
 
                   </div>
-                  <!-- <div class="card-footer">
-                  </div> -->
                 </div>
-              </div>
-            </div>
 
-            <h2 id="smart"><i class="bi bi-tv"></i> SMART</h2>
-
-            <div class="row">
-              <div class="col mb-sm-3">
-                <div class="card card-outline card-primary collapsed-card">
-                  <div class="card-header">
-                    <h3 class="card-title">Настройка SMART приставок</h3>
-                    <div class="card-tools">
-                      <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse">
-                        <i data-lte-icon="expand" class="bi bi-plus-lg"></i>
-                        <i data-lte-icon="collapse" class="bi bi-dash-lg"></i>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="card-body" style="box-sizing: border-box; display: none;">
-                    <!--begin::Accordion-->
-                    <div class="accordion" id="accordionSMARTSTB">
-                      <div class="accordion-item">
-                        <h2 class="accordion-header">
-                          <button
-                            class="accordion-button collapsed"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#collapseSMARTSTB_1"
-                            aria-expanded="false"
-                            aria-controls="collapseSMARTSTB_1"
-                          >
-                          Настройка DV приставки
-                          </button>
-                        </h2>
-                        <div id="collapseSMARTSTB_1" class="accordion-collapse collapse" data-bs-parent="#accordionSMARTSTB">
-                          <div class="accordion-body">
-                            <ul>
-                              <li>
-                                Для подключения пульта дистанционного управления к приставке, необходимо с близкого
-                                расстояния (20 см.) нажать ОДНОВРЕМЕННО кнопку <kbd>Громкости (минус)</kbd> и кнопку <kbd>ОК</kbd>
-                                (круглая кнопка в центре пульта) и держать около 10 секунд.
-                                Если Вы сделали всё верно, то на экране появится надпись «Успешно Подключен».
-                              </li>
-                              <li>Выберите язык, подтверждая свой выбор пультом на <kbd>OK</kbd> (круглой кнопкой в центре).</li>
-                              <li>"Настроить телевизор с помощью телефона Android" - Пропустить</li>
-                              <li>В перечне сетей Wi-Fi найдите и выберите Вашу сеть</li>
-                              <ul>
-                                <li>
-                                  "Введите пароль для Вашей сети Wi-Fi" - Перейдите на поле для ввода пароля. 
-                                  При нажатии на центральную круглую кнопку пульта отобразится виртуальная клавиатура:
-                                  введите пароль и подтвердите ввод, нажав кнопку на экранной клавиатуре с «галочкой».
-                                </li>
-                                <li>
-                                  При успешном подключении к сети Wi-Fi, на экране отобразится сообщение: «Установлено подключение к Интернету»
-                                  Далее ожидайте проверку обновлений - это займет некоторое время
-                                </li>
-                              </ul>
-                              <li>"Используйте все возможности телевизора" - Пропустить (Войти в гугл аккаунт можно позже при необходимости)</li>
-                              <ul>
-                                <li>"Условия использования" - нажать Принять</li>
-                                <li>"Сервисы Google" - нажать Принять</li>
-                                <li>"Google Ассистент" - нажать Пропустить</li>
-                                <li>"Не забудьте настроить Ассистента" - нажать Продолжить</li>
-                              </ul>
-                              <li>"Выберите название для устройства" - нажать на первый пункт "ZALA_SmartBox_DV9135"</li>
-                              <li>"Установка дополнительных приложений" - нажать Далее (ничего не выбирать)</li>
-                              <li>"Познакомиться с возможностями своего нового устройства" - нажимать вправо чтобы пролистать 4 слайда (правую сторону круглой кнопки в центре)</li>
-                              <li>"Разрешить приложению ZalaYasna доступ к фото и мультимедия на устройстве" - Разрешить</li>
-                              <li>Отобразится логотип загрузки SMART ZALA затем появится поле для ввода Логина и Пароля</li>
-                              <ul>
-                                Для ввода данных, нажмите на центральную круглую кнопку пульта отобразится виртуальная клавиатура.
-                                <li>1. Введите данные в "Имя пользователя", используя логин (15 цифр), далее сверните клавиатуру, нажав <kbd><-</kbd> кнопку "Назад"</li>
-                                <li>2. Спуститесь на строку ввода пароля и введите Первоначальный пароль из Бланк-заказа услуги, сверните клавиатуру, нажав <kbd><-</kbd> кнопку "Назад"</li>
-                                <li>3. Спуститесь на кнопку «Вход». Нажмите на пульте центральную круглую кнопку</li>
-                              </ul>
-                              <li>Вход в приложение выполнен. Для просмотра ТВ-передач выберите раздел "Телевидение"</li>
-                            </ul>
-                          
-                            <blockquote>
-                              <ul>
-                                <li>
-                                  <a href="https://www.beltelecom.by/tekstovaya-instrukciya-podklyuchenie-dv9135-etapy-zapuska-pervonachalnaya-nastroyka-podklyucheniya" target="_blank">
-                                    Подключение DV9135 – этапы запуска, первоначальная настройка подключения по сети Wi-Fi
-                                  </a>
-                                </li>
-                                <li>
-                                  <a href="https://chat.datacenter.by/index.php/f/1464576" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i>Nextcloud - STB DV9135</a>
-                                </li>
-                              </ul>
-                            </blockquote>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="accordion-item">
-                        <h2 class="accordion-header">
-                          <button
-                            class="accordion-button collapsed"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#collapseSMARTSTB_2"
-                            aria-expanded="false"
-                            aria-controls="collapseSMARTSTB_2"
-                          >
-                          Настройка SML приставки
-                          </button>
-                        </h2>
-                        <div id="collapseSMARTSTB_2" class="accordion-collapse collapse" data-bs-parent="#accordionSMARTSTB">
-                          <div class="accordion-body">
-                            <ul>
-                              <li>В случае верного подключения на экране отображается логотип «ZALA». Пожалуйста, дождитесь завершения загрузки.</li>
-                              <li>Выберите язык и нажмите кнопку <kbd>ОК</kbd> на пульте управления</li>
-                              <li>В открывшемся окне ожидайте отображения доступных сетей Wi-Fi.</li>
-                              <li>В перечне сетей Wi-Fi выберите Вашу сеть - нажмите кнопку <kbd>ОК</kbd> на пульте управления</li>
-                              <li>Введите пароль для Вашей сети Wi-Fi. Подтвердите ввод, выбрав кнопку <kbd>OK</kbd></li>
-                              <li>
-                                "Настройка беспроводного подключения", дождитесь завершения настройки подключения.
-                                Приставка автоматически проверит настройки подключения и отобразит доступную скорость доступа в Интернет.
-                              </li>
-                              <li>Выберите «Далее» и нажмите кнопку <kbd>OK</kbd> на пульте управления</li>
-                              <li>В появившейся форме в поле «Логин» вводим логин(15 цифр) и в поле «Пароль»
-                                вводим Первоначальный пароль из бланка заказа услуги, нажимаем «Далее».
-                              </li>
-                              <li>
-                                Отобразится окно создания профиля пользователя. В открывшемся окне в поле задайте имя профиля: при нажатии на кнопку <kbd>OK</kbd>
-                                пульта отобразится виртуальная клавиатура. Выберите тип профиля (мужской/женский/детский) и картинку профиля.
-                                Подтвердите кнопкой <kbd>OK</kbd> на пульте.
-                              </li>
-                              <li>Выбираем «Готово» и подтверждаем нажатием <kbd>OK</kbd></li>
-                              <li>Настройка и вход в профиль окончены. Для просмотра ТВ-передач выберите раздел «ТВ» кнопкой <kbd>OK</kbd> на пульте</li>
-                            </ul>
-                            <blockquote>
-                              <ul>
-                                <li>
-                                  <a href="https://www.beltelecom.by/tekstovaya-instrukciya-podklyuchenie-sml-5050-nastroyka-podklyucheniya-po-seti-wi-fi" target="_blank">
-                                  Подключение SML 5050 - настройка подключения по сети Wi-Fi
-                                  </a>
-                                </li>
-                                <li>
-                                  <a href="https://chat.datacenter.by/index.php/f/1464735" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i>Nextcloud - STB SML 5050</a>
-                                </li>
-                              </ul>
-                            </blockquote>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="accordion-item">
-                        <h2 class="accordion-header">
-                          <button
-                            class="accordion-button collapsed"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#collapseSMARTSTB_3"
-                            aria-expanded="false"
-                            aria-controls="collapseSMARTSTB_3"
-                          >
-                          Особенности подключения приставок
-                          </button>
-                        </h2>
-                        <div id="collapseSMARTSTB_3" class="accordion-collapse collapse" data-bs-parent="#accordionSMARTSTB">
-                          <div class="accordion-body">
-                            <h5>Общие рекомендации</h5>
-                            <ul>
-                              <li>Для стабильности подключайте приставку/Smart TV по Ethernet. По Wi-Fi возможны помехи и снижение качества</li>
-                              <li>Если нужен свитч - подойдёт обычный неуправляемый на 4–8 портов</li>
-                              <li>SMART TV работает по unicast, обычно дополнительных настроек в роутере не требуется.</li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="accordion-item">
-                        <h2 class="accordion-header">
-                          <button
-                            class="accordion-button collapsed"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#collapseSMARTSTB_4"
-                            aria-expanded="false"
-                            aria-controls="collapseSMARSTBT_4"
-                          >
-                          Сброс настроек на приставках
-                          </button>
-                        </h2>
-                        <div id="collapseSMARTSTB_4" class="accordion-collapse collapse" data-bs-parent="#accordionSMARTSTB">
-                          <div class="accordion-body">
-                            <h5>Сброс настроек на SML приставке:</h5>
-                            <p>На пульте ZALA нажать Настройки <i class="bi bi-gear-fill"></i>. Поддержка - О продукте - Сброс настроек</p>
-                            <h5>Сброс настроек на DV приставке:</h5>
-                            <p>На пульте ZALA нажать <i class="bi bi-gear-fill"></i>. Настройки - Настройки устройства - Об устройстве - Сброс настроек</p>
-                          </div>
-                        </div>
-                      </div>
-                      
-                    </div>
-                    <!--end::Accordion-->
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-sm-6 mb-3 mb-sm-3">
-                <div class="card card-outline card-primary collapsed-card">
-                  <div class="card-header">
-                    <h3 class="card-title">SMART ZALA</h3>
-
-                    <div class="card-tools">
-                      <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse">
-                        <i data-lte-icon="expand" class="bi bi-plus-lg"></i>
-                        <i data-lte-icon="collapse" class="bi bi-dash-lg"></i>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="card-body" style="box-sizing: border-box; display: none;">
-                    Просмотр через браузер <a href="https://fe.svc.ott.zala.by/" target="_blank">fe.svc.ott.zala.by</a>
-                    <br>
-                    <ul>
-                      <li>Компьютерах Windows 10 x86_x64. MacOS от 10.11 и выше</li>
-                      <li>Планшетных компьютерах и смартфонах Android версий Android 4.2 и выше</li>
-                      <li>Планшетных компьютерах и смартфонах iOS 8.0 и выше</li>
-                      <li>Телевизоров марки Samsung с операционной системой Tizen 3.0+, для моделей c 2017 года выпуска</li>
-                      <li>Телевизоров марки LG с операционной системой webOS 3.0+, для моделей с 2017 года выпуска</li>
-                      <li>Может работать на приставках с операционной системой Android 4.4 и выше</li>
-                    </ul>
-                  </div>
-                  <!-- <div class="card-footer">
-                  </div> -->
-                </div>
-              </div>
-
-              <div class="col-sm-6 mb-3 mb-sm-3">
-                <div class="card card-outline card-primary collapsed-card">
-                  <div class="card-header">
-                    <h3 class="card-title">ZALA YASNA</h3>
-
-                    <div class="card-tools">
-                      <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse">
-                        <i data-lte-icon="expand" class="bi bi-plus-lg"></i>
-                        <i data-lte-icon="collapse" class="bi bi-dash-lg"></i>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="card-body" style="box-sizing: border-box; display: none;">
-                    Просмотр через браузер <a href="https://tv.zala.by/" target="_blank">tv.zala.by</a>
-                    <br>
-                    <ul>
-                      <li>Для Компьютеров приложения нету - только веб версия</li>
-                      <li>Планшетных компьютерах и смартфонах Android версий Android 4.2 и выше</li>
-                      <li>Планшетных компьютерах и смартфонах iOS 8.0 и выше</li>
-                      <li>Телевизоров марки Samsung с операционной системой Tizen 3.0+, для моделей c 2017-2025 года выпуска</li>
-                      <li>Телевизоров марки LG с операционной системой webOS 3.0+, для моделей с 2017-2025 года выпуска</li>
-                      <li>Может работать на приставках с операционной системой Android 4.4 и выше</li>
-                    </ul>
-                  </div>
-                  <!-- <div class="card-footer">
-                  </div> -->
-                </div>
-              </div>
-
-            </div>
-
-            <div class="row">
-              <div class="col-sm-6 mb-3 mb-sm-3">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5>Руководства пользователя</h5>
-                    <ul>
-                      <li><a href="https://beltelecom.by/sites/default/files/content/zala/rukovodstvo_polzovatelia/manual_SMART_ZALA_MacOS_Windows.pdf">Руководство пользователя SMART ZALA на компьютерах c Windows и MacOS</a></li>
-                      <li><a href="https://beltelecom.by/sites/default/files/content/zala/rukovodstvo_polzovatelia/manual_SMART_ZALA_Android.pdf">Руководство пользователя SMART ZALA на устройствах Android</a></li>
-                      <li><a href="https://beltelecom.by/sites/default/files/content/zala/rukovodstvo_polzovatelia/manual_SMART_ZALA_iOS.pdf">Руководство пользователя SMART ZALA на устройствах iOS</a></li>
-                      <li><a href="https://beltelecom.by/sites/default/files/content/zala/rukovodstvo_polzovatelia/manual_SMART_ZALA_LG_Samsung.pdf">Руководство пользователя SMART ZALA на телевизорах LG и Samsung</a></li>
-                    </ul>
-                  </div>
-                  <div class="card-footer">
-                    <a href="https://chat.datacenter.by/index.php/f/1464471" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i>Nextcloud - SMART TV</a>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="col-sm-6 mb-3 mb-sm-3">
-                <div class="card h-100">
-                  <div class="card-header text-bg-secondary">
-                    <h3 class="card-title"> Настройка SMART</h3>
+                <div class="card">
+                  <div class="card-header text-bg-gray py-2">
+                    <h3 class="card-title" id="smart"><i class="bi bi-tv"></i> SMARTTV</h3>
                   </div>
                   <div class="card-body">
                     <span class="d-block">
+                      <span class="d-block">
+                        <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseSMARTsupporteddevices" role="button" aria-expanded="false" aria-controls="collapseSMARTsupporteddevices">
+                          <i class="bi bi-chevron-down"></i> Поддерживаемые устройства
+                        </a>
+                        <div class="collapse" id="collapseSMARTsupporteddevices">
+                          <h5>ZALA YASNA</h5>
+                          Просмотр через браузер <a href="https://tv.zala.by/" target="_blank">tv.zala.by</a>
+                          <br>
+                          <ul>
+                            <li>Для Компьютеров приложения нету - только веб версия</li>
+                            <li>Планшетных компьютерах и смартфонах Android версий Android 4.2 и выше</li>
+                            <li>Планшетных компьютерах и смартфонах iOS 8.0 и выше</li>
+                            <li>Телевизоров марки Samsung с операционной системой Tizen 3.0+, для моделей c 2017-2025 года выпуска</li>
+                            <li>Телевизоров марки LG с операционной системой webOS 3.0+, для моделей с 2017-2025 года выпуска</li>
+                            <li>Может работать на приставках с операционной системой Android 4.4 и выше</li>
+                          </ul>
+                          <br>
+  
+                          <h5>ZALA SMART</h5>
+                          Просмотр через браузер <a href="https://fe.svc.ott.zala.by/" target="_blank">fe.svc.ott.zala.by</a>
+                          <br>
+                          <ul>
+                            <li>Компьютерах Windows 10 x86_x64. MacOS от 10.11 и выше</li>
+                            <li>Планшетных компьютерах и смартфонах Android версий Android 4.2 и выше</li>
+                            <li>Планшетных компьютерах и смартфонах iOS 8.0 и выше</li>
+                            <li>Телевизоров марки Samsung с операционной системой Tizen 3.0+, для моделей c 2017 года выпуска</li>
+                            <li>Телевизоров марки LG с операционной системой webOS 3.0+, для моделей с 2017 года выпуска</li>
+                            <li>Может работать на приставках с операционной системой Android 4.4 и выше</li>
+                          </ul>
+                          
+                        </div>
+                      </span>
+
                       <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseSMARTappsetup" role="button" aria-expanded="false" aria-controls="collapseSMARTappsetup">
                         <i class="bi bi-chevron-down"></i> Установка приложения
                       </a>
@@ -1518,166 +1587,27 @@
                       </div>
                     </span>
 
+                    <span class="d-block">
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseSMARTrecommendations" role="button" aria-expanded="false" aria-controls="collapseSMARTrecommendations">
+                        <i class="bi bi-chevron-down"></i> Общие рекомендации
+                      </a>
+                      <div class="collapse" id="collapseSMARTrecommendations">
+                        <ul>
+                          <li>Для стабильности подключайте приставку/Smart TV по Ethernet. По Wi-Fi возможны помехи и снижение качества</li>
+                          <li>Если нужен свитч - подойдёт обычный неуправляемый на 4–8 портов</li>
+                          <li>SMART TV работает по unicast, обычно дополнительных настроек в роутере не требуется.</li>
+                        </ul>
+                      </div>
+                    </span>
+
                   </div>
                   <!-- <div class="card-footer">
                   </div> -->
                 </div>
-              </div>
 
-            </div>
-
-            <h3 id="dvbt"><i class="bi bi-radar"></i> Эфирное ТВ</h3>
-
-            <div class="row">
-              <div class="col mb-sm-3">
-                <div class="card card-outline card-primary collapsed-card">
-                  <div class="card-header">
-                    <h3 class="card-title">Настройка эфирного ТВ на приставке</h3>
-                    <div class="card-tools">
-                      <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse">
-                        <i data-lte-icon="expand" class="bi bi-plus-lg"></i>
-                        <i data-lte-icon="collapse" class="bi bi-dash-lg"></i>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="card-body" style="box-sizing: border-box; display: none;">
-                    <ol>
-                      <li>После загрузки приставки нажать кнопку <kbd>menu</kbd> на пульте приставки</li>
-                      <li>найти вкладку «Настройки», нажать на пульте кнопку <kbd>Ок</kbd></li>
-                      <li>выбрать «Удалить все», нажать на пульте кнопку <kbd>Ок</kbd></li>
-                      <li>подтвердить, что вы хотите удалить все каналы, нажав «Да»</li>
-                      <li>нажать кнопку <kbd>menu</kbd> на пульте приставки</li>
-                      <li>найти вкладку «настройки», нажать на пульте кнопку <kbd>ок</kbd></li>
-                      <li>на странице «настройки» перейти на вкладку «сканирование каналов» и нажать на пульте кнопку </kbd>ок<kbd></li>
-                      <li>на появившейся странице «Сканирование каналов» заполнить требуемые параметры:</li>
-                      <ul>
-                        <li>«Режим сканирование» - выбрать «по каналу»</li>
-                        <li>«Диапазон» - выбрать «UHF»</li>
-                        <li>«Номер канала» - выбрать номер канала(частота) исходя из <a href="https://www.beltelecom.by/coverage-maps-table">таблицы</a></li>
-                      </ul>
-                      <li>
-                        после выбора номера канала на странице «Сканирование каналов» должно появиться стабильное значение интенсивности и качества сигнала 25-30% и более. 
-                        Далее перейти на «Поиск» и нажать на пульте кнопку <kbd>OK</kbd>. Начинается сканирование выбранного радиочастотного канала. 
-                        По результатам сканирования появляется перечень телеканалов, входящих в отсканированный радиочастотный канал.
-                      </li>
-                      <li>повторить пункты 6-10 для сканирования радиочастотных каналов других мультиплексов, выбрав номер канала (частоту) исходя из <a href="https://www.beltelecom.by/coverage-maps-table">таблицы</a></li>
-                    </ol>
-                    <blockquote>Настройка будет успешной при условии что показатели интенсивности и качества принимаемого сигнала телеканалов стабильны и составляют 25-30% и более</blockquote>
-                  </div>
-                  <div class="card-footer">
-                    <ul>
-                      <li><a href="https://www.beltelecom.by/sites/default/files/content/zala/rukovodstvo_polzovatelia/manual_ZALA_efirnoe_meta-jun-2023.doc" target="_blank">Руководство пользователя эфирного телевидения ZALA (Мэта)</a></li>
-                      <li><a href="https://www.beltelecom.by/sites/default/files/content/zala/rukovodstvo_polzovatelia/Instruktciia-tiuner-Vitiaz.pdf" target="_blank">Руководство пользователя эфирного телевидения ZALA (Витязь)</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-sm-6 mb-3 mb-sm-3">
-                <div class="card card-outline card-primary collapsed-card">
-                  <div class="card-header">
-                    <h3 class="card-title">Параметры антенны</h3>
-                    <div class="card-tools">
-                      <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse">
-                        <i data-lte-icon="expand" class="bi bi-plus-lg"></i>
-                        <i data-lte-icon="collapse" class="bi bi-dash-lg"></i>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="card-body" style="box-sizing: border-box; display: none;">
-                    <p>
-                      Для приема эфирного цифрового телевидения нужна дециметровая антенна, работающая в диапазоне частот 470-862 МГц. 
-                      Рекомендуемые характеристики активной (комнатной) и пассивной (наружной) телевизионной антенны: 
-                    </p>
-                    <ul>
-                      <li>частотный диапазон ДМВ 470 МГц (21…69 каналы);</li>
-                      <li>коэффициент усиления 18 дБ и 15 дБ соответственно.</li>
-                    </ul>
-                    <p>Нецелесообразно применять антенны следующих типов:</p>
-                    <ul>
-                      <li>антенны метрового диапазона волн, так как для вещания цифрового эфирного телевидения в Республике Беларусь применяется только дециметровый диапазон.</li>
-                      <li>«польские» антенны. При использовании антенны типа «польская» с усилителем не гарантируется качественный прием цифрового сигнала.</li>
-                      <li>старые антенные системы могут в своем составе содержать элементы (сама антенна, радиокабель, сплиттеры, разъемы и т.д.), работа которых отрицательным образом может сказываться на качестве приема цифрового сигнала.</li>
-                    </ul>
-                    
-                    <p>В продаже имеются антенны как со встроенным усилителем (активные), так и без него (пассивные). Активные антенны для питания усилителя требуют подключения к электросети или активизации в цифровом приемнике функции питания антенны.</p>
-                    <p>Чем больше расстояние до передающей станции, тем с большим коэффициентом усиления должна быть антенна. Для приема близлежащих мощных станций (расстояния до 20-30 км) достаточно антенны с усилением 12-15 дБ.</p>
-                  </div>
-                  <div class="card-footer">
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-sm-6 mb-3 mb-sm-3">
-                <div class="card card-outline card-primary collapsed-card">
-                  <div class="card-header">
-                    <h3 class="card-title">Мультиплексы</h3>
-                    <div class="card-tools">
-                      <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse">
-                        <i data-lte-icon="expand" class="bi bi-plus-lg"></i>
-                        <i data-lte-icon="collapse" class="bi bi-dash-lg"></i>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="card-body" style="box-sizing: border-box; display: none;">
-                    <p>
-                      В наземном цифровом ТВ различные программы «упаковываются» в так называемые мультиплексы. Каждый мультиплекс затем передается в эфир на частоте одного из дециметровых ТВ каналов.
-                      В настоящее время в Республике Беларусь осуществляется передача трех мультиплексов. 
-                    </p>
-                    <div class="table-responsive">
-                      <table class="table table-bordered" role="table">
-                        <thead>
-                          <th>1-й мультиплекс (48)</th>
-                          <th>2-й мультиплекс (32)</th>
-                          <th>3-й мультиплекс (33)</th>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>частота: 690 МГц: Общедоступне телеканалы: «Беларусь 1», «Беларусь 2», «Беларусь 3», «ОНТ», «СТВ», «Мир», «РТР-Беларусь», «НТВ-Беларусь».</td>
-                            <td>частота 562 МГц: Базовый расширенный пакет из 18 телеканалов (включая бесплатные «8 канал» и «Беларусь 5»).</td>
-                            <td>частота 578 МГц: Дополнительные коммерческие телеканалы.</td>
-                          </tr>
-                        </tbody>
-                        <blockquote>Каналы второго и третьего мультиплексов представлены в закодированном виде</blockquote>
-                      </table>
-                    </div>
-                  </div>
-                  <div class="card-footer">
-                    <ul>
-                      <li>Для просмотра телеканала «Беларусь 5», который передается в составе 2-го мультиплекса в незакодированном виде, необходимо наличие цифрового тюнера стандарта DVB-T2.</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-sm-6 mb-3 mb-sm-3">
-                <div class="card h-100">
-                  <div class="card-body">
-                    Полезные ссылки:
-                    <ul>
-                      <li><a href="https://www.beltelecom.by/coverage-maps">Карты охвата телевизионными программами</a></li>
-                      <li><a href="https://www.beltelecom.by/news/main/kak-samostoyatelno-nastroit-efirnoe-televidenie">Как самостоятельно настроить эфирное телевидение</a></li>
-                      <li><a href="https://lan1.by/qa/1859/">Как настроить эфирную залу через CAM модуль</a></li>
-                    </ul>
-                    Инструкции для приставок:
-                    <ul>
-                      <li><a href="https://www.beltelecom.by/sites/default/files/content/zala/rukovodstvo_polzovatelia/manual_ZALA_efirnoe_meta-jun-2023.doc">Руководство пользователя эфирного телевидения ZALA (Мэта)</a></li>
-                      <li><a href="https://www.beltelecom.by/sites/default/files/content/zala/rukovodstvo_polzovatelia/Instruktciia-tiuner-Vitiaz.pdf">Руководство пользователя эфирного телевидения ZALA (Витязь)</a></li>
-                    </ul>
-                  </div>
-                  <div class="card-footer">
-                    <a href="https://chat.datacenter.by/index.php/f/1465307" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i>Nextcloud - Эфирное ТВ</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 mb-3 mb-sm-3">
-                <div class="card h-100">
-                  <div class="card-header text-bg-secondary">
-                    <h3 class="card-title"> Настройка Эфирного ТВ</h3>
+                <div class="card">
+                  <div class="card-header text-bg-gray py-2">
+                    <h3 class="card-title" id="dvbt"><i class="bi bi-radar"></i> Эфирное ТВ</h3>
                   </div>
                   <div class="card-body">
                     <span class="d-block">
@@ -1694,6 +1624,64 @@
                           </li>
                           <li>В случае, если "Pairing bad" необходио попробовать перезагрузить STB/Переподключить Smart-карту.</li>
                         </ul>
+                      </div>
+                    </span>
+
+                    <span class="d-block">
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseDVBantena" role="button" aria-expanded="false" aria-controls="collapseDVBantena">
+                        <i class="bi bi-chevron-down"></i> Параметры антенны
+                      </a>
+                      <div class="collapse" id="collapseDVBantena">
+                        <p>
+                          Для приема эфирного цифрового телевидения нужна дециметровая антенна, работающая в диапазоне частот 470-862 МГц. 
+                          Рекомендуемые характеристики активной (комнатной) и пассивной (наружной) телевизионной антенны: 
+                        </p>
+                        <ul>
+                          <li>частотный диапазон ДМВ 470 МГц (21…69 каналы);</li>
+                          <li>коэффициент усиления 18 дБ и 15 дБ соответственно.</li>
+                        </ul>
+                        <p>Нецелесообразно применять антенны следующих типов:</p>
+                        <ul>
+                          <li>антенны метрового диапазона волн, так как для вещания цифрового эфирного телевидения в Республике Беларусь применяется только дециметровый диапазон.</li>
+                          <li>«польские» антенны. При использовании антенны типа «польская» с усилителем не гарантируется качественный прием цифрового сигнала.</li>
+                          <li>старые антенные системы могут в своем составе содержать элементы (сама антенна, радиокабель, сплиттеры, разъемы и т.д.), работа которых отрицательным образом может сказываться на качестве приема цифрового сигнала.</li>
+                        </ul>
+                        
+                        <p>В продаже имеются антенны как со встроенным усилителем (активные), так и без него (пассивные). Активные антенны для питания усилителя требуют подключения к электросети или активизации в цифровом приемнике функции питания антенны.</p>
+                        <p>Чем больше расстояние до передающей станции, тем с большим коэффициентом усиления должна быть антенна. Для приема близлежащих мощных станций (расстояния до 20-30 км) достаточно антенны с усилением 12-15 дБ.</p>
+                      </div>
+                    </span>
+
+                    
+                    <span class="d-block">
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseDVBmux" role="button" aria-expanded="false" aria-controls="collapseDVBmux">
+                        <i class="bi bi-chevron-down"></i> Мультиплексы
+                      </a>
+                      <div class="collapse" id="collapseDVBmux">
+                        <p>
+                          В наземном цифровом ТВ различные программы «упаковываются» в так называемые мультиплексы. Каждый мультиплекс затем передается в эфир на частоте одного из дециметровых ТВ каналов.
+                          В настоящее время в Республике Беларусь осуществляется передача трех мультиплексов. 
+                        </p>
+                        <blockquote>Каналы второго и третьего мультиплексов представлены в закодированном виде</blockquote>
+                        <div class="table-responsive">
+                          <table class="table table-bordered" role="table">
+                            <thead>
+                              <th>1-й мультиплекс (48)</th>
+                              <th>2-й мультиплекс (32)</th>
+                              <th>3-й мультиплекс (33)</th>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>частота: 690 МГц: Общедоступне телеканалы: «Беларусь 1», «Беларусь 2», «Беларусь 3», «ОНТ», «СТВ», «Мир», «РТР-Беларусь», «НТВ-Беларусь».</td>
+                                <td>частота 562 МГц: Базовый расширенный пакет из 18 телеканалов (включая бесплатные «8 канал» и «Беларусь 5»).</td>
+                                <td>частота 578 МГц: Дополнительные коммерческие телеканалы.</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <blockquote>
+                            Для просмотра телеканала «Беларусь 5», который передается в составе 2-го мультиплекса в незакодированном виде, необходимо наличие цифрового тюнера стандарта DVB-T2.
+                          </blockquote>
+                        </div>
                       </div>
                     </span>
 
@@ -1759,13 +1747,17 @@
 
                   </div>
                 </div>
+
               </div>
-            </div>    
+            </div>
   
             <h3 id="vks"><i class="bi bi-camera-video-off"></i> Videocontrol</h3>
             <div class="row">
               <div class="col-sm-6 mb-3 mb-sm-3">
-                <div class="card h-100">
+                <div class="card">
+                  <div class="card-header text-bg-gray py-2">
+                    <h3 class="card-title"> Видеоконтроль документация</h3>
+                  </div>
                   <div class="card-body">
                     <ul class="list-unstyled">
                       <li>Веб-портал Видеоконтроль: <a href="https://myvideo.beltelecom.by" target="_blank">myvideo.beltelecom.by</a></li>
@@ -1783,16 +1775,44 @@
                       <li><a href="https://myvideo.beltelecom.by/s3/vms-store/downloads/documents/6732a7596cf6e/Руководство_по_обновлению_АРМ.pdf">Руководство по обновлению АРМ</a></li>
                       <li><a href="https://myvideo.beltelecom.by/s3/vms-store/downloads/documents/6a31335953b42/Инструкция_wildberries.pdf">Руководство по созданию токена интеграции c wildberries</a></li>
                     </ul>
-                  </div>
-                  <div class="card-footer">
-                    <a href="https://chat.datacenter.by/index.php/f/1465448" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i>Nextcloud - Видеоконтроль</a>
+
+                    <ul class="list-unstyled">
+                      <li><a href="https://chat.datacenter.by/index.php/f/1465448" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i>Nextcloud - Видеоконтроль</a></li>
+                    </ul>
                   </div>
                 </div>
+
+                <div class="card" id="domofon">
+                  <div class="card-header text-bg-gray py-2">
+                    <h3 class="card-title"> Видеодомофон документация</h3>
+                  </div>
+                  <div class="card-body">
+                    <p>
+                      Видеодомофон: <a href="https://www.beltelecom.by/private/video-intercom" target="_blank">beltelecom.by</a>,
+                      <a href="https://www.beltelecom.by/private/video-intercom/procedure-providing-video-intercom-service" target="_blank">ПОУ Видеодомофон</a>
+                    </p>
+                    <ul class="list-unstyled">
+                      <li><a href="http://10.248.4.95/index.php?r=helper/index&part=313&chapt=4065" target="_blank">Руководство пользователя услуги Видеодомофон (123-wiki)</a></li>
+                    </ul>
+  
+                    <ul class="list-unstyled">
+                      <li><a href="https://chat.datacenter.by/index.php/f/3904162" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i>Видеодомофон - Интерфейс приложения</a></li>
+                      <li><a href="https://chat.datacenter.by/index.php/f/5972608" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i>Видеодомофон - Панель</a></li>
+                    </ul>
+                    
+                    <ul class="list-unstyled">
+                      <li><a href="https://chat.datacenter.by/index.php/f/1599598" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i>Nextcloud - Домофонная сеть</a></li>
+                      <li><a href="https://chat.datacenter.by/index.php/f/1519729" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i>Nextcloud - Видеодомофон</a></li>
+                    </ul>
+                  </div>
+                </div> 
+
               </div>
+
               <div class="col-sm-6 mb-3 mb-sm-3">
-                <div class="card h-100">
-                  <div class="card-header text-bg-secondary">
-                    <h3 class="card-title"> Особенности работы Видеоконтроля</h3>
+                <div class="card">
+                  <div class="card-header text-bg-gray py-2">
+                    <h3 class="card-title"><i class="bi bi-camera-video-off"></i> Особенности работы Видеоконтроля</h3>
                   </div>
                   <div class="card-body">
 
@@ -1889,45 +1909,16 @@
          
                   </div>
                 </div>
-              </div>
-            </div>
 
-            <h3 id="domofon"><i class="bi bi-key"></i> Видеодомофон</h3>
-            <div class="row">
-              <div class="col-sm-6 mb-3 mb-sm-3">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <p>
-                      Видеодомофон: <a href="https://www.beltelecom.by/private/video-intercom" target="_blank">beltelecom.by</a>,
-                      <a href="https://www.beltelecom.by/private/video-intercom/procedure-providing-video-intercom-service" target="_blank">ПОУ Видеодомофон</a>
-                    </p>
-                    <ul class="list-unstyled">
-                      <li><a href="http://10.248.4.95/index.php?r=helper/index&part=313&chapt=4065" target="_blank">Руководство пользователя услуги Видеодомофон (123-wiki)</a></li>
-                    </ul>
-
-                    <ul class="list-unstyled">
-                      <li><a href="https://chat.datacenter.by/index.php/f/3904162" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i>Видеодомофон - Интерфейс приложения</a></li>
-                      <li><a href="https://chat.datacenter.by/index.php/f/5972608" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i>Видеодомофон - Панель</a></li>
-                    </ul>
-                  </div>
-                  <div class="card-footer">
-                    <ul class="list-unstyled">
-                      <li><a href="https://chat.datacenter.by/index.php/f/1599598" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i>Nextcloud - Домофонная сеть</a></li>
-                      <li><a href="https://chat.datacenter.by/index.php/f/1519729" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i>Nextcloud - Видеодомофон</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 mb-3 mb-sm-3">
-                <div class="card h-100">
-                  <div class="card-header text-bg-secondary">
-                    <h3 class="card-title"> Особенности работы видеодомофона</h3>
+                <div class="card">
+                  <div class="card-header text-bg-gray py-2">
+                    <h3 class="card-title"><i class="bi bi-key"></i> Особенности работы Видеодомофона</h3>
                   </div>
                   <div class="card-body">
 
                     <span class="d-block">
                       <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseVDOMarchive" role="button" aria-expanded="false" aria-controls="collapseVDOMarchive">
-                        <i class="bi bi-chevron-down"></i> Пропадает звук в скачанном видео
+                        <i class="bi bi-chevron-down"></i> История вызовов (Архив)
                       </a>
                       <div class="collapse" id="collapseVDOMarchive">
                         <p>
@@ -2014,181 +2005,58 @@
                       </div>
                     </span>
                     
+                    <span class="d-block">
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseVDOMcallfail" role="button" aria-expanded="false" aria-controls="collapseVDOMcallfail">
+                        <i class="bi bi-chevron-down"></i> Не поступает вызов в приложение
+                      </a>
+                      <div class="collapse" id="collapseVDOMcallfail">
+                        Если не проходят звонки в приложение Видеоконтроль на <i class="bi bi-android"></i>Android необходимо проверить:
+                        <ul>
+                          <li>Включение баннеров (всплывающих окон): Откройте Настройки - Перейдите в Уведомления - Выберите нужное приложение - Включите переключатель Баннеры.</li>
+                          
+                          <li>Уведомления на заблокированном экране: В том же меню приложения выберите Уведомления на экране блокировки > Показывать полностью.</li>
+                          <li>Отключение «Умных уведомлений»: Если включен режим «Умные уведомления», уведомления не будут отображаться в виде баннеров или на экране блокировки. Убедитесь, что эта опция выключена.</li>
+  
+                          <li>Приоритетные уведомления: Включите Приоритетные события, чтобы получать уведомления, даже если включен режим «Не беспокоить».</li>
+                          <li>Настройка режима «Не беспокоить»: Проверьте Настройки > Звуки и вибрация > Не беспокоить, чтобы баннеры не блокировались системно.</li>
+                        </ul>
+
+                        Если не проходят звонки в приложение Видеоконтроль на телефонах <i class="bi bi-yelp"></i>Huawei, Honor:
+                        <ul>
+                          <li>Настройки -> Батарея -> Запуск приложений -> Переключаем управление приложением Видеоконтроль вручную (разрешаем автозапуск, косвенный запуск, работу в фоне)</li>
+                          <li>Настройки -> Приложения -> Приложения -> нажимаем точечки в правом верхнем углу -> Специальный доступ -> Оптимизация работы батареи -> выбираем сверху вместо "Запрещено" "Все приложения" и запрещаем оптимизацию работы для приложения Видеоконтроль</li>
+                        </ul>
+                      </div>
+                    </span>
+
+                    <span class="d-block">
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseVDOMblock" role="button" aria-expanded="false" aria-controls="collapseVDOMblock">
+                        <i class="bi bi-chevron-down"></i> Особенности блокировки услуги
+                      </a>
+                      <div class="collapse" id="collapseVDOMblock">
+                        <a href="https://www.beltelecom.by/private/video-intercom/procedure-providing-video-intercom-service" traget="_blank">ПОУ 7.16.4</a> 
+                        При возникновении задолженности за Услугу (в рамках тарифного плана «Видеодомофон») или Базовую услугу, где Услуга подключена как дополнительная, а также при активации сервисов блокировки услуг для Базовой услуги, оказание Услуги приостанавливается, при этом:
+                        <ul>
+                          <li>блокируется доступ в Мобильное приложение Услуги;</li>
+                          <li>при оказании Услуги по варианту 1, возможность вызовов от ЗПУ на номер стационарного телефона Абонента сохраняется;</li>
+                          <li>при оказании Услуги по варианту 2, возможность вызовов от ЗПУ на домофонную трубку сохраняется при условии предварительной активации функции через Мобильное приложение Услуги.</li>
+                        </ul>
+                      </div>
+                    </span>
+
                   </div>
                 </div>
+
               </div>
-            </div> 
-
-            <h3 id="pbx"><i class="bi bi-cloud-arrow-down"></i> Облачная АТС</h3>
-            <div class="row">
-              <div class="col-sm-6 mb-3 mb-sm-3">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <p>Веб-портал облачной АТС: <a href="https://myvideo.beltelecom.by" target="_blank">pbx.beltelecom.by</a></p>
-                    <ul class="list-unstyled">
-                      <li><a href="https://chat.datacenter.by/index.php/f/1466979" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> Руководство пользователя PBX</a></li>
-                      <li><a href="https://chat.datacenter.by/index.php/f/1465589" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> SIP телефоны</a></li>
-                      <li><a href="https://chat.datacenter.by/index.php/f/1465728" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> Виртуальная АТС (Centrex)</a></li>
-                    </ul>
-                    <p><a href="https://www.beltelecom.by/business/additional-services/business-solutions-networking/oblachnaya-ats/poryadok-okazaniya" target="_blank">ПОУ Облачная АТС</a></p>
-                  </div>
-                  <div class="card-footer">
-                    <a href="https://chat.datacenter.by/index.php/f/1465513" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i>Nextcloud - Облачная АТС</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 mb-3 mb-sm-3">
-                <div class="card h-100">
-                  <div class="card-header text-bg-secondary">
-                    <h3 class="card-title"> Конфигурация ОАТС</h3>
-                  </div>
-                  <div class="card-body">
-
-                    <span class="d-block">
-                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapsePBXsipconf" role="button" aria-expanded="false" aria-controls="collapsePBXsipconf">
-                        <i class="bi bi-chevron-down"></i> Подключение SIP аппарата
-                      </a>
-                      <div class="collapse" id="collapsePBXsipconf">
-                        <p>
-                          Необходимо ip-phone подключить к порту модема, который настроен на ИНТЕРНЕТ. После ip-phone должен получить ip-адрес по DHCP от модема.
-                          Все телефоны объединяются в общую сеть портом WAN с помощью коммутатора(ов) или роутера. Каждому телефону присваивается IP-адрес по DHCP (при наличии)
-                          или вручную, например из диапазона 192.168.100.0/24. Последний октет адреса будет внутренним номером телефона по по-умолчанию, например: 
-                          если IP-адрес телефона 192.168.100.101, то позвонить на него можно будет по номеру #101#.
-                        </p>
-                        <p>В настройках WEB-интерфейса телефона необходимо указать - сервер, порт, короткий номер домен.</p>
-                        <ul>
-                          <li>SIP Server - IP адреса SBC МГТС: 10.24.0.16:5060 10.24.0.48:5060</li>
-                          <li>Account Active - значение YES. </li>
-                          <li>SIP User ID - {внутренний номер}$Домен</li>
-                          <li>Authenticate ID - {внутренний номер}</li>
-                          <li>Authenticate Password - {пароль для внутреннего номера}</li>
-                          <li>Name - {имя, которое будет показываться при сработке услуги CLIP}</li>
-                          <li>Transport protocol - UDP (предпочтительнее)</li>
-                        </ul>
-                        <blockquote>Не забудьте после настройки вернуть подключение в порт настроенный на SIP</blockquote>
-                      </div>
-                    </span>
-
-                    <span class="d-block">
-                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapsePBXextconf" role="button" aria-expanded="false" aria-controls="collapsePBXextconf">
-                        <i class="bi bi-chevron-down"></i> Тонкие настройки IP телефонии
-                      </a>
-                      <div class="collapse" id="collapsePBXextconf">
-                        <h5>Особенности и тонкие настройки</h5>
-                        <ul>
-                          <li>SIP Аппарат может работать по протоколу TCP или UDP, если аппарат поддерживает работу обоих протоколов, что лучше использовать UDP</li>
-                          <li>На аппарате должен быть отключен STUN-сервер, так как из-за этого могут возникнуть проблемы с прохождением трафика через NAT, что приводит к обрывам разговоров через аппарат. Должны быть выключены опции NAT Traversal и прокси-серверы</li> 
-                          <li>В настройках роутера (маршрутизатора), который раздает интернет в вашем офисе, должна быть отключена опция SIP - ALG. Если опция включена, она также приводит к обрывам разговоров через аппарат. (В роутере тоже должна быть выключена опция SIP ALG, по-умолчанию выключена)</li>
-                          <li>В настройках SIP-оборудования необходимо включить опцию keep alive либо уменьшить время регистрации до 180 (по умолчанию обычно 3600)</li>
-                          <li>Кодеки. Если есть возможность, указать приоритет использования: PCMA (G711a, G711 a-law), PCMU (G711u, G711 u-law), G729, RTP Packet size (время пакетизации) 20 мс</li>
-                        </ul>
-                      </div>
-                    </span>
-
-                    <span class="d-block">
-                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapsePBXservices" role="button" aria-expanded="false" aria-controls="collapsePBXservices">
-                        <i class="bi bi-chevron-down"></i> Номера сервисов
-                      </a>
-                      <div class="collapse" id="collapsePBXservices">
-                        <h5>Автодозвон и обратный вызов</h5>
-                        <ul>
-                          <li>Автодозвон, если номер занят — *1060 + номер телефона</li>
-                          <li>Автодозвон во всех случаях (если номер занят, недоступен и др.) — *1061 + номер телефона</li>
-                          <li>Автодозвон с обратным вызовом *118 + номер телефона. Если не указать номер телефона, то будет использован последний набранный номер</li>
-                        </ul>
-
-                        <h5>Быстрый набор</h5>
-                        <ul>
-                          <li>Запрос параметров — *116xx</li>
-                          <li>Установка параметров — *110xx + номер телефона</li>
-                          <li>Деактивация услуги — *110xx (где xx - код быстрого набора)</li>
-                        </ul>
-                        
-                        <h5>Будильник</h5>
-                        <ul>
-                          <li>Запрос параметров - *28</li>
-                          <li>Установка параметров - *18</li>
-                        </ul>
-                        
-                        <h5>Голосовая почта</h5>
-                        <ul>
-                          <li>Доступ к абонентскому ящику - *101</li>
-                          <li>Оставить сообщение - *102</li>
-                          <li>Системная голосовая почта - *2500</li>
-                        </ul>
-                        
-                        <h5>Соединение без набора номера (прямая связь)</h5>
-                        <ul>
-                          <li>Номер для настройки - *53*[желаемый номер]</li>
-                          <li>После поднятия трубки, нажатия клавиши громкой связи или клавиши line (зависит от терминала) будет набран желаемый номер.</li>
-                          <li>Деактивация — *53*</li>
-                        </ul>
-                        
-                        <h5>Постановка на удержание</h5>
-                        <ul>
-                          <li>Позволяет поставить разговор с собеседником на ожидание с проигрыванием мелодии.</li>
-                          <li>Комбинация *# - один раз - постановка на удержание, при наборе комбинации второй раз - снятие с удержания.</li>
-                          <li>Можно использовать соответствующую кнопку на телефонном аппарате (при наличии): [Удержание] или [Hold].</li>
-                        </ul>
-                        
-                        <h5>Перевод вызова</h5>
-                        <ul>
-                          <li>Позволяет поставить установленный вызов на удержание и перевести на другой номер: Комбинация *# + номер телефона + #</li>
-                          <li>Можно использовать соответствующую специальную кнопку телефонного аппарата (при наличии):[Перевод] / [Transfer] или [Refer].</li>
-                          <li>Сопровождаемый перевод: дождаться ответа вызываемого номера, сообщить о переводе вызова и далее завершить вызов (положить трубку).</li>
-                          <li>Несопровождаемый перевод: после отправки вызова на другой номер, не дожидаясь ответа завершить вызов (положить трубку).</li>
-                        </ul>
-                        
-                        <h5>Прочие</h5>
-                        <ul>
-                          <li>Установка параметров «Не беспокоить» — *150 (деактивация — *151)</li>
-                          <li>Повтор набора номера последнего исходящего вызова *1120</li>
-                          <li>Повтор набора номера последнего входящего вызова *1121</li>
-                          <li>Перехват вызова внутри отдела - *9</li>
-                          <li>Постановка в парк вызовов *1211xxx, где ххх - номер в парке</li>
-                          <li>Снятие с парковки вызовов *1210xxx, где ххх - номер в парке</li>
-                        </ul>
-                      </div>
-                    </span>
-
-                    <span class="d-block">
-                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapsePBXredirect" role="button" aria-expanded="false" aria-controls="collapsePBXredirect">
-                        <i class="bi bi-chevron-down"></i> Переадресация
-                      </a>
-                      <div class="collapse" id="collapsePBXredirect">
-                        <p>
-                          Настройку переадресации можно выполнить средствами телефонного аппарата, используя сервисные номера из списка, указанного на странице Номера сервисов. 
-                          Настройка переадресации средствами телефонного аппарата осуществляется только на номера (городские, мобильные, внутренние). 
-                          Переадресация на услугу Голосовая почта и на сервис Интеллектуальная переадресация настраивается на веб-интерфейсе ОАТС в разделе Профиль пользователя. 
-                        </p>
-
-                        <p>Список сервисных номеров для установки разных типов переадресации:</p>
-                        <ul>
-                          <li>Безусловная переадресация (активация) – *174+номер телефона;</li>
-                          <li>Безусловная переадресация (деактивация) – *174;</li>
-                          <li>Переадресация по недоступности (активация) – *173+номер телефона;</li>
-                          <li>Переадресация по недоступности (деактивация) – *173;</li>
-                          <li>Переадресация по неответу (активация) – *172+номер телефона;</li>
-                          <li>Переадресация по неответу (деактивация) – *172;</li>
-                          <li>Переадресация по занятости (активация) – *171+номер телефона;</li>
-                          <li>Переадресация по занятости (деактивация) – *171.</li>
-                        </ul>
-                        <blockquote>
-                          Формат набора: *174+375295623225 либо *173 + 3660 Программы SIP отличаются друг от друга, и при активации сервиса для некоторых необходимо
-                          в конце набора дополнительно добавлять # (например *151#). Сервис Ожидающий вызов не работает с настроенной услугой Интеллектуальная переадресация
-                        </blockquote>
-                      </div>
-                    </span>
-        
-                  </div>
-                </div>
-              </div>
-            </div> 
+            </div>
 
             <h3 id="ims"><i class="bi bi-telephone"></i> Телефония</h3>
             <div class="row">
               <div class="col-sm-6 mb-3 mb-sm-3">
-                <div class="card h-100">
+                <div class="card">
+                  <div class="card-header text-bg-gray py-2">
+                    <h3 class="card-title"> Телефония</h3>
+                  </div>
                   <div class="card-body">
                     <ul>
                       <li><a href="https://beltelecom.by/private/telephony/ustanovka-i-polzovanie-telefonom">Установка и пользование телефоном</a></li>
@@ -2196,20 +2064,39 @@
                       <li><a href="https://beltelecom.by/pamyatka-polzovatelya-dopolnitelnykh-vidov-uslug">Памятка пользователя дополнительных видов услуг</a></li>
                     </ul>
                     <ul class="list-unstyled">
+                      <li><a href="https://chat.datacenter.by/index.php/f/1464460" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i>Nextcloud - Телефония</a></li>
                       <li><a href="https://chat.datacenter.by/index.php/f/1542098" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> IMS телефония</a></li>
                       <li><a href="https://chat.datacenter.by/index.php/f/1465461" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> TDM, (E1 - ISDN - 30B)</a></li>
                       <li><a href="https://chat.datacenter.by/index.php/f/1464461" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> WLL </a></li>
                       <li><a href="https://chat.datacenter.by/index.php/f/1464470" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> Телефонные аппараты и факсы </a></li>
                     </ul>
                   </div>
-                  <div class="card-footer">
-                    <a href="https://chat.datacenter.by/index.php/f/1464460" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i>Nextcloud - Телефония</a>
+                </div>
+
+                <div class="card" id="pbx">
+                  <div class="card-header text-bg-gray py-2">
+                    <h3 class="card-title"> Облачная АТС</h3>
+                  </div>
+                  <div class="card-body">
+                    <p>Веб-портал облачной АТС: <a href="https://myvideo.beltelecom.by" target="_blank">pbx.beltelecom.by</a></p>
+                    <ul class="list-unstyled">
+                      <li><a href="https://chat.datacenter.by/index.php/f/1466979" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> Руководство пользователя PBX</a></li>
+                      <li><a href="https://chat.datacenter.by/index.php/f/1465589" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> SIP телефоны</a></li>
+                      <li><a href="https://chat.datacenter.by/index.php/f/1465728" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> Виртуальная АТС (Centrex)</a></li>
+                    </ul>
+
+                    <ul class="list-unstyled">
+                      <li><a href="https://www.beltelecom.by/business/additional-services/business-solutions-networking/oblachnaya-ats/poryadok-okazaniya" target="_blank">ПОУ Облачная АТС</a></li>
+                      <li><a href="https://chat.datacenter.by/index.php/f/1465513" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i>Nextcloud - Облачная АТС</a></li>
+                    </ul>
                   </div>
                 </div>
+                
               </div>
+
               <div class="col-sm-6 mb-3 mb-sm-3">
-                <div class="card h-100">
-                  <div class="card-header text-bg-secondary">
+                <div class="card">
+                  <div class="card-header text-bg-gray py-2">
                     <h3 class="card-title"> IMS</h3>
                   </div>
                   <div class="card-body">
@@ -2352,6 +2239,161 @@
 
                   </div>
                 </div>
+
+                <div class="card">
+                  <div class="card-header text-bg-gray py-2">
+                    <h3 class="card-title"><i class="bi bi-telephone-outbound"></i> SIP</h3>
+                  </div>
+                  <div class="card-body">
+
+                    <span class="d-block">
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseSIPsetup" role="button" aria-expanded="false" aria-controls="collapseSIPsetup">
+                        <i class="bi bi-chevron-down"></i> Подключение SIP аппарата
+                      </a>
+                      <div class="collapse" id="collapseSIPsetup">
+                        <p>
+                          Необходимо ip-phone подключить к порту модема, который настроен на ИНТЕРНЕТ. После ip-phone должен получить ip-адрес по DHCP от модема.
+                          Все телефоны объединяются в общую сеть портом WAN с помощью коммутатора(ов) или роутера. Каждому телефону присваивается IP-адрес по DHCP (при наличии)
+                          или вручную, например из диапазона 192.168.100.0/24. Последний октет адреса будет внутренним номером телефона по по-умолчанию, например: 
+                          если IP-адрес телефона 192.168.100.101, то позвонить на него можно будет по номеру #101#.
+                        </p>
+                        <p>В настройках WEB-интерфейса телефона необходимо указать - сервер, порт, короткий номер домен.</p>
+                        <ul>
+                          <li>SIP Server - IP адреса SBC МГТС: 10.24.0.16:5060 10.24.0.48:5060</li>
+                          <li>Account Active - значение YES. </li>
+                          <li>SIP User ID - {внутренний номер}$Домен</li>
+                          <li>Authenticate ID - {внутренний номер}</li>
+                          <li>Authenticate Password - {пароль для внутреннего номера}</li>
+                          <li>Name - {имя, которое будет показываться при сработке услуги CLIP}</li>
+                          <li>Transport protocol - UDP (предпочтительнее)</li>
+                        </ul>
+                        <blockquote>Не забудьте после настройки вернуть подключение в порт настроенный на SIP</blockquote>
+                      </div>
+                    </span>
+
+                    <span class="d-block">
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseSIPextconf" role="button" aria-expanded="false" aria-controls="collapseSIPextconf">
+                        <i class="bi bi-chevron-down"></i> Тонкие настройки IP телефонии
+                      </a>
+                      <div class="collapse" id="collapseSIPextconf">
+                        <h5>Особенности и тонкие настройки</h5>
+                        <ul>
+                          <li>SIP Аппарат может работать по протоколу TCP или UDP, если аппарат поддерживает работу обоих протоколов, что лучше использовать UDP</li>
+                          <li>На аппарате должен быть отключен STUN-сервер, так как из-за этого могут возникнуть проблемы с прохождением трафика через NAT, что приводит к обрывам разговоров через аппарат. Должны быть выключены опции NAT Traversal и прокси-серверы</li> 
+                          <li>В настройках роутера (маршрутизатора), который раздает интернет в вашем офисе, должна быть отключена опция SIP - ALG. Если опция включена, она также приводит к обрывам разговоров через аппарат. (В роутере тоже должна быть выключена опция SIP ALG, по-умолчанию выключена)</li>
+                          <li>В настройках SIP-оборудования необходимо включить опцию keep alive либо уменьшить время регистрации до 180 (по умолчанию обычно 3600)</li>
+                          <li>Кодеки. Если есть возможность, указать приоритет использования: PCMA (G711a, G711 a-law), PCMU (G711u, G711 u-law), G729, RTP Packet size (время пакетизации) 20 мс</li>
+                        </ul>
+                      </div>
+                    </span>
+        
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card-header text-bg-gray py-2">
+                    <h3 class="card-title"><i class="bi bi-cloud-arrow-down"></i> PBX (ОАТС)</h3>
+                  </div>
+                  <div class="card-body">
+
+                    <span class="d-block">
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapsePBXservices" role="button" aria-expanded="false" aria-controls="collapsePBXservices">
+                        <i class="bi bi-chevron-down"></i> Номера сервисов
+                      </a>
+                      <div class="collapse" id="collapsePBXservices">
+                        <h5>Автодозвон и обратный вызов</h5>
+                        <ul>
+                          <li>Автодозвон, если номер занят — *1060 + номер телефона</li>
+                          <li>Автодозвон во всех случаях (если номер занят, недоступен и др.) — *1061 + номер телефона</li>
+                          <li>Автодозвон с обратным вызовом *118 + номер телефона. Если не указать номер телефона, то будет использован последний набранный номер</li>
+                        </ul>
+
+                        <h5>Быстрый набор</h5>
+                        <ul>
+                          <li>Запрос параметров — *116xx</li>
+                          <li>Установка параметров — *110xx + номер телефона</li>
+                          <li>Деактивация услуги — *110xx (где xx - код быстрого набора)</li>
+                        </ul>
+                        
+                        <h5>Будильник</h5>
+                        <ul>
+                          <li>Запрос параметров - *28</li>
+                          <li>Установка параметров - *18</li>
+                        </ul>
+                        
+                        <h5>Голосовая почта</h5>
+                        <ul>
+                          <li>Доступ к абонентскому ящику - *101</li>
+                          <li>Оставить сообщение - *102</li>
+                          <li>Системная голосовая почта - *2500</li>
+                        </ul>
+                        
+                        <h5>Соединение без набора номера (прямая связь)</h5>
+                        <ul>
+                          <li>Номер для настройки - *53*[желаемый номер]</li>
+                          <li>После поднятия трубки, нажатия клавиши громкой связи или клавиши line (зависит от терминала) будет набран желаемый номер.</li>
+                          <li>Деактивация — *53*</li>
+                        </ul>
+                        
+                        <h5>Постановка на удержание</h5>
+                        <ul>
+                          <li>Позволяет поставить разговор с собеседником на ожидание с проигрыванием мелодии.</li>
+                          <li>Комбинация *# - один раз - постановка на удержание, при наборе комбинации второй раз - снятие с удержания.</li>
+                          <li>Можно использовать соответствующую кнопку на телефонном аппарате (при наличии): [Удержание] или [Hold].</li>
+                        </ul>
+                        
+                        <h5>Перевод вызова</h5>
+                        <ul>
+                          <li>Позволяет поставить установленный вызов на удержание и перевести на другой номер: Комбинация *# + номер телефона + #</li>
+                          <li>Можно использовать соответствующую специальную кнопку телефонного аппарата (при наличии):[Перевод] / [Transfer] или [Refer].</li>
+                          <li>Сопровождаемый перевод: дождаться ответа вызываемого номера, сообщить о переводе вызова и далее завершить вызов (положить трубку).</li>
+                          <li>Несопровождаемый перевод: после отправки вызова на другой номер, не дожидаясь ответа завершить вызов (положить трубку).</li>
+                        </ul>
+                        
+                        <h5>Прочие</h5>
+                        <ul>
+                          <li>Установка параметров «Не беспокоить» — *150 (деактивация — *151)</li>
+                          <li>Повтор набора номера последнего исходящего вызова *1120</li>
+                          <li>Повтор набора номера последнего входящего вызова *1121</li>
+                          <li>Перехват вызова внутри отдела - *9</li>
+                          <li>Постановка в парк вызовов *1211xxx, где ххх - номер в парке</li>
+                          <li>Снятие с парковки вызовов *1210xxx, где ххх - номер в парке</li>
+                        </ul>
+                      </div>
+                    </span>
+
+                    <span class="d-block">
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapsePBXredirect" role="button" aria-expanded="false" aria-controls="collapsePBXredirect">
+                        <i class="bi bi-chevron-down"></i> Переадресация
+                      </a>
+                      <div class="collapse" id="collapsePBXredirect">
+                        <p>
+                          Настройку переадресации можно выполнить средствами телефонного аппарата, используя сервисные номера из списка, указанного на странице Номера сервисов. 
+                          Настройка переадресации средствами телефонного аппарата осуществляется только на номера (городские, мобильные, внутренние). 
+                          Переадресация на услугу Голосовая почта и на сервис Интеллектуальная переадресация настраивается на веб-интерфейсе ОАТС в разделе Профиль пользователя. 
+                        </p>
+
+                        <p>Список сервисных номеров для установки разных типов переадресации:</p>
+                        <ul>
+                          <li>Безусловная переадресация (активация) – *174+номер телефона;</li>
+                          <li>Безусловная переадресация (деактивация) – *174;</li>
+                          <li>Переадресация по недоступности (активация) – *173+номер телефона;</li>
+                          <li>Переадресация по недоступности (деактивация) – *173;</li>
+                          <li>Переадресация по неответу (активация) – *172+номер телефона;</li>
+                          <li>Переадресация по неответу (деактивация) – *172;</li>
+                          <li>Переадресация по занятости (активация) – *171+номер телефона;</li>
+                          <li>Переадресация по занятости (деактивация) – *171.</li>
+                        </ul>
+                        <blockquote>
+                          Формат набора: *174+375295623225 либо *173 + 3660 Программы SIP отличаются друг от друга, и при активации сервиса для некоторых необходимо
+                          в конце набора дополнительно добавлять # (например *151#). Сервис Ожидающий вызов не работает с настроенной услугой Интеллектуальная переадресация
+                        </blockquote>
+                      </div>
+                    </span>
+        
+                  </div>
+                </div>
+
               </div>
             </div> 
             <!--end::Row-->

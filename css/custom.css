@@ -49,6 +49,11 @@ blockquote {
   color: #909090;
 }
 
+/* Change default header size */
+.app-header {
+  height: 2.5rem;
+}
+
 /* For large font tooggle button */
 body.font-large {
   font-size: 1.2rem;
@@ -59,7 +64,7 @@ body.font-large {
   min-height: 25px;
 }
 
-/* Custom code tag style*/
+/* Define color styles */
 code {
   color: DodgerBlue; 
   font-family: Consolas, 'Courier New', monospace;
@@ -68,4 +73,9 @@ code {
 mark {
   background: DodgerBlue;
   color: black;
+}
+
+.text-bg-gray {
+  background-color: #343a40; 
+  color: #ffffff;          
 }
