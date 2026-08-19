@@ -79,3 +79,8 @@ mark {
   background-color: #343a40; 
   color: #ffffff;          
 }
+
+/* Dirtyfix hide skip-link block*/
+.skip-link {
+  padding: 0px;
+}
