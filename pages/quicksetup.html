@@ -284,15 +284,8 @@
 
             <li class="nav-item">
               <a href="dashboard.html" class="nav-link">
-                <i class="nav-icon bi bi-grid-1x2 me-1" aria-hidden="true"></i>
+                <i class="nav-icon bi bi-grid-1x2" aria-hidden="true"></i>
                 <p>Главная</p>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a href="portals.html" class="nav-link">
-                <i class="nav-icon bi bi-grid-3x3-gap-fill me-1" aria-hidden="true"></i>
-                <p>Рабочие порталы</p>
               </a>
             </li>
 
@@ -302,40 +295,80 @@
                 <p>Оборудование</p>
               </a>
             </li>
-
-            <li class="nav-item">
-              <a href="quicksetup.html" class="nav-link active">
-                <i class="nav-icon bi bi-box2"></i>
-                <p>Быстрая настройка</p>
-              </a>
-            </li>
             
             <li class="nav-item">
-              <a href="netcheck.html" class="nav-link">
-                <i class="nav-icon bi bi-browser-safari"></i>
-                <p>Диагностика</p>
+              <a href="#" class="nav-link">
+                <i class="nav-icon bi bi-globe"></i>
+                <p>
+                  Веб порталы
+                  <i class="nav-arrow bi bi-chevron-right"></i>
+                </p>
               </a>
+              <ul class="nav nav-treeview">     
+                <li class="nav-item">
+                  <a href="portals.html" class="nav-link">
+                    &nbsp;&nbsp;<i class="nav-icon bi bi-grid-3x3-gap-fill" aria-hidden="true"></i>
+                    <p>Рабочие порталы</p>
+                  </a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="checker.html" class="nav-link">
+                    &nbsp;&nbsp;<i class="nav-icon bi bi-gear-wide-connected"></i>
+                    <p>Онлайн утилиты</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item menu-open">
+              <a href="#" class="nav-link">
+                <i class="nav-icon bi bi-patch-question"></i>
+                <p>
+                  FAQ
+                  <i class="nav-arrow bi bi-chevron-right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">     
+                <li class="nav-item">
+                  <a href="quicksetup.html" class="nav-link active">
+                    &nbsp;&nbsp;<i class="nav-icon bi bi-box2"></i>
+                    <p>Быстрая настройка</p>
+                  </a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="netcheck.html" class="nav-link">
+                    &nbsp;&nbsp;<i class="nav-icon bi bi-browser-safari"></i>
+                    <p>Диагностика</p>
+                  </a>
+                </li>
+              </ul>
             </li>
 
             <li class="nav-item">
-              <a href="checker.html" class="nav-link">
-                <i class="nav-icon bi bi-globe2"></i>
-                <p>Ресурсы</p>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a href="olt.html" class="nav-link">
+              <a href="#" class="nav-link">
                 <i class="nav-icon bi bi-terminal"></i>
-                <p>OLT cli</p>
+                <p>
+                  OLT
+                  <i class="nav-arrow bi bi-chevron-right"></i>
+                </p>
               </a>
-            </li>
-            
-            <li class="nav-item">
-              <a href="nextcloud.html" class="nav-link">
-                <i class="nav-icon bi bi-cloud"></i>
-                <p>Nextcloud-Disk</p>
-              </a>
+              <ul class="nav nav-treeview">     
+                <li class="nav-item">
+                  <a href="olt.html" class="nav-link">
+                    &nbsp;&nbsp;<i class="nav-icon bi bi-terminal"></i>
+                    <p>OLT cli</p>
+                  </a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="https://github.com/ins1x/OLT/wiki/HUAWEI" target="_blank" class="nav-link">
+                    &nbsp;&nbsp;<i class="nav-icon bi bi-github"></i>
+                    <p>Git-Wiki</p>
+                  </a>
+                </li>
+              </ul>
             </li>
             
             <!-- <li class="nav-header">Внешние</li> -->
@@ -370,7 +403,6 @@
                         <li><a class="dropdown-item" href="netcheck.html" aria-current="true"><i class="nav-icon bi bi-browser-safari" aria-hidden="true"></i> Диагностика</a></li>
                         <li><a class="dropdown-item" href="checker.html" aria-current="true"><i class="nav-icon bi bi-globe2" aria-hidden="true"></i> Ресурсы</a></li>
                         <li><a class="dropdown-item" href="olt.html" aria-current="true"><i class="nav-icon bi bi-terminal" aria-hidden="true"></i> OLT cli</a></li>
-                        <li><a class="dropdown-item" href="nextcloud.html" aria-current="true"><i class="nav-icon bi bi-cloud" aria-hidden="true"></i> Nextcloud-Disk</a></li>
                       </ul>
                     </li>
                   </li>
@@ -428,6 +460,11 @@
                                     <td>DNS платформы IPTV</td>
                                     <td>82.209.237.230</td>
                                     <td></td>
+                                  </tr>
+                                  <tr>
+                                    <td>DNS для Видеоконтроля (АРМ)</td>
+                                    <td>10.1.17.6</td>
+                                    <td>10.1.17.7</td>
                                   </tr>
                                 </tbody>
                               </table>
@@ -1341,6 +1378,7 @@
                     <h3 class="card-title" id="iptv"><i class="bi bi-usb-c"></i> IPTV</h3>
                   </div>
                   <div class="card-body">
+                    Сервисы:
                     <span class="d-block">
                       <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseIPTVSubtitles" role="button" aria-expanded="false" aria-controls="collapseIPTVSubtitles">
                         <i class="bi bi-chevron-down"></i> Субтитры
@@ -1363,29 +1401,6 @@
                     </span>
 
                     <span class="d-block">
-                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseIPTVSwitchStbIntreface" role="button" aria-expanded="false" aria-controls="collapseIPTVSwitchStbIntreface">
-                        <i class="bi bi-chevron-down"></i> Выставить старый интерфейс на B800
-                      </a>
-                      <div class="collapse" id="collapseIPTVSwitchStbIntreface">
-                        Если на приставке B800 интрефейс как на B700 (без сервисов).<br>
-                        Настройки - настройка меню - отображать меню в формате SD (установить галочку)
-                      </div>
-                    </span>
-
-                    <span class="d-block">
-                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseIPTVnosignal" role="button" aria-expanded="false" aria-controls="collapseIPTVnosignal">
-                        <i class="bi bi-chevron-down"></i> Нет изображения (Нет загрузки на экране)
-                      </a>
-                      <div class="collapse" id="collapseIPTVnosignal">
-                        <ul>
-                          <li>Переподключите HDMI кабель. Попробуйте отключить кабель HDMI от ТВ и поменять их стороны. Устройства можно не отключать.</li>
-                          <li>Отключите все внешние другие устройства подключенные к телевизору, а затем попробуйте воспроизвести снова.</li>
-                          <li>Отключите ТВ от сети на 15-20 минут и включите вновь.</li>
-                        </ul>
-                      </div>
-                    </span>
-
-                    <span class="d-block">
                       <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseIPTVFavorites" role="button" aria-expanded="false" aria-controls="collapseIPTVFavorites">
                         <i class="bi bi-chevron-down"></i> Добавить в избранные
                       </a>
@@ -1398,7 +1413,77 @@
                         <blockquote>При этом изменение номеров каналов в списке не предусматривается.</blockquote>
                       </div>
                     </span>
- 
+
+                    <span class="d-block">
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseIPTVpvr" role="button" aria-expanded="false" aria-controls="collapseIPTVpvr">
+                        <i class="bi bi-chevron-down"></i> Запись телепередач (PVR)
+                      </a>
+                      <div class="collapse" id="collapseIPTVpvr">
+                        Чтобы воспользоваться сервисом PVR необходимо:
+                        <ul>
+                          <li>Открыть программу передач: из интерактивного меню - нажмите кнопку <kbd>F2</kbd>, при просмотре телеканала - нажмите кнопку <kbd>Del<i class="bi bi-repeat"></i></kbd></li>
+                          <li>Выбрать будущую телепередачу и нажать кнопку <kbd>App</kbd></li>
+                          <li>В открывшемся окне нажать <kbd>OK</kbd></li>
+                        </ul>
+                        <p>После окончания трансляции телепередачи в эфире она будет записана и доступна для просмотра в разделе «Избранное» во вкладке «Записанные передачи».</p>
+                        <p>
+                          Объем записанной информации, предоставляемый в рамках PVR без дополнительной оплаты, составляет 5 (пять) часов (вне зависимости он набора подключенных пакетов).
+                          Дополнительный объем (свыше 5 часов) хранения записанной информации предоставляется в рамках сервиса «Хранение информации» в соответствии с действующими тарифами. 
+                        </p>
+                      </div>
+                    </span>
+
+                    <span class="d-block">
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseIPTVvideoteka" role="button" aria-expanded="false" aria-controls="collapseIPTVvideoteka">
+                        <i class="bi bi-chevron-down"></i> Видеотека (Видео по запросу / VOD)
+                      </a>
+                      <div class="collapse" id="collapseIPTVvideoteka">
+                        <ul>
+                          <li>Основное меню можно вызвать кнопкой <kbd>F3</kbd></li>
+                          <li>Если видеотеки контент по род.паролю открывает, но пишет сообщение о том что данный контент не входит в пакет услуг - проверить услугу 'Огран. доступа к платному каталогу Видео по Запросу'</li>
+                          <li>После заказа фильмов во вкладке Видеотека, фильм для просмотра доступен в разделе настройки - список заказов. Фильм будет доступен для просмотра 24 ч.</li>
+                        </ul>
+                      </div>
+                    </span>
+                    
+                    Дополнительные настройки:
+                    <span class="d-block">
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseIPTV1080" role="button" aria-expanded="false" aria-controls="collapseIPTV1080">
+                        <i class="bi bi-chevron-down"></i> В чем разница 1080i и 1080р
+                      </a>
+                      <div class="collapse" id="collapseIPTV1080">
+                        На самом деле, разница между этими двумя видами в способе вывода изображения на экран. 1080p – это прогрессивный способ вывода, а 1080i – чересстрочный.<br>
+                        Просмотрев технические характеристики стандарта 1080i и 1080p можно выделить основные отличия:
+                        <ul>
+                          <li>1080i разбивает кадр на два и отображает их в виде строк по очереди, в то время как 1080р делает это последовательно без разбивки кадра;</li>
+                          <li>1080р отличается более четким изображением, а при движении отсутствуют артефакты;</li>
+                        </ul>
+                        Современные телевизоры дополнительно обрабатывают сигнал 1080i, сглаживая изображение, в то время как сигнал стандарта HD со значением «р» в этом не нуждается.
+                        Стандарт HD со значением «i» обладает меньшими требованиями, чем 1080р к полосе пропуска канала.
+                        Изображения в формате HD со значением «p» не теряет качества при масштабировании, а текст, написанный любым шрифтом и кеглем, читается намного лучше.
+                      </div>
+                    </span>
+
+                    <span class="d-block">
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseIPTVvideoset" role="button" aria-expanded="false" aria-controls="collapseIPTVvideoset">
+                        <i class="bi bi-chevron-down"></i> Дополнительные настройки видео
+                      </a>
+                      <div class="collapse" id="collapseIPTVvideoset">
+                        <ul>
+                          <li>Для отображения меню и видео в формате <strong class="text-primary">(1080i, 1080p)</strong> необходимо нажать <kbd>SET</kbd> – пароль «6321» - «Аудио и видео настройки» - «ТВ-система» - выставить разрешение в соответствии с возможностями телевизора.</li>
+                          <li>Для перенастройки приставок B700v5S1 в разрешение 1080i, 1080p необходимо предварительно отключить функцию автоматического переключения видеорежима в аудио и видео настройках (<strong class="text-primary">HD&SDAutoSwitch</strong>)</li>
+                          <li>При подключении HDMI кабеля к приставке HD-режим 720p активируется автоматически и сигнал на аналоговых выходах (тюльпанах) отключится. Если необходимо подключать тюльпаны нужно выставить режим PAL в аудио-видео настройках</li>
+                          <li>Если видео расширяется не на весь экран в настр выбрать Система  - Видео и экран - Пропорции изображения Pan & can (3-й пункт)</li>
+                          <li>
+                            При подключении через RCA качество резко падает – очертания теряют четкость, а цвета становятся размытыми. 
+                            Максимальное разрешение видеосигнала составляет 720х576. Т.е. видео высокой четкости по нему передавать нельзя. Для этого надо использовать разъём HDMI.
+                          </li>
+                        </ul>
+                      </div>
+                    </span>
+
+                    
+   
                     <span class="d-block">
                       <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseIPTVkeyprog" role="button" aria-expanded="false" aria-controls="collapseIPTVkeyprog">
                         <i class="bi bi-chevron-down"></i> Программирование пульта
@@ -1452,16 +1537,59 @@
                     </span>
 
                     <span class="d-block">
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseIPTVSwitchStbIntreface" role="button" aria-expanded="false" aria-controls="collapseIPTVSwitchStbIntreface">
+                        <i class="bi bi-chevron-down"></i> Выставить старый интерфейс на B800
+                      </a>
+                      <div class="collapse" id="collapseIPTVSwitchStbIntreface">
+                        Если на приставке B800 интрефейс как на B700 (без сервисов).<br>
+                        Настройки - настройка меню - отображать меню в формате SD (установить галочку)
+                      </div>
+                    </span>
+
+                    Ошибки и решение проблем:
+                    <span class="d-block">
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseIPTVnosignal" role="button" aria-expanded="false" aria-controls="collapseIPTVnosignal">
+                        <i class="bi bi-chevron-down"></i> Нет изображения (Нет загрузки на экране)
+                      </a>
+                      <div class="collapse" id="collapseIPTVnosignal">
+                        <ul>
+                          <li>Переподключите HDMI кабель. Попробуйте отключить кабель HDMI от ТВ и поменять их стороны. Устройства можно не отключать.</li>
+                          <li>Отключите все внешние другие устройства подключенные к телевизору, а затем попробуйте воспроизвести снова.</li>
+                          <li>Отключите ТВ от сети на 15-20 минут и включите вновь.</li>
+                        </ul>
+                      </div>
+                    </span>
+                    
+                    <span class="d-block">
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseIPTVnosound" role="button" aria-expanded="false" aria-controls="collapseIPTVnosound">
+                        <i class="bi bi-chevron-down"></i> Нет звука
+                      </a>
+                      <div class="collapse" id="collapseIPTVnosound">
+                        <ul>
+                          <li>Проверьте пульты. Увеличьте громкость отдельно на пульте ZALA и на пульте от телевизора. Убедитесь, что звук не выключен кнопкой Mute (перечеркнутый динамик) <i class="bi bi-volume-mute"></i>.</li>
+                          <li>Выключите из розетки ТВ-приставку, подождите полминуты и включите снова.</li>
+                          <li>Проверьте провода. Плотно переподключите кабель HDMI или AV-кабель («тюльпаны») к приставке и телевизору.</li>
+                          <li>Попробовать сменить канал звука с помощью кнопки <kbd>L/R</kbd></li>
+                          <li>Если недавно менялись настройки приставки, сбросьте настройки STB чтобы вернуть параметры звука по-умолчанию</li>
+                          <li>Нет звука и черный экран на общедоступном интерактивная зала. Проверить подключен ли HD пакет.</li>
+                        </ul>
+                      </div>
+                    </span>
+
+                    <span class="d-block">
                       <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseIPTVerrorCodes" role="button" aria-expanded="false" aria-controls="collapseIPTVerrorCodes">
-                        <i class="bi bi-chevron-down"></i> Нестандартные ошибки
+                        <i class="bi bi-chevron-down"></i> Нестандартные ошибки IPTV
                       </a>
                       <div class="collapse" id="collapseIPTVerrorCodes">
                         <ul>
                           <li>Ошибка IPTV 1005, 1018, 1006 (Сигнал прерван) - Проверить физическое подключение.</li>
                           <li>Ошибка IPTV 1403, 1404, 1405 - Ha STB включено РРРоЕ либо LAN вместо DHCP (стоит точка возле РРРоЕ)</li>
                           <li>1562 и 5021 - сбой при попытке воспроизведения записанной передачи из меню (сбой платформы)</li>
+                          <li>4514 - проблема с подключением к сети, перезагрузка оборудования включая модем и сброс натсроек стб</li>
                           <li>70617206 - ошибка ввода логина-пароля</li>
                           <li>50991001, 50991002 - неверный порт подкл -> переставить в лан 4</li>
+                          <li>Система занята, повторите попытку позже при попытке перемотки либо запуска в отложенном. Проверить порт подключения!</li>
+                          <li>Розовый экран - проблема в настройках ТВ. Необходимо включить опцию <a href="https://www.sony.ru/electronics/support/articles/00163663">"Расширенный формат HDMI"</a> в настройках ТВ.</li>
                         </ul>
                       </div>
                     </span>
@@ -1559,12 +1687,13 @@
                         
                         <h5>ТВ LG</h5>
                         <p>Не имеют функцию сброса кэша приложения. Отключите ТВ по питанию минут на 15-20 для сброса. Крайняя мера переустановка приложения.</p>
-                        
+                        Ti
                         <h5>ТВ Sony</h5>
                         <p>Приложения - Просмотреть все приложения - выберите нужное - Очистить кэш.</p>
                       </div>
                     </span>
 
+                    Сервисы:
                     <span class="d-block">
                       <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseSMARTmultiroom" role="button" aria-expanded="false" aria-controls="collapseSMARTmultiroom">
                         <i class="bi bi-chevron-down"></i> Мультирум
@@ -1573,6 +1702,76 @@
                         <p>Мультирум - функция обеспечивающая просмотр Контента на двух устройствах одновременно для Абонентов, использующих приложение «ZALA», и на трех устройствах одновременно для Абонентов, использующих приложение «ZALA yasna».</p>
                         <h5>Выйти с устройства:</h5>
                         <p>Настройки - устройства - Выбрать устр-во и нажать покинуть группу. (Удалить из группы можно только подключенное устр-ва к данной учетной записи)</p>
+                      </div>
+                    </span>
+
+                    <span class="d-block">
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseSMARTsubtitles" role="button" aria-expanded="false" aria-controls="collapseSMARTsubtitles">
+                        <i class="bi bi-chevron-down"></i> Субтитры
+                      </a>
+                      <div class="collapse" id="collapseSMARTsubtitles">
+                        Управление отображением субтитров:
+                        <ul>
+                          <li>Открыть канал на весь экран</li> 
+                          <li>Нажать <kbd>OK</kbd> на пульте чтобы появиась информация о канале</li>
+                          <li>Нажать <kbd>вверх</kbd> и <kbd>вправо</kbd> чтобы переместиться на кнопку Опции (со значком троеточия)</li>
+                        </ul>
+                        Если меню субтитров активно, и дает менять язык значит опция включена.
+                      </div>
+                    </span>
+
+                    <span class="d-block">
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseSMARTtimeshift" role="button" aria-expanded="false" aria-controls="collapseSMARTtimeshift">
+                        <i class="bi bi-chevron-down"></i> Перемотка (timeshift)
+                      </a>
+                      <div class="collapse" id="collapseSMARTtimeshift">
+                        SmartZala перемотка работает максимум на полтора часа, особенность работы timeshift ZTE. 
+                        Если передача например 2 часа, то смотреть данную передачу уже только в отложенном просмотре без перемотки.
+                      </div>
+                    </span>
+
+                    Дополнительные настройки:
+                    <span class="d-block">
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseSMARTpowerofftimer" role="button" aria-expanded="false" aria-controls="collapseSMARTpowerofftimer">
+                        <i class="bi bi-chevron-down"></i> Таймер сна
+                      </a>
+                      <div class="collapse" id="collapseSMARTpowerofftimer">
+                        Система - таймер сна - и выбрать 1/2/3/5 часов ( по умолчанию 1 час)
+                      </div>
+                    </span>
+
+                    <span class="d-block">
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseSMARTblockedchannel" role="button" aria-expanded="false" aria-controls="collapseSMARTblockedchannel">
+                        <i class="bi bi-chevron-down"></i> Снять пароль с канала
+                      </a>
+                      <div class="collapse" id="collapseSMARTblockedchannel">
+                        Меню — профили — master — род.контроль — доступ к каналам. Выставить запрещено/разрешено на необходимом канале. 
+                      </div>
+                    </span>
+
+                    <span class="d-block">
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseSMARTvideoset" role="button" aria-expanded="false" aria-controls="collapseSMARTvideoset">
+                        <i class="bi bi-chevron-down"></i> Настройки видео
+                      </a>
+                      <div class="collapse" id="collapseSMARTvideoset">
+                        <ul>
+                          <li>Формат картинки по умолчанию под HD для SML приставки. В настройках приставки явно указать 1920х1080p@60Hz. Настройка -> Система -> Видео и экран -> Формат цифрового сигнала -> 1920х1080p@60Hz</li>
+                        </ul>
+                      </div>
+                    </span>
+                    
+
+                    Ошибки и возможные проблемы:
+                    <span class="d-block">
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseSMARTrecommendations" role="button" aria-expanded="false" aria-controls="collapseSMARTrecommendations">
+                        <i class="bi bi-chevron-down"></i> Общие рекомендации
+                      </a>
+                      <div class="collapse" id="collapseSMARTrecommendations">
+                        <ul>
+                          <li>Для стабильности подключайте приставку/Smart TV по Ethernet. По Wi-Fi возможны помехи и снижение качества</li>
+                          <li>Если нужен свитч - подойдёт обычный неуправляемый на 4–8 портов</li>
+                          <li>SMART TV работает по unicast, обычно дополнительных настроек в роутере не требуется.</li>
+                        </ul>
                       </div>
                     </span>
 
@@ -1588,15 +1787,26 @@
                       </div>
                     </span>
 
+
                     <span class="d-block">
-                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseSMARTrecommendations" role="button" aria-expanded="false" aria-controls="collapseSMARTrecommendations">
-                        <i class="bi bi-chevron-down"></i> Общие рекомендации
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseSMARTerrorCodes" role="button" aria-expanded="false" aria-controls="collapseSMARTerrorCodes">
+                        <i class="bi bi-chevron-down"></i> Нестандартные ошибки SMARTTV
                       </a>
-                      <div class="collapse" id="collapseSMARTrecommendations">
+                      <div class="collapse" id="collapseSMARTerrorCodes">
                         <ul>
-                          <li>Для стабильности подключайте приставку/Smart TV по Ethernet. По Wi-Fi возможны помехи и снижение качества</li>
-                          <li>Если нужен свитч - подойдёт обычный неуправляемый на 4–8 портов</li>
-                          <li>SMART TV работает по unicast, обычно дополнительных настроек в роутере не требуется.</li>
+                          <li>
+                            <b>Ошибка потока</b> связана с нестабильной работой сетевого подключения либо аппаратной частью устройства на котором просматривают ZALA.<br>
+                            Для старых LG/Samsung (2017+) можно поробовать в приложении SmartZala выбрать: "Настройки" -> "Качество вещания" -> "Использовать потоки канала с низким битрейтом".
+                          </li>
+                          <li>
+                            При запуске приложения окно сразу сворачивается либо появляется серый/белый/черный экран. 
+                            Необходимо дать разрешение приложению для доступа к файлам и мультимедиа. 
+                            Приложения - Выбрать из списка приложение ZALA - Разрешения - Файлы и медиафайлы - Разрешить только во время работы.</li>
+                          <li><b>Ошибка веб-страница не найдена</b>. Проверить подключение к сети, DNS, сбросить кэш приложения</li>
+                          <li>ТВ Samsung и на котором автоматически обновилось приложение Smart ZALA и после обновления при выборе канала чёрный экран. Необходимо на пульте выбрать кнопку "D" (синего цвета) и выбрать фомат (по умолчанию "Авто")</li>
+                          <li><b>Розовый экран</b> - проблема в настройках ТВ. Необходимо включить опцию <a href="https://www.sony.ru/electronics/support/articles/00163663">"Расширенный формат HDMI"</a> в настройках ТВ.</li>
+                          <li><b>Превышениие лимита подключенных устройств</b>. Настройки - устройства - Выбрать устр-во и нажать покинуть группу. (Удалить из группы можно только текущее подключенное устр-во)</li>
+                          <li>Zala yasna на <i class="bi bi-apple"></i>iPhone нет звука без наушников. Запустить приложение, и нажать кнопку увеличения громкости при трансляции в приложении</li>
                         </ul>
                       </div>
                     </span>
@@ -1839,10 +2049,19 @@
                         <i class="bi bi-chevron-down"></i> Настройка буфферизации в приложении
                       </a>
                       <div class="collapse" id="collapseVKSbufferset">
+                        Мобильное приложение:
                         <ul>
                           <li>Войти в приложение. Прочее -> Настройки -> Протокол проигрывания видео.</li>
                           <li>2 варианта: «Минимальная задержка (RTSP-протокол)» и «Буферизация (HLS-протокол)»</li>
                           <li>Выбрать второй, «Буферизация (HLS-протокол)» Сохранить изменения.</li>
+                        </ul>
+                        Desktop (АРМ):
+                        <ul>
+                          <li>
+                            Перейти в настройки - Воспроизведение. Поставить галочку на пункт Буфферизация если не установлена, и уменьшить количество пакетов до 10. 
+                            Таким образом можно нивелировать длительную буфферизацию при переходе на камеру. 
+                            Если увеличить количество пакетов до 100 то дольше будет открывать камеру, но картинка будет более плавная засчет большей буфферизации.
+                          </li>
                         </ul>
                       </div>
                     </span>
@@ -1876,6 +2095,43 @@
                       </div>
                     </span>
 
+                                        
+                    <span class="d-block">
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseVKSsubusers" role="button" aria-expanded="false" aria-controls="collapseVKSsubusers">
+                        <i class="bi bi-chevron-down"></i> Субпользователи
+                      </a>
+                      <div class="collapse" id="collapseVKSsubusers">
+                        <p>
+                        Дополнительные реквизиты к услуге "Видеоконтроль"* абонент заказывает  самостоятельно через WEB-портал https://myvideo.beltelecom.by (раздел  "Пользователи"), осуществляя вход с помощью реквизитов с правами  администратора.  
+                        Реквизиты с правами АДМИНИСТРАТОРА выделяются при заключении приложения и имеют привычный формат, например 170301XXXXX0002. 
+                        Дополнительные реквизиты имеют права ПОЛЬЗОВАТЕЛЯ, с возможностью  настройки индивидуальных прав доступа. Логин и пароль абонент придумывает самостоятельно. Логин имеет формат почты, например, ohrana-1@mail.ru.
+                        </p>
+                        
+                        <p>
+                        Добавить суб пользователя могут юрлица но только через web версию!. Раздел вверху Управление – вкладка субпользователи.
+                        </p>
+                        
+                        <p>
+                        *Доступно ТП "Видеоконтроль Бизнес" и "Видеоконтроль Квартал" по тарифу  "Предоставление одного комплекта пользовательских реквизитов доступа для  просмотра видеоинформации, в месяц".
+                        </p>
+                      </div>
+                    </span>
+
+                    <span class="d-block">
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseVKSchangepass" role="button" aria-expanded="false" aria-controls="collapseVKSchangepass">
+                        <i class="bi bi-chevron-down"></i> Смена пароля для доступа
+                      </a>
+                      <div class="collapse" id="collapseVKSchangepass">
+                        Смена пароля для доступа к услуге «Видеоконтроль» осуществляется через:
+                        <ul>
+                          <li>web-версию Мой Белтелеком. (!)<u>В мобильной версии «Мой Белтелеком» и в «Кабинете пользователя» (старая версия) эта возможность отсутствует!</u></li>
+                          <li>мобильное приложение «Видеоконтроль». При условии входа в приложение с помощью логина и пароля (не подходит вход по внешней авторизации – через Мой Белтелеком);</li>
+                          <li>web-портал услуги «Видеоконтроль»;</li>
+                          <li>версию Desktop-клиент (АРМ).</li>
+                        </ul>
+                      </div>
+                    </span>
+
                     <span class="d-block">
                       <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseVKSpadik" role="button" aria-expanded="false" aria-controls="collapseVKSpadik">
                         <i class="bi bi-chevron-down"></i> О просмотре только камер своего подъезда
@@ -1905,6 +2161,23 @@
                         <blockquote>
                           По просмотрку RTSP потоков по ссылке. Просматривать видео с камер по прямой rtsp-ссылке на своём телевизоре абонент не сможет, данный функционал не предусмотрен разработчиком. Просмотр доступен только через приложения для ПК/смартфона или через веб-версию + в прямую rtsp-ссылку входит служебная информация о камерах, которая абонентам не предоставляется
                         </blockquote>
+                      </div>
+                    </span>
+
+                    <span class="d-block">
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseVKStechinst" role="button" aria-expanded="false" aria-controls="collapseVKStechinst">
+                        <i class="bi bi-chevron-down"></i> Требования к установке камер
+                      </a>
+                      <div class="collapse" id="collapseVKStechinst">
+                        Условия установки, переустановки, монтажа доп. камер в многоквартирных жилых домах:
+                        <ul>
+                          <li>наличие в жилых домах технической возможности, обеспеченной Оператором; </li>
+                          <li>наличие решения общего собрания участников совместного домовладения на установку видеокамер либо наличие решения уполномоченного лица по управлению общим имуществом совместного домовладения, назначаемое местным исполнительным и распорядительным органом, о передаче общего имущества совместного домовладения во владение и пользование РУП *Белтелеком* для установки видеокамер;</li>
+                          <li>наличие достаточного количества Абонентов 1-й группы (из расчета порядка не менее 10 Абонентов 1-й группы, получающих доступ к информации с устанавливаемой видеокамеры) для обеспечения экономической эффективности установки (монтажа дополнительных) видеокамер Оператора.</li> 
+                          <li>п. 5.4 установка камер в частных домах (или внутри квартиры/тамбурах): - наличие технической возможности, обеспеченной Оператором; - наличие согласия на размещение видеокамер всех собственников при общей долевой собственности на жилой дом (земельный участок), всех владельцев квартир, имеющих право доступа в тамбур (при размещении камер в тамбуре);</li>
+                          <li>наличие согласия на запись и воспроизведение звука (при добавлении услуги) всех собственников при общей долевой собственности на жилой дом (земельный участок) и иных лиц, собственность которых попадает в зону обзора видеокамеры, всех владельцев квартир, имеющих право доступа в тамбур (при размещении камер в тамбуре);</li>
+                          <li>видеокамеры должны размещаться таким образом, чтобы зона обзора видеокамер не нарушала право иных лиц (например, соседей) на защиту от незаконного вмешательства в частную жизнь. В случае если в зону обзора видеокамеры попадает собственность иных лиц либо собственность, являющаяся долевой (на жилой дом, земельный участок), Абонент обязан получить согласие данных заинтересованных лиц на размещение видеокамер, запись и воспроизведение звука (при добавлении услуги). При поступлении в РУП *Белтелеком* обращений о нарушении права на защиту от незаконного вмешательства в частную жизнь в результате оказания услуги *Видеоконтроль* либо об отсутствии согласия заинтересованных лиц на размещение видеокамер (записи звука), будет произведен демонтаж видеокамер/отключение записи звука, которые вызывали обоснованные обращения.</li>
+                        </ul>
                       </div>
                     </span>
          
@@ -2158,6 +2431,35 @@
                     </span>
 
                     <span class="d-block">
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseIMSsplitter" role="button" aria-expanded="false" aria-controls="collapseIMSsplitter">
+                        <i class="bi bi-chevron-down"></i> После включения сплиттера/разветвителя телефон не работает
+                      </a>
+                      <div class="collapse" id="collapseIMSsplitter">
+                        <p>
+                          Перепутаны гнезда: Убедитесь, что основной кабель от городской розетки идет строго в разъем LINE (или Modem), 
+                          телефон — в разъем PHONE (или Tel), а модем — в MODEM (или ADSL). Если воткнуть телефон в порт модема или линии наоборот, связи не будет.
+                        </p>
+                        <p>
+                           Обратная полярность: Проблема может быть вызвана тем, что некоторые телефонные аппараты, в частности,
+                           немецкого производства, не сертифицированные для продаж в России и Беларуси, используют не две средние
+                           жилы телефонного кабеля (именно на это рассчитан сплиттер/микрофильтр), а две крайние. В
+                           этом случае будет необходимо переделать разводку телефонных розеток, к которым подключаются
+                           сплиттеры/микрофильтры и модем, и соединительный кабель, через который включен телефонный
+                           аппарат(ы).
+                        </p>
+                        <p>
+                          Параллельные телефоны: Если в квартире есть другие телефонные розетки, которые подключены к линии до сплиттера, 
+                          они будут глушить сигнал. Все телефонные аппараты в доме должны включаться только через разделительные фильтры.
+                        </p>
+                        <strong>Если при поступлении звонка на телефон или при попытке позвонить прерывается соединение с сетью. Если звонка на телефон нет, то все работает. </strong>
+                        <p>
+                          Такая ошибка чаще всего возникает, если при подключении не все телефонные аппараты были
+                          подключены через сплиттер или микрофильтры. Сверьте схему вашего подключения со схемой описанной выше.
+                        </p>
+                      </div>
+                    </span>
+
+                    <span class="d-block">
                       <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseIMSdvoset" role="button" aria-expanded="false" aria-controls="collapseIMSdvoset">
                         <i class="bi bi-chevron-down"></i> Особенности ДВУ
                       </a>
@@ -2260,7 +2562,7 @@
                         </p>
                         <p>В настройках WEB-интерфейса телефона необходимо указать - сервер, порт, короткий номер домен.</p>
                         <ul>
-                          <li>SIP Server - IP адреса SBC МГТС: 10.24.0.16:5060 10.24.0.48:5060</li>
+                          <li>SIP Server - IP адреса SBC МГТС: <strong class="text-primary">10.24.0.16:5060 10.24.0.48:5060</strong></li>
                           <li>Account Active - значение YES. </li>
                           <li>SIP User ID - {внутренний номер}$Домен</li>
                           <li>Authenticate ID - {внутренний номер}</li>

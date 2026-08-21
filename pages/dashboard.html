@@ -300,15 +300,8 @@
 
             <li class="nav-item">
               <a href="dashboard.html" class="nav-link active">
-                <i class="nav-icon bi bi-grid-1x2 me-1" aria-hidden="true"></i>
+                <i class="nav-icon bi bi-grid-1x2" aria-hidden="true"></i>
                 <p>Главная</p>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a href="portals.html" class="nav-link">
-                <i class="nav-icon bi bi-grid-3x3-gap-fill me-1" aria-hidden="true"></i>
-                <p>Рабочие порталы</p>
               </a>
             </li>
 
@@ -318,54 +311,83 @@
                 <p>Оборудование</p>
               </a>
             </li>
-
-            <li class="nav-item">
-              <a href="quicksetup.html" class="nav-link">
-                <i class="nav-icon bi bi-box2"></i>
-                <p>Быстрая настройка</p>
-              </a>
-            </li>
             
             <li class="nav-item">
-              <a href="netcheck.html" class="nav-link">
-                <i class="nav-icon bi bi-browser-safari"></i>
-                <p>Диагностика</p>
+              <a href="#" class="nav-link">
+                <i class="nav-icon bi bi-globe"></i>
+                <p>
+                  Веб порталы
+                  <i class="nav-arrow bi bi-chevron-right"></i>
+                </p>
               </a>
+              <ul class="nav nav-treeview">     
+                <li class="nav-item">
+                  <a href="portals.html" class="nav-link">
+                    &nbsp;&nbsp;<i class="nav-icon bi bi-grid-3x3-gap-fill" aria-hidden="true"></i>
+                    <p>Рабочие порталы</p>
+                  </a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="checker.html" class="nav-link">
+                    &nbsp;&nbsp;<i class="nav-icon bi bi-gear-wide-connected"></i>
+                    <p>Онлайн утилиты</p>
+                  </a>
+                </li>
+              </ul>
             </li>
 
             <li class="nav-item">
-              <a href="checker.html" class="nav-link">
-                <i class="nav-icon bi bi-globe2"></i>
-                <p>Ресурсы</p>
+              <a href="#" class="nav-link">
+                <i class="nav-icon bi bi-patch-question"></i>
+                <p>
+                  FAQ
+                  <i class="nav-arrow bi bi-chevron-right"></i>
+                </p>
               </a>
+              <ul class="nav nav-treeview">     
+                <li class="nav-item">
+                  <a href="quicksetup.html" class="nav-link">
+                    &nbsp;&nbsp;<i class="nav-icon bi bi-box2"></i>
+                    <p>Быстрая настройка</p>
+                  </a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="netcheck.html" class="nav-link">
+                    &nbsp;&nbsp;<i class="nav-icon bi bi-browser-safari"></i>
+                    <p>Диагностика</p>
+                  </a>
+                </li>
+              </ul>
             </li>
 
             <li class="nav-item">
-              <a href="olt.html" class="nav-link">
+              <a href="#" class="nav-link">
                 <i class="nav-icon bi bi-terminal"></i>
-                <!-- <p>OLT cli &nbsp;<span class="badge bg-danger">New</span></p> -->
-                <p>OLT cli</p>
+                <p>
+                  OLT
+                  <i class="nav-arrow bi bi-chevron-right"></i>
+                </p>
               </a>
+              <ul class="nav nav-treeview">     
+                <li class="nav-item">
+                  <a href="olt.html" class="nav-link">
+                    &nbsp;&nbsp;<i class="nav-icon bi bi-terminal"></i>
+                    <p>OLT cli</p>
+                  </a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="https://github.com/ins1x/OLT/wiki/HUAWEI" target="_blank" class="nav-link">
+                    &nbsp;&nbsp;<i class="nav-icon bi bi-github"></i>
+                    <p>Git-Wiki</p>
+                  </a>
+                </li>
+              </ul>
             </li>
-            
-            <li class="nav-item">
-              <a href="nextcloud.html" class="nav-link">
-                <i class="nav-icon bi bi-cloud"></i>
-                <p>Nextcloud-Disk</p>
-              </a>
-            </li>
-            
-            <!-- <span class="navbar-text fixed-bottom">
-              <small class="text-secondary">Beta version</small>
-            </span> -->
 
             <!-- <li class="nav-header">Внешние</li> -->
-            <!-- <li class="nav-item">
-              <a href="https://drive.google.com/drive/my-drive?hl=ru" target="_blank" class="nav-link">
-                <i class="nav-icon bi bi-google"></i>
-                <p>Google-Drive</p>
-              </a>
-            </li> -->
             <!--end::Sidebar Menu-->
           </nav>
         </div>
@@ -397,7 +419,6 @@
                         <li><a class="dropdown-item" href="netcheck.html" aria-current="true"><i class="nav-icon bi bi-browser-safari" aria-hidden="true"></i> Диагностика</a></li>
                         <li><a class="dropdown-item" href="checker.html" aria-current="true"><i class="nav-icon bi bi-globe2" aria-hidden="true"></i> Ресурсы</a></li>
                         <li><a class="dropdown-item" href="olt.html" aria-current="true"><i class="nav-icon bi bi-terminal" aria-hidden="true"></i> OLT cli</a></li>
-                        <li><a class="dropdown-item" href="nextcloud.html" aria-current="true"><i class="nav-icon bi bi-cloud" aria-hidden="true"></i> Nextcloud-Disk</a></li>
                       </ul>
                     </li>
                   </li>
@@ -407,6 +428,36 @@
             <!--end::Row-->
           </div>
           <!--end::Container-->
+        </div>
+
+        <div class="container-fluid">
+          <!-- Headline + search -->
+          <div class="text-center mb-4">
+            <form
+              class="row g-2 justify-content-center"
+              role="search"
+              onsubmit="event.preventDefault()"
+            >
+              <div class="col-md-6 col-lg-8">
+                <div class="input-group input-group-lg">
+                  <span class="input-group-text bg-body">
+                    <i class="bi bi-search" aria-hidden="true"></i>
+                  </span>
+                  <input
+                    type="search"
+                    id="nextcloud-search"
+                    class="form-control"
+                    placeholder="Введите ключевые слова для поиска на Nextcloud"
+                    aria-label="Search on Nextcloud-Disk"
+                  />
+                  <small class="card-text-secondary">&nbsp;</small>
+
+                </div>
+              </div>
+              
+            </form>
+          </div>
+          <!-- end container -->
         </div>
         <!--end::App Content Header-->
         <!--begin::App Content-->
@@ -419,8 +470,8 @@
                 <div class="col-sm-6 mb-3 mb-sm-3">
                   <div class="list-group overflow-auto" style="max-height: 8em;">
                     <a href="quicksetup.html" class="list-group-item list-group-item-action">
-                      Обновлен раздел быстрой настройки (FAQ)<br>
-                      <small class="text-secondary icon-link icon-link-hover"><i class="bi bi-arrow-return-right"></i> Перейти &nbsp; 18/08/2026</small>
+                      Обновлен раздел быстрой настройки (FAQ) и основное меню<br>
+                      <small class="text-secondary icon-link icon-link-hover"><i class="bi bi-arrow-return-right"></i> Перейти &nbsp; 21/08/2026</small>
                     </a>
                     <a href="equipment.html#dsl" class="list-group-item list-group-item-action">
                       Обновлена информация по DSL модемам и приставкам ZALA<br>
@@ -543,7 +594,7 @@
               <div class="col-sm-4 mb-3 mb-sm-3">
                 <div class="card h-100">
                   <div class="card-header">
-                    <h3 class="card-title"><i class="bi bi-globe2"></i> Ресурсы</h3>
+                    <h3 class="card-title"><i class="bi bi-globe2"></i> Онлайн ресурсы</h3>
                   </div>
                   <div class="card-body">
                     <div class="alert alert-light" role="alert">
@@ -569,7 +620,7 @@
                   </div> -->
                 </div>
               </div>
-              <div class="col-sm-4 mb-3 mb-sm-3">
+              <!-- <div class="col-sm-4 mb-3 mb-sm-3">
                 <div class="card h-100">
                   <div class="card-header">
                     <h3 class="card-title"><i class="bi bi-cloud"></i> Nextcloud</h3>
@@ -595,7 +646,7 @@
                     </a>
                   </div>
                 </div>
-              </div>
+              </div> -->
               <div class="col-sm-4 mb-3 mb-sm-3">
                 <div class="card">
                   <div class="card-header">
@@ -692,6 +743,27 @@
       const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
       const timezoneElement = document.getElementById('timezone');
       timezoneElement.innerHTML = `${userTimeZone}`;
+
+      const searchInputElement = document.getElementById('nextcloud-search'); 
+
+      // Search on pressed 'Enter' key
+      searchInputElement.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+          event.preventDefault(); 
+          const inputValue = event.target.value;
+          GoSearch(inputValue)
+          // const searchInputElement = document.getElementById('nextcloud-search'); 
+          // window.open("https://beltelecom.by/search/node?keys=" + inputValue.trim(), "_blank");
+        }
+      });
+      
+      // Go search <URL>
+      function GoSearch(query) {
+        if (searchInputElement.value.trim() === '') {
+          return;
+        }
+        window.open("https://chat.datacenter.by/index.php/apps/files/search/1758822?query=" + query, "_blank");
+      }
     </script>
 
   </body>

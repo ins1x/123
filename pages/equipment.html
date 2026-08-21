@@ -288,18 +288,11 @@
 
             <li class="nav-item">
               <a href="dashboard.html" class="nav-link">
-                <i class="nav-icon bi bi-grid-1x2 me-1" aria-hidden="true"></i>
+                <i class="nav-icon bi bi-grid-1x2" aria-hidden="true"></i>
                 <p>Главная</p>
               </a>
             </li>
 
-            <li class="nav-item">
-              <a href="portals.html" class="nav-link">
-                <i class="nav-icon bi bi-grid-3x3-gap-fill me-1" aria-hidden="true"></i>
-                <p>Рабочие порталы</p>
-              </a>
-            </li>
-            
             <li class="nav-item">
               <a href="equipment.html" class="nav-link active">
                 <i class="nav-icon bi bi-router"></i>
@@ -308,40 +301,80 @@
             </li>
 
             <li class="nav-item">
-              <a href="quicksetup.html" class="nav-link">
-                <i class="nav-icon bi bi-box2"></i>
-                <p>Быстрая настройка</p>
+              <a href="#" class="nav-link">
+                <i class="nav-icon bi bi-globe"></i>
+                <p>
+                  Веб порталы
+                  <i class="nav-arrow bi bi-chevron-right"></i>
+                </p>
               </a>
+              <ul class="nav nav-treeview">     
+                <li class="nav-item">
+                  <a href="portals.html" class="nav-link">
+                    &nbsp;&nbsp;<i class="nav-icon bi bi-grid-3x3-gap-fill" aria-hidden="true"></i>
+                    <p>Рабочие порталы</p>
+                  </a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="checker.html" class="nav-link">
+                    &nbsp;&nbsp;<i class="nav-icon bi bi-gear-wide-connected"></i>
+                    <p>Онлайн утилиты</p>
+                  </a>
+                </li>
+              </ul>
             </li>
             
             <li class="nav-item">
-              <a href="netcheck.html" class="nav-link">
-                <i class="nav-icon bi bi-browser-safari"></i>
-                <p>Диагностика</p>
+              <a href="#" class="nav-link">
+                <i class="nav-icon bi bi-patch-question"></i>
+                <p>
+                  FAQ
+                  <i class="nav-arrow bi bi-chevron-right"></i>
+                </p>
               </a>
+              <ul class="nav nav-treeview">     
+                <li class="nav-item">
+                  <a href="quicksetup.html" class="nav-link">
+                    &nbsp;&nbsp;<i class="nav-icon bi bi-box2"></i>
+                    <p>Быстрая настройка</p>
+                  </a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="netcheck.html" class="nav-link">
+                    &nbsp;&nbsp;<i class="nav-icon bi bi-browser-safari"></i>
+                    <p>Диагностика</p>
+                  </a>
+                </li>
+              </ul>
             </li>
 
             <li class="nav-item">
-              <a href="checker.html" class="nav-link">
-                <i class="nav-icon bi bi-globe2"></i>
-                <p>Ресурсы</p>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a href="olt.html" class="nav-link">
+              <a href="#" class="nav-link">
                 <i class="nav-icon bi bi-terminal"></i>
-                <p>OLT cli</p>
+                <p>
+                  OLT
+                  <i class="nav-arrow bi bi-chevron-right"></i>
+                </p>
               </a>
+              <ul class="nav nav-treeview">     
+                <li class="nav-item">
+                  <a href="olt.html" class="nav-link">
+                    &nbsp;&nbsp;<i class="nav-icon bi bi-terminal"></i>
+                    <p>OLT cli</p>
+                  </a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="https://github.com/ins1x/OLT/wiki/HUAWEI" target="_blank" class="nav-link">
+                    &nbsp;&nbsp;<i class="nav-icon bi bi-github"></i>
+                    <p>Git-Wiki</p>
+                  </a>
+                </li>
+              </ul>
             </li>
             
-            <li class="nav-item">
-              <a href="nextcloud.html" class="nav-link">
-                <i class="nav-icon bi bi-cloud"></i>
-                <p>Nextcloud-Disk</p>
-              </a>
-            </li>
-            </ul>
             <!-- <li class="nav-header">Внешние</li> -->
             <!--end::Sidebar Menu-->
           </nav>
@@ -374,7 +407,6 @@
                         <li><a class="dropdown-item" href="netcheck.html" aria-current="true"><i class="nav-icon bi bi-browser-safari" aria-hidden="true"></i> Диагностика</a></li>
                         <li><a class="dropdown-item" href="checker.html" aria-current="true"><i class="nav-icon bi bi-globe2" aria-hidden="true"></i> Ресурсы</a></li>
                         <li><a class="dropdown-item" href="olt.html" aria-current="true"><i class="nav-icon bi bi-terminal" aria-hidden="true"></i> OLT cli</a></li>
-                        <li><a class="dropdown-item" href="nextcloud.html" aria-current="true"><i class="nav-icon bi bi-cloud" aria-hidden="true"></i> Nextcloud-Disk</a></li>
                       </ul>
                     </li>
                   </li>
@@ -1169,6 +1201,10 @@
                               <ul>
                                 <li>Включение callerID на Photonspeak  -  VOIP/Advance/callerID mode - выставить DTMF</li>
                                 <li>После сброса в бридж не отключается DHCP! Снять DHCP с модема. LAN - DHCP - DHCP Mode выставить NONE и нажать Apply Changes.</li>
+                                <li>
+                                  Необходимо выбирать профиль ZALA в соответствии с АТС-блоком профиль IPTV-20 для блока ZTE C300M; профиль IPTV-1000 для блока ZTE C300;
+                                  На блоке с выбором профилей iptv-20 и iptv-1000 если профиль не применяется - попробовать портмаппинг выставить на "неопределено".
+                                </li>
                                 <li>Нет меню отключения (на ночь) ярких светодиодов индикаторной панели</li>
                                 <li>Падает скорость/разрывы/нестабильная работа в режиме моста</li>
                                 <li>Может не поднимать сессию если модем был выключен некоторое продолжительное время</li>
@@ -3537,13 +3573,15 @@
                           <td colspan="6">
                             <div class="collapse" id="collapseB700V8">
                               <ul>
-                                <li>
-                                  Нет встроенного wi-fi, и не работает через внешний wi-fi модуль. 
-                                  На моделях B700V8 и B800 запустить беспроводную сеть через внешний USB модуль нет возможности.
-                                  Отсутствуют необходимые драйверы и нет исходного кода ядра для сборки модулей.
-                                  На данный момент Wi-Fi через внешний USB модуль работает только на B700V5. 
-                                </li>
-                                <li>Разъёмы «USB» используются для включения расширенных функций (для разработчика и перепрошивки), не предназначены для мультимедийных функций</li>
+                                <li>Нет встроенного wi-fi, и не работает через внешний wi-fi модуль.</li>
+                                <li>На моделях B700V8 и B800 запустить беспроводную сеть через внешний USB модуль нет возможности.</li>
+                                <li>Отсутствуют необходимые драйверы и нет исходного кода ядра для сборки модулей.</li>
+                                <li>На данный момент Wi-Fi через внешний USB модуль работает только на B700V5.</li> 
+                                <li>Разъёмы «USB» используются для включения расширенных функций (для разработчика и перепрошивки), не предназначены для мультимедийных функций</li>                                
+                              </ul>
+                              Недостатки и возможные проблемы:
+                              <ul>
+                                <li>Если подвисает ТОЛЬКО один общедоступный канал например НТВ, на приставках B700V8 включать общедоступный HD и перезагружать приставку. На ADSL проверять тех возможность!</li>
                               </ul>
                             </div>
                           </td>
@@ -3607,6 +3645,8 @@
                                   На данный момент Wi-Fi через внешний USB модуль работает только на B700V5. 
                                 </li>
                                 <li>Рассинхронизация картинки и звука в отложенном и перемотке (timeshift) на новой платформе</li>
+                                <li>На старых прошивках STB уходила в бесконечные перезагрузки при подключении не в тот порт (Исправлено)</li>
+                                <li>Не работает Youtube на B800, черный экран и перезапуск не помог, порт подключения верный - Сбросить настройки STB чтобы прошло обновление</li>
                               </ul>
                             </div>
                           </td>
@@ -3668,6 +3708,7 @@
                               <ul>
                                 <li>Нет вкладки для сервиса YouTube (в сравненнии с другими SMART приставками)</li>
                                 <li>Приставка периодически теряет сеть вай-фай, и не видит её в списке доступных (при этом другие сети видны). Помогает только сброс настроек: Поддержка -О продукте - Сброс к заводским</li>
+                                <li>При отсутствии в меню Smart STB-приставки раздела "Телевидение" необходимо проверить подключение приставки к интернету (Настройки - Система - Настройки сети)</li>
                                 <li>Периодически начинает запрашивать master-PIN на всех каналах, помогает перезагрузка приставки по питанию</li>
                                 <li>Неудобный набор пароля от Wi-Fi нельзя посмотерть набранные символы, на англ раскладке при нажатии символов набираются спецсимволы</li>
                               </ul>

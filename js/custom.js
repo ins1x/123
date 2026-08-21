@@ -35,7 +35,7 @@ function backToTop() {
 }
 // End:Back to top button
 
-// Toggle large font 
+// Toggle large font
 const largeFontBtn = document.getElementById('toggleLargeFontBtn');
 largeFontBtn.addEventListener('click', () => {
   document.body.classList.toggle('font-large');
