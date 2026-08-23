@@ -1176,7 +1176,6 @@
                     <ul>
                       <li><a href="https://www.beltelecom.by/coverage-maps">Карты охвата телевизионными программами</a></li>
                       <li><a href="https://www.beltelecom.by/news/main/kak-samostoyatelno-nastroit-efirnoe-televidenie">Как самостоятельно настроить эфирное телевидение</a></li>
-                      <li><a href="https://lan1.by/qa/1859/">Как настроить эфирную залу через CAM модуль</a></li>
                     </ul>
 
                     <ul class="list-unstyled">
@@ -1367,6 +1366,65 @@
                       <li><a href="https://chat.datacenter.by/index.php/f/1520039" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> Приставки</a></li>
                     </ul>
                     
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card-header text-bg-gray py-2">
+                    <h3 class="card-title"> CAM модуль</h3>
+                  </div>
+                  <div class="card-body">
+                    <ul class="list-unstyled">
+                      <li><a href="https://lan1.by/qa/1859/">Как настроить эфирную залу через CAM модуль</a></li>
+                      <li><a href="https://chat.datacenter.by/index.php/f/1465330" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> CAM-модуль (документация)</a></li>
+                    </ul>                    
+
+                    <span class="d-block">
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseDVBcammod" role="button" aria-expanded="false" aria-controls="collapseDVBcammod">
+                        <i class="bi bi-chevron-down"></i> Какой телевизионный приемник совместим с CAM-модулем
+                      </a>
+                      <div class="collapse" id="collapseDVBcammod">
+                        <p>
+                          Для работы CAM-модуля РУП «Белтелеком» телевизионный приемник должен быть оснащен встроенным тюнером DVB-T2 и CI-слотом стандарта СI+. 
+                          По данным завода-производителя «Горизонт», все телевизионные приемники производства завода «Горизонт» пятого поколения и выше оснащены встроенным тюнером DVB-T2 и CI-слотом стандарта СI+
+                        </p>
+                      </div>
+                    </span>
+                    
+                    <span class="d-block">
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseDVBsmartcardpos" role="button" aria-expanded="false" aria-controls="collapseDVBsmartcardpos">
+                        <i class="bi bi-chevron-down"></i> Какой стороной вставлять CAM модуль и SMART карту
+                      </a>
+                      <div class="collapse" id="collapseDVBsmartcardpos">
+                        <p>
+                          CAM-модуль в телевизор вставляют лицевой стороной (где нанесен логотип провайдера или название модели) к передней панели экрана, а смарт-карту внутрь модуля — чипом (золотыми контактами) 
+                          вверх (к лицевой стороне модуля). Смарт-карта внутрь модуля вставляется чипом вверх, срезанный угол карты идет вперед по ходу движения. Вставляйте до щелчка или упора.
+                        </p>
+                      </div>
+                    </span>
+
+                    <span class="d-block">
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseDVBcaminit" role="button" aria-expanded="false" aria-controls="collapseDVBcaminit">
+                        <i class="bi bi-chevron-down"></i> Проверить определение СAM-модуля телевизором
+                      </a>
+                      <div class="collapse" id="collapseDVBcaminit">
+                        <ol>
+                          <li>В <a href="https://lan1.by/qa/1859/" target="_blank">меню телевизора</a> выбрать закладку «Канал», затем закладку «Общий интерфейс CI».</li>
+                          <li>
+                            Зайти в закладку «Общий интерфейс CI». Выбрать закладку «Служебная информация» либо «CAS information». 
+                            При этом должна высветиться информация которая содержит данные о номере CAM-модуля.
+                          </li>
+                        </ol>
+                        <blockquote>Внимание! В разных моделях телевизионных приемников данная закладка может называться по разному.</blockquote>
+
+                        Если вам не удалось увидеть служебную информацию, то это означает, что телевизионный приемник не видит CAM-модуль.
+                        <ul>
+                          <li>Модуль вставлен не до конца или неправильно в CI слот телевизионного приемника.</li>
+                          <li> CI слот телевизионного приемника не поддерживает стандарт CI+.</li>
+                        </ul>
+                      </div>
+                    </span>
+
                   </div>
                 </div>
 
@@ -1871,7 +1929,7 @@
                       <div class="collapse" id="collapseDVBmux">
                         <p>
                           В наземном цифровом ТВ различные программы «упаковываются» в так называемые мультиплексы. Каждый мультиплекс затем передается в эфир на частоте одного из дециметровых ТВ каналов.
-                          В настоящее время в Республике Беларусь осуществляется передача трех мультиплексов. 
+                          В настоящее время в Республике Беларусь осуществляется передача трех мультиплексов. <a href="https://beltelecom.by/coverage-maps-table" target="_blank">Таблица мультиплексов</a> 
                         </p>
                         <blockquote>Каналы второго и третьего мультиплексов представлены в закодированном виде</blockquote>
                         <div class="table-responsive">
@@ -1945,13 +2003,13 @@
                     </span>
 
                     <span class="d-block">
-                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseDVBsmartcardpos" role="button" aria-expanded="false" aria-controls="collapseDVBsmartcardpos">
-                        <i class="bi bi-chevron-down"></i> Какой стороной вставлять CAM модуль и SMART карту
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseDVBpvr" role="button" aria-expanded="false" aria-controls="collapseDVBpvr">
+                        <i class="bi bi-chevron-down"></i> Запись телепередач (PVR)
                       </a>
-                      <div class="collapse" id="collapseDVBsmartcardpos">
+                      <div class="collapse" id="collapseDVBpvr">
                         <p>
-                          CAM-модуль в телевизор вставляют лицевой стороной (где нанесен логотип провайдера или название модели) к передней панели экрана, а смарт-карту внутрь модуля — чипом (золотыми контактами) 
-                          вверх (к лицевой стороне модуля). Смарт-карта внутрь модуля вставляется чипом вверх, срезанный угол карты идет вперед по ходу движения. Вставляйте до щелчка или упора.
+                          Подключите USB-устройство. Открыть программу передач - выбрать будущую телепередачу и нажать <kbd>PVR</kbd> на пульте - в открывшемся окне нажать OK.
+                          После окончания трансляции телепередачи она будет записана, и доступна для просомтра в разделе Избранное (во вкладке меню PVR).
                         </p>
                       </div>
                     </span>
