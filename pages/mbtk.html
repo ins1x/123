@@ -92,6 +92,11 @@
 
     <!--begin::Locale-->
     <script src="../js/locale.js"></script>
+
+    <!-- docx lib uses jszip -->
+    <script src="../js/jszip.min.js"></script>
+    <script src="../js/docx-preview.min.js"></script>
+
     <!--end::Locale-->
   </head>
   <!--end::Head-->
@@ -439,7 +444,6 @@
         <!--end::App Content Header-->
         <!--begin::App Content-->
         <div class="app-content">
-
           <!--begin::Container-->
           <div class="container-fluid">
             <div class="row">
@@ -476,7 +480,7 @@
                 <div id="list-content" class="list-group">
                   <a class="list-group-item list-group-item-action" href="#mbtk-main">Основное</a>
                   <a class="list-group-item list-group-item-action" href="#mbtk-master">Мастера</a>
-                  <a class="list-group-item list-group-item-action" href="#mbtk-byfly">ByFly</a>
+                  <a class="list-group-item list-group-item-action" href="#mbtk-pon">PON</a>
                   <a class="list-group-item list-group-item-action" href="#mbtk-zala">ZALA</a>
                   <a class="list-group-item list-group-item-action" href="#mbtk-tarif">Тарифы</a>
                 </div>
@@ -514,56 +518,55 @@
                   </div>
                 </div>
 
-                <h3 id="mbtk-main">Основное</h3>
-                <div class="row">
-                  <div class="table-responsive">
-                    <table class="table table-striped-columns table-hover table-bordered">
-                    <thead>
-                      <tr>
-                        <th class="text-bg-secondary" width="20%">Вопрос</th>
-                        <th class="text-bg-secondary">Ответ</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td class="question">Уточнение</td>
-                        <td class="answer">
-                          Здравствуйте. Подскажите, пожалуйста, номер договора или городского телефона (с кодом населённого пункта) или ФИО с полным адресом предоставления услуги?
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="question">Завершение</td>
-                        <td class="answer">
-                          <p>Спасибо за обращение, всего доброго.</p>
-                          <p>Извините, длительное время от вас не было сообщений. Если возникнут вопросы по услугам компании «Белтелеком», создайте, пожалуйста, новое обращение. Спасибо. Всего доброго.</p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="question">Перенаправление</td>
-                        <td class="answer">
-                          <p>Здравствуйте. Перенаправим вашу заявку в офис продаж, с вами в рабочее время свяжется специалист и согласует все вопросы. Напишите, пожалуйста, телефон для связи.</p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="question">Контактный</td>
-                        <td class="answer">
-                          <p>Напишите, пожалуйста, контактный номер телефона, с вами свяжется наш сотрудник для решения данного вопроса.</p>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="question">Абонент долго не выходит на связь</td>
-                        <td class="answer">
-                          <p>Извините, длительное время от Вас не было сообщений. Если вопрос еще актуален, уточнив вышеуказанную информацию, создайте, пожалуйста, новое обращение. Спасибо. Всего доброго.</p>
-                          <p>Для восстановления качественного предоставления услуги нам необходим диалог с вами.</p>
-                        </td>
-                      </tr>
 
-                    </tbody>
-                  </table>
+
+                <h3 id="mbtk-main">Основное</h3>
+                <div class="table-responsive">
+                  <table class="table table-striped-columns table-hover table-bordered">
+                  <thead>
+                    <tr>
+                      <th class="text-bg-secondary" width="20%">Вопрос</th>
+                      <th class="text-bg-secondary">Ответ</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="question">Уточнение</td>
+                      <td class="answer">
+                        Здравствуйте. Подскажите, пожалуйста, номер договора или городского телефона (с кодом населённого пункта) или ФИО с полным адресом предоставления услуги?
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="question">Завершение</td>
+                      <td class="answer">
+                        <p>Спасибо за обращение, всего доброго.</p>
+                        <p>Извините, длительное время от вас не было сообщений. Если возникнут вопросы по услугам компании «Белтелеком», создайте, пожалуйста, новое обращение. Спасибо. Всего доброго.</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="question">Перенаправление</td>
+                      <td class="answer">
+                        <p>Здравствуйте. Перенаправим вашу заявку в офис продаж, с вами в рабочее время свяжется специалист и согласует все вопросы. Напишите, пожалуйста, телефон для связи.</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="question">Контактный</td>
+                      <td class="answer">
+                        <p>Напишите, пожалуйста, контактный номер телефона, с вами свяжется наш сотрудник для решения данного вопроса.</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="question">Абонент долго не выходит на связь</td>
+                      <td class="answer">
+                        <p>Извините, длительное время от Вас не было сообщений. Если вопрос еще актуален, уточнив вышеуказанную информацию, создайте, пожалуйста, новое обращение. Спасибо. Всего доброго.</p>
+                        <p>Для восстановления качественного предоставления услуги нам необходим диалог с вами.</p>
+                      </td>
+                    </tr>
+                  </tbody>
+                  <table>
                 </div>
 
                 <h3 id="mbtk-master">Мастера</h3>
-
                 <div class="table-responsive">
                   <table class="table table-striped-columns table-hover table-bordered">
                   <thead>
@@ -616,13 +619,73 @@
                         </p>
                       </td>
                     </tr>
+                    <tr>
+                      <td class="question">Высокое затухание / LOS</td>
+                      <td class="answer">
+                        <p>
+                          Здравствуйте. На модем поступает слабый оптический сигнал , что может влиять на качество предоставляемых услуг. Можем предложить выезд специалиста с осмотром. Повреждение до квартиры устраняется бесплатно, в квартире на платной основе (в среднем около 30 рублей в счет договора). 
+                          Выезд мастера возможен в будние дни с 9 до 13, с 13 до 17 или с 17 до 20, по субботам с 9 до 16
+                        </p>
+                        <p>
+                          Здравствуйте. Подскажите, пожалуйста, видимых повреждений или заломов оптического кабеля, который соединяет модем с оптической розеткой, визуально не видно? 
+                          Попробуйте проверить физику подключения оптоволоконного кабеля. Осмотреть на наличие видимых повреждений или заломов оптического кабеля (который соединяет модем с оптической розеткой). Переподключить оптический кабель, отключить и заново подключить в модеме, так же в оптической розетке отключить и подключить. Убедиться что коннекторы совпадают по цветам, нет заглушек на наконечниках. Если кабель скручен либо смотан кольцами - расправить.
+                        </p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="question">LOS на блоке</td>
+                      <td class="answer">
+                        <p>
+                          Здравствуйте. Возникла аварийная ситуация, наши специалисты в настоящее время занимаются устранением. Ожидайте, пожалуйста. Приносим извинения за неудобства.
+                        </p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="question">Первоначалка	</td>
+                      <td class="answer">
+                        <p>
+                          Здравствуйте. Модем настраивается автоматически в течении 10-15 минут с момента подключения к сети. Обращайте внимание на индикацию PON. Когда PON загорится устойчиво и индикатор Internet начнет мигать - можно проверять работу услуги. На новых модемах может быть выключен wi-fi кнопкой на корпусе модема. Если индикатор wi-fi (он же WLAN, 2.4G, 5G) не горит, то необходимо включить вай-фай кнопкой на корпусе модема удерживая ее 5-7 секунд.
+                        </p>
+                        <p>
+                          Подключение оконечного оборудовании и настройка услуг, входящих в пакет, может производиться специалистом Белтелеком. Дата выезда определяется по согласованию c абонентом на момент оформления договорных отношений. Первоначальный выезд технического специалиста к абоненту производится бесплатно, за повторный выезд для восстановления доступа к услугам (повторного подключения) взимается оплата согласно действующим тарифам.
+                        </p>
+                      </td>
+                    </tr>
+
                   </tbody>
                 </table>
 
-                <h4 id="mbtk-tarif">Пункт 3</h4>
-                <p>Содержимое третьего раздела...</p>
+                <h3 id="mbtk-pon">PON</h3>
+                <div class="table-responsive">
+                  <table class="table table-striped-columns table-hover table-bordered">
+                  <thead>
+                    <tr>
+                      <th class="text-bg-secondary" width="20%">Вопрос</th>
+                      <th class="text-bg-secondary">Ответ</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="question">Маркировка кабеля</td>
+                      <td class="answer">
+                        <p>
+                          Оптоволоконный патч-корд кабель есть в свободной продаже. При покупке обращайте внимание на цвета наконечников. 
+                          Есть исполнения кабеля в котором с двух сторон зеленые наконечники (маркировка <span class="badge bg-success">SC/APC</span>-<span class="badge bg-success">SC/APC</span>), а есть с одной стороны синий, а с другой зеленый (маркировка <span class="badge bg-success">SC/APC</span>-<span class="badge bg-primary">SC/UPC</span>) 
+                          Приобрести нужно аналогичный по цветам вашему текущему кабелю.
+                        </p>
+                      </td>
+                    </tr>
+                  </tbody>
+                  </table>
+                </div>
 
-                
+                <div style="margin-bottom: 15px;">
+                  <input id="fileInput" type="file" accept=".docx">
+                  <p style="font-size: 0.9em; color: #666;">Select a Word document (.docx) file for preview</p>
+                </div>
+
+                <div id="container-docx"></div>
+
               </div>
             </div>
             <!--end::Row-->      
@@ -708,7 +771,35 @@
           markInstance.mark(searchPage.value); 
         }
       });
-    </script>
+
+      // Initialize event listener
+      document.getElementById("fileInput").addEventListener("change", handleFile, false);
+  
+      function handleFile(event) {
+        const file = event.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            const docData = e.target.result;
+            docx.renderAsync(docData, document.getElementById("container-docx"))
+              .then(x => {
+                console.log("docx: finished", x)
+              });
+          };
+          reader.readAsArrayBuffer(file);
+        }
+      }
+
+    // fetch('https://assets')
+    // .then(response => response.blob())
+    // .then(blob => {
+    //   console.log('Blob успешно получен:', blob);
+    //   // Дальнейшая работа с blob
+    // })
+    // .catch(error => console.error('Ошибка:', error));
+    //   var docDataN = getBlobFromLocalhost();
+    //   docx.renderAsync(docDataN, document.getElementById("container-docx")).then(x => console.log("docx: finished"));
+    // </script>
 
   </body>
   <!--end::Body-->
