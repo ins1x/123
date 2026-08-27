@@ -679,13 +679,6 @@
                   </table>
                 </div>
 
-                <div style="margin-bottom: 15px;">
-                  <input id="fileInput" type="file" accept=".docx">
-                  <p style="font-size: 0.9em; color: #666;">Select a Word document (.docx) file for preview</p>
-                </div>
-
-                <div id="container-docx"></div>
-
               </div>
             </div>
             <!--end::Row-->      
@@ -771,35 +764,7 @@
           markInstance.mark(searchPage.value); 
         }
       });
-
-      // Initialize event listener
-      document.getElementById("fileInput").addEventListener("change", handleFile, false);
-  
-      function handleFile(event) {
-        const file = event.target.files[0];
-        if (file) {
-          const reader = new FileReader();
-          reader.onload = function (e) {
-            const docData = e.target.result;
-            docx.renderAsync(docData, document.getElementById("container-docx"))
-              .then(x => {
-                console.log("docx: finished", x)
-              });
-          };
-          reader.readAsArrayBuffer(file);
-        }
-      }
-
-    // fetch('https://assets')
-    // .then(response => response.blob())
-    // .then(blob => {
-    //   console.log('Blob успешно получен:', blob);
-    //   // Дальнейшая работа с blob
-    // })
-    // .catch(error => console.error('Ошибка:', error));
-    //   var docDataN = getBlobFromLocalhost();
-    //   docx.renderAsync(docDataN, document.getElementById("container-docx")).then(x => console.log("docx: finished"));
-    // </script>
+    </script>
 
   </body>
   <!--end::Body-->
