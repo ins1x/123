@@ -427,11 +427,10 @@
                   <div class="col-sm-6 mb-3 mb-sm-3">
                     <div class="card">
                       <div class="card-header text-bg-gray py-2">
-                        <h3 class="card-title"> Базовые настройки сети</h3>
+                        <h3 class="card-title"> Настройки сети</h3>
                       </div>
                       <div class="card-body">
-                        <p>Памятки по настройкам на <a href="https://www.beltelecom.by/help/checklist-for-settings" target="_blank">beltelecom.by</a></p>
-
+                        Справочные данные для настройки:
                         <span class="d-block">
                           <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapsecollapseDNStable" role="button" aria-expanded="false" aria-controls="collapseDNStable">
                             <i class="bi bi-chevron-down"></i> Адреса DNS серверов
@@ -540,65 +539,7 @@
                           </div>
                         </span>
 
-                        <span class="d-block">
-                          <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseNetworkIpv6set" role="button" aria-expanded="false" aria-controls="collapseNetworkIpv6set">
-                            <i class="bi bi-chevron-down"></i> Настройка для IPv6
-                          </a>
-                          <div class="collapse" id="collapseNetworkIpv6set">
-                            <p>При использовании IPv6-адреса в URL необходимо заключать адрес в квадратные скобки:<br><a href="http://[2001:0db8:11a3:09d7:1f34:8a2e:07a0:765d]/" target="_blank">http://[2001:0db8:11a3:09d7:1f34:8a2e:07a0:765d]/</a></p>
-                            <p>Если необходимо указать порт, то он пишется после скобок:<br><a href="http://[2001:0db8:11a3:09d7:1f34:8a2e:07a0:765d]:8080/" target="_blank">http://[2001:0db8:11a3:09d7:1f34:8a2e:07a0:765d]:8080/</a></p>
-                              
-                            Посмотреть полный IPv6 адрес можно через <code>ipconfig</code>:
-                            <code>
-                              <pre style="white-space: pre-line;">
-                              IPv6-адрес. . . . . . . . . . : 2a06:b800:1c00:0:c934:bb77:84:6752(Основной)
-                              Локальный IPv6-адрес канала . : fe80::c934:bb77:84:6752%23(Основной)
-                              Основной шлюз. . . . . . . . .: fe80::223:33ff:fe87:cb19%23
-                              </pre>
-                            </code>
-                            <blockquote>IPv6-адрес - это глобальный IPv6 адрес,  Локальный IPv6-адрес канала - это локальный IPv6 адрес внутри ЛВС</blockquote>
-                            
-                            <p>Калькулятор ipv6: <a href="https://edgecenter.ru/dev-tools/calc-net-ipv6" target="_blank">https://edgecenter.ru/dev-tools/calc-net-ipv6</a></p>
-
-                            Особенности работы IPv6:
-                            <ul>
-                              <li>
-                                При подключении услуги «Статический IPv6 адрес» выделяется статическая подсеть IPv6 с префиксом /56, в которую можно подключить до 2 в 72 степени устройств (4 секстиллиона), 
-                                каждое из которых будет иметь выделенные статические IPv6-адреса в интернете. Абонентам будет доступно использование одновременно протоколов IPv4 и IPv6, по технологии DualStack.
-                              </li>
-                              <li>
-                                Настройка DHCP в IPv6 отличается от старого IPv4 тем, что в нем нет привычного NAT, адреса состоят из 128 бит (8 групп шестнадцатеричных чисел), 
-                                а устройства умеют настраиваться сами с помощью автоконфигурации (SLAAC) или DHCPv6. 
-                                Для корректной работы удаленных сервисов необходимо вручную задать адрес из пула, иначе после перезагрузки оно получит другой IPv6 адрес.
-                              </li>
-                              <li>
-                                В IPv6 не нужно пробрасывать порты на роутере, такого явления в IPv6 нет. Все IPv6 адреса, которые получают устройства в локальной сети глобально маршрутизируемы. 
-                                Однако необходимые для работы порты должны быть открыты на вашем клиентском устройстве (могут быть заблокированны брандмаузером либо firewall)</li>
-                            </ul>
-                          </div>
-                        </span>
-
-                        <span class="d-block">
-                          <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseSpeedAndDuplex" role="button" aria-expanded="false" aria-controls="collapseSpeedAndDuplex">
-                            <i class="bi bi-chevron-down"></i> Настройка авто-согласования (дуплекс)
-                          </a>
-                          <div class="collapse" id="collapseSpeedAndDuplex">
-                            <p>
-                              Панель управления - Центр управления сетями и общим доступом - Изменение параметров адаптера (слева) 
-                              - Нажмите правой кнопкой мыши на ваше сетевое подключение и выберите <strong>Свойства</strong> -
-                              Кликните на кнопку <strong>Настроить</strong> (рядом с названием сетевой карты) - Перейдите на вкладку <strong>Дополнительно</strong> - 
-                              Найдите пункт <strong>Скорость и дуплекс (Speed & Duplex)</strong> или Тип подключения - в выпадающем списке выберите 
-                              Автосогласование (Auto Negotiation) - Нажмите ОК.
-                              <br>
-                              <a href="https://help-wifi.com/reshenie-problem-i-oshibok/nizkaya-skorost-interneta-po-kabelyu-skorost-linii-priem-peredacha-100-mbit-s-v-windows-kak-izmenit-i-uvelichit/">Пример настройки дуплекса для сетевой карты</a>
-                            </p>
-                            <blockquote> 
-                              Линк больше 100 Мбит-с может не подниматься из-за старого 4-х жильного кабеля, 
-                              неплотного контакта жил кабеля с коннектором, настроек сетевой и неккоректной работы сетевых драйверов.
-                            </blockquote>
-                          </div>
-                        </span>
-                        
+                        Базовые настройки сети:
                         <span class="d-block">
                           <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseCheckLocalIp" role="button" aria-expanded="false" aria-controls="collapseCheckLocalIp">
                             <i class="bi bi-chevron-down"></i> Проверить присвоенный IP
@@ -818,6 +759,70 @@
                           </div>
                         </span>
 
+                        Расширенные настройки сети:
+                        <span class="d-block">
+                          <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseNetworkIpv6set" role="button" aria-expanded="false" aria-controls="collapseNetworkIpv6set">
+                            <i class="bi bi-chevron-down"></i> Настройка для IPv6
+                          </a>
+                          <div class="collapse" id="collapseNetworkIpv6set">
+                            <p>При использовании IPv6-адреса в URL необходимо заключать адрес в квадратные скобки:<br><a href="http://[2001:0db8:11a3:09d7:1f34:8a2e:07a0:765d]/" target="_blank">http://[2001:0db8:11a3:09d7:1f34:8a2e:07a0:765d]/</a></p>
+                            <p>Если необходимо указать порт, то он пишется после скобок:<br><a href="http://[2001:0db8:11a3:09d7:1f34:8a2e:07a0:765d]:8080/" target="_blank">http://[2001:0db8:11a3:09d7:1f34:8a2e:07a0:765d]:8080/</a></p>
+                              
+                            Посмотреть полный IPv6 адрес можно через <code>ipconfig</code>:
+                            <code>
+                              <pre style="white-space: pre-line;">
+                              IPv6-адрес. . . . . . . . . . : 2a06:b800:1c00:0:c934:bb77:84:6752(Основной)
+                              Локальный IPv6-адрес канала . : fe80::c934:bb77:84:6752%23(Основной)
+                              Основной шлюз. . . . . . . . .: fe80::223:33ff:fe87:cb19%23
+                              </pre>
+                            </code>
+                            <blockquote>IPv6-адрес - это глобальный IPv6 адрес,  Локальный IPv6-адрес канала - это локальный IPv6 адрес внутри ЛВС</blockquote>
+                            
+                            <p>Калькулятор ipv6: <a href="https://edgecenter.ru/dev-tools/calc-net-ipv6" target="_blank">https://edgecenter.ru/dev-tools/calc-net-ipv6</a></p>
+
+                            Особенности работы IPv6:
+                            <ul>
+                              <li>
+                                При подключении услуги «Статический IPv6 адрес» выделяется статическая подсеть IPv6 с префиксом /56, в которую можно подключить до 2 в 72 степени устройств (4 секстиллиона), 
+                                каждое из которых будет иметь выделенные статические IPv6-адреса в интернете. Абонентам будет доступно использование одновременно протоколов IPv4 и IPv6, по технологии DualStack.
+                              </li>
+                              <li>
+                                Настройка DHCP в IPv6 отличается от старого IPv4 тем, что в нем нет привычного NAT, адреса состоят из 128 бит (8 групп шестнадцатеричных чисел), 
+                                а устройства умеют настраиваться сами с помощью автоконфигурации (SLAAC) или DHCPv6. 
+                                Для корректной работы удаленных сервисов необходимо вручную задать адрес из пула, иначе после перезагрузки оно получит другой IPv6 адрес.
+                              </li>
+                              <li>
+                                В IPv6 не нужно пробрасывать порты на роутере, такого явления в IPv6 нет. Все IPv6 адреса, которые получают устройства в локальной сети глобально маршрутизируемы. 
+                                Однако необходимые для работы порты должны быть открыты на вашем клиентском устройстве (могут быть заблокированны брандмаузером либо firewall)</li>
+                            </ul>
+                            
+                            <ul class="list-unstyled">
+                              <li><a href="https://chat.datacenter.by/index.php/f/1468878" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> Статический IP и IPv6</a></li>
+                            </ul>
+                          </div>
+                        </span>
+
+                        <span class="d-block">
+                          <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseSpeedAndDuplex" role="button" aria-expanded="false" aria-controls="collapseSpeedAndDuplex">
+                            <i class="bi bi-chevron-down"></i> Настройка авто-согласования (дуплекс)
+                          </a>
+                          <div class="collapse" id="collapseSpeedAndDuplex">
+                            <p>
+                              Панель управления - Центр управления сетями и общим доступом - Изменение параметров адаптера (слева) 
+                              - Нажмите правой кнопкой мыши на ваше сетевое подключение и выберите <strong>Свойства</strong> -
+                              Кликните на кнопку <strong>Настроить</strong> (рядом с названием сетевой карты) - Перейдите на вкладку <strong>Дополнительно</strong> - 
+                              Найдите пункт <strong>Скорость и дуплекс (Speed & Duplex)</strong> или Тип подключения - в выпадающем списке выберите 
+                              Автосогласование (Auto Negotiation) - Нажмите ОК.
+                              <br>
+                              <a href="https://help-wifi.com/reshenie-problem-i-oshibok/nizkaya-skorost-interneta-po-kabelyu-skorost-linii-priem-peredacha-100-mbit-s-v-windows-kak-izmenit-i-uvelichit/">Пример настройки дуплекса для сетевой карты</a>
+                            </p>
+                            <blockquote> 
+                              Линк больше 100 Мбит-с может не подниматься из-за старого 4-х жильного кабеля, 
+                              неплотного контакта жил кабеля с коннектором, настроек сетевой и неккоректной работы сетевых драйверов.
+                            </blockquote>
+                          </div>
+                        </span>
+
                       </div>
                     </div>
 
@@ -827,9 +832,7 @@
                       </div>
                       <div class="card-body">
                         <ul class="list-unstyled">
-                          <li><a href="https://chat.datacenter.by/index.php/f/1468878" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> Статический IP и IPv6</a></li>
-                          <li><a href="https://chat.datacenter.by/index.php/f/1465469" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> Настройка VPN (БТК)</a></li>
-                          <li><a href="https://chat.datacenter.by/index.php/f/1468777" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> Настройка wi-fi +(Общедоступные точки)</a></li>
+                          <li><a href="https://chat.datacenter.by/index.php/f/1465469" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> Настройка VPN (БТК)</a></li>                          
                           <li><a href="https://chat.datacenter.by/index.php/f/1468840" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> Настройка подключения и сервисов</a></li>
                           <li><a href="https://chat.datacenter.by/index.php/f/1467921" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> Nextcloud - Интернет и сети передачи данных</a></li>
                         </ul>
@@ -893,7 +896,12 @@
                             <i class="bi bi-chevron-down"></i> Общедоступный Wi-fi (ciscowifi.beltelecom.by)
                           </a>
                           <div class="collapse" id="collapseByflyWifi">
-                            Проверка полученного IP-адреса от точки досутпа wi-fi:
+                            <ul>
+                              <li><a href="https://beltelecom.by/private/telephony/prepaid-calls/stk/taksofony-i-telefonnye-karty-publichnyi-dogovor" target="_blank">Публичный договор</a></li>
+                              <li><a href="https://beltelecom.by/all/internet/wifi/how-to-use-wi-fi" target="_blank">Как пользоваться</a></li>
+                              <li><a href="https://chat.datacenter.by/index.php/f/1468777" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> Настройка wi-fi +(Общедоступные точки)</a></li>
+                            </ul>
+                            Проверка полученного IP-адреса от точки доступа wi-fi:
                             <ul>
                               <li>
                                 100.ххх по сети все хорошо, проблема возможна в клиентском устройстве. 
@@ -907,6 +915,59 @@
                               </li>
                             </ul>
                             <blockquote>Адреса из сети 169.254.0.0/16 Windows присваивает автоматически, если в подключенной сети нет DHCP сервера</blockquote>
+
+                            Не гарантируется по ПОУ:
+                            <ul>
+                              home-wifi.п.25 "Исполнитель не гарантирует бесперебойность доступа к Услуге", а так же Примечание 1. 
+                              "Скорость передачи данных для конкретной точки WIFI зависит от состояния радиоканала и степени загруженности сети (количества одновременно работающих абонентов)".
+                              Скорость предоставления доступа в сеть Интернет на базе технологии Wi-Fi с использованием карт  на одного пользователя составляет от 200 Кбит/с до 5 Мбит/с, в зависимости от одновременно работающего оборудования передачи данных в одной зоне доступа WI-FI.
+                            </ul>
+                          </div>
+                        </span>
+
+                        <span class="d-block">
+                          <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapsePortalCiscoWifi" role="button" aria-expanded="false" aria-controls="collapsePortalCiscoWifi">
+                            <i class="bi bi-chevron-down"></i> Точки Wi-fi для юр.лиц
+                          </a>
+                          <div class="collapse" id="collapsePortalCiscoWifi">
+                            Настройки SSID:
+                            <ul>
+                               <li>6.11 Возможное расширение созданной сети Wi-Fi осуществляется персоналом Оператора по факту обращения Абонента с внесением изменений в договорные отношения.</li>
+                               <li>6.12 Индивидуальное название точки доступа (SSID) для всех вариантов Услуги выбирается Абонентом самостоятельно и может содержать до 32 символов цифр и/или латинских букв верхнего и нижнего регистра.</li>
+                               <li>6.13 Для одного Абонента допускается выделение не более 5 сетей Wi-Fi (SSID) с любым количеством точек доступа в них.</li>
+                            </ul>
+                            PIN коды:
+                            <ul>
+                              <li>
+                                6.19.3 Сгенерированный PIN-код действует только в рамках локации Абонента и имеет ограниченное, настраиваемое время активации, после истечения которого, 
+                                помечается как недействительный. После получения PIN-кода, пользователь имеет возможность ввести его на любом из устройств, подключенных к данной сети Wi-Fi. 
+                                PIN-код возможно использовать однократно и только на одном устройстве.
+                              </li>
+                              <li>6.19.4 После введения PIN-кода доступ в Интернет с устройства, на котором был введен код, предоставляется в соответствии с выбранным Абонентом временем.</li>
+                              <li>6.19.5 В случае несогласия пользователя с условиями Соглашения PIN-код не высылается и доступ в сеть Интернет не предоставляется.</li>
+                              <li>
+                                6.19.6 В случае отсутствия у Пользователя номера мобильного телефона (либо при невозможности получения реквизитов на номер мобильного телефона, например, 
+                                при отсутствии подключенной услуги роуминга у абонента зарубежного мобильного оператора) пользователь обращается к администратору Абонента, который имеет 
+                                возможность авторизоваться на Портале авторизации под собственными реквизитами, и по паспортным данным пользователя выдать ему PIN-код для доступа к услуге. 
+                                Администратор Абонента информирует пользователя об условиях Соглашения. В случае согласия пользователя с условиями Соглашения администратор Абонента указывает
+                                 в форме авторизации паспортные данные пользователя и генерирует PIN-код, который передает пользователю. Ответственность за ознакомление с условиями Соглашения 
+                                 и правильность введенных паспортных данных (согласно 3.1) пользователя несет администратор Абонента. В случае согласия пользователя на обработку персональных 
+                                 данных для целей информирования, Абонент обязан взять у пользователя заявление в соответствии с п.3.2.
+                              </li>
+                              <blockquote>
+                                Пин для подключения действует 12 часов для 1 устройства. Можно запросить PIN на одном устройстве, но подключиться по нему на другом к той же точке.
+                              </blockquote>
+                            </ul>
+                            Касательно скорости на точках wi-fi из <a href="https://beltelecom.by/business/additional-services/business-solutions-networking/predostavlenie-v-polzovanie-seti-wi-fi">ПОУ</a>:
+                            <ul>
+                              При использовании Абонентом технологии беспроводного доступа Wi-Fi для подключения абонентского устройства к точке доступа скорость передачи данных будет ограничена факторами, 
+                              влияющими на распространение радиосигнала: удаленности от точки доступа, наличия помех и препятствий, технических характеристик подключаемого абонентского устройства
+                              (смартфон, ноутбук, планшет и др.), зашумленности радиоэфира. В данной строке подразумевается скорость передачи данных для одного Абонента/пользователя при условии 
+                              использования ресурсов точки доступа только одним абонентским устройством и превышении величины "отношение сигнал-шум" в радиоканале Wi-Fi 25 дБ в области уверенного
+                              приема (часть зоны доступа Wi-Fi без существенных внутрисистемных и межсистемных помех, ограниченная уровнем сигнала на входе приемника не менее - 80 дБм).
+                              Отношение "сигнал-шум" для канала подключения точки доступа на основе DSL должно быть не менее 12 дБ. 
+                              *Возможные перерывы предоставления Услуги обусловлены необходимостью проведения на оборудовании Оператора периодических планово-профилактических работ, ремонтно-восстановительных работ, а также погодными и иными факторами, влияющими на распространение радиосигнала.
+                            </ul>
                           </div>
                         </span>
 
@@ -1359,10 +1420,35 @@
                       </div>
                     </span>
 
+                    <span class="d-block">
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseSTBusb" role="button" aria-expanded="false" aria-controls="collapseSTBusb">
+                        <i class="bi bi-chevron-down"></i> Поддержка мультимедиа через USB 
+                      </a>
+                      <div class="collapse" id="collapseSTBusb">
+                        Поддержка мультимедиа через USB есть только на новых приставках:
+                        <ul>
+                          <li>B800 - через меню "Локальные медиа" при нажатии на <kbd>SET</kbd></li>
+                          <li>SML - при подключении появится иконка <i class="bi bi-usb-symbol"></i> в основном меню</li>
+                          <li>DV - для отображения файлов и мультимедиа нужно установить файловый менеджер из Google Play</li>
+                        </ul>
+                        Для приставок эфирного ТВ поддержка просмотра мультимедиа зависит от установленной прошивки. Все приставки работают только с USB отформатированными в FAT32.
+                        <blockquote>На остальных приставках разъёмы «USB» используются для включения расширенных функций (для разработчика и перепрошивки), не предназначены для мультимедийных функций.</blockquote>
+                      </div>
+                    </span>
+
+                    <!-- <span class="d-block">
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseSTBcontrol" role="button" aria-expanded="false" aria-controls="collapseSTBcontrol">
+                        <i class="bi bi-chevron-down"></i> Пульты
+                      </a>
+                      <div class="collapse" id="collapseSTBcontrol">
+                        
+                      </div>
+                    </span> -->
+
                     <br>
                     <ul class="list-unstyled">
                       <li><a href="https://chat.datacenter.by/index.php/f/1464626" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> OTT и IPTV по тарифам</a></li>
-                      <li><a href="https://chat.datacenter.by/index.php/f/1465142" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> Прочие сервисы</a></li>
+                      <li><a href="https://chat.datacenter.by/index.php/f/1465142" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> Прочие доступные сервисы</a></li>
                       <li><a href="https://chat.datacenter.by/index.php/f/1520039" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> Приставки</a></li>
                     </ul>
                     
