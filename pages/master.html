@@ -410,14 +410,14 @@
             <!--begin::Row-->
             <div class="row">
               <div class="col-sm-6">
-                <h3 class="mb-0 text-secondary"><i class="nav-icon bi bi-person-badge"></i> MBTK</h3>
+                <h3 class="mb-0 text-secondary"><i class="nav-icon bi bi-person-fill"></i> Master</h3>
               </div>
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-end">
                   <li class="breadcrumb-item"><a href="dashboard.html">Главная</a></li>
                   <li class="breadcrumb-item active" aria-current="page">
                     <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> MBTK</a>
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Мастер</a>
                       <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="dashboard.html" aria-current="true"><i class="nav-icon bi bi-grid-1x2 me-1" aria-hidden="true"></i> Главная</a></li>
                         <li><a class="dropdown-item" href="portals.html" aria-current="true"><i class="nav-icon bi bi-grid-3x3-gap-fill me-1" aria-hidden="true"></i> Рабочие порталы</a></li>
@@ -448,55 +448,105 @@
             <div class="row">
 
               <div class="col-md-6">
-                <div class="card card-primary card-outline mb-4">
-                  <div class="card-header">
+                <div class="card card-primary card-outline mb-2">
+                  <!-- <div class="card-header">
                     <div class="card-title">Назначить выезд</div>
-                  </div>
+                  </div> -->
                   <form>
                     <div class="card-body">
-                      <div class="mb-3">
-                        <select class="form-select" id="select-default">
-                          <option selected="">Осмотр по месту</option>
+                      <div class="mb-2">
+                        <select class="form-select" id="selectTemplate">
+                          <!-- <option selected="">Осмотр по месту</option>
                           <option>Настройка вай-фай / проверка</option>
-                          <option>Проверка качества предоставления</option>
-                          <option>Переобжатие</option>
-                          <option>Замена приставки</option>
-                          <option>Замена модема</option>
+                          < --- Loaded from JS --- > -->
                         </select>
                       </div>
-                      <div class="mb-3 form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                        <label class="form-check-label" for="exampleCheck1">Первоначальный</label>
+                      <!-- <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="checkNewClient" />
+                        <label class="form-check-label" for="checkNewClient">Первоначальный</label>
+                      </div> -->
+                      <ul class="nav nav-tabs" id="masterTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link active" id="first-tab" data-bs-toggle="tab" data-bs-target="#first" type="button" role="tab" aria-controls="first" aria-selected="true">Первоначальный</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link" id="repair-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Ремонт</button>
+                        </li>
+                      </ul>
+                      <br>
+                      <div class="tab-content" id="masterTabContent">
+
+                        <div class="tab-pane fade show active" id="first" role="tabpanel" aria-labelledby="first-tab">
+                          <div class="mb-2 form-check">
+                            <input type="checkbox" class="form-check-input" id="checkHaveEquip" />
+                            <label class="form-check-label" for="checkHaveEquip">Оборудование у абонента</label>
+                          </div>
+                          <div class="mb-2 form-check">
+                            <input type="checkbox" class="form-check-input" id="checkDopStb" />
+                            <label class="form-check-label" for="checkDopStb">Дополнительная приставка</label>
+                          </div>
+                          <div class="mb-2 form-check">
+                            <input type="checkbox" class="form-check-input" id="checkEthernet" />
+                            <label class="form-check-label" for="checkEthernet">Нужен сетевой кабель</label>
+                          </div>
+                        </div>
+                        
+
+                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="repair-tab">
+                          <div class="mb-2 form-check">
+                            <input type="checkbox" class="form-check-input" id="checkToday" />
+                            <label class="form-check-label" for="checkToday">Сегодня на сегодня</label>
+                          </div>
+                        </div>
+                        
                       </div>
-                      <div class="mb-3 form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck2" />
-                        <label class="form-check-label" for="exampleCheck2">Оборудование у аб-та</label>
+
+                      <!-- <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="checkNewClient" checked="">
+                        <label class="form-check-label" for="checkNewClient">Первоначальный</label>
+                      </div> -->
+                      <div class="mb-2 form-check">
+                        <input type="checkbox" class="form-check-input" id="checkCallBefore" />
+                        <label class="form-check-label" for="checkCallBefore">Предварительно набрать</label>
                       </div>
-                      <div class="mb-3 form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck3" />
-                        <label class="form-check-label" for="exampleCheck3">Дополнительная приставка</label>
+                      <div class="mb-2 form-check">
+                        <input type="checkbox" class="form-check-input" id="checkDomofon" />
+                        <label class="form-check-label" for="checkDomofon">Домофон</label>
                       </div>
-                      <div class="mb-3 form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck4" />
-                        <label class="form-check-label" for="exampleCheck4">Предварительно набрать</label>
-                      </div>
-                      <div class="mb-3 form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck5" />
-                        <label class="form-check-label" for="exampleCheck5">Нужен сетевой кабель</label>
+                      <div class="mb-2 form-check">
+                        <input type="checkbox" class="form-check-input" id="checkPay" />
+                        <label class="form-check-label" for="checkPay">Оплата</label>
                       </div>
                       <div class="form-floating">
-                        <textarea class="form-control" id="floatingTextarea" placeholder="Leave a comment here" style="height: 6rem"></textarea>
-                        <label for="floatingTextarea">Текст заявки</label>
+                        <textarea class="form-control" id="taskTextarea" placeholder="Leave a comment here" style="height: 10rem"></textarea>
+                        <label for="taskTextarea">Текст заявки</label>
                       </div>
                     </div>
                     <div class="card-footer">
-                      <button type="submit" class="btn btn-primary">Сформировать</button>
-                      <button type="submit" class="btn btn-outline-danger">Очистить</button>
+                      <button id="copyTextarea" type="button" class="btn btn-outline-primary">Скопировать</button>
+                      <button id="clearTextarea" type="reset" class="btn btn-outline-danger">Очистить</button>
+                      <!-- &nbsp;&nbsp;
+                      <button id="saveTextarea" type="button" class="btn btn-outline-success">Сформировать</button>  -->
                     </div>
                   </form>
                 </div>
               </div>
 
+              <!-- <div class="card card-primary card-outline mb-4">
+                <div class="card-header">
+                  <div class="card-title">Шаблоны</div>
+                </div>
+                <div class="card-body">
+                  <table class="table table-striped-columns" id="templatesTable">
+                    <tbody>
+                      Data loaded from JS
+                    </tbody>
+                  </table>
+                </div>
+                <div class="card-footer">
+                </div>
+              </div> -->
+              
             </div>
             <!--end::Row-->      
           </div>
@@ -562,6 +612,127 @@
     <!-- customjs -->
     <script src="../js/custom.js"></script>
 
+    <!-- only for this page-->    
+    <script language="javascript">
+
+      const masterTemplates = [
+        'Необходим выезд c осмотром по месту.',
+        'Необходим выезд для проверки работы услуги. Проверить работу услуги с модема напрямую. Дать рекомендации по улучшению работы сети Wi-fi по месту',
+        'Необходим выезд для проверки качества предоставления. Протестировать работу услуги с проверочного устройства. Взять двух-диапазонный модем под под блок Huawei/ZTE для теста и возможной замены. Владелец+',
+        'Необходим выезд для проверки работы услуги. Взять обжимник, коннекторы, проверить сетевой провод',
+        'Необходим выезд для проверки работы услуги ZALA и возможной замены STB приставки. Владелец+',
+        'Необходим выезд для замены оборудования. Взять модем под блок HUAWEI/ZTE. Владелец+',
+      ];
+      
+      const templatesDataTable = [
+        { name: 'Замена модема с проверкой', template: 'Необходим выезд для проверки качества предоставления. Протестировать работу услуги с проверочного устройства. Взять двух-диапазонный модем под под блок Huawei/ZTE для теста и возможной замены. Владелец+' },
+        { name: 'Замена модема', template: 'Необходима замена модема на двух-диапазонный под блок Huawei/ZTE, Владелец+' },
+        { name: 'Первоначалка', template: 'По согласованию с аб-том назначен первоначальный выезд спец-та на 2026-08-21 Необходимо подготовить наряд. Возьмите в работу' },
+        { name: 'Первоначалка + оборуд', template: 'По согласованию с аб-том назначен выезд первоначального на 2026-06-25 Необходимо подготовить оборудование под аб-та и документы. Возьмите в работу.' },
+        { name: '1305', template: 'Взять обжимник СК, коннекторы, проверить сетевой провод, взять комплект СТБ для возможной замены, адрес верный, об возможной оплате уведомлен' },
+        { name: 'LOS', template: 'LOS, блок норма, адрес верный, об возможной оплате уведомлен, тех блок +' },
+        { name: 'Smart Zala (wi-fi)', template: 'Зависания Smart Zala через приложения по Wi Fi, мастер по проверке качества предоставляемой услуги, проверить настр-ки модема, дать консул-ю по улучшению сигнала вф, взять тестовый сетевой кабель 10 метров для проверки, адрес верный, об возможной оплате уведомлен' },
+        { name: '100 МБит-с', template: 'Не поднимается линк выше 100 Мбит-с, кабель 8-ми жильный. Вопрос с падением скорости локального соединения между ПК и модемом. Необходимо проверить сетевой, переобжать. ' },
+        { name: 'Because of ring', template: 'Происходит деактивация модема , по причине некорректного подключения сетевых проводом или повреждения изоляции этих проводов ( короткое между жилами ) проверить по месту , взять проверочный кабель , обжимник , коннекторы , адрес верный, об возможной оплате уведомлен, тех блок отказ ' },
+        { name: 'Wi-fi', template: 'Низкая скорость, разрывы по вай фай, замена модема не помогла, повторно, мастер по проверки качества предоставляемой услуги, проверить настр-ки оборуд-я,  дать консул-ю по улучшению качества работы, адрес верный, об возможной оплате уведомлен, за 1 час перед приходом набрать на к.т. тех блок отказ.' },
+        { name: 'Установка ZALA', template: 'Слабый польз-ль, не может установить приложения Zala Yasna на ТВ. Мастер с флэшкой apk файлами, установить и проверить работу телевидения, адрес верный, об возможной оплате уведомлен, к.т +375298551085, тех блок отказ' },
+        { name: 'Wi-fi + УД', template: 'Низкая скорость по вай фай, мастер по проверки качества предоставляемой услуги, проверить настр-ки оборуд-я, дать консул-ю по улучшению качества работы, по ТП абонента возможно выдача 2х диапазонного модема, после проверки если есть необходимость в замене, то данный момент обязательно указать в заявке, адрес верный, общежитие, об возможной оплате уведомлен, перед приходом набрать на к.т., тех блок отказ.' },
+        { name: 'Zala Yasna / Smart Zala', template: 'У абонента старый ТВ, необх-мо выдача СТБ для работы телевидения. пред-но смены платформы с ZALA YASNA на SMART ZALA с выдачей SML, согласен, необх-мо переключить ТП на Ясна 200  Smart, согласован первоначальный выезд мастера для выдачи и подключения СТБ на 28.10.2026, необх-мо подготовить комплект СТБ SML+документы для мастера, информ-ю по оборуд-ю указать мастеру в заявке, возьмите пож-та в работу.' },
+        { name: 'ЦРУС нет лимита', template: 'PON мигает, на блок не выходит, новый абонент, пред-н ближайший доступный выезд PONюр по журналу на 2.08, абонент такое длительное время ожидать не может, нужен срочно интернет, посмотрите пож-та если возможность назначить выезда мастера раньше' },
+        { name: 'Низкая скорость на ПК по СК', template: 'Низкая скорость на ПК по СК, по линии все в норме. Необходимо протестировать подключение с использованием тестового ноутбука и сетевого кабеля, чтобы продемонстрировать работу услуги абоненту на месте. При необходимости предоставить консультацию по использованию услуги. Адрес верный, об возможной оплате уведомлен' }
+      ];
+
+      const selectTemplate = document.getElementById('selectTemplate');
+      const taskTextarea = document.getElementById('taskTextarea');
+      const copyTextarea = document.getElementById('copyTextarea');
+      // const saveTextarea = document.getElementById('saveTextarea');
+      const clearTextarea = document.getElementById('clearTextarea');
+      
+      // Fill templates table
+      // const tbody = document.querySelector('#templatesTable tbody');
+      
+      // const rowsTemplatesTable = templatesDataTable.map(data => {
+      //   return `
+      //     <tr>
+      //       <td>${data.name}</td>
+      //       <td>${data.template}</td>
+      //     </tr>
+      //   `;
+      // }).join('');
+      
+      // tbody.innerHTML = rowsTemplatesTable;
+      // End templates table
+
+      const optionsbody = document.querySelector('#selectTemplate');
+      const rowsNameTable = templatesDataTable.map(data => {
+        return `
+          <option>${data.name}</option>
+        `;
+      }).join('');
+      optionsbody.innerHTML = rowsNameTable;
+      // End options table
+
+      clearTextarea.addEventListener('click', (event) => {
+        taskTextarea.value = "";
+      });
+
+      copyTextarea.addEventListener('click', (event) => {
+        navigator.clipboard.writeText(taskTextarea.value);
+      });
+
+      const checkCallBefore = document.getElementById('checkCallBefore');
+      checkCallBefore.addEventListener('change', (event) => {
+        if (checkCallBefore.checked) {
+          if (!taskTextarea.value.includes('Предварительно связаться')) {
+            taskTextarea.value += ' Предварительно связаться';
+           }
+        } else {
+          taskTextarea.value = taskTextarea.value.replaceAll('Предварительно связаться', '');
+        }
+      });
+
+      const checkPay = document.getElementById('checkPay');
+      checkPay.addEventListener('change', (event) => {
+        if (checkPay.checked) {
+          if (!taskTextarea.value.includes('Оплата+')) {
+            taskTextarea.value += ' Оплата+';
+           }
+        } else {
+          taskTextarea.value = taskTextarea.value.replaceAll('Оплата+', '');
+        }
+      });
+
+      const checkDomofon = document.getElementById('checkDomofon');
+      checkDomofon.addEventListener('change', (event) => {
+        if (checkDomofon.checked) {
+          if (!taskTextarea.value.includes('Домофон+')) {
+            taskTextarea.value += ' Домофон+';
+           }
+        } else {
+          taskTextarea.value = taskTextarea.value.replaceAll('Домофон+', '');
+        }
+      });
+
+      selectTemplate.addEventListener('change', (event) => {
+        // const selectedValue = event.target.value;
+        const selectedIndex = selectTemplate.selectedIndex;
+      
+        if (selectedIndex !== "") {
+          // taskTextarea.value = masterTemplates[selectedIndex];
+          let item = templatesDataTable[selectedIndex];
+          console.log(item);
+          taskTextarea.value = item.template;
+        } else {
+          taskTextarea.value = "Описание появится здесь...";
+        }
+      });
+
+      // Protect from unsafe page reload
+      // window.addEventListener('beforeunload', function (event) {
+      //   event.preventDefault();
+      // });
+
+    </script>
   </body>
   <!--end::Body-->
 </html>
