@@ -482,10 +482,6 @@
                             <label class="form-check-label" for="checkHaveEquip">Оборудование у абонента</label>
                           </div>
                           <div class="mb-2 form-check">
-                            <input type="checkbox" class="form-check-input" id="checkDopStb" />
-                            <label class="form-check-label" for="checkDopStb">Дополнительная приставка</label>
-                          </div>
-                          <div class="mb-2 form-check">
                             <input type="checkbox" class="form-check-input" id="checkEthernet" />
                             <label class="form-check-label" for="checkEthernet">Нужен сетевой кабель</label>
                           </div>
@@ -531,6 +527,9 @@
                   </form>
                 </div>
               </div>
+              <a href="mbtk.html#mbtk-master" class="icon-link icon-link-hover">
+                <i class="bi bi-arrow-return-left"></i> Вернуться на шаблоны MBTK
+              </a>
 
               <!-- <div class="card card-primary card-outline mb-4">
                 <div class="card-header">
@@ -614,21 +613,14 @@
 
     <!-- only for this page-->    
     <script language="javascript">
-
-      const masterTemplates = [
-        'Необходим выезд c осмотром по месту.',
-        'Необходим выезд для проверки работы услуги. Проверить работу услуги с модема напрямую. Дать рекомендации по улучшению работы сети Wi-fi по месту',
-        'Необходим выезд для проверки качества предоставления. Протестировать работу услуги с проверочного устройства. Взять двух-диапазонный модем под под блок Huawei/ZTE для теста и возможной замены. Владелец+',
-        'Необходим выезд для проверки работы услуги. Взять обжимник, коннекторы, проверить сетевой провод',
-        'Необходим выезд для проверки работы услуги ZALA и возможной замены STB приставки. Владелец+',
-        'Необходим выезд для замены оборудования. Взять модем под блок HUAWEI/ZTE. Владелец+',
-      ];
       
       const templatesDataTable = [
         { name: 'Замена модема с проверкой', template: 'Необходим выезд для проверки качества предоставления. Протестировать работу услуги с проверочного устройства. Взять двух-диапазонный модем под под блок Huawei/ZTE для теста и возможной замены. Владелец+' },
         { name: 'Замена модема', template: 'Необходима замена модема на двух-диапазонный под блок Huawei/ZTE, Владелец+' },
+        { name: 'Замена STB', template: 'Необходим выезд для проверки работы услуги ZALA и возможной замены STB приставки. Владелец+' },
         { name: 'Первоначалка', template: 'По согласованию с аб-том назначен первоначальный выезд спец-та на 2026-08-21 Необходимо подготовить наряд. Возьмите в работу' },
         { name: 'Первоначалка + оборуд', template: 'По согласованию с аб-том назначен выезд первоначального на 2026-06-25 Необходимо подготовить оборудование под аб-та и документы. Возьмите в работу.' },
+        { name: 'Переобжатие', template: 'Необходим выезд для проверки работы услуги. Взять обжимник, коннекторы, проверить сетевой провод.' },
         { name: '1305', template: 'Взять обжимник СК, коннекторы, проверить сетевой провод, взять комплект СТБ для возможной замены, адрес верный, об возможной оплате уведомлен' },
         { name: 'LOS', template: 'LOS, блок норма, адрес верный, об возможной оплате уведомлен, тех блок +' },
         { name: 'Smart Zala (wi-fi)', template: 'Зависания Smart Zala через приложения по Wi Fi, мастер по проверке качества предоставляемой услуги, проверить настр-ки модема, дать консул-ю по улучшению сигнала вф, взять тестовый сетевой кабель 10 метров для проверки, адрес верный, об возможной оплате уведомлен' },
@@ -702,6 +694,28 @@
         }
       });
 
+      const checkEthernet = document.getElementById('checkEthernet');
+      checkEthernet.addEventListener('change', (event) => {
+        if (checkEthernet.checked) {
+          if (!taskTextarea.value.includes('Взять сетевой кабель до 10м.')) {
+            taskTextarea.value += ' Взять сетевой кабель до 10м.';
+           }
+        } else {
+          taskTextarea.value = taskTextarea.value.replaceAll('Взять сетевой кабель до 10м.', '');
+        }
+      });
+
+      const checkHaveEquip = document.getElementById('checkHaveEquip');
+      checkHaveEquip.addEventListener('change', (event) => {
+        if (checkHaveEquip.checked) {
+          if (!taskTextarea.value.includes('Оборудование на руках.')) {
+            taskTextarea.value += ' Оборудование на руках.';
+           }
+        } else {
+          taskTextarea.value = taskTextarea.value.replaceAll('Оборудование на руках.', '');
+        }
+      });
+
       const checkDomofon = document.getElementById('checkDomofon');
       checkDomofon.addEventListener('change', (event) => {
         if (checkDomofon.checked) {
@@ -713,12 +727,12 @@
         }
       });
 
+
       selectTemplate.addEventListener('change', (event) => {
         // const selectedValue = event.target.value;
         const selectedIndex = selectTemplate.selectedIndex;
       
         if (selectedIndex !== "") {
-          // taskTextarea.value = masterTemplates[selectedIndex];
           let item = templatesDataTable[selectedIndex];
           console.log(item);
           taskTextarea.value = item.template;
