@@ -91,10 +91,6 @@
     <script src="../js/color-modes.js"></script>
     <!--end::Color Mode Toggle-->
 
-    <!--begin::Locale-->
-    <script src="../js/locale.js"></script>
-
-    <!--end::Locale-->
   </head>
   <!--end::Head-->
   <!--begin::Body-->
@@ -413,6 +409,7 @@
             <div class="row">
               <div class="col-sm-6">
                 <h3 class="mb-0 text-secondary"><i class="nav-icon bi bi-person-badge"></i> MBTK</h3>
+                <p>Последнее обновление шаблонов: <strong class="text-secondary">2/09/2026</strong></p>
               </div>
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-end">
@@ -484,7 +481,7 @@
               
               <div class="row">
                 <div class="col-sm-6 mb-3 mb-sm-3">
-                  <p>Последнее обновление шаблонов: <strong class="text-secondary">2/09/2026</strong></p>
+                  <h4 id="mbtk-content" class="text-secondary">Оглавление</h4>
 
                   <div id="list-main-content" class="list-group">
                     <a class="list-group-item list-group-item-action" href="#mbtk-main">Основное</a>
@@ -574,7 +571,7 @@
                       </tbody>
                     </table>
                   </div>
-                  <a href="https://beltelecom.by/feedback/services-point" class="icon-link icon-link-hover">
+                  <a href="https://beltelecom.by/feedback/services-point" class="icon-link icon-link-hover" target="_blank">
                     <i class="bi bi-arrow-return-right"></i> Адреса и график работы офисов продаж
                   </a>
                 </div>
@@ -714,53 +711,76 @@
                               <input type="checkbox" class="form-check-input" id="checkNewClient" />
                               <label class="form-check-label" for="checkNewClient">Первоначальный</label>
                             </div> -->
-                            <ul class="nav nav-tabs" id="masterTab" role="tablist">
-                              <li class="nav-item" role="presentation">
-                                <button class="nav-link active" id="first-tab" data-bs-toggle="tab" data-bs-target="#first" type="button" role="tab" aria-controls="first" aria-selected="true">Первоначальный</button>
-                              </li>
-                              <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="repair-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Ремонт</button>
-                              </li>
-                            </ul>
-                            <br>
-                            <div class="tab-content" id="masterTabContent">
-      
-                              <div class="tab-pane fade show active" id="first" role="tabpanel" aria-labelledby="first-tab">
+                            <div class="row">
+                              <div class="col-sm-6 mb-3 mb-sm-3">
+                                <ul class="nav nav-tabs" id="masterTab" role="tablist">
+                                  <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="first-tab" data-bs-toggle="tab" data-bs-target="#first" type="button" role="tab" aria-controls="first" aria-selected="true">Первоначальный</button>
+                                  </li>
+                                  <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="repair-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Ремонт</button>
+                                  </li>
+                                </ul>
+                                <br>
+                                <div class="tab-content" id="masterTabContent">
+          
+                                  <div class="tab-pane fade show active" id="first" role="tabpanel" aria-labelledby="first-tab">
+                                    <div class="mb-2 form-check">
+                                      <input type="checkbox" class="form-check-input" id="checkHaveEquip" />
+                                      <label class="form-check-label" for="checkHaveEquip">Оборудование у абонента</label>
+                                    </div>
+                                    <div class="mb-2 form-check">
+                                      <input type="checkbox" class="form-check-input" id="checkEthernet" />
+                                      <label class="form-check-label" for="checkEthernet">Нужен сетевой кабель</label>
+                                    </div>
+                                  </div>
+                                  
+                                  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="repair-tab">
+                                    <div class="mb-2 form-check">
+                                      <input type="checkbox" class="form-check-input" id="checkToday" />
+                                      <label class="form-check-label" for="checkToday">Сегодня на сегодня</label>
+                                    </div>
+                                  </div>
+                                  
+                                </div>
+          
+                                <!-- <div class="form-check form-switch">
+                                  <input class="form-check-input" type="checkbox" role="switch" id="checkNewClient" checked="">
+                                  <label class="form-check-label" for="checkNewClient">Первоначальный</label>
+                                </div> -->
                                 <div class="mb-2 form-check">
-                                  <input type="checkbox" class="form-check-input" id="checkHaveEquip" />
-                                  <label class="form-check-label" for="checkHaveEquip">Оборудование у абонента</label>
+                                  <input type="checkbox" class="form-check-input" id="checkCallBefore" />
+                                  <label class="form-check-label" for="checkCallBefore">Предварительно связаться</label>
                                 </div>
                                 <div class="mb-2 form-check">
-                                  <input type="checkbox" class="form-check-input" id="checkEthernet" />
-                                  <label class="form-check-label" for="checkEthernet">Нужен сетевой кабель</label>
+                                  <input type="checkbox" class="form-check-input" id="checkDomofon" />
+                                  <label class="form-check-label" for="checkDomofon">Домофон</label>
+                                </div>
+                                <div class="mb-2 form-check">
+                                  <input type="checkbox" class="form-check-input" id="checkPay" />
+                                  <label class="form-check-label" for="checkPay">Оплата</label>
+                                </div>
+                                <div class="mb-2 form-check">
+                                  <input type="checkbox" class="form-check-input" id="checkTb" />
+                                  <label class="form-check-label" for="checkTb">Техблок</label>
                                 </div>
                               </div>
-                              
-                              <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="repair-tab">
-                                <div class="mb-2 form-check">
-                                  <input type="checkbox" class="form-check-input" id="checkToday" />
-                                  <label class="form-check-label" for="checkToday">Сегодня на сегодня</label>
+  
+                              <div class="col-sm-6 mb-3 mb-sm-3"> 
+                                <div class="dropdown">
+                                  <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" disabled>
+                                    Выберите время
+                                  </button>
+                                  <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">В течении дня</a></li>
+                                    <li><a class="dropdown-item" href="#">9-13</a></li>
+                                    <li><a class="dropdown-item" href="#">13-17</a></li>
+                                    <li><a class="dropdown-item" href="#">17-20</a></li>
+                                  </ul>
                                 </div>
                               </div>
-                              
                             </div>
-      
-                            <!-- <div class="form-check form-switch">
-                              <input class="form-check-input" type="checkbox" role="switch" id="checkNewClient" checked="">
-                              <label class="form-check-label" for="checkNewClient">Первоначальный</label>
-                            </div> -->
-                            <div class="mb-2 form-check">
-                              <input type="checkbox" class="form-check-input" id="checkCallBefore" />
-                              <label class="form-check-label" for="checkCallBefore">Предварительно набрать</label>
-                            </div>
-                            <div class="mb-2 form-check">
-                              <input type="checkbox" class="form-check-input" id="checkDomofon" />
-                              <label class="form-check-label" for="checkDomofon">Домофон</label>
-                            </div>
-                            <div class="mb-2 form-check">
-                              <input type="checkbox" class="form-check-input" id="checkPay" />
-                              <label class="form-check-label" for="checkPay">Оплата</label>
-                            </div>
+
                             <div class="form-floating">
                               <textarea class="form-control" id="taskTextarea" placeholder="Leave a comment here" style="height: 10rem"></textarea>
                               <label for="taskTextarea">Текст заявки</label>
@@ -1823,7 +1843,7 @@
                       <td class="question">Подключение онлайн</td>
                       <td class="answer">
                         <p>
-                          Для этого следует оставить заявку на сайте: https://www.beltelecom.by/request-order, и к вам домой, при необходимости, привезут и оборудование, и договор.
+                          Для этого следует оставить заявку на сайте: <a href="https://www.beltelecom.by/request-order">https://www.beltelecom.by/request-order</a>, и к вам домой, при необходимости, привезут и оборудование, и договор.
                           Онлайн-заявка обрабатывается в течение 3 рабочих дней.
                         </p>
                       </td>
@@ -1855,7 +1875,7 @@
                         </p>
                         Старая версия кабинета пользователя:
                         <p>
-                          Здравствуйте. Для подключения услуги перейдите на вкладку «Тарифы». Выберите тип подключаемой услуги или пакет услуг в меню справа. После выбирайте интересующий тарифный план нажатием кнопки «Подключить». Далее пройдите 4 шага оформления заявки. Также Вы можете оставить заявку на подключение на сайте beltelecom.by , перейдя по ссылке https://beltelecom.by/order                          
+                          Здравствуйте. Для подключения услуги перейдите на вкладку «Тарифы». Выберите тип подключаемой услуги или пакет услуг в меню справа. После выбирайте интересующий тарифный план нажатием кнопки «Подключить». Далее пройдите 4 шага оформления заявки. Также Вы можете оставить заявку на подключение на сайте beltelecom.by , перейдя по ссылке <a href="https://beltelecom.by/order">https://beltelecom.by/order</a>
                         </p>
                       </td>
                     </tr>
@@ -2247,7 +2267,7 @@
                       <td class="question">Подключить Smart ZALA</td>
                       <td class="answer">
                         <p>
-                          Вы можете самостоятельно подключить услугу. Для этого в разделе «Мои услуги» в правом верхнем углу нажимаете на «Добавить услугу (+)» - > Заказать новую услугу -> заполняете свой адрес и необходимые данные. Логин и пароль придут на указанный вами e-mail. Устройство, на котором планируете пользоваться услугой, присутствует в Перечне устройств, на которых возможен доступ к услуге SMART ZALA: http://zala.by/internet-tv-zala ?
+                          Вы можете самостоятельно подключить услугу. Для этого в разделе «Мои услуги» в правом верхнем углу нажимаете на «Добавить услугу (+)» - > Заказать новую услугу -> заполняете свой адрес и необходимые данные. Логин и пароль придут на указанный вами e-mail. Устройство, на котором планируете пользоваться услугой, присутствует в Перечне устройств, на которых возможен доступ к услуге SMART ZALA: <a href="https://beltelecom.by/private/tv/smart">https://beltelecom.by/private/tv/smart</a>
                         </p>
                       </td>
                     </tr>
@@ -2369,7 +2389,7 @@
                         <p>
                           Для подключения пульта дистанционного управления к приставке, необходимо с близкого
                           расстояния (20 см.) нажать ОДНОВРЕМЕННО кнопку Громкости (минус) и кнопки «ОК»
-                          (круглая кнопка в центре пульта) и держать около 10 секунд. Подробнее по инструкции: https://www.beltelecom.by/sites/default/files/instructions/tv_9135_1.pdf
+                          (круглая кнопка в центре пульта) и держать около 10 секунд. Подробнее по инструкции: <a href="https://www.beltelecom.by/sites/default/files/instructions/tv_9135_1.pdf">https://www.beltelecom.by/sites/default/files/instructions/tv_9135_1.pdf</a>
                         </p>
                       </td>
                     </tr>
@@ -2543,7 +2563,7 @@
                       <td class="question">Видеодомофон</td>
                       <td class="answer">
                         <p>
-                          Здравствуйте, услуга Видеодомофон у вас подключена. Для работы услуги с мобильного устройства нужно установить мобильное приложение. Подробнее https://www.beltelecom.by/private/video-intercom
+                          Здравствуйте, услуга Видеодомофон у вас подключена. Для работы услуги с мобильного устройства нужно установить мобильное приложение. Подробнее <a href="https://www.beltelecom.by/private/video-intercom">https://www.beltelecom.by/private/video-intercom</a>
                         </p>
                       </td>
                     </tr>
@@ -2668,24 +2688,34 @@
         }
       });
 
+      // Get date
+      const now = new Date();
+      let year = now.getFullYear();
+      let month = now.getMonth() + 1;
+      let day = now.getDate() + 1;
+      // Format manually as YYYY-MM-DD
+      const tommorow = `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+      day = now.getDate() + 7;
+      const inaweek = `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+
       // Master
       const templatesDataTable = [
-        { name: 'Замена модема с проверкой', template: 'Необходим выезд для проверки качества предоставления. Протестировать работу услуги с проверочного устройства. Взять двух-диапазонный модем под под блок Huawei/ZTE для теста и возможной замены. Владелец+' },
-        { name: 'Замена модема', template: 'Необходима замена модема на двух-диапазонный под блок Huawei/ZTE, Владелец+' },
-        { name: 'Замена STB', template: 'Необходим выезд для проверки работы услуги ZALA и возможной замены STB приставки. Владелец+' },
-        { name: 'Первоначалка', template: 'По согласованию с аб-том назначен первоначальный выезд спец-та на 2026-08-21 Необходимо подготовить наряд. Возьмите в работу' },
-        { name: 'Первоначалка + оборуд', template: 'По согласованию с аб-том назначен выезд первоначального на 2026-06-25 Необходимо подготовить оборудование под аб-та и документы. Возьмите в работу.' },
+        { name: 'Замена модема с проверкой', template: 'Необходим выезд для проверки качества предоставления. Протестировать работу услуги с проверочного устройства. Взять модем под под блок Huawei/ZTE для теста и возможной замены.' },
+        { name: 'Замена модема', template: 'Необходима замена модема на двух-диапазонный под блок Huawei/ZTE'},
+        { name: 'Замена STB', template: `Необходим выезд на ${tommorow} для проверки работы услуги ZALA и возможной замены STB приставки`},
+        { name: 'Первоначалка', template: `По согласованию с аб-том назначен первоначальный выезд спец-та на ${inaweek} Необходимо подготовить наряд. Возьмите в работу`},
+        { name: 'Первоначалка + оборуд', template: `По согласованию с аб-том назначен выезд первоначального на на ${inaweek} Необходимо подготовить оборудование под аб-та и документы. Возьмите в работу.` },
+        { name: 'Первоначалка Zala Yasna / Smart Zala', template: 'У абонента старый ТВ, необх-мо выдача СТБ для работы телевидения. Необх-мо подготовить комплект СТБ + документы для мастера, информ-ю по оборуд-ю указать мастеру в заявке, возьмите пож-та в работу.' },
+        { name: 'ЦРУС нет лимита', template: `PON мигает, на блок не выходит, новый абонент, пред-н ближайший доступный выезд PON.юр по журналу на ${inaweek}, абонент такое длительное время ожидать не может, нужен срочно интернет, посмотрите пож-та если возможность назначить выезда мастера раньше` },
         { name: 'Переобжатие', template: 'Необходим выезд для проверки работы услуги. Взять обжимник, коннекторы, проверить сетевой провод.' },
         { name: '1305', template: 'Взять обжимник СК, коннекторы, проверить сетевой провод, взять комплект СТБ для возможной замены, адрес верный, об возможной оплате уведомлен' },
-        { name: 'LOS', template: 'LOS, блок норма, адрес верный, об возможной оплате уведомлен, тех блок +' },
+        { name: 'LOS', template: 'LOS. Визуально кабель осматривали, переподклчюали. блок норма, адрес верный, об возможной оплате уведомлен' },
         { name: 'Smart Zala (wi-fi)', template: 'Зависания Smart Zala через приложения по Wi Fi, мастер по проверке качества предоставляемой услуги, проверить настр-ки модема, дать консул-ю по улучшению сигнала вф, взять тестовый сетевой кабель 10 метров для проверки, адрес верный, об возможной оплате уведомлен' },
         { name: '100 МБит-с', template: 'Не поднимается линк выше 100 Мбит-с, кабель 8-ми жильный. Вопрос с падением скорости локального соединения между ПК и модемом. Необходимо проверить сетевой, переобжать. ' },
-        { name: 'Because of ring', template: 'Происходит деактивация модема , по причине некорректного подключения сетевых проводом или повреждения изоляции этих проводов ( короткое между жилами ) проверить по месту , взять проверочный кабель , обжимник , коннекторы , адрес верный, об возможной оплате уведомлен, тех блок отказ ' },
-        { name: 'Wi-fi', template: 'Низкая скорость, разрывы по вай фай, замена модема не помогла, повторно, мастер по проверки качества предоставляемой услуги, проверить настр-ки оборуд-я,  дать консул-ю по улучшению качества работы, адрес верный, об возможной оплате уведомлен, за 1 час перед приходом набрать на к.т. тех блок отказ.' },
-        { name: 'Установка ZALA', template: 'Слабый польз-ль, не может установить приложения Zala Yasna на ТВ. Мастер с флэшкой apk файлами, установить и проверить работу телевидения, адрес верный, об возможной оплате уведомлен, к.т +375298551085, тех блок отказ' },
-        { name: 'Wi-fi + УД', template: 'Низкая скорость по вай фай, мастер по проверки качества предоставляемой услуги, проверить настр-ки оборуд-я, дать консул-ю по улучшению качества работы, по ТП абонента возможно выдача 2х диапазонного модема, после проверки если есть необходимость в замене, то данный момент обязательно указать в заявке, адрес верный, общежитие, об возможной оплате уведомлен, перед приходом набрать на к.т., тех блок отказ.' },
-        { name: 'Zala Yasna / Smart Zala', template: 'У абонента старый ТВ, необх-мо выдача СТБ для работы телевидения. пред-но смены платформы с ZALA YASNA на SMART ZALA с выдачей SML, согласен, необх-мо переключить ТП на Ясна 200  Smart, согласован первоначальный выезд мастера для выдачи и подключения СТБ на 28.10.2026, необх-мо подготовить комплект СТБ SML+документы для мастера, информ-ю по оборуд-ю указать мастеру в заявке, возьмите пож-та в работу.' },
-        { name: 'ЦРУС нет лимита', template: 'PON мигает, на блок не выходит, новый абонент, пред-н ближайший доступный выезд PONюр по журналу на 2.08, абонент такое длительное время ожидать не может, нужен срочно интернет, посмотрите пож-та если возможность назначить выезда мастера раньше' },
+        { name: 'Because of ring', template: 'Модем уходит из сети по закольцовке. Возможная причина некорректное подключение сетевых проводов, или повреждения изоляции этих проводов (короткое между жилами). Проверить по месту, взять обжимник.' },
+        { name: 'Wi-fi', template: 'Нарекания на работу по ваф-йаф. Выезд для проверки качества предоставляемой услуги, проверить настр-ки оборуд-я, дать консультацию по улучшению сигнала вай-фай.' },
+        { name: 'Установка Smart ZALA', template: 'Выезд для установки приложения ZALA на ТВ. Взять флешку с apk файлами, установить и проверить работу телевидения' },
+        { name: 'Wi-fi + УД', template: 'Низкая скорость по вай фай, мастер по проверки качества предоставляемой услуги, проверить настр-ки оборуд-я, дать консул-ю по улучшению качества работы, по ТП абонента возможно выдача контроллера УД' },
         { name: 'Низкая скорость на ПК по СК', template: 'Низкая скорость на ПК по СК, по линии все в норме. Необходимо протестировать подключение с использованием тестового ноутбука и сетевого кабеля, чтобы продемонстрировать работу услуги абоненту на месте. При необходимости предоставить консультацию по использованию услуги. Адрес верный, об возможной оплате уведомлен' }
       ];
 
@@ -2782,6 +2812,16 @@
         }
       });
 
+      const checkTb = document.getElementById('checkTb');
+      checkTb.addEventListener('change', (event) => {
+        if (checkTb.checked) {
+          if (!taskTextarea.value.includes('Тех.блок+')) {
+            taskTextarea.value += ' Тех.блок+';
+           }
+        } else {
+          taskTextarea.value = taskTextarea.value.replaceAll('Тех.блок+', '');
+        }
+      });
 
       selectTemplate.addEventListener('change', (event) => {
         // const selectedValue = event.target.value;
@@ -2789,7 +2829,6 @@
       
         if (selectedIndex !== "") {
           let item = templatesDataTable[selectedIndex];
-          console.log(item);
           taskTextarea.value = item.template;
         } else {
           taskTextarea.value = "Описание появится здесь...";

@@ -2,6 +2,12 @@
  * Required Plugin(AdminLTE) and OverlayScrollbars-->
  */
 
+const userLocale = navigator.language || navigator.userLanguage;
+const ruLocale = 'ru'; 
+if (!userLocale.startsWith(ruLocale)) {
+  document.getElementsByTagName("BODY")[0].style.display = "none";
+}
+
 const SELECTOR_SIDEBAR_WRAPPER = '.sidebar-wrapper';
 const Default = {
   scrollbarTheme: 'os-theme-light',
