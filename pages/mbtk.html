@@ -484,7 +484,7 @@
               
               <div class="row">
                 <div class="col-sm-6 mb-3 mb-sm-3">
-                  <p>Последнее обновление шаблонов: <strong class="text-secondary">30/08/2026</strong></p>
+                  <p>Последнее обновление шаблонов: <strong class="text-secondary">2/09/2026</strong></p>
 
                   <div id="list-main-content" class="list-group">
                     <a class="list-group-item list-group-item-action" href="#mbtk-main">Основное</a>
@@ -498,6 +498,7 @@
                     <a class="list-group-item list-group-item-action" href="#mbtk-kabinet">Кабинет пользователя</a>
                     <a class="list-group-item list-group-item-action" href="#mbtk-service">Управление услугами</a>
                     <a class="list-group-item list-group-item-action" href="#mbtk-oplata">Оплата</a>
+                    <a class="list-group-item list-group-item-action" href="#mbtk-retail">Рассрочка</a>
                     <a class="list-group-item list-group-item-action" href="#mbtk-tarif">Тарифы</a>
                     <a class="list-group-item list-group-item-action" href="#mbtk-changeplan">Переоформление</a>
                     <a class="list-group-item list-group-item-action" href="#mbtk-close">Расторжение</a>
@@ -687,9 +688,95 @@
                 </div>
 
                 <h3 id="mbtk-master">Мастера</h3>
-                <a href="master.html" class="icon-link icon-link-hover">
-                  <i class="bi bi-arrow-return-right"></i> Тестовая версия генератора шаблонов для согласования мастера
-                </a>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="card card-secondary card-outline collapsed-card card-outline mb-2">
+                      <div class="card-header">
+                        <div class="card-title">Назначить выезд</div>
+                        <div class="card-tools">
+                          <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse">
+                            <i data-lte-icon="expand" class="bi bi-plus-lg"></i>
+                            <i data-lte-icon="collapse" class="bi bi-dash-lg"></i>
+                          </button>
+                        </div>
+                      </div>
+                        <div class="card-body">
+                          <form>
+                            <div class="mb-2">
+                              <select class="form-select" id="selectTemplate">
+                                <!-- <option selected="">Осмотр по месту</option>
+                                <option>Настройка вай-фай / проверка</option>
+                                < --- Loaded from JS --- > -->
+                              </select>
+                            </div>
+                            <!-- <div class="mb-3 form-check">
+                              <input type="checkbox" class="form-check-input" id="checkNewClient" />
+                              <label class="form-check-label" for="checkNewClient">Первоначальный</label>
+                            </div> -->
+                            <ul class="nav nav-tabs" id="masterTab" role="tablist">
+                              <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="first-tab" data-bs-toggle="tab" data-bs-target="#first" type="button" role="tab" aria-controls="first" aria-selected="true">Первоначальный</button>
+                              </li>
+                              <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="repair-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Ремонт</button>
+                              </li>
+                            </ul>
+                            <br>
+                            <div class="tab-content" id="masterTabContent">
+      
+                              <div class="tab-pane fade show active" id="first" role="tabpanel" aria-labelledby="first-tab">
+                                <div class="mb-2 form-check">
+                                  <input type="checkbox" class="form-check-input" id="checkHaveEquip" />
+                                  <label class="form-check-label" for="checkHaveEquip">Оборудование у абонента</label>
+                                </div>
+                                <div class="mb-2 form-check">
+                                  <input type="checkbox" class="form-check-input" id="checkEthernet" />
+                                  <label class="form-check-label" for="checkEthernet">Нужен сетевой кабель</label>
+                                </div>
+                              </div>
+                              
+                              <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="repair-tab">
+                                <div class="mb-2 form-check">
+                                  <input type="checkbox" class="form-check-input" id="checkToday" />
+                                  <label class="form-check-label" for="checkToday">Сегодня на сегодня</label>
+                                </div>
+                              </div>
+                              
+                            </div>
+      
+                            <!-- <div class="form-check form-switch">
+                              <input class="form-check-input" type="checkbox" role="switch" id="checkNewClient" checked="">
+                              <label class="form-check-label" for="checkNewClient">Первоначальный</label>
+                            </div> -->
+                            <div class="mb-2 form-check">
+                              <input type="checkbox" class="form-check-input" id="checkCallBefore" />
+                              <label class="form-check-label" for="checkCallBefore">Предварительно набрать</label>
+                            </div>
+                            <div class="mb-2 form-check">
+                              <input type="checkbox" class="form-check-input" id="checkDomofon" />
+                              <label class="form-check-label" for="checkDomofon">Домофон</label>
+                            </div>
+                            <div class="mb-2 form-check">
+                              <input type="checkbox" class="form-check-input" id="checkPay" />
+                              <label class="form-check-label" for="checkPay">Оплата</label>
+                            </div>
+                            <div class="form-floating">
+                              <textarea class="form-control" id="taskTextarea" placeholder="Leave a comment here" style="height: 10rem"></textarea>
+                              <label for="taskTextarea">Текст заявки</label>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="card-footer">
+                          <button id="copyTextarea" type="button" class="btn btn-outline-primary">Скопировать</button>
+                          <button id="clearTextarea" type="reset" class="btn btn-outline-danger">Очистить</button>
+                          <!-- &nbsp;&nbsp;
+                          <button id="saveTextarea" type="button" class="btn btn-outline-success">Сформировать</button>  -->
+                        </div>
+                    </div>
+                  </div>                  
+                </div>
+
                 <div class="table-responsive">
                   <table class="table table-striped-columns table-bordered">
                   <thead>
@@ -810,10 +897,14 @@
                       </td>
                     </tr>
                     <tr>
-                      <td class="question">Подключить ONU</td>
+                      <td class="question">Подключить ONU / PON моргает</td>
                       <td class="answer">
                         <p>
-                          Здравствуйте. Модем настраивается автоматически в течении 10-15 минут с момента подключения к сети. Обращайте внимание на индикацию PON. Когда PON загорится устойчиво и индикатор Internet начнет мигать - можно проверять работу услуги. На новых модемах может быть выключен wi-fi кнопкой на корпусе модема. Если индикатор wi-fi (он же WLAN, 2.4G, 5G) не горит, то необходимо включить вай-фай кнопкой на корпусе модема удерживая ее 5-7 секунд.
+                          По какому адресу установлен модем? Найдите, пожалуйста, на модеме наклейку и напишите серийный номер модема "SN:", указанный на ней.  
+                          Модем не выключайте, будем производить настройку оборудования.
+                        </p>
+                        <p>
+                          Модем настраивается автоматически в течении 10-15 минут с момента подключения к сети. Обращайте внимание на индикацию PON. Когда PON загорится устойчиво и индикатор Internet начнет мигать - можно проверять работу услуги. На новых модемах может быть выключен wi-fi кнопкой на корпусе модема. Если индикатор wi-fi (он же WLAN, 2.4G, 5G) не горит, то необходимо включить вай-фай кнопкой на корпусе модема удерживая ее 5-7 секунд.
                         </p>
                       </td>
                     </tr>
@@ -1123,6 +1214,14 @@
                         </p>
                       </td>
                     </tr>
+                    <tr>
+                      <td class="question">Новые DNS</td>
+                      <td class="answer">
+                        <p>
+                          При настройке оборудования следует указывать новые IP-адреса DNS-серверов. Для филиала "Минская городская телефонная сеть" -> предпочитаемый 194.158.196.245, альтернативный 86.57.255.149.
+                        </p>
+                      </td>
+                    </tr>
                   </tbody>
                   </table>
                 </div>
@@ -1273,6 +1372,9 @@
                         <p>
                           Для получения детализации Вам нужно перейти на раздел «Статистика» -> «Детализация». Далее на всплывающем меню «Выберите услугу» нажать на нужное название (напр. Телефонная связь) и выбрать период, который Вас интересует. Также, нажав на ярлык с конвертом, можно заказать выписку на е-mail (предварительно добавив его в настройках аккаунта). 
                         </p>
+                        <blockquote>
+                          <a href="https://beltelecom.by/private/internet/poryadok">ПОУ byfly 3.5.9</a> Оператор предоставляет статистику по оказанным Услугам (кроме Услуги Wi-Fi при доступе посредством карт доступа) и полученным платежам за определённый период времени, но не более 3-х месяцев посредством заказа статистики Абонентом через «Кабинет пользователя», размещённый по адресу http://issa.beltelecom.by, или по письменному обращению Абонента.
+                        </blockquote>
                       </td>
                     </tr>
                     <tr>
@@ -1327,6 +1429,30 @@
                         <p>
                           Существует услуга информирование о приближении к порогу отключения на e-mail, она бесплатная, но для того, чтобы вам приходили сообщения необходимо было либо при заключении договора указать e-mail, на который хотите получать сообщения или сейчас нам сообщить e-mail. Также у нас есть услуга sms-информирования, данная услуга платная - 0,13 руб. в месяц, ее вы можете подключить в Кабинете пользователя.
                         </p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="question">SMS оповещение / <a href="http://10.248.4.95/index.php?r=helper/index&part=2518&chapt=2530">Альфа-имена</a></td>
+                      <td class="answer">
+                        Не приходит SMS оповещение
+                        <ul>
+                          Подскажите пожалуйста когда примерно в последний раз приходило SMS оповещение? Необходимо проверить в папке "Спам", возможно ошибочно сообщение попало туда.
+                        </ul>
+                        Пришло SMS сообщение от Белтелеком с цифрами
+                        <ul>
+                          Подскажите пожалуйста SMS сообщение пришло от какого имени (BELTELECOM, MBTK, MGTS, BTK и.т.д)?
+                        </ul>
+                        <blockquote>
+                          Если <a href="http://10.248.4.95/index.php?r=helper/index&part=2518&chapt=2530">альфа-имя</a> содержит:
+                          <ul>
+                            <li>BELTELECOM - Портал "Cisco-wifi"</li>
+                            <li>beltelecom - рассылка ЦУД</li>
+                            <li>MBELTELECOM - Портал "Мой Белтелеком"</li>
+                            <li>MGTS - Рассылка офиса продаж</li>
+                            <li>MGTS.btk - Информирование о задолженности</li>
+                            <li>BTK - Тех.рассылка филиалов</li>
+                          </ul>
+                        </blockquote>
                       </td>
                     </tr>
                     <tr>
@@ -1458,7 +1584,7 @@
                       </td>
                     </tr>
                     <tr>
-                      <td class="question">Возврат средств</td>
+                      <td class="question"><a href="http://10.248.4.95/index.php?r=helper/index&part=2518&chapt=2521">Возврат средств</a></td>
                       <td class="answer">
                         <p>Для перевода денежных средств необходимо обращаться на офис продаж РУП «Белтелеком».  Адреса офисов продаж: <a href="https://www.beltelecom.by/feedback/services-point">https://www.beltelecom.by/feedback/services-point</a></p>
                         При оплате с помощью <strong>банковской карты</strong> (интернет-банкинг, м-банкинг, терминалы, инфокиоски т.д.) необходимо:
@@ -1496,9 +1622,9 @@
                       </td>
                     </tr>
                     <tr>
-                      <td class="question">Оплата за телефонию (кредитная)</td>
+                      <td class="question">Оплата за телефонию (<a href="http://10.248.4.95/index.php?r=helper/index&part=2518&chapt=2520">кредитная</a>)</td>
                       <td class="answer">
-                        Здравствуйте. Белтелеком выставляет счета за телефонию в следующем месяце после оказания услуг, при которой Оператор по окончании календарного месяца формирует и выставляет счет за оказанные услуги электросвязи. Статистику платежей вы можете просмотреть в Статистика - История платежей. Либо через сайте Белтелеком https://www.beltelecom.by/information-services
+                        Здравствуйте. Белтелеком выставляет счета за телефонию в следующем месяце после оказания услуг, при которой Оператор по окончании календарного месяца формирует и выставляет счет за оказанные услуги электросвязи. Статистику платежей вы можете просмотреть в Статистика - История платежей. Либо через сайте Белтелеком <a href="https://www.beltelecom.by/information-services">https://www.beltelecom.by/information-services</a>
                       </td>
                     </tr>
                     <tr>
@@ -1549,6 +1675,92 @@
                   </table>
                 </div>
 
+                <h3 id="mbtk-retail">Рассрочка</h3>
+                <div class="table-responsive">
+                  <table class="table table-striped-columns table-bordered">
+                  <thead>
+                    <tr>
+                      <th class="text-bg-secondary" width="20%">Вопрос</th>
+                      <th class="text-bg-secondary">Ответ</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="question">Условия рассрочки</td>
+                      <td class="answer">
+                        Условия приобретения товара в рассрочку указаны в "Порядке предоставления рассрочки платежа на товар физическим лицам", а именно:
+                        <ul>
+                          <li> Покупатель должен являться абонентом услуг доступа в сеть Интернет и/или телевидения ZALA или пакетов услуг не менее 365 дней подряд, НЕЗАВИСИМО ОТ ТП либо набора услуг. СКОРОСТЬ ТП НЕ ИМЕЕТ ЗНАЧЕНИЯ!  </li>
+                          <li> Услуга не должна находиться в ПРИНУДИТЕЛЬНОЙ блокировке более 30 календарных дней СУММАРНО в течение последнего ГОДА пользования. В этот срок НЕ входят дни Добровольной Блокировки и Платной Блокировки.  </li>
+                          <li> Услуга не должна находиться на дату осуществления проверки условий приобретения товара в рассрочку в блокировке на основании постановления органов принудительного исполнения.  </li>
+                          <li> На момент приобретения товара должен являться абонентом услуг:</li>
+                          <ul>
+                            <li> для подключения по технологии xDSL и LTE: пакет услуг линейки «Семейный», за исключением «Семейный 3», «Семейный 4» или пакет услуг линейки «ЯСНА» со скоростью доступа к сети Интернет не ниже 35/17,5 Мбит/с;  </li>
+                            <li> для подключения по технологии PON: пакет услуг линейки «ЯСНА» со скоростью доступа к сети Интернет не ниже 100/50 Мбит/с  </li>
+                          </ul>
+                          <li> Покупателем может быть физическое лицо, являющееся гражданином Республики Беларусь в возрасте от 18 до 69 лет (включительно).  </li>
+                          <li> Кроме ОСНОВНЫХ УСЛОВИЙ приобретения товара в рассрочку специалисты СП проводят ДОПОЛНИТЕЛЬНУЮ ОЦЕНКУ:  </li>
+                          <ul>
+                            <li> проверка платежеспособность абонента по КРЕДИТНОМУ РЕГИСТРУ НАЦ. БАНКА РБ;  </li>
+                            <li> проверка задолженность по услугам электросвязи либо задолженность перед другими юр. лицами по "РЕЕСТРУ ЗАДОЛЖЕННОСТЕЙ ПО ИСПОЛНИТЕЛЬНЫМ ДОКУМЕНТАМ";  </li>
+                            <li> запрос СПРАВКИ О ДОХОДАХ за последние 3 мес. Срок действия контракта или срочного труд. договора должен составлять не менее 1 года.  </li>
+                          </ul>
+                        </ul>  
+                        Подробно с "Порядком предоставления рассрочки платежа на товар физическим лицам" Вы можете ознакомиться на нашем сайте: <a href="https://shop.beltelecom.by/upload/iblock/850/uz4pwqv8sr59box9bw8id4r4rz3zc5n4.pdf">https://shop.beltelecom.by/upload/iblock/850/uz4pwqv8sr59box9bw8id4r4rz3zc5n4.pdf</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="question">Обязательства</td>
+                      <td class="answer">
+                        После удовлетворения условий получения рассрочки, с абонентом заключается "Договор на реализацию товара", с приложениями "График платежей" и "Акт приема-передачи". По условиям договора абонент обязуется:  
+                        <ul>
+                          <li> Пользоваться услугой не менее периода рассрочки платежа за товар. Период рассрочки 12/18/24 месяца, можно выплатить досрочно.  </li>
+                          <li> Не допускать нахождение услуги, указанной в договоре, в ПРИНУДИТЕЛЬНОЙ блокировке более 60 календарных дней ПОДРЯД.  </li>
+                          <li> Не допускать блокировку услуги на основании постановлений ОПИ.</li>
+                        </ul>
+                        Подробно с "Порядком предоставления рассрочки платежа на товар физическим лицам" Вы можете ознакомиться на нашем сайте: <a href="https://shop.beltelecom.by/upload/iblock/850/uz4pwqv8sr59box9bw8id4r4rz3zc5n4.pdf">https://shop.beltelecom.by/upload/iblock/850/uz4pwqv8sr59box9bw8id4r4rz3zc5n4.pdf</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="question">Ограничения по возрасту</td>
+                      <td class="answer">
+                        Имеются ограничения по возрасту. Покупатель - физическое лицо, являющееся гражданином РБ, достигшее, 18-летнего возраста и не достигшее 70-летнего возраста, заключившее с РУП "Белтелеком" договор об оказании услуг электросвязи и договор на реализацию товара в рассрочку.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="question">Порядок оплаты рассрочки</td>
+                      <td class="answer">
+                        Оплата товара возможна оплата двумя способами:
+                        <ul>
+                          <li>1. На номер договора на реализацию товара с 1-го числа. С абонентом заключается Договор на реализацию товара, где указан данный номер. Оплата вносится с помощью ЕРИП до 20 числа. (ЕРИП, разделе <Интернет, телевидение, телефония > Белтелеком > регион > физические лица > реализация товаров>)  </li>
+                          <li>2. На номер приложения пакета услуг, указанного в Договоре на реализацию товара (номер приложения пакета услуг, которым обязуется пользоваться абонент). С 16-го до 20-го числа месяца, в котором выставлен счет, осуществляется проверка баланса лицевого счета услуги электросвязи.  </li>
+                        </ul>
+                        <p>С 21-го числа осуществляется проверка (1 раз в сутки) балансов лицевого счета услуги электросвязи и лицевого счета для оплаты товара по просроченным платежам.  </p>
+ 
+                        <p>При непоступлении оплаты на счёт за товар или на счёт пакета услуг начисляется пеня (0,15% от суммы каждого неоплаченного очередного ежемесячного счета за каждый день просрочки). При оплате в ЕРИП после 20-го числа покупатель увидит начисленную сумму очередного платежа, увеличенную на размер пени.</p>
+                        
+                        Подробно с "Порядком предоставления рассрочки платежа на товар физическим лицам" Вы можете ознакомиться на нашем сайте: <a href="https://shop.beltelecom.by/upload/iblock/850/uz4pwqv8sr59box9bw8id4r4rz3zc5n4.pdf">https://shop.beltelecom.by/upload/iblock/850/uz4pwqv8sr59box9bw8id4r4rz3zc5n4.pdf</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="question">Сколько товара можно взять в рассрочку</td>
+                      <td class="answer">   
+                        Максимальное количество единиц товара в рассрочку, которое вправе приобрести Покупатель, определяется следующими условиями  
+                        <ul>
+                          <li>общая сумма размера ежемесячных платежей не должна превышать:</li>
+                            <ul>
+                              <li>400 рублей включительно – для Покупателей, заключающих с Продавцом договор на реализацию товара в рассрочку в городах: Минске, Могилеве, Гомеле, Гродно, Витебске Бресте;  </li>
+                              <li>320 рублей включительно – для Покупателей, заключающих с Продавцом договор на реализацию товара в рассрочку во всех остальных населенных пунктах;  </li>
+                            </ul>
+                          <li>на дату оформления рассрочки на вторую и последующую единицу товара у Покупателя не должно быть просроченных непогашенных платежей по ранее приобретенным товарам.</li>
+                        </ul>
+                        Подробно с "Порядком предоставления рассрочки платежа на товар физическим лицам" Вы можете ознакомиться на нашем сайте: <a href="https://shop.beltelecom.by/upload/iblock/850/uz4pwqv8sr59box9bw8id4r4rz3zc5n4.pdf">https://shop.beltelecom.by/upload/iblock/850/uz4pwqv8sr59box9bw8id4r4rz3zc5n4.pdf</a>
+                      </td>
+                    </tr>
+                  </tbody>
+                  </table>
+                </div>
+
                 <h2 id="mbtk-dog" class="text-secondary text-center">Договорное сопровождение</h2>
 
                 <div class="row">
@@ -1561,6 +1773,7 @@
                   <div class="col-sm-6 mb-3 mb-sm-3">
                     <ul class="list-group">
                       <a class="list-group-item list-group-item-action" href="https://chat.datacenter.by/index.php/f/1465034"><i class="bi bi-cloud"></i> Nextcloud - Подключение и переоформление услуг</a>
+                      <a class="list-group-item list-group-item-action" href="http://10.248.4.95/index.php?r=helper/index&part=2518&chapt=2522"><i class="bi bi-123"></i> 123 - Установка и переоформление ФИЗ.Л./ЮР.Л./льготы</a>
                     </ul>
                   </div>
                 </div>
@@ -1576,10 +1789,17 @@
                       <a class="list-group-item list-group-item-action" href="https://www.beltelecom.by/private/telephony/additional-services/drugie-dopolnitelnye-vidy-uslug"><i class="bi bi-link"></i> Дополнительные виды услуг</a>
                     </ul>
                   </div>
-                  <div class="col-sm-8 mb-3 mb-sm-3">
+                  <div class="col-sm-4 mb-3 mb-sm-3">
+                    <ul class="list-group">
+                      <a class="list-group-item list-group-item-action" href="http://10.248.4.95/index.php?r=helper/index&part=2518&chapt=3670"><i class="bi bi-123"></i> 123 - Таблица всех тарифов</a>
+                      <a class="list-group-item list-group-item-action" href="http://10.248.4.95/index.php?r=helper/index&part=2518&chapt=2520"><i class="bi bi-123"></i> 123 - Расчет стоимости телефонных соединений</a>
+                      <a class="list-group-item list-group-item-action" href="http://10.248.4.95/index.php?r=helper/index&part=820&chapt=4003"><i class="bi bi-123"></i> 123 - Акции</a>
+                    </ul>
+                  </div>
+                  <div class="col-sm-4 mb-3 mb-sm-3">
                     <ul class="list-group">
                       <a class="list-group-item list-group-item-action" href="https://www.beltelecom.by/private/packages/faq"><i class="bi bi-link"></i> Часто задаваемые вопросы по пакетам услуг</a>
-                      <a class="list-group-item list-group-item-action" href="https://beltelecom.by/private/internet/help/voprosy-po-oplate-uslugi-i-osobennostyam-tarifnykh-planov"><i class="bi bi-link"></i> Часто задаваемые вопросы по по оплате услуги и особенностям тарифных планов</a>
+                      <a class="list-group-item list-group-item-action" href="https://beltelecom.by/private/internet/help/voprosy-po-oplate-uslugi-i-osobennostyam-tarifnykh-planov"><i class="bi bi-link"></i> Часто задаваемые вопросы по по оплате и тарифам</a>
                     </ul>
                   </div>
                 </div>
@@ -2247,6 +2467,18 @@
                       </td>
                     </tr>
                     <tr>
+                      <td class="question">IVI условия</td>
+                      <td class="answer">
+                        <p>
+                          При первом подключении абонентам предоставляется 30-дневный промопериод на условиях акции (со скидкой 99% к абонплате).  
+                          К одному аккаунту можно подключить до 5 разных устройств, при этом на каждом из них можно одновременно смотреть различный контент.  
+                          После подключения необходимо пройти процедуру связки логина с мобильным номером телефона абонента. 
+                          Связка логина и мобильного номера абонента выполняется на созданном специально для этих целей Интернет-портале <a href="http://ivi.beltelecom.by/">http://ivi.beltelecom.by/</a>. После этого из магазина приложений AppStore/GooglePlay/AppGallery/RuStore на устройство установить приложение Иви и, пройдя авторизацию в нем, пользоваться Услугой.  
+                          Приложение Иви доступно на Smart TV, мобильных телефонах, ТВ-приставках, XBox и Playstation. Примерный общий перечень устройств, на которых доступен Сервис, размещен по ссылке: <a href="https://www.ivi.ru/devices">https://www.ivi.ru/devices</a>.
+                        </p>
+                      </td>
+                    </tr>
+                    <tr>
                       <td class="question">IVI в ЧНН</td>
                       <td class="answer">
                         <p>
@@ -2285,6 +2517,7 @@
                       <a class="list-group-item list-group-item-action" href="https://vc.beltelecom.by" target="_blank"><i class="bi bi-link"></i> Описание услуги Видеоконтроль</a>
                       <a class="list-group-item list-group-item-action" href="https://myvideo.beltelecom.by/download" target="_blank"><i class="bi bi-link"></i> Приложения и инструкции</a>
                       <a class="list-group-item list-group-item-action" href="https://www.beltelecom.by/private/videokontrol-private/poryadok-okazaniya-uslugi-videokontrol-v-zhilyx-domax" target="_blank"><i class="bi bi-link"></i> Порядок оказания услуги</a>
+                      <a class="list-group-item list-group-item-action" href="http://10.248.4.95/index.php?r=helper/index&part=1045&chapt=4167"><i class="bi bi-123"></i> 123 - Видеодомофон</a>
                     </ul>
                   </div>
                   <div class="col-sm-6 mb-3 mb-sm-3">
@@ -2434,6 +2667,140 @@
           markInstance.mark(searchPage.value); 
         }
       });
+
+      // Master
+      const templatesDataTable = [
+        { name: 'Замена модема с проверкой', template: 'Необходим выезд для проверки качества предоставления. Протестировать работу услуги с проверочного устройства. Взять двух-диапазонный модем под под блок Huawei/ZTE для теста и возможной замены. Владелец+' },
+        { name: 'Замена модема', template: 'Необходима замена модема на двух-диапазонный под блок Huawei/ZTE, Владелец+' },
+        { name: 'Замена STB', template: 'Необходим выезд для проверки работы услуги ZALA и возможной замены STB приставки. Владелец+' },
+        { name: 'Первоначалка', template: 'По согласованию с аб-том назначен первоначальный выезд спец-та на 2026-08-21 Необходимо подготовить наряд. Возьмите в работу' },
+        { name: 'Первоначалка + оборуд', template: 'По согласованию с аб-том назначен выезд первоначального на 2026-06-25 Необходимо подготовить оборудование под аб-та и документы. Возьмите в работу.' },
+        { name: 'Переобжатие', template: 'Необходим выезд для проверки работы услуги. Взять обжимник, коннекторы, проверить сетевой провод.' },
+        { name: '1305', template: 'Взять обжимник СК, коннекторы, проверить сетевой провод, взять комплект СТБ для возможной замены, адрес верный, об возможной оплате уведомлен' },
+        { name: 'LOS', template: 'LOS, блок норма, адрес верный, об возможной оплате уведомлен, тех блок +' },
+        { name: 'Smart Zala (wi-fi)', template: 'Зависания Smart Zala через приложения по Wi Fi, мастер по проверке качества предоставляемой услуги, проверить настр-ки модема, дать консул-ю по улучшению сигнала вф, взять тестовый сетевой кабель 10 метров для проверки, адрес верный, об возможной оплате уведомлен' },
+        { name: '100 МБит-с', template: 'Не поднимается линк выше 100 Мбит-с, кабель 8-ми жильный. Вопрос с падением скорости локального соединения между ПК и модемом. Необходимо проверить сетевой, переобжать. ' },
+        { name: 'Because of ring', template: 'Происходит деактивация модема , по причине некорректного подключения сетевых проводом или повреждения изоляции этих проводов ( короткое между жилами ) проверить по месту , взять проверочный кабель , обжимник , коннекторы , адрес верный, об возможной оплате уведомлен, тех блок отказ ' },
+        { name: 'Wi-fi', template: 'Низкая скорость, разрывы по вай фай, замена модема не помогла, повторно, мастер по проверки качества предоставляемой услуги, проверить настр-ки оборуд-я,  дать консул-ю по улучшению качества работы, адрес верный, об возможной оплате уведомлен, за 1 час перед приходом набрать на к.т. тех блок отказ.' },
+        { name: 'Установка ZALA', template: 'Слабый польз-ль, не может установить приложения Zala Yasna на ТВ. Мастер с флэшкой apk файлами, установить и проверить работу телевидения, адрес верный, об возможной оплате уведомлен, к.т +375298551085, тех блок отказ' },
+        { name: 'Wi-fi + УД', template: 'Низкая скорость по вай фай, мастер по проверки качества предоставляемой услуги, проверить настр-ки оборуд-я, дать консул-ю по улучшению качества работы, по ТП абонента возможно выдача 2х диапазонного модема, после проверки если есть необходимость в замене, то данный момент обязательно указать в заявке, адрес верный, общежитие, об возможной оплате уведомлен, перед приходом набрать на к.т., тех блок отказ.' },
+        { name: 'Zala Yasna / Smart Zala', template: 'У абонента старый ТВ, необх-мо выдача СТБ для работы телевидения. пред-но смены платформы с ZALA YASNA на SMART ZALA с выдачей SML, согласен, необх-мо переключить ТП на Ясна 200  Smart, согласован первоначальный выезд мастера для выдачи и подключения СТБ на 28.10.2026, необх-мо подготовить комплект СТБ SML+документы для мастера, информ-ю по оборуд-ю указать мастеру в заявке, возьмите пож-та в работу.' },
+        { name: 'ЦРУС нет лимита', template: 'PON мигает, на блок не выходит, новый абонент, пред-н ближайший доступный выезд PONюр по журналу на 2.08, абонент такое длительное время ожидать не может, нужен срочно интернет, посмотрите пож-та если возможность назначить выезда мастера раньше' },
+        { name: 'Низкая скорость на ПК по СК', template: 'Низкая скорость на ПК по СК, по линии все в норме. Необходимо протестировать подключение с использованием тестового ноутбука и сетевого кабеля, чтобы продемонстрировать работу услуги абоненту на месте. При необходимости предоставить консультацию по использованию услуги. Адрес верный, об возможной оплате уведомлен' }
+      ];
+
+      const selectTemplate = document.getElementById('selectTemplate');
+      const taskTextarea = document.getElementById('taskTextarea');
+      const copyTextarea = document.getElementById('copyTextarea');
+      // const saveTextarea = document.getElementById('saveTextarea');
+      const clearTextarea = document.getElementById('clearTextarea');
+      
+      // Fill templates table
+      // const tbody = document.querySelector('#templatesTable tbody');
+      
+      // const rowsTemplatesTable = templatesDataTable.map(data => {
+      //   return `
+      //     <tr>
+      //       <td>${data.name}</td>
+      //       <td>${data.template}</td>
+      //     </tr>
+      //   `;
+      // }).join('');
+      
+      // tbody.innerHTML = rowsTemplatesTable;
+      // End templates table
+
+      const optionsbody = document.querySelector('#selectTemplate');
+      const rowsNameTable = templatesDataTable.map(data => {
+        return `
+          <option>${data.name}</option>
+        `;
+      }).join('');
+      optionsbody.innerHTML = rowsNameTable;
+      // End options table
+
+      clearTextarea.addEventListener('click', (event) => {
+        taskTextarea.value = "";
+      });
+
+      copyTextarea.addEventListener('click', (event) => {
+        navigator.clipboard.writeText(taskTextarea.value);
+      });
+
+      const checkCallBefore = document.getElementById('checkCallBefore');
+      checkCallBefore.addEventListener('change', (event) => {
+        if (checkCallBefore.checked) {
+          if (!taskTextarea.value.includes('Предварительно связаться')) {
+            taskTextarea.value += ' Предварительно связаться';
+           }
+        } else {
+          taskTextarea.value = taskTextarea.value.replaceAll('Предварительно связаться', '');
+        }
+      });
+
+      const checkPay = document.getElementById('checkPay');
+      checkPay.addEventListener('change', (event) => {
+        if (checkPay.checked) {
+          if (!taskTextarea.value.includes('Оплата+')) {
+            taskTextarea.value += ' Оплата+';
+           }
+        } else {
+          taskTextarea.value = taskTextarea.value.replaceAll('Оплата+', '');
+        }
+      });
+
+      const checkEthernet = document.getElementById('checkEthernet');
+      checkEthernet.addEventListener('change', (event) => {
+        if (checkEthernet.checked) {
+          if (!taskTextarea.value.includes('Взять сетевой кабель до 10м.')) {
+            taskTextarea.value += ' Взять сетевой кабель до 10м.';
+           }
+        } else {
+          taskTextarea.value = taskTextarea.value.replaceAll('Взять сетевой кабель до 10м.', '');
+        }
+      });
+
+      const checkHaveEquip = document.getElementById('checkHaveEquip');
+      checkHaveEquip.addEventListener('change', (event) => {
+        if (checkHaveEquip.checked) {
+          if (!taskTextarea.value.includes('Оборудование на руках.')) {
+            taskTextarea.value += ' Оборудование на руках.';
+           }
+        } else {
+          taskTextarea.value = taskTextarea.value.replaceAll('Оборудование на руках.', '');
+        }
+      });
+
+      const checkDomofon = document.getElementById('checkDomofon');
+      checkDomofon.addEventListener('change', (event) => {
+        if (checkDomofon.checked) {
+          if (!taskTextarea.value.includes('Домофон+')) {
+            taskTextarea.value += ' Домофон+';
+           }
+        } else {
+          taskTextarea.value = taskTextarea.value.replaceAll('Домофон+', '');
+        }
+      });
+
+
+      selectTemplate.addEventListener('change', (event) => {
+        // const selectedValue = event.target.value;
+        const selectedIndex = selectTemplate.selectedIndex;
+      
+        if (selectedIndex !== "") {
+          let item = templatesDataTable[selectedIndex];
+          console.log(item);
+          taskTextarea.value = item.template;
+        } else {
+          taskTextarea.value = "Описание появится здесь...";
+        }
+      });
+
+      // Protect from unsafe page reload
+      // window.addEventListener('beforeunload', function (event) {
+      //   event.preventDefault();
+      // });
+
     </script>
 
   </body>
