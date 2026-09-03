@@ -416,14 +416,15 @@
                   <li class="breadcrumb-item active" aria-current="page">
                     <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Выберите страницу</a>
-                      <ul class="dropdown-menu">
+                      <ul id="breadcrumb-dropdown" class="dropdown-menu">
+                        <!-- Generated via JS-->
                         <!-- <li><a class="dropdown-item" href="dashboard.html" aria-current="true"><i class="nav-icon bi bi-grid-1x2 me-1" aria-hidden="true"></i> Главная</a></li> -->
-                        <li><a class="dropdown-item" href="portals.html" aria-current="true"><i class="nav-icon bi bi-grid-3x3-gap-fill me-1" aria-hidden="true"></i> Рабочие порталы</a></li>
+                        <!-- <li><a class="dropdown-item" href="portals.html" aria-current="true"><i class="nav-icon bi bi-grid-3x3-gap-fill me-1" aria-hidden="true"></i> Рабочие порталы</a></li>
                         <li><a class="dropdown-item" href="checker.html" aria-current="true"><i class="nav-icon bi bi-globe2" aria-hidden="true"></i> Онлайн утилиты</a></li>
                         <li><a class="dropdown-item" href="equipment.html" aria-current="true"><i class="nav-icon bi bi-router" aria-hidden="true"></i> Оборудование</a></li>
                         <li><a class="dropdown-item" href="quicksetup.html" aria-current="true"><i class="nav-icon bi bi-box2" aria-hidden="true"></i> Быстрая настройка</a></li>
                         <li><a class="dropdown-item" href="netcheck.html" aria-current="true"><i class="nav-icon bi bi-browser-safari" aria-hidden="true"></i> Диагностика сети</a></li>
-                        <li><a class="dropdown-item" href="olt.html" aria-current="true"><i class="nav-icon bi bi-terminal" aria-hidden="true"></i> OLT cli</a></li>
+                        <li><a class="dropdown-item" href="olt.html" aria-current="true"><i class="nav-icon bi bi-terminal" aria-hidden="true"></i> OLT cli</a></li> -->
                       </ul>
                     </li>
                   </li>
@@ -774,6 +775,26 @@
         }
         window.open("https://chat.datacenter.by/index.php/apps/files/search/1758822?query=" + query, "_blank");
       }
+
+      // Generate breadcrumb dropdown
+      const breadcrumbTable = [
+        { desc: 'Главная', icon: 'bi-grid-1x2', link: 'dashboard.html'},
+        { desc: 'Рабочие порталы', icon: 'bi-grid-3x3-gap-fill', link: 'portals.html'},
+        { desc: 'Онлайн утилиты', icon: 'bi-globe2', link: 'checker.html'},
+        { desc: 'Оборудование', icon: 'bi-router', link: 'equipment.html'},
+        { desc: 'Быстрая настройка', icon: 'bi-box2', link: 'quicksetup.html'},
+        { desc: 'Диагностика сети', icon: 'bi-browser-safari', link: 'netcheck.html'},
+        { desc: 'Шаблоны МБТК', icon: 'bi-person-badge', link: 'mbtk.html'},
+        { desc: 'OLT cli', icon: 'bi-terminal', link: 'olt.html'}
+      ];
+
+      const breadcrumbDropdown = document.querySelector('#breadcrumb-dropdown');
+      const rowsBreadcrumbTable = breadcrumbTable.map(data => {
+        return `
+           <li><a class="dropdown-item" href="${data.link}" aria-current="true"><i class="nav-icon bi ${data.icon}" aria-hidden="true"></i> ${data.desc}</a></li>
+        `;
+      }).join('');
+      breadcrumbDropdown.innerHTML = rowsBreadcrumbTable;
 
       // Generate content menu and dropdown
       const newsTable = [
