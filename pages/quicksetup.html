@@ -1169,7 +1169,7 @@
             <h2 id="ZALA"><i class="bi bi-tv"></i> ZALA</h2>
             <div class="row">
               <div class="col-sm-6 mb-3 mb-sm-3">
-                <div class="card">
+                <div id="zala-manual" class="card">
                   <div class="card-header text-bg-gray py-2">
                     <h3 class="card-title"> Руководства пользователя</h3>
                   </div>
@@ -1380,6 +1380,22 @@
                     </span>
 
                     <span class="d-block">
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseSTBwificonnect" role="button" aria-expanded="false" aria-controls="collapseSTBwificonnect">
+                        <i class="bi bi-chevron-down"></i> Подключить STB к Wi-fi
+                      </a>
+                      <div class="collapse" id="collapseSTBwificonnect">
+                        DV9135
+                        <ul>
+                          На пульте от приставки нажать кнопку настройки (в виде шестеренки<i class="bi bi-gear-fill"></i>) - выбрать "Сеть и Интернет" - В списке "Доступные сети" выбрать из списка Вашу домашнюю сеть вай-фай (не byfly-wifi) - Ввести пароль от сети wi-fi. 
+                        </ul>
+                        SML 5050
+                        <ul>
+                          На пульте от приставки нажать кнопку настройки (в виде шестеренки<i class="bi bi-gear-wide"></i>) - выбрать "Сеть и Интернет" - Выбрать "Система" - Перейти на пункт "Настройка сети" - Внизу справа выбрать "Настроить подключение" - Автоматически запустится поиск сетей вай-фай, нужно подождать и выбрать из списка Вашу домашнюю сеть вай-фай (не byfly-wifi) - Ввести пароль от сети вай-фай. 
+                        </ul>
+                      </div>
+                    </span>
+
+                    <span class="d-block">
                       <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseSTBusb" role="button" aria-expanded="false" aria-controls="collapseSTBusb">
                         <i class="bi bi-chevron-down"></i> Поддержка мультимедиа через USB 
                       </a>
@@ -1476,7 +1492,7 @@
               </div>
 
               <div class="col-sm-6 mb-3 mb-sm-3">
-                <div class="card">
+                <div id="IPTV-setup" class="card">
                   <div class="card-header text-bg-gray py-2">
                     <h3 class="card-title" id="iptv"><i class="bi bi-usb-c"></i> IPTV</h3>
                   </div>
@@ -1700,7 +1716,7 @@
                   </div>
                 </div>
 
-                <div class="card">
+                <div id="SMART-setup" class="card">
                   <div class="card-header text-bg-gray py-2">
                     <h3 class="card-title" id="smart"><i class="bi bi-tv"></i> SMARTTV</h3>
                   </div>
@@ -1888,7 +1904,26 @@
                         </ul>
                       </div>
                     </span>
-                    
+
+                    <span class="d-block">
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseSMARThdmicec" role="button" aria-expanded="false" aria-controls="collapseSMARThdmicec">
+                        <i class="bi bi-chevron-down"></i> HDMI-CEC
+                      </a>
+                      <div class="collapse" id="collapseSMARThdmicec">
+                        <p>
+                          HDMI-CEC нужен для управления разными устройствами (телевизором и приставкой) с помощью одного пульта и синхронизации их работы по одному проводу HDMI.
+                        </p>
+                        HDMI-CEC на Android TV:
+                        <ul>
+                          <li>Нажмите кнопку «Настройки» (шестеренка) на пульте телевизора или приставки.</li>
+                          <li>Найдите и выберите пункт «Настройки устройства» (Device Preferences) или «Дисплей и звук».</li>
+                          <li>Перейдите в раздел «HDMI-CEC» и переведите переключатель «Управление по HDMI» (CEC Switch / Включить HDMI-CEC) в положение ВКЛ (ON).</li>
+                        </ul>
+                        <blockquote>
+                          На некоторых телевизорах (Sony, Philips, Xiaomi) эту функцию называют собственными именами производителей: Bravia Sync, EasyLink, Simplink или Anynet+, и её также требуется активировать в настройках самого ТВ.
+                        </blockquote>
+                      </div>
+                    </span>
 
                     Ошибки и возможные проблемы:
                     <span class="d-block">
@@ -1915,7 +1950,6 @@
                         <blockquote>Некоторые ТВ на базе Android периодически отзывают разрешение на запуск у неиспользуемых приложений</blockquote>
                       </div>
                     </span>
-
 
                     <span class="d-block">
                       <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseSMARTerrorCodes" role="button" aria-expanded="false" aria-controls="collapseSMARTerrorCodes">
@@ -1945,7 +1979,7 @@
                   </div> -->
                 </div>
 
-                <div class="card">
+                <div id="DVBT-setup" class="card">
                   <div class="card-header text-bg-gray py-2">
                     <h3 class="card-title" id="dvbt"><i class="bi bi-radar"></i> Эфирное ТВ</h3>
                   </div>
