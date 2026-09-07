@@ -370,7 +370,7 @@
             <div class="row">
               <div class="col-sm-6">
                 <h3 class="mb-0 text-secondary"><i class="nav-icon bi bi-person-badge"></i> MBTK</h3>
-                <p>Последнее обновление шаблонов: <strong class="text-secondary">6/09/2026</strong></p>
+                <p>Последнее обновление шаблонов: <strong class="text-secondary">7/09/2026</strong></p>
               </div>
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-end">
@@ -443,28 +443,6 @@
               <div class="row">
                 <div class="col-sm-6 mb-3 mb-sm-3">
                   <h4 id="mbtk-content" class="text-secondary">Оглавление</h4>
-                  <!-- <div id="list-main-content" class="list-group">
-                    <a class="list-group-item list-group-item-action" href="#mbtk-main">Основное</a>
-                    <a class="list-group-item list-group-item-action" href="#mbtk-universal">Универсальные ответы по неработающей услуге</a>
-                    <a class="list-group-item list-group-item-action" href="#mbtk-master">Мастера</a>
-                    <a class="list-group-item list-group-item-action" href="#mbtk-pon">Первоначальное</a>
-                    <a class="list-group-item list-group-item-action" href="#mbtk-quality">Качество предоставления</a>
-                    <a class="list-group-item list-group-item-action" href="#mbtk-wifi">Особенности предоставления и настройки Wifi</a>
-                    <a class="list-group-item list-group-item-action" href="#mbtk-dopset">Дополнительные настройки</a>
-                    <a class="list-group-item list-group-item-action" href="#mbtk-ploss">Недоступность ресурсов и потеря пакетов</a>
-                    <a class="list-group-item list-group-item-action" href="#mbtk-kabinet">Кабинет пользователя</a>
-                    <a class="list-group-item list-group-item-action" href="#mbtk-service">Управление услугами</a>
-                    <a class="list-group-item list-group-item-action" href="#mbtk-oplata">Оплата</a>
-                    <a class="list-group-item list-group-item-action" href="#mbtk-retail">Рассрочка</a>
-                    <a class="list-group-item list-group-item-action" href="#mbtk-tarif">Тарифы</a>
-                    <a class="list-group-item list-group-item-action" href="#mbtk-changeplan">Переоформление</a>
-                    <a class="list-group-item list-group-item-action" href="#mbtk-close">Расторжение</a>
-                    <a class="list-group-item list-group-item-action" href="#mbtk-telephony-restore">Восстановление телефонии</a>
-                    <a class="list-group-item list-group-item-action" href="#mbtk-zala-smart">SMART ZALA</a>
-                    <a class="list-group-item list-group-item-action" href="#mbtk-zala-setup">Настройки ZALA и STB приставки</a>
-                    <a class="list-group-item list-group-item-action" href="#mbtk-subscribe">Подписки и дополнительные сервисы</a>
-                    <a class="list-group-item list-group-item-action" href="#mbtk-videocontrol">Видеоконтроль</a>
-                  </div> -->
                   <div id="list-main-content" class="list-group">
                     <!-- Generated from JS -->
                   </div>
@@ -472,6 +450,27 @@
 
                 <div class="col-sm-6 mb-3 mb-sm-3">
                   <h4 id="mbtk-region" class="text-secondary">Принадлежность</h4>
+
+                  <div class="input-group">
+                    <input
+                      id="searchRegionBar"
+                      type="search"
+                      class="form-control search-input"
+                      placeholder="Введите название региона для поиска или номер приложения"
+                      aria-label="Search BY regions"
+                    />
+                    <button 
+                      class="btn btn-outline-secondary" 
+                      type="submit"
+                      id="searchRegionBtn"
+                      >
+                      <i class="bi bi-search" aria-hidden="true"></i>
+                    </button>
+                  </div>
+
+                  <strong id="searchRegionResult" class="text-secondary"></strong>
+                  <br>
+
                   <div class="table-responsive">
                     <table class="table table-striped-columns table-bordered">
                       <tbody>
@@ -480,24 +479,26 @@
                           <td>Гродненская</td>
                         </tr>
                         <tr>
+                          <td><strong class="text-primary">16</strong>XXXXXXXXXX</td>  
+                          <td>Брестская</td>  
+                        </tr>
+                        <tr>
                           <td><strong class="text-primary">21</strong>XXXXXXXXXX</td>
                           <td>Витебская</td>
+                        </tr>
+                        <tr>
+                          <td><strong class="text-primary">22</strong>XXXXXXXXXX</td>  
+                          <td>Могилевская</td>  
                         </tr>
                         <tr>
                           <td><strong class="text-primary">23</strong>XXXXXXXXXX</td>  
                           <td>Гомельская</td>  
                         </tr>
-                        <tr>
-                          <td><strong class="text-primary">22</strong>XX0XXXXXXX</td>  
-                          <td>Могилевская</td>  
-                        </tr>
-                        <tr>
-                          <td><strong class="text-primary">16</strong>XXXXXXXXXX</td>  
-                          <td>Брестская</td>  
-                        </tr>
                       </tbody>
                     </table>
                   </div>
+
+                  <h4 class="text-secondary">Офисы продаж</h4>
                   <div class="table-responsive">
                     <table class="table table-striped-columns table-bordered">
                       <tbody>
@@ -2766,6 +2767,187 @@
           markInstance.mark(searchPage.value); 
         }
       });
+
+      // Regions table
+      const regionsTable = [
+        { regname: 'Барановичский', region: 'Брестская'},
+        { regname: 'Берёзовский', region: 'Брестская'},
+        { regname: 'Брестский', region: 'Брестская'},
+        { regname: 'Ганцевичский', region: 'Брестская'},
+        { regname: 'Дрогичинский', region: 'Брестская'},
+        { regname: 'Жабинковский', region: 'Брестская'},
+        { regname: 'Ивановский', region: 'Брестская'},
+        { regname: 'Ивацевичский', region: 'Брестская'},
+        { regname: 'Каменецкий', region: 'Брестская'},
+        { regname: 'Кобринский', region: 'Брестская'},
+        { regname: 'Лунинецкий', region: 'Брестская'},
+        { regname: 'Ляховичский', region: 'Брестская'},
+        { regname: 'Малоритский', region: 'Брестская'},
+        { regname: 'Пинский', region: 'Брестская'},
+        { regname: 'Пружанский', region: 'Брестская'},
+        { regname: 'Столинский', region: 'Брестская'},
+        { regname: 'Бешенковичский', region: 'Витебская'},
+        { regname: 'Браславский', region: 'Витебская'},
+        { regname: 'Верхнедвинский', region: 'Витебская'},
+        { regname: 'Витебский', region: 'Витебская'},
+        { regname: 'Глубокский', region: 'Витебская'},
+        { regname: 'Городокский', region: 'Витебская'},
+        { regname: 'Докшицкий', region: 'Витебская'},
+        { regname: 'Дубровенский', region: 'Витебская'},
+        { regname: 'Лепельский', region: 'Витебская'},
+        { regname: 'Лиозненский', region: 'Витебская'},
+        { regname: 'Миорский', region: 'Витебская'},
+        { regname: 'Оршанский', region: 'Витебская'},
+        { regname: 'Полоцкий', region: 'Витебская'},
+        { regname: 'Поставский', region: 'Витебская'},
+        { regname: 'Россонский', region: 'Витебская'},
+        { regname: 'Сенненский', region: 'Витебская'},
+        { regname: 'Толочинский', region: 'Витебская'},
+        { regname: 'Ушачский', region: 'Витебская'},
+        { regname: 'Чашникский', region: 'Витебская'},
+        { regname: 'Шарковщинский', region: 'Витебская'},
+        { regname: 'Шумилинский', region: 'Витебская'},
+        { regname: 'Брагинский', region: 'Гомельская'},
+        { regname: 'Буда-Кошелевский', region: 'Гомельская'},
+        { regname: 'Ветковский', region: 'Гомельская'},
+        { regname: 'Гомельский', region: 'Гомельская'},
+        { regname: 'Добрушский', region: 'Гомельская'},
+        { regname: 'Ельский', region: 'Гомельская'},
+        { regname: 'Житковичский', region: 'Гомельская'},
+        { regname: 'Жлобинский', region: 'Гомельская'},
+        { regname: 'Калинковичский', region: 'Гомельская'},
+        { regname: 'Кормянский', region: 'Гомельская'},
+        { regname: 'Лельчицкий', region: 'Гомельская'},
+        { regname: 'Лоевский', region: 'Гомельская'},
+        { regname: 'Мозырский', region: 'Гомельская'},
+        { regname: 'Наровлянский', region: 'Гомельская'},
+        { regname: 'Октябрьский', region: 'Гомельская'},
+        { regname: 'Петриковский', region: 'Гомельская'},
+        { regname: 'Речицкий', region: 'Гомельская'},
+        { regname: 'Рогачевский', region: 'Гомельская'},
+        { regname: 'Светлогорский', region: 'Гомельская'},
+        { regname: 'Хойникский', region: 'Гомельская'},
+        { regname: 'Чечерский', region: 'Гомельская'},
+        { regname: 'Берестовицкий', region: 'Гродненская'},
+        { regname: 'Волковысский', region: 'Гродненская'},
+        { regname: 'Вороновский', region: 'Гродненская'},
+        { regname: 'Гродненский', region: 'Гродненская'},
+        { regname: 'Дятловский', region: 'Гродненская'},
+        { regname: 'Зельвенский', region: 'Гродненская'},
+        { regname: 'Ивьевский', region: 'Гродненская'},
+        { regname: 'Кореличский', region: 'Гродненская'},
+        { regname: 'Лидский', region: 'Гродненская'},
+        { regname: 'Мостовский', region: 'Гродненская'},
+        { regname: 'Новогрудский', region: 'Гродненская'},
+        { regname: 'Островецкий', region: 'Гродненская'},
+        { regname: 'Ошмянский', region: 'Гродненская'},
+        { regname: 'Свислочский', region: 'Гродненская'},
+        { regname: 'Слонимский', region: 'Гродненская'},
+        { regname: 'Сморгонский', region: 'Гродненская'},
+        { regname: 'Щучинский', region: 'Гродненская'},
+        { regname: 'Березинский', region: 'Минская'},
+        { regname: 'Борисовский', region: 'Минская'},
+        { regname: 'Вилейский', region: 'Минская'},
+        { regname: 'Воложинский', region: 'Минская'},
+        { regname: 'Дзержинский', region: 'Минская'},
+        { regname: 'Клецкий', region: 'Минская'},
+        { regname: 'Копыльский', region: 'Минская'},
+        { regname: 'Крупский', region: 'Минская'},
+        { regname: 'Логойский', region: 'Минская'},
+        { regname: 'Любанский', region: 'Минская'},
+        { regname: 'Минский', region: 'Минская'},
+        { regname: 'Молодечненский', region: 'Минская'},
+        { regname: 'Мядельский', region: 'Минская'},
+        { regname: 'Несвижский', region: 'Минская'},
+        { regname: 'Пуховичский', region: 'Минская'},
+        { regname: 'Слуцкий', region: 'Минская'},
+        { regname: 'Смолевичский', region: 'Минская'},
+        { regname: 'Солигорский', region: 'Минская'},
+        { regname: 'Стародорожский', region: 'Минская'},
+        { regname: 'Столбцовский', region: 'Минская'},
+        { regname: 'Узденский', region: 'Минская'},
+        { regname: 'Червенский', region: 'Минская'},
+        { regname: 'Белыничский', region: 'Могилевская'},
+        { regname: 'Бобруйский', region: 'Могилевская'},
+        { regname: 'Быховский', region: 'Могилевская'},
+        { regname: 'Глусский', region: 'Могилевская'},
+        { regname: 'Горецкий', region: 'Могилевская'},
+        { regname: 'Дрибинский', region: 'Могилевская'},
+        { regname: 'Кировский', region: 'Могилевская'},
+        { regname: 'Климовичский', region: 'Могилевская'},
+        { regname: 'Кличевский', region: 'Могилевская'},
+        { regname: 'Костюковичский', region: 'Могилевская'},
+        { regname: 'Краснопольский', region: 'Могилевская'},
+        { regname: 'Кричевский', region: 'Могилевская'},
+        { regname: 'Круглянский', region: 'Могилевская'},
+        { regname: 'Могилевский', region: 'Могилевская'},
+        { regname: 'Мстиславский', region: 'Могилевская'},
+        { regname: 'Осиповичский', region: 'Могилевская'},
+        { regname: 'Славгородский', region: 'Могилевская'},
+        { regname: 'Хотимский', region: 'Могилевская'},
+        { regname: 'Чаусский', region: 'Могилевская'},
+        { regname: 'Чериковский', region: 'Могилевская'},
+        { regname: 'Шкловский', region: 'Могилевская'}
+      ];
+      
+      const searchRegionBar = document.getElementById('searchRegionBar'); 
+      const searchRegionBtn = document.getElementById('searchRegionBtn'); 
+      const searchRegionResult = document.getElementById('searchRegionResult'); 
+
+      searchRegionBtn.addEventListener("click", ()=>{
+        if (searchRegionBar.value.trim() === '') {
+          searchRegionBar.focus();
+          return;
+        }
+        searchRegion();
+      });
+
+      searchRegionBar.addEventListener('input', (event) => {
+        if (searchRegionBar.value.trim() === '') {
+          searchRegionBar.focus();
+          return;
+        }
+        if (event.target.value.length > 3) {
+          searchRegion();
+        } else {
+          searchRegionResult.innerHTML = ``
+        }
+      });
+
+      function searchRegion()
+      {
+        const part = searchRegionBar.value;
+        const isContract = /^\d{9}.*$/;
+        const partRegexp = new RegExp(part, "i");
+        const regionResult = regionsTable.filter(item => partRegexp.test(item.regname));
+
+        // Search by contracts num
+        if (isContract.test(searchRegionBar.value)) {
+          if (searchRegionBar.value.startsWith("170")) {
+            searchRegionResult.innerHTML = `Предположительно относится к <b>Минску</b>`;
+          } else if (searchRegionBar.value.startsWith("176")) {
+            searchRegionResult.innerHTML = `Предположительно относится к <b>Минску или Минской области</b>`;
+          } else if (searchRegionBar.value.startsWith("177")) {
+            searchRegionResult.innerHTML = `Предположительно относится к области: <b>Минская</b>`;
+          } else if (searchRegionBar.value.startsWith("15")) {
+            searchRegionResult.innerHTML = `Предположительно относится к области: <b>Гродненская</b>`;
+          } else if (searchRegionBar.value.startsWith("16")) {
+            searchRegionResult.innerHTML = `Предположительно относится к области: <b>Брестская</b>`;
+          } else if (searchRegionBar.value.startsWith("21")) {
+            searchRegionResult.innerHTML = `Предположительно относится к области: <b>Витебская</b>`;
+          } else if (searchRegionBar.value.startsWith("22")) {
+            searchRegionResult.innerHTML = `Предположительно относится к области: <b>Могилевская</b>`;
+          } else if (searchRegionBar.value.startsWith("23")) {
+            searchRegionResult.innerHTML = `Предположительно относится к области: <b>Гомельская</b>`;
+          }
+        }
+
+        // Search by region name in regionsTable
+        if (regionResult != null) {
+          regionResult.forEach(item => searchRegionResult.innerHTML = `Cовпадение с <a href="https://google.com/search?q=${item.regname} район">${item.regname}</a> область: <b>${item.region}</b>`);
+          return regionResult;
+        } 
+      };
 
       // Generate content menu and dropdown
       const contentTable = [
