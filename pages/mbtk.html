@@ -495,6 +495,11 @@
                           <td>Гомельская</td>  
                         </tr>
                       </tbody>
+                      <caption>
+                        <a href="https://beltelecom.by/phone-code" class="icon-link icon-link-hover" target="_blank">
+                          <i class="bi bi-arrow-return-right"></i> Справочник по телефонным кодам
+                        </a>
+                      </caption>
                     </table>
                   </div>
 
@@ -503,27 +508,27 @@
                     <table class="table table-striped-columns table-bordered">
                       <tbody>
                         <tr>
-                          <td class="fw-bold">СП 1</td>
+                          <td class="fw-bold">ОП 1</td>
                           <td>Советский</td>
                           <td>Данилова</td>
                         </tr>
                         <tr>
-                          <td>СП 2</td>
+                          <td>ОП 2</td>
                           <td>Юр.лица</td>
                           <td>Новицкая О. В.</td>
                         </tr>
                         <tr>
-                          <td>СП 3</td>
+                          <td>ОП 3</td>
                           <td>Фрунзенский</td>
                           <td>Шишко И.В.</td>
                         </tr>
                         <tr>
-                          <td>СП 4</td>
+                          <td>ОП 4</td>
                           <td>Заводской</td>
                           <td>Ковалевич Е.А / Шиханцова А.А.</td>
                         </tr>
                         <tr>
-                          <td>СП 5</td>
+                          <td>ОП 5</td>
                           <td>Ленинский</td>
                           <td>Волощук</td>
                         </tr>
@@ -538,11 +543,13 @@
                           </tr>
                         </tfoot>
                       </tbody>
+                      <caption>
+                        <a href="https://beltelecom.by/feedback/services-point" class="icon-link icon-link-hover" target="_blank">
+                          <i class="bi bi-arrow-return-right"></i> Адреса и график работы офисов продаж
+                        </a>
+                      </caption>
                     </table>
                   </div>
-                  <a href="https://beltelecom.by/feedback/services-point" class="icon-link icon-link-hover" target="_blank">
-                    <i class="bi bi-arrow-return-right"></i> Адреса и график работы офисов продаж
-                  </a>
                 </div>
               </div>
               
@@ -2209,6 +2216,32 @@
                   </thead>
                   <tbody> 
                     <tr>
+                      <td class="question">Правила набора номеров</td>
+                      <td class="answer">
+                        <p>
+                          Для совершения междугородних и международных звонков в автоматическом режиме Вам необходимо знать: код выхода на междугородную станцию, код страны и города, куда вы хотите позвонить, телефон абонента. В первом случае вам необходимо знать: код выхода на междугородную станцию, код страны и города, куда вы хотите позвонить, телефон абонента.
+                          (Узнать коды городов можно по телефону 109).
+                        </p>
+                        Пример набора номера из сети «Белтелеком» в другие страны:
+                        <ul>
+                          <li>8 10 – код страны – код города – номер телефона</li>
+                          <li>В Россию: 8 10 7 - код города - номер телефона</li>
+                          <li>В Польшу 8 10 48 - код города - номер телефона</li>
+                        </ul>
+                        При международных звонках из других стран в Беларусь мы рекомендуем использовать полный формат набора номера:
+                        <ul>
+                          +375 – код города – номер телефона<br>
+                          Где «+» - символ, указывающий на необходимость набора международного префикса в соответствии с национальным планом нумерации страны, из которой идет вызов.
+                        </ul>
+                        Например:
+                        <ul>  
+                          <li>Из России в Беларусь: 8 – 10 – 375 – код города – номер телефона</li>
+                          <li>Из Молдовы в Беларусь: 0 – 0 – 375- код города – номер телефона</li>
+                        </ul>
+                        Подробнее по правилам набора номеров на сайте:<br> <a href="https://beltelecom.by/private/telephony/pravila-nabora-nomerov" target="_blank">https://beltelecom.by/private/telephony/pravila-nabora-nomerov</a> и <a href="https://www.beltelecom.by/business/telephony/international" target="_blank">https://www.beltelecom.by/business/telephony/international</a>.
+                      </td>
+                    </tr>
+                    <tr>
                       <td class="question">Нет зуммера</td>
                       <td class="answer">
                         <p>
@@ -2944,7 +2977,7 @@
 
         // Search by region name in regionsTable
         if (regionResult != null) {
-          regionResult.forEach(item => searchRegionResult.innerHTML = `Cовпадение с <a href="https://google.com/search?q=${item.regname} район">${item.regname}</a> область: <b>${item.region}</b>`);
+          regionResult.forEach(item => searchRegionResult.innerHTML = `&nbsp; Cовпадение с <a href="https://google.com/search?q=${item.regname} район" target="_blank">${item.regname}</a> район, область: <b>${item.region}</b><br>`);
           return regionResult;
         } 
       };
@@ -2966,7 +2999,7 @@
         { anchor: '#mbtk-tarif', name: 'Тарифы' },
         { anchor: '#mbtk-changeplan', name: 'Переоформление' },
         { anchor: '#mbtk-close', name: 'Расторжение' },
-        { anchor: '#mbtk-telephony-restore', name: 'Восстановление телефонии' },
+        { anchor: '#mbtk-telephony', name: 'Телефония' },
         { anchor: '#mbtk-zala-smart', name: 'SMART ZALA' },
         { anchor: '#mbtk-zala-setup', name: 'Настройки ZALA и STB приставки' },
         { anchor: '#mbtk-subscribe', name: 'Подписки и дополнительные сервисы' },
