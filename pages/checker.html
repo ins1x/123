@@ -411,20 +411,19 @@
                               type="button"
                               data-bs-toggle="dropdown"
                               aria-expanded="false"
-                            >
-                              Whois
-                            </button>
+                            >MAC-Vendor</button>
                             <ul class="dropdown-menu" id="dropdown-search">
                               <!-- <li><h6 class="dropdown-header">Select service</h6></li> -->
+                              <li><a class="dropdown-item" href="#">MAC-Vendor</a></li>
                               <li><a class="dropdown-item" href="#">Whois</a></li>
                               <li><a class="dropdown-item" href="#">Trace</a></li>
                               <li><a class="dropdown-item" href="#">Ping</a></li>
-                              <li><a class="dropdown-item" href="#">MAC-Vendor</a></li>
                               <li><a class="dropdown-item" href="#">DNS-Records</a></li>
                               <li><a class="dropdown-item" href="#">MX-Record</a></li>
                               <li><a class="dropdown-item" href="#">Spam-base</a></li>
                               <li><a class="dropdown-item" href="#">Check-host</a></li>
                               <li><a class="dropdown-item" href="#">Open-ports</a></li>
+                              <li><a class="dropdown-item" href="#">Vulnerable</a></li>
                             </ul>
                           </div>
                           <input type="text" class="form-control" placeholder="" aria-label="IP, MAC, URL site input" aria-describedby="button-addon1" id="input-Go">
@@ -624,7 +623,7 @@
                   <div>
                     <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
                       <i class="nav-icon bi bi-award"></i>
-                      Apps
+                      Apps-censorship
                     </h3>
                     <p>
                       Проверка заблокированных приложений
@@ -676,7 +675,7 @@
                 </div>
               </div>
   
-              <h2 id="ports" class="pb-2 border-bottom">Порты и протоколы</h2>
+              <h2 id="ports" class="pb-2 border-bottom">Открытые порты и сервисы</h2>
               <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-3 py-3">
                 <div class="col d-flex align-items-start">
                   <div>
@@ -696,6 +695,28 @@
                     </ul>
                   </div>
                 </div>
+
+                <div class="col d-flex align-items-start">
+                  <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
+                      <i class="nav-icon bi bi-bug-fill"></i>
+                      Open and vulnerable
+                    </h3>
+                    <p>
+                      Открытые и уязвимые сервисы
+                    </p>
+                    <ul>
+                      <li><a href="https://www.shodan.io" target="_blank">shodan.io</a></li>
+                      <li><a href="https://www.abuseipdb.com" target="_blank">abuseipdb.com</a></li>
+                      <li><a href="https://platform.censys.io" target="_blank">platform.censys.io</a></li>
+                      <li><a href="https://www.virustotal.com/gui/" target="_blank">virustotal.com</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <h2 id="ports" class="pb-2 border-bottom">HTTP и HTTPS</h2>
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-3 py-3">
                 <div class="col d-flex align-items-start">
                   <div>
                     <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
@@ -879,12 +900,12 @@
 
               </div>
 
-              <h2 id="etc" class="pb-2 border-bottom">Прочее</h2>
+              <h2 id="apps" class="pb-2 border-bottom">Браузер</h2>
               <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-3 py-3">
                 <div class="col d-flex align-items-start">
                   <div>
                     <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
-                      <i class="nav-icon bi bi-cpu-fill"></i>
+                      <i class="nav-icon bi bi-browser-chrome"></i>
                       Browser
                     </h3>
                     <p>
@@ -899,6 +920,25 @@
                   </div>
                 </div>
 
+                <div class="col d-flex align-items-start">
+                  <div>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
+                      <i class="nav-icon bi bi-android"></i>
+                      APK checker
+                    </h3>
+                    <p>
+                      Проверка Android APK файлов
+                    </p>
+                      <ul>
+                        <li><a href="https://www.free-codecs.com/app/apk-checker" target="_blank">free-codecs.com</a></li>
+                        <li><a href="https://sisik.eu/apk-tool" target="_blank">sisik.eu</a></li>
+                      </ul>
+                  </div>
+                </div>
+              </div>
+
+              <h2 id="speedtest" class="pb-2 border-bottom">Тест скорости</h2>
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-3 py-3">
                 <div class="col d-flex align-items-start">
                   <div>
                     <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
@@ -1031,15 +1071,16 @@
         const dropdownText = document.getElementById('button-dropdown').innerText.trim();
         
         const searchSources = {
+          "MAC-Vendor": `https://maclookup.app/search/result?mac=${query}`,
           "Whois": `https://mxtoolbox.com/SuperTool.aspx?action=whois%3a${query}`,
           "Ping": `https://ping.pe/${query}`,
-          "MAC-Vendor": `https://maclookup.app/search/result?mac=${query}`,
           "Trace": `https://tools.bunny.net/traceroute?query=${query}`,
           "DNS-Records": `https://dnschecker.org/all-dns-records-of-domain.php?query=${query}`,
           "MX-Record": `https://mxtoolbox.com/SuperTool.aspx?action=mx%3a${query}`,
           "Spam-base": `https://mxtoolbox.com/SuperTool.aspx?action=blacklist%3a${query}`,
           "Check-host": `https://check-host.net/check-http?host=${query}`,
-          "Open-ports": `https://dnschecker.org/port-scanner.php?query=${query}&ptype=server`
+          "Open-ports": `https://dnschecker.org/port-scanner.php?query=${query}&ptype=server`,
+          "Vulnerable": `https://www.shodan.io/host/${query}`
         };
       
         const targetUrl = searchSources[dropdownText];
