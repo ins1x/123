@@ -1885,7 +1885,7 @@
                   <div class="col-sm-6 mb-3 mb-sm-3">
                     <div class="card">
                       <div class="card-header text-bg-gray py-2">
-                        <h3 class="card-title"><i class="bi bi-wifi"></i> Сети Wi-fi</h3>
+                        <h3 class="card-title"><i class="bi bi-wifi"></i> Сети Wi-fi</h3></i>
                       </div>
                       <div class="card-body">
 
@@ -4611,6 +4611,7 @@
                     <h3 class="card-title"> Телефония</h3>
                   </div>
                   <div class="card-body">
+                    Услуги телефонии:
                     <ul>
                       <li><a href="https://beltelecom.by/private/telephony/ustanovka-i-polzovanie-telefonom">Установка и пользование телефоном</a></li>
                       <li><a href="https://beltelecom.by/private/telephony/additional-services">Дополнительные услуги</a></li>
@@ -4631,16 +4632,15 @@
                     <h3 class="card-title"> Облачная АТС</h3>
                   </div>
                   <div class="card-body">
-                    <p>Веб-портал облачной АТС: <a href="https://myvideo.beltelecom.by" target="_blank">pbx.beltelecom.by</a></p>
+                    <p>
+                      Веб-портал облачной АТС: <a href="https://myvideo.beltelecom.by" target="_blank">pbx.beltelecom.by</a><br>
+                      Порядок оказания услуги: <a href="https://www.beltelecom.by/business/additional-services/business-solutions-networking/oblachnaya-ats/poryadok-okazaniya" target="_blank">Облачная АТС</a><br>
+                    </p>
                     <ul class="list-unstyled">
                       <li><a href="https://chat.datacenter.by/index.php/f/1466979" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> Руководство пользователя PBX</a></li>
                       <li><a href="https://chat.datacenter.by/index.php/f/1465589" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> SIP телефоны</a></li>
                       <li><a href="https://chat.datacenter.by/index.php/f/1465728" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> Виртуальная АТС (Centrex)</a></li>
-                    </ul>
-
-                    <ul class="list-unstyled">
-                      <li><a href="https://www.beltelecom.by/business/additional-services/business-solutions-networking/oblachnaya-ats/poryadok-okazaniya" target="_blank">ПОУ Облачная АТС</a></li>
-                      <li><a href="https://chat.datacenter.by/index.php/f/1465513" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i>Nextcloud - Облачная АТС</a></li>
+                      <li><a href="https://chat.datacenter.by/index.php/f/1465513" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> Облачная АТС</a></li>
                     </ul>
                   </div>
                 </div>
@@ -4893,6 +4893,7 @@
                   </div>
                   <div class="card-body">
 
+                    Настройка сервисов:
                     <span class="d-block">
                       <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapsePBXservices" role="button" aria-expanded="false" aria-controls="collapsePBXservices">
                         <i class="bi bi-chevron-down"></i> Номера сервисов
@@ -4989,14 +4990,68 @@
                     </span>
 
                     <span class="d-block">
-                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapsePBXmissedcalls" role="button" aria-expanded="false" aria-controls="collapsePBXmissedcalls">
-                        <i class="bi bi-chevron-down"></i> Уведомление о пропущенных
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapsePBXaudiofiles" role="button" aria-expanded="false" aria-controls="collapsePBXaudiofiles">
+                        <i class="bi bi-chevron-down"></i> Аудиофайлы и записи разговоров
                       </a>
-                      <div class="collapse" id="collapsePBXmissedcalls">
-                        <strong>Имеется ли уведомление о пропущенных звонках, в том числе, если вызов был прерван по инициативе звонящего?</strong>
-                        <br>
-                        Вызов считается пропущенным, если звонок был без ответа и завершен по таймауту дозвона. Уведомление о пропущенном звонке, если вызов шел напрямую на номер абонента АТС и звонящий абонент сам завершил звонок, не формируется.
-                        При распределении звонка на КЦ и прерывании звонка по инициативе звонящего, уведомление о пропущенном звонке не формируется, так как вызов, не принятый одним оператором, мог быть принят другим. То есть невозможно считать вызов пропущенным. 
+                      <div class="collapse" id="collapsePBXaudiofiles">
+                        <ul>
+                          <li>
+                            Записанный разговор будет доступен на странице Записи разговоров. Индикация о доступной максимальной длительности записи расположена на главной странице Веб-портала в панели Данные Облачной АТС.
+                          </li>
+                          <li>
+                            Облачная АТС может проигрывать аудиофайлы только формата WAV. Запись аудиофайла может быть выполнена стандартными программами Windows.
+                             В случае если записанный аудиофайл имеет формат отличающийся от WAV, то производится конвертация файла с помощью любого конвертера форматов.
+                          </li>
+                          <li>
+                            Хранение и управление файлами записей разговоров производится по методу LIFO (последний вошел –– первый вышел). 
+                            Все файлы, помещенные в хранилище, нумеруются по порядку размещения. Только последний записанный файл можно извлечь из хранилища. 
+                            В случае если для записи нового файла не хватает места на диске, то функция записи будет освобождать место, удаляя последний записанный файл. 
+                            Удаление последних файлов будет происходить до тех пор, пока не будет достаточно места для записи нового файла
+                          </li>
+                        </ul>
+                      </div>
+                    </span>
+
+                    <span class="d-block">
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapsePBXtips" role="button" aria-expanded="false" aria-controls="collapsePBXtips">
+                        <i class="bi bi-chevron-down"></i> Особенности работы сервисов ОАТС
+                      </a>
+                      <div class="collapse" id="collapsePBXtips">
+                        <ul>
+                          <li>Детализация хранится 90 дней. Записи звонков опционально в зависимости от тарифа (отображается на портале срок хранения)</li>
+                          <li>Сервис Ожидающий вызов не работает с настроенной услугой Интеллектуальная переадресация</li>
+                        </ul>
+                      </div>
+                    </span>
+
+                    Маршрутизация и вызовы:
+
+                    <span class="d-block">
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapsePBXtimetable" role="button" aria-expanded="false" aria-controls="collapsePBXtimetable">
+                        <i class="bi bi-chevron-down"></i> Расписание
+                      </a>
+                      <div class="collapse" id="collapsePBXtimetable">
+                        <strong>Добавить специальный день</strong>
+                        <p>В случае если расписание работы Маршрута или Шага маршрута не круглосуточное, то необходимо настроить расписание.</p>
+                        <ul>
+                        Добавить специальный день в расписание (субботу). Необходимо зайти на портал и добавить в расписание (Облачная АТС - Маршрутизация - выбрать номер - специальный день - добавить)
+                        </ul>
+                      </div>
+                    </span>
+
+                    <span class="d-block">
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapsePBXoutboundrestrict" role="button" aria-expanded="false" aria-controls="collapsePBXoutboundrestrict">
+                        <i class="bi bi-chevron-down"></i> Запрет исходящих вызовов
+                      </a>
+                      <div class="collapse" id="collapsePBXoutboundrestrict">
+                        Настройка Запрет исходящих вызовов определяет, каким исходящим вызовам запрещено маршрутизироваться на номер, указанный в поле Выбор внешнего номера,
+                        если другое не определено настройками отдела или настройками сотрудника. Все исходящие вызовы разделены по направлениям. Управление настройками производится флагами:
+                        <ul>
+                          <li><i class="bi bi-x"></i> «запрет отключен» означает, что исходящим вызовам разрешено маршрутизироваться на внешний номер</li>
+                          <li><i class="bi bi-check"></i> «запрет включен» означает, что исходящим вызовам запрещено маршрутизироваться на внешний номер</li>
+                          <li><i class="bi bi-dash"></i> «запрет включен ограничено» означает, что исходящим вызовам запрещено маршрутизироваться на внешний номер, но для некоторых абонентов эта маршрутизация разрешена.</li>
+                        </ul>
+                        По умолчанию установлен флаг <i class="bi bi-x"></i> «запрет отключен»
                       </div>
                     </span>
 
@@ -5033,27 +5088,14 @@
 
                       </div>
                     </span>
-
+                    
                     <span class="d-block">
-                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapsePBXtips" role="button" aria-expanded="false" aria-controls="collapsePBXtips">
-                        <i class="bi bi-chevron-down"></i> Особенности работы сервисов ОАТС
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapsePBXmissedcalls" role="button" aria-expanded="false" aria-controls="collapsePBXmissedcalls">
+                        <i class="bi bi-chevron-down"></i> Уведомление о пропущенных
                       </a>
-                      <div class="collapse" id="collapsePBXtips">
-                        <ul>
-                          <li>
-                            Облачная АТС может проигрывать аудиофайлы только формата WAV. Запись аудиофайла может быть выполнена стандартными программами Windows.
-                             В случае если записанный аудиофайл имеет формат отличающийся от WAV, то производится конвертация файла с помощью любого конвертера форматов.
-                          </li>
-                          <li>
-                            Хранение и управление файлами записей разговоров производится по методу LIFO (последний вошел –– первый вышел). 
-                            Все файлы, помещенные в хранилище, нумеруются по порядку размещения. Только последний записанный файл можно извлечь из хранилища. 
-                            В случае если для записи нового файла не хватает места на диске, то функция записи будет освобождать место, удаляя последний записанный файл. 
-                            Удаление последних файлов будет происходить до тех пор, пока не будет достаточно места для записи нового файла
-                          </li>
-                          <li>Добавить специальный день в расписание (субботу). Необходимо зайти на портал и добавить в расписание (Облачная АТС - Маршрутизация - выбрать номер - специальный день - добавить)</li>
-                          <li>Детализация хранится 90 дней. Записи звонков опционально в зависимости от тарифа (отображается на портале срок хранения)</li>
-                          <li>Сервис Ожидающий вызов не работает с настроенной услугой Интеллектуальная переадресация</li>
-                        </ul>
+                      <div class="collapse" id="collapsePBXmissedcalls">
+                        Вызов считается пропущенным, если звонок был без ответа и завершен по таймауту дозвона. Уведомление о пропущенном звонке, если вызов шел напрямую на номер абонента АТС и звонящий абонент сам завершил звонок, не формируется.
+                        При распределении звонка на КЦ и прерывании звонка по инициативе звонящего, уведомление о пропущенном звонке не формируется, так как вызов, не принятый одним оператором, мог быть принят другим. То есть невозможно считать вызов пропущенным. 
                       </div>
                     </span>
 
