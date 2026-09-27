@@ -723,7 +723,20 @@
                           <div class="collapse" id="collapseNetworkIpv6set">
                             <p>При использовании IPv6-адреса в URL необходимо заключать адрес в квадратные скобки:<br><a href="http://[2001:0db8:11a3:09d7:1f34:8a2e:07a0:765d]/" target="_blank">http://[2001:0db8:11a3:09d7:1f34:8a2e:07a0:765d]/</a></p>
                             <p>Если необходимо указать порт, то он пишется после скобок:<br><a href="http://[2001:0db8:11a3:09d7:1f34:8a2e:07a0:765d]:8080/" target="_blank">http://[2001:0db8:11a3:09d7:1f34:8a2e:07a0:765d]:8080/</a></p>
-                              
+                            
+                            Обозначения:
+                            <ul>
+                              <li>
+                                Знак процента (%) в адресе IPv6 разделяет сам IP-адрес и идентификатор сетевого интерфейса. 
+                                Пример записи: <code>fe80::1ff:fe00:3%eth0</code> или <code>fe80::20c:42ff:fe06:ec64%17</code> (%17 порядкой номер интерфейса сетевой карты в системе Windows)
+                              </li>
+                              <li>Link-local локальные адреса начинаются с <code>fe80:</code>. Например default gateway <code>fe80::1</code></li>
+                              <li>
+                                Длинную последовательность блоков, состоящих только из нулей, можно заменить двойным двоеточием (::).
+                                <code>Полный адрес:2001:0db8:0000:0000:0000:0000:1428:57ab</code> Сжатый адрес: <code>2001:db8::1428:57ab</code>
+                                Сокращение "::" можно использовать всего один раз на весь IPv6-адрес.
+                              </li>
+                            </ul>
                             Посмотреть полный IPv6 адрес можно через <code>ipconfig</code>:
                             <code>
                               <pre style="white-space: pre-line;">
@@ -735,6 +748,15 @@
                             <blockquote>IPv6-адрес - это глобальный IPv6 адрес,  Локальный IPv6-адрес канала - это локальный IPv6 адрес внутри ЛВС</blockquote>
                             
                             <p>Калькулятор ipv6: <a href="https://edgecenter.ru/dev-tools/calc-net-ipv6" target="_blank">https://edgecenter.ru/dev-tools/calc-net-ipv6</a></p>
+
+                            Настройка сетевой на IPv6:
+                            <ul>
+                              <li>IPv6 адрес: Взять временный IPv6 из ipconfig</li>
+                              <li>Длина префикса: <code>64</code></li>
+                              <li>Шлюз: <code>fe80::1</code></li>
+                              <li>DNS предпочитаемый: <code>2a02:2208:0:240::245</code></li>
+                              <li>DNS альтернативный: <code>2a02:2208:0:144::149</code></li>
+                            </ul>
 
                             Особенности работы IPv6:
                             <ul>
@@ -1860,23 +1882,71 @@
                         <h3 class="card-title"> Прочие настройки сети</h3>
                       </div>
                       <div class="card-body">
+
+                        <span class="d-block">
+                          <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseVPNFail" role="button" aria-expanded="false" aria-controls="collapseVPNFail">
+                            <i class="bi bi-chevron-down"></i> Не работает VPN 
+                          </a>
+                          <div class="collapse" id="collapseVPNFail">
+                            <ul>
+                              <li>Сначала зафиксируйте масштабность вопроса с VPN: речь идет об одном или нескольких (всех) пользователях, которые не могут обмениваться данными.</li>
+                              <li>Если вопрос наблюдается локально у одного или выборочных абонентов, рекомендуем проверить настройки оборудования этих пользователей. </li>
+                              <li>Если проблема наблюдается у всех пользователей, и Вы используете схему с маршрутизатором и/или сервером доступа, рекомендуем Вам проверить корректность настроек данного оборудования.</li>
+                              <li>Проверьте сетевую связанность: рекомендуем выполнить команду ping и tracert (traceroute) с одной точки до другой, между которыми должен происходить обмен данными, и наоборот. Если подключение пользователей происходит через маршрутизатор к серверу, то эти же команды к адресу сервера и наоборот.</li>
+                            </ul>
+                           Проверить доступность точки: На ноутбуке/компьютере нажимаем сочетание двух клавиш Win + R. В появившемся окне пишем команду cmd. В окне командной строки вводим команду ping X.Х.Х.Х (адрес точки). Нажимаем клавишу Enter.
+                          </div>
+                        </span>
+
+                        <span class="d-block">
+                          <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseVPNethconfig" role="button" aria-expanded="false" aria-controls="collapseVPNethconfig">
+                            <i class="bi bi-chevron-down"></i> Настройка сети под VPN 
+                          </a>
+                          <div class="collapse" id="collapseVPNethconfig">
+                            <ul>
+                              <li>CE — Customer Edge router — граничный маршрутизатор клиента, который подключен в сеть провайдера.</li>
+                              <li>PE — Provider Edge router — граничный маршрутизатор провайдера. Собственно к нему и подключаются CE. </li>
+                            </ul>
+                            
+                            Настройки под VPN:
+                            <ul>
+                              <li>В поле "IP address" вводим значение CE</li>
+                              <li>в поле "Default gateway" вводим значение PE</li>
+                              <li>Подобрать маску подсети с помощью <a href="https://ip-calculator.ru">IP-калькулятора</a></li>
+                              <li>VLAN ID - 70</li>
+                              <li>802.1p - 3</li>
+                              <li>MTU - 1492</li>
+                              <li>IP Acquisition Mode - Static</li>
+                              <li>Выключаем Firewall на модеме БТК
+                                <ul>
+                                  <li>ZTE: Security - Firewall и в выпадающем списке Firewall level выбрать low</li>
+                                  <li>HUAWEI: Advanced - Firewall - Firewall level - Off</li>
+                                </ul>
+                              </li>
+                              <li>ACL - Service type: ICMP - Acess direction: WAN - Submit</li> 
+                            </ul>
+                            
+                            Специфичные параметры для ADSL:
+                            <ul>
+                              <li>VPI/VCI: 0/33</li>
+                              <li>Link type: IP</li>
+                              <li>IP type: Static</li>
+                              <li>Enable NAT - отключаем</li>
+                            </ul>
+                            
+                            <blockquote>
+                              Внимание! Для доступа к <a href="https://nces.by/helpdesk_reg/#%D0%9A%D0%B0%D0%BD%D0%B0%D0%BB%D1%8B%20%D1%81%D0%B2%D1%8F%D0%B7%D0%B8">системе НЦЭС</a> через VPN-канал на рабочем месте пользователя необходимо предварительно добавить запись 10.103.1.195 support.nces.by в конец файла: для пользователей Windows - файл %windir%\System32\drivers\etc\hosts, для пользователей Linux - файл /etc/hosts
+                            </blockquote>
+                            Статьи:
+                            <ul class="list-unstyled">
+                              <li><a href="https://lan1.by/5087">Настройка VPN на HUAWEI HG8245A</a></li>
+                              <li><a href="https://lan1.by/2169">Настройка VPN на модеме ZXHN H208N</a></li>
+                            </ul>
+                          </div>
+                        </span>
+                          
+                        Документация по VPN на Nextcloud:
                         <ul class="list-unstyled">
-
-                          <span class="d-block">
-                            <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseVPNFail" role="button" aria-expanded="false" aria-controls="collapseVPNFail">
-                              <i class="bi bi-chevron-down"></i> Не работает VPN 
-                            </a>
-                            <div class="collapse" id="collapseVPNFail">
-                              <ul>
-                                <li>Сначала зафиксируйте масштабность вопроса с VPN: речь идет об одном или нескольких (всех) пользователях, которые не могут обмениваться данными.</li>
-                                <li>Если вопрос наблюдается локально у одного или выборочных абонентов, рекомендуем проверить настройки оборудования этих пользователей. </li>
-                                <li>Если проблема наблюдается у всех пользователей, и Вы используете схему с маршрутизатором и/или сервером доступа, рекомендуем Вам проверить корректность настроек данного оборудования.</li>
-                                <li>Проверьте сетевую связанность: рекомендуем выполнить команду ping и tracert (traceroute) с одной точки до другой, между которыми должен происходить обмен данными, и наоборот. Если подключение пользователей происходит через маршрутизатор к серверу, то эти же команды к адресу сервера и наоборот.</li>
-                              </ul>
-                             Проверить доступность точки: На ноутбуке/компьютере нажимаем сочетание двух клавиш Win + R. В появившемся окне пишем команду cmd. В окне командной строки вводим команду ping X.Х.Х.Х (адрес точки). Нажимаем клавишу Enter.
-                            </div>
-                          </span>
-
                           <li><a href="https://chat.datacenter.by/index.php/f/1465469" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> Настройка VPN (БТК)</a></li>                          
                           <li><a href="https://chat.datacenter.by/index.php/f/1468840" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> Настройка подключения и сервисов</a></li>
                           <li><a href="https://chat.datacenter.by/index.php/f/1467921" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> Nextcloud - Интернет и сети передачи данных</a></li>
@@ -2597,11 +2667,6 @@
                             <i class="bi bi-chevron-down"></i> Общедоступный Wi-fi (ciscowifi.beltelecom.by) 
                           </a>
                           <div class="collapse" id="collapseByflyWifi">
-                            <br>
-                            <ul class="list-unstyled">
-                              <li><a href="https://beltelecom.by/all/internet/wifi/how-to-use-wi-fi" target="_blank">Как пользоваться</a></li>
-                              <li><a href="https://chat.datacenter.by/index.php/f/1468777" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> Настройка wi-fi +(Общедоступные точки)</a></li>
-                            </ul>
                             Проверка полученного IP-адреса от точки доступа wi-fi:
                             <ul>
                               <li>
@@ -2617,12 +2682,19 @@
                             </ul>
                             <blockquote>Адреса из сети 169.254.0.0/16 Windows присваивает автоматически, если в подключенной сети нет DHCP сервера</blockquote>
 
-                            Не гарантируется по ПОУ:
+                            Не гарантируется скорость подключения:
                             <ul>
-                              home-wifi.п.25 "Исполнитель не гарантирует бесперебойность доступа к Услуге", а так же Примечание 1. 
-                              "Скорость передачи данных для конкретной точки WIFI зависит от состояния радиоканала и степени загруженности сети (количества одновременно работающих абонентов)".
-                              Скорость предоставления доступа в сеть Интернет на базе технологии Wi-Fi с использованием карт  на одного пользователя составляет от 200 Кбит/с до 5 Мбит/с, в зависимости от одновременно работающего оборудования передачи данных в одной зоне доступа WI-FI.
+                              Согласно <a href="https://beltelecom.by/private/telephony/prepaid-calls/stk/taksofony-i-telefonnye-karty-publichnyi-dogovor">публичного договора</a>: "Скорость передачи данных для конкретной точки WIFI зависит от состояния радиоканала и степени загруженности сети (количества одновременно работающих абонентов)".
+                              <a href="https://www.beltelecom.by/private/internet/wifi">Скорость предоставления доступа в сеть Интернет на базе технологии Wi-Fi с использованием карт</a> на одного пользователя составляет от 200 Кбит/с до 5 Мбит/с, в зависимости от одновременно работающего оборудования передачи данных в одной зоне доступа WI-FI.
                             </ul>
+                            
+                            Смотри так же:
+                            <ul>
+                              <li><a href="https://beltelecom.by/all/internet/wifi/how-to-use-wi-fi" target="_blank">Как пользоваться</a></li>
+                              <li><a href="https://beltelecom.by/sites/default/files/content/wifi/Pamyatka-Wi-Fi1.doc">Памятка по настройке доступа к сети Интернет по технологии Wi-Fi</a></li>
+                              <li><a href="https://chat.datacenter.by/index.php/f/1468777" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> Настройка wi-fi +(Общедоступные точки)</a></li>
+                            </ul>
+
                           </div>
                         </span>
 
@@ -3823,7 +3895,7 @@
                         <i class="bi bi-chevron-down"></i> Настройки видео
                       </a>
                       <div class="collapse" id="collapseSMARTvideoset">
-                        <ul>
+                        <ul class="list-unstyled">
                           <li>Формат картинки по умолчанию под HD для SML приставки. В настройках приставки явно указать 1920х1080p@60Hz. Настройка -> Система -> Видео и экран -> Формат цифрового сигнала -> 1920х1080p@60Hz</li>
                         </ul>
                       </div>
@@ -4663,6 +4735,8 @@
                     <ul>
                       <li><a href="https://beltelecom.by/private/telephony/ustanovka-i-polzovanie-telefonom">Установка и пользование телефоном</a></li>
                       <li><a href="https://beltelecom.by/private/telephony/additional-services">Дополнительные услуги</a></li>
+                      <li><a href="https://beltelecom.by/private/telephony/virt-number">Виртуальный номер</a></li>
+                      <li><a href="https://beltelecom.by/business/telephony/usluga-isdn-2bd">Услуга ISDN (2B+D)</a></li>
                     </ul>
                     Памятки пользователя:
                     <ul>
@@ -5463,6 +5537,25 @@
 
     <!-- customjs -->
     <script src="../js/custom.js"></script>
+    
+    <!-- only for this page-->    
+    <!-- <script language="javascript">
+      function hideAllCollapse() {
+        const collapseElements = document.querySelectorAll('.collapse.show');
+        
+        collapseElements.forEach(el => {
+          
+          const collapseInstance = bootstrap.Collapse.getOrCreateInstance(el);
+          collapseInstance.hide();
+        });
+      }
+
+      const collapseBtn = document.querySelector('.bi-chevron-down');
+      collapseBtn.addEventListener('click', () => {
+        console.log('Button clicked via attribute!');
+        hideAllCollapse();
+      });
+    </script> -->
 
   </body>
   <!--end::Body-->
