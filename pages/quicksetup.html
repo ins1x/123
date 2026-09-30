@@ -495,7 +495,7 @@
                           </div>
                         </span>
 
-                        Базовые настройки сети:
+                        Базовые настройки сетевого адаптера:
                         <span class="d-block">
                           <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseCheckLocalIp" role="button" aria-expanded="false" aria-controls="collapseCheckLocalIp">
                             <i class="bi bi-chevron-down"></i> Проверить присвоенный IP
@@ -647,12 +647,12 @@
                             </p>
                             Дополнительные параметры которы по-умолчанию не запрашивает но могут понадобиться для расширенной настройки:
                             <ul>
-                              <li>MTU: 1492 (по умолчанию)</li>
-                              <li>Type: PPPoE client
+                              <li>MTU: <code>1492</code> (по умолчанию)</li>
+                              <li>Type: <code>PPPoE client</code>
                               <li>Поле Service Name - оставить пустым</li>
-                              <li>Use Peer DNS - Enable</li>
-                              <li>Add default route - Enable</li>
-                              <li>Authentication type - PAP/CHAP (Поддерживает оба режима)</li>
+                              <li>Use Peer DNS - <code>Enable</code></li>
+                              <li>Add default route - <code>Enable</code></li>
+                              <li>Authentication type - <code>PAP/CHAP</code> (Поддерживает оба режима)</li>
                             </ul>
     
                             <h5>Настройка PPPoE по бренду роутера</h5>
@@ -715,15 +715,12 @@
                           </div>
                         </span>
 
-                        Расширенные настройки сети:
+                        Расширенные настройки сетевого адаптера:
                         <span class="d-block">
                           <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseNetworkIpv6set" role="button" aria-expanded="false" aria-controls="collapseNetworkIpv6set">
-                            <i class="bi bi-chevron-down"></i> Настройка для IPv6
+                            <i class="bi bi-chevron-down"></i> Настройка сетевой для IPv6
                           </a>
                           <div class="collapse" id="collapseNetworkIpv6set">
-                            <p>При использовании IPv6-адреса в URL необходимо заключать адрес в квадратные скобки:<br><a href="http://[2001:0db8:11a3:09d7:1f34:8a2e:07a0:765d]/" target="_blank">http://[2001:0db8:11a3:09d7:1f34:8a2e:07a0:765d]/</a></p>
-                            <p>Если необходимо указать порт, то он пишется после скобок:<br><a href="http://[2001:0db8:11a3:09d7:1f34:8a2e:07a0:765d]:8080/" target="_blank">http://[2001:0db8:11a3:09d7:1f34:8a2e:07a0:765d]:8080/</a></p>
-                            
                             Обозначения:
                             <ul>
                               <li>
@@ -740,45 +737,61 @@
                             Посмотреть полный IPv6 адрес можно через <code>ipconfig</code>:
                             <code>
                               <pre style="white-space: pre-line;">
-                              IPv6-адрес. . . . . . . . . . : 2a06:b800:1c00:0:c934:bb77:84:6752(Основной)
-                              Локальный IPv6-адрес канала . : fe80::c934:bb77:84:6752%23(Основной)
-                              Основной шлюз. . . . . . . . .: fe80::223:33ff:fe87:cb19%23
+                              Временный IPv6-адрес . . . .  : 2a06:220f:2202:c2f1:c934:bb77:f184:6752
+                              Локальный IPv6-адрес канала . : fe80::c934:bb77:84:6752%23
+                              Основной шлюз . . . . . . . . : fe80::223:33ff:fe87:cb19%23
                               </pre>
                             </code>
                             <blockquote>IPv6-адрес - это глобальный IPv6 адрес,  Локальный IPv6-адрес канала - это локальный IPv6 адрес внутри ЛВС</blockquote>
                             
                             <p>Калькулятор ipv6: <a href="https://edgecenter.ru/dev-tools/calc-net-ipv6" target="_blank">https://edgecenter.ru/dev-tools/calc-net-ipv6</a></p>
 
-                            Настройка сетевой на IPv6:
+                            Настройка сетевой карты на IPv6:
                             <ul>
-                              <li>IPv6 адрес: Взять временный IPv6 из ipconfig</li>
+                              <li>IPv6 адрес: Взять временный IPv6 из <code>ipconfig /all</code> (Например <code>2a06:220f:2202:c2f1:c934:bb77:f184:6752</code>)</li>
                               <li>Длина префикса: <code>64</code></li>
-                              <li>Шлюз: <code>fe80::1</code></li>
+                              <li>
+                                Шлюз: В качестве шлюза указывать GUA (<a href="https://www.geeksforgeeks.org/computer-networks/global-unicast-address-in-ccna/">Global unicast IPv6 address</a>).
+                                Первые 4 блока из временного IPv6 с добавленным двумя двоеточиями <code>2a06:220f:2202:c2f1::</code> либо <code>fe80::1</code>
+                              </li>
                               <li>DNS предпочитаемый: <code>2a02:2208:0:240::245</code></li>
                               <li>DNS альтернативный: <code>2a02:2208:0:144::149</code></li>
                             </ul>
 
-                            Особенности работы IPv6:
-                            <ul>
-                              <li>
-                                При подключении услуги «Статический IPv6 адрес» выделяется статическая подсеть IPv6 с префиксом /56, в которую можно подключить до 2 в 72 степени устройств (4 секстиллиона), 
-                                каждое из которых будет иметь выделенные статические IPv6-адреса в интернете. Абонентам будет доступно использование одновременно протоколов IPv4 и IPv6, по технологии DualStack.
-                              </li>
-                              <li>
-                                Настройка DHCP в IPv6 отличается от старого IPv4 тем, что в нем нет привычного NAT, адреса состоят из 128 бит (8 групп шестнадцатеричных чисел), 
-                                а устройства умеют настраиваться сами с помощью автоконфигурации (SLAAC) или DHCPv6. 
-                                Для корректной работы удаленных сервисов необходимо вручную задать адрес из пула, иначе после перезагрузки оно получит другой IPv6 адрес.
-                              </li>
-                              <li>
-                                В IPv6 не нужно пробрасывать порты на роутере, такого явления в IPv6 нет. Все IPv6 адреса, которые получают устройства в локальной сети глобально маршрутизируемы. 
-                                Однако необходимые для работы порты должны быть открыты на вашем клиентском устройстве (могут быть заблокированны брандмаузером либо firewall)</li>
-                            </ul>
-                            
                             <ul class="list-unstyled">
                               <li><a href="https://chat.datacenter.by/index.php/f/1468878" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> Статический IP и IPv6</a></li>
                             </ul>
                           </div>
                         </span>
+
+                        <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseNetworkIpv6features" role="button" aria-expanded="false" aria-controls="collapseNetworkIpv6features">
+                          <i class="bi bi-chevron-down"></i> Особенности работы IPv6
+                        </a>
+                        <div class="collapse" id="collapseNetworkIpv6features">
+                          Особенности работы IPv6:
+                          <ul>
+                            <li>
+                              При подключении услуги «Статический IPv6 адрес» выделяется статическая подсеть IPv6 с префиксом /56, в которую можно подключить до 2 в 72 степени устройств (4 секстиллиона), 
+                              каждое из которых будет иметь выделенные статические IPv6-адреса в интернете. Абонентам будет доступно использование одновременно протоколов IPv4 и IPv6, по технологии DualStack.
+                            </li>
+                            <li>
+                              Настройка DHCP в IPv6 отличается от старого IPv4 тем, что в нем нет привычного NAT, адреса состоят из 128 бит (8 групп шестнадцатеричных чисел), 
+                              а устройства умеют настраиваться сами с помощью автоконфигурации (SLAAC) или DHCPv6. 
+                              Для корректной работы удаленных сервисов необходимо вручную задать адрес из пула, иначе после перезагрузки оно получит другой IPv6 адрес.
+                            </li>
+                            <li>
+                              В IPv6 не нужно пробрасывать порты на роутере, такого явления в IPv6 нет. Все IPv6 адреса, которые получают устройства в локальной сети глобально маршрутизируемы. 
+                              Однако необходимые для работы порты должны быть открыты на вашем клиентском устройстве (могут быть заблокированны брандмаузером либо firewall)</li>
+                          </ul>
+
+                          <p>При использовании IPv6-адреса в URL необходимо заключать адрес в квадратные скобки:<br><a href="http://[2001:0db8:11a3:09d7:1f34:8a2e:07a0:765d]/" target="_blank">http://[2001:0db8:11a3:09d7:1f34:8a2e:07a0:765d]/</a></p>
+                          <p>Если необходимо указать порт, то он пишется после скобок:<br><a href="http://[2001:0db8:11a3:09d7:1f34:8a2e:07a0:765d]:8080/" target="_blank">http://[2001:0db8:11a3:09d7:1f34:8a2e:07a0:765d]:8080/</a></p>
+                          
+                          <ul class="list-unstyled">
+                            <li><a href="https://habr.com/ru/articles/192164/" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> Практика IPv6 — домашняя сеть</a></li>
+                          </ul>
+                        </div>
+                      </span>
 
                         <span class="d-block">
                           <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseSpeedAndDuplex" role="button" aria-expanded="false" aria-controls="collapseSpeedAndDuplex">
@@ -1994,7 +2007,7 @@
 
                         <span class="d-block">
                           <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseWifiClass" role="button" aria-expanded="false" aria-controls="collapseWifiClass">
-                            <i class="bi bi-chevron-down"></i> Классы и стандарты Wi-Fi
+                            <i class="bi bi-chevron-down"></i> Классы и стандарты Wi-Fi (Расшифровка классов Wi-Fi)
                           </a>
                           <div class="collapse" id="collapseWifiClass">
                             <p>Дополнительную информацию о стандартах 802.11 вы найдете в статьях:</p>
@@ -2190,7 +2203,8 @@
                             </p>
                           </div>
                         </span>
-
+                        
+                        Выбор оборудования: 
                         <span class="d-block">
                           <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseWifiChooseRouter" role="button" aria-expanded="false" aria-controls="collapseWifiChooseRouter">
                             <i class="bi bi-chevron-down"></i> Выбор Wi-Fi роутера
@@ -2811,10 +2825,10 @@
                       </div>
                       <div class="card-body">
                         <span class="d-block">
-                          <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseCableConnectors" role="button" aria-expanded="false" aria-controls="collapseCableConnectors">
-                            <i class="bi bi-chevron-down"></i> Кабели и коннекторы RJ45 и RJ11
+                          <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseCableConnectorsRJ45" role="button" aria-expanded="false" aria-controls="collapseCableConnectorsRJ45">
+                            <i class="bi bi-chevron-down"></i> Кабели и коннекторы RJ45 (сетевой кабель)
                           </a>
-                          <div class="collapse" id="collapseCableConnectors">
+                          <div class="collapse" id="collapseCableConnectorsRJ45">
                             <h4 class="text-center">Сетевой кабель (RJ-45)</h4>
                             <p>
                             Для <a href="https://lan1.by/3831">обжатия сетевого кабеля</a> (витой пары) в коннектор RJ-45 используется <a href="https://ru.wikipedia.org/wiki/TIA/EIA-568-B">стандарт T568B (Прямое обжатие)</a>.
@@ -2827,8 +2841,23 @@
                             <p>
                             <a href="https://lan1.by/wp-content/uploads/4-2.jpg">Стандарт T568B (Рекомендуемый)</a>: бело-зеленый, зеленый, бело-оранжевый, синий, бело-синий, оранжевый, бело-коричневый, коричневый. 
                             Другая сторона имеет такой же порядок контактов. Лучше всего использовать это вариант.
-                            </p>
-                            
+                            </p>     
+
+                            Категория (Cat. / CAT): Определяет пропускную способность и частоту:
+                            <ul>
+                              <li>Cat.5e: Частота 100 МГц, скорость до 1 Гбит/с, длина до 100 м.</li>
+                              <li>Cat.6: Частота 250 МГц, скорость до 10 Гбит/с (на длине до 55 м).</li>
+                              <li>Cat.6a / Cat.7: Частота 500–600 МГц, скорость до 10 Гбит/с на полный метр.</li>
+                            </ul>
+                            <a href="https://chat.datacenter.by/index.php/f/1468818" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> Кабели и коннекторы</a>
+                          </div>
+                        </span>
+
+                        <span class="d-block">
+                          <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseCableConnectorsRJ12" role="button" aria-expanded="false" aria-controls="collapseCableConnectorsRJ12">
+                            <i class="bi bi-chevron-down"></i> Кабели и коннекторы RJ11 и RJ12 (телефонный кабель)
+                          </a>
+                          <div class="collapse" id="collapseCableConnectorsRJ12">
                             <h4 class="text-center">Телефонный кабель (RJ-11/12)</h4>
                             <p>
                               <a href="https://wifigid.ru/poleznoe-i-interesnoe/obzhim-telefonnogo-kabelya-2-4-zhily">Схема обжима телефонного кабеля</a> зависит от количества жил: для стандартного аналогового телефона используются два средних контакта разъема RJ-11 (контакты №3 и №4),
@@ -3468,6 +3497,100 @@
                   </div>
                 </div>
 
+                <div class="card">
+                  <div class="card-header text-bg-gray py-2">
+                    <h3 class="card-title"> Пульт</h3>
+                  </div>
+                  <div class="card-body">
+                    <ul class="list-unstyled">
+                      <li><a href="https://chat.datacenter.by/index.php/f/1465079" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> Пульт от интерактивного ТВ</a></li>
+                    </ul>                    
+
+                    <span class="d-block">
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseIPTVkeyprog" role="button" aria-expanded="false" aria-controls="collapseIPTVkeyprog">
+                        <i class="bi bi-chevron-down"></i> Программирование пульта
+                      </a>
+                      <div class="collapse" id="collapseIPTVkeyprog">
+                        <p>
+                          Оба варианта похожи, основное отличие в порядке нажатия клавиш при программировании. 
+                          В первом варианте (старые пульты) находясь в режиме программирования сперва нажимается клавиша на пульте от ТВ затем на пульте ZALA, а во втором (новые и покупные) сперва нажимается на пульте от ZALA затем на пульте от ТВ.
+                        </p>
+                        1 Вариант (старые пульты):
+                        <ul>
+                          <li>Подносим пульты друг напротив друга, пульт от ТВ напротив пульта от ZALA</li>
+                          <li>Зажимаем кнопку <kbd>SET</kbd> сверху на пульте ZALA на пару секунд, смотрим за индикацией.</li>
+                          <li>Загорится индикатор над SET и изменит цвет (с зеленого на красный или цвет будет тот же, но изменится яркость индикатора)</li>
+                          <li>Нажимаем на пульте от ТВ кнопку которую мы хотим настроить (Например вкл-выкл ТВ <i class="bi bi-power text-danger"></i>)</li>
+                          <li>На пульте от ZALA изменится цвет над SET на красный либо станет гореть ярче - значит сигнал он принял. </li>
+                          <li>Нажимаем на пульте от ZALA кнопку которую хотим запрограммировать (Например синюю кнопку включения <i class="bi bi-power text-info"></i>).</li>
+                          <li>Нажимаем <kbd>SET</kbd> чтобы выйти с настройки пульта - индикатор погаснет</li>
+                        </ul>  
+                        2 Вариант (новые пульты и покупные):
+                        <ul>
+                          <li>Подносим пульты друг напротив друга, пульт от ТВ напротив пульта от ZALA</li>
+                          <li>Зажимаем кнопку <kbd>SET</kbd> сверху на пульте ZALA на пару секунд, смотрим за индикацией.</li>
+                          <li>Загорится индикатор над SET и изменит цвет (с зеленого на красный или цвет будет тот же, но изменится яркость индикатора)</li>
+                          <li>Нажимаем на пульте от ZALA кнопку которую хотим запрограммировать (Например синюю кнопку включения <i class="bi bi-power text-info"></i>).</li>
+                          <li>Индикатор на пульте ZALA начнет моргать или изменит яркость</li>
+                          <li>Нажимаем на пульте от ТВ кнопку которую мы хотим настроить (Например вкл-выкл ТВ <i class="bi bi-power text-danger"></i>)</li>
+                          <li>Индикатор перестанет мигать</li>
+                          <li>Нажимаем <kbd>SET</kbd> чтобы выйти с настройки пульта - индикатор погаснет</li>
+                        </ul>
+                        Привязка универсального пульта 4-in-1:
+                        <ul>
+                          <li>Универсальный пульт 4-in-1 переключается согласно инструкции-вкладыша в нужный режим клавишей <kbd>standby (Включение)</kbd></li>
+                          <li>Зажмите одновременно кнопку <kbd>Standby (Включение)</kbd> и цифру 1.</li>
+                          <li>Удерживайте их, пока индикатор не моргнет 3 раза.</li>
+                          <li>Попробуйте поуправлять приставкой. Если приставка не реагирует, повторите процедуру, но уже с комбинациями кнопок <kbd>Standby</kbd> + 2, <kbd>Standby</kbd> + 3 или <kbd>Standby</kbd> + 4.</li>
+                          <li>Одна из этих комбинаций переключит пульт на частоту вашей модели приставки (B600, B700, Витязь и др.).</li>
+                        </ul>
+                        <blockquote> 
+                          Если при настройке и нажатии с пульта от ТВ на пульте ZALA индикация не меняется - пробуем вариант 2. 
+                          Цвета и нидикация пульта от ZALA может отличаться в зависимотси от сборки пульта, ориентируйтесь на порядок действий а не цвета.
+                          Не все пульты можно запрограммировать, это обусловлено аппаратными отличиями в кодировании сигнала. 
+                          На пульте ZALA 2 кнопки SET, для программирования используется кнопка в верхнем ряду. 
+                        </blockquote>
+                        <ul class="list-unstyled">
+                          <li><a href="https://www.youtube.com/watch?v=ZJ2rXxWyV10">Пример настройки различных пультов ZALA - YouTube</a></li>
+                          <li><a href="https://lan1.by/qa/5322/">Привязка универсального пульта - LAN1.by</a></li>
+                          <li><a href="https://chat.datacenter.by/index.php/f/1465079" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i>Nextcloud - Пульты ZALA и инструкции</a></li>
+                        </ul>
+                      </div>
+                    </span>
+
+                    <span class="d-block">
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseSMARThdmicec" role="button" aria-expanded="false" aria-controls="collapseSMARThdmicec">
+                        <i class="bi bi-chevron-down"></i> HDMI-CEC
+                      </a>
+                      <div class="collapse" id="collapseSMARThdmicec">
+                        <p>
+                          HDMI-CEC нужен для управления разными устройствами (телевизором и приставкой) с помощью одного пульта и синхронизации их работы по одному проводу HDMI.
+                        </p>
+                        HDMI-CEC на Android TV:
+                        <ul>
+                          <li>Нажмите кнопку «Настройки» (шестеренка) на пульте телевизора или приставки.</li>
+                          <li>Найдите и выберите пункт «Настройки устройства» (Device Preferences) или «Дисплей и звук».</li>
+                          <li>Перейдите в раздел «HDMI-CEC» и переведите переключатель «Управление по HDMI» (CEC Switch / Включить HDMI-CEC) в положение ВКЛ (ON).</li>
+                        </ul>
+                        <blockquote>
+                          На некоторых телевизорах (Sony, Philips, Xiaomi) эту функцию называют собственными именами производителей: Bravia Sync, EasyLink, Simplink или Anynet+, и её также требуется активировать в настройках самого ТВ.
+                        </blockquote>
+                      </div>
+                    </span>
+
+                    <span class="d-block">
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseSMARTDVkeybind" role="button" aria-expanded="false" aria-controls="collapseSMARTDVkeybind">
+                        <i class="bi bi-chevron-down"></i> DV9135 привязка пульта
+                      </a>
+                      <div class="collapse" id="collapseSMARTDVkeybind">
+                        <p>Для подключения пульта дистанционного управления к приставке, необходимо с близкого расстояния (20 см.) нажать ОДНОВРЕМЕННО кнопку Громкости (минус) и кнопки «ОК» (круглая кнопка в центре пульта) и держать около 10 секунд.</p>
+                        <blockquote>Подробнее по инструкции: https://www.beltelecom.by/sites/default/files/instructions/tv_9135_1.pdf</blockquote>
+                      </div>
+                    </span>
+
+                  </div>
+                </div>
+
               </div>
 
               <div class="col-sm-6 mb-3 mb-sm-3">
@@ -3576,60 +3699,6 @@
                             При подключении через RCA качество резко падает – очертания теряют четкость, а цвета становятся размытыми. 
                             Максимальное разрешение видеосигнала составляет 720х576. Т.е. видео высокой четкости по нему передавать нельзя. Для этого надо использовать разъём HDMI.
                           </li>
-                        </ul>
-                      </div>
-                    </span>
-
-                    
-   
-                    <span class="d-block">
-                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseIPTVkeyprog" role="button" aria-expanded="false" aria-controls="collapseIPTVkeyprog">
-                        <i class="bi bi-chevron-down"></i> Программирование пульта
-                      </a>
-                      <div class="collapse" id="collapseIPTVkeyprog">
-                        <p>
-                          Оба варианта похожи, основное отличие в порядке нажатия клавиш при программировании. 
-                          В первом варианте (старые пульты) находясь в режиме программирования сперва нажимается клавиша на пульте от ТВ затем на пульте ZALA, а во втором (новые и покупные) сперва нажимается на пульте от ZALA затем на пульте от ТВ.
-                        </p>
-                        1 Вариант (старые пульты):
-                        <ul>
-                          <li>Подносим пульты друг напротив друга, пульт от ТВ напротив пульта от ZALA</li>
-                          <li>Зажимаем кнопку <kbd>SET</kbd> сверху на пульте ZALA на пару секунд, смотрим за индикацией.</li>
-                          <li>Загорится индикатор над SET и изменит цвет (с зеленого на красный или цвет будет тот же, но изменится яркость индикатора)</li>
-                          <li>Нажимаем на пульте от ТВ кнопку которую мы хотим настроить (Например вкл-выкл ТВ <i class="bi bi-power text-danger"></i>)</li>
-                          <li>На пульте от ZALA изменится цвет над SET на красный либо станет гореть ярче - значит сигнал он принял. </li>
-                          <li>Нажимаем на пульте от ZALA кнопку которую хотим запрограммировать (Например синюю кнопку включения <i class="bi bi-power text-info"></i>).</li>
-                          <li>Нажимаем <kbd>SET</kbd> чтобы выйти с настройки пульта - индикатор погаснет</li>
-                        </ul>  
-                        2 Вариант (новые пульты и покупные):
-                        <ul>
-                          <li>Подносим пульты друг напротив друга, пульт от ТВ напротив пульта от ZALA</li>
-                          <li>Зажимаем кнопку <kbd>SET</kbd> сверху на пульте ZALA на пару секунд, смотрим за индикацией.</li>
-                          <li>Загорится индикатор над SET и изменит цвет (с зеленого на красный или цвет будет тот же, но изменится яркость индикатора)</li>
-                          <li>Нажимаем на пульте от ZALA кнопку которую хотим запрограммировать (Например синюю кнопку включения <i class="bi bi-power text-info"></i>).</li>
-                          <li>Индикатор на пульте ZALA начнет моргать или изменит яркость</li>
-                          <li>Нажимаем на пульте от ТВ кнопку которую мы хотим настроить (Например вкл-выкл ТВ <i class="bi bi-power text-danger"></i>)</li>
-                          <li>Индикатор перестанет мигать</li>
-                          <li>Нажимаем <kbd>SET</kbd> чтобы выйти с настройки пульта - индикатор погаснет</li>
-                        </ul>
-                        Привязка универсального пульта 4-in-1:
-                        <ul>
-                          <li>Универсальный пульт 4-in-1 переключается согласно инструкции-вкладыша в нужный режим клавишей <kbd>standby (Включение)</kbd></li>
-                          <li>Зажмите одновременно кнопку <kbd>Standby (Включение)</kbd> и цифру 1.</li>
-                          <li>Удерживайте их, пока индикатор не моргнет 3 раза.</li>
-                          <li>Попробуйте поуправлять приставкой. Если приставка не реагирует, повторите процедуру, но уже с комбинациями кнопок <kbd>Standby</kbd> + 2, <kbd>Standby</kbd> + 3 или <kbd>Standby</kbd> + 4.</li>
-                          <li>Одна из этих комбинаций переключит пульт на частоту вашей модели приставки (B600, B700, Витязь и др.).</li>
-                        </ul>
-                        <blockquote> 
-                          Если при настройке и нажатии с пульта от ТВ на пульте ZALA индикация не меняется - пробуем вариант 2. 
-                          Цвета и нидикация пульта от ZALA может отличаться в зависимотси от сборки пульта, ориентируйтесь на порядок действий а не цвета.
-                          Не все пульты можно запрограммировать, это обусловлено аппаратными отличиями в кодировании сигнала. 
-                          На пульте ZALA 2 кнопки SET, для программирования используется кнопка в верхнем ряду. 
-                        </blockquote>
-                        <ul class="list-unstyled">
-                          <li><a href="https://www.youtube.com/watch?v=ZJ2rXxWyV10">Пример настройки различных пультов ZALA - YouTube</a></li>
-                          <li><a href="https://lan1.by/qa/5322/">Привязка универсального пульта - LAN1.by</a></li>
-                          <li><a href="https://chat.datacenter.by/index.php/f/1465079" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i>Nextcloud - Пульты ZALA и инструкции</a></li>
                         </ul>
                       </div>
                     </span>
@@ -3919,26 +3988,6 @@
                         <p>
                         Для разблокировки контента с более высоким возрастным рейтингом потребуется ввести пин-код «0000».
                         </p>
-                      </div>
-                    </span>
-
-                    <span class="d-block">
-                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseSMARThdmicec" role="button" aria-expanded="false" aria-controls="collapseSMARThdmicec">
-                        <i class="bi bi-chevron-down"></i> HDMI-CEC
-                      </a>
-                      <div class="collapse" id="collapseSMARThdmicec">
-                        <p>
-                          HDMI-CEC нужен для управления разными устройствами (телевизором и приставкой) с помощью одного пульта и синхронизации их работы по одному проводу HDMI.
-                        </p>
-                        HDMI-CEC на Android TV:
-                        <ul>
-                          <li>Нажмите кнопку «Настройки» (шестеренка) на пульте телевизора или приставки.</li>
-                          <li>Найдите и выберите пункт «Настройки устройства» (Device Preferences) или «Дисплей и звук».</li>
-                          <li>Перейдите в раздел «HDMI-CEC» и переведите переключатель «Управление по HDMI» (CEC Switch / Включить HDMI-CEC) в положение ВКЛ (ON).</li>
-                        </ul>
-                        <blockquote>
-                          На некоторых телевизорах (Sony, Philips, Xiaomi) эту функцию называют собственными именами производителей: Bravia Sync, EasyLink, Simplink или Anynet+, и её также требуется активировать в настройках самого ТВ.
-                        </blockquote>
                       </div>
                     </span>
 
@@ -5539,23 +5588,24 @@
     <script src="../js/custom.js"></script>
     
     <!-- only for this page-->    
-    <!-- <script language="javascript">
+    <script language="javascript">
+      // Hide all bootstrap collapse function
       function hideAllCollapse() {
         const collapseElements = document.querySelectorAll('.collapse.show');
-        
         collapseElements.forEach(el => {
-          
           const collapseInstance = bootstrap.Collapse.getOrCreateInstance(el);
           collapseInstance.hide();
         });
       }
 
-      const collapseBtn = document.querySelector('.bi-chevron-down');
-      collapseBtn.addEventListener('click', () => {
-        console.log('Button clicked via attribute!');
-        hideAllCollapse();
+      // Hide all collapse on click link (like accordion blocks)
+      const collapseLinks = document.querySelectorAll('a.icon-link-hover');
+      collapseLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+          hideAllCollapse();
+        });
       });
-    </script> -->
+    </script>
 
   </body>
   <!--end::Body-->
