@@ -441,10 +441,13 @@
                           <a class="dropdown-item" href="#dual-band">Двух-диапазонные ONT/ONU</a>
                         </li>
                         <li>
-                          <a class="dropdown-item" href="#adsl">ADSL</a>
+                          <a class="dropdown-item" href="#iad">IAD терминалы</a>
                         </li>
                         <li>
-                          <a class="dropdown-item" href="#vdsl">VDSL</a>
+                          <a class="dropdown-item" href="#adsl">ADSL модемы</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#vdsl">VDSL модемы</a>
                         </li>
                         <li>
                           <a class="dropdown-item" href="#smarthome">Контроллеры</a>
@@ -1374,6 +1377,264 @@
               <div class="col mb-sm-3">
                 <div class="card h-100">
                   <div class="card-body">
+                    
+                    <h3 id="iad"><i class="bi bi-telephone-inbound"></i> IAD терминалы</h3>
+                    <div class="table-responsive">
+                      <table class="table table-striped table-hover">
+                      <thead>
+                        <tr>
+                          <th>Модель модема</th>
+                          <th>IP-адрес</th>
+                          <th>Login / Пароль</th>
+                          <th>Тип</th>
+                          <th>Порты</th>
+                          <th>Wi-fi</th>
+                          <th>Документы</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <a class="nav-link" data-bs-toggle="collapse" href="#collapseH208N" role="button" aria-expanded="false" aria-controls="collapseH208N">
+                              <i class="bi bi-chevron-down"></i> ZTE ZXHN H208N
+                            </a>
+                          </td>
+                          <td><a href="http://192.168.1.1" target="_blank"><small>192.168.1.1</small></a></td>
+                          <td><small>admin / admin</small></td>
+                          <td>ADSL2+</td>
+                          <td>
+                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="Все LAN порты до 100 Мбит/с (FE - Fast Ethernet)">
+                              <span class="badge text-bg-warning"><i class="bi bi-ethernet"></i>LAN 1-4 FE</span>  
+                            </a>  
+                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="FXS-порт (Foreign Exchange Station) аналоговый телефонный порт (под подключение RJ-11) предоставляет сервис POTS (Plain Old Telephone Service)">
+                              <span class="badge bg-success">1 FXS<i class="bi bi-telephone-inbound"></i></span> 
+                            </a>
+                            <span class="badge bg-success"><i class="bi bi-usb-symbol"></i>USB</span>
+                          </td>
+                          <td>
+                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="Wi-fi 4 - 802.11b/g/n - 2.4Ghz">
+                              <span class="badge" style="background-color: SteelBlue;"><i class="bi bi-wifi"></i> Wi-fi 4</span>
+                            </a>
+                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="WPA 2 (Wi-Fi Protected Access 2) также известный как WPA2-Personal, тип шифрования PSK (Pre-Shared Key)">
+                              <span class="badge" style="background-color: gray;">WPA2</span>
+                            </a>
+                          </td>
+                          <td>
+                            <a class="navbar-brand" title="Паспорт модема" target="_blank"
+                            href="https://howto.by/files/manual_h208n.pdf" aria-label="Up">
+                              <span class="badge" style="background-color: LightSlateGray;"><i class="bi bi-file-earmark"></i></span>
+                            </a>
+                            
+                            <a class="navbar-brand" title="Nextcloud информация по оборудованию" target="_blank"
+                            href="https://chat.datacenter.by/index.php/f/1468541" aria-label="Up">
+                              <span class="badge" style="background-color: DodgerBlue;"><i class="bi bi-cloud"></i></span>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colspan="7">
+                            <div class="collapse" id="collapseH208N">
+                              <ul>
+                                <li>Вход с правами Администратора под логином <strong class="text-danger">admin</strong>, пароль: <strong class="text-danger">admin</strong></li>
+                                <li><strong class="text-primary">Reset</strong> расположен на задней панели над подключением блока питания. Удерживать 10 секунд</li>
+                                <li>Черная кнопка <strong class="text-primary">WLAN</strong> расположена на задней панели рядом с подключением блока питания</li>
+                                <li>Данные для telnet для H208N Логин: <strong class="text-danger">root</strong> Пароль: <strong class="text-danger">root</strong></li>
+                                <ul>
+                                  <li>Включение второй точки доступа Wi-Fi на модеме H208N через telnet:
+                                    <code>sendcmd 3 webd setconfig publicSSIDDisp y</code>
+                                  </li>
+                                  <li>
+                                    Вывод всех команд в telnet для H208N:
+                                    <code>sendcmd 1 DB all</code>
+                                  </li>
+                                  <li>
+                                    Обращение к конкретной таблице в telnet для H208N
+                                    <code>sendcmd 1 DB p WANC</code>
+                                  </li>
+                                  <li>
+                                    Как посмотреть пароль на вход в веб-интерфейс H208N/H108N/H208L
+                                    <code>sendcmd 1 DB p DevAuthInfo</code>
+                                  </li>
+                                  <li>
+                                    Включить вкладку voIP в веб-интерфейсе
+                                    <code>sendcmd 3 webd setconfig voippagedisp</code>
+                                  </li>
+                                </ul>
+                              </ul>
+                              Недостатки и возможные проблемы:
+                              <ul>
+                                <li><strong class="text-danger">Кнопка WLAN на боковой панели работает только на выключение!</strong> Обрантное включение сети wi-fi только через настройки модема</li>
+                                <li>При отключении Wi-fi кнопкой индикатор <a href="https://lan1.by/2668">может не погаснуть</a>, но модуль wi-fi при этом отключится</li>
+                                <li>Если не работает факс необходимо проверить какой стандарт используется T30 либо <a href="https://www.3cx.ru/voip-sip/t38/">T38</a>. <a href="https://lan1.by/2319">Настроить модем на нужный стандарт</a></li>
+                                <li>Есл внезапно перестали работать все услуги (интернет, телевидение, телефония), а на модеме ZXHN H208N одновременно мигают индикаторы, то это значит, что модем начал обновлять свою прошивку. В этом случае нужно просто немного подождать и не выключать/перезагружать модем.</li>
+                                <li>Горит индикатор USB и услуги не работают - необходимо сресетить модем. Если не поможет, <a href="https://lan1.by/1511">необходима перепрошивка</a> (либо замена)</li>
+                              </ul>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <a class="nav-link" data-bs-toggle="collapse" href="#collapseH208L" role="button" aria-expanded="false" aria-controls="collapseH208L">
+                              <i class="bi bi-chevron-down"></i> ZTE ZXHN H208L, H201L
+                            </a>
+                          </td>
+                          <td><a href="http://192.168.1.1" target="_blank"><small>192.168.1.1</small></a></td>
+                          <td><small>admin / admin</small></td>
+                          <td>ADSL2+</td>
+                          <td>
+                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="Все LAN порты до 100 Мбит/с (FE - Fast Ethernet)">
+                              <span class="badge text-bg-warning"><i class="bi bi-ethernet"></i>LAN 1-4 FE</span>  
+                            </a>  
+                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="FXS-порт (Foreign Exchange Station) аналоговый телефонный порт (под подключение RJ-11) предоставляет сервис POTS (Plain Old Telephone Service)">
+                              <span class="badge bg-success">1 FXS<i class="bi bi-telephone-inbound"></i></span> 
+                            </a>
+                          </td>
+                          <td>
+                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="Wi-fi 4 - 802.11b/g/n - 2.4Ghz">
+                              <span class="badge" style="background-color: SteelBlue;"><i class="bi bi-wifi"></i> Wi-fi 4</span>
+                            </a>
+                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="WPA 2 (Wi-Fi Protected Access 2) также известный как WPA2-Personal, тип шифрования PSK (Pre-Shared Key)">
+                              <span class="badge" style="background-color: gray;">WPA2</span>
+                            </a>
+                          </td>
+                          <td>
+                            <a class="navbar-brand" title="Nextcloud информация по оборудованию" target="_blank"
+                            href="https://chat.datacenter.by/index.php/f/1468535" aria-label="Up">
+                              <span class="badge" style="background-color: DodgerBlue;"><i class="bi bi-cloud"></i></span>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colspan="7">
+                            <div class="collapse" id="collapseH208L">
+                              <ul>
+                                <li>Вход с правами Администратора под логином <strong class="text-danger">admin</strong>, пароль: <strong class="text-danger">admin</strong></li>
+                                <li>Белая пластиковая кнопка <strong class="text-primary">WLAN</strong> похожа на заглушку, и расположена на боковой панели рядом с красной кнопкой включения</li>
+                              </ul>
+                              Недостатки и возможные проблемы:
+                              <ul>
+                                <li><strong class="text-danger">Кнопка WLAN на боковой панели работает только на выключение!</strong> Обрантное включение сети wi-fi только через настройки модема!</li>
+                                <li>Услуга «Передача вызова» не работает на следующих моделях оконечного оборудования, устанавливаемого у абонента: ZXV10 H201Lb; ZXV10 H201L; ZXV10 H208Lb; ZXV10 H208L.</li>
+                                <li>На старых прошивках функция Wi-fi Isolation приводила к тормозам с интернетом, хотя должна по просту изолировать клиентов друг от друга. Network - WLAN - Basic и снимаем галочку Enable Isolation - Сохраняем на Submit.</li>
+                                <li>Не устанавливать модели 208L, 208LB для услуги Облачная АТС, возможна некорректная работа сервисов.</li>
+                              </ul>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <a class="nav-link" data-bs-toggle="collapse" href="#collapseHG552e" role="button" aria-expanded="false" aria-controls="collapseHG552e">
+                              <i class="bi bi-chevron-down"></i> Huawei HG552
+                            </a>
+                          </td>
+                          <td><a href="http://192.168.1.1" target="_blank"><small>192.168.1.1</small></a></td>
+                          <td><small>admin / admin</small></td>
+                          <td>ADSL2+</td>
+                          <td>
+                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="Все LAN порты до 100 Мбит/с (FE - Fast Ethernet)">
+                              <span class="badge text-bg-warning"><i class="bi bi-ethernet"></i>LAN 1-4 FE</span>  
+                            </a>  
+                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="2 FXS-порта (Foreign Exchange Station) аналоговые телефонные порты (под подключение RJ-11) предоставляют сервис POTS (Plain Old Telephone Service)">
+                              <span class="badge bg-secondary">2 FXS<i class="bi bi-telephone-inbound"></i></span> 
+                            </a> 
+                            <span class="badge bg-success"><i class="bi bi-usb-symbol"></i>USB</span>
+                          </td>
+                          <td>
+                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="Wi-fi 4 - 802.11b/g/n - 2.4Ghz">
+                              <span class="badge" style="background-color: SteelBlue;"><i class="bi bi-wifi"></i> Wi-fi 4</span>
+                            </a>
+                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="WPA 2 (Wi-Fi Protected Access 2) также известный как WPA2-Personal, тип шифрования PSK (Pre-Shared Key)">
+                              <span class="badge" style="background-color: gray;">WPA2</span>
+                            </a>
+                          </td>
+                          <td>
+                            <a class="navbar-brand" title="Паспорт модема" target="_blank"
+                            href="https://www.manualslib.com/manual/1193840/Huawei-Hg552e.html" aria-label="Up">
+                              <span class="badge" style="background-color: LightSlateGray;"><i class="bi bi-file-earmark"></i></span>
+                            </a>
+                            
+                            <a class="navbar-brand" title="Nextcloud информация по оборудованию" target="_blank"
+                            href="https://chat.datacenter.by/index.php/f/1468502" aria-label="Up">
+                              <span class="badge" style="background-color: DodgerBlue;"><i class="bi bi-cloud"></i></span>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colspan="7">
+                            <div class="collapse" id="collapseHG552e">
+                              <ul>
+                                <li>Вход с правами Администратора для серии Huawei HG5XXX логин: <strong class="text-danger">superadmin</strong>, пароль: <strong class="text-danger">!@HuaweiHgw</strong></li>
+                                <li>Пользовательский логин и пароль для входа в настройки модема - Логин <strong class="text-danger">admin</strong>, <strong class="text-danger">admin</strong></li>
+                                <li><strong class="text-primary">Reset</strong> расположен на задней панели рядом с подключением блока питания. Удерживать 10 секунд</li>
+                                <li>Белая пластиковая кнопка <strong class="text-primary">WLAN</strong> похожа на заглушку, и расположена на боковой панели рядом с белой кнопкой включения</li>
+                                <li>По-умолчанию устанавливается вертикально, но есть крепляния для фиксации на стене. HG552d не имеет креплений на стену!</li>
+                              </ul>
+                              Недостатки и возможные проблемы:
+                              <ul>
+                                <li>Не устанавливать модели HG552d, HG552e для услуги Облачная АТС, возможна некорректная работа сервисов.</li>
+                              </ul>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <a class="nav-link" data-bs-toggle="collapse" href="#collapseHG552f-11" role="button" aria-expanded="false" aria-controls="collapseHG552f-11">
+                              <i class="bi bi-chevron-down"></i> Huawei HG552f-11
+                            </a>
+                          </td>
+                          <td><a href="http://192.168.1.1" target="_blank"><small>192.168.1.1</small></a></td>
+                          <td><small>admin / admin</small></td>
+                          <td>ADSL2+</td>
+                          <td>
+                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="Все LAN порты до 100 Мбит/с (FE - Fast Ethernet)">
+                              <span class="badge text-bg-warning"><i class="bi bi-ethernet"></i>LAN 1-4 FE</span>  
+                            </a>  
+                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="FXS-порт (Foreign Exchange Station) аналоговый телефонный порт (под подключение RJ-11) предоставляет сервис POTS (Plain Old Telephone Service)">
+                              <span class="badge bg-secondary">1 FXS<i class="bi bi-telephone-inbound"></i></span> 
+                            </a>
+                            <span class="badge bg-success"><i class="bi bi-usb-symbol"></i>USB</span>
+                          </td>
+                          <td>
+                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="Wi-fi 4 - 802.11b/g/n - 2.4Ghz">
+                              <span class="badge" style="background-color: SteelBlue;"><i class="bi bi-wifi"></i> Wi-fi 4</span>
+                            </a>
+                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="WPA 2 (Wi-Fi Protected Access 2) также известный как WPA2-Personal, тип шифрования PSK (Pre-Shared Key)">
+                              <span class="badge" style="background-color: gray;">WPA2</span>
+                            </a>
+                          </td>
+                          <td>
+                            <a class="navbar-brand" title="Паспорт модема" target="_blank"
+                            href="https://www.cleancss.com/user-manuals/QIS/HG552E/1" aria-label="Up">
+                              <span class="badge" style="background-color: LightSlateGray;"><i class="bi bi-file-earmark"></i></span>
+                            </a>
+                            
+                            <a class="navbar-brand" title="Nextcloud информация по оборудованию" target="_blank"
+                            href="https://chat.datacenter.by/index.php/f/1468502" aria-label="Up">
+                              <span class="badge" style="background-color: DodgerBlue;"><i class="bi bi-cloud"></i></span>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colspan="7">
+                            <div class="collapse" id="collapseHG552f-11">
+                              <ul>
+                                <li>Вход с правами Администратора для серии Huawei HG5XXX логин: <strong class="text-danger">superadmin</strong>, пароль: <strong class="text-danger">!@HuaweiHgw</strong></li>
+                                <li>Пользовательский логин и пароль для входа в настройки модема - Логин <strong class="text-danger">admin</strong>, <strong class="text-danger">admin</strong></li>
+                                <li><strong class="text-primary">Reset</strong> расположен на задней панели рядом с подключением блока питания. Удерживать 10 секунд</li>
+                                <li>Белая пластиковая кнопка <strong class="text-primary">WLAN</strong> похожа на заглушку, и расположена на боковой панели рядом с белой кнопкой включения</li>
+                                <li>По-умолчанию устанавливается вертикально, но есть крепляния для фиксации на стене</li>
+                              </ul>
+                              Недостатки и возможные проблемы:
+                              <ul>
+                                <li>Не устанавливать модели HG552f-11, HG552f для услуги Облачная АТС, возможна некорректная работа сервисов.</li>
+                              </ul>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                      </table>
+                    </div>
+
                     <h3 id="adsl"><i class="bi bi-ethernet"></i> ADSL модемы</h3>
                     <div class="table-responsive">
                       <table class="table table-striped table-hover">
@@ -1530,134 +1791,6 @@
                                 <li><strong class="text-primary">Reset</strong> расположен на задней панели рядом с подключением блока питания. Удерживать 10 секунд</li>
                                 <li>Белая пластиковая кнопка <strong class="text-primary">WLAN</strong> похожа на заглушку, и расположена на боковой панели рядом с красной кнопкой включения</li>
                                 <li>Выпускался в <a href="https://4pda.to/forum/index.php?showtopic=849533&st=40#entry83370588">разных модификациях</a> под общим названием H108N.</li>
-                              </ul>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <a class="nav-link" data-bs-toggle="collapse" href="#collapseH208N" role="button" aria-expanded="false" aria-controls="collapseH208N">
-                              <i class="bi bi-chevron-down"></i> ZTE ZXHN H208N
-                            </a>
-                          </td>
-                          <td><a href="http://192.168.1.1" target="_blank"><small>192.168.1.1</small></a></td>
-                          <td><small>admin / admin</small></td>
-                          <td>ADSL2+</td>
-                          <td>
-                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="Все LAN порты до 100 Мбит/с (FE - Fast Ethernet)">
-                              <span class="badge text-bg-warning"><i class="bi bi-ethernet"></i>LAN 1-4 FE</span>  
-                            </a>  
-                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="FXS-порт (Foreign Exchange Station) аналоговый телефонный порт (под подключение RJ-11) предоставляет сервис POTS (Plain Old Telephone Service)">
-                              <span class="badge bg-success">1 FXS<i class="bi bi-telephone-inbound"></i></span> 
-                            </a>
-                            <span class="badge bg-success"><i class="bi bi-usb-symbol"></i>USB</span>
-                          </td>
-                          <td>
-                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="Wi-fi 4 - 802.11b/g/n - 2.4Ghz">
-                              <span class="badge" style="background-color: SteelBlue;"><i class="bi bi-wifi"></i> Wi-fi 4</span>
-                            </a>
-                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="WPA 2 (Wi-Fi Protected Access 2) также известный как WPA2-Personal, тип шифрования PSK (Pre-Shared Key)">
-                              <span class="badge" style="background-color: gray;">WPA2</span>
-                            </a>
-                          </td>
-                          <td>
-                            <a class="navbar-brand" title="Паспорт модема" target="_blank"
-                            href="https://howto.by/files/manual_h208n.pdf" aria-label="Up">
-                              <span class="badge" style="background-color: LightSlateGray;"><i class="bi bi-file-earmark"></i></span>
-                            </a>
-                            
-                            <a class="navbar-brand" title="Nextcloud информация по оборудованию" target="_blank"
-                            href="https://chat.datacenter.by/index.php/f/1468541" aria-label="Up">
-                              <span class="badge" style="background-color: DodgerBlue;"><i class="bi bi-cloud"></i></span>
-                            </a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td colspan="7">
-                            <div class="collapse" id="collapseH208N">
-                              <ul>
-                                <li>Вход с правами Администратора под логином <strong class="text-danger">admin</strong>, пароль: <strong class="text-danger">admin</strong></li>
-                                <li><strong class="text-primary">Reset</strong> расположен на задней панели над подключением блока питания. Удерживать 10 секунд</li>
-                                <li>Черная кнопка <strong class="text-primary">WLAN</strong> расположена на задней панели рядом с подключением блока питания</li>
-                                <li>Данные для telnet для H208N Логин: <strong class="text-danger">root</strong> Пароль: <strong class="text-danger">root</strong></li>
-                                <ul>
-                                  <li>Включение второй точки доступа Wi-Fi на модеме H208N через telnet:
-                                    <code>sendcmd 3 webd setconfig publicSSIDDisp y</code>
-                                  </li>
-                                  <li>
-                                    Вывод всех команд в telnet для H208N:
-                                    <code>sendcmd 1 DB all</code>
-                                  </li>
-                                  <li>
-                                    Обращение к конкретной таблице в telnet для H208N
-                                    <code>sendcmd 1 DB p WANC</code>
-                                  </li>
-                                  <li>
-                                    Как посмотреть пароль на вход в веб-интерфейс H208N/H108N/H208L
-                                    <code>sendcmd 1 DB p DevAuthInfo</code>
-                                  </li>
-                                  <li>
-                                    Включить вкладку voIP в веб-интерфейсе
-                                    <code>sendcmd 3 webd setconfig voippagedisp</code>
-                                  </li>
-                                </ul>
-                              </ul>
-                              Недостатки и возможные проблемы:
-                              <ul>
-                                <li><strong class="text-danger">Кнопка WLAN на боковой панели работает только на выключение!</strong> Обрантное включение сети wi-fi только через настройки модема</li>
-                                <li>При отключении Wi-fi кнопкой индикатор <a href="https://lan1.by/2668">может не погаснуть</a>, но модуль wi-fi при этом отключится</li>
-                                <li>Если не работает факс необходимо проверить какой стандарт используется T30 либо <a href="https://www.3cx.ru/voip-sip/t38/">T38</a>. <a href="https://lan1.by/2319">Настроить модем на нужный стандарт</a></li>
-                                <li>Есл внезапно перестали работать все услуги (интернет, телевидение, телефония), а на модеме ZXHN H208N одновременно мигают индикаторы, то это значит, что модем начал обновлять свою прошивку. В этом случае нужно просто немного подождать и не выключать/перезагружать модем.</li>
-                                <li>Горит индикатор USB и услуги не работают - необходимо сресетить модем. Если не поможет, <a href="https://lan1.by/1511">необходима перепрошивка</a> (либо замена)</li>
-                              </ul>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <a class="nav-link" data-bs-toggle="collapse" href="#collapseH208L" role="button" aria-expanded="false" aria-controls="collapseH208L">
-                              <i class="bi bi-chevron-down"></i> ZTE ZXHN H208L, H201L
-                            </a>
-                          </td>
-                          <td><a href="http://192.168.1.1" target="_blank"><small>192.168.1.1</small></a></td>
-                          <td><small>admin / admin</small></td>
-                          <td>ADSL2+</td>
-                          <td>
-                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="Все LAN порты до 100 Мбит/с (FE - Fast Ethernet)">
-                              <span class="badge text-bg-warning"><i class="bi bi-ethernet"></i>LAN 1-4 FE</span>  
-                            </a>  
-                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="FXS-порт (Foreign Exchange Station) аналоговый телефонный порт (под подключение RJ-11) предоставляет сервис POTS (Plain Old Telephone Service)">
-                              <span class="badge bg-success">1 FXS<i class="bi bi-telephone-inbound"></i></span> 
-                            </a>
-                          </td>
-                          <td>
-                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="Wi-fi 4 - 802.11b/g/n - 2.4Ghz">
-                              <span class="badge" style="background-color: SteelBlue;"><i class="bi bi-wifi"></i> Wi-fi 4</span>
-                            </a>
-                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="WPA 2 (Wi-Fi Protected Access 2) также известный как WPA2-Personal, тип шифрования PSK (Pre-Shared Key)">
-                              <span class="badge" style="background-color: gray;">WPA2</span>
-                            </a>
-                          </td>
-                          <td>
-                            <a class="navbar-brand" title="Nextcloud информация по оборудованию" target="_blank"
-                            href="https://chat.datacenter.by/index.php/f/1468535" aria-label="Up">
-                              <span class="badge" style="background-color: DodgerBlue;"><i class="bi bi-cloud"></i></span>
-                            </a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td colspan="7">
-                            <div class="collapse" id="collapseH208L">
-                              <ul>
-                                <li>Вход с правами Администратора под логином <strong class="text-danger">admin</strong>, пароль: <strong class="text-danger">admin</strong></li>
-                                <li>Белая пластиковая кнопка <strong class="text-primary">WLAN</strong> похожа на заглушку, и расположена на боковой панели рядом с красной кнопкой включения</li>
-                              </ul>
-                              Недостатки и возможные проблемы:
-                              <ul>
-                                <li><strong class="text-danger">Кнопка WLAN на боковой панели работает только на выключение!</strong> Обрантное включение сети wi-fi только через настройки модема!</li>
-                                <li>Услуга «Передача вызова» не работает на следующих моделях оконечного оборудования, устанавливаемого у абонента: ZXV10 H201Lb; ZXV10 H201L; ZXV10 H208Lb; ZXV10 H208L.</li>
-                                <li>На старых прошивках функция Wi-fi Isolation приводила к тормозам с интернетом, хотя должна по просту изолировать клиентов друг от друга. Network - WLAN - Basic и снимаем галочку Enable Isolation - Сохраняем на Submit.</li>
-                                <li>Не устанавливать модели 208L, 208LB для услуги Облачная АТС, возможна некорректная работа сервисов.</li>
                               </ul>
                             </div>
                           </td>
@@ -1862,116 +1995,6 @@
                                   Впоследствии кнопка вообще дает постоянний сигнал Reset, не давая модему загрузиться.
                                   Решение: замена на исправную или удаление кнопки Reset.
                                 </li>
-                              </ul>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <a class="nav-link" data-bs-toggle="collapse" href="#collapseHG552e" role="button" aria-expanded="false" aria-controls="collapseHG552e">
-                              <i class="bi bi-chevron-down"></i> Huawei HG552
-                            </a>
-                          </td>
-                          <td><a href="http://192.168.1.1" target="_blank"><small>192.168.1.1</small></a></td>
-                          <td><small>admin / admin</small></td>
-                          <td>ADSL2+</td>
-                          <td>
-                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="Все LAN порты до 100 Мбит/с (FE - Fast Ethernet)">
-                              <span class="badge text-bg-warning"><i class="bi bi-ethernet"></i>LAN 1-4 FE</span>  
-                            </a>  
-                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="2 FXS-порта (Foreign Exchange Station) аналоговые телефонные порты (под подключение RJ-11) предоставляют сервис POTS (Plain Old Telephone Service)">
-                              <span class="badge bg-secondary">2 FXS<i class="bi bi-telephone-inbound"></i></span> 
-                            </a> 
-                            <span class="badge bg-success"><i class="bi bi-usb-symbol"></i>USB</span>
-                          </td>
-                          <td>
-                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="Wi-fi 4 - 802.11b/g/n - 2.4Ghz">
-                              <span class="badge" style="background-color: SteelBlue;"><i class="bi bi-wifi"></i> Wi-fi 4</span>
-                            </a>
-                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="WPA 2 (Wi-Fi Protected Access 2) также известный как WPA2-Personal, тип шифрования PSK (Pre-Shared Key)">
-                              <span class="badge" style="background-color: gray;">WPA2</span>
-                            </a>
-                          </td>
-                          <td>
-                            <a class="navbar-brand" title="Паспорт модема" target="_blank"
-                            href="https://www.manualslib.com/manual/1193840/Huawei-Hg552e.html" aria-label="Up">
-                              <span class="badge" style="background-color: LightSlateGray;"><i class="bi bi-file-earmark"></i></span>
-                            </a>
-                            
-                            <a class="navbar-brand" title="Nextcloud информация по оборудованию" target="_blank"
-                            href="https://chat.datacenter.by/index.php/f/1468502" aria-label="Up">
-                              <span class="badge" style="background-color: DodgerBlue;"><i class="bi bi-cloud"></i></span>
-                            </a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td colspan="7">
-                            <div class="collapse" id="collapseHG552e">
-                              <ul>
-                                <li>Вход с правами Администратора для серии Huawei HG5XXX логин: <strong class="text-danger">superadmin</strong>, пароль: <strong class="text-danger">!@HuaweiHgw</strong></li>
-                                <li>Пользовательский логин и пароль для входа в настройки модема - Логин <strong class="text-danger">admin</strong>, <strong class="text-danger">admin</strong></li>
-                                <li><strong class="text-primary">Reset</strong> расположен на задней панели рядом с подключением блока питания. Удерживать 10 секунд</li>
-                                <li>Белая пластиковая кнопка <strong class="text-primary">WLAN</strong> похожа на заглушку, и расположена на боковой панели рядом с белой кнопкой включения</li>
-                                <li>По-умолчанию устанавливается вертикально, но есть крепляния для фиксации на стене. HG552d не имеет креплений на стену!</li>
-                              </ul>
-                              Недостатки и возможные проблемы:
-                              <ul>
-                                <li>Не устанавливать модели HG552d, HG552e для услуги Облачная АТС, возможна некорректная работа сервисов.</li>
-                              </ul>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <a class="nav-link" data-bs-toggle="collapse" href="#collapseHG552f-11" role="button" aria-expanded="false" aria-controls="collapseHG552f-11">
-                              <i class="bi bi-chevron-down"></i> Huawei HG552f-11
-                            </a>
-                          </td>
-                          <td><a href="http://192.168.1.1" target="_blank"><small>192.168.1.1</small></a></td>
-                          <td><small>admin / admin</small></td>
-                          <td>ADSL2+</td>
-                          <td>
-                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="Все LAN порты до 100 Мбит/с (FE - Fast Ethernet)">
-                              <span class="badge text-bg-warning"><i class="bi bi-ethernet"></i>LAN 1-4 FE</span>  
-                            </a>  
-                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="FXS-порт (Foreign Exchange Station) аналоговый телефонный порт (под подключение RJ-11) предоставляет сервис POTS (Plain Old Telephone Service)">
-                              <span class="badge bg-secondary">1 FXS<i class="bi bi-telephone-inbound"></i></span> 
-                            </a>
-                            <span class="badge bg-success"><i class="bi bi-usb-symbol"></i>USB</span>
-                          </td>
-                          <td>
-                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="Wi-fi 4 - 802.11b/g/n - 2.4Ghz">
-                              <span class="badge" style="background-color: SteelBlue;"><i class="bi bi-wifi"></i> Wi-fi 4</span>
-                            </a>
-                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="WPA 2 (Wi-Fi Protected Access 2) также известный как WPA2-Personal, тип шифрования PSK (Pre-Shared Key)">
-                              <span class="badge" style="background-color: gray;">WPA2</span>
-                            </a>
-                          </td>
-                          <td>
-                            <a class="navbar-brand" title="Паспорт модема" target="_blank"
-                            href="https://www.cleancss.com/user-manuals/QIS/HG552E/1" aria-label="Up">
-                              <span class="badge" style="background-color: LightSlateGray;"><i class="bi bi-file-earmark"></i></span>
-                            </a>
-                            
-                            <a class="navbar-brand" title="Nextcloud информация по оборудованию" target="_blank"
-                            href="https://chat.datacenter.by/index.php/f/1468502" aria-label="Up">
-                              <span class="badge" style="background-color: DodgerBlue;"><i class="bi bi-cloud"></i></span>
-                            </a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td colspan="7">
-                            <div class="collapse" id="collapseHG552f-11">
-                              <ul>
-                                <li>Вход с правами Администратора для серии Huawei HG5XXX логин: <strong class="text-danger">superadmin</strong>, пароль: <strong class="text-danger">!@HuaweiHgw</strong></li>
-                                <li>Пользовательский логин и пароль для входа в настройки модема - Логин <strong class="text-danger">admin</strong>, <strong class="text-danger">admin</strong></li>
-                                <li><strong class="text-primary">Reset</strong> расположен на задней панели рядом с подключением блока питания. Удерживать 10 секунд</li>
-                                <li>Белая пластиковая кнопка <strong class="text-primary">WLAN</strong> похожа на заглушку, и расположена на боковой панели рядом с белой кнопкой включения</li>
-                                <li>По-умолчанию устанавливается вертикально, но есть крепляния для фиксации на стене</li>
-                              </ul>
-                              Недостатки и возможные проблемы:
-                              <ul>
-                                <li>Не устанавливать модели HG552f-11, HG552f для услуги Облачная АТС, возможна некорректная работа сервисов.</li>
                               </ul>
                             </div>
                           </td>
