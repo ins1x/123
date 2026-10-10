@@ -411,13 +411,6 @@
                       <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Выберите страницу</a>
                       <ul id="breadcrumb-dropdown" class="dropdown-menu">
                         <!-- Generated via JS-->
-                        <!-- <li><a class="dropdown-item" href="dashboard.html" aria-current="true"><i class="nav-icon bi bi-grid-1x2 me-1" aria-hidden="true"></i> Главная</a></li> -->
-                        <!-- <li><a class="dropdown-item" href="portals.html" aria-current="true"><i class="nav-icon bi bi-grid-3x3-gap-fill me-1" aria-hidden="true"></i> Рабочие порталы</a></li>
-                        <li><a class="dropdown-item" href="checker.html" aria-current="true"><i class="nav-icon bi bi-globe2" aria-hidden="true"></i> Онлайн утилиты</a></li>
-                        <li><a class="dropdown-item" href="equipment.html" aria-current="true"><i class="nav-icon bi bi-router" aria-hidden="true"></i> Оборудование</a></li>
-                        <li><a class="dropdown-item" href="quicksetup.html" aria-current="true"><i class="nav-icon bi bi-box2" aria-hidden="true"></i> Быстрая настройка</a></li>
-                        <li><a class="dropdown-item" href="netcheck.html" aria-current="true"><i class="nav-icon bi bi-browser-safari" aria-hidden="true"></i> Диагностика сети</a></li>
-                        <li><a class="dropdown-item" href="olt.html" aria-current="true"><i class="nav-icon bi bi-terminal" aria-hidden="true"></i> OLT cli</a></li> -->
                       </ul>
                     </li>
                   </li>
@@ -450,10 +443,18 @@
                     aria-label="Search on Nextcloud-Disk"
                   />
                   <small class="card-text-secondary">&nbsp;</small>
-
+                  <a href="https://chat.datacenter.by/index.php/f/1476890" class="btn btn-outline-secondary btn-lg" role="button" target="_blank" aria-pressed="true" title="Nextcloud-Disk">
+                    <i class="bi bi-folder"></i> 123-Admin
+                  </a>
                 </div>
               </div>
-              
+              <!-- <div class="col-md-4 col-lg-2">
+                <ul>
+                  <a href="https://chat.datacenter.by/index.php/f/1476890" class="icon-link icon-link-hover" target="_blank" title="Nextcloud-Disk">
+                    <i class="bi bi-cloud" style="font-size: 1.25rem; color: dodgerblue;"></i><h5>123-Admin</h5>
+                  </a>
+                </ul> 
+              </div> -->
             </form>
           </div>
           <!-- end container -->
@@ -685,6 +686,7 @@
 
       // Generate content menu and dropdown
       const newsTable = [
+        { date: '10/10/2026', desc: 'Обновлен раздел рабочих порталов', link: 'portals.html'},
         { date: '10/09/2026', desc: 'Удалена страница диагностика сети из FAQ', link: 'quicksetup.html'},
         { date: '7/09/2026', desc: 'Добавлен поиск по регионам в шаблонах для МБТК', link: 'mbtk.html'},
         { date: '3/09/2026', desc: 'Добавлено оглавление в шаблонах MBTK и изменена шапка портала', link: 'mbtk.html'},
