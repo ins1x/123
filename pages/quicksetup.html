@@ -374,16 +374,37 @@
               На данной странице расположена техническая информация по настройке оборудования и различных услуг Белтелеком.<br>
               Если вас интересуют готовые ответы на <u>часто задаваемые вопросы</u> по услугам перейдите в раздел <i class="bi bi-person-badge"></i><a href="mbtk.html">Шаблоны МБТК</a>.
             </div>
-            <p>
-              <strong class="text-secondary h2">Перейти в раздел</strong>
+            <!-- <p>
               <a href="quicksetup.html#inet" class="btn btn-lg btn-outline-secondary"><i class="bi bi-pci-card-network" style="color: DodgerBlue;"></i> ByFly</a>
               <a href="quicksetup.html#zala" class="btn btn-lg btn-outline-secondary"><i class="bi bi-tv"></i> ZALA</a> 
               <a href="quicksetup.html#vks" class="btn btn-lg btn-outline-secondary"><i class="bi bi-camera-video-off" style="color: steelblue;"></i> Videocontrol</a>
               <a href="quicksetup.html#ims" class="btn btn-lg btn-outline-secondary"><i class="bi bi-telephone" style="color: purple;"></i> Телефония</a>
-            </p>
-            <!--begin::Row-->
-            <h2 id="inet"><i class="bi bi-pci-card-network" style="color: DodgerBlue;"></i> ByFly</h2>
-            <div class="row">
+            </p> -->
+            <ul class="nav nav-tabs nav-fill" id="quicksetup-tabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <h4><button class="nav-link active" id="byfly-tab" data-bs-toggle="tab" data-bs-target="#byfly" type="button" role="tab" aria-controls="byfly" aria-selected="true"><i class="bi bi-pci-card-network" style="color: DodgerBlue;"></i> ByFly</button></h4>
+              </li>
+              <li class="nav-item" role="presentation">
+                <h4><button class="nav-link" id="zala-tab" data-bs-toggle="tab" data-bs-target="#zala" type="button" role="tab" aria-controls="zala" aria-selected="false"><i class="bi bi-tv" style="color: dimgray;"></i> ZALA</button></h4>
+              </li>
+
+              <!-- <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true"> &nbsp; </a>
+              </li> -->
+
+              <li class="nav-item" role="presentation">
+                <h4><button class="nav-link" id="vks-tab" data-bs-toggle="tab" data-bs-target="#vks" type="button" role="tab" aria-controls="vks" aria-selected="false"><i class="bi bi-camera-video-off" style="color: steelblue;"></i> Videocontrol</button></h4>
+              </li>
+              <li class="nav-item" role="presentation">
+                <h4><button class="nav-link" id="ims-tab" data-bs-toggle="tab" data-bs-target="#ims" type="button" role="tab" aria-controls="ims" aria-selected="false"><i class="bi bi-telephone" style="color: purple;"></i> Телефония</button></h4>
+              </li>
+            </ul>
+            <!--begin::Tabs-->
+            <div class="tab-content" id="tabsContent">
+            <div class="tab-pane fade show active" id="byfly" role="tabpanel" aria-labelledby="byfly-tab">
+              <br>
+              <h2 id="byfly"><i class="bi bi-pci-card-network" style="color: DodgerBlue;"></i> ByFly</h2>
+              <div class="row">
               <div class="col mb-sm-3">
                 <div class="row">
                   <div class="col-sm-6 mb-3 mb-sm-3">
@@ -3205,10 +3226,13 @@
                 </div>
 
               </div>
+              </div>
             </div>
 
-            <h2 id="ZALA"><i class="bi bi-tv"></i> ZALA</h2>
-            <div class="row">
+            <div class="tab-pane fade" id="zala" role="tabpanel" aria-labelledby="zala-tab">
+              <br>
+              <h2 id="zala"><i class="bi bi-tv" style="color: grey;"></i> ZALA</h2>
+              <div class="row">
               <div class="col-sm-6 mb-3 mb-sm-3">
                 <div id="zala-manual" class="card">
                   <div class="card-header text-bg-gray py-2">
@@ -4242,10 +4266,13 @@
                 </div>
 
               </div>
+              </div>
             </div>
-  
-            <h2 id="vks"><i class="bi bi-camera-video-off" style="color: steelblue;"></i> Videocontrol</h2>
-            <div class="row">
+
+            <div class="tab-pane fade" id="vks" role="tabpanel" aria-labelledby="vks-tab">
+              <br>
+              <h2 id="vks"><i class="bi bi-camera-video-off" style="color: steelblue;"></i> Videocontrol</h2>
+              <div class="row">
               <div class="col-sm-6 mb-3 mb-sm-3">
 
                 <div class="card">
@@ -4803,10 +4830,13 @@
                 </div>
 
               </div>
+              </div>
             </div>
 
-            <h2 id="ims"><i class="bi bi-telephone" style="color: purple;"></i> Телефония</h2>
-            <div class="row">
+            <div class="tab-pane fade" id="ims" role="tabpanel" aria-labelledby="ims-tab">
+              <br>
+              <h2 id="ims"><i class="bi bi-telephone" style="color: purple;"></i> Телефония</h2>
+              <div class="row">
               <div class="col-sm-6 mb-3 mb-sm-3">
                 <div class="card">
                   <div class="card-header text-bg-gray py-2" style="background-color: purple;">
@@ -5555,6 +5585,9 @@
                 </div>
 
               </div>
+              </div>
+            </div>
+            <!--end::Tabs-->
             </div> 
             <!--end::Row-->
           </div>
