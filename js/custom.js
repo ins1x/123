@@ -97,3 +97,23 @@ searchBtn.addEventListener("click", ()=>{
   markInstance.mark(searchBar.value); 
 });
 // End: Page search
+
+// Generate breadcrumb dropdown
+const breadcrumbTable = [
+  { desc: 'Главная', icon: 'bi-grid-1x2', link: 'dashboard.html'},
+  { desc: 'Рабочие порталы', icon: 'bi-grid-3x3-gap-fill', link: 'portals.html'},
+  { desc: 'Онлайн утилиты', icon: 'bi-globe2', link: 'checker.html'},
+  { desc: 'Оборудование', icon: 'bi-router', link: 'equipment.html'},
+  { desc: 'Быстрая настройка', icon: 'bi-box2', link: 'quicksetup.html'},
+  { desc: 'Шаблоны МБТК', icon: 'bi-person-badge', link: 'mbtk.html'},
+  { desc: 'OLT команды', icon: 'bi-terminal', link: 'olt.html'}
+];
+
+const breadcrumbDropdown = document.querySelector('#breadcrumb-dropdown');
+const rowsBreadcrumbTable = breadcrumbTable.map(data => {
+  return `
+     <li><a class="dropdown-item" href="${data.link}" aria-current="true"><i class="nav-icon bi ${data.icon}" aria-hidden="true"></i> ${data.desc}</a></li>
+  `;
+}).join('');
+breadcrumbDropdown.innerHTML = rowsBreadcrumbTable;
+// End: breadcrumb
