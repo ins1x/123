@@ -116,4 +116,7 @@ const rowsBreadcrumbTable = breadcrumbTable.map(data => {
   `;
 }).join('');
 breadcrumbDropdown.innerHTML = rowsBreadcrumbTable;
+
+const footerTextContent = document.querySelector('#footer-text-content');
+footerTextContent.innerHTML = `<small><u>Не является</u> официальным ресурсом РУП "Белтелеком" &nbsp;2026 &#128383;<small>`
 // End: breadcrumb
