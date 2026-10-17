@@ -1,0 +1,40 @@
+<style>
+/* content sidebar */
+.right-sidebar-wrapper {
+    display: inline-flex;
+    min-height: 100vh;
+}
+.right-sidebar-content {
+    flex: 1;
+    padding: 20px;
+    transition: margin-right 0.3s;
+}
+.right-sidebar {
+    font-size: small;
+    width: 250px;
+    /* border-left: 1px solid #e5e7eb; */
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    top: 20px;
+    z-index: 9999;
+    transition: transform 0.3s;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.05);
+    overflow-y: auto;
+}
+.right-sidebar-header {
+    border-bottom: 1px solid black;
+}
+@media (max-width: 768px) {
+    .right-sidebar {
+        width: 100%;
+    }
+}
+</style>
+
+  <div class="right-sidebar" id="right-sidebar">
+    <h4 id="mbtk-content" class="text-secondary">Оглавление</h4>
+    <div id="list-main-content" class="list-group">
+      <!-- Generated from JS -->
+    </div>
+  </div>
