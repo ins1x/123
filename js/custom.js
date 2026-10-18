@@ -116,7 +116,36 @@ const rowsBreadcrumbTable = breadcrumbTable.map(data => {
   `;
 }).join('');
 breadcrumbDropdown.innerHTML = rowsBreadcrumbTable;
+// End: breadcrumb
 
+// Footer
 const footerTextContent = document.querySelector('#footer-text-content');
 footerTextContent.innerHTML = `<small><u>Не является</u> официальным ресурсом РУП "Белтелеком" &nbsp;2026 &#128383;<small>`
-// End: breadcrumb
+// End: Footer
+
+// Disclaimer
+const devDisclaimer = document.querySelector('#devDisclaimer');
+devDisclaimer.innerHTML = `
+Возможны опечатки и неточности, контент в процесе дополнения. Если обнаружили ошибку сообщите пожалуйста об этом разработчику. 
+Портал 123-Admin <u>не является</u> разработкой либо официальным ресурсом РУП "Белтелеком"
+`
+// End: Disclaimer
+
+// Generate sidebar menu
+// const sidebarMenuTable = [
+//   { desc: 'Главная', icon: 'bi-grid-1x2', link: 'dashboard.html'},
+//   { desc: 'Оборудование', icon: 'bi-router', link: 'equipment.html'},
+//   { desc: 'Рабочие порталы', icon: 'bi-grid-3x3-gap-fill', link: 'portals.html'},
+//   { desc: 'Онлайн утилиты', icon: 'bi-globe2', link: 'checker.html'},
+//   { desc: 'FAQ', icon: 'bi-patch-question', link: 'quicksetup.html'},
+//   { desc: 'Шаблоны МБТК', icon: 'bi-person-badge', link: 'mbtk.html'},
+//   { desc: 'OLT команды', icon: 'bi-terminal', link: 'olt.html'}
+// ];
+
+// const currentPath = window.location.pathname; 
+// const currentPageName = currentPath.split('/').filter(Boolean).pop(); 
+// const sidebarMenu = document.querySelector('#sidebar-menu');
+// const rowsSidebarTable = sidebarMenuTable.map(data => {
+//   return `<li class="nav-item"><a href="${data.link}" class="nav-link"><i class="nav-icon bi ${data.icon}" aria-hidden="true"></i><p>${data.desc}</p></a></li>`;
+// }).join('');
+// sidebarMenu.innerHTML = rowsSidebarTable;
