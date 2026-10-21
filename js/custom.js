@@ -126,10 +126,37 @@ footerTextContent.innerHTML = `<small><u>Не является</u> официа�
 // Disclaimer
 const devDisclaimer = document.querySelector('#devDisclaimer');
 devDisclaimer.innerHTML = `
-Возможны опечатки и неточности, контент в процесе дополнения. Если обнаружили ошибку сообщите пожалуйста об этом разработчику. 
-Портал 123-Admin <u>не является</u> разработкой либо официальным ресурсом РУП "Белтелеком"
+Возможны опечатки и неточности. Если обнаружили ошибку сообщите пожалуйста об этом разработчику. 
+Портал Admin-123 <u>не является</u> разработкой либо официальным ресурсом РУП "Белтелеком"
 `
 // End: Disclaimer
+
+// News block
+const newsTable = [
+  { date: '20/10/2026', desc: 'Добавлены фотографии ONU/ONT терминалов', link: 'equipment.html'},
+  { date: '17/10/2026', desc: 'Обновлен список подразделений для перенаправления в разделе MBTK', link: 'mbtk.html'},
+  { date: '14/10/2026', desc: 'Обновлен раздел FAQ', link: 'quicksetup.html'},
+  { date: '10/10/2026', desc: 'Обновлен раздел рабочих порталов', link: 'portals.html'},
+  { date: '10/09/2026', desc: 'Удалена страница диагностика сети из FAQ', link: 'quicksetup.html'},
+  { date: '7/09/2026', desc: 'Добавлен поиск по регионам в шаблонах для МБТК', link: 'mbtk.html'},
+  { date: '3/09/2026', desc: 'Добавлено оглавление в шаблонах MBTK и изменена шапка портала', link: 'mbtk.html'},
+  { date: '30/08/2026', desc: 'Добавлены шаблоны Мой Белтелком (веб-версия)', link: 'mbtk.html'},
+  { date: '21/08/2026', desc: 'Обновлен раздел быстрой настройки (FAQ) и основное меню', link: 'quicksetup.htm'},
+  { date: '10/08/2026', desc: 'Обновлена информация по DSL модемам и приставкам ZALA', link: 'equipment.html#dsl'},
+  { date: '2/08/2026', desc: 'Обновлена информация по Двух-диапазонным терминалам', link: 'equipment.html#dual-band'},
+  { date: '29/07/2026', desc: 'Список рабочих порталов теперь расположен на отдельной вкладке', link: 'portals.html'}
+];
+const whatsnew = document.querySelector('#whatsnew');
+const rowsNewsTable = newsTable.map(data => {
+  return `
+    <a href="${data.link}" class="list-group-item list-group-item-action">
+      ${data.desc}<br>
+      <small class="text-secondary icon-link icon-link-hover"><i class="bi bi-arrow-return-right"></i> Перейти &nbsp; ${data.date}</small>
+    </a>
+  `;
+}).join('');
+whatsnew.innerHTML = rowsNewsTable;
+// End: News block
 
 // Generate sidebar menu
 // const sidebarMenuTable = [
