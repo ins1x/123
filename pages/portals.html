@@ -383,6 +383,11 @@
             <!-- <div class="alert alert-light" role="alert">
               <h3>Веб-порталы для диагностики сети и рабочих задач</h3>
             </div> -->
+          
+            <!-- Google charts timeline-->
+            <div id="brandHistory"></div>
+
+            <img src="../assets/img/Timeline-BTK-transp.png" height="250" width="600" class="img-fluid rounded" alt="">
 
             <h2 class="text-center text-secondary">Веб-порталы для рабочих задач</h2>
 
@@ -1116,10 +1121,52 @@
     <script src="../js/custom.js"></script>
 
     <!-- only for this page-->
-    <!-- 
-      <script language="javascript">
-      </script>
-    -->
+
+    <!-- Google Charts Timeline-->
+    <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["timeline"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var container = document.getElementById('brandHistory');
+        var chart = new google.visualization.Timeline(container);
+        var dataTable = new google.visualization.DataTable();
+        dataTable.addColumn({ type: 'string', id: 'Year' });
+        dataTable.addColumn({ type: 'string', id: 'Name' });
+        dataTable.addColumn({ type: 'date', id: 'Start' });
+        dataTable.addColumn({ type: 'date', id: 'End' });
+        dataTable.addRows([
+          [ 'Timeline', 'ByFly', new Date(2006, 1, 1), new Date(2008, 1, 1)],
+          [ 'Timeline', 'ZALA (Интерактивное)', new Date(2008, 1, 1), new Date(2012, 1, 1)],
+          [ 'Timeline', 'IMS',  new Date(2012, 1, 1), new Date(2013, 1, 1)],
+          [ 'Timeline', 'ZALA (Эфирное)',  new Date(2013, 1, 1), new Date(2015, 1, 1)],
+          [ 'Timeline', 'ЯСНА',  new Date(2015, 1, 1), new Date(2016, 1, 1)],
+          [ 'Timeline', 'Видеоконтроль',  new Date(2016, 1, 1), new Date(2018, 1, 1)],
+          [ 'Timeline', 'ЯСНАе TV',  new Date(2018, 1, 1), new Date(2019, 1, 1)],
+          [ 'Timeline', 'Мой город',  new Date(2019, 1, 1), new Date(2021, 1, 1)],
+          [ 'Timeline', 'Beltelecom Shop',  new Date(2021, 1, 1), new Date(2022, 1, 1)],
+          [ 'Timeline', 'Evika!',  new Date(2022, 1, 1), new Date(2025, 1, 1)],
+          [ 'Timeline', 'Кибербезопасность',  new Date(2025, 1, 1), new Date(2026, 1, 1)],
+        ]);
+  
+        var options = {
+          title: 'История развития проектов',
+          legend: 'none',
+          height: '100',
+          backgroundColor: '#494949',
+          colors:['DodgerBlue','DimGrey','SlateGray','DimGray','DarkOrange','SteelBlue','DarkOrange','Magenta','Snow','BlueViolet','Indigo'], 
+          tooltip: {
+            trigger: 'none',
+          },
+          timeline: { 
+            showRowLabels: false,
+          },
+          avoidOverlappingGridLines: false
+        };
+  
+        chart.draw(dataTable, options);
+      } -->
+    </script>
 
   </body>
   <!--end::Body-->

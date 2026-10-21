@@ -133,7 +133,7 @@ devDisclaimer.innerHTML = `
 
 // News block
 const newsTable = [
-  { date: '20/10/2026', desc: 'Добавлены фотографии ONU/ONT терминалов', link: 'equipment.html'},
+  { date: '21/10/2026', desc: 'Добавлены фотографии ONU/ONT терминалов в список оборудования', link: 'equipment.html'},
   { date: '17/10/2026', desc: 'Обновлен список подразделений для перенаправления в разделе MBTK', link: 'mbtk.html'},
   { date: '14/10/2026', desc: 'Обновлен раздел FAQ', link: 'quicksetup.html'},
   { date: '10/10/2026', desc: 'Обновлен раздел рабочих порталов', link: 'portals.html'},
