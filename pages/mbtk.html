@@ -126,13 +126,120 @@
           <!--end::Start Navbar Links-->
           <ul class="navbar-nav">
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Оглавление</a>
+              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><i class="bi bi-bookmarks-fill"></i> Оглавление</a>
               <ul id="dropdown-main-content" class="dropdown-menu">
                 <!-- Generated form JS -->
               </ul>
             </li>
+
+            <!--begin::User Menu Dropdown-->
+            <li class="d-none d-sm-block nav-item dropdown user-menu">
+              <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                <i class="bi bi-file-earmark-person"></i>
+                <span class="d-md-inline">Принадлежность</span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
+                <li class="user-body">
+                  <!-- <p class="text-center">
+                    <small>Read-Only</small>
+                  </p> -->
+                  <!--begin::Row-->
+                  <h4 id="mbtk-region-menu" class="text-secondary">Принадлежность</h4>
+
+                  <div class="table-responsive">
+                    <table class="table table-striped-columns table-bordered">
+                      <tbody>
+                        <tr>
+                          <td class="h6"><strong class="text-primary">15</strong>XXXXXXXXXX</td>
+                          <td>Гродненская</td>
+                        </tr>
+                        <tr>
+                          <td class="h6"><strong class="text-primary">16</strong>XXXXXXXXXX</td>  
+                          <td>Брестская</td>  
+                        </tr>
+                        <tr>
+                          <td class="h6"><strong class="text-primary">21</strong>XXXXXXXXXX</td>
+                          <td>Витебская</td>
+                        </tr>
+                        <tr>
+                          <td class="h6"><strong class="text-primary">22</strong>XXXXXXXXXX</td>  
+                          <td>Могилевская</td>  
+                        </tr>
+                        <tr>
+                          <td class="h6"><strong class="text-primary">23</strong>XXXXXXXXXX</td>  
+                          <td>Гомельская</td>  
+                        </tr>
+                      </tbody>
+                      <caption>
+                        <a href="https://beltelecom.by/phone-code" class="icon-link icon-link-hover" target="_blank">
+                          <i class="bi bi-arrow-return-right"></i> Справочник по телефонным кодам
+                        </a>
+                      </caption>
+                    </table>
+                  </div>
+                </li>
+              </ul>
+            </li>
+
+            <li class="d-none d-sm-block nav-item dropdown user-menu">
+              <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                <i class="bi bi-building"></i>
+                <span class="d-md-inline">Офисы продаж</span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
+                <li class="user-body">
+                  <!-- <p class="text-center">
+                    <small>Read-Only</small>
+                  </p> -->
+                  <!--begin::Row-->
+                  <h4 id="mbtk-region-menu" class="text-secondary">Офисы продаж</h4>
+                  <div class="table-responsive">
+                    <table class="table table-sm table-striped-columns table-bordered">
+                      <tbody>
+                        <tr>
+                          <td><strong class="text-primary">1</strong> Советский</td>
+                          <td>Данилова</td>
+                        </tr>
+                        <tr>
+                          <td><strong class="text-primary">2</strong> Юр.лица</td>
+                          <td>Новицкая О. В.</td>
+                        </tr>
+                        <tr>
+                          <td><strong class="text-primary">3</strong> Фрунзенский</td>
+                          <td>Шишко И.В.</td>
+                        </tr>
+                        <tr>
+                          <td><strong class="text-primary">4</strong> Заводской</td>
+                          <td>Ковалевич Е.А / <div class="text-muted">Шиханцова А.А.</div></td>
+                        </tr>
+                        <tr>
+                          <td><strong class="text-primary">5</strong> Ленинский</td>
+                          <td>Волощук Е.В. / <div class="text-muted">Козловская Н.С.</div></td>
+                        </tr>
+                        <tfoot>
+                          <tr>
+                            <td>Рассрочка</td>
+                            <td>Буховцеву О. В.</td>
+                          </tr>
+                          <tr>
+                            <td>ГУА</td>
+                            <td>Плотникову Ю. В.</td>
+                          </tr>
+                        </tfoot>
+                      </tbody>
+                      <caption>
+                        <a href="https://beltelecom.by/feedback/services-point" class="icon-link icon-link-hover" target="_blank">
+                          <i class="bi bi-arrow-return-right"></i> Адреса и график работы офисов продаж
+                        </a>
+                      </caption>
+                    </table>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          <!--End::User Menu Dropdown-->
           </ul>
-          <!--begin::End Navbar Links-->
+          <!--End:: Navbar Links-->
           <ul class="navbar-nav ms-auto">
             <!--begin::Navbar Search-->
             <li class="nav-item">
@@ -370,7 +477,7 @@
 
               <div class="col-sm-6">
                 <h3 class="mb-0 text-secondary"><i class="nav-icon bi bi-person-badge"></i> MBTK</h3>
-                <p>Последнее обновление шаблонов: <strong class="text-secondary">17/10/2026</strong></p>
+                <p>Последнее обновление шаблонов: <strong class="text-secondary">24/10/2026</strong> содержит ответов: <span id="totalQuestions"></span></p>
               </div>
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-end">
@@ -978,6 +1085,11 @@
                           Возможные перерывы предоставления Услуг обусловлены необходимостью проведения на оборудовании Оператора периодических планово-профилактических работ, ремонтно-восстановительных работ, а также погодными и иными факторами, влияющими на распространение радиосигнала.
                           Информация о времени и продолжительности планово-профилактических работ размещается на сайте <a href="https://beltelecom.by/calendar-field_network_date/month">https://beltelecom.by/calendar-field_network_date/month</a>.
                           Доступ к экстренным службам 101, 102, 103, 104, 112 возможен посредством мобильных телефонов. Приносим извинения за временные неудобства.
+                        </ul>
+                        <strong class="subtitle">Виртуальный оператор Яна</strong>
+                        <ul>
+                          На официальном сайте информации об этих работах нет. На данный момент компанией проводятся работы по внедрению виртуального оператора Яны.
+                          К сожалению, дополнительной информацией по данному вопросу я не обладаю. Готовы помочь Вам по существу вашего обращения.
                         </ul>
                       </td>
                     </tr>
@@ -1734,6 +1846,30 @@
                       </td>
                     </tr>
                     <tr>
+                      <td class="question">Повреждение оборудования</td>
+                      <td class="answer">
+                        <strong class="subtitle">Поврежден модем / Повреждена приставка</strong>
+                        <ul>
+                          В случае повреждения или утери Абонентом основного устройства Оконечного оборудования, предоставленного Оператором, Абонент возмещает Оператору возникшие в связи с этим убытки, после чего Абоненту выдаётся исправное Оконечное оборудование. Порядок и размер возмещения указаны на сайте Оператора <a href="https://www.beltelecom.by/private/other/vozmeshchenie-stoimosti-imushchestva-rup-beltelekom">https://www.beltelecom.by/private/other/vozmeshchenie-stoimosti-imushchestva-rup-beltelekom</a>.
+                        </ul>
+                        <strong class="subtitle">Повреждены или утеряны комплектующие</strong>
+                        <ul>
+                          В случае повреждения только блока питания и/или иных комплектующих (повреждения, свидетельствующие о падении или небрежном использовании), Абонент возмещает рыночную стоимость блока питания и/или иных комплектующих. <a href="https://beltelecom.by/private/internet/poryadok">ПОУ 3.5.6.3 и 3.5.6.4</a>
+                          <p>
+                            Стоимость комплектующих элементов (пульт, блок питания, сет. кабель (RJ45), тел. кабель (RJ12), оптич. кабель, HDMI кабель, RCA кабель (тюльпаны), переходник RCA-SCART, сплиттер, КУД для ЭТ ZALA, SIM-карта LTE) выплачивается полностью в размере рыночной стоимости, <u>комплектующие амортизации не подлежат</u>.
+                          </p>
+                          <blockquote>
+                            Если на блок питания, выданный Оператором, истёк гарантийный срок, а Абонент возвращает комплект оборудования с блоком питания, выданным не Оператором, и его технические характеристики полностью соответствуют характеристикам утерянного блока питания, Оператор может принять данный блок питания взамен ранее выданного.
+                          </blockquote>
+                        </ul>
+
+                        <p>
+                        Замена неисправного Оконечного оборудования, предоставленного Оператором Абоненту для оказания Услуги, осуществляется Абонентом в офисе продаж. Адреса офисов продаж: <a href="https://www.beltelecom.by/feedback/services-point">https://www.beltelecom.by/feedback/services-point</a>
+                        </p>
+                        
+                      </td>
+                    </tr>
+                    <tr>
                       <td class="question">Не устраивает выданное оборудование</td>
                       <td class="answer">
                         <strong class="subtitle">Не устраивает модем</strong>
@@ -2220,12 +2356,10 @@
                       <td class="question">Снять добровольную блокировку</td>
                       <td class="answer">
                         <p>
-                          Здравствуйте. Для управления услугами в новом кабинете необходимо добавить услуги.
-                          В разделе «Мои услуги» в правом верхнем углу нажимаете на «Добавить услугу (+)» -> вводите  необходимые данные логин и пароль (можно найти в бланке заказа услуги). 
-                          Инструкцию можно скачать здесь: <a href="https://my.beltelecom.by/about">https://my.beltelecom.by/about</a>
-                        </p>
-                        <p>
-                        В «Кабинете пользователя» необходимо нажать на наименование услуги, которую хотите разблокировать. Произойдет переход на страницу с подробным описанием выбранной услуги. Затем нажать на значок "пауза" и выбрать разблокировать.                        
+                          Здравствуйте. Для разблокировки услуги в «Мой Белтелеком» необходимо нажать на наименование услуги, которую хотите разблокировать (например ЯСНА 500). 
+                          Произойдет переход на страницу с подробным описанием выбранной услуги. С левой стороны, в разделе подключенные опции будет список подключенных опций. 
+                          В данном списке необходимо найти "Добровольная блокировка" либо "Платная пауза" (в зависимости от блокировки которую выставляли), и нажать на ползунок правее. 
+                          В появившемся окне нажать разблокировать. Инструкцию можно скачать здесь: https://my.beltelecom.by/about
                         </p>
                       </td>
                     </tr>
@@ -2514,21 +2648,6 @@
                       <td class="question">Не освобождается от оплаты (пакет услуг)</td>
                       <td class="answer">
                         <a href="https://beltelecom.by/private/packages/poryadok-okazaniya-uslug">Согласно п.7.1.8</a> Порядка оказания услуг в составе пакетов: В случае, если на лицевом счёте недостаточно средств для оплаты оказываемого ежесуточного объёма Услуг, Оператор временно приостанавливает оказание Услуг, включая дополнительные услуги/сервисы. На период временного прекращения доступа к Пакету услуг, в т.ч. к иным дополнительным услугам и сервисам, входящим в состав Пакета услуг, по причине нулевого или отрицательного баланса лицевого счета, Абонент не освобождается от плановых ежемесячных платежей. Начисление ежемесячной платы производится до конца текущего календарного месяца. С начала нового календарного месяца ежемесячная плата не начисляется. Возобновление оказания Услуг производится после пополнения Абонентом лицевого счёта на сумму погашения образовавшейся задолженности и достижения положительного остатка на лицевом счёте. Согласно Приложения об оказания услуги "Пакеты услуг": Оператор вправе расторгнуть настоящее Приложение в одностороннем порядке без обращения в суд: в случае, когда Пакет услуг находится в блокировке по причине отрицательного или нулевого баланса лицевого счета более чем 60 дней. Т.е. услугу необходимо оплачивать. Для расторжения договора необходимо подать заявку за 30 дней. 
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="question">Повреждения модема</td>
-                      <td class="answer">
-                        <p>
-                        В случае повреждения или утери Абонентом основного устройства Оконечного оборудования, предоставленного Оператором, Абонент возмещает Оператору возникшие в связи с этим убытки, после чего Абоненту выдаётся исправное Оконечное оборудование. Порядок и размер возмещения указаны на сайте Оператора <a href="https://www.beltelecom.by/private/other/vozmeshchenie-stoimosti-imushchestva-rup-beltelekom">https://www.beltelecom.by/private/other/vozmeshchenie-stoimosti-imushchestva-rup-beltelekom</a>.
-                        </p>
-                        <p>
-                        В случае повреждения только блока питания и/или иных комплектующих (повреждения, свидетельствующие о падении или небрежном использовании), Абонент возмещает рыночную стоимость блока питания и/или иных комплектующих. <a href="https://beltelecom.by/private/internet/poryadok">ПОУ 3.5.6.3 и 3.5.6.4</a>
-                        </p>
-                        Замена неисправного Оконечного оборудования, предоставленного Оператором Абоненту для оказания Услуги, осуществляется Абонентом в офисе продаж. Адреса офисов продаж: <a href="https://www.beltelecom.by/feedback/services-point">https://www.beltelecom.by/feedback/services-point</a>
-                        <blockquote>
-                        Если на блок питания, выданный Оператором, истёк гарантийный срок, а Абонент возвращает комплект оборудования с блоком питания, выданным не Оператором, и его технические характеристики полностью соответствуют характеристикам утерянного блока питания, Оператор может принять данный блок питания взамен ранее выданного.
-                        </blockquote>
                       </td>
                     </tr>
                     <tr>
@@ -3244,7 +3363,7 @@
                           Подробнее по комплектации оборудования с фотографиями можете ознакомиться на сайте: <br>
                           <a href="https://beltelecom.by/private/other/vozmeshchenie-stoimosti-imushchestva-rup-beltelekom">https://beltelecom.by/private/other/vozmeshchenie-stoimosti-imushchestva-rup-beltelekom</a>
                         </p>
-
+                        
                         <blockquote>Важно! Комплектация различных моделей модемов может отличаться! Например, модем TS-4224 поставляется без сетевого кабеля и телефонного провода. В некоторых моделях модемов выдаётся кассета (специальная рамка для крепления модема).</blockquote>
                       </td>
                     </tr>
@@ -3570,6 +3689,31 @@
                         </ul>
                       </div>
                       </td>
+
+                      <tr>
+                        <td class="question">Проверить настройки телевизора / <b style="color: blue;">Нестандартные ошибки</b></td>
+                        <td class="answer">
+                          <strong class="subtitle">Перезагрузка ТВ по питанию</strong>
+                          <ul>
+                            Необходимо перезагрузить телевизор (полный сброс питания). Выключите телевизор с пульта, затем отключите кабель питания из розетки на 10–15 минут. 
+                            Это помогает разрядить остаточные конденсаторы и очистить временную память (кэш) устройства. Если к телевизору подключены периферийные устройства, отсоедините их.
+                          </ul>
+                          <strong class="subtitle">Проверитьнастройки на ТВ</strong>
+                          <ul>
+                            Необходимо проверить какие DNS серверы указаны в настройках сети. Попробуйте указать в настройках DNS1: <code>8.8.8.8</code> DNS2: <code>194.158.196.245</code>. 
+                            Проверьте не сбросился ли регион "Беларусь" в настройках самого телевизора. Проверьте дату и время, на телевизорах сбитое системное время часто блокирует работу приложений и сертификатов безопасности.
+                          </ul>
+                          <strong class="subtitle">DNS платформы (Smart)</strong>
+                          <ul>
+                            Попробуйте указать следующий DNS сервер <code>82.209.237.230</code> в настройках сети.
+                          </ul>
+                          <strong class="subtitle">Разрешения на запуск</strong>
+                          <ul>
+                            Если при запуске приложения окно сразу сворачивается либо появляется серый/белый/черный экран. 
+                            Необходимо дать разрешение приложению для доступа к файлам и мультимедиа. 
+                            Приложения - Выбрать из списка приложение ZALA - Разрешения - Файлы и медиафайлы - Разрешить только во время работы.</li>
+                          </ul>
+                        </td>
                     </tr>
                   </tbody>
                   </table>
@@ -4188,6 +4332,16 @@
                       </td>
                     </tr>
                     <tr>
+                      <td class="question">Чип-ключ</td>
+                      <td class="answer">
+                        <p>
+                          Здравствуйте. При заключении договора на услугу «Видеодомофон» от Белтелеком абоненту бесплатно предоставляется один чип-ключ на квартиру. 
+                          Второй и последующие чип-ключи - платные (9,65 BYN). Получить бесплатный ключ можно только в офисе продаж, который осуществлял подключение.
+                           https://www.beltelecom.by/feedback/services-point. Программирование и выдача дополнительных платных чип-ключей осуществляется в любом офисе продаж.
+                        </p>
+                      </td>
+                    </tr>
+                    <tr>
                       <td class="question">Видеодомофон Лайт</td>
                       <td class="answer">
                         <p>
@@ -4480,7 +4634,7 @@
 
         // Search by region name in regionsTable
         if (regionResult != null) {
-          regionResult.forEach(item => searchRegionResult.innerHTML = `&nbsp; Cовпадение с <a href="https://google.com/search?q=${item.regname} район" target="_blank">${item.regname}</a> район, область: <b>${item.region}</b><br>`);
+          regionResult.forEach(item => searchRegionResult.innerHTML = `&nbsp; Cовпадение с <a href="https://google.com/search?q=${item.regname} район" target="_blank">${item.regname}</a> район. <br>&nbsp; Область: <strong class="text-primary">${item.region}</strong><br>`);
           return regionResult;
         } 
       };
@@ -4629,6 +4783,15 @@
       //   event.preventDefault();
       // });
 
+      const questionsTotal = document.querySelectorAll('.question');
+      const subQuestionsTotal = document.querySelectorAll('.subtitle');
+      // console.log(questionsTotal.length, subQuestionsTotal.length);
+
+      const totalQuestions = document.querySelector('#totalQuestions');
+      if (totalQuestions) {
+        totalQuestions.innerHTML = `<b class="text-secondary">${subQuestionsTotal.length}<b>`;
+      }
+      
     </script>
 
   </body>

@@ -110,25 +110,31 @@ const breadcrumbTable = [
 ];
 
 const breadcrumbDropdown = document.querySelector('#breadcrumb-dropdown');
-const rowsBreadcrumbTable = breadcrumbTable.map(data => {
-  return `
-     <li><a class="dropdown-item" href="${data.link}" aria-current="true"><i class="nav-icon bi ${data.icon}" aria-hidden="true"></i> ${data.desc}</a></li>
-  `;
-}).join('');
-breadcrumbDropdown.innerHTML = rowsBreadcrumbTable;
+if (breadcrumbDropdown) {
+  const rowsBreadcrumbTable = breadcrumbTable.map(data => {
+    return `
+       <li><a class="dropdown-item" href="${data.link}" aria-current="true"><i class="nav-icon bi ${data.icon}" aria-hidden="true"></i> ${data.desc}</a></li>
+    `;
+  }).join('');
+  breadcrumbDropdown.innerHTML = rowsBreadcrumbTable;
+}
 // End: breadcrumb
 
 // Footer
 const footerTextContent = document.querySelector('#footer-text-content');
-footerTextContent.innerHTML = `<small><u>Не является</u> официальным ресурсом РУП "Белтелеком" &nbsp;2026 &#128383;<small>`
+if (footerTextContent) {
+  footerTextContent.innerHTML = `<small><u>Не является</u> официальным ресурсом РУП "Белтелеком" &nbsp;2026 &#128383;<small>`
+}
 // End: Footer
 
 // Disclaimer
 const devDisclaimer = document.querySelector('#devDisclaimer');
-devDisclaimer.innerHTML = `
-Возможны опечатки и неточности. Если обнаружили ошибку сообщите пожалуйста об этом разработчику. 
-Портал Admin-123 <u>не является</u> разработкой либо официальным ресурсом РУП "Белтелеком"
-`
+if (devDisclaimer) {
+  devDisclaimer.innerHTML = `
+  Возможны опечатки и неточности. Если обнаружили ошибку сообщите пожалуйста об этом разработчику. 
+  Портал Admin-123 <u>не является</u> разработкой либо официальным ресурсом РУП "Белтелеком"
+  `;
+}
 // End: Disclaimer
 
 // News block
@@ -147,15 +153,17 @@ const newsTable = [
   { date: '29/07/2026', desc: 'Список рабочих порталов теперь расположен на отдельной вкладке', link: 'portals.html'}
 ];
 const whatsnew = document.querySelector('#whatsnew');
-const rowsNewsTable = newsTable.map(data => {
-  return `
-    <a href="${data.link}" class="list-group-item list-group-item-action">
-      ${data.desc}<br>
-      <small class="text-secondary icon-link icon-link-hover"><i class="bi bi-arrow-return-right"></i> Перейти &nbsp; ${data.date}</small>
-    </a>
-  `;
-}).join('');
-whatsnew.innerHTML = rowsNewsTable;
+if (whatsnew) {
+  const rowsNewsTable = newsTable.map(data => {
+    return `
+      <a href="${data.link}" class="list-group-item list-group-item-action">
+        ${data.desc}<br>
+        <small class="text-secondary icon-link icon-link-hover"><i class="bi bi-arrow-return-right"></i> Перейти &nbsp; ${data.date}</small>
+      </a>
+    `;
+  }).join('');
+  whatsnew.innerHTML = rowsNewsTable;
+}
 // End: News block
 
 // Generate sidebar menu
