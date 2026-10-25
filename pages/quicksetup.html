@@ -540,8 +540,15 @@
                             <h5><i class="bi bi-apple"></i>iOS</h5>
                             <p>На iPhone перейдите в Настройки > Wi-Fi, коснитесь значка <i class="bi bi-info"></i> рядом с подключённой сетью, и ваш IP-адрес отобразится в разделе адреса.</p>
                 
+                            <h5>Частные адреса</h5>
+                            Для внутренних сетей выделены диапазоны, которые не используются в интернете:
+                            <ul>
+                              <li>10.0.0.0/8 - от 10.0.0.0 до 10.255.255.255;</li>
+                              <li>172.16.0.0/12 - от 172.16.0.0 до 172.31.255.255;</li>
+                              <li>192.168.0.0/16 - от 192.168.0.0 до 192.168.255.255.</li>
+                            </ul>
                             <blockquote>
-                              Адреса из пула 169.254.0.0/16 Windows присваивает самостоятельно, если в сети нет DHCP сервера
+                            Адреса из диапазона 169.254.0.0/16 Windows назначает себе сама, если не получила адрес от DHCP-сервера (автоматический частный адрес, APIPA). Если вы видите такой адрес, значит, DHCP не ответил.  
                             </blockquote>
                           </div>
                         </span>
@@ -781,6 +788,8 @@
                               <li>DNS альтернативный: <code>2a02:2208:0:144::149</code></li>
                             </ul>
 
+                            <a href="../assets/img/faq/IPv6-netadapter-conf.jpg" target="_blank"><img src="../assets/img/faq/IPv6-netadapter-conf.jpg" class="img-fluid" alt=""></a>
+
                             <ul class="list-unstyled">
                               <li><a href="https://chat.datacenter.by/index.php/f/1468878" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> Статический IP и IPv6</a></li>
                             </ul>
@@ -821,6 +830,7 @@
                             <i class="bi bi-chevron-down"></i> Настройка авто-согласования (дуплекс)
                           </a>
                           <div class="collapse" id="collapseSpeedAndDuplex">
+                            <a href="../assets/img/faq/Speed-and-Duplex.jpg" target="_blank"><img src="../assets/img/faq/Speed-and-Duplex.jpg" class="img-fluid" alt=""></a>
                             <p>
                               Панель управления - Центр управления сетями и общим доступом - Изменение параметров адаптера (слева) 
                               - Нажмите правой кнопкой мыши на ваше сетевое подключение и выберите <strong>Свойства</strong> -
@@ -834,6 +844,28 @@
                               Линк больше 100 Мбит-с может не подниматься из-за старого 4-х жильного кабеля, 
                               неплотного контакта жил кабеля с коннектором, настроек сетевой и неккоректной работы сетевых драйверов.
                             </blockquote>
+                          </div>
+                        </span>
+
+                        <span class="d-block">
+                          <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapsePPPoE32to29" role="button" aria-expanded="false" aria-controls="collapsePPPoE32to29">
+                            <i class="bi bi-chevron-down"></i> Настройка блока статических IP под маску /29
+                          </a>
+                          <div class="collapse" id="collapsePPPoE32to29">
+                           <p>
+                            <a href="../assets/img/faq/PPPoE-32-29.jpg" target="_blank"><img src="../assets/img/faq/PPPoE-32-29.jpg" class="img-fluid" alt=""></a>
+                            <p>
+                              Если клиенту выделили подсеть ipv4 по /29 маске, то все равно PPPoE поднимается на WAN по /32, а далее аб-т на своем оборудовании настраивает на LAN по заданной /29 маске. 
+                              Роутер устанавливает PPPoE-соединение и получает один белый IP-адрес (чаще всего с маской /32). Этот адрес используется для работы самого роутера и стандартного NAT для внутренней сети.
+                              Маршрутизация подсети /29: Провайдер маршрутизирует всю вашу подсеть /29 (например, 6 IP-адресов) через ваш PPPoE. По /29 маска всего 6 полезных IP-адресов,
+                              первый или выделенный IP обычно назначается на внутренний интерфейс роутера (бридж или LAN-порт), а остальные IP назначаются напрямую вашим серверам или устройствам.
+                              Вы можете объеденить нужные порты в Bridge (или выделите отдельный интерфейс под белые IP), назначьте первый рабочий IP-адрес из вашей подсети /29 на этот Bridge (например, x.x.x.1/29).
+                            </p>
+                            <blockquote>
+                              Отключите NAT (Masquerade) для трафика из подсети /29, чтобы устройства выходили в интернет с реальными белыми IP, а не через трансляцию адресов. 
+                              Если часть сети остается за NAT, оставьте Masquerade только для неё 
+                            </blockquote>
+                           </p>
                           </div>
                         </span>
 
@@ -1918,7 +1950,7 @@
                         <h3 class="card-title"> Прочие настройки сети</h3>
                       </div>
                       <div class="card-body">
-
+                        VPN:
                         <span class="d-block">
                           <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseVPNFail" role="button" aria-expanded="false" aria-controls="collapseVPNFail">
                             <i class="bi bi-chevron-down"></i> Не работает VPN 
@@ -1978,15 +2010,15 @@
                               <li><a href="https://lan1.by/5087">Настройка VPN на HUAWEI HG8245A</a></li>
                               <li><a href="https://lan1.by/2169">Настройка VPN на модеме ZXHN H208N</a></li>
                             </ul>
+
+                            Документация по VPN на Nextcloud:
+                            <ul class="list-unstyled">
+                              <li><a href="https://chat.datacenter.by/index.php/f/1465469" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> Настройка VPN (БТК)</a></li>                           
+                            </ul>
+
                           </div>
                         </span>
                           
-                        Документация по VPN на Nextcloud:
-                        <ul class="list-unstyled">
-                          <li><a href="https://chat.datacenter.by/index.php/f/1465469" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> Настройка VPN (БТК)</a></li>                          
-                          <li><a href="https://chat.datacenter.by/index.php/f/1468840" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> Настройка подключения и сервисов</a></li>
-                          <li><a href="https://chat.datacenter.by/index.php/f/1467921" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> Nextcloud - Интернет и сети передачи данных</a></li>
-                        </ul>
                       </div>
                     </div>
                     
@@ -2004,6 +2036,9 @@
                             <i class="bi bi-chevron-down"></i> Режимы работы точки доступа
                           </a>
                           <div class="collapse" id="collapseWifiAPmodes">
+                            
+                            <a href="../assets/img/faq/Speed-and-Duplex.jpg" target="_blank"><img src="../assets/img/faq/LAN-WAN-router-connection.jpg" class="img-fluid" alt=""></a>
+
                             <ul class="list-group list-group-flush">
                               <li class="list-group-item">
                                 <strong>Режим беспроводного маршрутизатора (Wireless Router)</strong>
@@ -2461,7 +2496,7 @@
                             </p>
 
                             <h5>2.4G</h5>
-                            <img src="https://cdn.nag.ru/news.public.uploads/upload/images/1563352225605.png.webp" class="img-fluid" alt="">
+                            <a href="../assets/img/faq/2.4G-channels.jpg" target="_blank"><img src="../assets/img/faq/2.4G-channels.jpg" class="img-fluid" alt=""></a> 
                             <p> 
                               Выбор канала WiFi зависит от загруженности эфира. Большинство роутеров по умолчанию работают на частоте 2.4 ГГц, которая имеет всего 3 непересекающихся канала (только 1, 6 и 11). 
                               Каналы 1, 6, и 11 будут иметь преимуществе перед алгоритмом автоматического назначение канала в базовых настройках роутера, т.к. будут подвержены меньшим количеством пересечений с соседними каналами. 
@@ -2470,7 +2505,7 @@
                             </p>
                             
                             <h5>5G</h5>
-                            <img src="https://help-wifi.com/wp-content/uploads/2025/01/Channel-Width-WiFi-5.jpg" class="img-fluid" alt="">
+                            <a href="../assets/img/faq/Channel-Width-WiFi-5.jpg" target="_blank"><img src="../assets/img/faq/Channel-Width-WiFi-5.jpg" class="img-fluid" alt=""></a>
                             <p>
                               Динамический выбор частоты (DFS) - это схема распределения каналов, разработанная для Wi-Fi, чтобы предотвратить его вмешательство в работу таких беспроводных систем, как военные радары, спутниковая связь, метеорологические радары.
                               При включенной функции DFS устройства будут контролировать частотный канал, который они используют для вещания. При обнаружении радиолокационных сигналов на используемом канале устройства автоматически освобождают этот канал и переключаются на альтернативный. Кроме того, канал, на котором были обнаружены радиолокационный сигналы, не будет использоваться в течение определённого периода времени.
@@ -2979,6 +3014,7 @@
                           </a>
                           <div class="collapse" id="collapseCableConnectorsPON">
                             <h4 class="text-center">Оптоволоконный кабель (SC/APC - SC/UPC)</h4>
+                            <a href="../assets/img/faq/PON-Cable-SC.jpg" target="_blank"><img src="../assets/img/faq/PON-Cable-SC.jpg" class="img-fluid" alt=""></a>
                             <p>
                               Основная разница между оптическими коннекторами SC UPC и SC APC заключается в типе полировки торца оптоволокна, определяющей величину отраженного сигнала. 
                               Разъемы SC UPC отполированы прямо, а SC APC — под углом 8°, из-за чего они имеют разную форму, цвет и область применения. Коннекторы SC UPC и SC APC физически нельзя соединять между собой. 
@@ -4928,27 +4964,6 @@
                   </div>
                 </div>
 
-                <div class="card" id="pbx">
-                  <div class="card-header text-bg-gray py-2" style="background-color: purple;">
-                    <h3 class="card-title"> Облачная АТС</h3>
-                  </div>
-                  <div class="card-body">
-                    <p>
-                      Веб-портал облачной АТС: <a href="https://myvideo.beltelecom.by" target="_blank">pbx.beltelecom.by</a><br>
-                      Порядок оказания услуги: <a href="https://www.beltelecom.by/business/additional-services/business-solutions-networking/oblachnaya-ats/poryadok-okazaniya" target="_blank">Облачная АТС</a><br>
-                    </p>
-                    <ul class="list-unstyled">
-                      <li><a href="https://chat.datacenter.by/index.php/f/1466979" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> Руководство пользователя PBX</a></li>
-                      <li><a href="https://chat.datacenter.by/index.php/f/1465589" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> SIP телефоны</a></li>
-                      <li><a href="https://chat.datacenter.by/index.php/f/1465728" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> Виртуальная АТС (Centrex)</a></li>
-                      <li><a href="https://chat.datacenter.by/index.php/f/1465513" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> Облачная АТС</a></li>
-                    </ul>
-                  </div>
-                </div>
-                
-              </div>
-
-              <div class="col-sm-6 mb-3 mb-sm-3">
                 <div class="card">
                   <div class="card-header text-bg-gray py-2" style="background-color: purple;">
                     <h3 class="card-title"><i class="bi bi-building"></i> IMS</h3>
@@ -5337,78 +5352,27 @@
 
                   </div>
                 </div>
+                
+              </div>
 
-                <div class="card">
+              <div class="col-sm-6 mb-3 mb-sm-3">
+
+                <div class="card" id="pbx">
                   <div class="card-header text-bg-gray py-2" style="background-color: purple;">
-                    <h3 class="card-title"><i class="bi bi-telephone-outbound"></i> SIP</h3>
+                    <h3 class="card-title"><i class="bi bi-cloud-arrow-down"></i> Облачная АТС <b>PBX</b> (ОАТС)</h3>
                   </div>
                   <div class="card-body">
 
-                    <span class="d-block">
-                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseSIPsetup" role="button" aria-expanded="false" aria-controls="collapseSIPsetup">
-                        <i class="bi bi-chevron-down"></i> Подключение SIP аппарата
-                      </a>
-                      <div class="collapse" id="collapseSIPsetup">
-                        <p>
-                          Необходимо ip-phone подключить к порту модема, который настроен на ИНТЕРНЕТ. После ip-phone должен получить ip-адрес по DHCP от модема.
-                          Все телефоны объединяются в общую сеть портом WAN с помощью коммутатора(ов) или роутера. Каждому телефону присваивается IP-адрес по DHCP (при наличии)
-                          или вручную, например из диапазона 192.168.100.0/24. Последний октет адреса будет внутренним номером телефона по по-умолчанию, например: 
-                          если IP-адрес телефона 192.168.100.101, то позвонить на него можно будет по номеру #101#.
-                        </p>
-                        <p>В настройках WEB-интерфейса телефона необходимо указать - сервер, порт, короткий номер домен.</p>
-                        <ul>
-                          <li>SIP Server - IP адреса SBC МГТС: <strong class="text-primary">10.24.0.16:5060 10.24.0.48:5060</strong></li>
-                          <li>Account Active - значение YES. </li>
-                          <li>SIP User ID - {внутренний номер}$Домен</li>
-                          <li>Authenticate ID - {внутренний номер}</li>
-                          <li>Authenticate Password - {пароль для внутреннего номера}</li>
-                          <li>Name - {имя, которое будет показываться при сработке услуги CLIP}</li>
-                          <li>Transport protocol - UDP (предпочтительнее)</li>
-                        </ul>
-                        <blockquote>Не забудьте после настройки вернуть подключение в порт настроенный на SIP</blockquote>
-                      </div>
-                    </span>
-
-                    <span class="d-block">
-                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseSIPextconf" role="button" aria-expanded="false" aria-controls="collapseSIPextconf">
-                        <i class="bi bi-chevron-down"></i> Тонкие настройки IP телефонии
-                      </a>
-                      <div class="collapse" id="collapseSIPextconf">
-                        <h5>Особенности и тонкие настройки</h5>
-                        <ul>
-                          <li>SIP Аппарат может работать по протоколу TCP или UDP, если аппарат поддерживает работу обоих протоколов, что лучше использовать UDP</li>
-                          <li>На аппарате должен быть отключен STUN-сервер, так как из-за этого могут возникнуть проблемы с прохождением трафика через NAT, что приводит к обрывам разговоров через аппарат. Должны быть выключены опции NAT Traversal и прокси-серверы</li> 
-                          <li>В настройках роутера (маршрутизатора), который раздает интернет в вашем офисе, должна быть отключена опция SIP - ALG. Если опция включена, она также приводит к обрывам разговоров через аппарат. (В роутере тоже должна быть выключена опция SIP ALG, по-умолчанию выключена)</li>
-                          <li>В настройках SIP-оборудования необходимо включить опцию keep alive либо уменьшить время регистрации до 180 (по умолчанию обычно 3600)</li>
-                          <li>Кодеки. Если есть возможность, указать приоритет использования: PCMA (G711a, G711 a-law), PCMU (G711u, G711 u-law), G729, RTP Packet size (время пакетизации) 20 мс</li>
-                        </ul>
-                      </div>
-                    </span>
-
-                    <span class="d-block">
-                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseSIPdtmf" role="button" aria-expanded="false" aria-controls="collapseSIPdtmf">
-                        <i class="bi bi-chevron-down"></i> Настроить DTMF на SIP телефоне FANVIL
-                      </a>
-                      <div class="collapse" id="collapseSIPdtmf">
-                        <p>
-                          Необходимо ip-phone подключить к порту модема, который настроен на ИНТЕРНЕТ. После ip-phone должен получить ip-адрес по DHCP от модема. 
-                          Для просмотра этого ip-адреса необходимо нажать кнопку справа от надписи INFO. Модем 4857511223344E40. 
-                          Далее переключить в порт SIP телефона зайти по адресу на настройки веб. интерфейс телефона. 
-                          Далее - SIP - LINE - DTMF - необходимо выставить IN/AUDIO или IN/bend. Остальные 2 режим RFS2833 - выкл. SIP INFO - выкл. 
-                          После этого проверить переадресацию вызова *# (должна быть музыка) далее короткий номер и #. 
-                        </p>
-                      </div>
-                    </span>
-
-                  </div>
-                </div>
-
-                <div class="card">
-                  <div class="card-header text-bg-gray py-2" style="background-color: purple;">
-                    <h3 class="card-title"><i class="bi bi-cloud-arrow-down"></i> PBX (ОАТС)</h3>
-                  </div>
-                  <div class="card-body">
-
+                    <p>
+                      Веб-портал облачной АТС: <a href="https://myvideo.beltelecom.by" target="_blank">pbx.beltelecom.by</a><br>
+                      Порядок оказания услуги: <a href="https://www.beltelecom.by/business/additional-services/business-solutions-networking/oblachnaya-ats/poryadok-okazaniya" target="_blank">Облачная АТС</a><br>
+                    </p>
+                    <ul class="list-unstyled">
+                      <li><a href="https://chat.datacenter.by/index.php/f/1466979" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> Руководство пользователя PBX</a></li>
+                      <li><a href="https://chat.datacenter.by/index.php/f/1465728" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> Виртуальная АТС (Centrex)</a></li>
+                      <li><a href="https://chat.datacenter.by/index.php/f/1465513" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> Облачная АТС</a></li>
+                    </ul>
+                    
                     Настройка сервисов:
                     <span class="d-block">
                       <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapsePBXservices" role="button" aria-expanded="false" aria-controls="collapsePBXservices">
@@ -5642,7 +5606,121 @@
                       </div>
                     </span>
                     
-        
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card-header text-bg-gray py-2" style="background-color: purple;">
+                    <h3 class="card-title"><i class="bi bi-telephone-outbound"></i> SIP</h3>
+                  </div>
+                  <div class="card-body">
+
+                    <span class="d-block">
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseSIPsetup" role="button" aria-expanded="false" aria-controls="collapseSIPsetup">
+                        <i class="bi bi-chevron-down"></i> Подключение SIP аппарата
+                      </a>
+                      <div class="collapse" id="collapseSIPsetup">
+                        <p>
+                          Необходимо ip-phone подключить к порту модема, который настроен на ИНТЕРНЕТ. После ip-phone должен получить ip-адрес по DHCP от модема.
+                          Все телефоны объединяются в общую сеть портом WAN с помощью коммутатора(ов) или роутера. Каждому телефону присваивается IP-адрес по DHCP (при наличии)
+                          или вручную, например из диапазона 192.168.100.0/24. Последний октет адреса будет внутренним номером телефона по по-умолчанию, например: 
+                          если IP-адрес телефона 192.168.100.101, то позвонить на него можно будет по номеру #101#.
+                        </p>
+                        <p>В настройках WEB-интерфейса телефона необходимо указать - сервер, порт, короткий номер домен.</p>
+                        <ul>
+                          <li>SIP Server - IP адреса SBC МГТС: <strong class="text-primary">10.24.0.16:5060 10.24.0.48:5060</strong></li>
+                          <li>Account Active - значение YES. </li>
+                          <li>SIP User ID - {внутренний номер}$Домен</li>
+                          <li>Authenticate ID - {внутренний номер}</li>
+                          <li>Authenticate Password - {пароль для внутреннего номера}</li>
+                          <li>Name - {имя, которое будет показываться при сработке услуги CLIP}</li>
+                          <li>Transport protocol - UDP (предпочтительнее)</li>
+                        </ul>
+                        <blockquote>Не забудьте после настройки вернуть подключение в порт настроенный на SIP</blockquote>
+                      </div>
+                    </span>
+
+                    <span class="d-block">
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseSIPextconf" role="button" aria-expanded="false" aria-controls="collapseSIPextconf">
+                        <i class="bi bi-chevron-down"></i> Тонкие настройки IP телефонии
+                      </a>
+                      <div class="collapse" id="collapseSIPextconf">
+                        <h5>Особенности и тонкие настройки</h5>
+                        <ul>
+                          <li>SIP Аппарат может работать по протоколу TCP или UDP, если аппарат поддерживает работу обоих протоколов, что лучше использовать UDP</li>
+                          <li>На аппарате должен быть отключен STUN-сервер, так как из-за этого могут возникнуть проблемы с прохождением трафика через NAT, что приводит к обрывам разговоров через аппарат. Должны быть выключены опции NAT Traversal и прокси-серверы</li> 
+                          <li>В настройках роутера (маршрутизатора), который раздает интернет в вашем офисе, должна быть отключена опция SIP - ALG. Если опция включена, она также приводит к обрывам разговоров через аппарат. (В роутере тоже должна быть выключена опция SIP ALG, по-умолчанию выключена)</li>
+                          <li>В настройках SIP-оборудования необходимо включить опцию keep alive либо уменьшить время регистрации до 180 (по умолчанию обычно 3600)</li>
+                          <li>Кодеки. Если есть возможность, указать приоритет использования: PCMA (G711a, G711 a-law), PCMU (G711u, G711 u-law), G729, RTP Packet size (время пакетизации) 20 мс</li>
+                        </ul>
+                      </div>
+                    </span>
+
+                    <span class="d-block">
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseSIPdtmf" role="button" aria-expanded="false" aria-controls="collapseSIPdtmf">
+                        <i class="bi bi-chevron-down"></i> Настроить DTMF на SIP телефоне FANVIL
+                      </a>
+                      <div class="collapse" id="collapseSIPdtmf">
+                        <p>
+                          Необходимо ip-phone подключить к порту модема, который настроен на ИНТЕРНЕТ. После ip-phone должен получить ip-адрес по DHCP от модема. 
+                          Для просмотра этого ip-адреса необходимо нажать кнопку справа от надписи INFO. Модем 4857511223344E40. 
+                          Далее переключить в порт SIP телефона зайти по адресу на настройки веб. интерфейс телефона. 
+                          Далее - SIP - LINE - DTMF - необходимо выставить IN/AUDIO или IN/bend. Остальные 2 режим RFS2833 - выкл. SIP INFO - выкл. 
+                          После этого проверить переадресацию вызова *# (должна быть музыка) далее короткий номер и #. 
+                        </p>
+                      </div>
+                    </span>
+
+                    <span class="d-block">
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseSIPblf" role="button" aria-expanded="false" aria-controls="collapseSIPblf">
+                        <i class="bi bi-chevron-down"></i> Индикация занятости линий на SIP-телефонах (BLF)
+                      </a>
+                      <div class="collapse" id="collapseSIPblf">
+                        <p>
+                          BLF (Busy Lamp Field) – это функция SIP-телефонов, которая позволяет отслеживать текущее состояние линий других абонентов вашей Виртуальной/Облачной АТС с помощью светящихся индикаторов.
+                          Различаются три состояния линии: свободна (Idle), идет вызов (Ringing), занята (Connected/Busy).
+                          Если линия не зарегистрирована, ее состояние будет показано как «свободна».
+                          Если нажать на кнопку BLF для свободной линии, то на нее будет произведен вызов.
+                        </p>
+                      </div>
+                    </span>
+
+                    <span class="d-block">
+                      <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseSIPtrace" role="button" aria-expanded="false" aria-controls="collapseSIPtrace">
+                        <i class="bi bi-chevron-down"></i> SIP типы сигнальных сообщений
+                      </a>
+                      <div class="collapse" id="collapseSIPtrace">
+                        <a href="../assets/img/faq/SIP-signal-messsages.jpg" target="_blank"><img src="../assets/img/faq/SIP-signal-messsages.jpg" class="img-fluid" alt=""></a> 
+                        <p>В ЅІР определены два типа сигнальных сообщений - запрос и ответ. Также существует шесть процедур:</p>
+                        <ul>
+                          <li>INVITE (приглашение) — приглашает пользователя принять участие в сеансе связи (служит для установления нового соединения; может содержать параметры для согласования);</li>
+                          <li>ВѴЕ (разъединение) - завершает соединение между двумя пользователями;</li>
+                          <li>OPTIONS (опции) — используется для передачи информации о поддерживаемых характеристиках (эта передача может осуществляться напрямую между двумя агентами пользователей или через сервер ЅIP);</li>
+                          <li>АСК (подтверждение) — используется для подтверждения получения сообщения или для положительного ответа на команду INVITE;</li>
+                          <li>CANCEL (отмена) - прекращает поиск пользователя;</li>
+                          <li>REGISTER (регистрация) — передает информацию о местоположении пользователя на сервер ЅІР, который может транслировать ее на сервер адресов (Location Server).</li>
+                        </ul>
+
+                        <h5>Ответы на запросы</h5>
+                        <p>Ответы на запросы сообщают о результате обработки запроса либо передают запрошенную информацию. 
+                          Структуру ответов и их виды протокол SIP унаследовал от протокола HTTP. Определено шесть типов ответов, несущих разную функциональную нагрузку. 
+                          Тип ответа кодируется трёхзначным числом, самой важной является первая цифра, которая определяет класс ответа:
+                        </p>
+                        <ul>
+                          <li>1ХХ — информационные ответы; показывают, что запрос находится в стадии обработки. Наиболее распространённые ответы данного типа — 100 Trying, 180 Ringing, 183 Session Progress.</li>
+                          <li>2ХХ — финальные ответы, означающие, что запрос был успешно обработан. В настоящее время в данном типе определены только два ответа — 200 OK и 202 Accepted(прим. 202 кода нет в RFC 3261).</li>
+                          <li>3ХХ — финальные ответы, информирующие оборудование вызывающего пользователя о новом местоположении вызываемого пользователя, например, ответ 302 Moved Temporary.</li>
+                          <li>4ХХ — финальные ответы, информирующие об отклонении или ошибке при обработке или выполнении запроса, например, 403 Forbidden или классический для протокола HTTP ответ 404 Not Found. Другие примеры: 406 Not Acceptable — неприемлемый (по содержанию) запрос, 486 Busy Here — абонент занят или 487 Request Terminated — вызывающий пользователь разорвал соединение не дожидаясь ответа (отмена запроса).</li>
+                          <li>5ХХ — финальные ответы, информирующие о том, что запрос не может быть обработан из-за отказа сервера, 500 Server Internal Error.</li>
+                          <li>6ХХ — финальные ответы, информирующие о том, что соединение с вызываемым пользователем установить невозможно, например, ответ 603 Decline означает, что вызываемый пользователь отклонил входящий вызов.</li>
+                        </ul>
+                        <a href="https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D1%82%D0%BE%D0%BA%D0%BE%D0%BB_%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F_%D1%81%D0%B5%D0%B0%D0%BD%D1%81%D0%B0" target="_blank">Википедия - Протокол установления сеанса SIP</a>
+                      </div>
+                    </span>
+
+                    <ul class="list-unstyled">
+                      <li><a href="https://chat.datacenter.by/index.php/f/1465589" target="_blank" class="icon-link icon-link-hover"><i class="bi bi-cloud"></i> Настройка SIP телефонов</a></li>
+                    </ul>
                   </div>
                 </div>
 
