@@ -380,7 +380,8 @@
             <div class="row">
               <div class="col-sm-6">
                 <h3 class="mb-0 text-secondary"><i class="bi bi-router"></i> Информация по оборудованию</h3>
-                <p>Последнее обновление: <strong class="text-secondary">28/10/2026</strong> содержит описание для <span id="totalEquipModels"></span></p> 
+                <!-- <p>Последнее обновление: <strong class="text-secondary">28/10/2026</strong> содержит описание для <span id="totalEquipModels"></span></p>  -->
+                <p>Последнее обновление: <strong class="text-secondary">29/10/2026</strong></p> 
               </div>
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-end">
@@ -523,6 +524,21 @@
                     <h3><i class="bi bi-router-fill"></i> PON ONT/ONU</h3>
                     <div class="table-responsive">
                       <!-- <table id="tableOnu" class="table table-striped table-hover searchable" data-sb-input-class="form-control"> -->
+                      <div class="alert alert-light" role="alert">
+                        <strong>ONT (Optical Network Terminal или оптический сетевой терминал)</strong> - абонентское устройство, которое устанавливается в квартире или доме для подключения к оптоволоконной сети по технологии GPON.
+                        Главная задача любого ONT — преобразовывать входящий световой (оптический) сигнал из волокна в электрический цифровой сигнал и наоборот.
+                        ONT работает с оптикой напрямую, тогда как обычный роутер подключается уже к нему (через кабель Ethernet) для распределения интернета по дому.
+                        <a class="nav-link" data-bs-toggle="collapse" href="#collapseONTinfo" role="button" aria-expanded="false" aria-controls="collapseONTinfo">
+                          <i class="bi bi-caret-down-fill"></i> Особенности характерные для всех ONT/ONU:
+                        </a>
+                        <div class="collapse" id="collapseONTinfo">
+                          <ul>
+                            <li>Каждое устройство имеет уникальный идентификатор (например, GPON Serial Number или ONU ID), по которому оно регистрируется и авторизуется на станции провайдера (OLT).</li>
+                            <li>Удаленное управление и настройка со стороны провайдера через стандартные протоколы (чаще всего OMCI в сетях GPON или TR-069).</li>
+                            <li>Vendor-lock - ONT не будет работать на блоке другого производителя (За исключением универсальных прошивок на некоторых двух-диапазонных модемов).</li>
+                          </ul>
+                        </div>
+                      </div>
                       <table class="table table-striped table-hover">
                       <thead>
                         <tr>
@@ -1118,6 +1134,17 @@
                     <h3 id="dual-band"><i class="bi bi-broadcast"></i> Dual-Band PON ONT/ONU</h3>
                     <div class="table-responsive">
                       <!-- <table id="tableOnu" class="table table-striped table-hover searchable" data-sb-input-class="form-control"> -->
+                      <div class="alert alert-light" role="alert">
+                        <strong>Двухдиапазонный терминал (Dual-Band ONT)</strong> — беспроводной Терминал, который одновременно транслирует две разные Wi-Fi-сети на частотах 2,4 ГГц и 5 ГГц.
+                        <a class="nav-link" data-bs-toggle="collapse" href="#collapseDualBandinfo" role="button" aria-expanded="false" aria-controls="collapseDualBandinfo">
+                          <i class="bi bi-caret-down-fill"></i> Особенности характерные для всех Dual-Band терминалов:
+                        </a>
+                        <div class="collapse" id="collapseDualBandinfo">
+                          <ul>
+                            <li>Все двух-диапазонные терминалы выдаваемые Белтелеком на базе технологии GPON имеют только 1 FXS порт для телефонии</li>
+                          </ul>
+                        </div>
+                      </div>
                       <table class="table table-striped table-hover">
                       <thead>
                         <tr>
@@ -1546,6 +1573,19 @@
                   <div class="card-body">
                     
                     <h3 id="iad"><i class="bi bi-telephone-inbound"></i> IAD терминалы</h3>
+                    <div class="alert alert-light" role="alert">
+                      <strong>IAD (Integrated Access Device)</strong> — это устройство интегрированного доступа, которое совмещает в себе функции модема/маршрутизатора для передачи данных (интернета) и голосового шлюза (VoIP) для подключения телефонии.
+                      <a class="nav-link" data-bs-toggle="collapse" href="#collapseIADinfo" role="button" aria-expanded="false" aria-controls="collapseIADinfo">
+                        <i class="bi bi-caret-down-fill"></i> Особенности характерные для всех IAD терминалов:
+                      </a>
+                      <div class="collapse" id="collapseIADinfo">
+                        <ul>
+                          <li>Ключевое отличие от обычных ADSL модемов это наличие FXS портов (RJ-11), которые служат для подключения стандартных аналоговых домашних телефонов или факсов.</li>
+                          <li>Поддержка протоколов IP-телефонии (VoIP) для регистрации телефонных номеров у провайдера.</li>
+                          <li>Модемы выдаваемые Белтелеком на базе технологии ADSL в стандартных прошивках работают только с IPv4, <u>нет поддержки IPv6</u></li>
+                        </ul>
+                      </div>
+                    </div>
                     <div class="table-responsive">
                       <table class="table table-striped table-hover">
                       <thead>
@@ -1822,6 +1862,22 @@
                     </div>
 
                     <h3 id="adsl"><i class="bi bi-ethernet"></i> ADSL модемы</h3>
+                    
+                    <div class="alert alert-light" role="alert">
+                      <strong>ADSL-модем</strong> — это устройство для подключения к интернету через обычную медную телефонную линию с использованием технологии ADSL (асимметричная цифровая абонентская линия), при которой скорость скачивания данных выше, чем скорость отдачи.
+                      <a class="nav-link" data-bs-toggle="collapse" href="#collapseADSLinfo" role="button" aria-expanded="false" aria-controls="collapseADSLinfo">
+                        <i class="bi bi-caret-down-fill"></i> Особенности характерные для всех ADSL модемов:
+                      </a>
+                      <div class="collapse" id="collapseADSLinfo">
+                        <ul>
+                          <li><a href="https://www.dlink.ru/ru/faq/141/793.html" target="_blank">Асимметричная передача данных</a> - cкорость загрузки информации (download) всегда выше, чем скорость отдачи (upload).</li>
+                          <li>На корпусе каждого такого модема обязательно присутствует порт WAN/DSL под телефонный кабель RJ-11.</li>
+                          <li>Обязательное использование сплиттеров или микрофильтров которые разделяют высокочастотный интернет-сигнал и низкочастотный голосовой сигнал, чтобы они не создавали взаимных помех</li>
+                          <li>Модемы выдаваемые Белтелеком на базе технологии ADSL в стандартных прошивках работают только с IPv4, <u>нет поддержки IPv6</u></li>
+                        </ul>
+                      </div>
+                    </div>
+
                     <div class="table-responsive">
                       <table class="table table-striped table-hover">
                       <thead>
@@ -2412,6 +2468,20 @@
                     </div>
                     
                     <h3 id="vdsl"><i class="bi bi-speedometer"></i> VDSL модемы</h3>
+                    <div class="alert alert-light" role="alert">
+                      <strong>VDSL-модемы (Very High-Speed Digital Subscriber Line)</strong> передают данные по обычным медным телефонным линиям с очень высокой скоростью, но на более коротких дистанциях, чем ADSL.
+                      <a class="nav-link" data-bs-toggle="collapse" href="#collapseVDSLinfo" role="button" aria-expanded="false" aria-controls="collapseVDSLinfo">
+                        <i class="bi bi-caret-down-fill"></i> Особенности характерные для всех VDSL модемов:
+                      </a>
+                      <div class="collapse" id="collapseVDSLinfo">
+                        <ul>
+                          <li>В стандарте VDSL скорость достигает до 52–56 Мбит/с, а в развитом стандарте VDSL2 скорость может составлять до 100–200 Мбит/с на коротких дистанциях.</li>
+                          <li>Максимальная скорость доступна только на небольших дистанциях (обычно до 300–500 метров от распределительного шкафа или станции провайдера).</li>
+                          <li>VDSL поддерживает работу в симметричном режиме (когда скорость от абонента и к абоненту одинакова).</li>
+                          <li>Большинство современных VDSL/VDSL2-модемов умеют работать со старыми протоколами ADSL/ADSL2+.</li>
+                        </ul>
+                      </div>
+                    </div>
                     <div class="table-responsive">
                       <table class="table table-striped table-hover">
                       <thead>
@@ -4326,11 +4396,11 @@
         }
       });
 
-      const equipTotal = document.querySelectorAll('.collapse');
-      const totalEquipModels = document.querySelector('#totalEquipModels');
-      if (totalEquipModels) {
-        totalEquipModels.innerHTML = `<b class="text-secondary">${equipTotal.length}</b> моделей`;
-      }
+      // const equipTotal = document.querySelectorAll('.collapse');
+      // const totalEquipModels = document.querySelector('#totalEquipModels');
+      // if (totalEquipModels) {
+      //   totalEquipModels.innerHTML = `<b class="text-secondary">${equipTotal.length}</b> моделей`;
+      // }
     </script>
 
   </body>
