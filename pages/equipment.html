@@ -525,9 +525,11 @@
                     <div class="table-responsive">
                       <!-- <table id="tableOnu" class="table table-striped table-hover searchable" data-sb-input-class="form-control"> -->
                       <div class="alert alert-light" role="alert">
-                        <strong>ONT (Optical Network Terminal или оптический сетевой терминал)</strong> - абонентское устройство, которое устанавливается в квартире или доме для подключения к оптоволоконной сети по технологии GPON.
-                        Главная задача любого ONT — преобразовывать входящий световой (оптический) сигнал из волокна в электрический цифровой сигнал и наоборот.
-                        ONT работает с оптикой напрямую, тогда как обычный роутер подключается уже к нему (через кабель Ethernet) для распределения интернета по дому.
+                        <p>
+                          <strong>ONT (Optical Network Terminal)</strong> - абонентское устройство для подключения к оптоволоконной сети по технологии GPON.
+                          Главная задача любого ONT — преобразовывать входящий световой (оптический) сигнал из волокна в электрический цифровой сигнал и наоборот.
+                          <!-- ONT работает с оптикой напрямую, тогда как обычный роутер подключается уже к нему (через кабель Ethernet) для распределения интернета по дому. -->
+                        </p>
                         <a class="nav-link" data-bs-toggle="collapse" href="#collapseONTinfo" role="button" aria-expanded="false" aria-controls="collapseONTinfo">
                           <i class="bi bi-caret-down-fill"></i> Особенности характерные для всех ONT/ONU:
                         </a>
@@ -889,6 +891,8 @@
                                 <li>Шлюз: <a href="http://192.168.100.1" target="_blank">192.168.100.1</a> вход с правами Администратора: <strong class="text-danger">telecomadmin / admintelecom</strong>, для пользователя <strong class="text-warning">root / admin</strong></li>
                                 <li><strong class="text-primary">Reset</strong> и <strong class="text-primary">WLAN</strong> расположены на боковой панели</li>
                                 <li><strong class="text-primary">WLAN</strong> включается удержанием более 3-х секунд</li>
+                                <li>Питание: Блок питания 12V / 1A (потребляемая мощность до 12 Вт)</li>
+                                <li>Габариты и вес: 168 × 115 × 30 мм, вес около 220 г</li>
                               </ul>
                             </div>
                           </td>
@@ -911,7 +915,7 @@
                             </a> 
                             <span class="badge bg-success"><i class="bi bi-usb-symbol"></i>USB</span>
                           </td>
-                          <td>Нет</td>
+                          <td>Нет <i class="bi bi-wifi-off"></i></td>
                           <td>
                             <a class="navbar-brand" title="Nextcloud информация по оборудованию" target="_blank"
                             href="https://chat.datacenter.by/index.php/f/7475778" aria-label="Up">
@@ -1135,7 +1139,10 @@
                     <div class="table-responsive">
                       <!-- <table id="tableOnu" class="table table-striped table-hover searchable" data-sb-input-class="form-control"> -->
                       <div class="alert alert-light" role="alert">
-                        <strong>Двухдиапазонный терминал (Dual-Band ONT)</strong> — беспроводной Терминал, который одновременно транслирует две разные Wi-Fi-сети на частотах 2,4 ГГц и 5 ГГц.
+                        <p>
+                          <strong>Двухдиапазонный терминал (Dual-Band ONT)</strong> — беспроводной Терминал, который одновременно транслирует две разные Wi-Fi-сети на частотах 2,4 ГГц и 5 ГГц.
+                        </p>
+                        
                         <a class="nav-link" data-bs-toggle="collapse" href="#collapseDualBandinfo" role="button" aria-expanded="false" aria-controls="collapseDualBandinfo">
                           <i class="bi bi-caret-down-fill"></i> Особенности характерные для всех Dual-Band терминалов:
                         </a>
@@ -1574,7 +1581,9 @@
                     
                     <h3 id="iad"><i class="bi bi-telephone-inbound"></i> IAD терминалы</h3>
                     <div class="alert alert-light" role="alert">
-                      <strong>IAD (Integrated Access Device)</strong> — это устройство интегрированного доступа, которое совмещает в себе функции модема/маршрутизатора для передачи данных (интернета) и голосового шлюза (VoIP) для подключения телефонии.
+                      <p>
+                        <strong>IAD (Integrated Access Device)</strong> — это устройство интегрированного доступа, которое совмещает в себе функции модема/маршрутизатора для передачи данных (интернета) и голосового шлюза (VoIP) для подключения телефонии.
+                      </p>
                       <a class="nav-link" data-bs-toggle="collapse" href="#collapseIADinfo" role="button" aria-expanded="false" aria-controls="collapseIADinfo">
                         <i class="bi bi-caret-down-fill"></i> Особенности характерные для всех IAD терминалов:
                       </a>
@@ -1864,7 +1873,9 @@
                     <h3 id="adsl"><i class="bi bi-ethernet"></i> ADSL модемы</h3>
                     
                     <div class="alert alert-light" role="alert">
-                      <strong>ADSL-модем</strong> — это устройство для подключения к интернету через обычную медную телефонную линию с использованием технологии ADSL (асимметричная цифровая абонентская линия), при которой скорость скачивания данных выше, чем скорость отдачи.
+                      <p>
+                        <strong>ADSL-модем</strong> — это устройство для подключения к интернету через обычную медную телефонную линию с использованием технологии ADSL (асимметричная цифровая абонентская линия), при которой скорость скачивания данных выше, чем скорость отдачи.
+                      </p>
                       <a class="nav-link" data-bs-toggle="collapse" href="#collapseADSLinfo" role="button" aria-expanded="false" aria-controls="collapseADSLinfo">
                         <i class="bi bi-caret-down-fill"></i> Особенности характерные для всех ADSL модемов:
                       </a>
@@ -1910,7 +1921,7 @@
                             </a> 
                             <span class="badge bg-danger"><i class="bi bi-usb-symbol"></i>no USB</span>
                           </td>
-                          <td>Нет</td>
+                          <td>Нет <i class="bi bi-wifi-off"></i></td>
                           <td>
                             <a class="navbar-brand" title="Паспорт модема" target="_blank"
                              href="https://www.192-168-1-1-ip.co/manuals/4808.pdf" aria-label="Up">
@@ -2079,7 +2090,7 @@
                             </a>
                             <span class="badge bg-danger"><i class="bi bi-usb-symbol"></i>no USB</span>
                           </td>
-                          <td>Нет</td>
+                          <td>Нет <i class="bi bi-wifi-off"></i></td>
                           <td>
                             <a class="navbar-brand" title="Инструкция по настройке" target="_blank"
                             href="http://www.vrn123.ru/wiki/services/xdsl/manuals/huawei/mt88x" aria-label="Up">
@@ -2124,7 +2135,7 @@
                             </a>
                             <span class="badge bg-danger"><i class="bi bi-usb-symbol"></i>no USB</span>
                           </td>
-                          <td>Нет</td>
+                          <td>Нет <i class="bi bi-wifi-off"></i></td>
                           <td>
                             <a class="navbar-brand" title="Паспорт модема" target="_blank"
                             href="https://www.manualslib.com/manual/764620/Huawei-Echolife-Hg510-Home-Gateway.html#product-EchoLife%20HG510" aria-label="Up">
@@ -2326,7 +2337,14 @@
                         <tr class="old-equipment">
                           <td colspan="7">
                             <div class="collapse" id="collapse5200G">
+                              <a href="../assets/img/equip/5200.jpg" target="_blank"><img src="../assets/img/equip/5200.jpg" height="500" width="500" class="img-fluid rounded" alt=""></a>
+                              <p>
+                                <a href="https://chat.datacenter.by/index.php/f/7437078" target="_blank" class="btn btn-outline-secondary">Документация</a>
+                              </p>
                               <ul>
+                                <li><strong>Billion BiPAC</strong> считается морально устаревшим. Однако за счет «неубиваемой» аппаратной базы (чипы TrendChip/Ralink) эти устройства до сих пор исправно работают в качестве надежных мостов (Bridge) или роутеров в тех населенных пунктах, где интернет всё еще подается по старым телефонным линиям ADSL</li>
+                                <li><strong class="text-primary">BiPAC 5200 (или 5200S / 5200S RC)</strong> - Чисто проводная базовая модель. Включает ADSL-порт и 4 порта LAN. <u>Беспроводной связи (Wi-Fi) в ней нет.</u></li>
+                                <li><strong class="text-primary">BiPAC 5200G (5200G RC / R4)</strong> - Версия с поддержкой Wi-Fi старого стандарта 802.11g (скорость беспроводной сети до 54 Мбит/с).</li>
                                 <li>Модем по умолчанию имеет шлюз 192.168.1.254, нужно учитывать данную особенность при настройке сетевой</li>
                                 <li><strong class="text-primary">Reset</strong> расположен на задней панели рядом с подключением блока питания. Удерживать 10 секунд</li>
                               </ul>
@@ -2336,7 +2354,7 @@
                         <tr class="old-equipment">
                           <td>
                             <a class="nav-link" data-bs-toggle="collapse" href="#collapse5102S" role="button" aria-expanded="false" aria-controls="collapse5102S">
-                              <i class="bi bi-chevron-down"></i> Billion BiPAC 5102S
+                              <i class="bi bi-chevron-down"></i> Billion BiPAC 5102
                             </a>
                           </td>
                           <td><a href="http://192.168.1.254" target="_blank"><small>192.168.1.254</small></a></td>
@@ -2351,14 +2369,7 @@
                             </a>
                             <span class="badge bg-danger"><i class="bi bi-usb-symbol"></i>no USB</span>
                           </td>
-                          <td>
-                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="Wi-fi 3 - 802.11b/g - 2.4Ghz">
-                              <span class="badge" style="background-color: SteelBlue;"><i class="bi bi-wifi"></i> Wi-fi 3</span>
-                            </a>
-                            <a href="#" style="text-decoration: none;" data-bs-toggle="tooltip" data-bs-title="WPA 2 (Wi-Fi Protected Access 2) также известный как WPA2-Personal, тип шифрования PSK (Pre-Shared Key)">
-                              <span class="badge" style="background-color: gray;">WPA2</span>
-                            </a>
-                          </td>
+                          <td>Нет <i class="bi bi-wifi-off"></i></td>
                           <td>
                             <a class="navbar-brand" title="Паспорт модема" target="_blank"
                             href="https://www.solwise.co.uk/downloads/files/billion-5102series-manual.pdf" aria-label="Up">
@@ -2374,9 +2385,16 @@
                         <tr class="old-equipment">
                           <td colspan="7">
                             <div class="collapse" id="collapse5102S">
+                              <a href="../assets/img/equip/5102S.jpg" target="_blank"><img src="../assets/img/equip/5102S.jpg" height="500" width="500" class="img-fluid rounded" alt=""></a>
+                              <p>
+                                <a href="https://chat.datacenter.by/index.php/f/7437399" target="_blank" class="btn btn-outline-secondary">Документация</a>
+                              </p>
                               <ul>
+                                <li>BiPAC 5102 имеет <strong class="text-warning">4 Ethernet</strong> порта, а модель 5102S оснащена всего одним LAN-портом 10/100 Мбит/с.</li>
                                 <li>Модем по умолчанию имеет шлюз 192.168.1.254, нужно учитывать данную особенность при настройке сетевой</li>
                                 <li><strong class="text-primary">Reset</strong> расположен на задней панели рядом с подключением блока питания. Удерживать 10 секунд</li>
+                                <li>Аппаратная особенность спецификации 5102S — использование блока питания 1A на 9V AC (переменного тока), в отличие от старшей модели 5102 которая питалась от 12V DC 1A</li>
+                                <li>Это полностью проводное устройство. Беспроводной модуль в данной модели отсутствует <i class="bi bi-wifi-off"></i>.</li>
                               </ul>
                             </div>
                           </td>
@@ -2399,7 +2417,7 @@
                             </a>
                             <span class="badge bg-danger"><i class="bi bi-usb-symbol"></i>no USB</span>
                           </td>
-                          <td>Нет</td>
+                          <td>Нет <i class="bi bi-wifi-off"></i></td>
                           <td>
                             <a class="navbar-brand" title="Паспорт модема" target="_blank"
                             href="https://www.manualslib.com/products/Siemens-Cl-010-I-351449.html" aria-label="Up">
@@ -2415,6 +2433,10 @@
                         <tr class="old-equipment">
                           <td colspan="7">
                             <div class="collapse" id="collapseCL-010">
+                              <a href="../assets/img/equip/Siemens-CL-010.jpg" target="_blank"><img src="../assets/img/equip/Siemens-CL-010.jpg" height="500" width="500" class="img-fluid rounded" alt=""></a>
+                              <p>
+                                <a href="https://chat.datacenter.by/index.php/f/7473348" target="_blank" class="btn btn-outline-secondary">Документация</a>
+                              </p>
                               <ul>
                                 <li><strong class="text-primary">Reset</strong> расположен на задней панели рядом с подключением блока питания. Удерживать 10 секунд</li>
                                 <li><i class="bi bi-wifi-off"></i>Нет Wi-Fi модуля</li>
@@ -2440,7 +2462,7 @@
                             </a>
                             <span class="badge bg-danger"><i class="bi bi-usb-symbol"></i>no USB</span>
                           </td>
-                          <td>Нет</td>
+                          <td>Нет <i class="bi bi-wifi-off"></i></td>
                           <td>
                             <a class="navbar-brand" title="Паспорт модема" target="_blank"
                             href="https://ftp.dlink.ru/pub/ADSL/DSL-2540U_BRU_C2/Description/NRU/DSL-2540UBRUC2_User%20Manual_v.1.1_RU.pdf" aria-label="Up">
@@ -2456,6 +2478,10 @@
                         <tr class="old-equipment">
                           <td colspan="7">
                             <div class="collapse" id="collapseDSL-2540U">
+                              <a href="../assets/img/equip/DSL-2540U.jpg" target="_blank"><img src="../assets/img/equip/DSL-2540U.jpg" height="500" width="500" class="img-fluid rounded" alt=""></a>
+                              <p>
+                                <a href="https://chat.datacenter.by/index.php/f/7473331" target="_blank" class="btn btn-outline-secondary">Документация</a>
+                              </p>
                               <ul>
                                 <li><i class="bi bi-wifi-off"></i>Нет Wi-Fi модуля</li>
                                 <li><strong class="text-primary">Reset</strong> расположен на задней панели рядом с подключением блока питания. Удерживать 10 секунд</li>
@@ -2469,7 +2495,9 @@
                     
                     <h3 id="vdsl"><i class="bi bi-speedometer"></i> VDSL модемы</h3>
                     <div class="alert alert-light" role="alert">
-                      <strong>VDSL-модемы (Very High-Speed Digital Subscriber Line)</strong> передают данные по обычным медным телефонным линиям с очень высокой скоростью, но на более коротких дистанциях, чем ADSL.
+                      <p>
+                        <strong>VDSL-модемы (Very High-Speed Digital Subscriber Line)</strong> передают данные по обычным медным телефонным линиям с очень высокой скоростью, но на более коротких дистанциях, чем ADSL.
+                      </p>
                       <a class="nav-link" data-bs-toggle="collapse" href="#collapseVDSLinfo" role="button" aria-expanded="false" aria-controls="collapseVDSLinfo">
                         <i class="bi bi-caret-down-fill"></i> Особенности характерные для всех VDSL модемов:
                       </a>
@@ -2514,7 +2542,7 @@
                             </a>
                             <span class="badge bg-danger"><i class="bi bi-usb-symbol"></i>no USB</span>
                           </td>
-                          <td>Нет</td>
+                          <td>Нет <i class="bi bi-wifi-off"></i></td>
                           <td>
                             <a class="navbar-brand" title="Паспорт модема" target="_blank"
                             href="http://www.vrn123.ru/wiki/services/xdsl/manuals/zyxel/660" aria-label="Up">
@@ -2561,7 +2589,7 @@
                             </a>
                             <span class="badge bg-danger"><i class="bi bi-usb-symbol"></i>no USB</span>
                           </td>
-                          <td>Нет</td>
+                          <td>Нет <i class="bi bi-wifi-off"></i></td>
                           <td>
                             <a class="navbar-brand" title="Паспорт модема" target="_blank"
                             href="http://download.from.zyxel.ru/download/b9c6a289-26e4-4fd6-9615-48cb767788a5/Prestige-841C-ref.pdf" aria-label="Up">
@@ -2794,6 +2822,22 @@
                   <div class="card-body">
 
                     <h3><i class="bi bi-house-up-fill"></i> Контроллеры</h3>
+                    
+                    <div class="alert alert-light" role="alert">
+                      <p>
+                        <strong>Smart Home Gateway</strong> — это центральное устройство для управления экосистемой умного дома, которое связывает беспроводные датчики в единую сеть и обеспечивает выход в интернет.
+                        <!-- ONT работает с оптикой напрямую, тогда как обычный роутер подключается уже к нему (через кабель Ethernet) для распределения интернета по дому. -->
+                      </p>
+                      <!-- <a class="nav-link" data-bs-toggle="collapse" href="#collapseSmartHomeInfo" role="button" aria-expanded="false" aria-controls="collapseSmartHomeInfo">
+                        <i class="bi bi-caret-down-fill"></i> Особенности характерные для всех контроллеров
+                      </a>
+                      <div class="collapse" id="collapseSmartHomeInfo">
+                        <ul>
+                          <li></li>
+                        </ul>
+                      </div> -->
+                    </div>
+
                     <div class="table-responsive">
                       <table class="table table-striped table-hover">
                       <thead>
@@ -2944,6 +2988,11 @@
                   <div class="card-body">
                     
                     <h3><i class="bi bi-sd-card"></i> GSM / LTE</h3>
+                    <div class="alert alert-light" role="alert">
+                      <p>
+                        3G/4G (LTE) Wi-Fi-роутеры со встроенным модемом и слотом для SIM-карты, предназначенные для обеспечения интернетом дома, на даче или в офисе, где нет возможности провести проводной интернет.
+                      </p>
+                    </div>
                     <div class="table-responsive">
                       <table class="table table-striped table-hover">
                       <thead>
@@ -3050,7 +3099,7 @@
                           <td>Нет</td>
                           <td>2G / 3G (UMTS)</td>
                           <td>Нет</td>
-                          <td>Нет</td>
+                          <td>Нет <i class="bi bi-wifi-off"></i></td>
                           <td>
                             <a class="navbar-brand" title="Паспорт модема" target="_blank"
                             href="https://www.manualslib.com/manual/1087717/Huawei-E173.html" aria-label="Up">
@@ -3092,7 +3141,7 @@
                           <td>Нет</td>
                           <td>WiMax</td>
                           <td>Нет</td>
-                          <td>Нет</td>
+                          <td>Нет <i class="bi bi-wifi-off"></i></td>
                           <td>
                             <a class="navbar-brand" title="Паспорт модема" target="_blank"
                             href="https://www.manualslib.com/manual/673078/Huawei-Wimax-Usb-Stick.html" aria-label="Up">
@@ -3143,6 +3192,13 @@
                 <div class="card h-100">
                   <div class="card-body">
                     <h3><i class="bi bi-router"></i> Роутеры</h3>
+
+                    <div class="alert alert-light" role="alert">
+                      <p>
+                        Wi-Fi маршрутизатор (или роутер) — это сетевое устройство, которое связывает вашу домашнюю или офисную сеть с интернетом от провайдера, и распределяет этот сигнал по проводам либо через беспроводную сеть Wi-Fi на смартфоны, ноутбуки и другие гаджеты.
+                      </p>
+                    </div>
+
                     <div class="table-responsive">
                       <table class="table table-striped table-hover">
                       <thead>
@@ -3410,6 +3466,13 @@
                   <div class="card-body">
                     
                     <h3><i class="bi bi-radar"></i> WLL-Терминалы</h3>
+
+                    <div class="alert alert-light" role="alert">
+                      <p>
+                        WLL-терминал — это специальное абонентское устройство (радиотерминал), которое позволяет подключить обычный стационарный телефон или телефонную линию к фиксированной сети связи через радиоканал
+                      </p>
+                    </div>
+
                     <div class="table-responsive">
                       <table class="table table-striped table-hover">
                       <thead>
@@ -3569,6 +3632,13 @@
                 <div class="card h-100">
                   <div class="card-body">
                     <h3><i class="bi bi-usb-c"></i> TV-Приставки</h3>
+                    
+                    <div class="alert alert-light" role="alert">
+                      <p>
+                        STB-приставка (Set-Top Box или телеприставка) — это абонентское электронное устройство, которое принимает сигнал цифрового телевидения или интернет-видеоконтента и преобразует его в формат, понятный телевизору.
+                      </p>
+                    </div>
+
                     <div class="table-responsive">
                       <table class="table table-striped table-hover">
                       <thead>
@@ -3604,7 +3674,7 @@
                             </a>
                             <span class="badge bg-success"><i class="bi bi-usb-symbol"></i>USB</span>
                           </td>
-                          <td>Нет</td>
+                          <td>Нет <i class="bi bi-wifi-off"></i></td>
                           <td>
                             <a class="navbar-brand" title="Инструкция по настройке" target="_blank"
                             href="https://www.beltelecom.by/sites/default/files/content/zala/rukovodstvo_polzovatelia/manual_ZALA_efirnoe_meta-jun-2023.doc" aria-label="Up">
@@ -3665,7 +3735,7 @@
                             </a>
                             <span class="badge bg-success"><i class="bi bi-usb-symbol"></i>USB</span>
                           </td>
-                          <td>Нет</td>
+                          <td>Нет <i class="bi bi-wifi-off"></i></td>
                           <td>
                             <a class="navbar-brand" title="Инструкция по настройке" target="_blank"
                             href="https://www.beltelecom.by/sites/default/files/content/zala/rukovodstvo_polzovatelia/Instruktciia-tiuner-Vitiaz.pdf" aria-label="Up">
@@ -3735,7 +3805,7 @@
                             </a>
                             <span class="badge bg-success"><i class="bi bi-usb-symbol"></i>2 USB</span>
                           </td>
-                          <td>Нет</td>
+                          <td>Нет <i class="bi bi-wifi-off"></i></td>
                           <td>
                             <a class="navbar-brand" title="Nextcloud информация по оборудованию" target="_blank"
                             href="https://chat.datacenter.by/index.php/f/1464968" aria-label="Up">
@@ -3794,7 +3864,7 @@
                             </a>
                             <span class="badge bg-success"><i class="bi bi-usb-symbol"></i>2 USB</span>
                           </td>
-                          <td>Нет</td>
+                          <td>Нет <i class="bi bi-wifi-off"></i></td>
                           <td>
                             <a class="navbar-brand" title="Инструкция по настройке" target="_blank"
                             href="https://lan1.by/1982" aria-label="Up">
@@ -3854,7 +3924,7 @@
                             </a>
                             <span class="badge bg-success"><i class="bi bi-usb-symbol"></i>2 USB</span>
                           </td>
-                          <td>Нет</td>
+                          <td>Нет <i class="bi bi-wifi-off"></i></td>
                           <td>
                             <a class="navbar-brand" title="Инструкция по настройке" target="_blank"
                             href="https://www.beltelecom.by/sites/default/files/content/zala/rukovodstvo_polzovatelia/rukovodstvo_polzovatelia_IPTV-2019.doc" aria-label="Up">
@@ -3929,7 +3999,7 @@
                             </a>
                             <span class="badge bg-success"><i class="bi bi-usb-symbol"></i>2 USB</span>
                           </td>
-                          <td>Нет</td>
+                          <td>Нет <i class="bi bi-wifi-off"></i></td>
                           <td>
                             <a class="navbar-brand" title="Инструкция по настройке" target="_blank"
                             href="https://www.beltelecom.by/sites/default/files/content/zala/rukovodstvo_polzovatelia/rukovodstvo_polzovatelia_IPTV-2019.doc" aria-label="Up">
@@ -3996,7 +4066,7 @@
                             </a>
                             <span class="badge bg-success"><i class="bi bi-usb-symbol"></i>2 USB</span>
                           </td>
-                          <td>Нет</td>
+                          <td>Нет <i class="bi bi-wifi-off"></i></td>
                           <td>
                             <a class="navbar-brand" title="Инструкция по настройке" target="_blank"
                             href="https://www.beltelecom.by/sites/default/files/content/zala/rukovodstvo_polzovatelia/IPTV_rukovodstvo_polzovatelia_iptv%202022_B800_B860.pdf" aria-label="Up">
@@ -4250,6 +4320,13 @@
                     <br>
 
                     <h3><i class="bi bi-credit-card"></i> CAM-модули</h3>
+                    
+                    <div class="alert alert-light" role="alert">
+                      <p>
+                        CAM-модуль (модуль условного доступа) — это компактное электронное устройство-адаптер, которое используется в телевизорах или цифровых ресиверах для просмотра зашифрованных (платных) каналов кабельного, спутникового или эфирного телевидения
+                      </p>
+                    </div>
+
                     <div class="table-responsive">
                       <table class="table table-striped table-hover">
                       <thead>
