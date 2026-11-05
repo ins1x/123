@@ -1,2 +1,19 @@
-User-agent: *
-Disallow: /
+# === Block AI crawler === 
+ User-Agent: GPTBot
+ User-Agent: ClaudeBot
+ User-Agent: Claude-SearchBot
+ User-Agent: CCBot
+ User-Agent: Google-Extended
+ User-Agent: Applebot-Extended
+ User-Agent: Bytespider
+ User-Agent: Meta-ExternalAgent
+ User-Agent: PerplexityBot
+ User-Agent: cohere-ai
+ Disallow: /
+ DisallowAITraining: /
+# === For all ===
+ User-Agent: *
+ Allow: /
+ DisallowAITraining: /
+ Content-Usage: train-ai=n
+ Content-Signal: search=no, ai-train=no

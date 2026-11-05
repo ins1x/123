@@ -1,6 +1,26 @@
 /*!
- * Custom scripts
- */
+ * Vanilla JS code for Admin-123 pages.
+*/
+
+// SSR Agent test
+function isAgent() {
+  if (typeof navigator === 'undefined') return false; 
+  const ua = navigator.userAgent;
+  const botPattern = /bot|spider|crawl|crawler|slurp|screenshot|lighthouse|chrome-lighthouse|google|yandex|bing|baidu|yahoo|duckduckgo|vkshare|facebookexternalhit|twitterbot|linkedinbot|embedly|quora/i;
+  const isAutomation = /headless|puppeteer|selenium|playwright|webdriver/i.test(ua) || navigator.webdriver;
+  return botPattern.test(ua) || isAutomation;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const path = window.location.pathname;
+  if (isAgent()) {
+    document.getElementsByTagName("BODY")[0].style.display = "none";
+    if ( !path.includes('index') && path !== '/' && !path.includes('login') ) {
+      window.location.replace('login.html');
+    }
+  }
+});
+// End: SSR
 
 // Enable Bootstrap popovers
 const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
@@ -28,18 +48,22 @@ function scrollFunction() {
   }
 }
 // When the user clicks on the button, scroll to the top of the document
-backToTopBtn.addEventListener("click", backToTop);
-function backToTop() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
+if (backToTopBtn) {
+  backToTopBtn.addEventListener("click", backToTop);
+  function backToTop() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
 }
 // End:Back to top button
 
 // Toggle large font
 const largeFontBtn = document.getElementById('toggleLargeFontBtn');
-largeFontBtn.addEventListener('click', () => {
-  document.body.classList.toggle('font-large');
-});
+if (largeFontBtn) {
+  largeFontBtn.addEventListener('click', () => {
+    document.body.classList.toggle('font-large');
+  });
+}
 // End: Toggle Large font
 
 // Simple keywords highlight at page search
@@ -49,21 +73,23 @@ const searchClearBtn = document.getElementById('searchClearBtn');
 var markContext, markInstance;
 
 // Search on pressed 'Enter' key
-searchBar.addEventListener('keydown', function(event) {
-  if (event.key === 'Enter') {
-    event.preventDefault(); 
-    const searchValue = event.target.value;
-    if (searchValue.trim() === '') {
-      searchBar.focus();
-      return;
+if (searchBar) {
+  searchBar.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+      event.preventDefault(); 
+      const searchValue = event.target.value;
+      if (searchValue.trim() === '') {
+        searchBar.focus();
+        return;
+      }
+      find(searchValue)
+      markContext = document.querySelector(".app-wrapper");
+      markInstance = new Mark(markContext);
+      markInstance.unmark();
+      markInstance.mark(searchBar.value);
     }
-    find(searchValue)
-    markContext = document.querySelector(".app-wrapper");
-    markInstance = new Mark(markContext);
-    markInstance.unmark();
-    markInstance.mark(searchBar.value);
-  }
-});
+  });
+}
 
 // Unmark search on ESC
 document.addEventListener('keydown', (event) => {
@@ -75,50 +101,32 @@ document.addEventListener('keydown', (event) => {
 });
 
 // If search input is empty - unmark context
-searchBar.addEventListener('input', function(event) {
-  const searchValue = event.target.value; 
-  if (searchValue.trim() === '') {
+if (searchBar) {
+  searchBar.addEventListener('input', function(event) {
+    const searchValue = event.target.value; 
+    if (searchValue.trim() === '') {
+      markContext = document.querySelector(".app-wrapper");
+      markInstance = new Mark(markContext);
+      markInstance.unmark();
+    }
+  });
+}
+
+// Search on press search button 
+if (searchBar) {
+  searchBtn.addEventListener("click", ()=>{
+    if (searchBar.value.trim() === '') {
+      searchBar.focus();
+      return;
+    }
+    find(searchBar.value)
     markContext = document.querySelector(".app-wrapper");
     markInstance = new Mark(markContext);
     markInstance.unmark();
-  }
-});
-
-// Search on press search button 
-searchBtn.addEventListener("click", ()=>{
-  if (searchBar.value.trim() === '') {
-    searchBar.focus();
-    return;
-  }
-  find(searchBar.value)
-  markContext = document.querySelector(".app-wrapper");
-  markInstance = new Mark(markContext);
-  markInstance.unmark();
-  markInstance.mark(searchBar.value); 
-});
-// End: Page search
-
-// Generate breadcrumb dropdown
-const breadcrumbTable = [
-  { desc: 'Главная', icon: 'bi-grid-1x2', link: 'dashboard.html'},
-  { desc: 'Рабочие порталы', icon: 'bi-grid-3x3-gap-fill', link: 'portals.html'},
-  { desc: 'Онлайн утилиты', icon: 'bi-globe2', link: 'checker.html'},
-  { desc: 'Оборудование', icon: 'bi-router', link: 'equipment.html'},
-  { desc: 'Быстрая настройка', icon: 'bi-box2', link: 'quicksetup.html'},
-  { desc: 'Шаблоны МБТК', icon: 'bi-person-badge', link: 'mbtk.html'},
-  { desc: 'OLT команды', icon: 'bi-terminal', link: 'olt.html'}
-];
-
-const breadcrumbDropdown = document.querySelector('#breadcrumb-dropdown');
-if (breadcrumbDropdown) {
-  const rowsBreadcrumbTable = breadcrumbTable.map(data => {
-    return `
-       <li><a class="dropdown-item" href="${data.link}" aria-current="true"><i class="nav-icon bi ${data.icon}" aria-hidden="true"></i> ${data.desc}</a></li>
-    `;
-  }).join('');
-  breadcrumbDropdown.innerHTML = rowsBreadcrumbTable;
+    markInstance.mark(searchBar.value); 
+  });
 }
-// End: breadcrumb
+// End: Page search
 
 // Footer
 const footerTextContent = document.querySelector('#footer-text-content');
@@ -167,21 +175,41 @@ if (whatsnew) {
 }
 // End: News block
 
-// Generate sidebar menu
-// const sidebarMenuTable = [
-//   { desc: 'Главная', icon: 'bi-grid-1x2', link: 'dashboard.html'},
-//   { desc: 'Оборудование', icon: 'bi-router', link: 'equipment.html'},
-//   { desc: 'Рабочие порталы', icon: 'bi-grid-3x3-gap-fill', link: 'portals.html'},
-//   { desc: 'Онлайн утилиты', icon: 'bi-globe2', link: 'checker.html'},
-//   { desc: 'FAQ', icon: 'bi-patch-question', link: 'quicksetup.html'},
-//   { desc: 'Шаблоны МБТК', icon: 'bi-person-badge', link: 'mbtk.html'},
-//   { desc: 'OLT команды', icon: 'bi-terminal', link: 'olt.html'}
-// ];
+// Generate navigation menu
+const navigationMenuTable = [
+  { desc: 'Главная', icon: 'bi-grid-1x2', link: 'dashboard.html'},
+  { desc: 'Оборудование', icon: 'bi-router', link: 'equipment.html'},
+  { desc: 'Рабочие порталы', icon: 'bi-grid-3x3-gap-fill', link: 'portals.html'},
+  { desc: 'Онлайн утилиты', icon: 'bi-gear-wide-connected', link: 'checker.html'},
+  { desc: 'FAQ', icon: 'bi-patch-question', link: 'quicksetup.html'},
+  { desc: 'Шаблоны МБТК', icon: 'bi-person-badge', link: 'mbtk.html'},
+  { desc: 'OLT команды', icon: 'bi-terminal', link: 'olt.html'}
+];
 
-// const currentPath = window.location.pathname; 
-// const currentPageName = currentPath.split('/').filter(Boolean).pop(); 
-// const sidebarMenu = document.querySelector('#sidebar-menu');
-// const rowsSidebarTable = sidebarMenuTable.map(data => {
-//   return `<li class="nav-item"><a href="${data.link}" class="nav-link"><i class="nav-icon bi ${data.icon}" aria-hidden="true"></i><p>${data.desc}</p></a></li>`;
-// }).join('');
-// sidebarMenu.innerHTML = rowsSidebarTable;
+const currentPath = window.location.pathname; 
+const currentPageName = currentPath.split('/').filter(Boolean).pop(); 
+const navigationMenu = document.querySelector('#navigation');
+if (navigationMenu) {
+  const rowsNavigationTable = navigationMenuTable.map(data => {
+    if (data.link.toLowerCase().includes(currentPageName.toLowerCase())) {
+      return `<li class="nav-item"><a href="${data.link}" class="nav-link active"><i class="nav-icon bi ${data.icon}" aria-hidden="true"></i><p>${data.desc}</p></a></li>`;
+    } else {
+      return `<li class="nav-item"><a href="${data.link}" class="nav-link"><i class="nav-icon bi ${data.icon}" aria-hidden="true"></i><p>${data.desc}</p></a></li>`;
+    }
+  }).join('');
+  // navigationMenu.innerHTML = rowsNavigationTable.concat('<li class="nav-header"><a href="https://github.com/ins1x/OLT/wiki/HUAWEI" class="btn btn-sm btn-outline-light w-100 d-flex align-items-center justify-content-center gap-2"><i class="bi bi-github" aria-hidden="true"></i>Git OLT</a></li>');
+  navigationMenu.innerHTML = rowsNavigationTable;
+  
+  // Generate breadcrumb dropdown
+  const breadcrumbDropdown = document.querySelector('#breadcrumb-dropdown');
+  if (breadcrumbDropdown) {
+    const rowsBreadcrumbTable = navigationMenuTable.map(data => {
+      return `
+         <li><a class="dropdown-item" href="${data.link}" aria-current="true"><i class="nav-icon bi ${data.icon}" aria-hidden="true"></i> ${data.desc}</a></li>
+      `;
+    }).join('');
+    breadcrumbDropdown.innerHTML = rowsBreadcrumbTable;
+  }
+  // End: breadcrumb
+}
+// End: Navigation menu
