@@ -147,6 +147,7 @@ if (devDisclaimer) {
 
 // News block
 const newsTable = [
+  { date: '06/11/2026', desc: 'Обновлено оглавление и раздел основное в MBTK', link: 'mbtk.html'},
   { date: '24/10/2026', desc: 'Добавлены фотографии приставок ZALA в список оборудования', link: 'equipment.html'},
   { date: '21/10/2026', desc: 'Добавлены фотографии ONU/ONT терминалов в список оборудования', link: 'equipment.html'},
   { date: '17/10/2026', desc: 'Обновлен список подразделений для перенаправления в разделе MBTK', link: 'mbtk.html'},

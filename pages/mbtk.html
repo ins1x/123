@@ -153,23 +153,23 @@
                     <table class="table table-striped-columns table-bordered">
                       <tbody>
                         <tr>
-                          <td class="h6"><strong class="text-primary">15</strong>XXXXXXXXXX</td>
+                          <td class="h6"><strong class="text-primary">15</strong><span class="text-secondary">XXXXXXXXXX</span></td>
                           <td>Гродненская</td>
                         </tr>
                         <tr>
-                          <td class="h6"><strong class="text-primary">16</strong>XXXXXXXXXX</td>  
+                          <td class="h6"><strong class="text-primary">16</strong><span class="text-secondary">XXXXXXXXXX</span></td>
                           <td>Брестская</td>  
                         </tr>
                         <tr>
-                          <td class="h6"><strong class="text-primary">21</strong>XXXXXXXXXX</td>
+                          <td class="h6"><strong class="text-primary">21</strong><span class="text-secondary">XXXXXXXXXX</span></td>
                           <td>Витебская</td>
                         </tr>
                         <tr>
-                          <td class="h6"><strong class="text-primary">22</strong>XXXXXXXXXX</td>  
+                          <td class="h6"><strong class="text-primary">22</strong><span class="text-secondary">XXXXXXXXXX</span></td>
                           <td>Могилевская</td>  
                         </tr>
                         <tr>
-                          <td class="h6"><strong class="text-primary">23</strong>XXXXXXXXXX</td>  
+                          <td class="h6"><strong class="text-primary">23</strong><span class="text-secondary">XXXXXXXXXX</span></td>
                           <td>Гомельская</td>  
                         </tr>
                       </tbody>
@@ -424,14 +424,14 @@
                   role="search"
                   onsubmit="event.preventDefault()"
                 >
-                  <div class="col-md-2 col-lg-2">
+                  <!-- <div class="col-md-2 col-lg-2">
                   <a class="btn btn-outline-success btn-lg bg-body" 
                     href="https://chat.datacenter.by/index.php/f/8729660" 
                     target="_blank" title="Добавить новый шаблон">
                     <i class="bi bi-plus-square"></i> Добавить
                   </a>
-                  </div>
-                  <div class="col-md-6 col-lg-6">
+                  </div> -->
+                  <div class="col-md-6 col-lg-8">
                     <div class="input-group input-group-lg">
                       <span class="input-group-text bg-body">
                         <i class="bi bi-search" aria-hidden="true"></i>
@@ -443,20 +443,18 @@
                         placeholder="Введите ключевые слова для поиска на странице"
                         aria-label="Search on page"
                       />
-                      <span class="input-group-text bg-body">
+                      <!-- <span class="input-group-text bg-body">
                         <i class="bi bi-file-earmark"></i>
-                      </span>
+                      </span> -->
                       <small class="card-text-secondary">&nbsp;</small>
                     </div>
                   </div>
-                  <div class="col-md-4 col-lg-3">
-                    <ul>
-                      <a class="btn btn-outline-primary bg-body" href="https://chat.datacenter.by/index.php/f/6713109" target="_blank">
-                        <i class="bi bi-filetype-docx" style="font-size: 1.5rem; color: dodgerblue;"></i>
-                        <strong>Старые Шаблоны МБТК</strong>
-                      </a>
-                    </ul> 
-                  </div>
+                  <!-- <div class="col-md-4 col-lg-3">
+                    <a class="btn btn-outline-primary bg-body" href="https://chat.datacenter.by/index.php/f/6713109" target="_blank">
+                      <i class="bi bi-filetype-docx" style="font-size: 1.5rem; color: dodgerblue;"></i>
+                      <strong>Старые Шаблоны МБТК</strong>
+                    </a>
+                  </div> -->
                   
                 </form>
               </div>
@@ -468,14 +466,16 @@
               <div class="row">
                 <div class="col-sm-4 mb-3 mb-sm-3">
                   <h4 id="mbtk-content" class="text-secondary">Оглавление</h4>
-                  <div id="list-main-content" class="list-group">
-                    <!-- Generated from JS -->
+                  <div class="overflow-auto" style="max-height: 22em;">
+                    <div id="list-main-content" class="list-group">
+                      <!-- Generated from JS -->
+                    </div>
                   </div>
                 </div>
 
                 <div class="col-sm-4 mb-3 mb-sm-3">
                   <h4 id="mbtk-region" class="text-secondary">Принадлежность</h4>
-
+                  
                   <div class="input-group">
                     <input
                       id="searchRegionBar"
@@ -492,6 +492,8 @@
                       <i class="bi bi-search" aria-hidden="true"></i>
                     </button>
                   </div>
+                  
+                  <br>
 
                   <strong id="searchRegionResult" class="text-secondary"></strong>
                   <br>
@@ -500,23 +502,23 @@
                     <table class="table table-striped-columns table-bordered">
                       <tbody>
                         <tr>
-                          <td class="h4"><strong class="text-primary">15</strong>XXXXXXXXXX</td>
+                          <td class="h4"><strong class="text-primary">15</strong><span class="text-secondary">XXXXXXXXXX</span></td>
                           <td>Гродненская</td>
                         </tr>
                         <tr>
-                          <td class="h4"><strong class="text-primary">16</strong>XXXXXXXXXX</td>  
+                          <td class="h4"><strong class="text-primary">16</strong><span class="text-secondary">XXXXXXXXXX</span></td>
                           <td>Брестская</td>  
                         </tr>
                         <tr>
-                          <td class="h4"><strong class="text-primary">21</strong>XXXXXXXXXX</td>
+                          <td class="h4"><strong class="text-primary">21</strong><span class="text-secondary">XXXXXXXXXX</span></td>
                           <td>Витебская</td>
                         </tr>
                         <tr>
-                          <td class="h4"><strong class="text-primary">22</strong>XXXXXXXXXX</td>  
+                          <td class="h4"><strong class="text-primary">22</strong><span class="text-secondary">XXXXXXXXXX</span></td>
                           <td>Могилевская</td>  
                         </tr>
                         <tr>
-                          <td class="h4"><strong class="text-primary">23</strong>XXXXXXXXXX</td>  
+                          <td class="h4"><strong class="text-primary">23</strong><span class="text-secondary">XXXXXXXXXX</span></td>
                           <td>Гомельская</td>  
                         </tr>
                       </tbody>
@@ -527,19 +529,6 @@
                       </caption>
                     </table>
                   </div>
-
-                  <h4 class="text-secondary">Часто используемые ссылки:</h4>
-                  <ul class="list-group">
-                    <a class="list-group-item list-group-item-action" href="https://www.beltelecom.by/feedback/services-point" target="_blank"><i class="bi bi-building" style="color: purple;"></i> Офисы продаж</a>
-                    <a class="list-group-item list-group-item-action" href="https://www.beltelecom.by/request-order" target="_blank"><i class="bi bi-house-add" style="color: purple;"></i> Подключить услуги</a>
-                    <a class="list-group-item list-group-item-action" href="https://beltelecom.by/help/checklist-for-settings" target="_blank"><i class="bi bi-patch-question" style="color: purple;"></i> Помощь</a>
-                    <a class="list-group-item list-group-item-action" href="https://beltelecom.by/private/internet/high-speed" target="_blank"><i class="bi bi-cash-coin" style="color: purple;"></i> Тарифы на интернет</a>
-                    <a class="list-group-item list-group-item-action" href="https://yasna.by/"><i class="bi bi-egg-fried" style="color: purple;"></i> Тарифы на пакеты ЯСНА</a>
-                    <a class="list-group-item list-group-item-action" href="https://calcus.ru/kalkulyator-dnej"><i class="bi bi-calendar-week" style="color: crimson;"></i> Калькулятор дат</a>
-                  </ul>
-                  <a href="portals.html" class="icon-link icon-link-hover">
-                    <i class="bi bi-arrow-return-right"></i> Другие рабочие порталы
-                  </a>
 
                   <!-- <h4 class="text-secondary">Офисы продаж</h4>
                   <div class="table-responsive">
@@ -591,39 +580,95 @@
                 </div>
                 
                 <div class="col-sm-4 mb-3 mb-sm-3">
-                  <h4 id="mbtk-region" class="text-secondary">Назначить мастера</h4>
-                  <form>
-                    <div class="mb-4">
-                      <select class="form-select" id="selectTemplate">
-                        <!-- <option selected="">Осмотр по месту</option>
-                        <option>Настройка вай-фай / проверка</option>
-                        < --- Loaded from JS --- > -->
-                      </select>
+                  <h4 id="mbtk-tools" class="text-secondary">&nbsp;</h4>
+                  
+                  <div class="btn-group-vertical" role="group" aria-label="Vertical button group">                  
+                    <a class="btn btn-outline-primary bg-body" href="https://chat.datacenter.by/index.php/f/6713109" target="_blank">
+                      <i class="bi bi-filetype-docx"></i>
+                      <strong>Старые Шаблоны МБТК</strong>
+                    </a>
+
+                    <a class="btn btn-outline-success bg-body" 
+                      href="https://chat.datacenter.by/index.php/f/8729660" 
+                      target="_blank" title="Добавить новый шаблон">
+                      <i class="bi bi-plus-square"></i> Добавить новый шаблон
+                    </a>
+  
+                    <button type="button" class="btn btn-outline-warning bg-body" data-bs-toggle="modal" data-bs-target="#masterModal">
+                      <i class="bi bi-person-walking"></i>
+                      <strong>Шаблоны назначить мастера</strong>
+                    </button>
+
+                    <a class="btn btn-outline-danger bg-body" href="https://calcus.ru/kalkulyator-dnej" target="_blank">
+                      <i class="bi bi-calendar-week" style="color: crimson;"></i> Онлайн калькулятор дней
+                    </a>
+                  </div>
+
+                  <!-- <h4 class="text-secondary">Часто используемые ссылки:</h4>
+                  <div class="overflow-auto" style="max-height: 8em;">
+                    <ul class="list-group">
+                      <a class="list-group-item list-group-item-action" href="https://www.beltelecom.by/feedback/services-point" target="_blank"><i class="bi bi-building" style="color: purple;"></i> Офисы продаж</a>
+                      <a class="list-group-item list-group-item-action" href="https://www.beltelecom.by/request-order" target="_blank"><i class="bi bi-house-add" style="color: purple;"></i> Подключить услуги</a>
+                      <a class="list-group-item list-group-item-action" href="https://beltelecom.by/help/checklist-for-settings" target="_blank"><i class="bi bi-patch-question" style="color: purple;"></i> Помощь</a>
+                      <a class="list-group-item list-group-item-action" href="https://beltelecom.by/private/internet/high-speed" target="_blank"><i class="bi bi-cash-coin" style="color: purple;"></i> Тарифы на интернет</a>
+                      <a class="list-group-item list-group-item-action" href="https://yasna.by/"><i class="bi bi-egg-fried" style="color: purple;"></i> Тарифы на пакеты ЯСНА</a>
+                    </ul>
+                    <a href="portals.html" class="icon-link icon-link-hover">
+                      <i class="bi bi-arrow-return-right"></i> Другие рабочие порталы
+                    </a>
+                  </div> -->
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="masterModal" tabindex="-1" aria-labelledby="masterModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title fs-5" id="masterModalLabel">Назначить мастера</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <form>
+                            <div class="mb-4">
+                              <select class="form-select" id="selectTemplate">
+                                <!-- <option selected="">Осмотр по месту</option>
+                                <option>Настройка вай-фай / проверка</option>
+                                < --- Loaded from JS --- > -->
+                              </select>
+                            </div>
+                            <!-- <div class="dropdown">
+                              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" disabled>
+                                Выберите время
+                              </button>
+                              <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">В течении дня</a></li>
+                                <li><a class="dropdown-item" href="#">9-13</a></li>
+                                <li><a class="dropdown-item" href="#">13-17</a></li>
+                                <li><a class="dropdown-item" href="#">17-20</a></li>
+                              </ul>
+                            </div> -->
+                            <div class="form-floating">
+                              <textarea class="form-control" id="taskTextarea" placeholder="Loading" style="height: 14.25rem"></textarea>
+                              <label for="taskTextarea">Текст заявки</label>
+                            </div>
+                            <div class="text-start">
+                              <!-- <a href="#mbtk-master" class="icon-link icon-link-hover">
+                                <i class="bi bi-arrow-90deg-down"></i> МБТК шаблоны
+                              </a>
+                              &nbsp;&nbsp; -->
+                              <button id="copyTextarea" type="button" class="btn btn-outline-primary btn-sm">Скопировать</button>
+                              <button id="clearTextarea" type="reset" class="btn btn-outline-danger btn-sm">Очистить</button>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                        </div>
+                      </div>
                     </div>
-                    <!-- <div class="dropdown">
-                      <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" disabled>
-                        Выберите время
-                      </button>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">В течении дня</a></li>
-                        <li><a class="dropdown-item" href="#">9-13</a></li>
-                        <li><a class="dropdown-item" href="#">13-17</a></li>
-                        <li><a class="dropdown-item" href="#">17-20</a></li>
-                      </ul>
-                    </div> -->
-                    <div class="form-floating">
-                      <textarea class="form-control" id="taskTextarea" placeholder="Leave a comment here" style="height: 14.25rem"></textarea>
-                      <label for="taskTextarea">Текст заявки</label>
-                    </div>
-                    <div class="text-end">
-                      <a href="#mbtk-master" class="icon-link icon-link-hover">
-                        <i class="bi bi-arrow-90deg-down"></i> МБТК шаблоны
-                      </a>
-                      &nbsp;&nbsp;
-                      <button id="copyTextarea" type="button" class="btn btn-outline-primary btn-sm">Скопировать</button>
-                      <button id="clearTextarea" type="reset" class="btn btn-outline-danger btn-sm">Очистить</button>
-                    </div>
-                  </form>
+                  </div>
+                  <!-- End:Modal -->
+
                </div>
               
               <!-- Scrolspy menu -->
@@ -1073,7 +1118,7 @@
                         <ul>
                           Здравствуйте. Со стороны оператора услуга настроена верно. Настройки со стороны станционного оборудования корректны. Соединения на модеме длительные. Параметры на линии в норме. Можем назначить выезд мастера для проверки по месту. Если проблема в нашем оборудовании выезд бесплатный, если проблема со стороны вашего оборудования или настроек, выезд может быть платный, около 20 рублей. Выезд мастера возможен в будние дни с 9 до 13, с 13 до 17 или с 17 до 20, по субботам с 9 до 16
                         </ul>
-                        <strong class="question">Выезд для проверки по месту Wi-Fi:</strong>
+                        <strong class="question">Выезд для проверки Wi-Fi:</strong>
                         <ul>
                           Здравствуйте. Со стороны оператора услуга настроена верно. Настройки со стороны станционного оборудования корректны. Соединения на модеме длительные. Параметры на линии в норме. Если пользуетесь по вайфай, самостоятельно разобраться не получается, а перезапуск модема не помогает - можем назначить выезд мастера для проверки по месту. Если проблема в нашем оборудовании выезд бесплатный, если проблема со стороны вашего оборудования или настроек, выезд может быть платный, в районе 20 рублей. 
                           Выезд мастера возможен <u>завтра с 13 до 17 или с 17 до 20 часов</u>, далее в <u>будние дни с 9 до 13, с 13 до 17 или с 17 до 20</u>
@@ -1670,10 +1715,16 @@
                     <tr>
                       <td class="category">WinMTR и трассировка</td>
                       <td class="answer">
-                        <p>
+                        <strong class="question">Сделать трассировку</strong>
+                        <ul>
                           Чтобы понять, где возникает проблема, желательно скачать в интернете программу <a href="https://www.nic.ru/help/winmtr-diagnostika-setevyh-soedinenij_6799.html">WinMTR</a> (либо аналоги, если вам известны). 
                           В соответствующее поле в окне программы ввести ip адрес нужного вам сервера и начать проверку маршрута. По полученным результатам можно будет понять, проблема появляется на территории Республики Беларусь, или за ее пределами. 
-                        </p>
+                          Если подключение осуществляется через VPN или сторонний прокси-сервис, рекомендуем проверить доступ без их использования.  
+                        </ul>
+                        <strong class="question">Высокий пинг либо потеря пакетов</strong>
+                        <ul>
+                          Вопрос с увеличением пинга может возникать на разных участках сети. Чтобы понять, где возникает проблема, желательно скачать в интернете программу <a href="https://www.nic.ru/help/winmtr-diagnostika-setevyh-soedinenij_6799.html">WinMTR</a> (либо аналоги, если вам известны). В соответствующее поле в окне программы ввести ip адрес нужного вам сервера и начать проверку маршрута. По полученным результатам можно понять, в чьей зоне ответственности находится проблема.
+                        </ul>
                       </td>
                     </tr>
                     <tr>
@@ -1687,52 +1738,59 @@
                       </td>
                     </tr>
                     <tr>
-                      <td class="category">Высокий пинг либо потеря пакетов</td>
+                      <td class="category">Результаты проверки</td>
                       <td class="answer">
-                        <p>
-                           Вопрос с увеличением пинга может возникать на разных участках сети. Чтобы понять, где возникает проблема, желательно скачать в интернете программу <a href="https://www.nic.ru/help/winmtr-diagnostika-setevyh-soedinenij_6799.html">WinMTR</a> (либо аналоги, если вам известны). В соответствующее поле в окне программы ввести ip адрес нужного вам сервера и начать проверку маршрута. По полученным результатам можно понять, в чьей зоне ответственности находится проблема.
-                        </p>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="category">Потери нет</td>
-                      <td class="answer">
-                        <p>
+                        <strong class="question" style="color:chartreuse">Потери нет</strong>
+                        <ul>
                           По трассировке проблем по сети нет. Обратите внимание на столбец с обозначением %, процент потерь на каждом хопе. Проблема с доступом к ресурсу может быть обусловлена временными изменениями или особенностями в настройках маршрутов хостера где размещен данный ресурс, не обязательно связанных с провайдером. Стоит также учитывать, что некоторые ограничения или блокировки могут быть связаны с настройками на стороне сайта или в инфраструктуре сети, не входящими в зону ответственности провайдера. Рекомендуем понаблюдать в течении дня за работой, потестировать через winMTR, обращать внимание на процент потерь. В случае если обнаружите потерю пакетов, вышлите трассировку для анализа.
-                        </p>
+                        </ul>
+                        <strong class="question">Результаты проверки сетевым инженером</strong>
+                        <ul>
+                          По результатам дополнительной проверки сетевым инженером установлено, что со стороны нашего сетевого оборудования блокировок в отношении данного ресурса нет. 
+                          Правила фильтрации, которые могли бы ограничивать доступ к указанному ресурсу, также отсутствуют. Ограничений со стороны нашей сетевой инфраструктуры не выявлено.
+                          В связи с этим не исключаем, что проблема может находиться за пределами нашей сети, например на стороне вышестоящих операторов связи или промежуточных сетевых узлов.  
+                        </ul>
                       </td>
                     </tr>
                     <tr>
-                      <td class="category">Недоступность игровых серверов</td>
+                      <td class="category">Недоступность ресурсов</td>
                       <td class="answer">
-                        <p>
+                        <strong class="question">Недоступность игровых серверов</strong>
+                        <ul>
                           Здравствуйте. На текущий момент массовых обращений, связанных с недоступностью игровых серверов не зафиксировано. Проведённый анализ состояния и интернет-инфраструктуры показал отсутствие проблем со стороны интернет-провайдера. Ключевые параметры соединения, такие как скорость передачи данных, стабильность соединения и отсутствие потерь пакетов, находятся в пределах нормы. Это означает, что сбои связанные с недоступностью серверов, скорее всего связаны с внутренними вопросами самой платформы или её серверной инфраструктурой, а не с локальным интернет-соединением пользователей.
-                        </p>
+                        </ul>
+                        <strong class="question">Недоступность сайта</strong>
+                        <ul>
+                          <p>
+                            Проблема с доступом к сайту может быть связана с особенностями маршрутизации, которые иногда возникают в сети. Такие ситуации могут быть обусловлены временными изменениями или особенностями в настройках маршрутов, не обязательно связанных с провайдером. В таких случаях рекомендуется перезагружать оборудование или подождать некоторое время, чтобы ситуация могла стабилизироваться. Проблем со стороны оператора выявлено не было, со стороны станционного оборудования настройки корректны.
+                          </p>
+                          <blockquote>
+                            РУП «Белтелеком» отвечает за качество интернета только внутри своей инфраструктуры и до стыков с международными сетями, руководствуясь действующим государственным стандартом СТБ 1962-2026. (Согласно ПОУ 1.5 Качество Услуг контролируется Оператором согласно СТБ 1962-2026 «Услуги передачи данных. Требования к качеству. Нормы и методы контроля».) 
+                          </blockquote>
+                        </ul>
                       </td>
                     </tr>
                     <tr>
-                      <td class="category">Недоступность сайта</td>
+                      <td class="category">Закрытая маршрутизация</td>
                       <td class="answer">
-                        <p>
-                          Проблема с доступом к сайту может быть связана с особенностями маршрутизации, которые иногда возникают в сети. Такие ситуации могут быть обусловлены временными изменениями или особенностями в настройках маршрутов, не обязательно связанных с провайдером. В таких случаях рекомендуется перезагружать оборудование или подождать некоторое время, чтобы ситуация могла стабилизироваться. Проблем со стороны оператора выявлено не было, со стороны станционного оборудования настройки корректны.
-                        </p>
-                        <blockquote>
-                          РУП «Белтелеком» отвечает за качество интернета только внутри своей инфраструктуры и до стыков с международными сетями, руководствуясь действующим государственным стандартом СТБ 1962-2026. (Согласно ПОУ 1.5 Качество Услуг контролируется Оператором согласно СТБ 1962-2026 «Услуги передачи данных. Требования к качеству. Нормы и методы контроля».) 
-                        </blockquote>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="category">Riot games (закрытая маршрутизация)</td>
-                      <td class="answer">
-                        <p>
-                          Здравствуйте. У игрового хостинг-провайдера реализована политика ограничения маршрутизации для фильтрации вредоносных подключений (Anti-DDoS), что может приводить к отсутствию ответов после узла core.beltelecom.by и появлению сообщения "No response from host" в трассировке. 
-                        </p>
-                        <p>
-                          На данный момент повышения задержки (пинга) на территории, обслуживаемой  Белтелеком не зафиксировано. Для дальнейшего анализа рекомендуется выполнить трассировку в момент стабильного и исправного доступа, а также сравнить полученную маршрутизацию с ранее предоставленной. 
-                        </p>
-                        <p>
-                          Если маршрутизация по-прежнему ограничена или недоступна, необходимо обращаться в техническую поддержку ресурса (Riot Games) для получения дополнительной информации о конфигурации маршрутов и возможных ограничениях.
-                        </p>
+                        <strong class="question">Закрытая маршрутизация</strong>
+                        <ul>
+                          Здравствуйте. По предоставленной Вам трассировке проблем с сетью нет. В трассировке отображаются не все узлы (вместо них видны звёздочки * * *), потому что промежуточные маршрутизаторы могут намеренно или технически не отвечать на диагностические запросы. 
+                          Многие сетевые устройства настроены так, чтобы игнорировать или отбрасывать часть служебных ICMP/UDP-запросов (например, пакеты с истекшим TTL), чтобы защитить узлы от перегрузки или DDoS-атак. 
+                          Если после пропущенных узлов трассировка успешно доходит до цели и следующие хопы отвечают нормально, это не означает обрыв связи — обычный пользовательский трафик через эти узлы проходит без проблем.
+                        </ul>
+                        <strong class="question"><span style="color: OrangeRed">Riot games</span> (закрытая маршрутизация)</strong>
+                        <ul>
+                          <p>
+                            Здравствуйте. У игрового хостинг-провайдера реализована политика ограничения маршрутизации для фильтрации вредоносных подключений (Anti-DDoS), что может приводить к отсутствию ответов после узла core.beltelecom.by и появлению сообщения "No response from host" в трассировке. 
+                          </p>
+                          <p>
+                            На данный момент повышения задержки (пинга) на территории, обслуживаемой  Белтелеком не зафиксировано. Для дальнейшего анализа рекомендуется выполнить трассировку в момент стабильного и исправного доступа, а также сравнить полученную маршрутизацию с ранее предоставленной. 
+                          </p>
+                          <p>
+                            Если маршрутизация по-прежнему ограничена или недоступна, необходимо обращаться в техническую поддержку ресурса (Riot Games) для получения дополнительной информации о конфигурации маршрутов и возможных ограничениях.
+                          </p>
+                        </ul>
                       </td>
                     </tr>
                   </tbody>
@@ -3188,8 +3246,8 @@
                       <td class="category">Смена архивного тарифа</td>
                       <td class="answer">
                         <p>
-                          Автоматическое переключение абонентов архивных тарифных планов на один из действующих тарифных планов по выбору Оператора осуществлено в связи с тем, что часть тарифных планов byfly перенесена в архив и подлежит удалению из биллинговой системы РУП «Белтелеком».
-                          Согласно «Приложению об оказанию услуг byfly»: «Оператор имеет право производить изменение тарифов и других условий предоставления Услуги». Информация о необходимости перейти на любой из актуальных тарифов по Вашему выбору была размещена: в новостях на beltelecom.by;
+                          Автоматическое переключение абонентов архивных тарифных планов на один из действующих тарифных планов по выбору Оператора осуществлено в связи с тем, что часть тарифных планов byfly перенесена в архив и подлежит удалению из биллинговой системы РУП Белтелеком.
+                          Согласно Приложению об оказанию услуг byfly «Оператор имеет право производить изменение тарифов и других условий предоставления Услуги». Информация о необходимости перейти на любой из актуальных тарифов по Вашему выбору была размещена в новостях на beltelecom.by.
                         </p>
                       </td>
                     </tr>
@@ -3440,7 +3498,7 @@
                       <td class="category">Блокировка телефонии</td>
                       <td class="answer">
                         <p>
-                          Действующие на сегодняшний день блокировки для физ лиц в течение календарного года (30 бесплатно, 45 платно). По заявлению абонента телефон можно отключить до года с внесением абонплаты (правила оказания услуг 45. По просьбе абонента допускается выключение оконечного устройства на срок, указанный им в заявлении, но не более чем на 1 год. В этом случае за абонентом сохраняется абонентский номер и взимается абонементная плата за время сохранения абонемента. В заявлении оговариваются сроки внесения абонементной платы.)
+                          Здравствуйте. По заявлению абонента телефон можно отключить до года с внесением абонплаты (правила оказания услуг электросвязи п.45). По просьбе абонента допускается выключение оконечного устройства на срок, указанный им в заявлении, но не более чем на 1 год. В этом случае за абонентом сохраняется абонентский номер и взимается абонементная плата за время сохранения абонемента. В заявлении оговариваются сроки внесения абонементной платы.
                         </p>
                       </td>
                     </tr>
@@ -4753,28 +4811,28 @@
 
       // Generate content menu and dropdown
       const contentTable = [
-        { anchor: '#mbtk-main', name: 'Основное'},
-        { anchor: '#mbtk-universal', name: 'Ответы по неработающей услуге' },
-        { anchor: '#mbtk-master', name: 'Мастера'},
-        { anchor: '#mbtk-quality', name: 'Качество предоставления' },
-        { anchor: '#mbtk-equipset', name: 'Оборудование' },
-        { anchor: '#mbtk-wifi', name: 'Настройка Wi-fi' },
-        { anchor: '#mbtk-kabinet', name: 'Кабинет пользователя' },
-        { anchor: '#mbtk-oplata', name: 'Оплата' },
-        { anchor: '#mbtk-retail', name: 'Рассрочка' },
-        { anchor: '#mbtk-tarif', name: 'Тарифы' },
-        { anchor: '#mbtk-changeplan', name: 'Переоформление' },
-        { anchor: '#mbtk-close', name: 'Расторжение' },
-        { anchor: '#mbtk-telephony', name: 'Телефония' },
-        { anchor: '#mbtk-zala', name: 'ZALA' },
-        { anchor: '#mbtk-subscribe', name: 'Подписки и дополнительные сервисы' },
-        { anchor: '#mbtk-videocontrol', name:'Видеоконтроль и видеодомофон' }
+        { anchor: '#mbtk-main', name: 'Основное', icon: 'bi-bookmark', color: 'dimgrey' },
+        { anchor: '#mbtk-universal', name: 'Ответы по неработающей услуге', icon: 'bi-exclamation-triangle', color: 'gold' },
+        { anchor: '#mbtk-master', name: 'Мастер', icon: 'bi-person-walking', color: 'dimgrey' },
+        { anchor: '#mbtk-quality', name: 'Качество предоставления', icon: 'bi-speedometer', color: 'darkorange' },
+        { anchor: '#mbtk-equipset', name: 'Оборудование', icon: 'bi-router', color: 'dimgrey' },
+        { anchor: '#mbtk-wifi', name: 'Настройка Wi-fi', icon: 'bi-wifi-off', color: 'dimgrey' },
+        { anchor: '#mbtk-kabinet', name: 'Кабинет пользователя', icon: 'bi-person-badge', color: 'DeepSkyBlue' },
+        { anchor: '#mbtk-oplata', name: 'Оплата', icon: 'bi-cash-coin', color: 'DarkGreen' },
+        { anchor: '#mbtk-retail', name: 'Рассрочка', icon: 'bi-clock-history', color: 'dimgrey' },
+        { anchor: '#mbtk-tarif', name: 'Тарифы', icon: 'bi-bag-check', color: 'Orange' },
+        { anchor: '#mbtk-changeplan', name: 'Переоформление', icon: 'bi-people', color: 'dimgrey' },
+        { anchor: '#mbtk-close', name: 'Расторжение', icon: 'bi-person-dash', color: 'crimson' },
+        { anchor: '#mbtk-telephony', name: 'Телефония', icon: 'bi-telephone', color: 'dimgrey' },
+        { anchor: '#mbtk-zala', name: 'ZALA', icon: 'bi-tv', color: 'dimgrey' },
+        { anchor: '#mbtk-subscribe', name: 'Подписки и дополнительные сервисы', icon: 'bi-bag-plus', color: 'dimgrey' },
+        { anchor: '#mbtk-videocontrol', name:'Видеоконтроль и видеодомофон', icon: 'bi-camera-video-off', color: 'RoyalBlue' }
       ];
 
       const contentScrollspy = document.querySelector('#list-main-content');
       const rowsContentTable = contentTable.map(data => {
         return `
-          <a class="list-group-item list-group-item-action" href="${data.anchor}">${data.name}</a>
+          <a class="list-group-item list-group-item-action" href="${data.anchor}"><i class="bi ${data.icon}" style="color: ${data.color}"></i> ${data.name}</a>
         `;
       }).join('');
       contentScrollspy.innerHTML = rowsContentTable;
@@ -4782,7 +4840,7 @@
       const contentScrollspyDropdown = document.querySelector('#dropdown-main-content');
       const rowsContentDropdownTable = contentTable.map(data => {
         return `
-          <li><a class="dropdown-item" href="${data.anchor}">${data.name}</a></li>
+          <li><a class="dropdown-item" href="${data.anchor}"><i class="bi ${data.icon}" style="color: ${data.color}"></i> ${data.name}</a></li>
         `;
       }).join('');
       contentScrollspyDropdown.innerHTML = rowsContentDropdownTable;
