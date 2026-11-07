@@ -293,7 +293,7 @@
               <div class="col-sm-6">
                 <h3 class="mb-0 text-secondary"><i class="bi bi-router"></i> Информация по оборудованию</h3>
                 <!-- <p>Последнее обновление: <strong class="text-secondary">28/10/2026</strong> содержит описание для <span id="totalEquipModels"></span></p>  -->
-                <p>Последнее обновление: <strong class="text-secondary">29/10/2026</strong></p> 
+                <p>Последнее обновление: <strong class="text-secondary">07/11/2026</strong></p> 
               </div>
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-end">
@@ -1467,11 +1467,22 @@
                               <ul>
                                 <li>Проблемы с неработающей IPTV ZALA на С300 v.1.2.5 пробовать перерегистрировать. После перерегистрации проверять меняется ли VLAN 20 на 1000 для IPTV.</li>
                                 <li>Нет возможности настроить DHCP и Port-Mapping под учеткой <strong class="text-warning">user</strong></li>
-                                <li>Слабо защищенная wi-fi сеть, достаточно подставить <strong class="text-danger">8с</strong> к названию wi-fi сети чтобы получить пароль</li>
-                                <li>Неочевидная смена пароля от wi-fi - нужно выбрать шифрование, только тогда появляются поля для настройки</li>
                                 <li>На OLT ZTE некорректно отображается оптический параметр TX(up), у рабочих аб-тов должен показывать ~2-3 dBm, а показывает ~ -27-28</li>
-                                <li>Партия с серийным <strong class="text-primary">5347544XXXXXXXXX</strong> - настройка вай-фай может не соответствовать наклейке на корпусе</li>
-                                <li>Не держит выставленный вручную канал Wi-fi для сетей 5G <u>если канал выше 50-го</u>, либо ширина канала стоит <b>40Мгц</b>. на 2.4G такое поведение не наблюдается</li>
+                                <li>
+                                  <i class="bi bi-wifi-off"></i> Wi-fi
+                                  <ul>
+                                    <li>Партия с серийным <strong class="text-primary">5347544XXXXXXXXX</strong> - настройка вай-фай может не соответствовать наклейке на корпусе</li>
+                                    <li>
+                                      Не держит выставленный вручную канал Wi-fi для сетей 5G <u>если канал выше 50-го</u>, либо ширина канала стоит <b>40Мгц</b>.<br>
+                                      На 2.4G такое поведение не наблюдается для стандартной ширины канала.
+                                    </li>
+                                    <li>Слабо защищенная wi-fi сеть, достаточно подставить <strong class="text-danger">8с</strong> к названию wi-fi сети чтобы получить пароль</li>
+                                    <li>
+                                      Неочевидная смена пароля от wi-fi - нужно выбрать шифрование, только тогда появляются поля для настройки. <br>
+                                      (WLAN - Security - Encryption - Выбрать тип шифрования WPA 2 Mixed либо WPA3.)
+                                    </li>
+                                  </ul>
+                                </li>
                               </ul>
                             </div>
                           </td>
@@ -2470,6 +2481,10 @@
                         <tr class="old-equipment">
                           <td colspan="7">
                             <div class="collapse" id="collapsePrestigeP660">
+                              <a href="../assets/img/equip/660R.jpg" target="_blank"><img src="../assets/img/equip/660R.jpg" height="500" width="500" class="img-fluid rounded" alt=""></a>
+                              <p>
+                                <a href="https://chat.datacenter.by/index.php/f/7438226" target="_blank" class="btn btn-outline-secondary">Документация</a>
+                              </p>
                               <ul>
                                 <li>Вход с правами Администратора под логином: <strong class="text-danger">admin</strong>, пароль: <strong class="text-danger">1234</strong> (для telnet аналогично)</li>
                                 <li>При первоначальном входе в админку предложит сменить пароль, можно не менять пропустить нажав Ignore</li>
