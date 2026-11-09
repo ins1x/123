@@ -141,13 +141,33 @@
                 <span class="d-md-inline">Принадлежность</span>
                 <i class="bi bi-caret-down-fill"></i>
               </a>
-              <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
+              <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end" style="min-width: 22em;">
                 <li class="user-body">
                   <!-- <p class="text-center">
                     <small>Read-Only</small>
                   </p> -->
                   <!--begin::Row-->
-                  <h4 id="mbtk-region-menu" class="text-secondary">Принадлежность</h4>
+                  <div class="input-group">
+                    <input
+                      id="searchRegionBar"
+                      type="search"
+                      class="form-control search-input"
+                      placeholder="Введите название региона или номер приложения"
+                      aria-label="Search BY regions"
+                    />
+                    <button 
+                      class="btn btn-outline-secondary" 
+                      type="submit"
+                      id="searchRegionBtn"
+                      >
+                      <i class="bi bi-search" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                  
+                  <br>
+
+                  <strong id="searchRegionResult" class="text-secondary"></strong>
+                  <br>
 
                   <div class="table-responsive">
                     <table class="table table-striped-columns table-bordered">
@@ -190,13 +210,12 @@
                 <span class="d-md-inline">Офисы продаж</span>
                 <i class="bi bi-caret-down-fill"></i>
               </a>
-              <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
+              <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end" style="min-width: 25em;">
                 <li class="user-body">
                   <!-- <p class="text-center">
                     <small>Read-Only</small>
                   </p> -->
                   <!--begin::Row-->
-                  <h4 id="mbtk-region-menu" class="text-secondary">Офисы продаж</h4>
                   <div class="table-responsive">
                     <table class="table table-sm table-striped-columns table-bordered">
                       <tbody>
@@ -464,217 +483,100 @@
               </div> -->
               
               <div class="row">
-                <div class="col-sm-4 mb-3 mb-sm-3">
+                <!-- <div class="col-sm-4 mb-3 mb-sm-3">
                   <h4 id="mbtk-content" class="text-secondary">Оглавление</h4>
                   <div class="overflow-auto" style="max-height: 22em;">
                     <div id="list-main-content" class="list-group">
-                      <!-- Generated from JS -->
+                       Generated from JS
                     </div>
                   </div>
-                </div>
-
-                <div class="col-sm-4 mb-3 mb-sm-3">
-                  <h4 id="mbtk-region" class="text-secondary">Принадлежность</h4>
-                  
-                  <div class="input-group">
-                    <input
-                      id="searchRegionBar"
-                      type="search"
-                      class="form-control search-input"
-                      placeholder="Введите название региона или номер приложения"
-                      aria-label="Search BY regions"
-                    />
-                    <button 
-                      class="btn btn-outline-secondary" 
-                      type="submit"
-                      id="searchRegionBtn"
-                      >
-                      <i class="bi bi-search" aria-hidden="true"></i>
-                    </button>
-                  </div>
-                  
-                  <br>
-
-                  <strong id="searchRegionResult" class="text-secondary"></strong>
-                  <br>
-
-                  <div class="table-responsive">
-                    <table class="table table-striped-columns table-bordered">
-                      <tbody>
-                        <tr>
-                          <td class="h4"><strong class="text-primary">15</strong><span class="text-secondary">XXXXXXXXXX</span></td>
-                          <td>Гродненская</td>
-                        </tr>
-                        <tr>
-                          <td class="h4"><strong class="text-primary">16</strong><span class="text-secondary">XXXXXXXXXX</span></td>
-                          <td>Брестская</td>  
-                        </tr>
-                        <tr>
-                          <td class="h4"><strong class="text-primary">21</strong><span class="text-secondary">XXXXXXXXXX</span></td>
-                          <td>Витебская</td>
-                        </tr>
-                        <tr>
-                          <td class="h4"><strong class="text-primary">22</strong><span class="text-secondary">XXXXXXXXXX</span></td>
-                          <td>Могилевская</td>  
-                        </tr>
-                        <tr>
-                          <td class="h4"><strong class="text-primary">23</strong><span class="text-secondary">XXXXXXXXXX</span></td>
-                          <td>Гомельская</td>  
-                        </tr>
-                      </tbody>
-                      <caption>
-                        <a href="https://beltelecom.by/phone-code" class="icon-link icon-link-hover" target="_blank">
-                          <i class="bi bi-arrow-return-right"></i> Справочник по телефонным кодам
-                        </a>
-                      </caption>
-                    </table>
-                  </div>
-
-                  <!-- <h4 class="text-secondary">Офисы продаж</h4>
-                  <div class="table-responsive">
-                    <table class="table table-striped-columns table-bordered">
-                      <tbody>
-                        <tr>
-                          <td class="h5">ОП 1</td>
-                          <td>Советский</td>
-                          <td>Данилова</td>
-                        </tr>
-                        <tr>
-                          <td class="h5">ОП 2</td>
-                          <td>Юр.лица</td>
-                          <td>Новицкая О. В.</td>
-                        </tr>
-                        <tr>
-                          <td class="h5">ОП 3</td>
-                          <td>Фрунзенский</td>
-                          <td>Шишко И.В.</td>
-                        </tr>
-                        <tr>
-                          <td class="h5">ОП 4</td>
-                          <td>Заводской</td>
-                          <td>Ковалевич Е.А / <div class="text-muted">Шиханцова А.А.</div></td>
-                        </tr>
-                        <tr>
-                          <td class="h5">ОП 5</td>
-                          <td>Ленинский</td>
-                          <td>Волощук Е.В. / <div class="text-muted">Козловская Н.С.</div></td>
-                        </tr>
-                        <tfoot>
-                          <tr>
-                            <td>Рассрочка</td>
-                            <td colspan="2">Приобретение товаров в рассрочку, направлять на Буховцеву О. В.</td>
-                          </tr>
-                          <tr>
-                            <td>ГУА</td>
-                            <td colspan="2">Удержание и.т.п., направлять на Плотникову Ю. В.</td>
-                          </tr>
-                        </tfoot>
-                      </tbody>
-                      <caption>
-                        <a href="https://beltelecom.by/feedback/services-point" class="icon-link icon-link-hover" target="_blank">
-                          <i class="bi bi-arrow-return-right"></i> Адреса и график работы офисов продаж
-                        </a>
-                      </caption>
-                    </table>
-                  </div> -->
-                </div>
+                </div> -->
                 
-                <div class="col-sm-4 mb-3 mb-sm-3">
-                  <h4 id="mbtk-tools" class="text-secondary">&nbsp;</h4>
-                  
-                  <div class="btn-group-vertical" role="group" aria-label="Vertical button group">                  
-                    <a class="btn btn-outline-primary bg-body" href="https://chat.datacenter.by/index.php/f/6713109" target="_blank">
-                      <i class="bi bi-filetype-docx"></i>
-                      <strong>Старые Шаблоны МБТК</strong>
-                    </a>
+                <div class="btn-group" role="group"> 
 
-                    <a class="btn btn-outline-success bg-body" 
-                      href="https://chat.datacenter.by/index.php/f/8729660" 
-                      target="_blank" title="Добавить новый шаблон">
-                      <i class="bi bi-plus-square"></i> Добавить новый шаблон
-                    </a>
-  
-                    <button type="button" class="btn btn-outline-warning bg-body" data-bs-toggle="modal" data-bs-target="#masterModal">
-                      <i class="bi bi-person-walking"></i>
-                      <strong>Шаблоны назначить мастера</strong>
-                    </button>
+                  <a class="btn btn-outline-primary bg-body" href="https://chat.datacenter.by/index.php/f/6713109" target="_blank">
+                    <i class="bi bi-filetype-docx"></i>
+                    <strong>Старые Шаблоны МБТК</strong>
+                  </a>
 
-                    <a class="btn btn-outline-danger bg-body" href="https://calcus.ru/kalkulyator-dnej" target="_blank">
-                      <i class="bi bi-calendar-week" style="color: crimson;"></i> Онлайн калькулятор дней
-                    </a>
-                  </div>
+                  <a class="btn btn-outline-success bg-body" 
+                    href="https://chat.datacenter.by/index.php/f/8729660" 
+                    target="_blank" title="Добавить новый шаблон">
+                    <i class="bi bi-plus-square"></i> Добавить новый шаблон
+                  </a>
 
-                  <!-- <h4 class="text-secondary">Часто используемые ссылки:</h4>
-                  <div class="overflow-auto" style="max-height: 8em;">
-                    <ul class="list-group">
-                      <a class="list-group-item list-group-item-action" href="https://www.beltelecom.by/feedback/services-point" target="_blank"><i class="bi bi-building" style="color: purple;"></i> Офисы продаж</a>
-                      <a class="list-group-item list-group-item-action" href="https://www.beltelecom.by/request-order" target="_blank"><i class="bi bi-house-add" style="color: purple;"></i> Подключить услуги</a>
-                      <a class="list-group-item list-group-item-action" href="https://beltelecom.by/help/checklist-for-settings" target="_blank"><i class="bi bi-patch-question" style="color: purple;"></i> Помощь</a>
-                      <a class="list-group-item list-group-item-action" href="https://beltelecom.by/private/internet/high-speed" target="_blank"><i class="bi bi-cash-coin" style="color: purple;"></i> Тарифы на интернет</a>
-                      <a class="list-group-item list-group-item-action" href="https://yasna.by/"><i class="bi bi-egg-fried" style="color: purple;"></i> Тарифы на пакеты ЯСНА</a>
-                    </ul>
-                    <a href="portals.html" class="icon-link icon-link-hover">
-                      <i class="bi bi-arrow-return-right"></i> Другие рабочие порталы
-                    </a>
-                  </div> -->
+                  <button type="button" class="btn btn-outline-warning bg-body" data-bs-toggle="modal" data-bs-target="#masterModal">
+                    <i class="bi bi-person-walking"></i>
+                    <strong>Шаблоны назначить мастера</strong>
+                  </button>
 
-                  <!-- Modal -->
-                  <div class="modal fade" id="masterModal" tabindex="-1" aria-labelledby="masterModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h1 class="modal-title fs-5" id="masterModalLabel">Назначить мастера</h1>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                          <form>
-                            <div class="mb-4">
-                              <select class="form-select" id="selectTemplate">
-                                <!-- <option selected="">Осмотр по месту</option>
-                                <option>Настройка вай-фай / проверка</option>
-                                < --- Loaded from JS --- > -->
-                              </select>
-                            </div>
-                            <!-- <div class="dropdown">
-                              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" disabled>
-                                Выберите время
-                              </button>
-                              <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">В течении дня</a></li>
-                                <li><a class="dropdown-item" href="#">9-13</a></li>
-                                <li><a class="dropdown-item" href="#">13-17</a></li>
-                                <li><a class="dropdown-item" href="#">17-20</a></li>
-                              </ul>
-                            </div> -->
-                            <div class="form-floating">
-                              <textarea class="form-control" id="taskTextarea" placeholder="Loading" style="height: 14.25rem"></textarea>
-                              <label for="taskTextarea">Текст заявки</label>
-                            </div>
-                            <div class="text-start">
-                              <!-- <a href="#mbtk-master" class="icon-link icon-link-hover">
-                                <i class="bi bi-arrow-90deg-down"></i> МБТК шаблоны
-                              </a>
-                              &nbsp;&nbsp; -->
-                              <button id="copyTextarea" type="button" class="btn btn-outline-primary btn-sm">Скопировать</button>
-                              <button id="clearTextarea" type="reset" class="btn btn-outline-danger btn-sm">Очистить</button>
-                            </div>
-                          </form>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
-                          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-                        </div>
+                  <button type="button" class="btn btn-outline-secondary bg-body dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    Полезные ссылки
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://www.beltelecom.by/feedback/services-point" target="_blank"><i class="bi bi-building" style="color: purple;"></i> Офисы продаж</a></li>
+                    <li><a class="dropdown-item" href="https://www.beltelecom.by/request-order" target="_blank"><i class="bi bi-house-add" style="color: purple;"></i> Подключить услуги</a></li>
+                    <li><a class="dropdown-item" href="https://beltelecom.by/help/checklist-for-settings" target="_blank"><i class="bi bi-patch-question" style="color: purple;"></i> Помощь</a></li>
+                    <li><a class="dropdown-item" href="https://beltelecom.by/private/internet/high-speed" target="_blank"><i class="bi bi-cash-coin" style="color: purple;"></i> Тарифы на интернет</a></li>
+                    <li><a class="dropdown-item" href="https://yasna.by/"><i class="bi bi-egg-fried" style="color: purple;"></i> Тарифы на пакеты ЯСНА</a></li>
+                    <li><a class="dropdown-item" href="https://calcus.ru/kalkulyator-dnej"><i class="bi bi-calendar-week" style="color: crimson;"></i> Онлайн калькулятор дней</a></li>
+                  </ul>
+
+                </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="masterModal" tabindex="-1" aria-labelledby="masterModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="masterModalLabel">Назначить мастера</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <form>
+                          <div class="mb-4">
+                            <select class="form-select" id="selectTemplate">
+                              <!-- <option selected="">Осмотр по месту</option>
+                              <option>Настройка вай-фай / проверка</option>
+                              < --- Loaded from JS --- > -->
+                            </select>
+                          </div>
+                          <!-- <div class="dropdown">
+                            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" disabled>
+                              Выберите время
+                            </button>
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="#">В течении дня</a></li>
+                              <li><a class="dropdown-item" href="#">9-13</a></li>
+                              <li><a class="dropdown-item" href="#">13-17</a></li>
+                              <li><a class="dropdown-item" href="#">17-20</a></li>
+                            </ul>
+                          </div> -->
+                          <div class="form-floating">
+                            <textarea class="form-control" id="taskTextarea" placeholder="Loading" style="height: 14.25rem"></textarea>
+                            <label for="taskTextarea">Текст заявки</label>
+                          </div>
+                          <div class="text-start">
+                            <!-- <a href="#mbtk-master" class="icon-link icon-link-hover">
+                              <i class="bi bi-arrow-90deg-down"></i> МБТК шаблоны
+                            </a>
+                            &nbsp;&nbsp; -->
+                            <button id="copyTextarea" type="button" class="btn btn-outline-primary btn-sm">Скопировать</button>
+                            <button id="clearTextarea" type="reset" class="btn btn-outline-danger btn-sm">Очистить</button>
+                            <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Закрыть</button>
+                          </div>
+                        </form>
                       </div>
                     </div>
                   </div>
-                  <!-- End:Modal -->
+                </div>
+                <!-- End:Modal -->
+              </div>
 
-               </div>
-              
               <!-- Scrolspy menu -->
               <div id="main-table-content">
                
-                <h2 id="mbtk-main" class="text-secondary text-center">Основное</h2>
+                <h2 id="mbtk-main" class="text-secondary text-center invisible">Основное</h2>
 
                 <div class="table-responsive">
                   
@@ -3431,11 +3333,11 @@
                                 <li>- сетевой кабель RJ45;</li>
                                 <li>- возможные варианты выданных комплектующих шнуров:</li>
                                 <ol>
-                                  <li>кабель «тюльпаны» (RCA)+ компонентный кабель (RGB) +HDMI;</li>
-                                  <li>кабель «тюльпаны» (RCA)+ компонентный кабель (RGB);</li>
-                                  <li>кабель «тюльпаны» (RCA) +HDMI;</li>
-                                  <li>кабель «тюльпаны» (RCA);</li>
-                                  <li>компонентный кабель (RGB) +HDMI.</li>
+                                  <li>- кабель «тюльпаны» (RCA)+ компонентный кабель (RGB) +HDMI;</li>
+                                  <li>- кабель «тюльпаны» (RCA)+ компонентный кабель (RGB);</li>
+                                  <li>- кабель «тюльпаны» (RCA) +HDMI;</li>
+                                  <li>- кабель «тюльпаны» (RCA);</li>
+                                  <li>- компонентный кабель (RGB) +HDMI.</li>
                                 </ol>
                               </ul>
                               <a class="nav-link" data-bs-toggle="collapse" href="#collapseEquipZALA" role="button" aria-expanded="false" aria-controls="collapseEquipZALA">
@@ -3450,13 +3352,13 @@
                             <td>PON</td>
                             <td>
                               <ul class="list-unstyled">
-                                <li>модем;</li>
-                                <li>блок питания;</li>
-                                <li>оптоволоконный кабель;</li>
-                                <li>сетевой кабель RJ45;</li>
-                                <li>телефонный провод (RJ11/ RJ12);</li>
-                                <li>кассета (специальная рамка для крепления модема);</li>
-                                <li>подставка (для установки модема в вертикальное положение).</li>
+                                <li>- модем;</li>
+                                <li>- блок питания;</li>
+                                <li>- оптоволоконный кабель;</li>
+                                <li>- сетевой кабель RJ45;</li>
+                                <li>- телефонный провод (RJ11/ RJ12);</li>
+                                <li>- кассета (специальная рамка для крепления модема);</li>
+                                <li>- подставка (для установки модема в вертикальное положение).</li>
                               </ul>
                               <a class="nav-link" data-bs-toggle="collapse" href="#collapseEquipPON" role="button" aria-expanded="false" aria-controls="collapseEquipPON">
                                 <i class="bi bi-chevron-down"></i> Фотография комплекта PON
@@ -3470,11 +3372,11 @@
                             <td>ADSL / IAD</td>
                             <td>
                               <ul class="list-unstyled">
-                                <li>модем;</li>
-                                <li>блок питания;</li>
-                                <li>сетевой кабель RJ45;</li>
-                                <li>2 телефонных провода (RJ11/ RJ12);</li>
-                                <li>сплиттер.</li>
+                                <li>- модем;</li>
+                                <li>- блок питания;</li>
+                                <li>- сетевой кабель RJ45;</li>
+                                <li>- 2 телефонных провода (RJ11/ RJ12);</li>
+                                <li>- сплиттер.</li>
                               </ul>
                               <a class="nav-link" data-bs-toggle="collapse" href="#collapseEquipADSL" role="button" aria-expanded="false" aria-controls="collapseEquipADSL">
                                 <i class="bi bi-chevron-down"></i> Фотография комплекта ADSL
@@ -4887,20 +4789,24 @@
       ];
 
       const contentScrollspy = document.querySelector('#list-main-content');
-      const rowsContentTable = contentTable.map(data => {
-        return `
-          <a class="list-group-item list-group-item-action" href="${data.anchor}"><i class="bi ${data.icon}" style="color: ${data.color}"></i> ${data.name}</a>
-        `;
-      }).join('');
-      contentScrollspy.innerHTML = rowsContentTable;
+      if (contentScrollspy) {
+        const rowsContentTable = contentTable.map(data => {
+          return `
+            <a class="list-group-item list-group-item-action" href="${data.anchor}"><i class="bi ${data.icon}" style="color: ${data.color}"></i> ${data.name}</a>
+          `;
+        }).join('');
+        contentScrollspy.innerHTML = rowsContentTable;
+      }
 
       const contentScrollspyDropdown = document.querySelector('#dropdown-main-content');
-      const rowsContentDropdownTable = contentTable.map(data => {
-        return `
-          <li><a class="dropdown-item" href="${data.anchor}"><i class="bi ${data.icon}" style="color: ${data.color}"></i> ${data.name}</a></li>
-        `;
-      }).join('');
-      contentScrollspyDropdown.innerHTML = rowsContentDropdownTable;
+      if (contentScrollspyDropdown) {
+        const rowsContentDropdownTable = contentTable.map(data => {
+          return `
+            <li><a class="dropdown-item" href="${data.anchor}"><i class="bi ${data.icon}" style="color: ${data.color}"></i> ${data.name}</a></li>
+          `;
+        }).join('');
+        contentScrollspyDropdown.innerHTML = rowsContentDropdownTable;
+      }
       
       // Get date
       const now = new Date();
