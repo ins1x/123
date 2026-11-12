@@ -102,7 +102,8 @@
   </head>
   <!--end::Head-->
   <!--begin::Body-->
-  <body class="fixed-header layout-fixed sidebar-expand-lg bg-body-tertiary" data-bs-spy="scroll" data-bs-target="#list-main-content" data-bs-smooth-scroll="true">
+  <!-- <body class="fixed-header layout-fixed sidebar-expand-lg bg-body-tertiary" data-bs-spy="scroll" data-bs-target="#list-main-content" data-bs-smooth-scroll="true"> -->
+    <body class="fixed-header layout-fixed sidebar-expand-lg bg-body-tertiary"></body>
     <!--begin::App Wrapper-->
     <div class="app-wrapper">
       <!--begin::Header-->
@@ -4788,21 +4789,21 @@
         { anchor: '#mbtk-videocontrol', name:'Видеоконтроль и видеодомофон', icon: 'bi-camera-video-off', color: 'RoyalBlue' }
       ];
 
-      const contentScrollspy = document.querySelector('#list-main-content');
-      if (contentScrollspy) {
-        const rowsContentTable = contentTable.map(data => {
-          return `
-            <a class="list-group-item list-group-item-action" href="${data.anchor}"><i class="bi ${data.icon}" style="color: ${data.color}"></i> ${data.name}</a>
-          `;
-        }).join('');
-        contentScrollspy.innerHTML = rowsContentTable;
-      }
+      // const contentScrollspy = document.querySelector('#list-main-content');
+      // if (contentScrollspy) {
+      //   const rowsContentTable = contentTable.map(data => {
+      //     return `
+      //       <a class="list-group-item list-group-item-action" href="${data.anchor}"><i class="bi ${data.icon}" style="color: ${data.color}"></i> ${data.name}</a>
+      //     `;
+      //   }).join('');
+      //   contentScrollspy.innerHTML = rowsContentTable;
+      // }
 
       const contentScrollspyDropdown = document.querySelector('#dropdown-main-content');
       if (contentScrollspyDropdown) {
         const rowsContentDropdownTable = contentTable.map(data => {
           return `
-            <li><a class="dropdown-item" href="${data.anchor}"> ${data.name}</a></li>
+            <li><a class="dropdown-item" href="${data.anchor}"><i class="bi ${data.icon}" style="color: ${data.color}"></i> ${data.name}</a></li>
           `;
         }).join('');
         contentScrollspyDropdown.innerHTML = rowsContentDropdownTable;
