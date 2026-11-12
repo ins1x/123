@@ -4802,7 +4802,7 @@
       if (contentScrollspyDropdown) {
         const rowsContentDropdownTable = contentTable.map(data => {
           return `
-            <li><i class="bi ${data.icon}" style="color: ${data.color}"></i> <a class="dropdown-item" href="${data.anchor}"> ${data.name}</a></li>
+            <li><a class="dropdown-item" href="${data.anchor}"> ${data.name}</a></li>
           `;
         }).join('');
         contentScrollspyDropdown.innerHTML = rowsContentDropdownTable;
