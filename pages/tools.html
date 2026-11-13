@@ -28,46 +28,24 @@
     <!--end::Accessibility Features-->
 
     <!--begin::Fonts-->
-    <!-- <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@fontsource/source-sans-3@5.0.12/index.css"
-      integrity="sha256-tXJfXfp6Ewt1ilPzLDtQnJV4hclT9XuaZUKyUvmyr+Q="
-      crossorigin="anonymous"
-      media="print"
-      onload="this.media = 'all'"
-    /> -->
-    <link rel="stylesheet" href="../fonts/fonts.css" />
+    <link rel="stylesheet" href="../css/fonts/fonts.css" />
     <!--end::Fonts-->
-
-    <!--begin::Third Party Plugin(OverlayScrollbars)-->
-    <!-- <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.11.0/styles/overlayscrollbars.min.css"
-      crossorigin="anonymous"
-    /> -->
-    <link rel="stylesheet" href="../css/overlayscrollbars.min.css" />
-    <!--end::Third Party Plugin(OverlayScrollbars)-->
-
+    
     <!--begin::Third Party Plugin(Bootstrap Icons)-->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
-      crossorigin="anonymous"
-    />
-    <!-- <link rel="stylesheet" href="fonts/bootstrap-icons.min.css" /> -->
+    <link rel="stylesheet" href="../css/bootstrap-icons.min.css" /> 
     <!--end::Third Party Plugin(Bootstrap Icons)-->
 
+    <!--begin::Third Party Plugin(OverlayScrollbars)-->
+    <link rel="stylesheet" href="../css/overlayscrollbars.min.css" />
+    <!--end::Third Party Plugin(OverlayScrollbars)-->
+    
     <!--begin::Required Plugin(AdminLTE)-->
     <link rel="stylesheet" href="../css/adminlte.css" />
     <!--end::Required Plugin(AdminLTE)-->
 
-    <!-- apexcharts
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/apexcharts@3.37.1/dist/apexcharts.css"
-      integrity="sha256-4MX+61mt9NVvvuPjUWdUdyfZfxSB1/Rf9WtqRHgG5S0="
-      crossorigin="anonymous"
-    /> -->
+    <!--begin::Required Plugin(AdminLTE)-->
+    <link rel="stylesheet" href="../css/adminlte.css" />
+    <!--end::Required Plugin(AdminLTE)-->
 
     <!--begin::Custom-->
     <link rel="stylesheet" href="../css/custom.css" />
@@ -126,22 +104,6 @@
                 </button>
               </div>
             </li>
-
-            <!-- <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" data-bs-title="Поиск (CTRL + F)">
-              <li class="nav-item">
-                <a 
-                  class="nav-link" 
-                  data-widget="navbar-search" 
-                  data-bs-toggle="popover" 
-                  data-bs-title="Поиск" 
-                  data-bs-content="Поисковый движок еще не добавлен. Используйте CTRL + F для поиска по странице" 
-                  href="#" 
-                  role="button">
-                  <i class="bi bi-search"></i>
-                </a>
-              </li>
-            </span> -->
-            <!--end::Navbar Search-->
 
             <!--begin::Large font-->
             <li class="nav-item">
@@ -266,13 +228,14 @@
             <!--begin::Row-->
             <div class="row">
               <div class="col-sm-6">
-                <h3 class="mb-0 text-secondary"><i class="nav-icon bi bi-gear-wide-connected"></i> Онлайн-утилиты</h3>
+                <h3 class="mb-0 text-secondary"><i class="nav-icon bi bi-gear-wide-connected"></i> Онлайн утилиты</h3>
               </div>
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-end">
+                  <li class="breadcrumb-item"><a href="dashboard.html">Главная</a></li>
                   <li class="breadcrumb-item active" aria-current="page">
                     <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Выберите страницу</a>
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Онлайн утилиты</a>
                       <ul id="breadcrumb-dropdown" class="dropdown-menu">
                         <!-- Generate breadcrumb dropdown via JS-->
                       </ul>
@@ -294,7 +257,7 @@
           <div class="container-fluid">
 
             <div class="alert alert-light" role="alert">
-              Данный раздел находится в процессе доработки. Предыдущая версия <a href="ins1x.github.io/checker" target="_blank">ins1x.github.io/checker</a><br>
+              Данный раздел находится в процессе разработки. Предыдущая версия <a href="https://ins1x.github.io/checker" target="_blank">ins1x.github.io/checker</a><br>
             </div>
 
             <div class="row row-cols-1 row-cols-md-2 g-4">
@@ -310,10 +273,10 @@
                         <p>Проверьте OUI или MAC-адрес и получите подробные сведения о производителе</p>
                       </p>
                       <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="00:1A:2B:3C:4D:5E" aria-label="MAC" aria-describedby="" id="input-MAC">
-                        <button class="btn btn-success" type="button" id="button-MAC">Проверить</button>
+                        <input type="text" class="form-control" placeholder="00:1A:2B:3C:4D:5E" aria-label="MAC" aria-describedby="" id="input-mac">
+                        <button class="btn btn-success" type="button" id="button-mac">Проверить</button>
                       </div>
-                      <div id="mac-help" class="form-text">
+                      <div id="mac-label" class="form-text">
                         Вводить MAC можно в различных форматах например dead.beef.1234
                       </div>
                       <!-- Проверять маки модемов провайдера на лету -->
@@ -326,49 +289,20 @@
                       <div class="collapse" id="collapseMacOptions">
                         <div class="card card-body">
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="mac-checkbox-1" value="option1">
+                            <input class="form-check-input" name="mac-radio-options" type="radio" id="mac-checkbox-1" value="radio1" checked>
                             <label class="form-check-label" for="mac-checkbox-1">macvendors.com</label>
                           </div>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="mac-checkbox-2" value="option2">
+                            <input class="form-check-input" name="mac-radio-options" type="radio" id="mac-checkbox-2" value="radio2">
                             <label class="form-check-label" for="mac-checkbox-2">maclookup.app</label>
                           </div>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="mac-checkbox-2" value="option2">
-                            <label class="form-check-label" for="mac-checkbox-2">metroethernet.ru</label>
+                            <input class="form-check-input" name="mac-radio-options" type="radio" id="mac-checkbox-3" value="radio3">
+                            <label class="form-check-label" for="mac-checkbox-3">macaddresslookup.io</label>
                           </div>
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="mac-checkbox-2" value="option2">
-                            <label class="form-check-label" for="mac-checkbox-2">macaddresslookup.io</label>
-                          </div>
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="mac-checkbox-2" value="option2">
-                            <label class="form-check-label" for="mac-checkbox-2">wintelguy.com</label>
-                          </div>
-                          <!-- <ul>
-                            <li><a href="https://macvendors.com/" target="_blank">MAC vendors</a></li>
-                            <li><a href="https://maclookup.app/" target="_blank">MAC Address Lookup</a></li>
-                            <li><a href="https://metroethernet.ru/tools/oui" target="_blank">metroethernet</a></li>
-                            <li><a href="https://macaddresslookup.io/" target="_blank">macaddresslookup</a></li>
-                            <li><a href="https://wintelguy.com" target="_blank">wintelguy.com</a></li>
-                          </ul> -->
                         </div>
                       </div>
 
-                      <!-- <span class="d-block">
-                        <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseMAClinks" role="button" aria-expanded="false" aria-controls="collapseMAClinks">
-                          <i class="bi bi-chevron-down"></i> Альтернативные ресурсы для проверки
-                        </a>
-                        <div class="collapse" id="collapseMAClinks">
-                          <ul>
-                            <li><a href="https://macvendors.com/" target="_blank">MAC vendors</a></li>
-                            <li><a href="https://maclookup.app/" target="_blank">MAC Address Lookup</a></li>
-                            <li><a href="https://metroethernet.ru/tools/oui" target="_blank">metroethernet</a></li>
-                            <li><a href="https://macaddresslookup.io/" target="_blank">macaddresslookup</a></li>
-                            <li><a href="https://wintelguy.com" target="_blank">wintelguy.com</a></li>
-                          </ul>
-                        </div>
-                      </span> -->
                     </p>
                   </div>
                 </div>
@@ -378,7 +312,7 @@
                   <div class="card-body">
                     <p class="card-text">
                       <p class="col-md-8 fs-3">
-                        <i class="nav-icon bi bi-bar-chart-steps"></i> Traceroute and PING
+                        <i class="nav-icon bi bi-bar-chart-steps" style="color:dodgerblue"></i> Traceroute and PING
                         <p>Онлайн пинг, трассировка и проверка доступности</p>
                       </p>
                       <div class="input-group mb-3">
@@ -404,30 +338,34 @@
                       <div class="collapse" id="collapsePingOptions">
                         <div class="card card-body">
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="mac-checkbox-1" value="option1">
-                            <label class="form-check-label" for="mac-checkbox-1">macvendors.com</label>
+                            <input class="form-check-input" type="checkbox" id="ping-checkbox-1" value="option1">
+                            <label class="form-check-label" for="ping-checkbox-1">ping.pe</label>
                           </div>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="mac-checkbox-2" value="option2">
-                            <label class="form-check-label" for="mac-checkbox-2">maclookup.app</label>
+                            <input class="form-check-input" type="checkbox" id="ping-checkbox-2" value="option2">
+                            <label class="form-check-label" for="ping-checkbox-2">ping.eu</label>
                           </div>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="mac-checkbox-2" value="option2">
-                            <label class="form-check-label" for="mac-checkbox-2">metroethernet.ru</label>
+                            <input class="form-check-input" type="checkbox" id="ping-checkbox-3" value="option2">
+                            <label class="form-check-label" for="ping-checkbox-3">dnschecker.org</label>
                           </div>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="mac-checkbox-2" value="option2">
-                            <label class="form-check-label" for="mac-checkbox-2">macaddresslookup.io</label>
+                            <input class="form-check-input" type="checkbox" id="ping-checkbox-4" value="option2">
+                            <label class="form-check-label" for="ping-checkbox-4">globalping.io</label>
                           </div>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="mac-checkbox-2" value="option2">
-                            <label class="form-check-label" for="mac-checkbox-2">wintelguy.com</label>
+                            <input class="form-check-input" type="checkbox" id="ping-checkbox-5" value="option2">
+                            <label class="form-check-label" for="ping-checkbox-5">centralops.net</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="ping-checkbox-5" value="option2">
+                            <label class="form-check-label" for="ping-checkbox-5">geopinger.net</label>
                           </div>
                           <!-- <ul>
                             <li><a href="https://ping.pe" target="_blank">ping.pe</a></li>
                             <li><a href="https://ping.eu" target="_blank">ping.eu</a></li>
                             <li><a href="https://dnschecker.org/ping-ipv4.php" target="_blank">IP-Pinger</a></li>
-                            <li><a href="https://globalping.io" target="_blank">globalping.io</a></li>
+                            <li><a href="globalping.io" target="_blank">globalping.io</a></li>
                             <li><a href="https://centralops.net/CO/Ping" target="_blank">centralops.net</a></li>
                             <li><a href="https://geopinger.net" target="_blank">geopinger.net</a></li>
                           </ul> -->
@@ -443,20 +381,28 @@
                   <div class="card-body">
                     <p class="card-text">
                       <p class="col-md-8 fs-3">
-                        <i class="nav-icon bi bi-globe-americas"></i> Whois
+                        <i class="nav-icon bi bi-globe-americas" style="color:goldenrod;"></i> Whois
                         <p>
-                          Whois позволяет собрать информацию о сайте по IP либо домену
+                          Whois позволяет собрать регистрационную информацию об IP-адресе
                         </p>
                         <div class="input-group mb-3">
-                          <input type="text" class="form-control" placeholder="IP или домен сайта" aria-label="input-whois" aria-describedby="button-addon" id="input-whois">
+                          <input type="text" class="form-control" placeholder="Введите IP-адрес" aria-label="input-whois" aria-describedby="button-addon" id="input-whois">
                           <button class="btn btn-outline-warning bg-body" type="button" id="button-whois">Проверить</button>
+                        </div>
+                        <div id="whois-label" class="form-text">
                         </div>
                         <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
                           <input type="radio" class="btn-check" name="btnradio-whois" id="btnradio-whois-1" autocomplete="off" checked>
-                          <label class="btn btn-outline-primary" for="btnradio-whois-1">Who.is</label>
+                          <label class="btn btn-outline-warning" for="btnradio-whois-1">Who.is</label>
                         
                           <input type="radio" class="btn-check" name="btnradio-whois" id="btnradio-whois-2" autocomplete="off">
-                          <label class="btn btn-outline-primary" for="btnradio-whois-2">RIPE</label>
+                          <label class="btn btn-outline-warning" for="btnradio-whois-2">RIPE.net</label>
+
+                          <input type="radio" class="btn-check" name="btnradio-whois" id="btnradio-whois-3" autocomplete="off">
+                          <label class="btn btn-outline-warning" for="btnradio-whois-3">DNSchecker.org</label>
+
+                          <input type="radio" class="btn-check" name="btnradio-whois" id="btnradio-whois-4" autocomplete="off">
+                          <label class="btn btn-outline-warning" for="btnradio-whois-4">Hoster.by</label>
                         </div>
                       </p>
                     </p>
@@ -477,14 +423,46 @@
                         <input type="text" class="form-control" placeholder="IP или домен сайта" aria-label="input-blocklist" aria-describedby="button-addon" id="input-blocklist">
                         <button class="btn btn-outline-danger bg-body" type="button" id="button-blocklist">Проверить</button>
                       </div>
-                      <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                        <input type="radio" class="btn-check" name="btnradio-blocklist" id="btnradio-blocklist-1" autocomplete="off" checked>
-                        <label class="btn btn-outline-primary" for="btnradio-blocklist-1">SPAMBASE</label>
-                      
-                        <input type="radio" class="btn-check" name="btnradio-blocklist" id="btnradio-blocklist-2" autocomplete="off">
-                        <label class="btn btn-outline-primary" for="btnradio-blocklist-2">Blocklist</label>
+                      <div id="blocklist-label" class="form-text">
                       </div>
-                      <!-- проверка на блокировки в нескольких источниках -->
+                      <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                        <input type="radio" class="btn-check" name="btnradio-blocklist" id="btnradio-blocklist-1" data-bs-toggle="collapse" href="#collapseSpamlistOptions" aria-controls="collapseSpamlistOptions" autocomplete="off" checked>
+                        <label class="btn btn-outline-danger" for="btnradio-blocklist-1">SPAMBASE</label>
+                      
+                        <input type="radio" class="btn-check" name="btnradio-blocklist" id="btnradio-blocklist-2" data-bs-toggle="collapse" href="#collapseBlocklistOptions" aria-controls="collapseBlocklistOptions" autocomplete="off">
+                        <label class="btn btn-outline-danger" for="btnradio-blocklist-2">Blocklist</label>
+                      </div>
+                     
+                      <div class="collapse" id="collapseSpamlistOptions">
+                        <div class="card card-body">
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="spam-radio-options" type="radio" id="spam-checkbox-1" value="radio1" checked>
+                            <label class="form-check-label" for="spam-checkbox-1">mxtoolbox.com</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="spam-radio-options" type="radio" id="spam-checkbox-2" value="radio2">
+                            <label class="form-check-label" for="spam-checkbox-2">MultiRBL</label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="collapse" id="collapseBlocklistOptions">
+                        <div class="card card-body">
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="blocklist-radio-options" type="radio" id="blocklist-checkbox-1" value="radio1" checked>
+                            <label class="form-check-label" for="blocklist-checkbox-1">fortinet</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="blocklist-radio-options" type="radio" id="blocklist-checkbox-2" value="radio2">
+                            <label class="form-check-label" for="blocklist-checkbox-2">zvelo</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="blocklist-radio-options" type="radio" id="blocklist-checkbox-3" value="radio3">
+                            <label class="form-check-label" for="blocklist-checkbox-3">belgie</label>
+                          </div>
+                        </div>
+                      </div>
+
                     </p>
                   </div>
                 </div>
@@ -601,43 +579,13 @@
       <!--end::Footer-->
     </div>
     <!--end::App Wrapper-->
-    <!--begin::Script-->
-    <!--begin::Third Party Plugin(OverlayScrollbars)-->
-    <!-- <script
-      src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.11.0/browser/overlayscrollbars.browser.es6.min.js"
-      crossorigin="anonymous"
-    ></script> -->
+    <!-- GLOBAL SCRIPTS -->
     <script src="../js/overlayscrollbars.browser.es6.min.js"></script>
-    <!--end::Third Party Plugin(OverlayScrollbars)--><!--begin::Required Plugin(popperjs for Bootstrap 5)-->
-    <!-- <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-      crossorigin="anonymous"
-    ></script> -->
     <script src="../js/popper.min.js"></script>
-    <!--end::Required Plugin(popperjs for Bootstrap 5)--><!--begin::Required Plugin(Bootstrap 5)-->
-    <!-- <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"
-      crossorigin="anonymous"
-    ></script> -->
     <script src="../js/bootstrap.min.js"></script>
-    <!--end::Required Plugin(Bootstrap 5)--><!--begin::Required Plugin(AdminLTE)-->
     <script src="../js/adminlte.js"></script>
-    <!--end::Required Plugin(AdminLTE)--><!--begin::OverlayScrollbars Configure-->
 
     <!-- OPTIONAL SCRIPTS -->
-
-    <!-- sortablejs -->
-    <!-- <script
-      src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"
-      crossorigin="anonymous"
-    ></script> -->
-    <!-- <script src="../js/sortable.min.js"></script> -->
-
-    <!-- search keyword highlighter plugin -->
-    <!-- <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js"
-      crossorigin="anonymous"
-    ></script> -->
     <script src="../js/mark.min.js"></script>
 
     <!-- customjs -->
@@ -645,6 +593,106 @@
 
     <!-- only for this page-->    
     <script language="javascript">
+      // mac-input event
+      document.getElementById('input-mac').addEventListener('input', (event) => {
+        // Regular expression remove "http://" or "http" at the beginning of a line (case insensitive)
+        event.target.value = event.target.value.replace(/^https?:\/\//i, '');
+        // Regular expression remove "www." at the beginning of a line (case insensitive)
+        event.target.value = event.target.value.replace(/^www\./i, '');
+        
+        // Select dropdown MAC-Vendor item if find MAC 
+        const macRegex = /^(([0-9A-Fa-f]{2}[:]){5}|([0-9A-Fa-f]{2}[-]){5})([0-9A-Fa-f]{2})$/;
+        if (macRegex.test(event.target.value)) {
+        }
+        
+        // Convert from cisco format dead.beef.1234 to common format de:ad:be:ef:12:34
+        const ciscoMacRegex = /^([0-9a-fA-F]{4}\.){2}[0-9a-fA-F]{4}$/;
+        if (ciscoMacRegex.test(event.target.value)) {
+          const cleanMac = event.target.value.replace(/\./g, '');
+          event.target.value = cleanMac.match(/.{1,2}/g).join(':').toLowerCase();
+        }
+        
+        // Convert from huawei format dead-beef-1234 to common format de:ad:be:ef:12:34
+        const huaweiMacRegex = /^([0-9a-fA-F]{4}\-){2}[0-9a-fA-F]{4}$/;
+        if (huaweiMacRegex.test(event.target.value)) {
+          const cleanMac = event.target.value.replace(/\-/g, '');
+          event.target.value = cleanMac.match(/.{1,2}/g).join(':').toLowerCase();
+        }
+
+        // Select port check (Validates 0-255 ranges and 1-65535 ports)
+        // const strictIpPortRegex = /^(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)\.){3}(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d):(?:6553[0-5]|655[0-2]\d|65[0-4]\d\d|6[0-4]\d{3}|[1-5]\d{4}|[1-9]\d{0,3})$/;
+      });
+
+      document.getElementById('button-mac').addEventListener('click', () => {
+        const searchQuery = document.getElementById('input-mac').value.trim();
+        if (!searchQuery) {
+          document.getElementById("mac-label").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> Вы не указали MAC адрес для поиска. Например: 40-A8-F0-4F-50-9E`;
+          return;
+        }
+        if (document.getElementById('mac-checkbox-1').checked) {
+          window.open(`https://macvendors.com/?search=${searchQuery}`, "_blank");
+        }
+        if (document.getElementById('mac-checkbox-2').checked) {
+          window.open(`https://maclookup.app/search/result?mac=${searchQuery}`, "_blank");
+        }
+        if (document.getElementById('mac-checkbox-3').checked) {
+          window.open(`https://macaddresslookup.io/?search=${searchQuery}`, "_blank");
+        }
+      });
+
+      document.getElementById('button-whois').addEventListener('click', () => {
+        const searchQuery = document.getElementById('input-whois').value.trim();
+        if (!searchQuery) {
+          document.getElementById("whois-label").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> Вы не указали IP адрес либо домен для поиска.`;
+          return;
+        }
+        if (document.getElementById('btnradio-whois-1').checked) {
+          window.open(`https://who.is/whois/${searchQuery}`, "_blank");
+        }
+        if (document.getElementById('btnradio-whois-2').checked) {
+          window.open(`https://apps.db.ripe.net/db-web-ui/query?bflag=false&dflag=false&rflag=true&searchtext=${searchQuery}&source=RIPE`, "_blank");
+        }
+        if (document.getElementById('btnradio-whois-3').checked) {
+          window.open(`https://dnschecker.org/domain-ip-lookup.php?query=${searchQuery}&dns=google`, "_blank");
+        }
+        if (document.getElementById('btnradio-whois-4').checked) {
+          window.open(`https://whois.hoster.by/?domain=${searchQuery}`, "_blank");
+        }
+      });
+
+      document.getElementById('button-blocklist').addEventListener('click', () => {
+        const searchQuery = document.getElementById('input-blocklist').value.trim();
+        if (!searchQuery) {
+          document.getElementById("blocklist-label").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> Вы не указали IP адрес либо домен для поиска.`;
+          return;
+        }
+        if (document.getElementById('btnradio-blocklist-1').checked) {
+          if (document.getElementById('spam-checkbox-1').checked) {
+            window.open(`https://mxtoolbox.com/SuperTool.aspx?action=blacklist%3a${searchQuery}&run=toolpage`, "_blank");
+          }
+          if (document.getElementById('spam-checkbox-2').checked) {
+            window.open(`https://multirbl.valli.org/lookup/${searchQuery}.html`, "_blank");
+          }
+        }
+      });
+
+      // Hide all bootstrap collapse function
+      function hideAllCollapse() {
+        const collapseElements = document.querySelectorAll('.collapse.show');
+        collapseElements.forEach(el => {
+          const collapseInstance = bootstrap.Collapse.getOrCreateInstance(el);
+          collapseInstance.hide();
+        });
+      }
+
+      // Hide all collapse on click link (like accordion blocks)
+      const collapseLinks = document.querySelectorAll('.btn-check');
+      collapseLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+          hideAllCollapse();
+          // event.target.focus();
+        });
+      });
     </script>
 
   </body>
