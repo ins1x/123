@@ -43,12 +43,16 @@
     <link rel="stylesheet" href="../css/adminlte.css" />
     <!--end::Required Plugin(AdminLTE)-->
 
-    <!--begin::Required Plugin(AdminLTE)-->
-    <link rel="stylesheet" href="../css/adminlte.css" />
-    <!--end::Required Plugin(AdminLTE)-->
-
     <!--begin::Custom-->
     <link rel="stylesheet" href="../css/custom.css" />
+    <!--end::Custom-->
+
+    <!-- custom style only for this page -->
+    <style>
+      ul {
+        list-style-type: "▸";
+      }
+    </style>
     <!--end::Custom-->
 
     <!--begin::Color Mode Toggle-->
@@ -72,14 +76,6 @@
                 <i class="bi bi-list"></i>
               </a>
             </li>
-
-            <!-- <li class="nav-item d-none d-md-block">
-              <a href="dashboard.html" class="nav-link">
-                <i class="bi bi-grid-1x2 me-1" aria-hidden="true"></i>
-                Главная
-              </a>
-            </li> -->
-
           </ul>
           <!--end::Start Navbar Links-->
 
@@ -281,26 +277,15 @@
                       </div>
                       <!-- Проверять маки модемов провайдера на лету -->
 
-                      <p class="d-inline-flex gap-1">
-                        <a class="btn btn-outline-success bg-body" data-bs-toggle="collapse" href="#collapseMacOptions" role="button" aria-expanded="false" aria-controls="collapseMacOptions">
-                          <i class="bi bi-chevron-down"></i> Дополнительно
-                        </a>
-                      </p>
-                      <div class="collapse" id="collapseMacOptions">
-                        <div class="card card-body">
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="mac-radio-options" type="radio" id="mac-checkbox-1" value="radio1" checked>
-                            <label class="form-check-label" for="mac-checkbox-1">macvendors.com</label>
-                          </div>
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="mac-radio-options" type="radio" id="mac-checkbox-2" value="radio2">
-                            <label class="form-check-label" for="mac-checkbox-2">maclookup.app</label>
-                          </div>
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="mac-radio-options" type="radio" id="mac-checkbox-3" value="radio3">
-                            <label class="form-check-label" for="mac-checkbox-3">macaddresslookup.io</label>
-                          </div>
-                        </div>
+                      <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                        <input type="radio" class="btn-check" name="btnradio-mac" id="btnradio-mac-1" autocomplete="off" checked>
+                        <label class="btn btn-outline-success" for="btnradio-mac-1">MACVendors.com</label>
+
+                        <input type="radio" class="btn-check" name="btnradio-mac" id="btnradio-mac-2" autocomplete="off">
+                        <label class="btn btn-outline-success" for="btnradio-mac-2">maclookup.app</label>
+
+                        <input type="radio" class="btn-check" name="btnradio-mac" id="btnradio-mac-3" autocomplete="off">
+                        <label class="btn btn-outline-success" for="btnradio-mac-3">macaddresslookup.io</label>
                       </div>
 
                     </p>
@@ -319,56 +304,70 @@
                         <input type="text" class="form-control" placeholder="IP или домен сайта" aria-label="input-ping" aria-describedby="button-addon" id="input-ping">
                         <button class="btn btn-primary" type="button" id="button-ping">Проверить</button>
                       </div>
-                      <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-                        <label class="btn btn-outline-primary" for="btnradio1">Ping</label>
-                      
-                        <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-                        <label class="btn btn-outline-primary" for="btnradio2">Traceroute</label>
 
-                        <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-                        <label class="btn btn-outline-primary" for="btnradio3">Availability</label>
+                      <div id="ping-label" class="form-text">
                       </div>
+  
+                      <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                        <input type="radio" class="btn-check" name="btnradio-ping" id="btnradio-ping-1" data-bs-toggle="collapse" href="#collapsePing" aria-controls="collapsePing" autocomplete="off" checked>
+                        <label class="btn btn-outline-primary" for="btnradio-ping-1">Ping</label>
+                      
+                        <input type="radio" class="btn-check" name="btnradio-ping" id="btnradio-ping-2"  data-bs-toggle="collapse" href="#collapseTrace" aria-controls="collapseTrace" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="btnradio-ping-2">Traceroute</label>
 
-                      <p class="d-flex justify-content-end">
-                        <a class="btn btn-outline-primary bg-body" data-bs-toggle="collapse" href="#collapsePingOptions" role="button" aria-expanded="false" aria-controls="collapsePingOptions">
-                          <i class="bi bi-chevron-down"></i> Дополнительно
-                        </a>
-                      </p>
-                      <div class="collapse" id="collapsePingOptions">
+                        <input type="radio" class="btn-check" name="btnradio-ping" id="btnradio-ping-3" data-bs-toggle="collapse" href="#collapseHost" aria-controls="collapseHost" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="btnradio-ping-3">Availability</label>
+                      </div>
+                     
+                      <div class="collapse" id="collapsePing">
                         <div class="card card-body">
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="ping-checkbox-1" value="option1">
+                            <input class="form-check-input" type="checkbox" id="ping-checkbox-1" value="" autocomplete="off" checked>
                             <label class="form-check-label" for="ping-checkbox-1">ping.pe</label>
                           </div>
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="ping-checkbox-2" value="option2">
-                            <label class="form-check-label" for="ping-checkbox-2">ping.eu</label>
-                          </div>
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="ping-checkbox-3" value="option2">
-                            <label class="form-check-label" for="ping-checkbox-3">dnschecker.org</label>
-                          </div>
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="ping-checkbox-4" value="option2">
-                            <label class="form-check-label" for="ping-checkbox-4">globalping.io</label>
-                          </div>
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="ping-checkbox-5" value="option2">
-                            <label class="form-check-label" for="ping-checkbox-5">centralops.net</label>
-                          </div>
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="ping-checkbox-5" value="option2">
-                            <label class="form-check-label" for="ping-checkbox-5">geopinger.net</label>
-                          </div>
-                          <!-- <ul>
-                            <li><a href="https://ping.pe" target="_blank">ping.pe</a></li>
+                          
+                          <h4>Альтернативные ресурсы</h4>
+                          <ul>
                             <li><a href="https://ping.eu" target="_blank">ping.eu</a></li>
                             <li><a href="https://dnschecker.org/ping-ipv4.php" target="_blank">IP-Pinger</a></li>
-                            <li><a href="globalping.io" target="_blank">globalping.io</a></li>
+                            <li><a href="https://globalping.io" target="_blank">globalping.io</a></li>
                             <li><a href="https://centralops.net/CO/Ping" target="_blank">centralops.net</a></li>
                             <li><a href="https://geopinger.net" target="_blank">geopinger.net</a></li>
-                          </ul> -->
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div class="collapse" id="collapseTrace">
+                        <div class="card card-body">
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="trace-checkbox-1" value="" autocomplete="off" checked>
+                            <label class="form-check-label" for="trace-checkbox-1">tools.bunny.net</label>
+                          </div>
+                          
+                          <h4>Альтернативные ресурсы</h4>
+                          <ul>
+                            <li><a href="https://traceroute-online.com" target="_blank">traceroute-online</a></li>
+                            <li><a href="https://mxtoolbox.com/TraceRouteLookup.aspx" target="_blank">ICMP-trace</a></li>
+                            <li><a href="https://host-tracker.com/en/ic/check-trace" target="_blank">host-tracker</a></li>
+                            <li><a href="https://geotraceroute.com/" target="_blank">geotraceroute.com</a></li>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div class="collapse" id="collapseHost">
+                        <div class="card card-body">
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="host-checkbox-1" value="" autocomplete="off" checked>
+                            <label class="form-check-label" for="host-checkbox-1">host-tracker.com</label>
+                          </div>
+                          
+                          <h4>Альтернативные ресурсы</h4>
+                          <ul>
+                            <li><a href="https://check-host.net/check-http" target="_blank">check-host</a></li>
+                            <li><a href="https://downdetector.com/" target="_blank">downdetector</a></li>
+                            <li><a href="https://www.reg.ru/whois/check_site" target="_blank">reg.ru</a></li>
+                            <li><a href="https://2ip.ru/site-availability/" target="_blank">2ip.ru</a></li>
+                          </ul>
                         </div>
                       </div>
 
@@ -423,8 +422,10 @@
                         <input type="text" class="form-control" placeholder="IP или домен сайта" aria-label="input-blocklist" aria-describedby="button-addon" id="input-blocklist">
                         <button class="btn btn-outline-danger bg-body" type="button" id="button-blocklist">Проверить</button>
                       </div>
+
                       <div id="blocklist-label" class="form-text">
                       </div>
+
                       <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
                         <input type="radio" class="btn-check" name="btnradio-blocklist" id="btnradio-blocklist-1" data-bs-toggle="collapse" href="#collapseSpamlistOptions" aria-controls="collapseSpamlistOptions" autocomplete="off" checked>
                         <label class="btn btn-outline-danger" for="btnradio-blocklist-1">SPAMBASE</label>
@@ -460,9 +461,43 @@
                             <input class="form-check-input" name="blocklist-radio-options" type="radio" id="blocklist-checkbox-3" value="radio3">
                             <label class="form-check-label" for="blocklist-checkbox-3">belgie</label>
                           </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="blocklist-radio-options" type="radio" id="blocklist-checkbox-4" value="radio4">
+                            <label class="form-check-label" for="blocklist-checkbox-4">blockedin</label>
+                          </div>
                         </div>
                       </div>
 
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card card-info card-outline h-100">
+                  <div class="card-body">
+                    <p class="card-text">
+                      <p class="col-md-8 fs-3">
+                        <i class="bi bi-globe2" style="color:deepskyblue"></i> Domain
+                      </p>
+                      <p>
+                        Проверка DNS записей, SSL сертификатов для домена
+                      </p>
+                      <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Домен сайта" aria-label="button-domain" aria-describedby="button-addon" id="input-domain">
+                        <button class="btn btn-outline-info bg-body" type="button" id="button-domain">Проверить</button>
+                      </div>
+
+                      <div id="domain-label" class="form-text">
+                      </div>
+                      <!-- проверка DNS записей с выбором типа + ссылка на DNS провадера -->
+                      
+                      <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                        <input type="radio" class="btn-check" name="btnradio-domain" id="btnradio-domain-1" autocomplete="off" checked>
+                        <label class="btn btn-outline-info" for="btnradio-domain-1">DNS записи</label>
+                      
+                        <input type="radio" class="btn-check" name="btnradio-domain" id="btnradio-domain-2" autocomplete="off">
+                        <label class="btn btn-outline-info" for="btnradio-domain-2">SSL сертификаты</label>
+                      </div>
                     </p>
                   </div>
                 </div>
@@ -472,50 +507,25 @@
                   <div class="card-body">
                     <p class="card-text">
                       <p class="col-md-8 fs-3">
-                        <i class="bi bi-globe2"></i> Domain
-                      </p>
-                      <p>
-                        Проверка DNS записей, SSL сертификатов для домена
-                      </p>
-                      <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Домен сайта" aria-label="button-domain" aria-describedby="button-addon" id="input-domain">
-                        <button class="btn btn-outline-primary bg-body" type="button" id="button-domain">Проверить</button>
-                      </div>
-                      <!-- проверка DNS записей с выбором типа + ссылка на DNS провадера -->
-                      
-                      <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                        <input type="radio" class="btn-check" name="btnradio-domain" id="btnradio-domain-1" autocomplete="off" checked>
-                        <label class="btn btn-outline-primary" for="btnradio-domain-1">DNS записи</label>
-                      
-                        <input type="radio" class="btn-check" name="btnradio-domain" id="btnradio-domain-2" autocomplete="off">
-                        <label class="btn btn-outline-primary" for="btnradio-domain-2">SSL сертификаты</label>
-                      </div>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card card-primary card-outline h-100">
-                  <div class="card-body">
-                    <p class="card-text">
-                      <p class="col-md-8 fs-3">
                         <i class="bi bi-diagram-3-fill"></i> Open ports
                       </p>
                       <p>
                         Проверка открытых портов
                       </p>
                       <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="IP:порт либо url сайта" aria-label="input-portcheck" aria-describedby="button-addon" id="input-portcheck">
-                        <button class="btn btn-outline-primary bg-body" type="button" id="button-portcheck">Проверить</button>
+                        <input type="text" class="form-control" placeholder="Введите IP-адрес" aria-label="input-portcheck" aria-describedby="button-addon" id="input-portcheck">
+                        <button class="btn btn-outline-secondary bg-body" type="button" id="button-portcheck">Проверить</button>
                       </div>
 
-                      <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                      <div id="portcheck-label" class="form-text">
+                      </div>
+                      <!-- <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
                         <input type="radio" class="btn-check" name="btnradio-portcheck" id="btnradio-portcheck-1" autocomplete="off" checked>
-                        <label class="btn btn-outline-primary" for="btnradio-portcheck-1">Проверить популярные порты</label>
+                        <label class="btn btn-outline-secondary" for="btnradio-portcheck-1">Проверить популярные порты</label>
                       
                         <input type="radio" class="btn-check" name="btnradio-portcheck" id="btnradio-portcheck-2" autocomplete="off">
-                        <label class="btn btn-outline-primary" for="btnradio-portcheck-2">По списку</label>
-                      </div>
+                        <label class="btn btn-outline-secondary" for="btnradio-portcheck-2">По списку</label>
+                      </div> -->
 
                       <span class="d-block">
                         <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseWellKnownPorts" role="button" aria-expanded="false" aria-controls="collapseWellKnownPorts">
@@ -618,9 +628,6 @@
           const cleanMac = event.target.value.replace(/\-/g, '');
           event.target.value = cleanMac.match(/.{1,2}/g).join(':').toLowerCase();
         }
-
-        // Select port check (Validates 0-255 ranges and 1-65535 ports)
-        // const strictIpPortRegex = /^(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)\.){3}(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d):(?:6553[0-5]|655[0-2]\d|65[0-4]\d\d|6[0-4]\d{3}|[1-5]\d{4}|[1-9]\d{0,3})$/;
       });
 
       document.getElementById('button-mac').addEventListener('click', () => {
@@ -629,13 +636,13 @@
           document.getElementById("mac-label").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> Вы не указали MAC адрес для поиска. Например: 40-A8-F0-4F-50-9E`;
           return;
         }
-        if (document.getElementById('mac-checkbox-1').checked) {
+        if (document.getElementById('btnradio-mac-1').checked) {
           window.open(`https://macvendors.com/?search=${searchQuery}`, "_blank");
         }
-        if (document.getElementById('mac-checkbox-2').checked) {
+        if (document.getElementById('btnradio-mac-2').checked) {
           window.open(`https://maclookup.app/search/result?mac=${searchQuery}`, "_blank");
         }
-        if (document.getElementById('mac-checkbox-3').checked) {
+        if (document.getElementById('btnradio-mac-3').checked) {
           window.open(`https://macaddresslookup.io/?search=${searchQuery}`, "_blank");
         }
       });
@@ -673,7 +680,68 @@
           if (document.getElementById('spam-checkbox-2').checked) {
             window.open(`https://multirbl.valli.org/lookup/${searchQuery}.html`, "_blank");
           }
+        } else if (document.getElementById('btnradio-blocklist-2').checked) {
+          if (document.getElementById('blocklist-checkbox-1').checked) {
+            window.open(`https://url.fortinet.net/rate/submit.php`, "_blank");
+          }
+          if (document.getElementById('blocklist-checkbox-2').checked) {
+            window.open(`https://tools.zvelo.com`, "_blank");
+          }
+          if (document.getElementById('blocklist-checkbox-3').checked) {
+            window.open(`https://belgie.by/ru/other/info/search_sod/`, "_blank");
+          }
+          if (document.getElementById('blocklist-checkbox-4').checked) {
+            window.open(`https://blockedin.org/ru/`, "_blank");
+          }
         }
+      });
+
+      document.getElementById('button-ping').addEventListener('click', () => {
+        const searchQuery = document.getElementById('input-ping').value.trim();
+        if (!searchQuery) {
+          document.getElementById("ping-label").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> Вы не указали IP адрес либо домен для проверки.`;
+          return;
+        }
+        if (document.getElementById('btnradio-ping-1').checked) {
+          if (document.getElementById('ping-checkbox-1').checked) {
+            window.open(`https://ping.pe/${searchQuery}`, "_blank");
+          }
+        } else if (document.getElementById('btnradio-ping-2').checked) {
+          if (document.getElementById('trace-checkbox-1').checked) {
+            window.open(`https://tools.bunny.net/traceroute?query=${searchQuery}`, "_blank");
+          }
+        } else if (document.getElementById('btnradio-ping-3').checked) {
+          if (document.getElementById('host-checkbox-1').checked) {
+            window.open(`https://www.host-tracker.com/ru/ic/check-http?autostart=1&url=${searchQuery}&pool=`, "_blank");
+          }
+        }
+      });
+
+      document.getElementById('button-domain').addEventListener('click', () => {
+        const searchQuery = document.getElementById('input-domain').value.trim();
+        if (!searchQuery) {
+          document.getElementById("domain-label").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> Вы не указали домен для проверки. Например google.com`;
+          return;
+        }
+        if (document.getElementById('btnradio-domain-1').checked) {
+          window.open(`https://dnschecker.org/all-dns-records-of-domain.php?query=${searchQuery}&rtype=ALL&dns=cloudflare`, "_blank");
+        }
+        if (document.getElementById('btnradio-domain-2').checked) {
+          window.open(`https://www.sslshopper.com/ssl-checker.html#hostname=${searchQuery}`, "_blank");
+        }
+      });
+
+      document.getElementById('button-portcheck').addEventListener('click', () => {
+        const searchQuery = document.getElementById('input-portcheck').value.trim();
+        if (!searchQuery) {
+          document.getElementById("portcheck-label").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> Вы не указали IP для проверки`;
+          return;
+        }
+        
+        window.open(`https://dnschecker.org/port-scanner.php?query=${searchQuery}`, "_blank");
+
+        // Select port check (Validates 0-255 ranges and 1-65535 ports)
+        // const strictIpPortRegex = /^(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)\.){3}(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d):(?:6553[0-5]|655[0-2]\d|65[0-4]\d\d|6[0-4]\d{3}|[1-5]\d{4}|[1-9]\d{0,3})$/;
       });
 
       // Hide all bootstrap collapse function
