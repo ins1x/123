@@ -47,14 +47,6 @@
     <link rel="stylesheet" href="../css/custom.css" />
     <!--end::Custom-->
 
-    <!-- custom style only for this page -->
-    <style>
-      ul {
-        list-style-type: "▸";
-      }
-    </style>
-    <!--end::Custom-->
-
     <!--begin::Color Mode Toggle-->
     <script src="../js/color-modes.js"></script>
     <!--end::Color Mode Toggle-->
@@ -252,11 +244,22 @@
           <!--begin::Container-->
           <div class="container-fluid">
 
-            <div class="alert alert-light" role="alert">
-              Данный раздел находится в процессе разработки. Предыдущая версия <a href="https://ins1x.github.io/checker" target="_blank">ins1x.github.io/checker</a><br>
-            </div>
+            <!-- <p class="d-flex justify-content-start gap-2">
+              <div class="alert alert-light" role="alert">
+                Данный раздел находится в процессе разработки. Предыдущая версия <a href="checker.html" target="_blank">ins1x.github.io/checker</a><br>
+              </div>
+            </p> -->
 
-            <div class="row row-cols-1 row-cols-md-2 g-4">
+            <p class="d-flex justify-content-end gap-2">
+              <a class="btn btn-outline-secondary active" href="tools.html">
+                <i class="bi bi-gear-wide-connected"></i><strong> Онлайн-утилиты</strong>
+              </a>
+              <a class="btn btn-outline-secondary" href="checker.html">
+                <i class="bi bi-card-list"></i><strong> Список ресурсов</strong>
+              </a>
+            </p>
+
+            <div class="row row-cols-1 row-cols-md-2 g-2">
               <div class="col">
                 <div class="card card-success card-outline h-100">
                   <!-- <div class="card-header text-bg-gray py-2">
@@ -266,18 +269,20 @@
                     <p class="card-text">
                       <p class="col-md-8 fs-3">
                         <i class="nav-icon bi bi-pci-card-network" style="color:darkgreen"></i><strong> MAC-Vendor</strong>
-                        <p>Проверьте OUI или MAC-адрес и получите подробные сведения о производителе</p>
+                        <p id="mac-label">
+                          Проверьте MAC-адрес и получите подробные сведения о производителе
+                        </p>
                       </p>
                       <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="00:1A:2B:3C:4D:5E" aria-label="MAC" aria-describedby="" id="input-mac">
-                        <button class="btn btn-success" type="button" id="button-mac">Проверить</button>
+                        <button class="btn btn-success" type="button" id="button-mac">Проверить <i class="bi bi-chevron-right"></i></button>
                       </div>
-                      <div id="mac-label" class="form-text">
+                      <div id="mac-status" class="form-text">
                         Вводить MAC можно в различных форматах например dead.beef.1234
                       </div>
                       <!-- Проверять маки модемов провайдера на лету -->
 
-                      <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                      <div class="btn-group py-2" role="group" aria-label="Basic radio toggle button group">
                         <input type="radio" class="btn-check" name="btnradio-mac" id="btnradio-mac-1" autocomplete="off" checked>
                         <label class="btn btn-outline-success" for="btnradio-mac-1">MACVendors.com</label>
 
@@ -298,76 +303,66 @@
                     <p class="card-text">
                       <p class="col-md-8 fs-3">
                         <i class="nav-icon bi bi-bar-chart-steps" style="color:dodgerblue"></i> Traceroute and PING
-                        <p>Онлайн пинг, трассировка и проверка доступности</p>
+                        <p id="ping-label">Онлайн пинг, трассировка и проверка доступности</p>
                       </p>
                       <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="IP или домен сайта" aria-label="input-ping" aria-describedby="button-addon" id="input-ping">
-                        <button class="btn btn-primary" type="button" id="button-ping">Проверить</button>
+                        <button class="btn btn-primary" type="button" id="button-ping">Проверить <i class="bi bi-chevron-right"></i></button>
                       </div>
 
-                      <div id="ping-label" class="form-text">
+                      <div id="ping-status" class="form-text">
                       </div>
   
-                      <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                      <div class="btn-group py-2" role="group" aria-label="Basic radio toggle button group">
                         <input type="radio" class="btn-check" name="btnradio-ping" id="btnradio-ping-1" data-bs-toggle="collapse" href="#collapsePing" aria-controls="collapsePing" autocomplete="off" checked>
-                        <label class="btn btn-outline-primary" for="btnradio-ping-1">Ping</label>
+                        <label class="btn btn-outline-primary" for="btnradio-ping-1"><i class="bi bi-graph-up"></i> Ping</label>
                       
                         <input type="radio" class="btn-check" name="btnradio-ping" id="btnradio-ping-2"  data-bs-toggle="collapse" href="#collapseTrace" aria-controls="collapseTrace" autocomplete="off">
-                        <label class="btn btn-outline-primary" for="btnradio-ping-2">Traceroute</label>
+                        <label class="btn btn-outline-primary" for="btnradio-ping-2"><i class="bi bi-bar-chart-steps"></i> Traceroute</label>
 
                         <input type="radio" class="btn-check" name="btnradio-ping" id="btnradio-ping-3" data-bs-toggle="collapse" href="#collapseHost" aria-controls="collapseHost" autocomplete="off">
-                        <label class="btn btn-outline-primary" for="btnradio-ping-3">Availability</label>
+                        <label class="btn btn-outline-primary" for="btnradio-ping-3"><i class="bi bi-activity"></i> Availability</label>
                       </div>
                      
                       <div class="collapse" id="collapsePing">
                         <div class="card card-body">
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="ping-checkbox-1" value="" autocomplete="off" checked>
+                            <input class="form-check-input" name="ping-radio-options" type="radio" id="ping-checkbox-1" value="" autocomplete="off" checked>
                             <label class="form-check-label" for="ping-checkbox-1">ping.pe</label>
                           </div>
-                          
-                          <h4>Альтернативные ресурсы</h4>
-                          <ul>
-                            <li><a href="https://ping.eu" target="_blank">ping.eu</a></li>
-                            <li><a href="https://dnschecker.org/ping-ipv4.php" target="_blank">IP-Pinger</a></li>
-                            <li><a href="https://globalping.io" target="_blank">globalping.io</a></li>
-                            <li><a href="https://centralops.net/CO/Ping" target="_blank">centralops.net</a></li>
-                            <li><a href="https://geopinger.net" target="_blank">geopinger.net</a></li>
-                          </ul>
+
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="ping-radio-options" type="radio" id="ping-checkbox-2" value="" autocomplete="off">
+                            <label class="form-check-label" for="ping-checkbox-2">check-host.net</label>
+                          </div>
                         </div>
                       </div>
 
                       <div class="collapse" id="collapseTrace">
                         <div class="card card-body">
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="trace-checkbox-1" value="" autocomplete="off" checked>
+                            <input class="form-check-input" name="trace-radio-options" type="radio" id="trace-checkbox-1" value="" autocomplete="off" checked>
                             <label class="form-check-label" for="trace-checkbox-1">tools.bunny.net</label>
                           </div>
-                          
-                          <h4>Альтернативные ресурсы</h4>
-                          <ul>
-                            <li><a href="https://traceroute-online.com" target="_blank">traceroute-online</a></li>
-                            <li><a href="https://mxtoolbox.com/TraceRouteLookup.aspx" target="_blank">ICMP-trace</a></li>
-                            <li><a href="https://host-tracker.com/en/ic/check-trace" target="_blank">host-tracker</a></li>
-                            <li><a href="https://geotraceroute.com/" target="_blank">geotraceroute.com</a></li>
-                          </ul>
+
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="trace-radio-options" type="radio" id="trace-checkbox-2" value="" autocomplete="off">
+                            <label class="form-check-label" for="trace-checkbox-2">mxtoolbox.com</label>
+                          </div>
                         </div>
                       </div>
 
                       <div class="collapse" id="collapseHost">
                         <div class="card card-body">
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="host-checkbox-1" value="" autocomplete="off" checked>
-                            <label class="form-check-label" for="host-checkbox-1">host-tracker.com</label>
+                            <input class="form-check-input" name="host-radio-options" type="radio" id="host-checkbox-1" value="" autocomplete="off" checked>
+                            <label class="form-check-label" for="host-checkbox-1">check-host.net</label>
                           </div>
-                          
-                          <h4>Альтернативные ресурсы</h4>
-                          <ul>
-                            <li><a href="https://check-host.net/check-http" target="_blank">check-host</a></li>
-                            <li><a href="https://downdetector.com/" target="_blank">downdetector</a></li>
-                            <li><a href="https://www.reg.ru/whois/check_site" target="_blank">reg.ru</a></li>
-                            <li><a href="https://2ip.ru/site-availability/" target="_blank">2ip.ru</a></li>
-                          </ul>
+
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="host-radio-options" type="radio" id="host-checkbox-2" value="" autocomplete="off">
+                            <label class="form-check-label" for="host-checkbox-2">host-tracker.com</label>
+                          </div>
                         </div>
                       </div>
 
@@ -381,16 +376,16 @@
                     <p class="card-text">
                       <p class="col-md-8 fs-3">
                         <i class="nav-icon bi bi-globe-americas" style="color:goldenrod;"></i> Whois
-                        <p>
+                        <p id="whois-label">
                           Whois позволяет собрать регистрационную информацию об IP-адресе
                         </p>
                         <div class="input-group mb-3">
                           <input type="text" class="form-control" placeholder="Введите IP-адрес" aria-label="input-whois" aria-describedby="button-addon" id="input-whois">
-                          <button class="btn btn-outline-warning bg-body" type="button" id="button-whois">Проверить</button>
+                          <button class="btn btn-warning text-light" type="button" id="button-whois">Проверить <i class="bi bi-chevron-right"></i></button>
                         </div>
-                        <div id="whois-label" class="form-text">
+                        <div id="whois-status" class="form-text">
                         </div>
-                        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                        <div class="btn-group py-2" role="group" aria-label="Basic radio toggle button group">
                           <input type="radio" class="btn-check" name="btnradio-whois" id="btnradio-whois-1" autocomplete="off" checked>
                           <label class="btn btn-outline-warning" for="btnradio-whois-1">Who.is</label>
                         
@@ -415,23 +410,23 @@
                       <p class="col-md-8 fs-3">
                         <i class="nav-icon bi bi-envelope-slash" style="color:crimson"></i> Blocklist
                       </p>
-                      <p>
-                        Проверка сайта в заблокированных ресурсах
+                      <p id="blocklist-label">
+                        Проверка IP либо домена в списках заблокированных ресурсов
                       </p>
                       <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="IP или домен сайта" aria-label="input-blocklist" aria-describedby="button-addon" id="input-blocklist">
-                        <button class="btn btn-outline-danger bg-body" type="button" id="button-blocklist">Проверить</button>
+                        <input type="text" class="form-control" placeholder="IP или домен сайта" aria-label="input-blocklist" aria-describedby="blocklist-label" id="input-blocklist">
+                        <button class="btn btn-danger" type="button" id="button-blocklist">Проверить <i class="bi bi-chevron-right"></i></button>
                       </div>
 
-                      <div id="blocklist-label" class="form-text">
+                      <div id="blocklist-status" class="form-text">
                       </div>
 
-                      <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                      <div class="btn-group py-2" role="group" aria-label="Basic radio toggle button group">
                         <input type="radio" class="btn-check" name="btnradio-blocklist" id="btnradio-blocklist-1" data-bs-toggle="collapse" href="#collapseSpamlistOptions" aria-controls="collapseSpamlistOptions" autocomplete="off" checked>
-                        <label class="btn btn-outline-danger" for="btnradio-blocklist-1">SPAMBASE</label>
+                        <label class="btn btn-outline-danger" for="btnradio-blocklist-1"><i class="nav-icon bi bi-envelope-slash"></i> SPAMlist</label>
                       
                         <input type="radio" class="btn-check" name="btnradio-blocklist" id="btnradio-blocklist-2" data-bs-toggle="collapse" href="#collapseBlocklistOptions" aria-controls="collapseBlocklistOptions" autocomplete="off">
-                        <label class="btn btn-outline-danger" for="btnradio-blocklist-2">Blocklist</label>
+                        <label class="btn btn-outline-danger" for="btnradio-blocklist-2"><i class="nav-icon bi bi-ban"></i> Blocklist</label>
                       </div>
                      
                       <div class="collapse" id="collapseSpamlistOptions">
@@ -451,19 +446,19 @@
                         <div class="card card-body">
                           <div class="form-check form-check-inline">
                             <input class="form-check-input" name="blocklist-radio-options" type="radio" id="blocklist-checkbox-1" value="radio1" checked>
-                            <label class="form-check-label" for="blocklist-checkbox-1">fortinet</label>
+                            <label class="form-check-label" for="blocklist-checkbox-1">fortinet (Услуга Фильтрации)</label>
                           </div>
                           <div class="form-check form-check-inline">
                             <input class="form-check-input" name="blocklist-radio-options" type="radio" id="blocklist-checkbox-2" value="radio2">
-                            <label class="form-check-label" for="blocklist-checkbox-2">zvelo</label>
+                            <label class="form-check-label" for="blocklist-checkbox-2">zvelo (Родительский контроль)</label>
                           </div>
                           <div class="form-check form-check-inline">
                             <input class="form-check-input" name="blocklist-radio-options" type="radio" id="blocklist-checkbox-3" value="radio3">
-                            <label class="form-check-label" for="blocklist-checkbox-3">belgie</label>
+                            <label class="form-check-label" for="blocklist-checkbox-3">belgie (Блокировки по РБ)</label>
                           </div>
                           <div class="form-check form-check-inline">
                             <input class="form-check-input" name="blocklist-radio-options" type="radio" id="blocklist-checkbox-4" value="radio4">
-                            <label class="form-check-label" for="blocklist-checkbox-4">blockedin</label>
+                            <label class="form-check-label" for="blocklist-checkbox-4">blockedin (Блокировки в РФ)</label>
                           </div>
                         </div>
                       </div>
@@ -479,24 +474,24 @@
                       <p class="col-md-8 fs-3">
                         <i class="bi bi-globe2" style="color:deepskyblue"></i> Domain
                       </p>
-                      <p>
+                      <p id="domain-label">
                         Проверка DNS записей, SSL сертификатов для домена
                       </p>
                       <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="Домен сайта" aria-label="button-domain" aria-describedby="button-addon" id="input-domain">
-                        <button class="btn btn-outline-info bg-body" type="button" id="button-domain">Проверить</button>
+                        <button class="btn btn-info text-light" type="button" id="button-domain">Проверить <i class="bi bi-chevron-right"></i></button>
                       </div>
 
-                      <div id="domain-label" class="form-text">
+                      <div id="domain-status" class="form-text">
                       </div>
                       <!-- проверка DNS записей с выбором типа + ссылка на DNS провадера -->
                       
-                      <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                      <div class="btn-group py-2" role="group" aria-label="Basic radio toggle button group">
                         <input type="radio" class="btn-check" name="btnradio-domain" id="btnradio-domain-1" autocomplete="off" checked>
-                        <label class="btn btn-outline-info" for="btnradio-domain-1">DNS записи</label>
+                        <label class="btn btn-outline-info" for="btnradio-domain-1"><i class="bi bi-database-add"></i> DNS записи</label>
                       
                         <input type="radio" class="btn-check" name="btnradio-domain" id="btnradio-domain-2" autocomplete="off">
-                        <label class="btn btn-outline-info" for="btnradio-domain-2">SSL сертификаты</label>
+                        <label class="btn btn-outline-info" for="btnradio-domain-2"><i class="bi bi-file-earmark-lock"></i> SSL сертификаты</label>
                       </div>
                     </p>
                   </div>
@@ -507,28 +502,59 @@
                   <div class="card-body">
                     <p class="card-text">
                       <p class="col-md-8 fs-3">
-                        <i class="bi bi-diagram-3-fill"></i> Open ports
+                        <i class="bi bi-diagram-3-fill" style="color:dimgray"></i> Open ports
                       </p>
-                      <p>
+                      <p id="portcheck-label">
                         Проверка открытых портов
                       </p>
                       <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="Введите IP-адрес" aria-label="input-portcheck" aria-describedby="button-addon" id="input-portcheck">
-                        <button class="btn btn-outline-secondary bg-body" type="button" id="button-portcheck">Проверить</button>
+                        <button class="btn btn-secondary" type="button" id="button-portcheck">Проверить <i class="bi bi-chevron-right"></i></button>
                       </div>
 
-                      <div id="portcheck-label" class="form-text">
+                      <div id="portcheck-status" class="form-text">
                       </div>
-                      <!-- <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                        <input type="radio" class="btn-check" name="btnradio-portcheck" id="btnradio-portcheck-1" autocomplete="off" checked>
-                        <label class="btn btn-outline-secondary" for="btnradio-portcheck-1">Проверить популярные порты</label>
+
+                      <div class="btn-group py-2" role="group" aria-label="Basic radio toggle button group">
+                        <input type="radio" class="btn-check" name="btnradio-portcheck" id="btnradio-portcheck-1" data-bs-toggle="collapse" href="#collapseOpenports" aria-controls="collapseOpenports" autocomplete="off" checked>
+                        <label class="btn btn-outline-secondary" for="btnradio-portcheck-1"> <i class="bi bi-diagram-3-fill"></i> Открытые порты</label>
                       
-                        <input type="radio" class="btn-check" name="btnradio-portcheck" id="btnradio-portcheck-2" autocomplete="off">
-                        <label class="btn btn-outline-secondary" for="btnradio-portcheck-2">По списку</label>
-                      </div> -->
+                        <input type="radio" class="btn-check" name="btnradio-portcheck" id="btnradio-portcheck-2" data-bs-toggle="collapse" href="#collapseVulnerable" aria-controls="collapseVulnerable" autocomplete="off">
+                        <label class="btn btn-outline-secondary" for="btnradio-portcheck-2"><i class="nav-icon bi bi-bug-fill"></i> Уязвимости</label>
+                      </div>
 
-                      <span class="d-block">
-                        <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseWellKnownPorts" role="button" aria-expanded="false" aria-controls="collapseWellKnownPorts">
+                      <div class="collapse py-2" id="collapseOpenports">
+                        <div class="card card-body">
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="openports-radio-options" type="radio" id="openports-checkbox-1" value="radio1" checked>
+                            <label class="form-check-label" for="openports-checkbox-1">dnschecker.org</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="openports-radio-options" type="radio" id="openports-checkbox-2" value="radio2">
+                            <label class="form-check-label" for="openports-checkbox-2">netprobe.online</label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="collapse py-2" id="collapseVulnerable">
+                        <div class="card card-body">
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="vulnerable-radio-options" type="radio" id="vulnerable-checkbox-1" value="" checked>
+                            <label class="form-check-label" for="vulnerable-checkbox-1">shodan</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="vulnerable-radio-options" type="radio" id="vulnerable-checkbox-2" value="">
+                            <label class="form-check-label" for="vulnerable-checkbox-2">censys</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="vulnerable-radio-options" type="radio" id="vulnerable-checkbox-3" value="">
+                            <label class="form-check-label" for="vulnerable-checkbox-3">abuseipdb</label>
+                          </div>
+                        </div>
+                      </div>
+                  
+                      <span class="d-block py-2">
+                        <a class="icon-link icon-link-hover no-underline" data-bs-toggle="collapse" href="#collapseWellKnownPorts" role="button" aria-expanded="false" aria-controls="collapseWellKnownPorts">
                           <i class="bi bi-chevron-down"></i> Список популярных портов
                         </a>
                         <div class="collapse" id="collapseWellKnownPorts">
@@ -558,9 +584,7 @@
                           </ul>
                         </div>
                       </span>
-                      <p>
-                        <!-- текстовое поле с дефолт списком + подсказкf по фильтрам, детектить NAT -->
-                      </p>
+          
                     </p>
                   </div>
                 </div>
@@ -603,16 +627,13 @@
 
     <!-- only for this page-->    
     <script language="javascript">
-      // mac-input event
-      document.getElementById('input-mac').addEventListener('input', (event) => {
-        // Regular expression remove "http://" or "http" at the beginning of a line (case insensitive)
-        event.target.value = event.target.value.replace(/^https?:\/\//i, '');
-        // Regular expression remove "www." at the beginning of a line (case insensitive)
-        event.target.value = event.target.value.replace(/^www\./i, '');
-        
-        // Select dropdown MAC-Vendor item if find MAC 
+
+      // MAC card
+      document.getElementById('input-mac').addEventListener('input', (event) => {        
+        // Focus on button if find MAC 
         const macRegex = /^(([0-9A-Fa-f]{2}[:]){5}|([0-9A-Fa-f]{2}[-]){5})([0-9A-Fa-f]{2})$/;
         if (macRegex.test(event.target.value)) {
+          document.getElementById('button-mac').focus();
         }
         
         // Convert from cisco format dead.beef.1234 to common format de:ad:be:ef:12:34
@@ -620,6 +641,7 @@
         if (ciscoMacRegex.test(event.target.value)) {
           const cleanMac = event.target.value.replace(/\./g, '');
           event.target.value = cleanMac.match(/.{1,2}/g).join(':').toLowerCase();
+          document.getElementById('button-mac').focus();
         }
         
         // Convert from huawei format dead-beef-1234 to common format de:ad:be:ef:12:34
@@ -627,13 +649,14 @@
         if (huaweiMacRegex.test(event.target.value)) {
           const cleanMac = event.target.value.replace(/\-/g, '');
           event.target.value = cleanMac.match(/.{1,2}/g).join(':').toLowerCase();
+          document.getElementById('button-mac').focus();
         }
       });
 
       document.getElementById('button-mac').addEventListener('click', () => {
         const searchQuery = document.getElementById('input-mac').value.trim();
         if (!searchQuery) {
-          document.getElementById("mac-label").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> Вы не указали MAC адрес для поиска. Например: 40-A8-F0-4F-50-9E`;
+          document.getElementById("mac-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> Вы не указали MAC адрес для поиска. Например: 40-A8-F0-4F-50-9E`;
           return;
         }
         if (document.getElementById('btnradio-mac-1').checked) {
@@ -647,10 +670,31 @@
         }
       });
 
+      // Whois card
+      document.getElementById('input-whois').addEventListener('input', (event) => {
+        // Regular expression remove "http://" or "http" at the beginning of a line (case insensitive)
+        event.target.value = event.target.value.replace(/^https?:\/\//i, '');
+        // Regular expression remove "www." at the beginning of a line (case insensitive)
+        event.target.value = event.target.value.replace(/^www\./i, '');
+        // Regular expression remove everything in the string after the "/"" character
+        event.target.value = event.target.value.split('/')[0]; 
+
+        const ipv4Regex = /^\d{1,3}(\.\d{1,3}){3}$/;
+        const domainRegex = /^(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z]{2,}(?:\/[^\s]*)?$/i;
+
+        if (ipv4Regex.test(event.target.value) || domainRegex.test(event.target.value)) {
+          document.getElementById("whois-status").innerHTML = `<i class="bi bi-check-lg text-success"></i> Проверка <strong class="text-secondary">${event.target.value}</strong>`;
+          document.getElementById('button-whois').focus();
+        } else {
+          document.getElementById("whois-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> Вы указали данные в неверном формате. Введите IP либо сайт`;
+          return;
+        }
+      });
+
       document.getElementById('button-whois').addEventListener('click', () => {
         const searchQuery = document.getElementById('input-whois').value.trim();
         if (!searchQuery) {
-          document.getElementById("whois-label").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> Вы не указали IP адрес либо домен для поиска.`;
+          document.getElementById("whois-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> Вы не указали IP адрес либо домен для поиска.`;
           return;
         }
         if (document.getElementById('btnradio-whois-1').checked) {
@@ -667,10 +711,31 @@
         }
       });
 
+      // Blocklist card
+      document.getElementById('input-blocklist').addEventListener('input', (event) => {
+        // Regular expression remove "http://" or "http" at the beginning of a line (case insensitive)
+        event.target.value = event.target.value.replace(/^https?:\/\//i, '');
+        // Regular expression remove "www." at the beginning of a line (case insensitive)
+        event.target.value = event.target.value.replace(/^www\./i, '');
+        // Regular expression remove everything in the string after the "/"" character
+        event.target.value = event.target.value.split('/')[0]; 
+
+        const ipv4Regex = /^\d{1,3}(\.\d{1,3}){3}$/;
+        const domainRegex = /^(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z]{2,}(?:\/[^\s]*)?$/i;
+
+        if (ipv4Regex.test(event.target.value) || domainRegex.test(event.target.value)) {
+          document.getElementById("blocklist-status").innerHTML = `<i class="bi bi-check-lg text-success"></i> Проверка <strong class="text-secondary">${event.target.value}</strong>`;
+          document.getElementById('button-blocklist').focus();
+        } else {
+          document.getElementById("blocklist-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> Вы указали данные в неверном формате. Введите IP либо сайт`;
+          return;
+        }
+      });
+
       document.getElementById('button-blocklist').addEventListener('click', () => {
         const searchQuery = document.getElementById('input-blocklist').value.trim();
         if (!searchQuery) {
-          document.getElementById("blocklist-label").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> Вы не указали IP адрес либо домен для поиска.`;
+          document.getElementById("blocklist-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> Вы не указали IP адрес либо домен для поиска.`;
           return;
         }
         if (document.getElementById('btnradio-blocklist-1').checked) {
@@ -695,32 +760,123 @@
           }
         }
       });
+    
+      document.getElementById('btnradio-blocklist-1').addEventListener('change', (event) => {
+        if (event.target.checked) {
+          if (document.getElementById('blocklist-label')) {
+            document.getElementById("blocklist-label").innerHTML = `Проверка находится ли IP-адрес в черном списке (DNSBL)`;
+          }
+        }
+      });
+
+      document.getElementById('btnradio-blocklist-2').addEventListener('change', (event) => {
+        if (event.target.checked) {
+          if (document.getElementById('blocklist-label')) {
+            document.getElementById("blocklist-label").innerHTML = `Проверка находится ли IP-адрес либо домен в списках блокировки`;
+          }
+        }
+      });
+
+      // Ping, Trace card 
+      document.getElementById('input-ping').addEventListener('input', (event) => {
+        // Regular expression remove "http://" or "http" at the beginning of a line (case insensitive)
+        event.target.value = event.target.value.replace(/^https?:\/\//i, '');
+        // Regular expression remove "www." at the beginning of a line (case insensitive)
+        event.target.value = event.target.value.replace(/^www\./i, '');
+        // Regular expression remove everything in the string after the "/"" character
+        event.target.value = event.target.value.split('/')[0]; 
+
+        const ipv4Regex = /^\d{1,3}(\.\d{1,3}){3}$/;
+        const domainRegex = /^(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z]{2,}(?:\/[^\s]*)?$/i;
+
+        if (ipv4Regex.test(event.target.value) || domainRegex.test(event.target.value)) {
+          document.getElementById("ping-status").innerHTML = `<i class="bi bi-check-lg text-success"></i> Проверка <strong class="text-secondary">${event.target.value}</strong>`;
+          document.getElementById('button-ping').focus();
+        } else {
+          document.getElementById("ping-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> Вы указали данные в неверном формате. Введите IP либо сайт`;
+          return;
+        }
+      });
 
       document.getElementById('button-ping').addEventListener('click', () => {
         const searchQuery = document.getElementById('input-ping').value.trim();
         if (!searchQuery) {
-          document.getElementById("ping-label").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> Вы не указали IP адрес либо домен для проверки.`;
+          document.getElementById("ping-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> Вы не указали IP адрес либо домен для проверки.`;
           return;
         }
         if (document.getElementById('btnradio-ping-1').checked) {
           if (document.getElementById('ping-checkbox-1').checked) {
             window.open(`https://ping.pe/${searchQuery}`, "_blank");
           }
+          if (document.getElementById('ping-checkbox-2').checked) {
+            window.open(`https://check-host.net/check-ping?host=${searchQuery}`, "_blank");
+          }
         } else if (document.getElementById('btnradio-ping-2').checked) {
           if (document.getElementById('trace-checkbox-1').checked) {
             window.open(`https://tools.bunny.net/traceroute?query=${searchQuery}`, "_blank");
           }
+          if (document.getElementById('trace-checkbox-2').checked) {
+            window.open(`https://mxtoolbox.com/SuperTool.aspx?action=trace%3a${searchQuery}&run=toolpage`, "_blank");
+          }
         } else if (document.getElementById('btnradio-ping-3').checked) {
           if (document.getElementById('host-checkbox-1').checked) {
+            window.open(`https://check-host.net/check-http?host=${searchQuery}`, "_blank");
+          }
+          if (document.getElementById('host-checkbox-2').checked) {
             window.open(`https://www.host-tracker.com/ru/ic/check-http?autostart=1&url=${searchQuery}&pool=`, "_blank");
           }
+        }
+      });
+
+      document.getElementById('btnradio-ping-1').addEventListener('change', (event) => {
+        if (event.target.checked) {
+          if (document.getElementById('ping-label')) {
+            document.getElementById("ping-label").innerHTML = `Онлайн пинг IP адреса либо домена`;
+          }
+        }
+      });
+
+      document.getElementById('btnradio-ping-2').addEventListener('change', (event) => {
+        if (event.target.checked) {
+          if (document.getElementById('ping-label')) {
+            document.getElementById("ping-label").innerHTML = `Онлайн трассировка ресурса по IP либо домену`;
+          }
+        }
+      });
+      
+      document.getElementById('btnradio-ping-3').addEventListener('change', (event) => {
+        if (event.target.checked) {
+          if (document.getElementById('ping-label')) {
+            document.getElementById("ping-label").innerHTML = `Онлайн проверка доступности ресурса HTTP(s)`;
+          }
+        }
+      });
+
+      // Domain card 
+      document.getElementById('input-domain').addEventListener('input', (event) => {
+        // Regular expression remove "http://" or "http" at the beginning of a line (case insensitive)
+        event.target.value = event.target.value.replace(/^https?:\/\//i, '');
+        // Regular expression remove "www." at the beginning of a line (case insensitive)
+        event.target.value = event.target.value.replace(/^www\./i, '');
+        // Regular expression remove everything in the string after the "/"" character
+        event.target.value = event.target.value.split('/')[0]; 
+
+        const ipv4Regex = /^\d{1,3}(\.\d{1,3}){3}$/;
+        const domainRegex = /^(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z]{2,}(?:\/[^\s]*)?$/i;
+
+        if (ipv4Regex.test(event.target.value) || domainRegex.test(event.target.value)) {
+          document.getElementById("domain-status").innerHTML = `<i class="bi bi-check-lg text-success"></i> Проверка <strong class="text-secondary">${event.target.value}</strong>`;
+          document.getElementById('button-domain').focus();
+        } else {
+          document.getElementById("domain-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> Вы указали данные в неверном формате. Введите IP либо сайт`;
+          return;
         }
       });
 
       document.getElementById('button-domain').addEventListener('click', () => {
         const searchQuery = document.getElementById('input-domain').value.trim();
         if (!searchQuery) {
-          document.getElementById("domain-label").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> Вы не указали домен для проверки. Например google.com`;
+          document.getElementById("domain-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> Вы не указали домен для проверки. Например google.com`;
           return;
         }
         if (document.getElementById('btnradio-domain-1').checked) {
@@ -731,17 +887,89 @@
         }
       });
 
+      document.getElementById('btnradio-domain-1').addEventListener('change', (event) => {
+        if (event.target.checked) {
+          if (document.getElementById('domain-label')) {
+            document.getElementById("domain-label").innerHTML = `Проверка DNS-записей доменов и IP-адресов.`;
+            document.getElementById("domain-status").innerHTML = `(A, AAAA, MX, TXT, CNAME, NS, PTR, MX, A, NS, TXT, SOA, CNAME)`;
+          }
+        }
+      });
+
+      document.getElementById('btnradio-domain-2').addEventListener('change', (event) => {
+        if (event.target.checked) {
+          if (document.getElementById('domain-label')) {
+            document.getElementById("domain-label").innerHTML = `Проверка SSL-сертификата и TLS`;
+            document.getElementById("domain-status").innerHTML = ``;
+          }
+        }
+      });
+
+      // Portcheck card 
+      document.getElementById('input-portcheck').addEventListener('input', (event) => {
+        // Regular expression remove "http://" or "http" at the beginning of a line (case insensitive)
+        event.target.value = event.target.value.replace(/^https?:\/\//i, '');
+        // Regular expression remove "www." at the beginning of a line (case insensitive)
+        event.target.value = event.target.value.replace(/^www\./i, '');
+        // Regular expression remove everything in the string after the "/"" character
+        event.target.value = event.target.value.split('/')[0]; 
+
+        const ipv4Regex = /^\d{1,3}(\.\d{1,3}){3}$/;
+        const domainRegex = /^(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z]{2,}(?:\/[^\s]*)?$/i;
+        // Select port check (Validates 0-255 ranges and 1-65535 ports)
+        // const strictIpPortRegex = /^(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)\.){3}(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d):(?:6553[0-5]|655[0-2]\d|65[0-4]\d\d|6[0-4]\d{3}|[1-5]\d{4}|[1-9]\d{0,3})$/;
+
+        if (ipv4Regex.test(event.target.value)) {
+          document.getElementById("portcheck-status").innerHTML = `<i class="bi bi-check-lg text-success"></i> Проверка <strong class="text-secondary">${event.target.value}</strong>`;
+          document.getElementById('button-portcheck').focus();
+        } else {
+          document.getElementById("portcheck-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> Вы указали данные в неверном формате. Введите IP либо сайт`;
+          return;
+        }
+      });
+
       document.getElementById('button-portcheck').addEventListener('click', () => {
         const searchQuery = document.getElementById('input-portcheck').value.trim();
         if (!searchQuery) {
-          document.getElementById("portcheck-label").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> Вы не указали IP для проверки`;
+          document.getElementById("portcheck-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> Вы не указали IP для проверки`;
           return;
         }
-        
-        window.open(`https://dnschecker.org/port-scanner.php?query=${searchQuery}`, "_blank");
 
-        // Select port check (Validates 0-255 ranges and 1-65535 ports)
-        // const strictIpPortRegex = /^(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)\.){3}(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d):(?:6553[0-5]|655[0-2]\d|65[0-4]\d\d|6[0-4]\d{3}|[1-5]\d{4}|[1-9]\d{0,3})$/;
+        if (document.getElementById('btnradio-portcheck-1').checked) {
+          if (document.getElementById('openports-checkbox-1').checked) {
+            window.open(`https://dnschecker.org/port-scanner.php?query=${searchQuery}`, "_blank");
+          }
+          if (document.getElementById('openports-checkbox-2').checked) {
+            window.open(`https://netprobe.online/port?host=${searchQuery}&port=443`, "_blank");
+          }
+        } else if (document.getElementById('btnradio-portcheck-2').checked) {
+          if (document.getElementById('vulnerable-checkbox-1').checked) {
+            window.open(`https://www.shodan.io/host/${searchQuery}`, "_blank");
+          }
+          if (document.getElementById('vulnerable-checkbox-2').checked) {
+            window.open(`https://platform.censys.io/search?q=host.ip%3A+%22${searchQuery}%22+`, "_blank");
+          }
+          if (document.getElementById('vulnerable-checkbox-3').checked) {
+            window.open(`https://www.abuseipdb.com/check/${searchQuery}`, "_blank");
+          }
+          
+        }
+      });
+
+      document.getElementById('btnradio-portcheck-1').addEventListener('change', (event) => {
+        if (event.target.checked) {
+          if (document.getElementById('portcheck-label')) {
+            document.getElementById("portcheck-label").innerHTML = `Проверка открытых портов на доступность`;
+          }
+        }
+      });
+
+      document.getElementById('btnradio-portcheck-2').addEventListener('change', (event) => {
+        if (event.target.checked) {
+          if (document.getElementById('portcheck-label')) {
+            document.getElementById("portcheck-label").innerHTML = `Проверка ресурса на наличие уязвимых сервисов`;
+          }
+        }
       });
 
       // Hide all bootstrap collapse function

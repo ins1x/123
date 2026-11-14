@@ -147,6 +147,7 @@ if (devDisclaimer) {
 
 // News block
 const newsTable = [
+  { date: '14/11/2026', desc: 'Полностью переработан раздел онлайн-утилиты', link: 'tools.html'},
   { date: '06/11/2026', desc: 'Обновлено оглавление и раздел основное в MBTK', link: 'mbtk.html'},
   { date: '24/10/2026', desc: 'Добавлены фотографии приставок ZALA в список оборудования', link: 'equipment.html'},
   { date: '21/10/2026', desc: 'Добавлены фотографии ONU/ONT терминалов в список оборудования', link: 'equipment.html'},
@@ -181,7 +182,7 @@ const navigationMenuTable = [
   { desc: 'Главная', icon: 'bi-grid-1x2', link: 'dashboard.html'},
   { desc: 'Оборудование', icon: 'bi-router', link: 'equipment.html'},
   { desc: 'Рабочие порталы', icon: 'bi-grid-3x3-gap-fill', link: 'portals.html'},
-  { desc: 'Онлайн утилиты', icon: 'bi-gear-wide-connected', link: 'checker.html'},
+  { desc: 'Онлайн утилиты', icon: 'bi-gear-wide-connected', link: 'tools.html'},
   { desc: 'FAQ', icon: 'bi-patch-question', link: 'quicksetup.html'},
   { desc: 'Шаблоны МБТК', icon: 'bi-person-badge', link: 'mbtk.html'},
   { desc: 'OLT команды', icon: 'bi-terminal', link: 'olt.html'}
