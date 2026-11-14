@@ -244,12 +244,6 @@
           <!--begin::Container-->
           <div class="container-fluid">
 
-            <!-- <p class="d-flex justify-content-start gap-2">
-              <div class="alert alert-light" role="alert">
-                Данный раздел находится в процессе разработки. Предыдущая версия <a href="checker.html" target="_blank">ins1x.github.io/checker</a><br>
-              </div>
-            </p> -->
-
             <p class="d-flex justify-content-end gap-2">
               <a class="btn btn-outline-secondary active" href="tools.html">
                 <i class="bi bi-gear-wide-connected"></i><strong> Онлайн-утилиты</strong>
@@ -280,7 +274,6 @@
                       <div id="mac-status" class="form-text">
                         Вводить MAC можно в различных форматах например dead.beef.1234
                       </div>
-                      <!-- Проверять маки модемов провайдера на лету -->
 
                       <div class="btn-group py-2" role="group" aria-label="Basic radio toggle button group">
                         <input type="radio" class="btn-check" name="btnradio-mac" id="btnradio-mac-1" autocomplete="off" checked>
@@ -626,66 +619,49 @@
                           <div class="table-responsive">
                             <table class="table table-borders table-striped-columns table-hover">
                               <thead>
-                                <th>
-                                  <strong>Тип</strong>
-                                </th>
-                                <th>
-                                  <strong>Назначение</strong>
-                                </th>
-                                <!-- <th>
-                                  <strong>Пример значения</strong>
-                                </th> -->
+                                <th><strong>Тип</strong></th>
+                                <th><strong>Назначение</strong></th>
                               </thead>
                               <tbody>
                                 <tr>
                                   <td>A</td>
                                   <td>Связывает доменное имя с IPv4-адресом сервера. Указывает, где физически расположен сайт</td>
-                                  <!-- <td><code>123.123.123.123</code></td> -->
                                 </tr>
                                 <tr>
                                   <td>AAAA</td>
                                   <td>Связывает доменное имя с IPv6-адресом сервера. Аналог A-записи для нового формата адресов</td>
-                                  <!-- <td><code>2002:7b7b:7b7b:0:0:0:0:0</code></td> -->
                                 </tr>
                                 <tr>
                                   <td>CNAME</td>
                                   <td>Создает псевдоним для доменного имени. Указывает, что один адрес должен вести на тот же IP, что и другой. Часто используется для поддоменов</td>
-                                  <!-- <td><code>site.by</code></td> -->
                                 </tr>
                                 <tr>
                                   <td>MX</td>
                                   <td>Определяет серверы входящей почты и приоритет каждого из них</td>
-                                  <!-- <td><code>mx1.hosting.hoster.by</code></td> -->
                                 </tr>
                                 <tr>
                                   <td>TXT</td>
                                   <td>Содержит произвольную текстовую информацию. Применяется для проверок безопасности почты (SPF, DKIM), подтверждения прав на домен и других целей</td>
-                                  <!-- <td><code>v=site-verification=xxxxxxxxxxxx</code></td> -->
                                 </tr>
                                 <tr>
                                   <td>NS</td>
                                   <td>Указывает авторитативные DNS-серверы для домена. Именно эти серверы хранят и предоставляют информацию об остальных ресурсных записях зоны</td>
-                                  <!-- <td><code>ns1.hoster.by</code></td> -->
                                 </tr>
                                 <tr>
                                   <td>SOA</td>
                                   <td>Начальная запись зоны. Содержит служебную информацию о домене: первичный DNS-сервер, контакт администратора и тайминги обновления и кэширования</td>
-                                  <!-- <td><code>example.com. IN  SOA  ns1.example.com. admin.example.com.</code></td> -->
                                 </tr>
                                 <tr>
                                   <td>SPF</td>
                                   <td>Cодержит информацию о списке серверов, которые имеют право отправлять письма от имени заданного домена. Позволяет избежать несанкционированного использования.</td>
-                                  <!-- <td><code>v=spf1 include:_spf.hosting.reg.ru ip4:123.123.123.123 a mx ~all</code></td> -->
                                 </tr>
                                 <tr>
                                   <td>PTR</td>
                                   <td>Обратная запись, связывающая IP-адрес с доменным именем. Используется для обратного DNS-поиска, в том числе для проверок при отправке почты</td>
-                                  <!-- <td><code>site.by</code></td> -->
                                 </tr>
                                 <tr>
                                   <td>TLSA</td>
                                   <td>TLSA-запись позволяет владельцу домена подтвердить подлинность используемого сертификата или цифровой подписи средствами DNSSEC. С помощью TLSA-записи вы можете сохранить отпечаток TLS или SSL-сертификата на вашем DNS-сервере.</td>
-                                  <!-- <td><code>_443._tcp.www.example.com IN TLSA 3 0 1 12B1B210D87C674F0C748E0E259CEB328C4A33A11F19467700EB2</code></td> -->
                                 </tr>
                               </tbody>
                             </table>
@@ -833,6 +809,46 @@
         const macRegex = /^(([0-9A-Fa-f]{2}[:]){5}|([0-9A-Fa-f]{2}[-]){5})([0-9A-Fa-f]{2})$/;
         if (macRegex.test(event.target.value)) {
           // document.getElementById('button-mac').focus();
+          const Photonspeak = /^\b3C:46:45\b/i;
+          const Transservice = /^\b58:F8:5D\b/i;
+          const ZXG412D = /^\bE8:CC:8C\b/i;
+          const SDMC = /^\b50:DE:19\b/i;
+          const Huawei8245 = /^\b00:18:82\b/i;
+
+          if (Photonspeak.test(event.target.value)) {
+            document.getElementById("mac-status").innerHTML = `<i class="bi bi-check-lg text-success"></i> Совпадение - Photonspeak (MA670)`;
+          }
+          if (Transservice.test(event.target.value)) {
+            document.getElementById("mac-status").innerHTML = `<i class="bi bi-check-lg text-success"></i> Совпадение - Transservice (TS-4224)`;
+          }
+          if (ZXG412D.test(event.target.value)) {
+            document.getElementById("mac-status").innerHTML = `<i class="bi bi-check-lg text-success"></i> Совпадение - Промсвязь (MT-PON-AT-4 ПЮРК.465614.006-17 ZXG412D)`;
+          }
+          if (SDMC.test(event.target.value)) {
+            document.getElementById("mac-status").innerHTML = `<i class="bi bi-check-lg text-success"></i> Совпадение - SDMC (DV9135)`;
+          }
+          if (Huawei8245.test(event.target.value)) {
+            document.getElementById("mac-status").innerHTML = `<i class="bi bi-check-lg text-success"></i> Совпадение - HUAWEI HG8245 (Optical Network Terminal)`;
+          }
+
+          // Regexp find ZTE OUI by patterns
+          const ZTEoui = [
+            /^\b28:DB:02\b/i, /^\b30:1F:48\b/i, /^\b48:13:18\b/i, /^\b00:15:EB\b/i, /^\b00:19:C6\b/i,
+            /^\b00:1E:73\b/i, /^\b00:22:93\b/i, /^\b38:46:08\b/i, /^\b84:74:2A\b/i, /^\b34:2D:0F\b/i
+          ];
+          if (ZTEoui.some((regex) => regex.test(event.target.value))) {
+            document.getElementById("mac-status").innerHTML = `<i class="bi bi-check-lg text-success"></i> Совпадение - ZTE (Optical Network Terminal)`;
+          }
+
+          // Regexp find HUAWEI OUI by patterns
+          const HUAWEIoui = [
+            /^\b00:E0:FC\b/i, /^\b00:46:4B\b/i, /^\b00:25:68\b/i, /^\b00:25:9E\b/i, /^\b04:F9:38\b/i,
+            /^\b08:19:A6\b/i, /^\b10:47:80\b/i, /^\b14:B9:68\b/i, /^\b18:C0:07\b/i, /^\b24:1A:E6\b/i
+          ];
+          if (HUAWEIoui.some((regex) => regex.test(event.target.value))) {
+            document.getElementById("mac-status").innerHTML = `<i class="bi bi-check-lg text-success"></i> Совпадение - HUAWEI (Optical Network Terminal)`;
+          }
+          
         }
         
         // Convert from cisco format dead.beef.1234 to common format de:ad:be:ef:12:34
@@ -848,12 +864,13 @@
           const cleanMac = event.target.value.replace(/\-/g, '');
           event.target.value = cleanMac.match(/.{1,2}/g).join(':').toLowerCase();
         }
+
       });
 
       document.getElementById('input-mac').addEventListener('keydown', function (event) {
         if (event.key === 'Enter') {
           // document.getElementById('button-mac').focus();
-          document.getElementById('button-mac').click();
+          document.getElementById('button-mac').change();
         }
       });
 

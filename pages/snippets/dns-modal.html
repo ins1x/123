@@ -1,0 +1,102 @@
+            <!-- Modal -->
+            <div class="modal fade" id="dnsModal" tabindex="-1" aria-labelledby="dnsModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="dnsModalLabel">Адреса DNS серверов</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form>
+  
+                        <h5>Все IP-адреса <a href="https://www.beltelecom.by/ip-adresa-serverov-dns-neobkhodimykh-dlya-nastroyki-podklyucheniya-k-internet">DNS-серверов</a></h5>
+                        <div class="table-responsive">
+                          <table class="table table-bordered table-striped">
+                            <tbody>
+                              <tr>
+                                <td>&nbsp;</td>
+                                <td>Предпочитаемый</td>
+                                <td>Альтернативный</td>
+                              </tr>
+                              <tr>
+                                <td>Минск</td>
+                                <td>194.158.196.245</td>
+                                <td>86.57.255.149</td>
+                              </tr>
+                              <tr>
+                                <td>Фильтрация</td>
+                                <td>194.158.196.137</td>
+                                <td>194.158.196.141</td>
+                              </tr>
+                              <tr>
+                                <td>DNS платформы IPTV</td>
+                                <td>82.209.237.230</td>
+                                <td></td>
+                              </tr>
+                              <tr>
+                                <td>DNS для Видеоконтроля (АРМ)</td>
+                                <td>10.1.17.6</td>
+                                <td>10.1.17.7</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <br>
+        
+                        <h5>Параметры для IPv6</h5>
+                        <div class="table-responsive">
+                          <table class="table table-bordered table-striped">
+                            <tbody>
+                              <tr>
+                                <td>&nbsp;</td>
+                                <td>Предпочитаемый</td>
+                                <td>Альтернативный</td>
+                              </tr>
+                              <tr>
+                                <td>Минск</td>
+                                <td>2a02:2208:0:240::245/64</td>
+                                <td>2a02:2208:0:144::149/64</td>
+                              </tr>
+                              <tr>
+                                <td>Google DNS</td>
+                                <td>2001:4860:4860::8888</td>
+                                <td>2001:4860:4860::8844</td>
+                              </tr>
+                              <tr>
+                                <td>Google DNS64 (NAT64 ipv6-to-ipv4)</td>
+                                <td>2001:4860:4860::6464</td>
+                                <td></td>
+                              </tr>
+                              <tr>
+                                <td>Шлюз по-умолчанию</td>
+                                <td>fe80::1/128</td>
+                                <td></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <br>
+  
+                        <h5>xDSL VPI-VCI</h5>
+                        <table class="table table-bordered table-striped-columns">
+                          <tbody>
+                            <tr>
+                              <td>Byfly - <strong>VPI 0 VCI 33</strong></td>
+                              <td>IPTV  - <strong>VPI 1 VCI 34</strong></td>
+                            </tr>
+                          </tbody>
+                        </table>
+  
+                        <div class="text-end">
+                          <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Закрыть</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End:Modal -->
+  
+              <a class="btn btn-outline-secondary" title="Список DNS" data-bs-toggle="modal" data-bs-target="#dnsModal" href="">
+                <i class="bi bi-globe2"></i><strong> DNS</strong>
+              </a>
