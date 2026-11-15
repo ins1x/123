@@ -46,14 +46,6 @@
     <!--begin::Custom-->
     <link rel="stylesheet" href="../css/custom.css" />
 
-    <!-- custom style only for this page -->
-    <style>
-      ul {
-        list-style-type: "▸";
-      }
-    </style>
-    <!--end::Custom-->
-
     <!--begin::Color Mode Toggle-->
     <script src="../js/color-modes.js"></script>
     <!--end::Color Mode Toggle-->
@@ -258,7 +250,7 @@
           <!--begin::Container-->
           <div class="container-fluid">
 
-            <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
+            <ul class="nav nav-tabs nav-fill" id="cliTabs" role="tablist">
               <li class="nav-item" role="presentation">
                 <h4><button class="nav-link active" id="huawei-tab" data-bs-toggle="tab" data-bs-target="#huawei" type="button" role="tab" aria-controls="huawei" aria-selected="true">HUAWEI</button></h4>
               </li>
@@ -266,12 +258,18 @@
                 <h4><button class="nav-link" id="zte-tab" data-bs-toggle="tab" data-bs-target="#zte" type="button" role="tab" aria-controls="zte" aria-selected="false">ZTE</button></h4>
               </li>
 
+              <!--begin::Reserved space-->
               <li class="nav-item">
                 <a class="nav-link disabled" aria-disabled="true"> &nbsp; </a>
               </li>
 
+              <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true"> &nbsp; </a>
+              </li>
+              <!--end::Reserved space-->
+
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-title="Wiki по командам OLT для HUAWEI и ZTE с примерами"><i class="nav-icon bi bi-github"></i> OLT Commands Git</a>
+                <a class="nav-link dropdown-toggle text-bg-gray border border-secondary" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-title="Wiki по командам OLT для HUAWEI и ZTE с примерами"><i class="nav-icon bi bi-github"></i> OLT Commands Git</a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" target="_blank" href="https://github.com/ins1x/OLT/wiki/HUAWEI">Команды для HUAWEI</a></li>
                   <li><a class="dropdown-item" target="_blank" href="https://github.com/ins1x/OLT/wiki/ZTE">Команды для ZTE</a></li>
@@ -279,7 +277,7 @@
               </li>
 
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-title="Примеры конфигов"><i class="nav-icon bi bi-cloud"></i> ONU configs</a>
+                <a class="nav-link dropdown-toggle text-bg-gray border border-secondary" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-title="Примеры конфигов"><i class="nav-icon bi bi-cloud"></i> ONU configs</a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" target="_blank" href="https://chat.datacenter.by/index.php/f/5030766" aria-current="true">Nextcloud - примеры конфигов HUAWEI</a></li>
                   <li><a class="dropdown-item" target="_blank" href="https://chat.datacenter.by/index.php/f/7289753" aria-current="true">Nextcloud - примеры конфигов ZTE</a></li>
@@ -287,14 +285,14 @@
               </li>
             </ul>
             
-            <div class="tab-content" id="myTabContent">
+            <div class="tab-content" id="cliTabsContent">
               <div class="tab-pane fade show active" id="huawei" role="tabpanel" aria-labelledby="huawei-tab">
 
                 <div class="row">
                   <div class="col-sm-6 mb-3 mb-sm-3">
                     <div class="card">
                       <div class="card-header text-bg-gray py-2">
-                        <h3 class="card-title"><i class="bi bi-info-circle"></i> Информация о ONT</h3>
+                        <h3 class="card-title fs-5"><i class="bi bi-info-circle"></i> Информация о ONT</h3>
                       </div>
                       <div class="card-body" style="box-sizing: border-box; display: block;">
                         <div class="table-responsive">
@@ -380,7 +378,7 @@
                       </div>
 
                       <div class="card-header text-bg-gray py-2">
-                        <h3 class="card-title"><i class="bi bi-bezier"></i> Маршрутизация и трафик</h3>
+                        <h3 class="card-title fs-5"><i class="bi bi-bezier"></i> Маршрутизация и трафик</h3>
                       </div>
     
                       <div class="card-body" style="box-sizing: border-box; display: block;">
@@ -445,7 +443,7 @@
                       </div>
 
                       <div class="card-header text-bg-gray py-2">
-                        <h3 class="card-title"><i class="bi bi-wifi"></i> Wi-fi</h3>
+                        <h3 class="card-title fs-5"><i class="bi bi-wifi"></i> Wi-fi</h3>
                       </div>
     
                       <div class="card-body" style="box-sizing: border-box; display: block;">
@@ -483,7 +481,7 @@
                       </div>
 
                       <div class="card-header text-bg-gray py-2">
-                        <h3 class="card-title"><i class="bi bi-building-fill-exclamation"></i> Информация о статусе ONT по блоку</h3>
+                        <h3 class="card-title fs-5"><i class="bi bi-building-fill-exclamation"></i> Информация о статусе ONT по блоку</h3>
                       </div>
     
                       <div class="card-body" style="box-sizing: border-box; display: block;">
@@ -532,7 +530,7 @@
                       </div>
 
                       <div class="card-header text-bg-gray py-2">
-                        <h3 class="card-title"><i class="bi bi-graph-up-arrow"></i> Пинг и ARP</h3>
+                        <h3 class="card-title fs-5"><i class="bi bi-graph-up-arrow"></i> Пинг и ARP</h3>
                       </div>
     
                       <div class="card-body" style="box-sizing: border-box; display: block;">
@@ -609,7 +607,7 @@
                       </div>
 
                       <div class="card-header text-bg-gray py-2">
-                        <h3 class="card-title"><i class="bi bi-telephone"></i> VoIP (POTS)</h3>
+                        <h3 class="card-title fs-5"><i class="bi bi-telephone"></i> VoIP (POTS)</h3>
                       </div>
     
                       <div class="card-body" style="box-sizing: border-box; display: block;">
@@ -659,7 +657,7 @@
                   <div class="col-sm-6 mb-3 mb-sm-3">
                     <div class="card">
                       <div class="card-header text-bg-gray py-2">
-                        <h3 class="card-title"><i class="bi bi-search"></i> Поиcк</h3>
+                        <h3 class="card-title fs-5"><i class="bi bi-search"></i> Поиcк</h3>
     
                         <!-- <div class="card-tools">
                           <button type="button" class="btn btn-tool" data-lte-toggle="card-maximize">
@@ -721,7 +719,7 @@
                       </div>
     
                       <div class="card-header text-bg-gray py-2">
-                        <h3 class="card-title"><i class="bi bi-building-fill-add"></i> Регистрация</h3>
+                        <h3 class="card-title fs-5"><i class="bi bi-building-fill-add"></i> Регистрация</h3>
                       </div>
                       <div class="card-body" style="box-sizing: border-box; display: block;">
                         <div class="table-responsive"> 
@@ -778,7 +776,7 @@
                       </div>
     
                       <div class="card-header text-bg-gray py-2">
-                        <h3 class="card-title"><i class="bi bi-gear-wide-connected"></i> Сервисы</h3>
+                        <h3 class="card-title fs-5"><i class="bi bi-gear-wide-connected"></i> Сервисы</h3>
                       </div>
                       <div class="card-body" style="box-sizing: border-box; display: block;">
                         <div class="table-responsive"> 
@@ -860,7 +858,7 @@
                       </div>
 
                       <div class="card-header text-bg-gray py-2">
-                        <h3 class="card-title"><i class="bi bi-building-fill-check"></i> Активировать порт</h3>
+                        <h3 class="card-title fs-5"><i class="bi bi-building-fill-check"></i> Активировать порт</h3>
                       </div>
                       <div class="card-body" style="box-sizing: border-box; display: block;">
                         <div class="table-responsive"> 
@@ -920,7 +918,7 @@
                       </div>
 
                       <div class="card-header text-bg-gray py-2">
-                        <h3 class="card-title"><i class="bi bi-bootstrap-reboot"></i> Reset и Reboot</h3>
+                        <h3 class="card-title fs-5"><i class="bi bi-bootstrap-reboot"></i> Reset и Reboot</h3>
                       </div>
                       <div class="card-body" style="box-sizing: border-box; display: block;">
                         <div class="table-responsive"> 
@@ -956,7 +954,7 @@
                       </div>
 
                       <div class="card-header text-bg-gray py-2">
-                        <h3 class="card-title"><i class="bi bi-diagram-3-fill"></i> Мультикаст</h3>
+                        <h3 class="card-title fs-5"><i class="bi bi-diagram-3-fill"></i> Мультикаст</h3>
                       </div>
                       <div class="card-body" style="box-sizing: border-box; display: block;">
                         <div class="table-responsive"> 
@@ -1034,7 +1032,7 @@
                   <div class="col-sm-6 mb-3 mb-sm-3">
                     <div class="card">
                       <div class="card-header text-bg-gray py-2">
-                        <h3 class="card-title"><i class="bi bi-info-circle"></i> Информация о ONT</h3>
+                        <h3 class="card-title fs-5"><i class="bi bi-info-circle"></i> Информация о ONT</h3>
                       </div>
                       <div class="card-body" style="box-sizing: border-box; display: block;">
                         <div class="table-responsive">
@@ -1130,7 +1128,7 @@
                       </div>
 
                       <div class="card-header text-bg-gray py-2">
-                        <h3 class="card-title"><i class="bi bi-tools"></i> Посмотреть конфигурацию ONU</h3>
+                        <h3 class="card-title fs-5"><i class="bi bi-tools"></i> Посмотреть конфигурацию ONU</h3>
                       </div>
     
                       <div class="card-body" style="box-sizing: border-box; display: block;">
@@ -1167,7 +1165,7 @@
                       </div>
 
                       <div class="card-header text-bg-gray py-2">
-                        <h3 class="card-title"><i class="bi bi-building-fill-exclamation"></i> Информация о статусе ONT по блоку</h3>
+                        <h3 class="card-title fs-5"><i class="bi bi-building-fill-exclamation"></i> Информация о статусе ONT по блоку</h3>
                       </div>
     
                       <div class="card-body" style="box-sizing: border-box; display: block;">
@@ -1216,7 +1214,7 @@
                       </div>
 
                       <div class="card-header text-bg-gray py-2">
-                        <h3 class="card-title"><i class="bi bi-graph-up-arrow"></i> Пинг и ARP</h3>
+                        <h3 class="card-title fs-5"><i class="bi bi-graph-up-arrow"></i> Пинг и ARP</h3>
                       </div>
     
                       <div class="card-body" style="box-sizing: border-box; display: block;">
@@ -1279,7 +1277,7 @@
                       </div>
 
                       <div class="card-header text-bg-gray py-2">
-                        <h3 class="card-title"><i class="bi bi-ethernet"></i> Настроить порт</h3>
+                        <h3 class="card-title fs-5"><i class="bi bi-ethernet"></i> Настроить порт</h3>
                       </div>
     
                       <div class="card-body" style="box-sizing: border-box; display: block;">
@@ -1344,7 +1342,7 @@
                       </div>
 
                       <div class="card-header text-bg-gray py-2">
-                        <h3 class="card-title"><i class="bi bi-ethernet"></i> DHCP</h3>
+                        <h3 class="card-title fs-5"><i class="bi bi-ethernet"></i> DHCP</h3>
                       </div>
     
                       <div class="card-body" style="box-sizing: border-box; display: block;">
@@ -1389,7 +1387,7 @@
                       </div>
 
                       <div class="card-header text-bg-gray py-2">
-                        <h3 class="card-title"><i class="bi bi-telephone"></i> VoIP (POTS)</h3>
+                        <h3 class="card-title fs-5"><i class="bi bi-telephone"></i> VoIP (POTS)</h3>
                       </div>
     
                       <div class="card-body" style="box-sizing: border-box; display: block;">
@@ -1471,7 +1469,7 @@
                   <div class="col-sm-6 mb-3 mb-sm-3">
                     <div class="card">
                       <div class="card-header text-bg-gray py-2">
-                        <h3 class="card-title"><i class="bi bi-search"></i> Поиcк</h3>
+                        <h3 class="card-title fs-5"><i class="bi bi-search"></i> Поиcк</h3>
     
                         <!-- <div class="card-tools">
                           <button type="button" class="btn btn-tool" data-lte-toggle="card-maximize">
@@ -1534,7 +1532,7 @@
                       </div>
     
                       <div class="card-header text-bg-gray py-2">
-                        <h3 class="card-title"><i class="bi bi-building-fill-add"></i> Регистрация</h3>
+                        <h3 class="card-title fs-5"><i class="bi bi-building-fill-add"></i> Регистрация</h3>
                       </div>
                       <div class="card-body" style="box-sizing: border-box; display: block;">
                         <div class="table-responsive"> 
@@ -1596,7 +1594,7 @@
                       </div>
 
                       <div class="card-header text-bg-gray py-2">
-                        <h3 class="card-title"><i class="bi bi-router"></i> Режимы работы</h3>
+                        <h3 class="card-title fs-5"><i class="bi bi-router"></i> Режимы работы</h3>
                       </div>
                       <div class="card-body" style="box-sizing: border-box; display: block;">
                         <div class="table-responsive"> 
@@ -1648,7 +1646,7 @@
                       </div>
     
                       <div class="card-header text-bg-gray py-2">
-                        <h3 class="card-title"><i class="bi bi-gear-wide-connected"></i> Сервисы</h3>
+                        <h3 class="card-title fs-5"><i class="bi bi-gear-wide-connected"></i> Сервисы</h3>
                       </div>
                       <div class="card-body" style="box-sizing: border-box; display: block;">
                         <div class="table-responsive"> 
@@ -1721,7 +1719,7 @@
                       </div>
 
                       <div class="card-header text-bg-gray py-2">
-                        <h3 class="card-title"><i class="bi bi-building-fill-check"></i> Активировать ONT на порту</h3>
+                        <h3 class="card-title fs-5"><i class="bi bi-building-fill-check"></i> Активировать ONT на порту</h3>
                       </div>
                       <div class="card-body" style="box-sizing: border-box; display: block;">
                         <div class="table-responsive"> 
@@ -1763,7 +1761,7 @@
                       </div>
 
                       <div class="card-header text-bg-gray py-2">
-                        <h3 class="card-title"><i class="bi bi-bootstrap-reboot"></i> Reset и Reboot</h3>
+                        <h3 class="card-title fs-5"><i class="bi bi-bootstrap-reboot"></i> Reset и Reboot</h3>
                       </div>
                       <div class="card-body" style="box-sizing: border-box; display: block;">
                         <div class="table-responsive"> 
@@ -1805,7 +1803,7 @@
                       </div>
 
                       <div class="card-header text-bg-gray py-2">
-                        <h3 class="card-title"><i class="bi bi-diagram-3-fill"></i> Multicast</h3>
+                        <h3 class="card-title fs-5"><i class="bi bi-diagram-3-fill"></i> Multicast</h3>
                       </div>
                       <div class="card-body" style="box-sizing: border-box; display: block;">
                         <div class="table-responsive"> 
@@ -1869,7 +1867,7 @@
                       </div>
 
                       <div class="card-header text-bg-gray py-2">
-                        <h3 class="card-title"><i class="bi bi-pencil-square"></i> TR-69</h3>
+                        <h3 class="card-title fs-5"><i class="bi bi-pencil-square"></i> TR-69</h3>
                       </div>
                       <div class="card-body" style="box-sizing: border-box; display: block;">
                         <div class="table-responsive"> 
@@ -1950,20 +1948,6 @@
     <script src="../js/adminlte.js"></script>
     <!--end::Required Plugin(AdminLTE)--><!--begin::OverlayScrollbars Configure-->
 
-    <!-- OPTIONAL SCRIPTS -->
-
-    <!-- sortablejs -->
-    <!-- <script
-      src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"
-      crossorigin="anonymous"
-    ></script> -->
-    <!-- <script src="../js/sortable.min.js"></script> -->
-
-    <!-- search keyword highlighter plugin -->
-    <!-- <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js"
-      crossorigin="anonymous"
-    ></script> -->
     <script src="../js/mark.min.js"></script>
 
     <!-- customjs -->
@@ -1999,6 +1983,25 @@
             console.error('clipboard copy error: ', err);
         });
       }
+
+      // Save active tab to local storage
+      document.addEventListener('DOMContentLoaded', function () {
+        const activeTab = localStorage.getItem('activeTabCli');
+        if (activeTab) {
+          const tabTrigger = document.querySelector(`[data-bs-target="${activeTab}"]`);
+          if (tabTrigger) {
+            const tab = new bootstrap.Tab(tabTrigger);
+            tab.show();
+          }
+        }
+    
+        const tabTriggers = document.querySelectorAll('#cliTabs button[data-bs-toggle="tab"]');
+        tabTriggers.forEach(function (triggerEl) {
+          triggerEl.addEventListener('shown.bs.tab', function (event) {
+            localStorage.setItem('activeTabCli', event.target.getAttribute('data-bs-target'));
+          });
+        });
+      });
       // End copy to clipboard function
     </script>
   <!--end::page scripts-->
