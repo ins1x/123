@@ -135,6 +135,16 @@ if (footerTextContent) {
 }
 // End: Footer
 
+// Nav footer
+const navfooterTextContent = document.querySelector('#nav-footer');
+if (navfooterTextContent) {
+  navfooterTextContent.innerHTML = `
+  <i class="bi bi-globe2"></i>
+  <a href="https://123-admin.short.do" class="text-muted">123-admin.short.do</a>
+  `
+}
+// End: Footer
+
 // Disclaimer
 const devDisclaimer = document.querySelector('#devDisclaimer');
 if (devDisclaimer) {
@@ -147,6 +157,7 @@ if (devDisclaimer) {
 
 // News block
 const newsTable = [
+  { date: '15/11/2026', desc: 'Подключен новый домен 123-admin.short.do', link: 'https://123-admin.short.do'},
   { date: '14/11/2026', desc: 'Полностью переработан раздел онлайн-утилиты', link: 'tools.html'},
   { date: '06/11/2026', desc: 'Обновлено оглавление и раздел основное в MBTK', link: 'mbtk.html'},
   { date: '24/10/2026', desc: 'Добавлены фотографии приставок ZALA в список оборудования', link: 'equipment.html'},
