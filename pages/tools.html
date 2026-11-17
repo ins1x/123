@@ -373,6 +373,8 @@
                           Проверьте MAC-адрес и получите подробные сведения о производителе
                         </p>
                       </p>
+                      <p id="mac-text">
+                      </p>
                       <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="00:1A:2B:3C:4D:5E" aria-label="MAC" aria-describedby="" id="input-mac">
                         <button class="btn btn-success" type="button" id="button-mac">Проверить <i class="bi bi-chevron-right"></i></button>
@@ -843,35 +845,14 @@
                       </div>
                       
                       <div class="input-group mb-2">
-                        <span class="input-group-text" id="basic-addon1">Port:</span>
+                        <span class="input-group-text" id="grp-text-port">Port:</span>
                         <div class="dropup">
                           <a class="btn btn-outline-secondary dropdown-toggle" href="#" id="button-dropdown-portcheck" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            443 - SSL / HTTPS (Hypertext Transfer Protocol Secure)
+                            <small>443 - SSL / HTTPS (Hypertext Transfer Protocol Secure)</small>
                           </a>
                         
                           <ul class="dropdown-menu" id="dropdown-portcheck">
-                            <li><a class="dropdown-item" href="#">20 & 21 - FTP (File Transfer Protocol)</a></li>
-                            <li><a class="dropdown-item" href="#">22 - SSH (Secure Shell)</a></li>
-                            <li><a class="dropdown-item" href="#">23 - Telnet, a Remote Login Service</a></li>
-                            <li><a class="dropdown-item" href="#">25 - SMTP (Simple Mail Transfer Protocol)</a></li>
-                            <li><a class="dropdown-item" href="#">53 - DNS (Domain Name System)</a></li>
-                            <li><a class="dropdown-item" href="#">80 - HTTP (Hypertext Transfer Protocol)</a></li>
-                            <li><a class="dropdown-item" href="#">110 - POP3 (Post Office Protocol 3)</a></li>
-                            <li><a class="dropdown-item" href="#">115 - SFTP (Secure File Transfer Protocol)</a></li>
-                            <li><a class="dropdown-item" href="#">123 - NTP (Network Time Protocol)</a></li>
-                            <li><a class="dropdown-item" href="#">143 - IMAP (Internet Message Access Protocol)</a></li>
-                            <li><a class="dropdown-item" href="#">161 - SNMP (Simple Network Management Protocol)</a></li>
-                            <li><a class="dropdown-item" href="#">194 - IRC (Internet Relay Chat)</a></li>
-                            <li><a class="dropdown-item" href="#">443 - SSL / HTTPS (Hypertext Transfer Protocol Secure)</a></li>
-                            <li><a class="dropdown-item" href="#">445 - SMB</a></li>
-                            <li><a class="dropdown-item" href="#">465 - SMTPS (Simple Mail Transfer Protocol over SSL)</a></li>
-                            <li><a class="dropdown-item" href="#">554 - RTSP (Real Time Stream Control Protocol)</a></li>
-                            <li><a class="dropdown-item" href="#">873 - RSYNC (RSYNC File Transfer Services)</a></li>
-                            <li><a class="dropdown-item" href="#">993 - IMAPS (Internet Message Access Protocol over SSL)</a></li>
-                            <li><a class="dropdown-item" href="#">995 - POP3S (Post Office Protocol 3 over SSL)</a></li>
-                            <li><a class="dropdown-item" href="#">3389 - RDP (Remote Desktop Protocol)</a></li>
-                            <li><a class="dropdown-item" href="#">5900 - VNC</a></li>
-                            <li><a class="dropdown-item" href="#">8080 - HTTP-Proxy</a></li>
+                            <!-- Genereted by JS -->
                           </ul>
                         </div>
                       </div>
@@ -913,6 +894,16 @@
                           </div>
                         </div>
                       </div>
+
+                      <span class="d-block py-2">
+                        <a class="icon-link icon-link-hover no-underline" data-bs-toggle="collapse" href="#collapseBlockedPortsonDynIP" role="button" aria-expanded="false" aria-controls="collapseBlockedPortsonDynIP">
+                          <i class="bi bi-chevron-down"></i> Закрытые порты на динамике
+                        </a>
+                        <div class="collapse" id="collapseBlockedPortsonDynIP">
+                          <p>Закрыты порты на входящий трафик для абонентов с динамическим IP адресом: <span class="text-muted">21/TCP(FTP), 22/TCP,UDP(SSH), 23/TCP,UDP(Telnet), 53/TCP,UDP(DNS), 80/TCP,UDP(HTTP), 443/TCP,UDP(HTTPS)</span></p>
+                          <p>На модеме по-умолчанию включен Firewall который блокирует порты: <span class="text-muted">21/TCP(FTP), 22/TCP,UDP(SSH), 23/TCP,UDP(Telnet), 80/TCP,UDP(HTTP), 443/TCP,UDP(HTTPS)</span></p>
+                        </div>
+                      </span>
           
                     </p>
                   </div>
@@ -986,9 +977,7 @@
         if (macRegex.test(event.target.value)) {
           // document.getElementById('button-mac').focus();
           const Photonspeak = /^\b3C:46:45\b/i;
-          const Transservice = /^\b58:F8:5D\b/i;
           const ZXG412D = /^\bE8:CC:8C\b/i;
-          const SDMC = /^\b50:DE:19\b/i;
           const Huawei8245 = /^\b00:18:82\b/i;
           
           // clean status if correct format
@@ -996,19 +985,37 @@
 
           // Find OUI for BTK equip
           if (Photonspeak.test(event.target.value)) {
-            document.getElementById("mac-status").innerHTML = `<i class="bi bi-check-lg text-success"></i> Совпадение - Photonspeak (MA670)`;
-          }
-          if (Transservice.test(event.target.value)) {
-            document.getElementById("mac-status").innerHTML = `<i class="bi bi-check-lg text-success"></i> Совпадение - Transservice (TS-4224)`;
+            document.getElementById("mac-text").innerHTML = `<i class="bi bi-check-lg text-success"></i> Совпадение - Photonspeak (MA670)`;
           }
           if (ZXG412D.test(event.target.value)) {
-            document.getElementById("mac-status").innerHTML = `<i class="bi bi-check-lg text-success"></i> Совпадение - Промсвязь (MT-PON-AT-4 ПЮРК.465614.006-17 ZXG412D)`;
-          }
-          if (SDMC.test(event.target.value)) {
-            document.getElementById("mac-status").innerHTML = `<i class="bi bi-check-lg text-success"></i> Совпадение - SDMC (DV9135)`;
+            document.getElementById("mac-text").innerHTML = `<i class="bi bi-check-lg text-success"></i> Совпадение - Промсвязь (MT-PON-AT-4 ПЮРК.465614.006-17 ZXG412D)`;
           }
           if (Huawei8245.test(event.target.value)) {
-            document.getElementById("mac-status").innerHTML = `<i class="bi bi-check-lg text-success"></i> Совпадение - HUAWEI HG8245 (Optical Network Terminal)`;
+            document.getElementById("mac-text").innerHTML = `<i class="bi bi-check-lg text-success"></i> Совпадение - HUAWEI HG8245 (Optical Network Terminal)`;
+          }
+
+          // Regexp find SDMC OUI by patterns
+          const sdmcOUI = [
+            /^\b50:DE:19\b/i, /^\b5C:7B:5C\b/i, /^\b2C:EC:F7\b/i, /^\b98:C9:BE\b/i, /^\bB0:B3:69\b/i, /^\bB4:9D:FD\b/i, /^\bB4:E2:65\b/i, /^\bFC:D5:D9\b/i
+          ];
+          if (sdmcOUI.some((regex) => regex.test(event.target.value))) {
+            document.getElementById("mac-text").innerHTML = `<i class="bi bi-check-lg text-success"></i> Совпадение - SDMC (DV9135)`;
+          }
+
+          // Regexp find Transservice OUI by patterns
+          const TransserviceOUI = [
+            /^\b58:F8:5D\b/i, /^\b58:F8:5C\b/i
+          ];
+          if (TransserviceOUI.some((regex) => regex.test(event.target.value))) {
+            document.getElementById("mac-text").innerHTML = `<i class="bi bi-check-lg text-success"></i> Совпадение - Transservice (TS-4224)`;
+          }
+
+          // Regexp find ZTE STB OUI by patterns
+          const ZTEstbB700OUI = [
+            /^\bA4:40:27\b/i, /^\bE8:AC:AD\b/i, /^\b28:8C:B8\b/i, /^\b04:95:73\b/i
+          ];
+          if (ZTEstbB700OUI.some((regex) => regex.test(event.target.value))) {
+            document.getElementById("mac-text").innerHTML = `<i class="bi bi-check-lg text-success"></i> Совпадение - ZTE STB ZXV10 B700`;
           }
 
           // Regexp find ZTE OUI by patterns
@@ -1017,22 +1024,33 @@
             /^\b00:1E:73\b/i, /^\b00:22:93\b/i, /^\b38:46:08\b/i, /^\b84:74:2A\b/i, /^\b34:2D:0F\b/i
           ];
           if (ZTEoui.some((regex) => regex.test(event.target.value))) {
-            document.getElementById("mac-status").innerHTML = `<i class="bi bi-check-lg text-success"></i> Совпадение - ZTE (Optical Network Terminal)`;
+            document.getElementById("mac-text").innerHTML = `<i class="bi bi-check-lg text-success"></i> Совпадение - ZTE (Optical Network Terminal)`;
           }
 
           // Regexp find HUAWEI OUI by patterns
           const HUAWEIoui = [
             /^\b00:E0:FC\b/i, /^\b00:46:4B\b/i, /^\b00:25:68\b/i, /^\b00:25:9E\b/i, /^\b04:F9:38\b/i,
-            /^\b08:19:A6\b/i, /^\b10:47:80\b/i, /^\b14:B9:68\b/i, /^\b18:C0:07\b/i, /^\b24:1A:E6\b/i
+            /^\b08:19:A6\b/i, /^\b10:47:80\b/i, /^\b14:B9:68\b/i, /^\b18:C0:07\b/i, /^\b24:1A:E6\b/i,
+            /^\b04:33:89\b/i, /^\bE0:28:61\b/i
           ];
           if (HUAWEIoui.some((regex) => regex.test(event.target.value))) {
-            document.getElementById("mac-status").innerHTML = `<i class="bi bi-check-lg text-success"></i> Совпадение - HUAWEI (Optical Network Terminal)`;
+            document.getElementById("mac-text").innerHTML = `<i class="bi bi-check-lg text-success"></i> Совпадение - HUAWEI (Optical Network Terminal)`;
           }
+
+          // Regexp find Smart home gateway HUAWEI
+          const HUAWEIsmarthomeOUI = [
+            /^\b0C:45:BA\b/i, /^\bD0:EF:C1\b/i
+          ];
+          if (HUAWEIsmarthomeOUI.some((regex) => regex.test(event.target.value))) {
+            document.getElementById("mac-text").innerHTML = `<i class="bi bi-check-lg text-success"></i> Совпадение - Контроллер абонентский КА-001`;
+          }
+
         } else {
           if (event.target.value.length) {
             document.getElementById("mac-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> Неверный формат. Введите MAC-адрес например DE:AD:BE:EF:12:34 или dead.beef.1234`;
           } else {
             document.getElementById("mac-status").innerHTML = `Вводить MAC можно в различных форматах например DE:AD:BE:EF:12:34 или dead.beef.1234`;
+            document.getElementById("mac-text").innerHTML = ``;
           }
         }
 
@@ -1042,6 +1060,14 @@
         if (event.key === 'Enter') {
           // document.getElementById('button-mac').focus();
           document.getElementById('button-mac').click();
+        }
+      });
+
+      document.getElementById('input-mac').addEventListener('blur', () => {
+        event.target.value = event.target.value.trim();
+        if (!event.target.value.length) {
+          document.getElementById("mac-status").innerHTML = ``;
+          document.getElementById("mac-text").innerHTML = ``;
         }
       });
 
@@ -1455,13 +1481,13 @@
       });
 
       // Portcheck card
-      var selectedIndexPortcheck = 13;
+      let selectedPort = 443; // default port to test
 
       const portsTable = [
         { port: '20 ', desc: 'FTP (File Transfer Protocol)'},
         { port: '21 ', desc: 'FTP (File Transfer Protocol)'},
         { port: '22 ', desc: 'SSH (Secure Shell)'},
-        { port: '23 ', desc: 'Telnet, a Remote Login Service'},
+        { port: '23 ', desc: 'Telnet (Remote login)'},
         { port: '25 ', desc: 'SMTP (Simple Mail Transfer Protocol)'},
         { port: '53 ', desc: 'DNS (Domain Name System)'},
         { port: '80 ', desc: 'HTTP (Hypertext Transfer Protocol)'},
@@ -1472,22 +1498,22 @@
         { port: '161', desc: 'SNMP (Simple Network Management Protocol)'},
         { port: '194', desc: 'IRC (Internet Relay Chat)'},
         { port: '443', desc: 'SSL / HTTPS (Hypertext Transfer Protocol Secure)'},
-        { port: '445', desc: 'SMB'},
+        { port: '445', desc: 'SMB (Samba)'},
         { port: '465', desc: 'SMTPS (Simple Mail Transfer Protocol over SSL)'},
         { port: '554', desc: 'RTSP (Real Time Stream Control Protocol)'},
         { port: '873', desc: 'RSYNC (RSYNC File Transfer Services)'},
         { port: '993', desc: 'IMAPS (Internet Message Access Protocol over SSL)'},
         { port: '995', desc: 'POP3S (Post Office Protocol 3 over SSL)'},
-        { port: '338', desc: ' RDP (Remote Desktop Protocol)'},
-        { port: '590', desc: ' VNC'},
-        { port: '808', desc: ' HTTP-Proxy'}
+        { port: '338', desc: 'RDP (Remote Desktop Protocol)'},
+        { port: '590', desc: 'VNC (Virtual Network Computing)'},
+        { port: '8080', desc: 'HTTP-Proxy'}
       ];
 
       const dropdownPortcheck= document.querySelector('#dropdown-portcheck');
       if (dropdownPortcheck) {
         const rowsPortsTable = portsTable.map(data => {
           return `
-            <li><a class="dropdown-item" href="#">${data.port} - ${data.desc}</a></li>
+            <li><a class="dropdown-item small text-muted" href="#">${data.port} - ${data.desc}</a></li>
           `;
         }).join('');
         dropdownPortcheck.innerHTML = rowsPortsTable;
@@ -1497,16 +1523,16 @@
         item.addEventListener('click', function(selDropdown) {
           selDropdown.preventDefault();
           const selectedText = this.innerText;
-          document.getElementById('button-dropdown-portcheck').innerText = selectedText;
-        });
-      });
-
-      const items = Array.from(document.querySelectorAll('#dropdown-portcheck .dropdown-item'));
-      items.forEach((item) => {
-        item.addEventListener('click', (event) => {
-          event.preventDefault();
-          selectedIndexPortcheck = items.indexOf(event.target);
-          // console.log('Selected Index:', selectedIndexPortcheck); 
+          document.getElementById('button-dropdown-portcheck').innerHTML = `<small>${selectedText}</small>`;
+          // Get port from description
+          const digitsRegexp = this.innerText.match(/\d+/);
+          const port = digitsRegexp ? Number(digitsRegexp[0]) : null;
+          if (port) {
+            selectedPort = port;
+          }
+          if ([21, 22, 23, 53, 80, 443].includes(selectedPort)) {
+            document.getElementById("portcheck-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-info"></i> Порт заблокирован на динамическом IP адресе и firewall модема по-умолчанию`;
+          }
         });
       });
 
@@ -1517,9 +1543,6 @@
         event.target.value = event.target.value.replace(/^www\./i, '');
         // Regular expression remove everything in the string after the "/"" character
         event.target.value = event.target.value.split('/')[0]; 
-
-        // Select port check (Validates 0-255 ranges and 1-65535 ports)
-        // const strictIpPortRegex = /^(?:(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)\.){3}(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d):(?:6553[0-5]|655[0-2]\d|65[0-4]\d\d|6[0-4]\d{3}|[1-5]\d{4}|[1-9]\d{0,3})$/;
 
         if (ipv4Regex.test(event.target.value)) {
           document.getElementById("portcheck-status").innerHTML = `<i class="bi bi-check-lg text-success"></i> Проверка <strong class="text-secondary">${event.target.value}</strong>`;
@@ -1570,9 +1593,7 @@
 
         if (document.getElementById('btnradio-portcheck-1').checked) {
           if (document.getElementById('openports-checkbox-1').checked) {
-            if (selectedIndexPortcheck) {
-              window.open(`https://netprobe.online/port?host=${searchQuery}&port=443`, "_blank");
-            }
+            window.open(`https://netprobe.online/port?host=${searchQuery}&port=${selectedPort}`, "_blank");
           }
           if (document.getElementById('openports-checkbox-2').checked) {
             window.open(`https://dnschecker.org/port-scanner.php?query=${searchQuery}`, "_blank");
