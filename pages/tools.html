@@ -509,16 +509,16 @@
                         <div class="collapse" id="collapseWhois">
                           <div class="card card-body">
                             <div class="form-check form-check-inline">
-                              <input class="form-check-input" name="whois-radio-options" type="radio" id="whois-checkbox-1" value="" autocomplete="off" checked>
-                              <label class="form-check-label" for="whois-checkbox-1">Who.is</label>
+                              <input class="form-check-input" name="whois-radio-options" type="radio" id="whois-checkbox-1" value="" autocomplete="off">
+                              <label class="form-check-label" for="whois-checkbox-1">RIPE.net</label>
                             </div>
                             <div class="form-check form-check-inline">
                               <input class="form-check-input" name="whois-radio-options" type="radio" id="whois-checkbox-2" value="" autocomplete="off">
-                              <label class="form-check-label" for="whois-checkbox-2">RIPE.net</label>
+                              <label class="form-check-label" for="whois-checkbox-2">DNSchecker.org</label>
                             </div>
                             <div class="form-check form-check-inline">
-                              <input class="form-check-input" name="whois-radio-options" type="radio" id="whois-checkbox-3" value="" autocomplete="off">
-                              <label class="form-check-label" for="whois-checkbox-3">DNSchecker.org</label>
+                              <input class="form-check-input" name="whois-radio-options" type="radio" id="whois-checkbox-3" value="" autocomplete="off" checked>
+                              <label class="form-check-label" for="whois-checkbox-3">Who.is</label>
                             </div>
                             <div class="form-check form-check-inline">
                               <input class="form-check-input" name="whois-radio-options" type="radio" id="whois-checkbox-4" value="" autocomplete="off">
@@ -841,6 +841,40 @@
 
                       <div id="portcheck-status" class="form-text">
                       </div>
+                      
+                      <div class="input-group mb-2">
+                        <span class="input-group-text" id="basic-addon1">Port:</span>
+                        <div class="dropup">
+                          <a class="btn btn-outline-secondary dropdown-toggle" href="#" id="button-dropdown-portcheck" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            443 - SSL / HTTPS (Hypertext Transfer Protocol Secure)
+                          </a>
+                        
+                          <ul class="dropdown-menu" id="dropdown-portcheck">
+                            <li><a class="dropdown-item" href="#">20 & 21 - FTP (File Transfer Protocol)</a></li>
+                            <li><a class="dropdown-item" href="#">22 - SSH (Secure Shell)</a></li>
+                            <li><a class="dropdown-item" href="#">23 - Telnet, a Remote Login Service</a></li>
+                            <li><a class="dropdown-item" href="#">25 - SMTP (Simple Mail Transfer Protocol)</a></li>
+                            <li><a class="dropdown-item" href="#">53 - DNS (Domain Name System)</a></li>
+                            <li><a class="dropdown-item" href="#">80 - HTTP (Hypertext Transfer Protocol)</a></li>
+                            <li><a class="dropdown-item" href="#">110 - POP3 (Post Office Protocol 3)</a></li>
+                            <li><a class="dropdown-item" href="#">115 - SFTP (Secure File Transfer Protocol)</a></li>
+                            <li><a class="dropdown-item" href="#">123 - NTP (Network Time Protocol)</a></li>
+                            <li><a class="dropdown-item" href="#">143 - IMAP (Internet Message Access Protocol)</a></li>
+                            <li><a class="dropdown-item" href="#">161 - SNMP (Simple Network Management Protocol)</a></li>
+                            <li><a class="dropdown-item" href="#">194 - IRC (Internet Relay Chat)</a></li>
+                            <li><a class="dropdown-item" href="#">443 - SSL / HTTPS (Hypertext Transfer Protocol Secure)</a></li>
+                            <li><a class="dropdown-item" href="#">445 - SMB</a></li>
+                            <li><a class="dropdown-item" href="#">465 - SMTPS (Simple Mail Transfer Protocol over SSL)</a></li>
+                            <li><a class="dropdown-item" href="#">554 - RTSP (Real Time Stream Control Protocol)</a></li>
+                            <li><a class="dropdown-item" href="#">873 - RSYNC (RSYNC File Transfer Services)</a></li>
+                            <li><a class="dropdown-item" href="#">993 - IMAPS (Internet Message Access Protocol over SSL)</a></li>
+                            <li><a class="dropdown-item" href="#">995 - POP3S (Post Office Protocol 3 over SSL)</a></li>
+                            <li><a class="dropdown-item" href="#">3389 - RDP (Remote Desktop Protocol)</a></li>
+                            <li><a class="dropdown-item" href="#">5900 - VNC</a></li>
+                            <li><a class="dropdown-item" href="#">8080 - HTTP-Proxy</a></li>
+                          </ul>
+                        </div>
+                      </div>
 
                       <div class="btn-group py-2" role="group" aria-label="Basic radio toggle button group">
                         <input type="radio" class="btn-check" name="btnradio-portcheck" id="btnradio-portcheck-1" data-bs-toggle="collapse" href="#collapseOpenports" aria-controls="collapseOpenports" autocomplete="off" checked>
@@ -853,12 +887,12 @@
                       <div class="collapse py-2" id="collapseOpenports">
                         <div class="card card-body">
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="openports-radio-options" type="radio" id="openports-checkbox-1" value="radio1" checked>
-                            <label class="form-check-label" for="openports-checkbox-1">dnschecker.org</label>
+                            <input class="form-check-input" name="openports-radio-options" type="radio" id="openports-checkbox-1" value="radio2">
+                            <label class="form-check-label" for="openports-checkbox-1">netprobe.online</label>
                           </div>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="openports-radio-options" type="radio" id="openports-checkbox-2" value="radio2">
-                            <label class="form-check-label" for="openports-checkbox-2">netprobe.online</label>
+                            <input class="form-check-input" name="openports-radio-options" type="radio" id="openports-checkbox-2" value="radio1" checked>
+                            <label class="form-check-label" for="openports-checkbox-2">dnschecker.org</label>
                           </div>
                         </div>
                       </div>
@@ -879,38 +913,6 @@
                           </div>
                         </div>
                       </div>
-                  
-                      <span class="d-block py-2">
-                        <a class="icon-link icon-link-hover no-underline" data-bs-toggle="collapse" href="#collapseWellKnownPorts" role="button" aria-expanded="false" aria-controls="collapseWellKnownPorts">
-                          <i class="bi bi-chevron-down"></i> Список популярных портов
-                        </a>
-                        <div class="collapse" id="collapseWellKnownPorts">
-                          <ul class="list-unstyled">
-                            <li><strong class="text-primary">20 & 21</strong> - FTP (File Transfer Protocol)</li>
-                            <li><strong class="text-primary">22</strong> - SSH (Secure Shell)</li>
-                            <li><strong class="text-primary">23</strong> - Telnet, a Remote Login Service</li>
-                            <li><strong class="text-primary">25</strong> - SMTP (Simple Mail Transfer Protocol)</li>
-                            <li><strong class="text-primary">53</strong> - DNS (Domain Name System)</li>
-                            <li><strong class="text-primary">80</strong> - HTTP (Hypertext Transfer Protocol)</li>
-                            <li><strong class="text-primary">110</strong> - POP3 (Post Office Protocol 3)</li>
-                            <li><strong class="text-primary">115</strong> - SFTP (Secure File Transfer Protocol)</li>
-                            <li><strong class="text-primary">123</strong> - NTP (Network Time Protocol)</li>
-                            <li><strong class="text-primary">143</strong> - IMAP (Internet Message Access Protocol)</li>
-                            <li><strong class="text-primary">161</strong> - SNMP (Simple Network Management Protocol)</li>
-                            <li><strong class="text-primary">194</strong> - IRC (Internet Relay Chat)</li>
-                            <li><strong class="text-primary">443</strong> - SSL / HTTPS (Hypertext Transfer Protocol Secure)</li>
-                            <li><strong class="text-primary">445</strong> - SMB</li>
-                            <li><strong class="text-primary">465</strong> - SMTPS (Simple Mail Transfer Protocol over SSL)</li>
-                            <li><strong class="text-primary">554</strong> - RTSP (Real Time Stream Control Protocol)</li>
-                            <li><strong class="text-primary">873</strong> - RSYNC (RSYNC File Transfer Services)</li>
-                            <li><strong class="text-primary">993</strong> - IMAPS (Internet Message Access Protocol over SSL)</li>
-                            <li><strong class="text-primary">995</strong> - POP3S (Post Office Protocol 3 over SSL)</li>
-                            <li><strong class="text-primary">3389</strong> - RDP (Remote Desktop Protocol)</li>
-                            <li><strong class="text-primary">5900</strong> - VNC</li>
-                            <li><strong class="text-primary">8080</strong> - HTTP-Proxy</li>
-                          </ul>
-                        </div>
-                      </span>
           
                     </p>
                   </div>
@@ -1129,13 +1131,13 @@
 
         if (document.getElementById('btnradio-whois-1').checked) {
           if (document.getElementById('whois-checkbox-1').checked) {
-            window.open(`https://who.is/whois/${searchQuery}`, "_blank");
-          }
-          if (document.getElementById('whois-checkbox-2').checked) {
             window.open(`https://apps.db.ripe.net/db-web-ui/query?bflag=false&dflag=false&rflag=true&searchtext=${searchQuery}&source=RIPE`, "_blank");
           }
-          if (document.getElementById('whois-checkbox-3').checked) {
+          if (document.getElementById('whois-checkbox-2').checked) {
             window.open(`https://dnschecker.org/domain-ip-lookup.php?query=${searchQuery}&dns=google`, "_blank");
+          }
+          if (document.getElementById('whois-checkbox-3').checked) {
+            window.open(`https://who.is/whois/${searchQuery}`, "_blank");
           }
           if (document.getElementById('whois-checkbox-4').checked) {
             window.open(`https://whois.hoster.by/?domain=${searchQuery}`, "_blank");
@@ -1261,6 +1263,7 @@
           if (document.getElementById('blocklist-label')) {
             document.getElementById('input-blocklist').disabled = false;
             document.getElementById("blocklist-label").innerHTML = `Проверка находится ли IP-адрес в черном списке (DNSBL)`;
+            document.getElementById("blocklist-status").innerHTML = ``;
           }
         }
       });
@@ -1270,7 +1273,7 @@
           if (document.getElementById('blocklist-label')) {
             document.getElementById('input-blocklist').disabled = true;
             document.getElementById("blocklist-label").innerHTML = `Проверка находится ли IP-адрес либо домен в списках блокировки`;
-            document.getElementById("blocklist-status").innerHTML = `Нажмите кнопку "Продолжить" после выбора ресурса`;
+            document.getElementById("blocklist-status").innerHTML = `Нажмите кнопку "Проверить" после выбора ресурса`;
             document.getElementById('button-blocklist').focus();
           }
         }
@@ -1451,7 +1454,62 @@
         }
       });
 
-      // Portcheck card 
+      // Portcheck card
+      var selectedIndexPortcheck = 13;
+
+      const portsTable = [
+        { port: '20 ', desc: 'FTP (File Transfer Protocol)'},
+        { port: '21 ', desc: 'FTP (File Transfer Protocol)'},
+        { port: '22 ', desc: 'SSH (Secure Shell)'},
+        { port: '23 ', desc: 'Telnet, a Remote Login Service'},
+        { port: '25 ', desc: 'SMTP (Simple Mail Transfer Protocol)'},
+        { port: '53 ', desc: 'DNS (Domain Name System)'},
+        { port: '80 ', desc: 'HTTP (Hypertext Transfer Protocol)'},
+        { port: '110', desc: 'POP3 (Post Office Protocol 3)'},
+        { port: '115', desc: 'SFTP (Secure File Transfer Protocol)'},
+        { port: '123', desc: 'NTP (Network Time Protocol)'},
+        { port: '143', desc: 'IMAP (Internet Message Access Protocol)'},
+        { port: '161', desc: 'SNMP (Simple Network Management Protocol)'},
+        { port: '194', desc: 'IRC (Internet Relay Chat)'},
+        { port: '443', desc: 'SSL / HTTPS (Hypertext Transfer Protocol Secure)'},
+        { port: '445', desc: 'SMB'},
+        { port: '465', desc: 'SMTPS (Simple Mail Transfer Protocol over SSL)'},
+        { port: '554', desc: 'RTSP (Real Time Stream Control Protocol)'},
+        { port: '873', desc: 'RSYNC (RSYNC File Transfer Services)'},
+        { port: '993', desc: 'IMAPS (Internet Message Access Protocol over SSL)'},
+        { port: '995', desc: 'POP3S (Post Office Protocol 3 over SSL)'},
+        { port: '338', desc: ' RDP (Remote Desktop Protocol)'},
+        { port: '590', desc: ' VNC'},
+        { port: '808', desc: ' HTTP-Proxy'}
+      ];
+
+      const dropdownPortcheck= document.querySelector('#dropdown-portcheck');
+      if (dropdownPortcheck) {
+        const rowsPortsTable = portsTable.map(data => {
+          return `
+            <li><a class="dropdown-item" href="#">${data.port} - ${data.desc}</a></li>
+          `;
+        }).join('');
+        dropdownPortcheck.innerHTML = rowsPortsTable;
+      }
+      
+      document.querySelectorAll('#dropdown-portcheck .dropdown-item').forEach(item => {
+        item.addEventListener('click', function(selDropdown) {
+          selDropdown.preventDefault();
+          const selectedText = this.innerText;
+          document.getElementById('button-dropdown-portcheck').innerText = selectedText;
+        });
+      });
+
+      const items = Array.from(document.querySelectorAll('#dropdown-portcheck .dropdown-item'));
+      items.forEach((item) => {
+        item.addEventListener('click', (event) => {
+          event.preventDefault();
+          selectedIndexPortcheck = items.indexOf(event.target);
+          // console.log('Selected Index:', selectedIndexPortcheck); 
+        });
+      });
+
       document.getElementById('input-portcheck').addEventListener('input', (event) => {
         // Regular expression remove "http://" or "http" at the beginning of a line (case insensitive)
         event.target.value = event.target.value.replace(/^https?:\/\//i, '');
@@ -1512,10 +1570,12 @@
 
         if (document.getElementById('btnradio-portcheck-1').checked) {
           if (document.getElementById('openports-checkbox-1').checked) {
-            window.open(`https://dnschecker.org/port-scanner.php?query=${searchQuery}`, "_blank");
+            if (selectedIndexPortcheck) {
+              window.open(`https://netprobe.online/port?host=${searchQuery}&port=443`, "_blank");
+            }
           }
           if (document.getElementById('openports-checkbox-2').checked) {
-            window.open(`https://netprobe.online/port?host=${searchQuery}&port=443`, "_blank");
+            window.open(`https://dnschecker.org/port-scanner.php?query=${searchQuery}`, "_blank");
           }
         } else if (document.getElementById('btnradio-portcheck-2').checked) {
           if (document.getElementById('vulnerable-checkbox-1').checked) {
@@ -1546,7 +1606,7 @@
           }
         }
       });
-
+       
       // Hide all bootstrap collapse function
       function hideAllCollapse() {
         const collapseElements = document.querySelectorAll('.collapse.show');
