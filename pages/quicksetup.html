@@ -3,7 +3,7 @@
   <!--begin::Head-->
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Admin-123 | Quick Setup</title>
+    <title>Admin-123 | FAQ</title>
 
     <!--begin::Accessibility Meta Tags-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
@@ -75,10 +75,11 @@
                 Главная
               </a>
             </li> -->
-
           </ul>
           <!--end::Start Navbar Links-->
           <ul class="navbar-nav">
+            <li class="nav-item d-none d-md-block" id="current-tab-status">
+            </li>
           </ul>
           <!--begin::End Navbar Links-->
           <ul class="navbar-nav ms-auto">
@@ -5653,19 +5654,6 @@
     <!--end::Required Plugin(AdminLTE)--><!--begin::OverlayScrollbars Configure-->
 
     <!-- OPTIONAL SCRIPTS -->
-
-    <!-- sortablejs -->
-    <!-- <script
-      src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"
-      crossorigin="anonymous"
-    ></script> -->
-    <!-- <script src="../js/sortable.min.js"></script> -->
-
-    <!-- search keyword highlighter plugin -->
-    <!-- <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js"
-      crossorigin="anonymous"
-    ></script> -->
     <script src="../js/mark.min.js"></script>
 
     <!-- customjs -->
@@ -5710,6 +5698,18 @@
         });
       });
 
+      // Change current tab on header menu if switch tabs
+      const tabElements = document.querySelectorAll('#quicksetup-tabs button[data-bs-toggle="tab"]');
+      tabElements.forEach(tab => {
+        tab.addEventListener('shown.bs.tab', event => {
+          const selectedTab = document.querySelector('#quicksetup-tabs .nav-link.active');
+          const tabStatusText = document.querySelector('#current-tab-status');
+          if (selectedTab) {
+            const selectedTabText = selectedTab.textContent.trim();
+            tabStatusText.innerHTML = `<strong class="text-muted fs-5">${selectedTabText}</strong>`;
+          }
+        });
+      });
     </script>
 
   </body>
