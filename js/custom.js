@@ -157,6 +157,7 @@ if (devDisclaimer) {
 
 // News block
 const newsTable = [
+  { date: '21/11/2026', desc: 'Обновлен раздел онлайн-утилиты, добавлен FAQ', link: 'tools.html'},
   { date: '15/11/2026', desc: 'Подключен новый домен 123-admin.short.do', link: 'https://123-admin.short.do'},
   { date: '14/11/2026', desc: 'Полностью переработан раздел онлайн-утилиты', link: 'tools.html'},
   { date: '06/11/2026', desc: 'Обновлено оглавление и раздел основное в MBTK', link: 'mbtk.html'},

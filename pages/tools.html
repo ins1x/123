@@ -70,7 +70,10 @@
             </li>
           </ul>
           <!--end::Start Navbar Links-->
-
+          <ul class="navbar-nav">
+            <li class="nav-item d-none d-md-block" id="current-tab-status">
+            </li>
+          </ul>
           <!--begin::End Navbar Links-->
           <ul class="navbar-nav ms-auto">
             <!--begin::Navbar Search-->
@@ -359,599 +362,1170 @@
               </div>
             </div>
 
-            <div class="row row-cols-1 row-cols-md-2 g-2">
-              <div class="col">
-                <div class="card card-success card-outline h-100">
-                  <!-- <div class="card-header text-bg-gray py-2">
-                    <h5 class="card-title">MAC</h5>
-                  </div> -->
-                  <div class="card-body">
-                    <p class="card-text">
-                      <p class="col-md-8 fs-3">
-                        <i class="nav-icon bi bi-pci-card-network" style="color:darkgreen"></i><strong> MAC-Vendor</strong>
-                        <p id="mac-label">
-                          Проверьте MAC-адрес и получите подробные сведения о производителе
+            <ul class="nav nav-tabs nav-fill" id="tools-tabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active fs-5" id="mac-tab" data-bs-toggle="tab" data-bs-target="#mac-content" type="button" role="tab" aria-controls="byfly" aria-selected="true"><i class="bi bi-pci-card-network" style="color:darkgreen"></i> MAC-Vendor</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link fs-5" id="trace-tab" data-bs-toggle="tab" data-bs-target="#trace-content" type="button" role="tab" aria-controls="zala" aria-selected="false"><i class="bi bi-bar-chart-steps" style="color: dodgerblue"></i> PING, TRACE, MTR</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link fs-5" id="whois-tab" data-bs-toggle="tab" data-bs-target="#whois-content" type="button" role="tab" aria-controls="vks" aria-selected="false"><i class="bi bi-globe-americas" style="color: goldenrod"></i> IP Whois</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link fs-5" id="blocklist-tab" data-bs-toggle="tab" data-bs-target="#blocklist-content" type="button" role="tab" aria-controls="ims" aria-selected="false"><i class="bi bi-envelope-slash" style="color: crimson""></i> Blocklist</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link fs-5" id="domain-tab" data-bs-toggle="tab" data-bs-target="#domain-content" type="button" role="tab" aria-controls="ims" aria-selected="false"><i class="bi bi-globe2" style="color: deepskyblue"></i> Domain</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link fs-5" id="portcheck-tab" data-bs-toggle="tab" data-bs-target="#portcheck-content" type="button" role="tab" aria-controls="ims" aria-selected="false"><i class="bi bi-diagram-3-fill" style="color: dimgray"></i> Openports</button>
+              </li>
+            </ul>
+            <!--begin::Tabs-->
+
+            <div class="tab-content" id="tabsTools">
+              <!-- mac-tab -->
+              <div class="tab-pane fade show active" id="mac-content" role="tabpanel" aria-labelledby="mac-tab">
+                <div class="row row-cols-1 row-cols-md-2 g-2">
+                  <div class="col">
+                    <div class="card card-success card-outline h-100">
+                      <!-- <div class="card-header text-bg-gray py-2">
+                        <h5 class="card-title">MAC</h5>
+                      </div> -->
+                      <div class="card-body">
+                        <p class="card-text">
+                          <p class="col-md-8 fs-3">
+                            <i class="nav-icon bi bi-pci-card-network" style="color:darkgreen"></i><strong> MAC-Vendor</strong>
+                            <p id="mac-label">
+                              Проверьте MAC-адрес и получите подробные сведения о производителе
+                            </p>
+                          </p>
+                          <p id="mac-text">
+                          </p>
+                          <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="00:1A:2B:3C:4D:5E" aria-label="MAC" aria-describedby="" id="input-mac">
+                            <button class="btn btn-success" type="button" id="button-mac">Проверить <i class="bi bi-chevron-right"></i></button>
+                          </div>
+                          <div id="mac-status" class="form-text">
+                            Вводить MAC можно в различных форматах например dead.beef.1234
+                          </div>
+    
+                          <div class="btn-group py-2" role="group" aria-label="Basic radio toggle button group">
+                            <input type="radio" class="btn-check" name="btnradio-mac" id="btnradio-mac-1" data-bs-toggle="collapse" href="#collapseMac" aria-controls="collapseMac" autocomplete="off" checked>
+                            <label class="btn btn-outline-success" for="btnradio-mac-1"><i class="bi bi-pci-card-network"></i> MAC-Vendors</label>
+                          </div>
+                         
+                          <div class="collapse" id="collapseMac">
+                            Альтернативные источники для поиска:
+                            <div class="card card-body">
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="mac-radio-options" type="radio" id="mac-checkbox-1" value="" autocomplete="off" checked>
+                                <label class="form-check-label" for="mac-checkbox-1">MACVendors.com</label>
+                              </div>
+    
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="mac-radio-options" type="radio" id="mac-checkbox-2" value="" autocomplete="off">
+                                <label class="form-check-label" for="mac-checkbox-2">maclookup.app</label>
+                              </div>
+    
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="mac-radio-options" type="radio" id="mac-checkbox-3" value="" autocomplete="off">
+                                <label class="form-check-label" for="mac-checkbox-3">macaddresslookup.io</label>
+                              </div>
+                            </div>
+                          </div>
+    
                         </p>
-                      </p>
-                      <p id="mac-text">
-                      </p>
-                      <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="00:1A:2B:3C:4D:5E" aria-label="MAC" aria-describedby="" id="input-mac">
-                        <button class="btn btn-success" type="button" id="button-mac">Проверить <i class="bi bi-chevron-right"></i></button>
                       </div>
-                      <div id="mac-status" class="form-text">
-                        Вводить MAC можно в различных форматах например dead.beef.1234
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="card card-success card-outline h-100">
+                      <div class="card-body">
+                        <p class="card-text">
+                          <p class="col-md-8 fs-3">
+                            <i class="nav-icon bi bi-patch-question" style="color:darkgreen"></i><strong> FAQ</strong>
+                          </p>
+                          <p>
+                            <b class="text-success">MAC Lookup</b> — это сервис для определения производителя сетевого оборудования (вендора) по его физическому MAC-адресу.
+                          </p>
+
+                          <span class="d-block">
+                            <a class="icon-link icon-link-hover no-underline" data-bs-toggle="collapse" href="#collapseOUIfaq" role="button" aria-expanded="false" aria-controls="collapseOUIfaq">
+                              <i class="bi bi-chevron-down"></i> Что такое OUI?
+                            </a>
+                            <div class="collapse" id="collapseOUIfaq">
+                              <p>
+                                <b class="text-success">OUI (Organizationally Unique Identifier</b> — уникальный идентификатор организации) — это префикс из первых 24 бит (обычно первые 6 шестнадцатеричных символов, например <code>00:E0:FC</code>) в MAC-адресе сетевого устройства, который присваивается производителю или организации комитетом <a href="https://standards.ieee.org/products-programs/regauth/" target="_blank">IEEE Registration Authority</a>.
+                              </p>
+                            </div>
+                          </span>
+
+                          <span class="d-block">
+                            <a class="icon-link icon-link-hover no-underline" data-bs-toggle="collapse" href="#collapseMACfindFaq" role="button" aria-expanded="false" aria-controls="collapseMACfindFaq">
+                              <i class="bi bi-chevron-down"></i> Как найти MAC-адрес на своем устройстве?
+                            </a>
+                            <div class="collapse" id="collapseMACfindFaq">
+                              <h5><i class="bi bi-microsoft"></i> Windows (10 и 11)</h5>
+                              Через командную строку:
+                              <ol>
+                              	<li>Нажмите клавиши Win + R, введите cmd и нажмите Enter.</li>
+                              	<li>Введите команду ipconfig /all и нажмите Enter.</li>
+                              	<li>Найдите строчку «Физический адрес» (Physical Address) напротив вашего сетевого адаптера или Wi-Fi (вид примерно такой: 00-11-22-AA-BB-CC).</li>
+                              </ol>
+                              <blockquote>Альтернативная команда: введите getmac /v.</blockquote>
+                              
+                              Через параметры:
+                              <ol>
+                              	<li>Откройте Параметры -> Сеть и Интернет -> Wi-Fi или Ethernet.</li>
+                              	<li>Перейдите в Свойства и прокрутите вниз до пункта Физический адрес (MAC).</li>
+                              </ol>
+
+                              <h5><i class="bi bi-apple"></i> macOS</h5>
+                              Через системные настройки:
+                              <ol>
+                              	<li>Нажмите на значок Apple (<i class="bi bi-apple"></i>) в левом верхнем углу и выберите Системные настройки.</li>
+                              	<li>Перейдите в раздел Сеть, выберите нужное подключение (Wi-Fi или Ethernet) и посмотрите строчку «Адрес».</li>
+                              </ol>
+                              Через терминал:
+                              <ol>
+                              	<li>Откройте Терминал.</li>
+                              	<li>Введите команду <code>ifconfig en0 | grep ether</code> (или подставьте имя своего интерфейса).</li>
+                              </ol>
+                              
+                              <h5><i class="bi bi-android"></i>Android</h5>
+                              <ul class="list-unstyled">Откройте Настройки -> О телефоне -> Общая информация (или «Статус») и найдите пункт MAC-адрес Wi-Fi.</ul>
+
+                              <h5><i class="bi bi-apple"></i>iOS (iPhone/iPad)</h5>
+                              <ul class="list-unstyled">Откройте Настройки -> Основные -> Об этом устройстве -> Адрес Wi-Fi.</ul>
+     
+                            </div>
+                          </span>
+
+                        </p>
                       </div>
-
-                      <div class="btn-group py-2" role="group" aria-label="Basic radio toggle button group">
-                        <input type="radio" class="btn-check" name="btnradio-mac" id="btnradio-mac-1" data-bs-toggle="collapse" href="#collapseMac" aria-controls="collapseMac" autocomplete="off" checked>
-                        <label class="btn btn-outline-success" for="btnradio-mac-1"><i class="bi bi-pci-card-network"></i> MAC-Vendors</label>
-                      </div>
-                     
-                      <div class="collapse" id="collapseMac">
-                        <div class="card card-body">
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="mac-radio-options" type="radio" id="mac-checkbox-1" value="" autocomplete="off" checked>
-                            <label class="form-check-label" for="mac-checkbox-1">MACVendors.com</label>
-                          </div>
-
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="mac-radio-options" type="radio" id="mac-checkbox-2" value="" autocomplete="off">
-                            <label class="form-check-label" for="mac-checkbox-2">maclookup.app</label>
-                          </div>
-
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="mac-radio-options" type="radio" id="mac-checkbox-3" value="" autocomplete="off">
-                            <label class="form-check-label" for="mac-checkbox-3">macaddresslookup.io</label>
-                          </div>
-                        </div>
-                      </div>
-
-                    </p>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="col">
-                <div class="card card-primary card-outline h-100">
-                  <div class="card-body">
-                    <p class="card-text">
-                      <p class="col-md-8 fs-3">
-                        <i class="nav-icon bi bi-bar-chart-steps" style="color:dodgerblue"></i> Traceroute and PING
-                        <p id="ping-label">Онлайн пинг, трассировка и проверка доступности</p>
-                      </p>
-                      <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="IP или домен сайта" aria-label="input-ping" aria-describedby="button-addon" id="input-ping">
-                        <button class="btn btn-primary" type="button" id="button-ping">Проверить <i class="bi bi-chevron-right"></i></button>
+              
+              <!-- trace-tab -->
+              <div class="tab-pane fade" id="trace-content" role="tabpanel" aria-labelledby="trace-tab">
+                <div class="row row-cols-1 row-cols-md-2 g-2">
+                  <div class="col">
+                    <div class="card card-primary card-outline h-100">
+                      <div class="card-body">
+                        <p class="card-text">
+                          <p class="col-md-8 fs-3">
+                            <i class="nav-icon bi bi-bar-chart-steps" style="color:dodgerblue"></i> Traceroute and PING
+                            <p id="ping-label">Онлайн пинг, трассировка и проверка доступности</p>
+                          </p>
+                          <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="IP или домен сайта" aria-label="input-ping" aria-describedby="button-addon" id="input-ping">
+                            <button class="btn btn-primary" type="button" id="button-ping">Проверить <i class="bi bi-chevron-right"></i></button>
+                          </div>
+    
+                          <div id="ping-status" class="form-text">
+                          </div>
+      
+                          <div class="btn-group py-2" role="group" aria-label="Basic radio toggle button group">
+                            <input type="radio" class="btn-check" name="btnradio-ping" id="btnradio-ping-1" data-bs-toggle="collapse" href="#collapsePing" aria-controls="collapsePing" autocomplete="off" checked>
+                            <label class="btn btn-outline-primary" for="btnradio-ping-1"><i class="bi bi-graph-up"></i> Ping</label>
+                          
+                            <input type="radio" class="btn-check" name="btnradio-ping" id="btnradio-ping-2"  data-bs-toggle="collapse" href="#collapseTrace" aria-controls="collapseTrace" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="btnradio-ping-2"><i class="bi bi-bar-chart-steps"></i> Traceroute</label>
+    
+                            <input type="radio" class="btn-check" name="btnradio-ping" id="btnradio-ping-3" data-bs-toggle="collapse" href="#collapseMTR" aria-controls="collapseMTR" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="btnradio-ping-3"><i class="bi bi-list-stars"></i> MTR</label>
+    
+                            <input type="radio" class="btn-check" name="btnradio-ping" id="btnradio-ping-4" data-bs-toggle="collapse" href="#collapseHost" aria-controls="collapseHost" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="btnradio-ping-4"><i class="bi bi-activity"></i> Доступность</label>
+                          </div>
+                         
+                          <div class="collapse" id="collapsePing">
+                            Альтернативные источники для поиска: 
+                            <div class="card card-body">
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="ping-radio-options" type="radio" id="ping-checkbox-1" value="" autocomplete="off" checked>
+                                <label class="form-check-label" for="ping-checkbox-1">ping.pe</label>
+                              </div>
+    
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="ping-radio-options" type="radio" id="ping-checkbox-2" value="" autocomplete="off">
+                                <label class="form-check-label" for="ping-checkbox-2">check-host.net</label>
+                              </div>
+                            </div>
+                          </div>
+    
+                          <div class="collapse" id="collapseTrace">
+                            Альтернативные источники для поиска: 
+                            <div class="card card-body">
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="trace-radio-options" type="radio" id="trace-checkbox-1" value="" autocomplete="off" checked>
+                                <label class="form-check-label" for="trace-checkbox-1">tools.bunny.net</label>
+                              </div>
+    
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="trace-radio-options" type="radio" id="trace-checkbox-2" value="" autocomplete="off">
+                                <label class="form-check-label" for="trace-checkbox-2">mxtoolbox.com</label>
+                              </div>
+                            </div>
+                          </div>
+    
+                          <div class="collapse" id="collapseHost">
+                            Альтернативные источники для поиска: 
+                            <div class="card card-body">
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="host-radio-options" type="radio" id="host-checkbox-1" value="" autocomplete="off" checked>
+                                <label class="form-check-label" for="host-checkbox-1">check-host.net</label>
+                              </div>
+    
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="host-radio-options" type="radio" id="host-checkbox-2" value="" autocomplete="off">
+                                <label class="form-check-label" for="host-checkbox-2">host-tracker.com</label>
+                              </div>
+                            </div>
+                          </div>
+    
+                          
+                          <div class="collapse" id="collapseMTR">
+                            Альтернативные источники для поиска: 
+                            <div class="card card-body">
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="mtr-radio-options" type="radio" id="mtr-checkbox-1" value="" autocomplete="off" checked>
+                                <label class="form-check-label" for="mtr-checkbox-1">check-host.cc</label>
+                              </div>
+    
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="mtr-radio-options" type="radio" id="mtr-checkbox-2" value="" autocomplete="off">
+                                <label class="form-check-label" for="mtr-checkbox-2">mtr.ping.pe</label>
+                              </div>
+                            </div>
+                          </div>
+    
+                        </p>
                       </div>
+                    </div>
+                  </div>
 
-                      <div id="ping-status" class="form-text">
-                      </div>
+                  <div class="col">
+                    <div class="card card-primary card-outline h-100">
+                      <div class="card-body">
+                        <p class="card-text">
+                          <p class="col-md-8 fs-3">
+                            <i class="nav-icon bi bi-patch-question" style="color:dodgerblue"></i> FAQ
+                          </p>
   
-                      <div class="btn-group py-2" role="group" aria-label="Basic radio toggle button group">
-                        <input type="radio" class="btn-check" name="btnradio-ping" id="btnradio-ping-1" data-bs-toggle="collapse" href="#collapsePing" aria-controls="collapsePing" autocomplete="off" checked>
-                        <label class="btn btn-outline-primary" for="btnradio-ping-1"><i class="bi bi-graph-up"></i> Ping</label>
-                      
-                        <input type="radio" class="btn-check" name="btnradio-ping" id="btnradio-ping-2"  data-bs-toggle="collapse" href="#collapseTrace" aria-controls="collapseTrace" autocomplete="off">
-                        <label class="btn btn-outline-primary" for="btnradio-ping-2"><i class="bi bi-bar-chart-steps"></i> Traceroute</label>
+                          <p>
+                            <b class="text-primary">Ping, traceroute (trace) и MTR</b> — это базовые сетевые утилиты для диагностики доступности серверов и поиска проблем со связью. С их помощью проверяют, доходят ли пакеты данных до цели и где именно они теряются или задерживаются.
+                          </p>
+                          <span class="d-block">
+                            <a class="icon-link icon-link-hover no-underline" data-bs-toggle="collapse" href="#collapseMTRcolumnsdesc" role="button" aria-expanded="false" aria-controls="collapseMTRcolumnsdesc">
+                              <i class="bi bi-chevron-down"></i> Расшифровка значений MTR
+                            </a>
+                            <div class="collapse" id="collapseMTRcolumnsdesc">
+                              <p>
+                                MTR объединяет ping и traceroute в единую диагностическую программу. Сначала выполняется трассировка маршрута для обнаружения каждого маршрутизатора на пути, затем отправляется несколько зондирующих запросов к каждому узлу для получения статистики потерь пакетов и задержки для каждого узла.
+                              </p>
+                              <ul class="triangle">
+                                <li><code>host</code> — имя хоста</li>
+                                <li><code>Loss%</code> — процент потерь пакетов</li>
+                                <li><code>Snt</code> — количество отправленных пакетов</li>
+                                <li><code>Last</code> — время задержки последнего отправленного пакета в миллисекундах</li>
+                                <li><code>Avg</code> — среднее время задержки</li>
+                                <li><code>Best</code> — минимальное время задержки</li>
+                                <li><code>Wrst</code> — максимальное время задержки</li>
+                                <li><code>StDev</code> — среднеквадратичное отклонение времени задержки</li>
+                              </ul>
+                            </div>
+                          </span>
 
-                        <input type="radio" class="btn-check" name="btnradio-ping" id="btnradio-ping-3" data-bs-toggle="collapse" href="#collapseMTR" aria-controls="collapseMTR" autocomplete="off">
-                        <label class="btn btn-outline-primary" for="btnradio-ping-3"><i class="bi bi-list-stars"></i> MTR</label>
-
-                        <input type="radio" class="btn-check" name="btnradio-ping" id="btnradio-ping-4" data-bs-toggle="collapse" href="#collapseHost" aria-controls="collapseHost" autocomplete="off">
-                        <label class="btn btn-outline-primary" for="btnradio-ping-4"><i class="bi bi-activity"></i> Доступность</label>
-
-                      </div>
-                     
-                      <div class="collapse" id="collapsePing">
-                        <div class="card card-body">
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="ping-radio-options" type="radio" id="ping-checkbox-1" value="" autocomplete="off" checked>
-                            <label class="form-check-label" for="ping-checkbox-1">ping.pe</label>
-                          </div>
-
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="ping-radio-options" type="radio" id="ping-checkbox-2" value="" autocomplete="off">
-                            <label class="form-check-label" for="ping-checkbox-2">check-host.net</label>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="collapse" id="collapseTrace">
-                        <div class="card card-body">
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="trace-radio-options" type="radio" id="trace-checkbox-1" value="" autocomplete="off" checked>
-                            <label class="form-check-label" for="trace-checkbox-1">tools.bunny.net</label>
-                          </div>
-
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="trace-radio-options" type="radio" id="trace-checkbox-2" value="" autocomplete="off">
-                            <label class="form-check-label" for="trace-checkbox-2">mxtoolbox.com</label>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="collapse" id="collapseHost">
-                        <div class="card card-body">
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="host-radio-options" type="radio" id="host-checkbox-1" value="" autocomplete="off" checked>
-                            <label class="form-check-label" for="host-checkbox-1">check-host.net</label>
-                          </div>
-
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="host-radio-options" type="radio" id="host-checkbox-2" value="" autocomplete="off">
-                            <label class="form-check-label" for="host-checkbox-2">host-tracker.com</label>
-                          </div>
-                        </div>
-                      </div>
-
-                      
-                      <div class="collapse" id="collapseMTR">
-                        <div class="card card-body">
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="mtr-radio-options" type="radio" id="mtr-checkbox-1" value="" autocomplete="off" checked>
-                            <label class="form-check-label" for="mtr-checkbox-1">check-host.cc</label>
-                          </div>
-
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="mtr-radio-options" type="radio" id="mtr-checkbox-2" value="" autocomplete="off">
-                            <label class="form-check-label" for="mtr-checkbox-2">mtr.ping.pe</label>
-                          </div>
-                        </div>
-                      </div>
-
-                      <span class="d-block">
-                        <a class="icon-link icon-link-hover no-underline" data-bs-toggle="collapse" href="#collapseMTRcolumnsdesc" role="button" aria-expanded="false" aria-controls="collapseMTRcolumnsdesc">
-                          <i class="bi bi-chevron-down"></i> Расшифровка значений MTR
-                        </a>
-                        <div class="collapse" id="collapseMTRcolumnsdesc">
-                          <ul>
-                            <li>host — имя хоста</li>
-                            <li>Loss% — процент потерь пакетов</li>
-                            <li>Snt — количество отправленных пакетов</li>
-                            <li>Last — время задержки последнего отправленного пакета в миллисекундах</li>
-                            <li>Avg — среднее время задержки</li>
-                            <li>Best — минимальное время задержки</li>
-                            <li>Wrst — максимальное время задержки</li>
-                            <li>StDev — среднеквадратичное отклонение времени задержки</li>
-                          </ul>
-                        </div>
-                      </span>
-
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card card-warning card-outline h-100">
-                  <div class="card-body">
-                    <p class="card-text">
-                      <p class="col-md-8 fs-3">
-                        <i class="nav-icon bi bi-globe-americas" style="color:goldenrod;"></i> IP whois
-                        <p id="whois-label">
-                          Whois позволяет собрать регистрационную информацию об IP-адресе
+                          <span class="d-block">
+                            <a class="icon-link icon-link-hover no-underline" data-bs-toggle="collapse" href="#collapseTraceAdvices" role="button" aria-expanded="false" aria-controls="collapseTraceAdvices">
+                              <i class="bi bi-chevron-down"></i> Общие рекомендации по анализу трассировки
+                            </a>
+                            <div class="collapse" id="collapseTraceAdvices">
+                              
+                              <p>Анализ трассировок позволяет определить наличие и место возникновения сетевых проблем.</p>
+                              <ol>
+                                <li>
+                                  Самые главные показатели - показатели <u>последнего узла</u>. На протяжении всего маршрута показатели пинга и потерь могут скакать и прыгать из-за настроек оборудования провайдера,
+                                  но если показатели последнего узла в норме, то все соединение также в норме. Фактически, пинг и потери последнего узла - это пинг и потери всего маршрута.
+                                </li>
+                                <li>
+                                  Если мы видим большой пинг и\или потери пакетов на последнем узле, это вовсе не значит, что проблема появляется именно в нем. 
+                                  Дело в том, что трассировка проходит дальше вне зависимости от показателя пинга и потерь на узле, соотвественно, показатели сохраняются и переносятся
+                                  (зачастую нарастая, как снежный ком) на следующие узлы до самого последнего. 
+                                  Что это значит? Это значит, что при плохих показателях последнего узла найти источник проблем можно, проследив обратно по трассировке до места возникновения такого высокого пинга или потерь пакетов.
+                                </li>
+                                <li>
+                                  <b>Потери пакетов в 100%</b> при нормальных показателях последующих узлов <u>являются нормой</u> и указывают на соответствующую настройку данного узла сети - не отвечать на трассировочные запросы.
+                                </li>
+                                <li>
+                                  Надпись <i>No Response from the host</i> или <i>Превышен интервал ожидания для узла</i> указывают на наличие блокирующего возможность трассировки файерволла или сетевого экрана. 
+                                  Подобная надпись уже с первого узла указывает на жесткие настройки файерволла или брандмауэра на компьютере, со второго на сетевой экран или фильтрацию траффика на роутере.
+                                </li>
+                                <li>
+                                  Ключевая вещь, которую многие люди не понимают в MTR или traceroute, заключается в следующем: 
+                                  если потеря пакетов или увеличение RTT не наблюдаются при каждом прыжке между данным прыжком и концом пути — это не проблема.
+                                  RTT каждого прыжка — полезная метрика, потому что говорит нам, сколько времени потребовалось пакету, чтобы добраться до этого прыжка и обратно. 
+                                  <blockquote>RTT (Round-Trip Time) — это время прохождения пакета данных от отправителя к получателю и обратно, измеряемое в миллисекундах.</blockquote>
+                                </li>
+                                <li>
+                                  Понимание прямого и обратного пути. Путь, по которому пакет проходит между A и B, часто не совпадает с путем, по которому он проходит между B и A. Таким образом, если вы пингуете определенный IP-адрес, то ваш ping (echo request), скорее всего, будет идти по другому пути, нежели ответ (echo reply).
+                                  Это означает, что когда вы используете MTR или traceroute и видите потерю пакетов, начиная с конкретного прыжка — это не обязательно тот прыжок, который привёл к проблеме.
+                                </li>
+                              </ol>
+  
+                              <h3>Особенности работы</h3>
+                              <ul>
+                                <li>
+                                  На некторых хопах в выводе могут отображаються звёздочки ( * либо "host not response"). 
+                                  Это значит, что маршрутизатор не отправил ответ — пакет отфильтрован, истёк таймаут или узел не отвечает на запросы traceroute.
+                                </li>
+                                <li>
+                                  На некоторых хопах может быть разный IP в строках и результаты запуска traceroute могут отличаться при повторной трассировке.
+                                  Участок сети может иметь несколько возможных маршрутов. Ответы могут приходить от разных маршрутизаторов из-за балансировки нагрузки.
+                                  Маршруты могут динамически меняться, пакеты могут балансироваться, а узлы — по-разному реагировать на нагрузку или фильтрацию.
+                                </li>
+                                <li>
+                                  Для кириллического домена, его нужно сначала перевести в PUNY код любым конвертером (например через <a href="reg.ru/web-tools/punycode">reg.ru/web-tools/punycode</a>) 
+                                  затем полученный код вставить в команду, вот так: <code>tracert xn--1-7sb1a4ah.xn--p1ai</code>
+                                </li>
+                                <li>
+                                  Traceroute: Ключ -I включает ICMP-трассировку, -T — TCP. Это помогает обходить фильтрацию UDP или проверять доступность конкретных портов.
+                                </li>
+                              </ul>  
+                            </div>
+                          </span>
+                          
                         </p>
-                        <div class="input-group mb-3">
-                          <input type="text" class="form-control" placeholder="Введите IP-адрес" aria-label="input-whois" aria-describedby="button-addon" id="input-whois">
-                          <button class="btn btn-warning text-light" type="button" id="button-whois">Проверить <i class="bi bi-chevron-right"></i></button>
-                        </div>
-                        <div id="whois-status" class="form-text">
-                        </div>
-                        
-                        <div class="btn-group py-2" role="group" aria-label="Basic radio toggle button group">
-                          <input type="radio" class="btn-check" name="btnradio-whois" id="btnradio-whois-1" data-bs-toggle="collapse" href="#collapseWhois" aria-controls="collapseWhois" autocomplete="off" checked>
-                          <label class="btn btn-outline-warning text-light" for="btnradio-whois-1"><i class="bi bi-globe-americas"></i> WHOIS</label>
+                      </div>
+                    </div>
+                  </div>
 
-                          <input type="radio" class="btn-check" name="btnradio-whois" id="btnradio-whois-2" data-bs-toggle="collapse" href="#collapseAsn" aria-controls="collapseAsn" autocomplete="off">
-                          <label class="btn btn-outline-warning text-light" for="btnradio-whois-2"><i class="bi bi-map"></i> ASN Lookup</label>
-                        </div>
-                       
-                        <div class="collapse" id="collapseWhois">
-                          <div class="card card-body">
-                            <div class="form-check form-check-inline">
-                              <input class="form-check-input" name="whois-radio-options" type="radio" id="whois-checkbox-1" value="" autocomplete="off" checked>
-                              <label class="form-check-label" for="whois-checkbox-1">RIPE.net</label>
+                </div>
+              </div>
+              
+              <!-- whois-tab -->
+              <div class="tab-pane fade" id="whois-content" role="tabpanel" aria-labelledby="whois-tab">
+                <div class="row row-cols-1 row-cols-md-2 g-2">
+                  <div class="col">
+                    <div class="card card-warning card-outline h-100">
+                      <div class="card-body">
+                        <p class="card-text">
+                          <p class="col-md-8 fs-3">
+                            <i class="nav-icon bi bi-globe-americas" style="color:goldenrod;"></i> IP Whois
+                            <p id="whois-label">
+                              Whois позволяет собрать регистрационную информацию об IP-адресе
+                            </p>
+                            <div class="input-group mb-3">
+                              <input type="text" class="form-control" placeholder="Введите IP-адрес" aria-label="input-whois" aria-describedby="button-addon" id="input-whois">
+                              <button class="btn btn-warning text-light" type="button" id="button-whois">Проверить <i class="bi bi-chevron-right"></i></button>
                             </div>
-                            <div class="form-check form-check-inline">
-                              <input class="form-check-input" name="whois-radio-options" type="radio" id="whois-checkbox-2" value="" autocomplete="off">
-                              <label class="form-check-label" for="whois-checkbox-2">DNSchecker.org</label>
+                            <div id="whois-status" class="form-text">
                             </div>
-                            <div class="form-check form-check-inline">
-                              <input class="form-check-input" name="whois-radio-options" type="radio" id="whois-checkbox-3" value="" autocomplete="off">
-                              <label class="form-check-label" for="whois-checkbox-3">Who.is</label>
+                            
+                            <div class="btn-group py-2" role="group" aria-label="Basic radio toggle button group">
+                              <input type="radio" class="btn-check" name="btnradio-whois" id="btnradio-whois-1" data-bs-toggle="collapse" href="#collapseWhois" aria-controls="collapseWhois" autocomplete="off" checked>
+                              <label class="btn btn-outline-warning text-light" for="btnradio-whois-1"><i class="bi bi-globe-americas"></i> WHOIS</label>
+    
+                              <input type="radio" class="btn-check" name="btnradio-whois" id="btnradio-whois-2" data-bs-toggle="collapse" href="#collapseAsn" aria-controls="collapseAsn" autocomplete="off">
+                              <label class="btn btn-outline-warning text-light" for="btnradio-whois-2"><i class="bi bi-map"></i> ASN Lookup</label>
                             </div>
-                            <div class="form-check form-check-inline">
-                              <input class="form-check-input" name="whois-radio-options" type="radio" id="whois-checkbox-4" value="" autocomplete="off">
-                              <label class="form-check-label" for="whois-checkbox-4">Hoster.by</label>
+                           
+                            <div class="collapse" id="collapseWhois">
+                              Альтернативные источники для поиска: 
+                              <div class="card card-body">
+                                <div class="form-check form-check-inline">
+                                  <input class="form-check-input" name="whois-radio-options" type="radio" id="whois-checkbox-1" value="" autocomplete="off" checked>
+                                  <label class="form-check-label" for="whois-checkbox-1">RIPE.net</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                  <input class="form-check-input" name="whois-radio-options" type="radio" id="whois-checkbox-2" value="" autocomplete="off">
+                                  <label class="form-check-label" for="whois-checkbox-2">DNSchecker.org</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                  <input class="form-check-input" name="whois-radio-options" type="radio" id="whois-checkbox-3" value="" autocomplete="off">
+                                  <label class="form-check-label" for="whois-checkbox-3">Who.is</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                  <input class="form-check-input" name="whois-radio-options" type="radio" id="whois-checkbox-4" value="" autocomplete="off">
+                                  <label class="form-check-label" for="whois-checkbox-4">Hoster.by</label>
+                                </div>
+                              </div>
                             </div>
-                          </div>
-                        </div>
+    
+                            <div class="collapse" id="collapseAsn">
+                              Альтернативные источники для поиска: 
+                              <div class="card card-body">
+                                <div class="form-check form-check-inline">
+                                  <input class="form-check-input" name="asn-radio-options" type="radio" id="asn-checkbox-1" value="" autocomplete="off" checked>
+                                  <label class="form-check-label" for="asn-checkbox-1">whoisfreaks.com</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                  <input class="form-check-input" name="asn-radio-options" type="radio" id="asn-checkbox-2" value="" autocomplete="off">
+                                  <label class="form-check-label" for="asn-checkbox-2">radar.qrator.net</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                  <input class="form-check-input" name="asn-radio-options" type="radio" id="asn-checkbox-3" value="" autocomplete="off">
+                                  <label class="form-check-label" for="asn-checkbox-3">mxtoolbox.com</label>
+                                </div>
+                              </div>
+                            </div>
+                          </p>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
 
-                        <div class="collapse" id="collapseAsn">
-                          <div class="card card-body">
-                            <div class="form-check form-check-inline">
-                              <input class="form-check-input" name="asn-radio-options" type="radio" id="asn-checkbox-1" value="" autocomplete="off" checked>
-                              <label class="form-check-label" for="asn-checkbox-1">whoisfreaks.com</label>
+                  <div class="col">
+                    <div class="card card-warning card-outline h-100">
+                      <div class="card-body">
+                        <p class="card-text">
+                          <p class="col-md-8 fs-3">
+                            <i class="nav-icon bi bi-patch-question" style="color:goldenrod;"></i> FAQ
+                          </p>
+                          <p>
+                            <b class="text-warning">WHOIS</b> это сетевой сервис для получения регистрационных данных о доменных именах, IP-адресах и автономных системах. 
+                            Он работает поверх TCP (порт 43) и обращается к базам данных регистраторов и реестров.
+                          </p>
+                          <span class="d-block">
+                            <a class="icon-link icon-link-hover no-underline" data-bs-toggle="collapse" href="#collapseAsnFaq" role="button" aria-expanded="false" aria-controls="collapseAsnFaq">
+                              <i class="bi bi-chevron-down"></i> Что такое ASN?
+                            </a>
+                            <div class="collapse" id="collapseAsnFaq">
+                              <b class="text-warning">ASN (Autonomous System Number)</b> — это уникальный номер автономной системы (AS), который используется для маршрутизации трафика между крупными сетями в интернете по протоколу BGP.
                             </div>
-                            <div class="form-check form-check-inline">
-                              <input class="form-check-input" name="asn-radio-options" type="radio" id="asn-checkbox-2" value="" autocomplete="off">
-                              <label class="form-check-label" for="asn-checkbox-2">radar.qrator.net</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                              <input class="form-check-input" name="asn-radio-options" type="radio" id="asn-checkbox-3" value="" autocomplete="off">
-                              <label class="form-check-label" for="asn-checkbox-3">mxtoolbox.com</label>
-                            </div>
-                          </div>
-                        </div>
-                      </p>
-                    </p>
+                          </span>
+                          
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="col">
-                <div class="card card-danger card-outline h-100">
-                  <div class="card-body">
-                    <p class="card-text">
-                      <p class="col-md-8 fs-3">
-                        <i class="nav-icon bi bi-envelope-slash" style="color:crimson"></i> Blocklist
-                      </p>
-                      <p id="blocklist-label">
-                        Проверка IP либо домена в списках заблокированных ресурсов
-                      </p>
-                      <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="IP или домен сайта" aria-label="input-blocklist" aria-describedby="blocklist-label" id="input-blocklist">
-                        <button class="btn btn-danger" type="button" id="button-blocklist">Проверить <i class="bi bi-chevron-right"></i></button>
+              
+              <!-- blocklist-tab -->
+              <div class="tab-pane fade" id="blocklist-content" role="tabpanel" aria-labelledby="blocklist-tab">
+                <div class="row row-cols-1 row-cols-md-2 g-2">
+                  <div class="col">
+                    <div class="card card-danger card-outline h-100">
+                      <div class="card-body">
+                        <p class="card-text">
+                          <p class="col-md-8 fs-3">
+                            <i class="nav-icon bi bi-envelope-slash" style="color:crimson"></i> Blocklist
+                          </p>
+                          <p id="blocklist-label">
+                            Проверка IP либо домена в списках заблокированных ресурсов
+                          </p>
+                          <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="IP или домен сайта" aria-label="input-blocklist" aria-describedby="blocklist-label" id="input-blocklist">
+                            <button class="btn btn-danger" type="button" id="button-blocklist">Проверить <i class="bi bi-chevron-right"></i></button>
+                          </div>
+    
+                          <div id="blocklist-status" class="form-text">
+                          </div>
+    
+                          <div class="btn-group py-2" role="group" aria-label="Basic radio toggle button group">
+                            <input type="radio" class="btn-check" name="btnradio-blocklist" id="btnradio-blocklist-1" data-bs-toggle="collapse" href="#collapseSpamlistOptions" aria-controls="collapseSpamlistOptions" autocomplete="off" checked>
+                            <label class="btn btn-outline-danger" for="btnradio-blocklist-1"><i class="nav-icon bi bi-envelope-slash"></i> SPAMlist</label>
+                          
+                            <input type="radio" class="btn-check" name="btnradio-blocklist" id="btnradio-blocklist-2" data-bs-toggle="collapse" href="#collapseBlocklistOptions" aria-controls="collapseBlocklistOptions" autocomplete="off">
+                            <label class="btn btn-outline-danger" for="btnradio-blocklist-2"><i class="nav-icon bi bi-ban"></i> Blocklist</label>
+                          </div>
+                         
+                          <div class="collapse" id="collapseSpamlistOptions">
+                            Альтернативные источники для поиска: 
+                            <div class="card card-body">
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="spam-radio-options" type="radio" id="spam-checkbox-1" value="radio1" checked>
+                                <label class="form-check-label" for="spam-checkbox-1">mxtoolbox.com</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="spam-radio-options" type="radio" id="spam-checkbox-2" value="radio2">
+                                <label class="form-check-label" for="spam-checkbox-2">MultiRBL</label>
+                              </div>
+                            </div>
+                          </div>
+    
+                          <div class="collapse" id="collapseBlocklistOptions">
+                            Альтернативные источники для поиска: 
+                            <div class="card card-body">
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="blocklist-radio-options" type="radio" id="blocklist-checkbox-1" value="radio1" checked>
+                                <label class="form-check-label" for="blocklist-checkbox-1">fortinet (Обеспечение безопасности сетевого трафика)</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="blocklist-radio-options" type="radio" id="blocklist-checkbox-2" value="radio2">
+                                <label class="form-check-label" for="blocklist-checkbox-2">zvelo (Родительский контроль)</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="blocklist-radio-options" type="radio" id="blocklist-checkbox-3" value="radio3">
+                                <label class="form-check-label" for="blocklist-checkbox-3">belgie (Ограничение доступа к информации РУП БелГИЭ)</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="blocklist-radio-options" type="radio" id="blocklist-checkbox-4" value="radio4">
+                                <label class="form-check-label" for="blocklist-checkbox-4">blockedin (Реестр запрещенных сайтов)</label>
+                              </div>
+                            </div>
+                          </div>
+    
+                        </p>
                       </div>
-
-                      <div id="blocklist-status" class="form-text">
-                      </div>
-
-                      <div class="btn-group py-2" role="group" aria-label="Basic radio toggle button group">
-                        <input type="radio" class="btn-check" name="btnradio-blocklist" id="btnradio-blocklist-1" data-bs-toggle="collapse" href="#collapseSpamlistOptions" aria-controls="collapseSpamlistOptions" autocomplete="off" checked>
-                        <label class="btn btn-outline-danger" for="btnradio-blocklist-1"><i class="nav-icon bi bi-envelope-slash"></i> SPAMlist</label>
-                      
-                        <input type="radio" class="btn-check" name="btnradio-blocklist" id="btnradio-blocklist-2" data-bs-toggle="collapse" href="#collapseBlocklistOptions" aria-controls="collapseBlocklistOptions" autocomplete="off">
-                        <label class="btn btn-outline-danger" for="btnradio-blocklist-2"><i class="nav-icon bi bi-ban"></i> Blocklist</label>
-                      </div>
-                     
-                      <div class="collapse" id="collapseSpamlistOptions">
-                        <div class="card card-body">
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="spam-radio-options" type="radio" id="spam-checkbox-1" value="radio1" checked>
-                            <label class="form-check-label" for="spam-checkbox-1">mxtoolbox.com</label>
-                          </div>
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="spam-radio-options" type="radio" id="spam-checkbox-2" value="radio2">
-                            <label class="form-check-label" for="spam-checkbox-2">MultiRBL</label>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="collapse" id="collapseBlocklistOptions">
-                        <div class="card card-body">
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="blocklist-radio-options" type="radio" id="blocklist-checkbox-1" value="radio1" checked>
-                            <label class="form-check-label" for="blocklist-checkbox-1">fortinet (Обеспечение безопасности сетевого трафика)</label>
-                          </div>
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="blocklist-radio-options" type="radio" id="blocklist-checkbox-2" value="radio2">
-                            <label class="form-check-label" for="blocklist-checkbox-2">zvelo (Родительский контроль)</label>
-                          </div>
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="blocklist-radio-options" type="radio" id="blocklist-checkbox-3" value="radio3">
-                            <label class="form-check-label" for="blocklist-checkbox-3">belgie (Ограничение доступа к информации РУП БелГИЭ)</label>
-                          </div>
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="blocklist-radio-options" type="radio" id="blocklist-checkbox-4" value="radio4">
-                            <label class="form-check-label" for="blocklist-checkbox-4">blockedin (Реестр запрещенных сайтов)</label>
-                          </div>
-                        </div>
-                      </div>
-
-                    </p>
+                    </div>
                   </div>
+
+                  <div class="col">
+                    <div class="card card-danger card-outline h-100">
+                      <div class="card-body">
+                        <p class="card-text">
+                          <p class="col-md-8 fs-3">
+                            <i class="nav-icon bi bi-patch-question" style="color:crimson"></i> FAQ
+                          </p>
+                          <p>
+                            <b class="text-danger">DNSBL</b> (Domain Name System-based Blackhole List) или <b class="text-danger">RBL</b> (Real-time Blackhole List).
+                            Это специальная база данных IP-адресов и доменных имён, которые были замечены в рассылке спама, фишинга или вредоносного ПО. 
+                            Большинство хостинг-провайдеров и владельцев сетей напрямую сверяются со списками Blackhole. 
+                            Они делают это для защиты своей инфраструктуры и поддержания высокой репутации собственных IP-адресов.
+                          </p>
+                          <span class="d-block">
+                            <a class="icon-link icon-link-hover no-underline" data-bs-toggle="collapse" href="#collapseBlocklistReasons" role="button" aria-expanded="false" aria-controls="collapseBlocklistReasons">
+                              <i class="bi bi-chevron-down"></i> Факторы которые могут повлиять на попадание в <b class="text-danger">Blacklist</b>
+                            </a>
+                            <div class="collapse" id="collapseBlocklistReasons">
+                              <ul>
+                                <li>Отправка большого количества писем за короткий период времени.</li> 
+                                <li>Рассылка писем на несуществующие или неактивные адреса.</li> 
+                                <li>Отсутствие надлежащей аутентификации (SPF, DKIM, DMARC).</li> 
+                                <li>Использование общих или бесплатных IP-адресов.</li> 
+                                <li>Использование спам-слов в теме или тексте сообщения.</li> 
+                                <li>Высокий уровень жалоб на спам от получателей.</li> 
+                                <li>Плохая репутация IP-адреса или домена.</li> 
+                                <li>Наличие вредоносного ПО на компьютере или сервере.</li> 
+                              </ul>
+                            </div>
+                          </span>
+
+                          <span class="d-block">
+                            <a class="icon-link icon-link-hover no-underline" data-bs-toggle="collapse" href="#collapseBlocklistsDesc" role="button" aria-expanded="false" aria-controls="collapseBlocklistsDesc">
+                              <i class="bi bi-chevron-down"></i> Какие списки проверяются чаще всего
+                            </a>
+                            <div class="collapse" id="collapseBlocklistsDesc">
+                              <ul class="triangle">
+                                <li>SBL (Spamhaus Block List) — база IP-адресов, с которых зафиксирована отправка спама или вредоносного ПО.</li>
+                                <li>XBL (Exploits Block List) — список зараженных компьютеров и серверов, входящих в ботнеты.</li>
+                                <li>PBL (Policy Block List) — база динамических IP-адресов домашних провайдеров, с которых в принципе не должна отправляться почта напрямую.</li>
+                                <li>DBL (Domain Block List) — список доменов, замеченных в спаме, фишинге или распространении вирусов.</li>
+                              </ul>
+                            </div>
+                          </span>
+
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
                 </div>
               </div>
-              <div class="col">
-                <div class="card card-info card-outline h-100">
-                  <div class="card-body">
-                    <p class="card-text">
-                      <p class="col-md-8 fs-3">
-                        <i class="bi bi-globe2" style="color:deepskyblue"></i> Domain
-                      </p>
-                      <p id="domain-label">
-                        Проверка DNS-записей доменов
-                      </p>
-                      <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Домен сайта" aria-label="button-domain" aria-describedby="button-addon" id="input-domain">
-                        <button class="btn btn-info text-light" type="button" id="button-domain">Проверить <i class="bi bi-chevron-right"></i></button>
-                      </div>
-
-                      <div id="domain-status" class="form-text">
-                      </div>
-                      
-                      <div class="btn-group py-2" role="group" aria-label="Basic radio toggle button group">
-                        <input type="radio" class="btn-check" name="btnradio-domain" id="btnradio-domain-1" autocomplete="off" checked>
-                        <label class="btn btn-outline-info text-light" for="btnradio-domain-1"><i class="bi bi-database-add"></i> DNS записи</label>
-                      
-                        <input type="radio" class="btn-check" name="btnradio-domain" id="btnradio-domain-2" autocomplete="off">
-                        <label class="btn btn-outline-info text-light" for="btnradio-domain-2"><i class="bi bi-file-earmark-lock"></i> SSL сертификаты</label>
-                      </div>
-
-                      <span class="d-block py-2">
-                        <a class="icon-link icon-link-hover no-underline" data-bs-toggle="collapse" href="#collapseDNSentries" role="button" aria-expanded="false" aria-controls="collapseDNSentries">
-                          <i class="bi bi-chevron-down"></i> Типы ресурсных записей DNS
-                        </a>
-                        <div class="collapse" id="collapseDNSentries">
-                          <div class="table-responsive">
-                            <table class="table table-borders table-striped-columns table-hover">
-                              <thead>
-                                <th><strong>Тип</strong></th>
-                                <th><strong>Назначение</strong></th>
-                              </thead>
-                              <tbody>
-                                <tr>
-                                  <td>A</td>
-                                  <td>Связывает доменное имя с IPv4-адресом сервера. Указывает, где физически расположен сайт</td>
-                                </tr>
-                                <tr>
-                                  <td>AAAA</td>
-                                  <td>Связывает доменное имя с IPv6-адресом сервера. Аналог A-записи для нового формата адресов</td>
-                                </tr>
-                                <tr>
-                                  <td>CNAME</td>
-                                  <td>Создает псевдоним для доменного имени. Указывает, что один адрес должен вести на тот же IP, что и другой. Часто используется для поддоменов</td>
-                                </tr>
-                                <tr>
-                                  <td>MX</td>
-                                  <td>Определяет серверы входящей почты и приоритет каждого из них</td>
-                                </tr>
-                                <tr>
-                                  <td>TXT</td>
-                                  <td>Содержит произвольную текстовую информацию. Применяется для проверок безопасности почты (SPF, DKIM), подтверждения прав на домен и других целей</td>
-                                </tr>
-                                <tr>
-                                  <td>NS</td>
-                                  <td>Указывает авторитативные DNS-серверы для домена. Именно эти серверы хранят и предоставляют информацию об остальных ресурсных записях зоны</td>
-                                </tr>
-                                <tr>
-                                  <td>SOA</td>
-                                  <td>Начальная запись зоны. Содержит служебную информацию о домене: первичный DNS-сервер, контакт администратора и тайминги обновления и кэширования</td>
-                                </tr>
-                                <tr>
-                                  <td>SPF</td>
-                                  <td>Cодержит информацию о списке серверов, которые имеют право отправлять письма от имени заданного домена. Позволяет избежать несанкционированного использования.</td>
-                                </tr>
-                                <tr>
-                                  <td>PTR</td>
-                                  <td>Обратная запись, связывающая IP-адрес с доменным именем. Используется для обратного DNS-поиска, в том числе для проверок при отправке почты</td>
-                                </tr>
-                                <tr>
-                                  <td>TLSA</td>
-                                  <td>TLSA-запись позволяет владельцу домена подтвердить подлинность используемого сертификата или цифровой подписи средствами DNSSEC. С помощью TLSA-записи вы можете сохранить отпечаток TLS или SSL-сертификата на вашем DNS-сервере.</td>
-                                </tr>
-                              </tbody>
-                            </table>
+              
+              <!-- domain-tab -->
+              <div class="tab-pane fade" id="domain-content" role="tabpanel" aria-labelledby="domain-tab">
+                <div class="row row-cols-1 row-cols-md-2 g-2">
+                  <div class="col">
+                    <div class="card card-info card-outline h-100">
+                      <div class="card-body">
+                        <p class="card-text">
+                          <p class="col-md-8 fs-3">
+                            <i class="bi bi-globe2" style="color:deepskyblue"></i> Domain
+                          </p>
+                          <p id="domain-label">
+                            Проверка DNS-записей доменов
+                          </p>
+                          <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Домен сайта" aria-label="button-domain" aria-describedby="button-addon" id="input-domain">
+                            <button class="btn btn-info text-light" type="button" id="button-domain">Проверить <i class="bi bi-chevron-right"></i></button>
                           </div>
-                        </div>
-                      </span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card card-secondary card-outline h-100">
-                  <div class="card-body">
-                    <p class="card-text">
-                      <p class="col-md-8 fs-3">
-                        <i class="bi bi-diagram-3-fill" style="color:dimgray"></i> Open ports
-                      </p>
-                      <p id="portcheck-label">
-                        Проверка открытых портов на доступность
-                      </p>
-                      <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Введите IP-адрес" aria-label="input-portcheck" aria-describedby="button-addon" id="input-portcheck">
-                        <button class="btn btn-secondary" type="button" id="button-portcheck">Проверить <i class="bi bi-chevron-right"></i></button>
-                      </div>
-
-                      <div id="portcheck-status" class="form-text">
-                      </div>
-                      
-                      <div class="input-group mb-2">
-                        <span class="input-group-text" id="grp-text-port">Port:</span>
-                        <div class="dropup">
-                          <a class="btn btn-outline-secondary dropdown-toggle" href="#" id="button-dropdown-portcheck" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <small>443 - SSL / HTTPS (Hypertext Transfer Protocol Secure)</small>
-                          </a>
-                        
-                          <ul class="dropdown-menu" id="dropdown-portcheck">
-                            <!-- Genereted by JS -->
-                          </ul>
-                        </div>
-                      </div>
-
-                      <div class="btn-group py-2" role="group" aria-label="Basic radio toggle button group">
-                        <input type="radio" class="btn-check" name="btnradio-portcheck" id="btnradio-portcheck-1" data-bs-toggle="collapse" href="#collapseOpenports" aria-controls="collapseOpenports" autocomplete="off" checked>
-                        <label class="btn btn-outline-secondary" for="btnradio-portcheck-1"> <i class="bi bi-diagram-3-fill"></i> Открытые порты</label>
-                      
-                        <input type="radio" class="btn-check" name="btnradio-portcheck" id="btnradio-portcheck-2" data-bs-toggle="collapse" href="#collapseVulnerable" aria-controls="collapseVulnerable" autocomplete="off">
-                        <label class="btn btn-outline-secondary" for="btnradio-portcheck-2"><i class="nav-icon bi bi-bug-fill"></i> Уязвимости</label>
-                      </div>
-
-                      <div class="collapse py-2" id="collapseOpenports">
-                        <div class="card card-body">
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="openports-radio-options" type="radio" id="openports-checkbox-1" value="radio2" checked>
-                            <label class="form-check-label" for="openports-checkbox-1">netprobe.online</label>
-                          </div>
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="openports-radio-options" type="radio" id="openports-checkbox-2" value="radio1">
-                            <label class="form-check-label" for="openports-checkbox-2">check-host.cc</label>
-                          </div>
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="openports-radio-options" type="radio" id="openports-checkbox-3" value="radio1">
-                            <label class="form-check-label" for="openports-checkbox-3">dnschecker.org</label>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="collapse py-2" id="collapseVulnerable">
-                        <div class="card card-body">
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="vulnerable-radio-options" type="radio" id="vulnerable-checkbox-1" value="" checked>
-                            <label class="form-check-label" for="vulnerable-checkbox-1">shodan</label>
-                          </div>
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="vulnerable-radio-options" type="radio" id="vulnerable-checkbox-2" value="">
-                            <label class="form-check-label" for="vulnerable-checkbox-2">censys</label>
-                          </div>
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="vulnerable-radio-options" type="radio" id="vulnerable-checkbox-3" value="">
-                            <label class="form-check-label" for="vulnerable-checkbox-3">abuseipdb</label>
-                          </div>
-                        </div>
-                      </div>
-
-                      <span class="d-block">
-                        <a class="icon-link icon-link-hover no-underline" data-bs-toggle="collapse" href="#collapseBlockedPortsonDynIP" role="button" aria-expanded="false" aria-controls="collapseBlockedPortsonDynIP">
-                          <i class="bi bi-chevron-down"></i> Закрытые порты на динамике
-                        </a>
-                        <div class="collapse" id="collapseBlockedPortsonDynIP">
-                          <p>Закрыты порты на входящий трафик для абонентов с динамическим IP адресом: <span class="text-muted">21/TCP(FTP), 22/TCP,UDP(SSH), 23/TCP,UDP(Telnet), 53/TCP,UDP(DNS), 80/TCP,UDP(HTTP), 443/TCP,UDP(HTTPS)</span></p>
-                          <p>На модеме по-умолчанию включен Firewall который блокирует порты: <span class="text-muted">21/TCP(FTP), 22/TCP,UDP(SSH), 23/TCP,UDP(Telnet), 80/TCP,UDP(HTTP), 443/TCP,UDP(HTTPS)</span></p>
-                        </div>
-                      </span>
-
-                      <span class="d-block">
-                        <a class="icon-link icon-link-hover no-underline" data-bs-toggle="collapse" href="#collapseFilters" role="button" aria-expanded="false" aria-controls="collapseFilters">
-                          <i class="bi bi-chevron-down"></i> Описание профилей фильтрации
-                        </a>
-                        <div class="collapse" id="collapseFilters">
-                          <div class="table-responsive">
-                            <table class="table table-striped table-hover">
-                              <tbody>
-                                <tr>
-                                  <td>№</td>
-                                  <td>Фильтр</td>
-                                  <td>Порты</td>
-                                </tr>
-                                <tr>
-                                  <td>0</td>
-                                  <td>Нет - Без ограничения доступа</td>
-                                  <td>-</td>
-                                </tr>
-                                <tr>
-                                  <td>1</td>
-                                  <td>
-                                    Фильтр оператора + DNS + БелГИЭ<br>
-                                    Без фильтрации социальных сетей и мессенджеров
-                                  </td>
-                                  <td>-</td>
-                                </tr>
-                                <tr>
-                                  <td>2</td>
-                                  <td>
-                                    Фильтр оператора + БелГИЭ + DNS + AV + IPS + Anti-DDoS
-                                  </td>
-                                  <td>
-                                    Произвольный набор портов протоколов транспортного уровня<br>
-                                    (функция самостоятельной настройки)
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>3</td>
-                                  <td>
-                                    Фильтр оператора + РК без блокировки соц.сетей<br>
-                                    <a href="https://beltelecom.by/business/internet/additional-service/parental-control">Родительский контроль</a> легкий в КП
-                                  </td>
-                                  <td>-</td>
-                                </tr>
-                                <tr>
-                                  <td>4</td>
-                                  <td>
-                                    Фильтр оператора + РК блокировка соц.сетей<br>
-                                    <a href="https://beltelecom.by/business/internet/additional-service/parental-control">Родительский контроль</a> стандартный в КП
-                                  </td>
-                                  <td>-</td>
-                                </tr>
-                                <tr>
-                                  <td>5</td>
-                                  <td>
-                                    Фильтр оператора + БелГИЭ + DNS + AV + IPS + Anti-DDoS<br>
-                                    + FW1 (Госсекреты - Разреш. Web + Mail)
-                                  </td>
-                                  <td>
-                                    ТСP: 25, 53, 80, 110, 119, 123, 443, 465, 587, 993, 995, 1080, 8080, 3128, 8020, 18020; <br>
-                                    UDP: 53, 8020, 18020.
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>6</td>
-                                  <td>
-                                    Фильтр оператора + БелГИЭ + DNS + AV + IPS + Anti-DDoS<br>
-                                    + FW2 (Госсекреты - Разреш. Web + Mail + Сообщ)
-                                  </td>
-                                  <td>
-                                    ТСP: 25, 53, 80, 110, 119, 123, 443, 465, 587, 993, 995, >1024. <br>
-                                    UDP: 53, >1024.
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>7</td>
-                                  <td>
-                                    Фильтр оператора + БелГИЭ + DNS + AV + IPS + Anti-DDoS<br>
-                                    + FW3 (Госсекреты - Разреш. Web + Mail + FTP + Сообщ)
-                                  </td>
-                                  <td>
-                                    ТСP: 20, 21, 22, 23, 25, 53, 69, 80, 81, 110, 119, 123, 443, 444, 465, 500, 587, 990, 993, 995,>1024; <br>
-                                    UDP: 53, 69, 123, 444, 443, 465, 500, 990, 993, >1024.
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>8</td>
-                                  <td>
-                                    БелГИЭ + DNS + AV + IPS + Anti-DDoS + Род. контроль стандарт <br>
-                                    + FW3 (Госсекреты - Разреш. Web + Mail + FTP + Сообщ)
-                                  </td>
-                                  <td>
-                                      ТСP: 20, 21, 22, 23, 25, 53, 69, 80, 81, 110, 119, 123, 443, 444, 465, 500, 587, 990, 993, 995,>1024; <br>
-                                      UDP: 53, 69, 123, 444, 443, 465, 500, 990, 993, >1024.
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>9</td>
-                                  <td>Защищенный ОРД + AV + IPS + Род. контроль стандарт</td>
-                                  <td>
-                                    ТСP: 20, 21, 22, 23, 25, 53, 69, 80, 81, 110, 119, 123, 443, 444, 465, 500, 587, 990, 993, 995,>1024; <br>
-                                    UDP: 53, 69, 123, 444, 443, 465, 500, 990, 993, >1024.
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
+    
+                          <div id="domain-status" class="form-text">
                           </div>
                           
-                          Расшифровка сокращений:
-                          <ul>
-                            <li>AV - (antivirus) - фильтрация трафика от вредоносного программного обеспечения;</li>
-                            <li>Anti-DDoS - защита от различных типов распределённых атак (DDoS-атак);</li>
-                            <li>DNS - доступ к информации, размещенной в сети Интернет, осуществляется с использованием специализированной системы DNS серверов;</li>
-                            <li>IPS - (intrusion prevention system) - обнаружение уязвимостей систем защиты информации;</li>
-                            <li>FW - (firewall) – межсетевое экранирование по портам протоколов транспортного уровня;</li>
-                            <li>FW 1 - Доступ в Интернет + электронная почта;</li>
-                            <li>FW 2 - Доступ в Интернет + электронная почта + Мгновенные сообщения (Месседжеры);</li>
-                            <li>FW 3 - Доступ в Интернет + электронная почта + Мгновенные сообщения (Месседжеры) + FTP;</li>
-                            <li>БелГИЭ - (web filtering) - web-фильтрация, ограничение доступа к информации с использованием списков, формируемых РУП «БелГИЭ»;</li>
-                            <li>Фильтр оператора - (web filtering) - web-фильтрация, ограничение доступа к информации с использованием списка РУП «Белтелеком»;</li>
-                          </ul>
-                        </div>
-                      </span>
-          
-                    </p>
+                          <div class="btn-group py-2" role="group" aria-label="Basic radio toggle button group">
+                            <input type="radio" class="btn-check" name="btnradio-domain" id="btnradio-domain-1" autocomplete="off" checked>
+                            <label class="btn btn-outline-info text-light" for="btnradio-domain-1"><i class="bi bi-database-add"></i> DNS записи</label>
+                          
+                            <input type="radio" class="btn-check" name="btnradio-domain" id="btnradio-domain-2" autocomplete="off">
+                            <label class="btn btn-outline-info text-light" for="btnradio-domain-2"><i class="bi bi-file-earmark-lock"></i> SSL сертификаты</label>
+                          </div>
+    
+                        </p>
+                      </div>
+                    </div>
                   </div>
+
+                  <div class="col">
+                    <div class="card card-info card-outline h-100">
+                      <div class="card-body">
+                        <p class="card-text">
+                          <p class="col-md-8 fs-3">
+                            <i class="bi bi-patch-question" style="color:deepskyblue"></i> FAQ
+                          </p>
+                          <p>
+                            <b class="text-info">Domain Lookup</b> - это общее название для сервисов, которые позволяют получить техническую информацию о любом доменном имени в интернете.
+                          </p>
+                          <span class="d-block">
+                            <a class="icon-link icon-link-hover no-underline" data-bs-toggle="collapse" href="#collapseDNSentries" role="button" aria-expanded="false" aria-controls="collapseDNSentries">
+                              <i class="bi bi-chevron-down"></i> Типы ресурсных записей DNS (MX, PTR, NS и.т.д)
+                            </a>
+                            <div class="collapse" id="collapseDNSentries">
+                              <div class="table-responsive">
+                                <table class="table table-borders table-striped-columns table-hover">
+                                  <thead>
+                                    <th><strong>Тип</strong></th>
+                                    <th><strong>Назначение</strong></th>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>A</td>
+                                      <td>Связывает доменное имя с IPv4-адресом сервера. Указывает, где физически расположен сайт</td>
+                                    </tr>
+                                    <tr>
+                                      <td>AAAA</td>
+                                      <td>Связывает доменное имя с IPv6-адресом сервера. Аналог A-записи для нового формата адресов</td>
+                                    </tr>
+                                    <tr>
+                                      <td>CNAME</td>
+                                      <td>Создает псевдоним для доменного имени. Указывает, что один адрес должен вести на тот же IP, что и другой. Часто используется для поддоменов</td>
+                                    </tr>
+                                    <tr>
+                                      <td>MX</td>
+                                      <td>Определяет серверы входящей почты и приоритет каждого из них</td>
+                                    </tr>
+                                    <tr>
+                                      <td>TXT</td>
+                                      <td>Содержит произвольную текстовую информацию. Применяется для проверок безопасности почты (SPF, DKIM), подтверждения прав на домен и других целей</td>
+                                    </tr>
+                                    <tr>
+                                      <td>NS</td>
+                                      <td>Указывает авторитативные DNS-серверы для домена. Именно эти серверы хранят и предоставляют информацию об остальных ресурсных записях зоны</td>
+                                    </tr>
+                                    <tr>
+                                      <td>SOA</td>
+                                      <td>Начальная запись зоны. Содержит служебную информацию о домене: первичный DNS-сервер, контакт администратора и тайминги обновления и кэширования</td>
+                                    </tr>
+                                    <tr>
+                                      <td>SPF</td>
+                                      <td>Cодержит информацию о списке серверов, которые имеют право отправлять письма от имени заданного домена. Позволяет избежать несанкционированного использования.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>PTR</td>
+                                      <td>Обратная запись, связывающая IP-адрес с доменным именем. Используется для обратного DNS-поиска, в том числе для проверок при отправке почты</td>
+                                    </tr>
+                                    <tr>
+                                      <td>TLSA</td>
+                                      <td>TLSA-запись позволяет владельцу домена подтвердить подлинность используемого сертификата или цифровой подписи средствами DNSSEC. С помощью TLSA-записи вы можете сохранить отпечаток TLS или SSL-сертификата на вашем DNS-сервере.</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                          </span>
+
+                          <span class="d-block">
+                            <a class="icon-link icon-link-hover no-underline" data-bs-toggle="collapse" href="#collapseSSLcertFaq" role="button" aria-expanded="false" aria-controls="collapseSSLcertFaq">
+                              <i class="bi bi-chevron-down"></i>  SSL-сертификат
+                            </a>
+                            <div class="collapse" id="collapseSSLcertFaq">
+                              <p>
+                                SSL-сертификат — это цифровой файл на сервере, который подтверждает подлинность сайта и включает шифрованное соединение по протоколу HTTPS. На практике шифрование работает через современный протокол TLS, но название SSL сохранилось
+                              </p>
+                            </div>
+                          </span>
+
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              
+              <!-- portcheck-tab -->
+              <div class="tab-pane fade" id="portcheck-content" role="tabpanel" aria-labelledby="portcheck-tab">
+                <div class="row row-cols-1 row-cols-md-2 g-2">
+                  <div class="col">
+                    <div class="card card-secondary card-outline h-100">
+                      <div class="card-body">
+                        <p class="card-text">
+                          <p class="col-md-8 fs-3">
+                            <i class="bi bi-diagram-3-fill" style="color:dimgray"></i> Open ports
+                          </p>
+                          <p id="portcheck-label">
+                            Проверка открытых портов на доступность
+                          </p>
+                          <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Введите IP-адрес" aria-label="input-portcheck" id="input-portcheck">
+                            <button class="btn btn-secondary" type="button" id="button-portcheck">Проверить <i class="bi bi-chevron-right"></i></button>
+                          </div>
+    
+                          <div id="portcheck-status" class="form-text">
+                          </div>
+                          
+                          <div class="input-group mb-2">
+                            <!-- <span class="input-group-text" id="grp-text-port">Port:</span> -->
+                            <input type="text" class="form-control input-group-text" style="max-width: 5em;" placeholder="Port" aria-label="input-portnumber" id="input-portnumber">
+                            <div class="dropup">
+                              <a class="btn btn-outline-secondary dropdown-toggle" href="#" id="button-dropdown-portcheck" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <small>443 - SSL / HTTPS (Hypertext Transfer Protocol Secure)</small>
+                              </a>
+                            
+                              <ul class="dropdown-menu overflow-auto" style="max-height: 20em;" id="dropdown-portcheck">
+                                <!-- Genereted by JS -->
+                              </ul>
+                            </div>
+
+                          </div>
+    
+                          <div class="btn-group py-2" role="group" aria-label="Basic radio toggle button group">
+                            <input type="radio" class="btn-check" name="btnradio-portcheck" id="btnradio-portcheck-1" data-bs-toggle="collapse" href="#collapseOpenports" aria-controls="collapseOpenports" autocomplete="off" checked>
+                            <label class="btn btn-outline-secondary" for="btnradio-portcheck-1"> <i class="bi bi-diagram-3-fill"></i> Открытые порты</label>
+                          
+                            <input type="radio" class="btn-check" name="btnradio-portcheck" id="btnradio-portcheck-2" data-bs-toggle="collapse" href="#collapseVulnerable" aria-controls="collapseVulnerable" autocomplete="off">
+                            <label class="btn btn-outline-secondary" for="btnradio-portcheck-2"><i class="nav-icon bi bi-bug-fill"></i> Уязвимости</label>
+                          </div>
+    
+                          <div class="collapse" id="collapseOpenports">
+                            Альтернативные источники для поиска: 
+                            <div class="card card-body">
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="openports-radio-options" type="radio" id="openports-checkbox-1" value="radio1" checked> 
+                                <label class="form-check-label" for="openports-checkbox-1">check-host.cc</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="openports-radio-options" type="radio" id="openports-checkbox-2" value="radio2">
+                                <label class="form-check-label" for="openports-checkbox-2">netprobe.online</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="openports-radio-options" type="radio" id="openports-checkbox-3" value="radio3">
+                                <label class="form-check-label" for="openports-checkbox-3">dnschecker.org</label>
+                              </div>
+                            </div>
+                          </div>
+    
+                          <div class="collapse" id="collapseVulnerable">
+                            Альтернативные источники для поиска: 
+                            <div class="card card-body">
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="vulnerable-radio-options" type="radio" id="vulnerable-checkbox-1" value="" checked>
+                                <label class="form-check-label" for="vulnerable-checkbox-1">shodan</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="vulnerable-radio-options" type="radio" id="vulnerable-checkbox-2" value="">
+                                <label class="form-check-label" for="vulnerable-checkbox-2">censys</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="vulnerable-radio-options" type="radio" id="vulnerable-checkbox-3" value="">
+                                <label class="form-check-label" for="vulnerable-checkbox-3">abuseipdb</label>
+                              </div>
+                            </div>
+                          </div>
+              
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="card card-secondary card-outline h-100">
+                      <div class="card-body">
+                        <p class="card-text">
+                          <p class="col-md-8 fs-3">
+                            <i class="bi bi-patch-question" style="color:dimgray"></i> FAQ
+                          </p>
+                          <p>
+                            <b class="text-secondary">Open Ports Lookup</b> — это инструмент для проверки того, какие сетевые порты на конкретном IP-адресе или домене доступны для входящих подключений из интернета.
+                          </p>
+                          <span class="d-block">
+                            <a class="icon-link icon-link-hover no-underline" data-bs-toggle="collapse" href="#collapseBlockedPortsonDynIP" role="button" aria-expanded="false" aria-controls="collapseBlockedPortsonDynIP">
+                              <i class="bi bi-chevron-down"></i> Закрытые порты на динамическом IP
+                            </a>
+                            <div class="collapse" id="collapseBlockedPortsonDynIP">
+                              <p>Закрыты порты на входящий трафик для абонентов с динамическим IP адресом: <span class="text-muted">21/TCP(FTP), 22/TCP,UDP(SSH), 23/TCP,UDP(Telnet), 53/TCP,UDP(DNS), 80/TCP,UDP(HTTP), 443/TCP,UDP(HTTPS)</span></p>
+                              <p>На модеме по-умолчанию включен Firewall который блокирует порты: <span class="text-muted">21/TCP(FTP), 22/TCP,UDP(SSH), 23/TCP,UDP(Telnet), 80/TCP,UDP(HTTP), 443/TCP,UDP(HTTPS)</span></p>
+                            </div>
+                          </span>
+    
+                          <span class="d-block">
+                            <a class="icon-link icon-link-hover no-underline" data-bs-toggle="collapse" href="#collapseFilters" role="button" aria-expanded="false" aria-controls="collapseFilters">
+                              <i class="bi bi-chevron-down"></i> Описание профилей фильтрации
+                            </a>
+                            <div class="collapse" id="collapseFilters">
+                              <div class="table-responsive">
+                                <table class="table table-striped table-hover">
+                                  <tbody>
+                                    <tr>
+                                      <td>№</td>
+                                      <td>Фильтр</td>
+                                      <td>Порты</td>
+                                    </tr>
+                                    <tr>
+                                      <td>0</td>
+                                      <td>Нет - Без ограничения доступа</td>
+                                      <td>-</td>
+                                    </tr>
+                                    <tr>
+                                      <td>1</td>
+                                      <td>
+                                        Фильтр оператора + DNS + БелГИЭ<br>
+                                        Без фильтрации социальных сетей и мессенджеров
+                                      </td>
+                                      <td>-</td>
+                                    </tr>
+                                    <tr>
+                                      <td>2</td>
+                                      <td>
+                                        Фильтр оператора + БелГИЭ + DNS + AV + IPS + Anti-DDoS
+                                      </td>
+                                      <td>
+                                        Произвольный набор портов протоколов транспортного уровня<br>
+                                        (функция самостоятельной настройки)
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>3</td>
+                                      <td>
+                                        Фильтр оператора + РК без блокировки соц.сетей<br>
+                                        <a href="https://beltelecom.by/business/internet/additional-service/parental-control">Родительский контроль</a> легкий в КП
+                                      </td>
+                                      <td>-</td>
+                                    </tr>
+                                    <tr>
+                                      <td>4</td>
+                                      <td>
+                                        Фильтр оператора + РК блокировка соц.сетей<br>
+                                        <a href="https://beltelecom.by/business/internet/additional-service/parental-control">Родительский контроль</a> стандартный в КП
+                                      </td>
+                                      <td>-</td>
+                                    </tr>
+                                    <tr>
+                                      <td>5</td>
+                                      <td>
+                                        Фильтр оператора + БелГИЭ + DNS + AV + IPS + Anti-DDoS<br>
+                                        + FW1 (Госсекреты - Разреш. Web + Mail)
+                                      </td>
+                                      <td>
+                                        ТСP: 25, 53, 80, 110, 119, 123, 443, 465, 587, 993, 995, 1080, 8080, 3128, 8020, 18020; <br>
+                                        UDP: 53, 8020, 18020.
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>6</td>
+                                      <td>
+                                        Фильтр оператора + БелГИЭ + DNS + AV + IPS + Anti-DDoS<br>
+                                        + FW2 (Госсекреты - Разреш. Web + Mail + Сообщ)
+                                      </td>
+                                      <td>
+                                        ТСP: 25, 53, 80, 110, 119, 123, 443, 465, 587, 993, 995, >1024. <br>
+                                        UDP: 53, >1024.
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>7</td>
+                                      <td>
+                                        Фильтр оператора + БелГИЭ + DNS + AV + IPS + Anti-DDoS<br>
+                                        + FW3 (Госсекреты - Разреш. Web + Mail + FTP + Сообщ)
+                                      </td>
+                                      <td>
+                                        ТСP: 20, 21, 22, 23, 25, 53, 69, 80, 81, 110, 119, 123, 443, 444, 465, 500, 587, 990, 993, 995,>1024; <br>
+                                        UDP: 53, 69, 123, 444, 443, 465, 500, 990, 993, >1024.
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>8</td>
+                                      <td>
+                                        БелГИЭ + DNS + AV + IPS + Anti-DDoS + Род. контроль стандарт <br>
+                                        + FW3 (Госсекреты - Разреш. Web + Mail + FTP + Сообщ)
+                                      </td>
+                                      <td>
+                                          ТСP: 20, 21, 22, 23, 25, 53, 69, 80, 81, 110, 119, 123, 443, 444, 465, 500, 587, 990, 993, 995,>1024; <br>
+                                          UDP: 53, 69, 123, 444, 443, 465, 500, 990, 993, >1024.
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>9</td>
+                                      <td>Защищенный ОРД + AV + IPS + Род. контроль стандарт</td>
+                                      <td>
+                                        ТСP: 20, 21, 22, 23, 25, 53, 69, 80, 81, 110, 119, 123, 443, 444, 465, 500, 587, 990, 993, 995,>1024; <br>
+                                        UDP: 53, 69, 123, 444, 443, 465, 500, 990, 993, >1024.
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                              
+                              Расшифровка сокращений:
+                              <ul>
+                                <li>AV - (antivirus) - фильтрация трафика от вредоносного программного обеспечения;</li>
+                                <li>Anti-DDoS - защита от различных типов распределённых атак (DDoS-атак);</li>
+                                <li>DNS - доступ к информации, размещенной в сети Интернет, осуществляется с использованием специализированной системы DNS серверов;</li>
+                                <li>IPS - (intrusion prevention system) - обнаружение уязвимостей систем защиты информации;</li>
+                                <li>FW - (firewall) – межсетевое экранирование по портам протоколов транспортного уровня;</li>
+                                <li>FW 1 - Доступ в Интернет + электронная почта;</li>
+                                <li>FW 2 - Доступ в Интернет + электронная почта + Мгновенные сообщения (Месседжеры);</li>
+                                <li>FW 3 - Доступ в Интернет + электронная почта + Мгновенные сообщения (Месседжеры) + FTP;</li>
+                                <li>БелГИЭ - (web filtering) - web-фильтрация, ограничение доступа к информации с использованием списков, формируемых РУП «БелГИЭ»;</li>
+                                <li>Фильтр оператора - (web filtering) - web-фильтрация, ограничение доступа к информации с использованием списка РУП «Белтелеком»;</li>
+                              </ul>
+                            </div>
+                          </span>
+
+                          <span class="d-block">
+                            <a class="icon-link icon-link-hover no-underline" data-bs-toggle="collapse" href="#collapseCheckOpenPorts" role="button" aria-expanded="false" aria-controls="collapseCheckOpenPorts">
+                              <i class="bi bi-chevron-down"></i> Проверить открыт ли порт из консоли
+                            </a>
+                            <div class="collapse" id="collapseCheckOpenPorts">
+                              <p>Перед проверкой из внешней сети попробуйте подключиться к серверу используя его внутренний IP-адрес и порт из браузера находясь в той же локальной сети.</p>
+                            
+                              <h4>Проверка в Windows</h4>
+                              <p>Проверить доступность порта с помощью утилиты Telnet: <code>telnet 192.168.1.1 4000</code> (4000 заменить на нужный порт)</p>
+                              <blockquote>
+                                <ul>
+                                  <li>Connected to IP ... Connection closed by foreign host - Порт открыт</li>
+                                  <li>Protocol mismatch. Connection closed by foreign host - Порт открыт</li>
+                                  <li>Trying IP...telnet: Unable to connect to remote host: Network is unreachable - Порт закрыт</li>
+                                </ul>
+                              </blockquote>
+                              <p>Самый простой способ проверить открытые порты — использовать встроенную утилиту netstat:</p>
+                              <ol>
+                                <li>Нажмите <kbd>Win+R</kbd>, введите <code>cmd</code> и нажмите Enter</li>
+                                <li>В появившемся окне введите команду: <code>netstat -an</code></li>
+                                <li>Для отображения программ, использующих порты: <code>netstat -ab</code> (требуются права администратора)</li>
+                                <li>Альтернативный вариант с PID процесса: <code>netstat -aon</code></p></li>
+                                <code>
+                                  <pre style="white-space: pre-line;">
+                                  Имя    Локальный адрес        Внешний адрес          Состояние
+                                  TCP    0.0.0.0:135            0.0.0.0:0              LISTENING
+                                  TCP    0.0.0.0:445            0.0.0.0:0              ESTABLISHED
+                                  TCP    0.0.0.0:5040           0.0.0.0:0              TIME_WAIT
+                                  TCP    0.0.0.0:5357           0.0.0.0:0              LISTENING
+                                  TCP    0.0.0.0:7680           0.0.0.0:0              LISTENING
+                                  </pre>
+                                </code>
+                              </ol>
+                              
+                              <p>После проверки вы увидите список портов со статусами:</p>
+                              <blockquote>
+                                <ul>
+                                  <li>LISTENING — порт открыт и ожидает соединений</li>  
+                                  <li>ESTABLISHED — активное соединение</li>  
+                                  <li>CLOSE_WAIT — соединение закрывается</li>  
+                                  <li>TIME_WAIT — соединение завершено, но порт временно занят</li>
+                                </ul>
+                              </blockquote>
+  
+                              <p>Проверить коннект на определенный порт: <code>Test-NetConnection google.com -port 80</code></p>
+                              <code>
+                                <pre style="white-space: pre-line;">
+                                ComputerName     : google.com
+                                RemoteAddress    : 142.250.130.101
+                                RemotePort       : 80
+                                InterfaceAlias   : Ethernet 2
+                                SourceAddress    : 100.111.112.2
+                                TcpTestSucceeded : True
+                                </pre>
+                              </code>
+  
+                              <p>Cписок всех портов, которые прослушивает процесс: <code>Get-NetTCPConnection -OwningProcess (Get-Process -name svchost).Id -State Listen</code></p>
+                              <code>
+                                <pre style="white-space: pre-line;">
+                                  LocalAddress                        LocalPort RemoteAddress                       RemotePort State       AppliedSetting OwningProcess
+                                  ------------                        --------- -------------                       ---------- -----       -------------- -------------
+                                  ::                                  49672     ::                                  0          Listen                     3204         
+                                  ::                                  49667     ::                                  0          Listen                     2024         
+                                  ::                                  49666     ::                                  0          Listen                     1776         
+                                  ::                                  135       ::                                  0          Listen                     1128         
+                                  0.0.0.0                             49672     0.0.0.0                             0          Listen                     3204         
+                                  0.0.0.0                             49667     0.0.0.0                             0          Listen                     2024         
+                                  0.0.0.0                             49666     0.0.0.0                             0          Listen                     1776         
+                                  0.0.0.0                             5040      0.0.0.0                             0          Listen                     6668         
+                                  0.0.0.0                             135       0.0.0.0                             0          Listen                     1128  
+                                </pre>
+                              </code>
+  
+                              <h4>Проверка в Linux и macOS</h4>
+                              
+                              <p>В системах Linux и macOS используйте терминал:</p>
+                              <ol>
+                                <li>Откройте терминал (<kbd>CTRL + SHIFT + T</kbd>)</li>
+                                <li>Введите: <code>sudo lsof -i -P -n | grep LISTEN</code></li>
+                              </ol>
+                              <p>Альтернативный вариант: <code>ss -tulpn</code> либо <code>ss -tulpn | grep :80</code></p>
+                            </div>
+                          </span>
+  
+                          <span class="d-block">
+                            <a class="icon-link icon-link-hover no-underline" data-bs-toggle="collapse" href="#collapsePortForwarding" role="button" aria-expanded="false" aria-controls="collapsePortForwarding">
+                              <i class="bi bi-chevron-down"></i> Проброс портов (Port Forwarding)
+                            </a>
+                            <div class="collapse" id="collapsePortForwarding">
+                              <p>
+                                Проброс портов (Port Forwarding) — это настройка роутера, которая перенаправляет входящие запросы из интернета, пришедшие на определенный порт роутера,
+                                 на конкретный порт заданного устройства в локальной сети. Без проброса портов роутер игнорирует такие запросы, потому что они считаются потенциально опасными.
+                              </p>
+  
+                              <p>Самые очевидные сценарии, в которых нужен проброс портов:</p>
+                              <ul>
+                                  <li>Подключение к домашнему серверу (игровому, камер видеонаблюдения, хранилища данных)</li>
+                                  <li>Хостинг игровых серверов или веб-сайтов на домашнем ПК</li>
+                                  <li>Доступ к удаленному рабочему столу</li>
+                                  <li>Удаленное управление устройствами</li>
+                              </ul>
+  
+                              <h4>Cоздание правила переадресации</h4>
+                              <p>
+                                Перейдите в раздел, отвечающий за перенаправление трафика. В зависимости от производителя роутера и его прошивки он может называться 
+                                "Переадресация портов", "Виртуальные серверы", "Port Forwarding" или "NAT". 
+                                Нажмите кнопку "Добавить новую запись" ("Создать") и заполните основные поля:
+                              </p>
+                              <ul>
+                                <li>Имя службы / Описание: любое понятное название (например, Minecraft_Server)</li>
+                                <li>Внешний порт (External Port): порт, на который будут приходить запросы из интернета</li>
+                                <li>Внутренний порт (Internal Port): порт, который слушает программа на самом компьютере (часто совпадает с внешним)</li>
+                                <li>Внутренний IP-адрес (Internal IP): статический локальный IP-адрес компьютера, который вы зафиксировали на первом шаге (например, 168.0.1.154)</li>
+                                <li>Протокол (Protocol): выберите TCP, UDP или оба сразу (All/Both), исходя из системных требований приложения</li>
+                                <li>Сохраните правило и перезагрузите роутер, если этого требует система.</li>
+                              </ul>
+      
+                              <p>Например, у вас есть домашний ПК с IP 192.168.0.164 и на нем запущена игра, которая слушает порт TCP 25565. Тогда вы настраиваете роутер так:<p>
+                              <code>
+                                <pre style="white-space: pre-line;">
+                                внешний порт: 25565
+                                внутренний IP: 192.168.0.164
+                                внутренний порт: 25565
+                                протокол: TCP
+                                </pre>
+                              </code>
+                              <p>Теперь любой запрос из Интернета на ваш внешний IP (роутер) и порт 25565 будет перенаправлен на порт 25565 вашего компьютера, на котором запущена игра.</p>
+                            </div>
+                          </span>
+
+                          <span class="d-block">
+                            <a class="icon-link icon-link-hover no-underline" data-bs-toggle="collapse" href="#collapsePortForwardingTroubles" role="button" aria-expanded="false" aria-controls="collapsePortForwardingTroubles">
+                              <i class="bi bi-chevron-down"></i> Возможные проблемы при открытии портов
+                            </a>
+                            <div class="collapse" id="collapsePortForwardingTroubles">
+                              <ul>
+                                <li>
+                                  <p>
+                                    <strong>Должен быть белый IP</strong>, за NAT работать не будет. При настройке переадресации портов необходимо наличие белого публичного IP-адреса
+                                     на WAN-интерфейсе через который осуществляется подключение к Интернету. 
+                                     Если же на WAN-интерфейсе роутера используется серый IP-адрес из частной подсети, проброс портов работать не будет.
+                                     (ISP) реализует трансляцию сетевых адресов операторского класса (<a href="https://ru.wikipedia.org/wiki/CGNAT">CGNAT</a>). 
+                                     В таких случаях несколько пользователей в одной сети совместно используют один публичный IP-адрес, а маршрутизатор назначает частные IP-адреса отдельным устройствам в локальной сети.
+                                  </p>
+                                </li>
+                                <li>
+                                  <p>
+                                    Убедитесь, что клиент (на которого осуществляется проброс портов) отвечает на эхо-запросы ping к внешним ресурсам. 
+                                    Кроме того, основным шлюзом на данном устройстве должен быть локальный IP-адрес. В меню роутера найдите настройки проброса портов или Port Forwarding. 
+                                    Создайте новое правило в котором укажите требуемые номера портов и внутренний ip адрес компьютера 
+                                    (определить его возможно через панель управления в состоянии сетевого подключения). В завершение, сохраните правило и настройки устройства.
+                                  </p>
+                                </li>
+                                <li>
+                                  <p>
+                                    <strong>Сервис или приложение</strong>, на которое осуществляется переадресация портов, должно быть запущено, чтобы при проверке порт виделся как "открытый". 
+                                    Например, если FTP-сервер не запущен, а правило NAT для переадресации порта имеется, статус порта при проверке будет "закрыт".
+                                  </p>
+                                </li>
+                                <li><strong>Firewall/Брандмаузер</strong></li>
+                                <uL>
+                                  <li>
+                                    <p>Роутеры имеют собственные функции <strong>файрволла/брандмауэра</strong> и порты может потребоваться открыть (пробросить) и в настройках роутера. 
+                                      В зависимости от марки и модели Wi-Fi роутера, это выполняется в разных разделах: перенаправление портов (port forwarding), брандмауэр (firewall),
+                                      межсетевой экран, виртуальные серверы. Логика настройки везде одна и та же - добавляются обычно совпадающие внешний порт и внутренний порт (нужный вам порт), 
+                                      указывается внутренний IP (локальный IP компьютера, к которому нужно пробросить порт), тип протокола TCP или UDP, 
+                                      иногда требуется указать интерфейс для соединений из внешней сети (WAN). </p>
+                                  </li>
+                                  <li>
+                                    <p>
+                                      На компьютере возможно используется сетевой экран (брандмауэр, Firewall) или специальное ПО для защиты в Интернете. 
+                                      Необходимо временно отключите эти приложение и проверьте работоспособность переадресации портов.
+                                    </p>
+                                  </li>
+                                </uL>
+                                <li><strong>Конфликт с другими сервисами и приложениями:</strong></li>
+                                <ul>
+                                  <li>
+                                    <p>
+                                      Наличие антивирусов с функциями защиты сети также может влиять на возможность установки соединений по определенным портам. 
+                                      следует проверить их настройки, при наличии такого ПО, чтобы открыть соответствующие порты или отключить защиту для них.
+                                    </p>
+                                  </li>
+                                  <li>
+                                    <p>
+                                      <strong>VPN</strong> может влиять на возможность обмена данными по определенным портам. 
+                                      Решение: отключить VPN, либо посмотреть, есть ли возможность открыть порты в ПО для VPN.
+                                    </p>
+                                  </li>
+                                </ul>
+                                <li><strong>Неправильная конфигурация:</strong></li>
+                                <ul>
+                                  <li>
+                                    <p>В правиле переадресации портов может быть неправильно выбран входящий интерфейс. В поле "Вход" нужно выбрать именно тот интерфейс, 
+                                      через который Роутер получает доступ в Интернет, и через который планируется удаленный доступ к устройству домашней сети.
+                                    </p>
+                                  </li>
+                                  <li>
+                                    <p>В сетевых настройках хоста, на который осуществляется проброс портов, необходимо, чтобы IP-адрес шлюза по умолчанию был равен локальному IP-адресу Роутера
+                                       (по умолчанию 192.168.1.1). Это актуально, если на хосте вы указываете вручную сетевые настройки подключения. Если же хост является DHCP-клиентом,
+                                       т.е. получает автоматически IP-адрес, маску подсети, шлюз по умолчанию и DNS-адреса, в этом случае шлюз по умолчанию будет равен локальному IP-адресу.
+                                    </p>
+                                  </li>
+                                  <li>
+                                    <p>При переадресации <strong>53-го порта на внутренний DNS-сервер</strong> необходимо учитывать, что при наличии компонентов группы Интернет-фильтры, 
+                                      происходит SNAT переадресованных пакетов, так что адресом источника становится ip-адрес Роутера в домашней сети. Из-за этого могут не синхронизироваться зоны DNS. 
+                                      При использовании локального DNS создать правила блокировки 53 порта по UDP и TCP на все адреса кроме локальной сети.
+                                    </p>
+                                  </li>
+                                  <li>
+                                    <p>
+                                      <strong>Не рекомендуется использовать проброс портов для публикации веб и почтовых серверов (80, 443 порты).</strong> 
+                                      Для их публикации воспользуйтесь <a href="https://docs.ideco.ru/v10/ru/ngfw/settings/services/reverse-proxy.html" rel="noopener noreferrer nofollow" data-text-el="text-only-link" data-md-href="https://docs.ideco.ru/v10/ru/ngfw/settings/services/reverse-proxy.html">обратным прокси-сервером</a>. 
+                                      Таким образом, ваши сервера будут лучше защищены от атак из сети Интернет.
+                                    </p>
+                                  </li>
+                                  <li>
+                                    <p>
+                                      Порт на внешнем интерфейсе сервера, с которого будут транслироваться запросы, может отличаться от публикуемого порта самой службы. 
+                                      Например, можно транслировать внешние запросы на порт 4489, а в локальную сеть на порт 3389, 
+                                      чтобы воспрепятствовать автоматическим попыткам подключения вредоносного ПО на популярный сервис.
+                                    </p>
+                                  </li>
+                                  <li>
+                                    <p>
+                                      Кроме того, некоторые маршрутизаторы могут не поддерживать UPnP (Universal Plug and Play) или отключать эту функцию, 
+                                      что препятствует автоматической переадресации портов и затрудняет прямой доступ устройств в локальной сети из Интернета. 
+                                    </p>
+                                  </li>
+                                </ul>
+                              </ul>
+                            </div>
+                          </span>
+
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
                 </div>
               </div>
 
-            <!-- end container -->
-          </div>
+            </div>
+
+
           
         </div>
 
@@ -1003,6 +1577,8 @@
         if (!event.target.value.length) {
           document.getElementById("mac-status").innerHTML = `Вводить MAC можно в различных форматах например DE:AD:BE:EF:12:34 или dead.beef.1234`;
           document.getElementById("mac-text").innerHTML = ``;
+          document.getElementById("input-mac").classList.remove('is-valid');
+          document.getElementById("input-mac").classList.remove('is-invalid');
         }
 
         // Convert from cisco format dead.beef.1234 to common format de:ad:be:ef:12:34
@@ -1093,9 +1669,13 @@
         } else {
           if (event.target.value.length) {
             document.getElementById("mac-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> Неверный формат. Введите MAC-адрес например DE:AD:BE:EF:12:34 или dead.beef.1234`;
+            document.getElementById("input-mac").classList.remove('is-valid');
+            document.getElementById("input-mac").classList.add('is-invalid');
           } else {
             document.getElementById("mac-status").innerHTML = `Вводить MAC можно в различных форматах например DE:AD:BE:EF:12:34 или dead.beef.1234`;
             document.getElementById("mac-text").innerHTML = ``;
+            document.getElementById("input-mac").classList.remove('is-valid');
+            document.getElementById("input-mac").classList.remove('is-invalid');
           }
         }
 
@@ -1120,6 +1700,8 @@
         const searchQuery = document.getElementById('input-mac').value.trim();
         if (!searchQuery) {
           document.getElementById("mac-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> Вы не указали MAC адрес для поиска. Например: 40-A8-F0-4F-50-9E`;
+          document.getElementById("input-mac").classList.remove('is-valid');
+          document.getElementById("input-mac").classList.add('is-invalid');
           return;
         }
         if (document.getElementById('btnradio-mac-1').checked) {
@@ -1736,11 +2318,24 @@
           const port = digitsRegexp ? Number(digitsRegexp[0]) : null;
           if (port) {
             selectedPort = port;
+            document.getElementById('input-portnumber').value = port;
           }
           if ([21, 22, 23, 53, 80, 443].includes(selectedPort)) {
             document.getElementById("portcheck-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-info"></i> Порт заблокирован на динамическом IP адресе и firewall модема по-умолчанию`;
           }
         });
+      });
+
+      document.getElementById('input-portnumber').addEventListener('input', (event) => {
+        const portRegex = /^(6553[0-5]|655[0-2]\d|65[0-4]\d{2}|6[0-4]\d{3}|[1-5]\d{4}|[1-9]\d{0,3}|0)$/;
+        if (!event.target.value.length) {
+           return;
+        }
+
+        if (portRegex.test(event.target.value)) {
+          selectedPort = event.target.value.trim();
+        } 
+        
       });
 
       document.getElementById('input-portcheck').addEventListener('input', (event) => {
@@ -1822,10 +2417,10 @@
 
         if (document.getElementById('btnradio-portcheck-1').checked) {
           if (document.getElementById('openports-checkbox-1').checked) {
-            window.open(`https://netprobe.online/port?host=${searchQuery}&port=${selectedPort}`, "_blank");
+            window.open(`https://check-host.cc/ru/tcp?host=${searchQuery}:${selectedPort}`, "_blank");
           }
           if (document.getElementById('openports-checkbox-2').checked) {
-            window.open(`https://check-host.cc/ru/tcp?host=${searchQuery}:${selectedPort}`, "_blank");
+            window.open(`https://netprobe.online/port?host=${searchQuery}&port=${selectedPort}`, "_blank");
           }
           if (document.getElementById('openports-checkbox-3').checked) {
             window.open(`https://dnschecker.org/port-scanner.php?query=${searchQuery}`, "_blank");
@@ -1875,6 +2470,38 @@
         link.addEventListener('click', (event) => {
           hideAllCollapse();
           // event.target.focus();
+        });
+      });
+
+      // Save active tab to local storage
+      document.addEventListener('DOMContentLoaded', function () {
+        const activeTab = localStorage.getItem('activeTabTools');
+        if (activeTab) {
+          const tabTrigger = document.querySelector(`[data-bs-target="${activeTab}"]`);
+          if (tabTrigger) {
+            const tab = new bootstrap.Tab(tabTrigger);
+            tab.show();
+          }
+        }
+    
+        const tabTriggers = document.querySelectorAll('#tools-tabs button[data-bs-toggle="tab"]');
+        tabTriggers.forEach(function (triggerEl) {
+          triggerEl.addEventListener('shown.bs.tab', function (event) {
+            localStorage.setItem('activeTabTools', event.target.getAttribute('data-bs-target'));
+          });
+        });
+      });
+
+      // Change current tab on header menu if switch tabs
+      const tabElements = document.querySelectorAll('#tools-tabs button[data-bs-toggle="tab"]');
+      tabElements.forEach(tab => {
+        tab.addEventListener('shown.bs.tab', event => {
+          const selectedTab = document.querySelector('#tools-tabs .nav-link.active');
+          const tabStatusText = document.querySelector('#current-tab-status');
+          if (selectedTab) {
+            const selectedTabText = selectedTab.textContent.trim();
+            tabStatusText.innerHTML = `<strong class="text-muted fs-5">${selectedTabText}</strong>`;
+          }
         });
       });
     </script>

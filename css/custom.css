@@ -102,7 +102,9 @@ mark {
 
 .no-underline {
   text-decoration: none;
-  color: #808080;
+  /* color: var(--bs-secondary); */
+  font-weight: bold;
+  color: var(--bs-dark-text-emphasis);
 }
 
 ul.triangle {
