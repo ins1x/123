@@ -66,6 +66,9 @@
         letter-spacing: -0.5px;
         font-size: 1.1rem; 
       }
+      .article-quote {
+        letter-spacing: -0.5px;
+      }
     </style>
     <!--end::Custom-->
 
@@ -388,8 +391,8 @@
             <div class="row">
 
               <div class="col-sm-8">
-                <h3 class="mb-0 text-secondary"><i class="nav-icon bi bi-person-badge"></i> MBTK</h3>
-                <p>Последнее обновление шаблонов: <strong class="text-secondary">17/11/2026</strong> содержит ответов: <span id="totalQuestions"></span></p>
+                <div class="mb-0 text-secondary fs-3"><i class="nav-icon bi bi-person-badge"></i> MBTK </div>
+                <p>Последнее обновление шаблонов: <strong class="text-secondary">21/11/2026</strong> содержит ответов: <span id="totalQuestions"></span></p>
               </div>
               <div class="col-sm-4">
                 <ol class="breadcrumb float-sm-end">
@@ -430,21 +433,28 @@
                   </a>
                   </div> -->
                   <div class="col-md-6 col-lg-8">
-                    <div class="input-group input-group-lg">
-                      <span class="input-group-text bg-body">
-                        <i class="bi bi-search" aria-hidden="true"></i>
-                      </span>
+                    <div class="input-group input-group-lg">                      
+                                            
+                      <input type="checkbox" class="form-check-input btn-check" name="btn-check-hideblocks" id="btn-toggle-hideblocks" autocomplete="off" checked>
+                      <label class="btn btn-outline-primary" for="btn-toggle-hideblocks" title="Скрывать блоки таблицы при поиске"><i class="bi bi-file-earmark-excel" aria-hidden="true"></i></label>
+
+                      <button class="btn btn-outline-secondary bg-body" type="button" id="button-clean-search" title="Очистить поле"><i class="bi bi-eraser"></i></button>
+
                       <input
                         type="search"
                         id="page-search"
                         class="form-control"
-                        placeholder="Введите ключевые слова для поиска на странице"
+                        placeholder="Введите ключевые слова для поиска в таблицах"
                         aria-label="Search on page"
                       />
                       <!-- <span class="input-group-text bg-body">
                         <i class="bi bi-file-earmark"></i>
                       </span> -->
-                      <small class="card-text-secondary">&nbsp;</small>
+                      
+                      <span class="input-group-text bg-body-secondary" style="min-width: 3em;">
+                        <i class="bi bi-search text-muted" aria-hidden="true"></i> 
+                      </span>
+                      <!-- <small class="card-text-secondary">&nbsp;</small> -->
                     </div>
                   </div>
                   <!-- <div class="col-md-4 col-lg-3">
@@ -457,6 +467,8 @@
                 </form>
               </div>
               
+              <div id="search-status" class="form-text text-center fs-4">
+              </div>
             
               <!-- <div class="container my-5 position-fixed top-20">
               </div> -->
@@ -555,9 +567,9 @@
               <!-- Scrolspy menu -->
               <div id="main-table-content">
                
-                <h2 id="mbtk-main" class="text-secondary text-center invisible">Основное</h2>
+                <!-- <h2 id="mbtk-main" class="text-secondary text-center invisible">Основное</h2> -->
 
-                <div class="table-responsive">
+                <div id="mbtk-main" class="table-responsive py-2">
                   
                   <table class="table table-striped-columns table-bordered">
                     <thead>
@@ -788,7 +800,7 @@
                           <!-- End: collapseForwardSub -->  
                           </div>
                         </span>
-                      <blockquote>
+                      <blockquote class="article-quote">
                         Составлено согласно "<a href="https://chat.datacenter.by/index.php/f/4940263">Положения о порядке взаимодействия между структурными подразделениями</a>"
                       </blockquote>
                       </td>
@@ -1241,10 +1253,12 @@
 
                 <h2 id="mbtk-quality" class="text-center text-secondary">Качество предоставления</h2>
 
-                <p><a href="https://beltelecom.by/private/internet/poryadok">ПОУ byfly 3.1.5</a> Скорость доступа к внешним Интернет-ресурсам не является гарантированной и зависит от работоспособности каналов и узлов Интернет, находящихся в области ответственности других операторов электросвязи.</p>
+                <blockquote class="article-quote">
+                  <a href="https://beltelecom.by/private/internet/poryadok">ПОУ byfly 3.1.5</a> Скорость доступа к внешним Интернет-ресурсам не является гарантированной и зависит от работоспособности каналов и узлов Интернет, находящихся в области ответственности других операторов электросвязи.
+                </blockquote>
 
                 <span class="d-block">
-                  <a class="icon-link icon-link-hover" data-bs-toggle="collapse" href="#collapseBTKquality" role="button" aria-expanded="false" aria-controls="collapseBTKquality">
+                  <a class="icon-link icon-link-hover article-quote" data-bs-toggle="collapse" href="#collapseBTKquality" role="button" aria-expanded="false" aria-controls="collapseBTKquality">
                     <i class="bi bi-chevron-down"></i> Параметры качества предоставления услуг
                   </a>
                   <div class="collapse" id="collapseBTKquality">
@@ -1402,7 +1416,7 @@
                   </div>
                 </span>
 
-                <blockquote>
+                <blockquote class="article-quote">
                   Скорость передачи данных в соответствии с тарифным планом обеспечивается только для случаев оказания услуги с применением проводных технологий. 
                   При использовании Абонентом технологии беспроводного доступа Wi-Fi для подключения абонентского устройства (компьютер, смартфон и т.п.) 
                   к оконечному оборудования скорость передачи данных будет ограничена факторами, влияющими на распространение радиосигнала: удалённость от точки доступа, 
@@ -1591,7 +1605,7 @@
 
                 
                 <h3 id="mbtk-ploss">Недоступность ресурсов и потеря пакетов</h3>
-                <blockquote>
+                <blockquote class="article-quote">
                   <a href="https://beltelecom.by/private/internet/poryadok">ПОУ byfly 3.1.5</a> Скорость доступа к внешним Интернет-ресурсам не является гарантированной и зависит от работоспособности каналов и узлов Интернет, находящихся в области ответственности других операторов электросвязи.
                 </blockquote>
 
@@ -1812,7 +1826,7 @@
                           Предварительно с тарифами можете ознакомится на сайте <a href="https://beltelecom.by/private/pakety-uslug">https://beltelecom.by/private/pakety-uslug</a>
                         </ul>
 
-                        <blockquote>
+                        <blockquote class="article-quote">
                           <a href="https://beltelecom.by/private/internet/poryadok">ПОУ byfly 3.5.14</a> Для тарифных планов с доступом Интернет от 100 Мбит/с и выше Оператор гарантирует скорость проводного соединения с установленными согласно п.1.5.1 параметрами качества. Для обеспечения скорости Интернет по технологии Wi-Fi  от 100 Мбит/с и выше необходимо наличие двухдиапазонного модема (терминала), поддерживающего  стандарты IEEE 802.11n/ас, который может быть выдан Оператором при наличии, либо приобретен Абонентом самостоятельно. Для обеспечения скорости Интернет по технологии Wi-Fi от 100 Мбит/с и выше необходимо наличие Абонентского оборудования, сертифицированного в Национальной системе подтверждения соответствия Республики Беларусь, и поддерживающего  стандарты IEEE 802.11n/ас.
                         </blockquote>
                       </td>
@@ -1876,7 +1890,7 @@
 
 
                 <h3 id="mbtk-wifi">Настройка Wi-fi</h3>
-                <blockquote>
+                <blockquote class="article-quote">
                   <a href="https://beltelecom.by/private/internet/poryadok">ПОУ byfly 3.5.8</a> Абонент самостоятельно принимает решение об использовании технологии беспроводного доступа Wi-Fi для соединения нескольких устройств (например – телевизоров, ноутбуков, сетевых проигрывателей и пр.) в сеть; самостоятельно настраивает (при отказе от платной настройки в соответствии с п.3.1.2.2. настоящего Порядка) подобное оборудование и несёт ответственность за настройку безопасности соединения с использованием беспроводных технологий, в частности – Wi-Fi.
                 </blockquote>
                                 
@@ -1993,7 +2007,7 @@
                 </div>
 
                 <h3 id="mbtk-dopset">Дополнительные настройки</h3>
-                <blockquote>
+                <blockquote class="article-quote">
                   <a href="https://beltelecom.by/private/internet/poryadok">ПОУ byfly 5.2.5</a> «Дополнительные настройки абонентского и Оконечного оборудования, локальной сети, беспроводного доступа Wi-Fi Абонент производит самостоятельно. Служба технической поддержки Оператора консультации по указанным действиям не производит».
                 </blockquote>
 
@@ -2289,7 +2303,7 @@
                   </table>
                 </div>
 
-                <h4 id="mbtk-service">Управление услугами</h4>
+                <h3 id="mbtk-service">Управление услугами</h3>
                 <div class="table-responsive">
                   <table class="table table-striped-columns table-bordered">
                   <thead>
@@ -4082,18 +4096,18 @@
                     </tr>
                     <tr>
                   </tbody>
-                  </table>
                   <caption>
                     <a href="quicksetup.html#iptv" class="icon-link icon-link-hover">
                       <i class="bi bi-arrow-return-right"></i> Больше информации по настройкам ZALA в FAQ
                     </a>
                   </caption>
+                  </table>
                 </div>
 
                 <h2 id="mbtk-subscribe" class="text-secondary text-center">Подписки и дополнительные сервисы</h2>
-                <p class="text-secondary">
+                <blockquote class="article-quote">
                   3.7.3 Дополнительные услуги предоставляются с произвольной даты при обращении к представителю Оператора, самостоятельном заказе через приложение «Мой Белтелеком». При самостоятельном заказе в «Кабинете пользователя» услуги доступны только с текущей даты. Настройку дополнительных услуг на абонентском оборудовании Оператор не производит.
-                </p>
+                </blockquote>
                 <div class="table-responsive">
                   <table class="table table-striped-columns table-bordered">
                   <thead>
@@ -4583,23 +4597,101 @@
     
     <!-- only for this page-->    
     <script language="javascript">
-      const searchPage = document.getElementById('page-search'); 
+      const searchPageInput = document.getElementById('page-search'); 
+
       // Search on page - pressed 'Enter' key
-      searchPage.addEventListener('keydown', function(event) {
+      searchPageInput.addEventListener('keydown', function(event) {
         if (event.key === 'Enter') {
           event.preventDefault(); 
-          const inputValue = event.target.value;
-          if (searchPage.value.trim() === '') {
-            searchPage.focus();
+          if (searchPageInput.value.trim() === '') {
+            searchPageInput.focus();
             return;
           }
-          find(searchPage.value)
+
+          if (document.getElementById('btn-toggle-hideblocks').checked) {
+            filterAllTables(searchPageInput.value);
+          }
+          
+          find(searchPageInput.value);
           markContext = document.querySelector(".app-wrapper");
           markInstance = new Mark(markContext);
           markInstance.unmark();
-          markInstance.mark(searchPage.value); 
+          markInstance.mark(searchPageInput.value); 
+
+          document.getElementById("search-status").innerHTML = `Для того чтобы скрыть результаты поиска нажмите ESC либо очистите поле поиска`;
+        }
+
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+          if (searchPageInput.value.length) {
+            document.getElementById('button-clean-search').click();
+            document.getElementById("search-status").innerHTML = ``;
+          }
         }
       });
+
+      searchPageInput.addEventListener('input', (event) => {
+        if (!searchPageInput.value.length) {
+          document.getElementById('button-clean-search').click();
+          document.getElementById("search-status").innerHTML = ``;
+        }
+        document.getElementById("button-clean-search").classList.add('active');
+      });
+
+      searchPageInput.addEventListener('blur', (event) => {
+        if (searchPageInput.value.trim() === '') {
+          document.getElementById("button-clean-search").classList.remove('active');
+          document.getElementById("search-status").innerHTML = ``;
+        }
+      });
+      
+      document.getElementById('button-clean-search').addEventListener('click', () => {
+        if (markInstance) {
+          markInstance.unmark();
+        }
+        searchPageInput.value = ``;
+
+        if (document.getElementById('btn-toggle-hideblocks').checked) {
+          filterAllTables(searchPageInput.value);
+
+          // Show hidden garbage elements on clean search
+          document.querySelectorAll('.list-group, .article-quote, .btn-group').forEach((el) => {
+            el.classList.remove('d-none');
+          });
+          
+          document.querySelectorAll('h3, h2, caption, th').forEach((el) => {
+            el.classList.remove('d-none');
+          });
+        }
+      });
+
+      function filterAllTables(query) {
+        const searchquery = query.trim().toLowerCase();
+        const rows = document.querySelectorAll('table tr');
+      
+        rows.forEach((row) => {
+          // Hide garbage elements on search
+          document.querySelectorAll('.list-group, .article-quote, .btn-group').forEach((el) => {
+            el.classList.add('d-none');
+          });
+      
+          document.querySelectorAll('h3, h2, caption, th').forEach((el) => {
+            el.classList.add('d-none');
+          });
+
+          // Restore rows if empty search value
+          if (!searchquery) {
+            row.style.display = '';
+            return;
+          }
+      
+          // Hide rows
+          const text = row.textContent.toLowerCase();
+          row.style.display = text.includes(searchquery) ? '' : 'none';
+        });
+      }
 
       // Regions table
       const regionsTable = [
