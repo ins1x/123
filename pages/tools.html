@@ -367,7 +367,7 @@
                 <button class="nav-link active fs-5" id="mac-tab" data-bs-toggle="tab" data-bs-target="#mac-content" type="button" role="tab" aria-controls="byfly" aria-selected="true"><i class="bi bi-pci-card-network" style="color:darkgreen"></i> MAC-Vendor</button>
               </li>
               <li class="nav-item" role="presentation">
-                <button class="nav-link fs-5" id="trace-tab" data-bs-toggle="tab" data-bs-target="#trace-content" type="button" role="tab" aria-controls="zala" aria-selected="false"><i class="bi bi-bar-chart-steps" style="color: dodgerblue"></i> PING, TRACE, MTR</button>
+                <button class="nav-link fs-5" id="trace-tab" data-bs-toggle="tab" data-bs-target="#trace-content" type="button" role="tab" aria-controls="zala" aria-selected="false"><i class="bi bi-bar-chart-steps" style="color: dodgerblue"></i> Trace</button>
               </li>
               <li class="nav-item" role="presentation">
                 <button class="nav-link fs-5" id="whois-tab" data-bs-toggle="tab" data-bs-target="#whois-content" type="button" role="tab" aria-controls="vks" aria-selected="false"><i class="bi bi-globe-americas" style="color: goldenrod"></i> IP Whois</button>
@@ -379,7 +379,7 @@
                 <button class="nav-link fs-5" id="domain-tab" data-bs-toggle="tab" data-bs-target="#domain-content" type="button" role="tab" aria-controls="ims" aria-selected="false"><i class="bi bi-globe2" style="color: deepskyblue"></i> Domain</button>
               </li>
               <li class="nav-item" role="presentation">
-                <button class="nav-link fs-5" id="portcheck-tab" data-bs-toggle="tab" data-bs-target="#portcheck-content" type="button" role="tab" aria-controls="ims" aria-selected="false"><i class="bi bi-diagram-3-fill" style="color: dimgray"></i> Openports</button>
+                <button class="nav-link fs-5" id="portcheck-tab" data-bs-toggle="tab" data-bs-target="#portcheck-content" type="button" role="tab" aria-controls="ims" aria-selected="false"><i class="bi bi-diagram-3-fill" style="color: dimgray"></i> Ports</button>
               </li>
             </ul>
             <!--begin::Tabs-->
@@ -519,8 +519,8 @@
                       <div class="card-body">
                         <p class="card-text">
                           <p class="col-md-8 fs-3">
-                            <i class="nav-icon bi bi-bar-chart-steps" style="color:dodgerblue"></i> Traceroute and PING
-                            <p id="ping-label">Онлайн пинг, трассировка и проверка доступности</p>
+                            <i class="nav-icon bi bi-bar-chart-steps" style="color:dodgerblue"></i> PING, TRACE, MTR
+                            <p id="ping-label">Онлайн пинг, трассировка, mtr и проверка доступности</p>
                           </p>
                           <div class="input-group mb-3">
                             <input type="text" class="form-control" placeholder="IP или домен сайта" aria-label="input-ping" aria-describedby="button-addon" id="input-ping">
@@ -619,7 +619,7 @@
                           </p>
   
                           <p>
-                            <b class="text-primary">Ping, traceroute (trace) и MTR</b> — это базовые сетевые утилиты для диагностики доступности серверов и поиска проблем со связью. С их помощью проверяют, доходят ли пакеты данных до цели и где именно они теряются или задерживаются.
+                            <b class="text-primary">Ping, trace, MTR</b> — это базовые сетевые утилиты для диагностики доступности серверов и поиска проблем со связью. С их помощью проверяют, доходят ли пакеты данных до цели и где именно они теряются или задерживаются.
                           </p>
                           <span class="d-block">
                             <a class="icon-link icon-link-hover no-underline" data-bs-toggle="collapse" href="#collapseMTRcolumnsdesc" role="button" aria-expanded="false" aria-controls="collapseMTRcolumnsdesc">
@@ -734,6 +734,9 @@
     
                               <input type="radio" class="btn-check" name="btnradio-whois" id="btnradio-whois-2" data-bs-toggle="collapse" href="#collapseAsn" aria-controls="collapseAsn" autocomplete="off">
                               <label class="btn btn-outline-warning text-light" for="btnradio-whois-2"><i class="bi bi-map"></i> ASN Lookup</label>
+
+                              <input type="radio" class="btn-check" name="btnradio-whois" id="btnradio-whois-3" data-bs-toggle="collapse" href="#collapseRDAP" aria-controls="collapseRDAP" autocomplete="off">
+                              <label class="btn btn-outline-warning text-light" for="btnradio-whois-3"><i class="bi bi-r-circle"></i> RDAP</label>
                             </div>
                            
                             <div class="collapse" id="collapseWhois">
@@ -775,6 +778,20 @@
                                 </div>
                               </div>
                             </div>
+
+                            <div class="collapse" id="collapseRDAP">
+                              Альтернативные источники для поиска: 
+                              <div class="card card-body">
+                                <div class="form-check form-check-inline">
+                                  <input class="form-check-input" name="rdap-radio-options" type="radio" id="rdap-checkbox-1" value="" autocomplete="off" checked>
+                                  <label class="form-check-label" for="rdap-checkbox-1">rdap.com</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                  <input class="form-check-input" name="rdap-radio-options" type="radio" id="rdap-checkbox-2" value="" autocomplete="off">
+                                  <label class="form-check-label" for="rdap-checkbox-2">client.rdap.org</label>
+                                </div>
+                              </div>
+                            </div>
                           </p>
                         </p>
                       </div>
@@ -792,14 +809,26 @@
                             <b class="text-warning">WHOIS</b> это сетевой сервис для получения регистрационных данных о доменных именах, IP-адресах и автономных системах. 
                             Он работает поверх TCP (порт 43) и обращается к базам данных регистраторов и реестров.
                           </p>
+
                           <span class="d-block">
                             <a class="icon-link icon-link-hover no-underline" data-bs-toggle="collapse" href="#collapseAsnFaq" role="button" aria-expanded="false" aria-controls="collapseAsnFaq">
-                              <i class="bi bi-chevron-down"></i> Что такое ASN?
+                              <i class="bi bi-chevron-down"></i> Что такое <b class="text-warning">ASN</b>?
                             </a>
                             <div class="collapse" id="collapseAsnFaq">
                               <b class="text-warning">ASN (Autonomous System Number)</b> — это уникальный номер автономной системы (AS), который используется для маршрутизации трафика между крупными сетями в интернете по протоколу BGP.
                             </div>
                           </span>
+
+                          <span class="d-block">
+                            <a class="icon-link icon-link-hover no-underline" data-bs-toggle="collapse" href="#collapseRDAPfaq" role="button" aria-expanded="false" aria-controls="collapseRDAPfaq">
+                              <i class="bi bi-chevron-down"></i> Что такое <b class="text-warning">RDAP</b>?
+                            </a>
+                            <div class="collapse" id="collapseRDAPfaq">
+                              <b class="text-warning">RDAP (Registration Data Access Protocol</b> — протокол доступа к регистрационным данным) — это современный сетевой протокол, который заменяет устаревший WHOIS для получения сведений о доменных именах, IP-адресах и автономных системах (ASN).
+                            </div>
+                          </span>
+
+                          
                           
                         </p>
                       </div>
@@ -1087,6 +1116,10 @@
                             </div>
 
                           </div>
+
+                          <p>
+                            <button type="button" class="btn btn-sm btn-outline-secondary bg-body" id="btn-checkport-portinfo">Узнать назначение порта <i class="bi bi-question-octagon"></i></button>
+                          </p>
     
                           <div class="btn-group py-2" role="group" aria-label="Basic radio toggle button group">
                             <input type="radio" class="btn-check" name="btnradio-portcheck" id="btnradio-portcheck-1" data-bs-toggle="collapse" href="#collapseOpenports" aria-controls="collapseOpenports" autocomplete="off" checked>
@@ -1568,6 +1601,7 @@
       const privateIpRegex = /^(10\.|172\.(1[6-9]|2\d|3[0-1])\.|192\.168\.|127\.0\.0\.1)/;
       const multicastRegex = /^(22[4-9]|23\d)\.(?:\d{1,3}\.){2}\d{1,3}$/;
       const macRegex = /^(([0-9A-Fa-f]{2}[:]){5}|([0-9A-Fa-f]{2}[-]){5})([0-9A-Fa-f]{2})$/;
+      const portRegex = /^(6553[0-5]|655[0-2]\d|65[0-4]\d{2}|6[0-4]\d{3}|[1-5]\d{4}|[1-9]\d{0,3}|0)$/;
 
       // MAC card
       document.getElementById('input-mac').addEventListener('input', (event) => {
@@ -1888,6 +1922,13 @@
           if (document.getElementById('asn-checkbox-3').checked) {
             window.open(`https://mxtoolbox.com/SuperTool.aspx?action=asn%3a${searchQuery}&run=toolpage`, "_blank");
           }
+        } else if (document.getElementById('btnradio-whois-3').checked) {
+          if (document.getElementById('rdap-checkbox-1').checked) {
+            window.open(`https://www.rdap.com/?type=auto&query=${searchQuery}`, "_blank");
+          }
+          if (document.getElementById('rdap-checkbox-2').checked) {
+            window.open(`https://client.rdap.org/?type=ip&object=${searchQuery}`, "_blank");
+          }
         }
       });
 
@@ -1904,6 +1945,15 @@
         if (event.target.checked) {
           if (document.getElementById('whois-label')) {
             document.getElementById("whois-label").innerHTML = `Информация об Автономной Системе (AS) по IP`;
+            document.getElementById("whois-status").innerHTML = ``;
+          }
+        }
+      });
+
+      document.getElementById('btnradio-whois-3').addEventListener('change', (event) => {
+        if (event.target.checked) {
+          if (document.getElementById('whois-label')) {
+            document.getElementById("whois-label").innerHTML = `Доступ к регистрационным данным (RDAP) по IP`;
             document.getElementById("whois-status").innerHTML = ``;
           }
         }
@@ -2327,7 +2377,6 @@
       });
 
       document.getElementById('input-portnumber').addEventListener('input', (event) => {
-        const portRegex = /^(6553[0-5]|655[0-2]\d|65[0-4]\d{2}|6[0-4]\d{3}|[1-5]\d{4}|[1-9]\d{0,3}|0)$/;
         if (!event.target.value.length) {
            return;
         }
@@ -2336,6 +2385,15 @@
           selectedPort = event.target.value.trim();
         } 
         
+      });
+
+      document.getElementById('btn-checkport-portinfo').addEventListener('click', () => {
+        if (portRegex.test(document.getElementById('input-portnumber').value)) {
+          window.open(`https://whatportis.com/ports?q=${selectedPort}`, "_blank");
+        } else {
+          document.getElementById("portcheck-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> Вы указали порт в неверном формате.`;
+          return;
+        }
       });
 
       document.getElementById('input-portcheck').addEventListener('input', (event) => {
@@ -2465,11 +2523,17 @@
       }
 
       // Hide all collapse on click link (like accordion blocks)
-      const collapseLinks = document.querySelectorAll('.btn-check');
+      const collapseBtns = document.querySelectorAll('.btn-check');
+      collapseBtns.forEach(link => {
+        link.addEventListener('click', (event) => {
+          hideAllCollapse();
+        });
+      });
+
+      const collapseLinks = document.querySelectorAll('a.icon-link-hover');
       collapseLinks.forEach(link => {
         link.addEventListener('click', (event) => {
           hideAllCollapse();
-          // event.target.focus();
         });
       });
 
