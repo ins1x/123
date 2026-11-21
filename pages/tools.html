@@ -434,8 +434,12 @@
                         <input type="radio" class="btn-check" name="btnradio-ping" id="btnradio-ping-2"  data-bs-toggle="collapse" href="#collapseTrace" aria-controls="collapseTrace" autocomplete="off">
                         <label class="btn btn-outline-primary" for="btnradio-ping-2"><i class="bi bi-bar-chart-steps"></i> Traceroute</label>
 
-                        <input type="radio" class="btn-check" name="btnradio-ping" id="btnradio-ping-3" data-bs-toggle="collapse" href="#collapseHost" aria-controls="collapseHost" autocomplete="off">
-                        <label class="btn btn-outline-primary" for="btnradio-ping-3"><i class="bi bi-activity"></i> Доступность</label>
+                        <input type="radio" class="btn-check" name="btnradio-ping" id="btnradio-ping-3" data-bs-toggle="collapse" href="#collapseMTR" aria-controls="collapseMTR" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="btnradio-ping-3"><i class="bi bi-list-stars"></i> MTR</label>
+
+                        <input type="radio" class="btn-check" name="btnradio-ping" id="btnradio-ping-4" data-bs-toggle="collapse" href="#collapseHost" aria-controls="collapseHost" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="btnradio-ping-4"><i class="bi bi-activity"></i> Доступность</label>
+
                       </div>
                      
                       <div class="collapse" id="collapsePing">
@@ -479,6 +483,39 @@
                           </div>
                         </div>
                       </div>
+
+                      
+                      <div class="collapse" id="collapseMTR">
+                        <div class="card card-body">
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="mtr-radio-options" type="radio" id="mtr-checkbox-1" value="" autocomplete="off" checked>
+                            <label class="form-check-label" for="mtr-checkbox-1">check-host.cc</label>
+                          </div>
+
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="mtr-radio-options" type="radio" id="mtr-checkbox-2" value="" autocomplete="off">
+                            <label class="form-check-label" for="mtr-checkbox-2">mtr.ping.pe</label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <span class="d-block">
+                        <a class="icon-link icon-link-hover no-underline" data-bs-toggle="collapse" href="#collapseMTRcolumnsdesc" role="button" aria-expanded="false" aria-controls="collapseMTRcolumnsdesc">
+                          <i class="bi bi-chevron-down"></i> Расшифровка значений MTR
+                        </a>
+                        <div class="collapse" id="collapseMTRcolumnsdesc">
+                          <ul>
+                            <li>host — имя хоста</li>
+                            <li>Loss% — процент потерь пакетов</li>
+                            <li>Snt — количество отправленных пакетов</li>
+                            <li>Last — время задержки последнего отправленного пакета в миллисекундах</li>
+                            <li>Avg — среднее время задержки</li>
+                            <li>Best — минимальное время задержки</li>
+                            <li>Wrst — максимальное время задержки</li>
+                            <li>StDev — среднеквадратичное отклонение времени задержки</li>
+                          </ul>
+                        </div>
+                      </span>
 
                     </p>
                   </div>
@@ -743,12 +780,16 @@
                       <div class="collapse py-2" id="collapseOpenports">
                         <div class="card card-body">
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="openports-radio-options" type="radio" id="openports-checkbox-1" value="radio2">
+                            <input class="form-check-input" name="openports-radio-options" type="radio" id="openports-checkbox-1" value="radio2" checked>
                             <label class="form-check-label" for="openports-checkbox-1">netprobe.online</label>
                           </div>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="openports-radio-options" type="radio" id="openports-checkbox-2" value="radio1" checked>
-                            <label class="form-check-label" for="openports-checkbox-2">dnschecker.org</label>
+                            <input class="form-check-input" name="openports-radio-options" type="radio" id="openports-checkbox-2" value="radio1">
+                            <label class="form-check-label" for="openports-checkbox-2">check-host.cc</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="openports-radio-options" type="radio" id="openports-checkbox-3" value="radio1">
+                            <label class="form-check-label" for="openports-checkbox-3">dnschecker.org</label>
                           </div>
                         </div>
                       </div>
@@ -959,6 +1000,11 @@
         // Remove spaces
         event.target.value = event.target.value.trim();   
         
+        if (!event.target.value.length) {
+          document.getElementById("mac-status").innerHTML = `Вводить MAC можно в различных форматах например DE:AD:BE:EF:12:34 или dead.beef.1234`;
+          document.getElementById("mac-text").innerHTML = ``;
+        }
+
         // Convert from cisco format dead.beef.1234 to common format de:ad:be:ef:12:34
         const ciscoMacRegex = /^([0-9a-fA-F]{4}\.){2}[0-9a-fA-F]{4}$/;
         if (ciscoMacRegex.test(event.target.value)) {
@@ -1065,7 +1111,7 @@
       document.getElementById('input-mac').addEventListener('blur', () => {
         event.target.value = event.target.value.trim();
         if (!event.target.value.length) {
-          document.getElementById("mac-status").innerHTML = ``;
+          document.getElementById("mac-status").innerHTML = `Вводить MAC можно в различных форматах например DE:AD:BE:EF:12:34 или dead.beef.1234`;
           document.getElementById("mac-text").innerHTML = ``;
         }
       });
@@ -1157,26 +1203,37 @@
         // Regular expression remove everything in the string after the "/"" character
         event.target.value = event.target.value.split('/')[0]; 
 
-        if (ipv4Regex.test(event.target.value) || domainRegex.test(event.target.value)) {
-          document.getElementById("whois-status").innerHTML = `<i class="bi bi-check-lg text-success"></i> <strong class="text-secondary">${event.target.value}</strong> - нажмите кнопку "Проверить" чтобы продолжить`;
-          
-          if (BeltelecomIPpool.some(subnet => isIpInCidr(event.target.value, subnet))) {
-            document.getElementById("whois-status").innerHTML = `IP <strong class="text-secondary">${event.target.value}</strong> входит в пул адресов РУП Белтелеком`;
-          }
+        if (!event.target.value.length) {
+          document.getElementById("whois-status").innerHTML = ``;
+          document.getElementById("input-whois").classList.remove('is-invalid');
+          document.getElementById("input-whois").classList.remove('is-valid');
+        }
 
-          // document.getElementById('button-whois').focus();
-          if (cgnatRegex.test(event.target.value)) {
-            document.getElementById("whois-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> IP <strong class="text-secondary">${event.target.value}</strong> находится за <b><a href="https://ru.wikipedia.org/wiki/CGNAT" target="_blank">CGNAT</a><b>`;
+        if (event.target.value.length >= 7) {
+          if (ipv4Regex.test(event.target.value) || domainRegex.test(event.target.value)) {
+            document.getElementById("whois-status").innerHTML = `<i class="bi bi-check-lg text-success"></i> <strong class="text-secondary">${event.target.value}</strong> - нажмите кнопку "Проверить" чтобы продолжить`;
+            document.getElementById("input-whois").classList.remove('is-invalid');
+            document.getElementById("input-whois").classList.add('is-valid');
+            if (BeltelecomIPpool.some(subnet => isIpInCidr(event.target.value, subnet))) {
+              document.getElementById("whois-status").innerHTML = `IP <strong class="text-secondary">${event.target.value}</strong> входит в пул адресов РУП Белтелеком`;
+            }
+  
+            // document.getElementById('button-whois').focus();
+            if (cgnatRegex.test(event.target.value)) {
+              document.getElementById("whois-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> IP <strong class="text-secondary">${event.target.value}</strong> находится за <b><a href="https://ru.wikipedia.org/wiki/CGNAT" target="_blank">CGNAT</a><b>`;
+            }
+            if (privateIpRegex.test(event.target.value)) {
+              document.getElementById("whois-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-danger"></i> IP <strong class="text-secondary">${event.target.value}</strong> находится в частном либо локальном диапазоне`;
+            }
+            if (multicastRegex.test(event.target.value)) {
+              document.getElementById("whois-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-danger"></i> IP <strong class="text-secondary">${event.target.value}</strong> используется для мультикаста либо многоадресной рассылки`;
+            }
+          } else {
+            document.getElementById("input-whois").classList.remove('is-valid');
+            document.getElementById("input-whois").classList.add('is-invalid');
+            document.getElementById("whois-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> Вы указали данные в неверном формате. Введите IP либо сайт`;
+            return;
           }
-          if (privateIpRegex.test(event.target.value)) {
-            document.getElementById("whois-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-danger"></i> IP <strong class="text-secondary">${event.target.value}</strong> находится в частном либо локальном диапазоне`;
-          }
-          if (multicastRegex.test(event.target.value)) {
-            document.getElementById("whois-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-danger"></i> IP <strong class="text-secondary">${event.target.value}</strong> используется для мультикаста либо многоадресной рассылки`;
-          }
-        } else {
-          document.getElementById("whois-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> Вы указали данные в неверном формате. Введите IP либо сайт`;
-          return;
         }
       });
 
@@ -1197,6 +1254,8 @@
         const searchQuery = document.getElementById('input-whois').value.trim();
         if (!searchQuery) {
           document.getElementById("whois-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> Вы не указали IP адрес либо домен для поиска.`;
+          document.getElementById("input-whois").classList.remove('is-valid');
+          document.getElementById("input-whois").classList.add('is-invalid');
           return;
         }
 
@@ -1207,14 +1266,20 @@
           }
           if (privateIpRegex.test(searchQuery)) {
             document.getElementById("whois-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-danger"></i> IP <strong class="text-secondary">${searchQuery}</strong> находится в частном либо локальном диапазоне`;
+            document.getElementById("input-whois").classList.remove('is-valid');
+            document.getElementById("input-whois").classList.add('is-invalid');
             return;
           }
           if (multicastRegex.test(searchQuery)) {
             document.getElementById("whois-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-danger"></i> IP <strong class="text-secondary">${searchQuery}</strong> используется для мультикаста либо многоадресной рассылки`;
+            document.getElementById("input-whois").classList.remove('is-valid');
+            document.getElementById("input-whois").classList.add('is-invalid');
             return;
           }
         } else {
           document.getElementById("whois-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> Вы указали данные в неверном формате. Введите IP либо сайт`;
+          document.getElementById("input-whois").classList.remove('is-valid');
+          document.getElementById("input-whois").classList.add('is-invalid');
           return;
         }
 
@@ -1223,7 +1288,7 @@
             window.open(`https://apps.db.ripe.net/db-web-ui/query?bflag=false&dflag=false&rflag=true&searchtext=${searchQuery}&source=RIPE`, "_blank");
           }
           if (document.getElementById('whois-checkbox-2').checked) {
-            window.open(`https://dnschecker.org/domain-ip-lookup.php?query=${searchQuery}&dns=google`, "_blank");
+            window.open(`https://dnschecker.org/ip-location.php?ip=${searchQuery}`, "_blank");
           }
           if (document.getElementById('whois-checkbox-3').checked) {
             window.open(`https://who.is/whois/${searchQuery}`, "_blank");
@@ -1271,13 +1336,25 @@
         // Regular expression remove everything in the string after the "/"" character
         event.target.value = event.target.value.split('/')[0]; 
 
+        if (!event.target.value.length) {
+          document.getElementById("blocklist-status").innerHTML = ``;
+          document.getElementById("input-blocklist").classList.remove('is-invalid');
+          document.getElementById("input-blocklist").classList.remove('is-valid');
+        }
+
         if (ipv4Regex.test(event.target.value) || domainRegex.test(event.target.value)) {
           document.getElementById("blocklist-status").innerHTML = `<i class="bi bi-check-lg text-success"></i> <strong class="text-secondary">${event.target.value}</strong> - нажмите кнопку "Проверить" чтобы продолжить`;
           // document.getElementById('button-blocklist').focus();
+          document.getElementById("input-blocklist").classList.remove('is-invalid');
+          document.getElementById("input-blocklist").classList.add('is-valid');
         } else {
           if (document.getElementById('btnradio-blocklist-1').checked) {
-            document.getElementById("blocklist-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> Вы указали данные в неверном формате. Введите IP либо сайт`;
-            return;
+            if (event.target.value.length >= 7) {
+              document.getElementById("input-blocklist").classList.remove('is-valid');
+              document.getElementById("input-blocklist").classList.add('is-invalid');
+              document.getElementById("blocklist-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> Вы указали данные в неверном формате. Введите IP либо сайт`;
+              return;
+            }
           }
         }
       });
@@ -1300,25 +1377,35 @@
         if (!searchQuery) {
           if (document.getElementById('btnradio-blocklist-1').checked) {
             document.getElementById("blocklist-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> Вы не указали IP адрес либо домен для поиска.`;
+            document.getElementById("input-blocklist").classList.remove('is-valid');
+            document.getElementById("input-blocklist").classList.add('is-invalid');
             return;
           }
         }
 
         if (ipv4Regex.test(searchQuery) || domainRegex.test(searchQuery)) {
+          document.getElementById("input-blocklist").classList.remove('is-invalid');
+          document.getElementById("input-blocklist").classList.add('is-valid');
           document.getElementById("blocklist-status").innerHTML = `<i class="bi bi-check-lg text-success"></i> <strong class="text-secondary">${searchQuery}</strong> - нажмите кнопку "Проверить" чтобы продолжить`;
           if (cgnatRegex.test(searchQuery)) {
             document.getElementById("blocklist-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> IP <strong class="text-secondary">${searchQuery}</strong> находится за <b><a href="https://ru.wikipedia.org/wiki/CGNAT" target="_blank">CGNAT</a><b>`;
           }
           if (privateIpRegex.test(searchQuery)) {
             document.getElementById("blocklist-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-danger"></i> IP <strong class="text-secondary">${searchQuery}</strong> находится в частном либо локальном диапазоне`;
+            document.getElementById("input-blocklist").classList.remove('is-valid');
+            document.getElementById("input-blocklist").classList.add('is-invalid');
             return;
           }
           if (multicastRegex.test(searchQuery)) {
             document.getElementById("blocklist-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-danger"></i> IP <strong class="text-secondary">${searchQuery}</strong> используется для мультикаста либо многоадресной рассылки`;
+            document.getElementById("input-blocklist").classList.remove('is-valid');
+            document.getElementById("input-blocklist").classList.add('is-invalid');
             return;
           }
         } else {
           if (document.getElementById('btnradio-blocklist-1').checked) {
+            document.getElementById("input-blocklist").classList.remove('is-valid');
+            document.getElementById("input-blocklist").classList.add('is-invalid');
             document.getElementById("blocklist-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> Вы указали данные в неверном формате. Введите IP либо сайт`;
             return;
           }
@@ -1377,12 +1464,24 @@
         // Regular expression remove everything in the string after the "/"" character
         event.target.value = event.target.value.split('/')[0]; 
 
-        if (ipv4Regex.test(event.target.value) || domainRegex.test(event.target.value)) {
-          document.getElementById("ping-status").innerHTML = `<i class="bi bi-check-lg text-success"></i> <strong class="text-secondary">${event.target.value}</strong> - нажмите кнопку "Проверить" чтобы продолжить`;
-          // document.getElementById('button-ping').focus();
-        } else {
-          document.getElementById("ping-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> Вы указали данные в неверном формате. Введите IP либо сайт`;
-          return;
+        if (!event.target.value.length) {
+          document.getElementById("ping-status").innerHTML = ``;
+          document.getElementById("input-ping").classList.remove('is-valid');
+          document.getElementById("input-ping").classList.remove('is-invalid');
+        }
+
+        if (event.target.value.length >= 5) {
+          if (ipv4Regex.test(event.target.value) || domainRegex.test(event.target.value)) {
+            document.getElementById("ping-status").innerHTML = `<i class="bi bi-check-lg text-success"></i> <strong class="text-secondary">${event.target.value}</strong> - нажмите кнопку "Проверить" чтобы продолжить`;
+            document.getElementById("input-ping").classList.remove('is-invalid');
+            document.getElementById("input-ping").classList.add('is-valid');
+            // document.getElementById('button-ping').focus();
+          } else {
+            document.getElementById("input-ping").classList.remove('is-valid');
+            document.getElementById("input-ping").classList.add('is-invalid');
+            document.getElementById("ping-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> Вы указали данные в неверном формате. Введите IP либо сайт`;
+            return;
+          }
         }
       });
 
@@ -1402,24 +1501,34 @@
       document.getElementById('button-ping').addEventListener('click', () => {
         const searchQuery = document.getElementById('input-ping').value.trim();
         if (!searchQuery) {
+          document.getElementById("input-ping").classList.remove('is-valid');
+          document.getElementById("input-ping").classList.add('is-invalid');
           document.getElementById("ping-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> Вы не указали IP адрес либо домен для проверки.`;
           return;
         }
 
         if (ipv4Regex.test(searchQuery) || domainRegex.test(searchQuery)) {
+          document.getElementById("input-ping").classList.remove('is-invalid');
+          document.getElementById("input-ping").classList.add('is-valid');
           document.getElementById("ping-status").innerHTML = `<i class="bi bi-check-lg text-success"></i> <strong class="text-secondary">${searchQuery}</strong> - нажмите кнопку "Проверить" чтобы продолжить`;
           if (cgnatRegex.test(searchQuery)) {
             document.getElementById("ping-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> IP <strong class="text-secondary">${searchQuery}</strong> находится за <b><a href="https://ru.wikipedia.org/wiki/CGNAT" target="_blank">CGNAT</a><b>`;
           }
           if (privateIpRegex.test(searchQuery)) {
+            document.getElementById("input-ping").classList.remove('is-valid');
+            document.getElementById("input-ping").classList.add('is-invalid');
             document.getElementById("ping-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-danger"></i> IP <strong class="text-secondary">${searchQuery}</strong> находится в частном либо локальном диапазоне`;
             return;
           }
           if (multicastRegex.test(searchQuery)) {
+            document.getElementById("input-ping").classList.remove('is-valid');
+            document.getElementById("input-ping").classList.add('is-invalid');
             document.getElementById("ping-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-danger"></i> IP <strong class="text-secondary">${searchQuery}</strong> используется для мультикаста либо многоадресной рассылки`;
             return;
           }
         } else {
+          document.getElementById("input-ping").classList.remove('is-valid');
+          document.getElementById("input-ping").classList.add('is-invalid');
           document.getElementById("ping-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> Вы указали данные в неверном формате. Введите IP либо сайт`;
           return;
         }
@@ -1439,6 +1548,13 @@
             window.open(`https://mxtoolbox.com/SuperTool.aspx?action=trace%3a${searchQuery}&run=toolpage`, "_blank");
           }
         } else if (document.getElementById('btnradio-ping-3').checked) {
+          if (document.getElementById('host-checkbox-1').checked) {
+            window.open(`https://check-host.cc/ru/mtr?host=${searchQuery}`, "_blank");
+          }
+          if (document.getElementById('host-checkbox-2').checked) {
+            window.open(`https://mtr.ping.pe/${searchQuery}`, "_blank");
+          }
+        } else if (document.getElementById('btnradio-ping-4').checked) {
           if (document.getElementById('host-checkbox-1').checked) {
             window.open(`https://check-host.net/check-http?host=${searchQuery}`, "_blank");
           }
@@ -1467,6 +1583,14 @@
       document.getElementById('btnradio-ping-3').addEventListener('change', (event) => {
         if (event.target.checked) {
           if (document.getElementById('ping-label')) {
+            document.getElementById("ping-label").innerHTML = `Онлайн измерение задержки и потери пакетов (MTR)`;
+          }
+        }
+      });
+
+      document.getElementById('btnradio-ping-4').addEventListener('change', (event) => {
+        if (event.target.checked) {
+          if (document.getElementById('ping-label')) {
             document.getElementById("ping-label").innerHTML = `Онлайн проверка доступности ресурса HTTP(s)`;
           }
         }
@@ -1481,12 +1605,24 @@
         // Regular expression remove everything in the string after the "/"" character
         event.target.value = event.target.value.split('/')[0]; 
 
-        if (ipv4Regex.test(event.target.value) || domainRegex.test(event.target.value)) {
-          document.getElementById("domain-status").innerHTML = `<i class="bi bi-check-lg text-success"></i> <strong class="text-secondary">${event.target.value}</strong> - нажмите кнопку "Проверить" чтобы продолжить`;
-          // document.getElementById('button-domain').focus();
-        } else {
-          document.getElementById("domain-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> Вы указали данные в неверном формате. Введите IP либо сайт`;
-          return;
+        if (!event.target.value.length) {
+          document.getElementById("domain-status").innerHTML = ``;
+          document.getElementById("input-domain").classList.remove('is-valid');
+          document.getElementById("input-domain").classList.remove('is-invalid');
+        }
+
+        if (event.target.value.length >= 5) {
+          if (ipv4Regex.test(event.target.value) || domainRegex.test(event.target.value)) {
+            document.getElementById("input-domain").classList.remove('is-invalid');
+            document.getElementById("input-domain").classList.add('is-valid');
+            document.getElementById("domain-status").innerHTML = `<i class="bi bi-check-lg text-success"></i> <strong class="text-secondary">${event.target.value}</strong> - нажмите кнопку "Проверить" чтобы продолжить`;
+            // document.getElementById('button-domain').focus();
+          } else {
+            document.getElementById("input-domain").classList.remove('is-valid');
+            document.getElementById("input-domain").classList.add('is-invalid');
+            document.getElementById("domain-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> Вы указали данные в неверном формате. Введите IP либо сайт`;
+            return;
+          }
         }
       });
 
@@ -1506,13 +1642,19 @@
       document.getElementById('button-domain').addEventListener('click', () => {
         const searchQuery = document.getElementById('input-domain').value.trim();
         if (!searchQuery) {
+          document.getElementById("input-domain").classList.remove('is-valid');
+          document.getElementById("input-domain").classList.add('is-invalid');
           document.getElementById("domain-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> Вы не указали домен для проверки. Например google.com`;
           return;
         }
         
         if (ipv4Regex.test(searchQuery) || domainRegex.test(searchQuery)) {
+          document.getElementById("input-domain").classList.remove('is-invalid');
+          document.getElementById("input-domain").classList.add('is-valid');
           document.getElementById("domain-status").innerHTML = `<i class="bi bi-check-lg text-success"></i> <strong class="text-secondary">${searchQuery}</strong> - нажмите кнопку "Проверить" чтобы продолжить`;
         } else {
+          document.getElementById("input-domain").classList.remove('is-valid');
+          document.getElementById("input-domain").classList.add('is-invalid');
           document.getElementById("domain-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> Вы указали данные в неверном формате. Введите сайт например: beltelecom.by`;
           return;
         }
@@ -1569,6 +1711,8 @@
         { port: '995', desc: 'POP3S (Post Office Protocol 3 over SSL)'},
         { port: '338', desc: 'RDP (Remote Desktop Protocol)'},
         { port: '590', desc: 'VNC (Virtual Network Computing)'},
+        { port: '1900', desc: 'UPNP (Universal Plug and Play)'},
+        { port: '5353', desc: 'mDNS (Multicast Domain Name System)'},
         { port: '8080', desc: 'HTTP-Proxy'}
       ];
 
@@ -1607,12 +1751,24 @@
         // Regular expression remove everything in the string after the "/"" character
         event.target.value = event.target.value.split('/')[0]; 
 
-        if (ipv4Regex.test(event.target.value)) {
-          document.getElementById("portcheck-status").innerHTML = `<i class="bi bi-check-lg text-success"></i> <strong class="text-secondary">${event.target.value}</strong> - нажмите кнопку "Проверить" чтобы продолжить`;
-          // document.getElementById('button-portcheck').focus();
-        } else {
-          document.getElementById("portcheck-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> Вы указали данные в неверном формате. Введите IP либо сайт`;
-          return;
+        if (!event.target.value.length) {
+          document.getElementById("portcheck-status").innerHTML = ``;
+          document.getElementById("input-portcheck").classList.remove('is-valid');
+          document.getElementById("input-portcheck").classList.remove('is-invalid');
+        }
+
+        if (event.target.value.length >= 5) {
+          if (ipv4Regex.test(event.target.value)) {
+            document.getElementById("input-portcheck").classList.remove('is-invalid');
+            document.getElementById("input-portcheck").classList.add('is-valid');
+            document.getElementById("portcheck-status").innerHTML = `<i class="bi bi-check-lg text-success"></i> <strong class="text-secondary">${event.target.value}</strong> - нажмите кнопку "Проверить" чтобы продолжить`;
+            // document.getElementById('button-portcheck').focus();
+          } else {
+            document.getElementById("input-portcheck").classList.remove('is-valid');
+            document.getElementById("input-portcheck").classList.add('is-invalid');
+            document.getElementById("portcheck-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> Вы указали данные в неверном формате. Введите IP либо сайт`;
+            return;
+          }
         }
       });
 
@@ -1632,24 +1788,34 @@
       document.getElementById('button-portcheck').addEventListener('click', () => {
         const searchQuery = document.getElementById('input-portcheck').value.trim();
         if (!searchQuery) {
+          document.getElementById("input-portcheck").classList.remove('is-valid');
+          document.getElementById("input-portcheck").classList.add('is-invalid');
           document.getElementById("portcheck-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> Вы не указали IP для проверки`;
           return;
         }
 
         if (ipv4Regex.test(searchQuery) || domainRegex.test(searchQuery)) {
+          document.getElementById("input-portcheck").classList.remove('is-invalid');
+          document.getElementById("input-portcheck").classList.add('is-valid');
           document.getElementById("portcheck-status").innerHTML = `<i class="bi bi-check-lg text-success"></i> <strong class="text-secondary">${searchQuery}</strong> - нажмите кнопку "Проверить" чтобы продолжить`;
           if (cgnatRegex.test(searchQuery)) {
             document.getElementById("portcheck-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> IP <strong class="text-secondary">${searchQuery}</strong> находится за <b><a href="https://ru.wikipedia.org/wiki/CGNAT" target="_blank">CGNAT</a><b>`;
           }
           if (privateIpRegex.test(searchQuery)) {
+            document.getElementById("input-portcheck").classList.remove('is-valid');
+            document.getElementById("input-portcheck").classList.add('is-invalid');
             document.getElementById("portcheck-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-danger"></i> IP <strong class="text-secondary">${searchQuery}</strong> находится в частном либо локальном диапазоне`;
             return;
           }
           if (multicastRegex.test(searchQuery)) {
+            document.getElementById("input-portcheck").classList.remove('is-valid');
+            document.getElementById("input-portcheck").classList.add('is-invalid');
             document.getElementById("portcheck-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-danger"></i> IP <strong class="text-secondary">${searchQuery}</strong> используется для мультикаста либо многоадресной рассылки`;
             return;
           }
         } else {
+          document.getElementById("input-portcheck").classList.remove('is-valid');
+          document.getElementById("input-portcheck").classList.add('is-invalid');
           document.getElementById("portcheck-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> Вы указали данные в неверном формате. Введите IP либо сайт`;
           return;
         }
@@ -1659,6 +1825,9 @@
             window.open(`https://netprobe.online/port?host=${searchQuery}&port=${selectedPort}`, "_blank");
           }
           if (document.getElementById('openports-checkbox-2').checked) {
+            window.open(`https://check-host.cc/ru/tcp?host=${searchQuery}:${selectedPort}`, "_blank");
+          }
+          if (document.getElementById('openports-checkbox-3').checked) {
             window.open(`https://dnschecker.org/port-scanner.php?query=${searchQuery}`, "_blank");
           }
         } else if (document.getElementById('btnradio-portcheck-2').checked) {
