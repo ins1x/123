@@ -266,10 +266,17 @@
 
                       <input type="radio" class="btn-check" name="btnradio-dnsip" id="btnradio-dnsip-2" data-bs-toggle="collapse" href="#collapseIpv6list" aria-controls="Ipv6list" autocomplete="off">
                       <label class="btn btn-outline-primary" for="btnradio-dnsip-2"><i class="bi bi-6-square"></i> IPv6</label>
+
+                      <input type="radio" class="btn-check" name="btnradio-dnsip" id="btnradio-dnsip-3" data-bs-toggle="collapse" href="#collapsevpilist" aria-controls="vpilist" autocomplete="off">
+                      <label class="btn btn-outline-primary" for="btnradio-dnsip-3"><i class="bi bi-tag"></i> VPI/VCI</label>
+
+                      <input type="radio" class="btn-check" name="btnradio-dnsip" id="btnradio-dnsip-4" data-bs-toggle="collapse" href="#collapsePrefixlist" aria-controls="vpilist" autocomplete="off">
+                      <label class="btn btn-outline-primary" for="btnradio-dnsip-4"><i class="bi bi-alt"></i> Prefix</label>
                     </div>
 
                     <form>
                       <div class="collapse show" id="collapseDNSlist">
+                        <h5>Параметры DNS</h5>
                         <div class="table-responsive">
                           <table class="table table-bordered table-striped">
                             <caption>
@@ -347,6 +354,70 @@
                         <p>Проверить поддержку IPv6 - <a href="https://test-ipv6.com/" target="_blank">Test-IPv6.com</a></p>
                       </div>
 
+                      <div class="collapse" id="collapsevpilist">
+                        <h5>xDSL VPI-VCI</h5>
+                        <p class="small">
+                          Параметры подключения для технологии xDSL которые задают виртуальный путь и канал передачи данны
+                        </p>
+                        <table class="table table-bordered table-striped-columns">
+                          <thead>
+                            <tr>
+                              <th>Сервис</th>
+                              <th>
+                                VPI/VCI
+                                <!-- <span class="badge text-bg-secondary" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="VPI (Virtual Path Identifier) - идентификатор виртуального пути (логического «маршрута» внутри сети ATM)">VPI</span> /
+                                <span class="badge text-bg-secondary" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="VCI (Virtual Channel Identifier) — идентификатор виртуального канала (конкретного «потока» внутри выбранного виртуального пути)">VCI</span> -->
+                              </th>
+                            </tr>
+                          <tbody>
+                            <tr>
+                              <td>Byfly</td>
+                              <td>0 / 33</td>
+                            </tr>
+                            <tr>
+                              <td>IPTV</td>
+                              <td>1 / 34</td>
+                            </tr>
+                            <tr>
+                              <td>IMS</td>
+                              <td>2 / 35</td>
+                            </tr>
+                            <tr>
+                              <td>Byfly-wifi</td>
+                              <td>3 / 36</td>
+                            </tr>
+                            <tr>
+                              <td>Охрана</td>
+                              <td>4 / 37</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+
+                      <div class="collapse" id="collapsePrefixlist">
+                        <h5>Префиксы сети</h5>
+                        <p class="small">Префикс сети (нотация CIDR) показывает число единичных бит в маске подсети (от /0 до /32 для IPv4). Например, префикс /24 означает маску 255.255.255.0, где 24 бита отведены под сеть, а 8 бит — под устройства.</p>
+                        <table class="table table-bordered table-striped-columns small">
+                          <thead>
+                            <th>Префикс</th>
+                            <th>Маска</th>
+                            <th>Полезные адреса</th>
+                          </thead>
+                          <tbody>
+                              <tr><td>/32</td><td>255.255.255.255</td><td>1 </td></tr>
+                              <tr><td>/31</td><td>255.255.255.254</td><td>2 </td></tr>
+                              <tr><td>/30</td><td>255.255.255.252</td><td>2 </td></tr>
+                              <tr><td>/29</td><td>255.255.255.248</td><td>6 </td></tr>
+                              <tr><td>/28</td><td>255.255.255.240</td><td>14</td></tr>
+                              <tr><td>/27</td><td>255.255.255.224</td><td>30</td></tr>
+                              <tr><td>/26</td><td>255.255.255.192</td><td>62</td></tr>
+                              <tr><td>/25</td><td>255.255.255.128</td><td>126</td></tr>
+                              <tr><td>/24</td><td>255.255.255.0  </td><td>254</td></tr>
+                          </tbody>
+                        </table>
+                        <p>Расчет сети по префиксу: <a href="https://net-config.com/general-network/ip-subnet-architect/" target="_blank">net-config.com</a></p>
+                      </div>
+
                       <div class="text-end">
                         <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Закрыть</button>
                       </div>
@@ -359,10 +430,6 @@
 
             <div class="d-flex mb-3">
               <div class="me-auto p-2">
-                <a class="btn btn-outline-secondary" title="Калькулятор сетей" target="_blank"
-                href="https://net-config.com/general-network/ip-subnet-architect/">
-                  <i class="bi bi-calculator"></i> Subnet-calc
-                </a>
                 <a class="btn btn-outline-primary" id="btn-dnsip" title="Проверочные данные" target="_blank"
                 data-bs-toggle="modal" data-bs-target="#dnsModal" 
                 data-bs-title="Проверочные данные IP/DNS">
@@ -3071,12 +3138,12 @@
       });
 
       // IP/DNS modal show default DNS tab
-      document.getElementById('btn-dnsip').addEventListener('click', () => {
-        const bsCollapseDNS = new bootstrap.Collapse('#collapseDNSlist', {
-          toggle: false
-        })
-        bsCollapseDNS.show();
-      });
+      // document.getElementById('btn-dnsip').addEventListener('click', () => {
+      //   const bsCollapseDNS = new bootstrap.Collapse('#collapseDNSlist', {
+      //     toggle: false
+      //   })
+      //   bsCollapseDNS.show();
+      // });
        
       // Hide all bootstrap collapse function
       function hideAllCollapse() {
