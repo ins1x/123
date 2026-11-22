@@ -259,73 +259,91 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
+
+                    <div class="btn-group py-2" role="group" aria-label="Basic radio toggle button group">
+                      <input type="radio" class="btn-check" name="btnradio-dnsip" id="btnradio-dnsip-1" data-bs-toggle="collapse" href="#collapseDNSlist" aria-controls="DNSlist" autocomplete="off" checked>
+                      <label class="btn btn-outline-primary" for="btnradio-dnsip-1"><i class="bi bi-globe"></i> DNS</label>
+
+                      <input type="radio" class="btn-check" name="btnradio-dnsip" id="btnradio-dnsip-2" data-bs-toggle="collapse" href="#collapseIpv6list" aria-controls="Ipv6list" autocomplete="off">
+                      <label class="btn btn-outline-primary" for="btnradio-dnsip-2"><i class="bi bi-6-square"></i> IPv6</label>
+                    </div>
+
                     <form>
-                      <div class="table-responsive">
-                        <table class="table table-bordered table-striped">
-                          <caption>
-                            Все IP-адреса <a href="https://www.beltelecom.by/ip-adresa-serverov-dns-neobkhodimykh-dlya-nastroyki-podklyucheniya-k-internet">DNS-серверов</a>
-                          </caption>
-                          <tbody>
-                            <tr>
-                              <td>&nbsp;</td>
-                              <td>Предпочитаемый</td>
-                              <td>Альтернативный</td>
-                            </tr>
-                            <tr>
-                              <td>Минск</td>
-                              <td>194.158.196.245</td>
-                              <td>86.57.255.149</td>
-                            </tr>
-                            <tr>
-                              <td>Фильтрация</td>
-                              <td>194.158.196.137</td>
-                              <td>194.158.196.141</td>
-                            </tr>
-                            <tr>
-                              <td>DNS платформы IPTV</td>
-                              <td>82.209.237.230</td>
-                              <td></td>
-                            </tr>
-                            <tr>
-                              <td>DNS для Видеоконтроля (АРМ)</td>
-                              <td>10.1.17.6</td>
-                              <td>10.1.17.7</td>
-                            </tr>
-                          </tbody>
-                        </table>
+                      <div class="collapse show" id="collapseDNSlist">
+                        <div class="table-responsive">
+                          <table class="table table-bordered table-striped">
+                            <caption>
+                              Все IP-адреса <a href="https://www.beltelecom.by/ip-adresa-serverov-dns-neobkhodimykh-dlya-nastroyki-podklyucheniya-k-internet">DNS-серверов</a>
+                            </caption>
+                            <tbody>
+                              <tr>
+                                <td>&nbsp;</td>
+                                <td>Предпочитаемый</td>
+                                <td>Альтернативный</td>
+                              </tr>
+                              <tr>
+                                <td>Минск</td>
+                                <td>194.158.196.245</td>
+                                <td>86.57.255.149</td>
+                              </tr>
+                              <tr>
+                                <td>Фильтрация (БелГИЭ)</td>
+                                <td>194.158.196.137</td>
+                                <td>194.158.196.141</td>
+                              </tr>
+                              <tr>
+                                <td>Фильтрация ОРД (9 профиль)</td>
+                                <td>86.57.159.36</td>
+                                <td>86.57.159.37</td>
+                              </tr>
+                              <tr>
+                                <td>DNS платформы IPTV</td>
+                                <td>82.209.237.230</td>
+                                <td></td>
+                              </tr>
+                              <tr>
+                                <td>DNS для Видеоконтроля (АРМ)</td>
+                                <td>10.1.17.6</td>
+                                <td>10.1.17.7</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
                       </div>
-      
-                      <h5>Параметры для IPv6</h5>
-                      <div class="table-responsive">
-                        <table class="table table-bordered table-striped">
-                          <tbody>
-                            <tr>
-                              <td>&nbsp;</td>
-                              <td>Предпочитаемый</td>
-                              <td>Альтернативный</td>
-                            </tr>
-                            <tr>
-                              <td>Минск</td>
-                              <td>2a02:2208:0:240::245/64</td>
-                              <td>2a02:2208:0:144::149/64</td>
-                            </tr>
-                            <tr>
-                              <td>Google DNS</td>
-                              <td>2001:4860:4860::8888</td>
-                              <td>2001:4860:4860::8844</td>
-                            </tr>
-                            <tr>
-                              <td>Google DNS64</td>
-                              <td>2001:4860:4860::6464</td>
-                              <td></td>
-                            </tr>
-                            <tr>
-                              <td>Шлюз по-умолчанию</td>
-                              <td>fe80::1/128</td>
-                              <td></td>
-                            </tr>
-                          </tbody>
-                        </table>
+
+                      <div class="collapse" id="collapseIpv6list">
+                        <h5>Параметры для IPv6</h5>
+                        <div class="table-responsive">
+                          <table class="table table-bordered table-striped">
+                            <tbody>
+                              <tr>
+                                <td>&nbsp;</td>
+                                <td>Предпочитаемый</td>
+                                <td>Альтернативный</td>
+                              </tr>
+                              <tr>
+                                <td>Минск</td>
+                                <td>2a02:2208:0:240::245/64</td>
+                                <td>2a02:2208:0:144::149/64</td>
+                              </tr>
+                              <tr>
+                                <td>Google DNS</td>
+                                <td>2001:4860:4860::8888</td>
+                                <td>2001:4860:4860::8844</td>
+                              </tr>
+                              <tr>
+                                <td>Google DNS64</td>
+                                <td>2001:4860:4860::6464</td>
+                                <td></td>
+                              </tr>
+                              <tr>
+                                <td>Шлюз по-умолчанию</td>
+                                <td>fe80::1/128</td>
+                                <td></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
                       </div>
 
                       <div class="text-end">
@@ -344,7 +362,7 @@
                 href="https://net-config.com/general-network/ip-subnet-architect/">
                   <i class="bi bi-calculator"></i> Subnet-calc
                 </a>
-                <a class="btn btn-outline-primary" title="Проверочные данные" target="_blank"
+                <a class="btn btn-outline-primary" id="btn-dnsip" title="Проверочные данные" target="_blank"
                 data-bs-toggle="modal" data-bs-target="#dnsModal" 
                 data-bs-title="Проверочные данные IP/DNS">
                   <i class="bi bi-globe"></i> IP/DNS
@@ -619,8 +637,9 @@
                           </p>
   
                           <p>
-                            <b class="text-primary">Ping, trace, MTR</b> — это базовые сетевые утилиты для диагностики доступности серверов и поиска проблем со связью. С их помощью проверяют, доходят ли пакеты данных до цели и где именно они теряются или задерживаются.
+                            <b class="text-primary">Ping, Trace, MTR</b> — это базовые сетевые утилиты для диагностики доступности серверов и поиска проблем со связью. С их помощью проверяют, доходят ли пакеты данных до цели и где именно они теряются или задерживаются.
                           </p>
+
                           <span class="d-block">
                             <a class="icon-link icon-link-hover no-underline" data-bs-toggle="collapse" href="#collapseMTRcolumnsdesc" role="button" aria-expanded="false" aria-controls="collapseMTRcolumnsdesc">
                               <i class="bi bi-chevron-down"></i> Расшифровка значений MTR
@@ -701,6 +720,278 @@
                             </div>
                           </span>
                           
+                          Утилиты и команды:
+                          <span class="d-block">
+                            <a class="icon-link icon-link-hover no-underline" data-bs-toggle="collapse" href="#collapsePowerShellTestConnection" role="button" aria-expanded="false" aria-controls="collapsePowerShellTestConnection">
+                              <i class="bi bi-chevron-down"></i> Команды для проверки через <i class="bi bi-terminal" style="color: dodgerblue"></i> PowerShell
+                            </a>
+                            <div class="collapse" id="collapsePowerShellTestConnection">
+                              
+                              <blockquote>Необходимо запустить <a href="https://learn.microsoft.com/ru-ru/powershell/">PowerShell</a> чтобы использовать команды ниже (<kbd>Win+R</kbd> и введите <code>powershell</code>)</blockquote>
+
+                              <p>Проверка доступности ресурса: <code>Test-NetConnection google.com</code> </p>
+                              <code>
+                                <pre style="white-space: pre-line;">
+                                ComputerName           : google.com
+                                RemoteAddress          : 142.250.130.101
+                                InterfaceAlias         : Ethernet 3
+                                SourceAddress          : 100.111.112.1
+                                PingSucceeded          : True
+                                PingReplyDetails (RTT) : 27 ms
+                                </pre>
+                              </code>
+  
+                              <p>Проверить коннект на определенный порт: <code>Test-NetConnection google.com -port 80</code></p>
+                              <code>
+                                <pre style="white-space: pre-line;">
+                                ComputerName     : google.com
+                                RemoteAddress    : 142.250.130.101
+                                RemotePort       : 80
+                                InterfaceAlias   : Ethernet 2
+                                SourceAddress    : 100.111.112.2
+                                TcpTestSucceeded : True
+                                </pre>
+                              </code>
+                              
+                              <p>Проверить коннект с определенным MTU и TTL: <code>Test-Connection -ComputerName server1 -MtuSize 1400 -Ttl 128</code></p>
+  
+                              <ul>
+                                <li><a href="https://fasterdata.es.net/network-tuning/mtu-issues/debugging-mtu-problems/">Debugging MTU Problems</a></li>
+                                <li><a href="https://github.com/chubin/awesome-console-services">awesome-console-services</a></li>
+                              </ul>
+                            </div>
+                          </span>
+
+                          <span class="d-block">
+                            <a class="icon-link icon-link-hover no-underline" data-bs-toggle="collapse" href="#collapseTracertCmds" role="button" aria-expanded="false" aria-controls="collapseTracertCmds">
+                              <i class="bi bi-chevron-down"></i> Трассировка через <i class="bi bi-terminal"></i> Tracert 
+                            </a>
+                            <div class="collapse" id="collapseTracertCmds">
+        
+                              <ul class="triangle">
+                                <li><code>tracert -d 1.1.1.1</code> — без преобразования IP в доменные имена (вывод идёт быстрее, без задержек на DNS).</li>
+                                <li><code>tracert -h 50 google.com</code> — увеличить лимит промежуточных узлов до 50 (по умолчанию 30).</li>
+                                <li><code>tracert -w 1000 google.com</code> — задать тайм-аут ожидания ответа каждого узла в 1000 мс (1 секунда; по умолчанию 4000 мс).</li>
+                                <li><code>tracert -4 google.com</code> — принудительно использовать IPv4.</li>
+                                <li><code>tracert -6 google.com</code> — принудительно использовать IPv6.</li>
+                              </ul>
+
+                              <p>Пример трассировки на DNS google: <code>tracert google.com</code></p>
+                              <code class="language-shell" data-lang="shell">
+                                <pre style="white-space: pre-line;">
+                                Трассировка маршрута к google.com
+                                с максимальным числом прыжков 30:
+                                
+                                  1     1 ms     1 ms     1 ms  192.168.1.1 
+                                  2     2 ms     2 ms     2 ms  10.100.0.1 
+                                  3     5 ms     3 ms     3 ms  isp-gateway.msk.ru
+                                  4     8 ms     6 ms     7 ms  core-router.Moscow.gldn.net
+                                  5    15 ms    14 ms    13 ms  core-router.Frankfurt.gldn.net
+                                  6    22 ms    22 ms    23 ms  72.14.209.18 
+                                  7    23 ms    22 ms    23 ms  142.250.226.78 
+                                  8    24 ms    23 ms    22 ms  fra16s50-in-f14.1e100.net
+                                
+                                Трассировка завершена.
+                                </pre>
+                              </code>
+                                
+                              
+                            </div>
+                          </span>
+
+                          
+                          <span class="d-block">
+                            <a class="icon-link icon-link-hover no-underline" data-bs-toggle="collapse" href="#collapseTraceroute" role="button" aria-expanded="false" aria-controls="collapseTraceroute">
+                              <i class="bi bi-chevron-down"></i> Трассировка через <i class="bi bi-terminal"></i> Traceroute
+                            </a>
+                            <div class="collapse" id="collapseTraceroute">
+                              Traceroute — по умолчанию она отправляет UDP-пакеты и делает до 30 переходов (хопов) с тремя замерами времени на каждом узле.
+
+                              <ul class="triangle">
+                                <li><code>traceroute example.com</code> — базовая трассировка до домена или IP-адреса.</li>
+                                <li><code>traceroute -n 8.8.8.8</code> — трассировка без преобразования IP в доменные имена (работает быстрее, так как не ждет ответы DNS).</li>
+                                <li><code>traceroute -4 example.com</code> и <code>traceroute -6 example.com</code> — принудительный выбор IPv4 или IPv6.</li>
+                              </ul>
+
+                              <p>Пример трассировки на DNS google: <code>traceroute google.com</code></p>
+                              <code class="language-shell" data-lang="shell">
+                                <pre style="white-space: pre-line;">
+                                  traceroute to google.com (142.250.185.78), 30 hops max, 60 byte packets
+                                   1  _gateway (192.168.1.1)  1.420 ms  1.215 ms  1.180 ms
+                                   2  10.200.0.1 (10.200.0.1)  6.812 ms  7.104 ms  6.590 ms
+                                   3  gw-core-1.isp.net (198.51.100.1)  14.330 ms  15.012 ms  14.890 ms
+                                   4  * * *
+                                   5  142.250.232.14 (142.250.232.14)  28.410 ms  27.950 ms  28.120 ms
+                                   6  waw02s24-in-f14.1e100.net (142.250.185.78)  29.105 ms  28.880 ms  29.012 ms                                  
+                                </pre>
+                              </code>
+
+                              Если узлы или фаерволы блокируют UDP-трафик по умолчанию, смените протокол:
+                              <ul class="triangle">
+                                <li><code>traceroute -I example.com</code> — отправка ICMP-запросов (аналогично tracert в Windows).</li>
+                                <li><code>traceroute -T -p 443 example.com</code> — отправка TCP SYN-пакетов на указанный порт (например, 443 для HTTPS).</li>
+                              </ul>
+                              
+                              Настройка параметров и интерфейса:
+                              <ul class="triangle">
+                                <li><code>traceroute -m 50 example.com</code> — увеличить максимальное число хопов (по умолчанию 30).</li>
+                                <li><code>traceroute -q 1 example.com</code> — отправлять по 1 пакету на каждый узел вместо 3.</li>
+                                <li><code>traceroute -w 2 example.com</code> — задать таймаут ожидания ответа в секундах.</li>
+                                <li><code>traceroute -i eth0 example.com</code> — отправить пакеты через конкретный сетевой интерфейс.</li>
+                              </ul>
+                            </div>
+                          </span>
+  
+                          <span class="d-block">
+                            <a class="icon-link icon-link-hover no-underline" data-bs-toggle="collapse" href="#collapseTracerouteDiff" role="button" aria-expanded="false" aria-controls="collapseTracerouteDiff">
+                              <i class="bi bi-chevron-down"></i> Разница между Traceroute и Tracert
+                            </a>
+                            <div class="collapse" id="collapseTracerouteDiff">
+                              <p>
+                                Traceroute и Tracert в основном работают одинаково – они предоставляют информацию о пути пакета данных из одной точки сети на конкретный IP-сервер. Когда данные передаются между двумя точками, они должны проходить через несколько устройств (например, маршрутизаторы).
+                                Traceroute сопоставляет каждый переход, предоставляет подробную информацию и время приёма-передачи (RTT), а также, по возможности, сообщает имя устройства и IP-адрес.
+                              </p>
+  
+                              <p>
+                                <strong>Tracert</strong>
+                              </p>
+                              <ol>
+                                <li>Tracert, в отличие от своего Linux-двойника, реализован на основе протокола ICMP, а не UDP.</li>
+                                <li>Tracert отправляет эхо-запрос ICMP (ICMP Echo Request) с TTL=1.</li>
+                                <li>Первый маршрутизатор проверяет адрес назначения, чтобы выяснить был ли отправлен запрос именно ему.</li>
+                                <li>Узнав, что цель пакета другой хост, маршрутизатор отбрасывает его, и TTL становится равным 0.</li>
+                                <li>Затем маршрутизатор 1 отправляет ICMP-сообщение с указанием информации о себе и причине проблемы источнику пакета: Time-To-Live Exceeded или Time Exceeded in transit.</li>
+                                <li>Благодаря этому сообщению Tracert записывает маршрутизатор 1 как первый транзитный участок или, как его ещё называют, хоп, прыжок.</li>
+                              </ol>
+                              <p>Процесс передачи пакета между промежуточными маршрутизаторами продолжится, пока переменная (TTL ICMP-запроса), не станет равна количеству прыжков между узлом-отправителем и узлом-получателем, и пакет не будет получен хостом назначения или количество сетевых переходов не превысит максимальное значение для Tracert 30.</p>
+                              <ol>
+                                <li>Когда целевой хост проверит IP-адрес назначения и узнает, что запрос был направлен именно ему, он отправит эхо-ответ ICMP (ICMP Echo Request), что даст утилите понять, что процесс передачи завершён.</li>
+                              </ol>
+                              <p>
+                                <strong>Traceroute</strong>
+                              </p>
+                              <p>
+                                В чём ещё отличие Traceroute от Tracert? В Traceroute схема схожая, практически идентичная.
+                                Целевому хосту направляется фрагментированный UDP-запрос. Таким образом, отправляется сразу несколько пакетов с TTL: TTL=1, TTL=2 и TTL=3.
+                                В каждом пакете содержатся данные о порте отправителя (Source) и порте получателя (Destination). Destination порт по умолчанию закрытый (34434), 
+                                поэтому утилита Traceroute сразу понимает, что процесс передачи данных завершён, когда получает ответ с сообщением о недоступности порта 
+                                "Destination port unreachable" (Хост/Порт недостижим). Иными словами, запрос достиг целевого хоста.
+                              </p>
+  
+                              <p>Источник: <a href="https://www.nic.ru/help/traceroute-i-tracert-utility-bliznecy-chto-takoe-trassirovka-seti_11102.html">nic.ru</a></p>
+                            </div>
+                          </span>
+
+                          <span class="d-block">
+                            <a class="icon-link icon-link-hover no-underline" data-bs-toggle="collapse" href="#collapseWinMTRcmds" role="button" aria-expanded="false" aria-controls="collapseWinMTRcmds">
+                              <i class="bi bi-chevron-down"></i>Проверка через <i class="bi bi-align-top"></i>WinMTR
+                            </a>
+                            <div class="collapse" id="collapseWinMTRcmds">
+                              <h5>WinMTR</h5>
+                              <ul>
+                                <li>Стандартная версия: <a href="https://archive.nichost.ru/winmtr-v092.zip">winmtr-v092.zip</a></li>
+                                <li>Расширенная версия (с поддержкой ipv6): <a href="https://github.com/White-Tiger/WinMTR/releases/download/v1.0/WinMTR-v100.zip">WinMTR Redux</a></li>
+                              </ul>
+                              <p>Проверка соединения с помощью утилиты WinMTR:</p>
+                              <ol>
+                                <li>
+                                  Запустите программу от имени администратора, щёлкнув по иконке правой кнопкой и выбрав соответствующий пункт в контекстном меню.<br>
+                                  В главном окне программы нажмите кнопку Опции (Options), чтобы перейти к настройкам программы.
+                                </li>
+                                <li>В открывшемся окне отключите параметр Разрешение имен (Resolve names).</li>
+                                <li>В поле Хост (Host) введите доменное имя проверяемого узла или его IP-адрес.</li>
+                                <li>Нажмите кнопку Старт (Start), спустя 2-3 минуты работы программы нажмите кнопку Стоп (Stop).</li>
+                                <li>Сохраните результат работы программы на своем компьютере, нажав кнопку Экспортировать текст (Export TEXT).</li>
+                              </ol>
+                          
+                              <p>Отчет программы содержит следующие данные:</p>
+                              <ul>
+                                  <li><code>Hostname</code> — IP-адрес или доменное имя узла.</li>
+                                  <li><code>Nr</code> — порядковый номер узла в маршруте</li>
+                                  <li><code>Loss%</code> — процент потерянных ответов от данного узла</li>
+                                  <li><code>Sent</code> — отправлено запросов данному узлу</li>
+                                  <li><code>Recv</code> — получено ответов от узла</li>
+                                  <li><code>Best</code> — наименьшее (наилучшее) время задержки в миллисекундах</li>
+                                  <li><code>Avrg</code> — среднее время задержки
+                                  <li><code>Worst</code> — наибольшее (наихудшее) время задержки</li>
+                                  <li><code>Last</code> — время задержки последнего полученного пакета</li>
+                              </ul>                                
+                              
+                            </div>
+                          </span>
+
+                          <span class="d-block">
+                            <a class="icon-link icon-link-hover no-underline" data-bs-toggle="collapse" href="#collapseMTRcmds" role="button" aria-expanded="false" aria-controls="collapseMTRcmds">
+                              <i class="bi bi-chevron-down"></i>Проверка через <i class="bi bi-tux"></i>MTR
+                            </a>
+                            <div class="collapse" id="collapseMTRcmds">
+                              <h5>MTR</h5>
+                              <p>
+                                Этот инструмент предустановлен в большинстве дистрибутивов Gnu / Linux и им довольно легко пользоваться. 
+                                Нам останется только открыть терминал (<kbd>Ctrl + Alt + T</kbd>)
+                              </p>
+                              <p>Стандартный вызов mtr: <code>mtr google.com</code></p>
+                              <code>
+                                <pre style="white-space: pre-line;">
+                                  My traceroute  [v0.92]
+                                  home (62.3.100.24)                                  2022-03-17T18:20:20+0000
+                                  Keys:  Help   Display mode   Restart statistics   Order of fields   quit
+                                                                         Packets               Pings
+                                   Host                                Loss%   Snt   Last  Avg  Best  Wrst StDev
+                                   1. 62-3-100-30.dsl.in-addr.zen.co.u  0.0%    5    0.6   0.6   0.5   0.6   0.0
+                                   2. ???
+                                   3. lag-8.p2.thn-lon.zen.net.uk       0.0%    5   12.3  12.3  12.2  12.5   0.1
+                                   4. lag-2.br1.thn-lon.zen.net.uk      0.0%    5   12.3  12.3  12.0  12.5   0.2
+                                   5. 72.14.223.28                      0.0%    5   12.9  12.8  12.4  12.9   0.2
+                                   6. 209.85.249.149                    0.0%    5   13.4  13.7  13.3  14.2   0.4
+                                   7. 142.251.54.27                     0.0%    5   12.0  11.8  11.4  12.0   0.2
+                                   8. dns.google                        0.0%    4   12.1  11.8  11.6  12.1   0.2
+                                </pre>
+                              </code>
+  
+                              <p>Если нужно, чтобы команда не производила преобразование IP-адреса в имя хоста, при запуске команды mtr используйте ключ -n: <code>mtr -n 8.8.8.8</code></p>
+                              <p>Использование опции -b позволяет отображать как имена узлов, так и их IP-адреса: <code>mtr -b 8.8.8.8</code></p>
+                              <p>
+                                Чтобы задействовать TCP SYN-пакеты или UDP-датаграммы вместо стандартных ICMP-запросов используйте ключи –tcp, –udp:<br>
+                                <code>mtr --tcp google.com</code><br>
+                                <code>mtr --udp google.com</code>
+                              </p>
+                            </div>
+                          </span>
+
+                          <span class="d-block">
+                            <a class="icon-link icon-link-hover no-underline" data-bs-toggle="collapse" href="#collapseCurlCmds" role="button" aria-expanded="false" aria-controls="collapseCurlCmds">
+                              <i class="bi bi-chevron-down"></i> Команды для проверки через <i class="bi bi-tux"></i> curl
+                            </a>
+                            <div class="collapse" id="collapseCurlCmds">
+                                
+                              <p>Проверка коннекта к приложению через curl (Linux)</p>
+                              <code>
+                                <pre style="white-space: pre-line;">
+                                  curl -w "time_connect: %{time_connect}\ntime_appconnect: %{time_appconnect}\ntime_starttransfer: %{time_starttransfer}\ntime_total: %{time_total}\n" \ 
+                                  -o /dev/null -s https://apphost/cgi
+                                </pre>
+                              </code>
+  
+                              <pre style="white-space: pre-line;">
+                                Output:
+                                time_connect: 0.016985
+                                time_appconnect: 0.075189
+                                time_starttransfer: 0.089458
+                              </pre>
+  
+                              <p>Проверка HTTP-статус сервера через curl (Linux):</p>
+                              <code>
+                                <pre style="white-space: pre-line;">
+                                  curl -Is example.com | head -n 1
+                                </pre>
+                              </code>
+
+                              <blockquote>(Статус код "200 OK" означает что запрос был успешно выполнен и сайт доступен, а "404" или "500" — ошибку). Подробнее <a href="https://developer.mozilla.org/ru/docs/Web/HTTP/Reference/Status">HTTP коды</a>.</blockquote>
+
+                            </div>
+                          </span>
+                        
                         </p>
                       </div>
                     </div>
@@ -952,6 +1243,21 @@
                             </div>
                           </span>
 
+                          <span class="d-block">
+                            <a class="icon-link icon-link-hover no-underline" data-bs-toggle="collapse" href="#collapseNetworkFiltration" role="button" aria-expanded="false" aria-controls="collapseNetworkFiltration">
+                              <i class="bi bi-chevron-down"></i> Проверка нахождения ресурса в списке фильтрации
+                            </a>
+                            <div class="collapse" id="collapseNetworkFiltration">
+  
+                              <ul class="triangle">
+                                <li>Услуга "Родительский котнтроль" - <a href="https://tools.zvelo.com/" target="_blank">tools.zvelo.com</a></li>
+                                <li>Услуга "Обеспечение безопасности сетевого трафика" - <a href="https://url.fortinet.net/rate/submit.php" target="_blank">url.fortinet.net</a></li>
+                                <li>Ограничение доступа к информации РУП «БелГИЭ» - <a href="https://belgie.by/ru/other/info" target="_blank">belgie.by</a></li>
+                              </ul>
+                              
+                            </div>
+                          </span>
+
                         </p>
                       </div>
                     </div>
@@ -1064,12 +1370,83 @@
 
                           <span class="d-block">
                             <a class="icon-link icon-link-hover no-underline" data-bs-toggle="collapse" href="#collapseSSLcertFaq" role="button" aria-expanded="false" aria-controls="collapseSSLcertFaq">
-                              <i class="bi bi-chevron-down"></i>  SSL-сертификат
+                              <i class="bi bi-chevron-down"></i> Ошибки связанные с SSL-сертификатом
                             </a>
                             <div class="collapse" id="collapseSSLcertFaq">
                               <p>
-                                SSL-сертификат — это цифровой файл на сервере, который подтверждает подлинность сайта и включает шифрованное соединение по протоколу HTTPS. На практике шифрование работает через современный протокол TLS, но название SSL сохранилось
+                                <b class="text-info">SSL-сертификат</b> — это цифровой файл на сервере, который подтверждает подлинность сайта и включает шифрованное соединение по протоколу HTTPS. На практике шифрование работает через современный протокол TLS, но название SSL сохранилось
                               </p>
+
+                              Основные причины появления ошибки "Ваше подключение не защищено":
+                              <ul>
+                                <li><strong>Сбиты дата и время на устройстве</strong>. Если часы отстают или спешат, браузер решает, что сертификат еще не начал действовать или уже просрочен.</li>
+                                <li><strong>Антивирус, прокси или корпоративный фаервол</strong>. Они могут перехватывать HTTPS-трафик и подменять сертификат на свой — если его корневой сертификат не установлен в доверенных на устройстве, браузер покажет ошибку.</li>
+                                <li><strong>VPN или прокси</strong>. Проверьте подключение в другом браузере или через мобильный интернет. Публичные сети Wi-Fi иногда перехватывают трафик и требуют авторизации на странице входа.</li>
+                                <li><strong>Устаревшее хранилище корневых сертификатов в OC и интернет-браузере</strong>. В старых ОС или браузерах может не хватать актуальных корневых сертификатов (например, после ротации цепочек у CA).</li>
+                                <li><strong>Несовпадение домена или адреса (SAN / CN)</strong>. Сертификат выпущен для другого домена/поддомена или пользователь заходит по IP-адресу вместо доменного имени.</li>
+                                <li><strong>Кэш или HSTS</strong>. Браузер запомнил старое состояние сертификата или политику HSTS для домена и блокирует соединение при изменении настроек.</li>
+                                <li><strong>Смешанный контент (если речь о значке «Не защищено» без блокировки)</strong>. Основная страница открывается по HTTPS с валидным SSL, но картинки, скрипты или стили грузятся по HTTP.</li>
+                              </ul>
+
+                              Проверить SSL сертфиикат онлайн:
+                              <ul class="triangle">
+                                <li><a href="https://sslshopper.com/ssl-checker.html" target="_blank">sslshopper</a></li>
+                                <li><a href="https://ssl.org/" target="_blank">ssl.org</a></li>
+                                <li><a href="https://ssllabs.com/ssltest/" target="_blank">ssllabs</a></li>
+                              </ul>
+                            </div>
+                          </span>
+
+                          <span class="d-block">
+                            <a class="icon-link icon-link-hover no-underline" data-bs-toggle="collapse" href="#collapseDigResolve" role="button" aria-expanded="false" aria-controls="collapseDigResolve">
+                              <i class="bi bi-chevron-down"></i>  Проверить resolve DNS через nslookup <i class="bi bi-windows"></i>Windows
+                            </a>
+                            <div class="collapse" id="collapseDigResolve">
+                              <p><code>nslookup 8.8.4.4</code> - отобразить имя узла, соответствующее IP-адресу 8.8.4.4</p>
+                            
+                              <p>
+                                <code>nslookup -type=mx yandex.ru</code> - то же, что и в предыдущем примере, но с указанием типа запрашиваемой записи -type=mx. 
+                                Сервер DNS ответит на запрос утилиты nslookup перечислением почтовых серверов, обслуживающих домен yandex.ru 
+                              </p>
+  
+                              <p>
+                                <code>nslookup odnoklassniki.ru 8.8.8.8</code> - определить IP-адрес узла odnokassniki.ru с использованием DNS-сервера 8.8.8.8 
+                                (публичный DNS-сервер Google), вместо DNS-сервера, заданного в настройках сетевого подключения. 
+                                <code>nslookup -type=mx -timeout=8 vk.com 208.67.220.220 - </code> отобразить запись MX для домена vk.com из базы данных сервера с IP-адресом 208.67.220.220 (сервер <a href="https://www.opendns.com/">OpenDNS</a>).
+                              </p> 
+                              
+                              <p><code>nslookup -type=any -timeout=8 vk.com 208.67.220.220</code> - то же, что и в предыдущем примере, но выполняется запрос на отображение любых типов записей.</p>
+  
+                              <p>Альтернативный вариант проверить resolve DNS через powershell: <code>Resolve-DnsName onliner.by</code></p>
+                              <code>
+                                <pre style="white-space: pre-line;">
+                                  Name                                           Type   TTL   Section    IPAddress
+                                  ----                                           ----   ---   -------    ---------
+                                  onliner.by                                     A      400   Answer     178.124.129.12
+                                  onliner.by                                     A      400   Answer     178.124.129.14
+                                </pre>
+                              </code>
+                              </p>
+                            </div>
+                          </span>
+
+                          <span class="d-block">
+                            <a class="icon-link icon-link-hover no-underline" data-bs-toggle="collapse" href="#collapseNslookupResolve" role="button" aria-expanded="false" aria-controls="collapseNslookupResolve">
+                              <i class="bi bi-chevron-down"></i>  Проверить resolve DNS через dig <i class="bi bi-tux"></i>Linux
+                            </a>
+                            <div class="collapse" id="collapseNslookupResolve">
+                              <p>
+                                dig (Domain Information Groper) — это консольная утилита для работы с DNS-серверами. 
+                                С её помощью можно проверить, какие записи настроены для домена, откуда они приходят и насколько корректно работает резолвинг.
+                              </p>
+                              <ul class="triangle">
+                                <li>Запросить все DNS записи: <code>dig example.com ANY</code></li>
+                                <li>Запрос к конкретному DNS-серверу. Выполняет запрос через указанный DNS‑резолвер (Google DNS): <code>dig @8.8.8.8 example.com</code></li>
+                                <li>Трассировка DNS-резолвинга (Пошаговая трассировка от корневых серверов до авторитетного NS): <code>dig +trace example.com</code></li>
+                                <li>Проверка PTR записи: <code>dig -x 142.250.180.206</code></li>
+                                <li>Проверка MX записи: <code>dig example.com MX</code></li>
+                                <li>Проверка DNSSEC: <code>dig @xx.xx.xx.xx www.m-system.net +dnssec</code></li>
+                              </ul>
                             </div>
                           </span>
 
@@ -2511,6 +2888,14 @@
             document.getElementById("portcheck-label").innerHTML = `Проверка ресурса на наличие уязвимых сервисов`;
           }
         }
+      });
+
+      // IP/DNS modal show default DNS tab
+      document.getElementById('btn-dnsip').addEventListener('click', () => {
+        const bsCollapseDNS = new bootstrap.Collapse('#collapseDNSlist', {
+          toggle: false
+        })
+        bsCollapseDNS.show();
       });
        
       // Hide all bootstrap collapse function
