@@ -344,6 +344,7 @@
                             </tbody>
                           </table>
                         </div>
+                        <p>Проверить поддержку IPv6 - <a href="https://test-ipv6.com/" target="_blank">Test-IPv6.com</a></p>
                       </div>
 
                       <div class="text-end">
@@ -629,7 +630,7 @@
                   </div>
 
                   <div class="col">
-                    <div class="card card-primary card-outline h-100">
+                    <div class="card card-primary card-outline">
                       <div class="card-body">
                         <p class="card-text">
                           <p class="col-md-8 fs-3">
@@ -683,10 +684,6 @@
                                   <b>Потери пакетов в 100%</b> при нормальных показателях последующих узлов <u>являются нормой</u> и указывают на соответствующую настройку данного узла сети - не отвечать на трассировочные запросы.
                                 </li>
                                 <li>
-                                  Надпись <i>No Response from the host</i> или <i>Превышен интервал ожидания для узла</i> указывают на наличие блокирующего возможность трассировки файерволла или сетевого экрана. 
-                                  Подобная надпись уже с первого узла указывает на жесткие настройки файерволла или брандмауэра на компьютере, со второго на сетевой экран или фильтрацию траффика на роутере.
-                                </li>
-                                <li>
                                   Ключевая вещь, которую многие люди не понимают в MTR или traceroute, заключается в следующем: 
                                   если потеря пакетов или увеличение RTT не наблюдаются при каждом прыжке между данным прыжком и концом пути — это не проблема.
                                   RTT каждого прыжка — полезная метрика, потому что говорит нам, сколько времени потребовалось пакету, чтобы добраться до этого прыжка и обратно. 
@@ -695,14 +692,6 @@
                                 <li>
                                   Понимание прямого и обратного пути. Путь, по которому пакет проходит между A и B, часто не совпадает с путем, по которому он проходит между B и A. Таким образом, если вы пингуете определенный IP-адрес, то ваш ping (echo request), скорее всего, будет идти по другому пути, нежели ответ (echo reply).
                                   Это означает, что когда вы используете MTR или traceroute и видите потерю пакетов, начиная с конкретного прыжка — это не обязательно тот прыжок, который привёл к проблеме.
-                                </li>
-                              </ol>
-  
-                              <h3>Особенности работы</h3>
-                              <ul>
-                                <li>
-                                  На некторых хопах в выводе могут отображаються звёздочки ( * либо "host not response"). 
-                                  Это значит, что маршрутизатор не отправил ответ — пакет отфильтрован, истёк таймаут или узел не отвечает на запросы traceroute.
                                 </li>
                                 <li>
                                   На некоторых хопах может быть разный IP в строках и результаты запуска traceroute могут отличаться при повторной трассировке.
@@ -713,14 +702,46 @@
                                   Для кириллического домена, его нужно сначала перевести в PUNY код любым конвертером (например через <a href="reg.ru/web-tools/punycode">reg.ru/web-tools/punycode</a>) 
                                   затем полученный код вставить в команду, вот так: <code>tracert xn--1-7sb1a4ah.xn--p1ai</code>
                                 </li>
-                                <li>
-                                  Traceroute: Ключ -I включает ICMP-трассировку, -T — TCP. Это помогает обходить фильтрацию UDP или проверять доступность конкретных портов.
-                                </li>
-                              </ul>  
+                              </ol>  
                             </div>
                           </span>
-                          
-                          Утилиты и команды:
+
+                          <span class="d-block">
+                            <a class="icon-link icon-link-hover no-underline" data-bs-toggle="collapse" href="#collapseTraceHiddenroutes" role="button" aria-expanded="false" aria-controls="collapseTraceHiddenroutes">
+                              <i class="bi bi-chevron-down"></i> Скрытый маршрут - No Response from the host
+                            </a>
+                            <div class="collapse" id="collapseTraceHiddenroutes">
+                              <p>
+                                Надпись <i class="text-secondary">No Response from the host</i> или <i class="text-secondary">Превышен интервал ожидания для узла</i>  означает, что конкретный промежуточный узел на пути к серверу не отвечает на диагностические ICMP-запросы.
+                                В подавляющем большинстве случаев это нормальная работа сети, а не поломка. Это значит, что маршрутизатор не отправил ответ — пакет отфильтрован, истёк таймаут или узел не отвечает на запросы traceroute.
+                              </p>
+                              Почему возникает это сообщение:
+                              <ul>
+                                <li>Фильтрация ICMP-трафика. Администраторы провайдеров и владельцы серверов часто отключают ответы на пинги (ICMP-пакеты) на маршрутизаторах для защиты от DDoS-атак и сканирования сети.</li>
+                                <li>Низкий приоритет обработки. Маршрутизатор настроен на быструю пересылку основного трафика, поэтому он игнорирует служебные диагностические запросы, чтобы не тратить ресурсы процессора.</li>
+                                <li>Работа файрвола или NAT. Локальный брандмауэр, роутер или системы глубокой фильтрации трафика (DPI) могут блокировать обратные диагностические пакеты.</li>
+                                <li>Подобная надпись уже с первого узла указывает на жесткие настройки файерволла или брандмауэра на компьютере, со второго на сетевой экран или фильтрацию траффика на роутере.</li>
+                              </ul>
+                            </div>
+                          </span>
+                        
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="card card-primary card-outline">
+                      <div class="card-body">
+                        <p class="card-text">
+                          <p class="col-md-8 fs-3">
+                            <i class="nav-icon bi bi-terminal-fill" style="color:dodgerblue"></i> CMD
+                          </p>
+  
+                          <p>
+                            Базовые команды для диагностики сети проверяют доступность узлов, проверку маршрутов и работу DNS в Windows и Linux.
+                          </p>
+
                           <span class="d-block">
                             <a class="icon-link icon-link-hover no-underline" data-bs-toggle="collapse" href="#collapsePowerShellTestConnection" role="button" aria-expanded="false" aria-controls="collapsePowerShellTestConnection">
                               <i class="bi bi-chevron-down"></i> Команды для проверки через <i class="bi bi-terminal" style="color: dodgerblue"></i> PowerShell
@@ -991,7 +1012,6 @@
 
                             </div>
                           </span>
-                        
                         </p>
                       </div>
                     </div>
@@ -1047,7 +1067,15 @@
                                 </div>
                                 <div class="form-check form-check-inline">
                                   <input class="form-check-input" name="whois-radio-options" type="radio" id="whois-checkbox-4" value="" autocomplete="off">
-                                  <label class="form-check-label" for="whois-checkbox-4">Hoster.by</label>
+                                  <label class="form-check-label" for="whois-checkbox-4">whatsmydns.me</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                  <input class="form-check-input" name="whois-radio-options" type="radio" id="whois-checkbox-5" value="" autocomplete="off">
+                                  <label class="form-check-label" for="whois-checkbox-5">captaindns.com</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                  <input class="form-check-input" name="whois-radio-options" type="radio" id="whois-checkbox-6" value="" autocomplete="off">
+                                  <label class="form-check-label" for="whois-checkbox-6">Hoster.by</label>
                                 </div>
                               </div>
                             </div>
@@ -1083,6 +1111,7 @@
                                 </div>
                               </div>
                             </div>
+
                           </p>
                         </p>
                       </div>
@@ -1103,7 +1132,7 @@
 
                           <span class="d-block">
                             <a class="icon-link icon-link-hover no-underline" data-bs-toggle="collapse" href="#collapseAsnFaq" role="button" aria-expanded="false" aria-controls="collapseAsnFaq">
-                              <i class="bi bi-chevron-down"></i> Что такое <b class="text-warning">ASN</b>?
+                              <i class="bi bi-chevron-down"></i> Что такое <b class="text-warning">ASN</b>
                             </a>
                             <div class="collapse" id="collapseAsnFaq">
                               <b class="text-warning">ASN (Autonomous System Number)</b> — это уникальный номер автономной системы (AS), который используется для маршрутизации трафика между крупными сетями в интернете по протоколу BGP.
@@ -1112,12 +1141,34 @@
 
                           <span class="d-block">
                             <a class="icon-link icon-link-hover no-underline" data-bs-toggle="collapse" href="#collapseRDAPfaq" role="button" aria-expanded="false" aria-controls="collapseRDAPfaq">
-                              <i class="bi bi-chevron-down"></i> Что такое <b class="text-warning">RDAP</b>?
+                              <i class="bi bi-chevron-down"></i> Что такое <b class="text-warning">RDAP</b>
                             </a>
                             <div class="collapse" id="collapseRDAPfaq">
                               <b class="text-warning">RDAP (Registration Data Access Protocol</b> — протокол доступа к регистрационным данным) — это современный сетевой протокол, который заменяет устаревший WHOIS для получения сведений о доменных именах, IP-адресах и автономных системах (ASN).
                             </div>
                           </span>
+
+                          <span class="d-block">
+                            <a class="icon-link icon-link-hover no-underline" data-bs-toggle="collapse" href="#collapseIPV6faq" role="button" aria-expanded="false" aria-controls="collapseIPV6faq">
+                              <i class="bi bi-chevron-down"></i> Проверка поддержки <b class="text-warning">IPv6</b>
+                            </a>
+                            <div class="collapse" id="collapseIPV6faq">
+                              <p>Чтобы проверить, поддерживает ли ваше подключение протокол IPv6, воспользуйтесь одним из популярных онлайн-сервисов диагностики:</p>
+                              <ul class="triangle">
+                                <li><a href="https://test-ipv6.com/" target="_blank">Test-IPv6.com</a> — классический и самый подробный инструмент. Показывает ваши текущие адреса IPv4 и IPv6, оценивает готовность сети по 10-балльной шкале и выявляет проблемы с DNS или маршрутизацией.</li>
+                                <li><a href="https://ipv6test.google.com/" target="_blank">Google IPv6 Test</a> — минималистичный тест от Google, который быстро проверяет, не возникнут ли у вашего браузера проблемы при доступе к сайтам с поддержкой IPv6.</li>
+                              </ul>
+                              <p class="fs-5">Как проверить локально (без браузера)</p>
+                              Вы можете убедиться, назначен ли вашему устройству IPv6-адрес, через терминал или командную строку:
+                              <ul class="triangle">
+                                <li><i class="bi bi-windows"></i>Windows: откройте cmd или PowerShell и выполните команду <code>ipconfig</code>. Наличие строки IPv6-адрес (не начинающейся с fe80::) говорит о работе протокола.</li>
+                                <li><i class="bi bi-tux"></i>Linux: выполните в терминале <code>ip -6 addr</code></li>
+                                <li><i class="bi bi-apple"></i>macOS: <code>ifconfig | grep inet6</code></li>
+                                <li>Для проверки связи в интернет выполните: <code>ping -6 google.com.</code></li>
+                              </ul>
+                            </div>
+                          </span>
+
 
                           
                           
@@ -1288,13 +1339,74 @@
                           </div>
                           
                           <div class="btn-group py-2" role="group" aria-label="Basic radio toggle button group">
-                            <input type="radio" class="btn-check" name="btnradio-domain" id="btnradio-domain-1" autocomplete="off" checked>
+                            <input type="radio" class="btn-check" name="btnradio-domain" id="btnradio-domain-1" data-bs-toggle="collapse" href="#collapseRecordsDNS" aria-controls="collapseRecordsDNS" autocomplete="off" checked>
                             <label class="btn btn-outline-info text-light" for="btnradio-domain-1"><i class="bi bi-database-add"></i> DNS записи</label>
                           
-                            <input type="radio" class="btn-check" name="btnradio-domain" id="btnradio-domain-2" autocomplete="off">
+                            <input type="radio" class="btn-check" name="btnradio-domain" id="btnradio-domain-2" data-bs-toggle="collapse" href="#collapseSSL" aria-controls="collapseSSL" autocomplete="off">
                             <label class="btn btn-outline-info text-light" for="btnradio-domain-2"><i class="bi bi-file-earmark-lock"></i> SSL сертификаты</label>
+
+                            <input type="radio" class="btn-check" name="btnradio-domain" id="btnradio-domain-3" data-bs-toggle="collapse" href="#collapseIPV6" aria-controls="collapseIPV6" autocomplete="off">
+                            <label class="btn btn-outline-info text-light" for="btnradio-domain-3"><i class="bi bi-6-circle"></i> IPv6</label>
                           </div>
     
+                          <div class="collapse" id="collapseRecordsDNS">
+                            Альтернативные источники для поиска: 
+                            <div class="card card-body">
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="dnsrecords-radio-options" type="radio" id="dnsrecords-checkbox-1" value="" autocomplete="off" checked>
+                                <label class="form-check-label" for="dnsrecords-checkbox-1">dnschecker.org</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="dnsrecords-radio-options" type="radio" id="dnsrecords-checkbox-2" value="" autocomplete="off">
+                                <label class="form-check-label" for="dnsrecords-checkbox-2">whatsmydns.net</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="dnsrecords-radio-options" type="radio" id="dnsrecords-checkbox-3" value="" autocomplete="off">
+                                <label class="form-check-label" for="dnsrecords-checkbox-3">mxtoolbox.com/</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="dnsrecords-radio-options" type="radio" id="dnsrecords-checkbox-4" value="" autocomplete="off">
+                                <label class="form-check-label" for="dnsrecords-checkbox-4">nslookup.io</label>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="collapse" id="collapseSSL">
+                            Альтернативные источники для поиска: 
+                            <div class="card card-body">
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="ssl-radio-options" type="radio" id="ssl-checkbox-1" value="" autocomplete="off" checked>
+                                <label class="form-check-label" for="ssl-checkbox-1">sslshopper.com</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="ssl-radio-options" type="radio" id="ssl-checkbox-2" value="" autocomplete="off">
+                                <label class="form-check-label" for="ssl-checkbox-2">ssllabs.com</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="ssl-radio-options" type="radio" id="ssl-checkbox-3" value="" autocomplete="off">
+                                <label class="form-check-label" for="ssl-checkbox-3">decoder.link</label>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="collapse" id="collapseIPV6">
+                            Альтернативные источники для поиска: 
+                            <div class="card card-body">
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="ipv6-radio-options" type="radio" id="ipv6-checkbox-1" value="" autocomplete="off" checked>
+                                <label class="form-check-label" for="ipv6-checkbox-1">ready.chair6.net</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="ipv6-radio-options" type="radio" id="ipv6-checkbox-2" value="" autocomplete="off">
+                                <label class="form-check-label" for="ipv6-checkbox-2">test-ipv6.run</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="ipv6-radio-options" type="radio" id="ipv6-checkbox-3" value="" autocomplete="off">
+                                <label class="form-check-label" for="ipv6-checkbox-3">internet.nl</label>
+                              </div>
+                            </div>
+                          </div>
+
                         </p>
                       </div>
                     </div>
@@ -1973,12 +2085,16 @@
     <script language="javascript">
       // Global RegEx patterns
       const ipv4Regex = /^\d{1,3}(\.\d{1,3}){3}$/;
+      const ipv6Regex = /^(?:(?:[0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}|(?:[0-9a-fA-F]{1,4}:){1,7}:|(?:[0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|(?:[0-9a-fA-F]{1,4}:){1,5}(?::[0-9a-fA-F]{1,4}){1,2}|(?:[0-9a-fA-F]{1,4}:){1,4}(?::[0-9a-fA-F]{1,4}){1,3}|(?:[0-9a-fA-F]{1,4}:){1,3}(?::[0-9a-fA-F]{1,4}){1,4}|(?:[0-9a-fA-F]{1,4}:){1,2}(?::[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:(?::[0-9a-fA-F]{1,4}){1,6}|:(?:(?::[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(?::[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(?:ffff(?::0{1,4})?:)?(?:(?:25[0-5]|(?:2[0-4]|1?[0-9])?[0-9])\.){3}(?:25[0-5]|(?:2[0-4]|1?[0-9])?[0-9])|(?:[0-9a-fA-F]{1,4}:){1,4}:(?:(?:25[0-5]|(?:2[0-4]|1?[0-9])?[0-9])\.){3}(?:25[0-5]|(?:2[0-4]|1?[0-9])?[0-9]))$/;
+      const localIpv6Regex = /^(?:(?:0{1,4}:){7}0{0,3}1|::1|fe[89ab][0-9a-f]:|f[cd][0-9a-f]{2}:)/i;
       const domainRegex = /^(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z]{2,}(?:\/[^\s]*)?$/i;
       const cgnatRegex = /^100\.(6[4-9]|[7-9][0-9]|1[0-1][0-9]|12[0-7])\.(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])\.(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])$/; //RFC 6598
       const privateIpRegex = /^(10\.|172\.(1[6-9]|2\d|3[0-1])\.|192\.168\.|127\.0\.0\.1)/;
       const multicastRegex = /^(22[4-9]|23\d)\.(?:\d{1,3}\.){2}\d{1,3}$/;
       const macRegex = /^(([0-9A-Fa-f]{2}[:]){5}|([0-9A-Fa-f]{2}[-]){5})([0-9A-Fa-f]{2})$/;
       const portRegex = /^(6553[0-5]|655[0-2]\d|65[0-4]\d{2}|6[0-4]\d{3}|[1-5]\d{4}|[1-9]\d{0,3}|0)$/;
+
+
 
       // MAC card
       document.getElementById('input-mac').addEventListener('input', (event) => {
@@ -2203,7 +2319,7 @@
         }
 
         if (event.target.value.length >= 7) {
-          if (ipv4Regex.test(event.target.value) || domainRegex.test(event.target.value)) {
+          if (ipv4Regex.test(event.target.value) || domainRegex.test(event.target.value) || ipv6Regex.test(event.target.value)) {
             document.getElementById("whois-status").innerHTML = `<i class="bi bi-check-lg text-success"></i> <strong class="text-secondary">${event.target.value}</strong> - нажмите кнопку "Проверить" чтобы продолжить`;
             document.getElementById("input-whois").classList.remove('is-invalid');
             document.getElementById("input-whois").classList.add('is-valid');
@@ -2220,6 +2336,15 @@
             }
             if (multicastRegex.test(event.target.value)) {
               document.getElementById("whois-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-danger"></i> IP <strong class="text-secondary">${event.target.value}</strong> используется для мультикаста либо многоадресной рассылки`;
+            }
+            if (ipv6Regex.test(event.target.value)) {
+              if (localIpv6Regex.test(event.target.value)) {
+                document.getElementById("whois-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-danger"></i> IPv6 <strong class="text-secondary">${event.target.value}</strong> находится в частном либо локальном диапазоне (link-local)`;
+                document.getElementById("input-whois").classList.remove('is-valid');
+                document.getElementById("input-whois").classList.add('is-invalid');
+                return;
+              }
+              document.getElementById("whois-status").innerHTML = `<i class="bi bi-check-lg text-success"></i> Valid IPv6: <strong class="text-secondary">${event.target.value}</strong> <a href="https://test-ipv6.com/" class="text-secondary" target="_blank">test-ipv6.com</a>`;
             }
           } else {
             document.getElementById("input-whois").classList.remove('is-valid');
@@ -2244,7 +2369,7 @@
       });
 
       document.getElementById('button-whois').addEventListener('click', () => {
-        const searchQuery = document.getElementById('input-whois').value.trim();
+        let searchQuery = document.getElementById('input-whois').value.trim();
         if (!searchQuery) {
           document.getElementById("whois-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> Вы не указали IP адрес либо домен для поиска.`;
           document.getElementById("input-whois").classList.remove('is-valid');
@@ -2252,7 +2377,7 @@
           return;
         }
 
-        if (ipv4Regex.test(searchQuery) || domainRegex.test(searchQuery)) {
+        if (ipv4Regex.test(searchQuery) || domainRegex.test(searchQuery) || ipv6Regex.test(searchQuery)) {
           document.getElementById("whois-status").innerHTML = `<i class="bi bi-check-lg text-success"></i> <strong class="text-secondary">${searchQuery}</strong> - нажмите кнопку "Проверить" чтобы продолжить`;
           if (cgnatRegex.test(searchQuery)) {
             document.getElementById("whois-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> IP <strong class="text-secondary">${searchQuery}</strong> находится за <b><a href="https://ru.wikipedia.org/wiki/CGNAT" target="_blank">CGNAT</a><b>`;
@@ -2268,6 +2393,17 @@
             document.getElementById("input-whois").classList.remove('is-valid');
             document.getElementById("input-whois").classList.add('is-invalid');
             return;
+          }
+          if (ipv6Regex.test(searchQuery)) {
+            if (localIpv6Regex.test(searchQuery)) {
+              document.getElementById("whois-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-danger"></i> IPv6 <strong class="text-secondary">${searchQuery}</strong> находится в частном либо локальном диапазоне (link-local)`;
+              document.getElementById("input-whois").classList.remove('is-valid');
+              document.getElementById("input-whois").classList.add('is-invalid');
+              return;
+            }
+            // Standard URL Encoding - text.replaceAll(":", "%3A");
+            searchQuery = encodeURIComponent(searchQuery);
+            document.getElementById("whois-status").innerHTML = `<i class="bi bi-check-lg text-success"></i> Valid IPv6: <strong class="text-secondary">${searchQuery}</strong> <a href="https://test-ipv6.com/" class="text-secondary" target="_blank">test-ipv6.com</a>`;
           }
         } else {
           document.getElementById("whois-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> Вы указали данные в неверном формате. Введите IP либо сайт`;
@@ -2287,6 +2423,12 @@
             window.open(`https://who.is/whois/${searchQuery}`, "_blank");
           }
           if (document.getElementById('whois-checkbox-4').checked) {
+            window.open(`https://whatsmydns.me/ip-whois-lookup?query=${searchQuery}`, "_blank");
+          }
+          if (document.getElementById('whois-checkbox-5').checked) {
+            window.open(`https://www.captaindns.com/en/tools/ip/whois-ip/${searchQuery}`, "_blank");
+          }
+          if (document.getElementById('whois-checkbox-6').checked) {
             window.open(`https://whois.hoster.by/?domain=${searchQuery}`, "_blank");
           }
         } else if (document.getElementById('btnradio-whois-2').checked) {
@@ -2669,11 +2811,40 @@
         }
 
         if (document.getElementById('btnradio-domain-1').checked) {
-          window.open(`https://dnschecker.org/all-dns-records-of-domain.php?query=${searchQuery}&rtype=ALL&dns=cloudflare`, "_blank");
+          if (document.getElementById('dnsrecords-checkbox-1').checked) {
+            window.open(`https://dnschecker.org/all-dns-records-of-domain.php?query=${searchQuery}&rtype=ALL&dns=cloudflare`, "_blank");
+          }
+          if (document.getElementById('dnsrecords-checkbox-2').checked) {
+            window.open(`https://www.whatsmydns.net/dns-lookup?query=${searchQuery}&server=google`, "_blank");
+          }
+          if (document.getElementById('dnsrecords-checkbox-3').checked) {
+            window.open(`https://mxtoolbox.com/SuperTool.aspx?action=a%3a${searchQuery}&run=toolpage`, "_blank");
+          }
+          if (document.getElementById('dnsrecords-checkbox-4').checked) {
+            window.open(`https://www.nslookup.io/domains/${searchQuery}/dns-records/`, "_blank");
+          }
+        } else if (document.getElementById('btnradio-domain-2').checked) {
+          if (document.getElementById('ssl-checkbox-1').checked) {
+            window.open(`https://www.sslshopper.com/ssl-checker.html#hostname=${searchQuery}`, "_blank");
+          }
+          if (document.getElementById('ssl-checkbox-2').checked) {
+            window.open(`https://www.ssllabs.com/ssltest/analyze.html?d=${searchQuery}&latest`, "_blank");
+          }
+          if (document.getElementById('ssl-checkbox-3').checked) {
+            window.open(`https://decoder.link/sslchecker/${searchQuery}/443`, "_blank");
+          }
+        } else if (document.getElementById('btnradio-domain-3').checked) {
+          if (document.getElementById('ipv6-checkbox-1').checked) {
+            window.open(`https://ready.chair6.net/?url=${searchQuery}`, "_blank");
+          }
+          if (document.getElementById('ipv6-checkbox-2').checked) {
+            window.open(`https://test-ipv6.run/domain-checker?domain=${searchQuery}`, "_blank");
+          }
+          if (document.getElementById('ipv6-checkbox-3').checked) {
+            window.open(`https://internet.nl/site/${searchQuery}/`, "_blank");
+          }
         }
-        if (document.getElementById('btnradio-domain-2').checked) {
-          window.open(`https://www.sslshopper.com/ssl-checker.html#hostname=${searchQuery}`, "_blank");
-        }
+
       });
 
       document.getElementById('btnradio-domain-1').addEventListener('change', (event) => {
@@ -2689,6 +2860,15 @@
         if (event.target.checked) {
           if (document.getElementById('domain-label')) {
             document.getElementById("domain-label").innerHTML = `Проверка SSL-сертификата и TLS`;
+            document.getElementById("domain-status").innerHTML = ``;
+          }
+        }
+      });
+
+      document.getElementById('btnradio-domain-3').addEventListener('change', (event) => {
+        if (event.target.checked) {
+          if (document.getElementById('domain-label')) {
+            document.getElementById("domain-label").innerHTML = `Проверить поддерживает ли домен доступ по протоколу IPv6`;
             document.getElementById("domain-status").innerHTML = ``;
           }
         }
