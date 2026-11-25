@@ -251,6 +251,27 @@
           <!--begin::Container-->
           <div class="container-fluid">
             <!-- Modal -->
+
+            <div class="modal fade" id="historyModal" tabindex="-1" aria-labelledby="historyModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="historyModalLabel">История поиска</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <!-- <h5>История поиска</h5> -->
+                    <!-- <p class="small">
+                      История последних запросов (не сохраняется если обновить страницу вкладку)
+                    </p> -->
+                    <ul id="historyList" class="list-group">
+                      <li class="list-group-item list-group-item-action">194.158.196.245</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div class="modal fade" id="dnsModal" tabindex="-1" aria-labelledby="dnsModalLabel" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
@@ -434,6 +455,16 @@
                 data-bs-toggle="modal" data-bs-target="#dnsModal" 
                 data-bs-title="Проверочные данные IP/DNS">
                   <i class="bi bi-globe"></i> IP/DNS
+                </a>
+              </div>
+              <div class="p-2 dropdown">
+                <!-- <button class="btn btn-outline-warning dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-clock-history"></i> История
+                </button> -->
+                <a class="btn btn-outline-warning" id="btn-history" title="История поиска" target="_blank"
+                data-bs-toggle="modal" data-bs-target="#historyModal" 
+                data-bs-title="История поиска">
+                  <i class="bi bi-clock-history"></i> История
                 </a>
               </div>
               <div class="p-2">
@@ -2161,8 +2192,8 @@
       const macRegex = /^(([0-9A-Fa-f]{2}[:]){5}|([0-9A-Fa-f]{2}[-]){5})([0-9A-Fa-f]{2})$/;
       const portRegex = /^(6553[0-5]|655[0-2]\d|65[0-4]\d{2}|6[0-4]\d{3}|[1-5]\d{4}|[1-9]\d{0,3}|0)$/;
 
-
-
+      let historyList = [];
+      const historyItems = 5;
       // MAC card
       document.getElementById('input-mac').addEventListener('input', (event) => {
         // Remove spaces
@@ -2190,28 +2221,28 @@
         }
 
         if (macRegex.test(event.target.value)) {
-          // document.getElementById('button-mac').focus();
-          const Photonspeak = /^\b3C:46:45\b/i;
-          const ZXG412D = /^\bE8:CC:8C\b/i;
-          const Huawei8245 = /^\b00:18:82\b/i;
-          
+          document.getElementById("input-mac").classList.remove('is-invalid');
+          document.getElementById("input-mac").classList.add('is-valid');
+
+          // document.getElementById('button-mac').focus();;
+
           // clean status if correct format
           document.getElementById("mac-status").innerHTML = `Вводить MAC можно в различных форматах например DE:AD:BE:EF:12:34 или dead.beef.1234`;
 
-          // Find OUI for BTK equip
-          if (Photonspeak.test(event.target.value)) {
+          // Regexp find Photonspeak OUI by patterns
+          const PhotonspeakOUI = [
+            /^\bF8:C4:F3\b/i, /^\b3C:46:45\b/i
+          ];
+          if (PhotonspeakOUI.some((regex) => regex.test(event.target.value))) {
             document.getElementById("mac-text").innerHTML = `<i class="bi bi-check-lg text-success"></i> Совпадение - Photonspeak (MA670)`;
-          }
-          if (ZXG412D.test(event.target.value)) {
-            document.getElementById("mac-text").innerHTML = `<i class="bi bi-check-lg text-success"></i> Совпадение - Промсвязь (MT-PON-AT-4 ПЮРК.465614.006-17 ZXG412D)`;
-          }
-          if (Huawei8245.test(event.target.value)) {
-            document.getElementById("mac-text").innerHTML = `<i class="bi bi-check-lg text-success"></i> Совпадение - HUAWEI HG8245 (Optical Network Terminal)`;
           }
 
           // Regexp find SDMC OUI by patterns
           const sdmcOUI = [
-            /^\b50:DE:19\b/i, /^\b5C:7B:5C\b/i, /^\b2C:EC:F7\b/i, /^\b98:C9:BE\b/i, /^\bB0:B3:69\b/i, /^\bB4:9D:FD\b/i, /^\bB4:E2:65\b/i, /^\bFC:D5:D9\b/i
+            /^\b2C:EC:F7\b/i, /^\b50:DE:19\b/i, /^\b5C:7B:5C\b/i, /^\b98:C9:BE\b/i,
+            /^\bB0:B3:69\b/i, /^\bB4:9D:FD\b/i, /^\bB4:E2:65\b/i, /^\bFC:D5:D9\b/i,
+            // new block (Shenzhen SDMC Technology CP,.LTD)
+            /^\b04:5F:A6\b/i, /^\b78:AF:B8\b/i, /^\b84:C3:00\b/i, /^\bE4:FA:E4\b/i
           ];
           if (sdmcOUI.some((regex) => regex.test(event.target.value))) {
             document.getElementById("mac-text").innerHTML = `<i class="bi bi-check-lg text-success"></i> Совпадение - SDMC (DV9135)`;
@@ -2219,45 +2250,132 @@
 
           // Regexp find Transservice OUI by patterns
           const TransserviceOUI = [
-            /^\b58:F8:5D\b/i, /^\b58:F8:5C\b/i
+            /^\b58:F8:5D\b/i, /^\b58:F8:5C\b/i, /^\b48:45:CF\b/i
           ];
           if (TransserviceOUI.some((regex) => regex.test(event.target.value))) {
             document.getElementById("mac-text").innerHTML = `<i class="bi bi-check-lg text-success"></i> Совпадение - Transservice (TS-4224)`;
           }
 
           // Regexp find ZTE STB OUI by patterns
-          const ZTEstbB700OUI = [
-            /^\bA4:40:27\b/i, /^\bE8:AC:AD\b/i, /^\b28:8C:B8\b/i, /^\b04:95:73\b/i
+          const ZTEstbB700oui = [
+            // ZXV10 B600 / B700
+            /^\b00:15:EB\b/i, /^\b00:19:C6\b/i, /^\b00:1E:73\b/i, /^\b00:22:93\b/i,
+            /^\b00:25:12\b/i, /^\b00:26:ED\b/i, /^\b08:18:1A\b/i, /^\b14:60:80\b/i,
+            /^\b2C:26:C5\b/i, /^\b34:4B:50\b/i, /^\b38:46:08\b/i, /^\b48:28:2F\b/i,
+            /^\b54:22:F8\b/i, /^\b68:1A:B2\b/i, /^\b70:9F:2D\b/i, /^\b78:31:2B\b/i,
+            /^\b84:74:2A\b/i, /^\b9C:D2:4B\b/i, /^\bC8:64:C7\b/i, /^\bD0:15:4A\b/i,
+            /^\bA4:40:27\b/i, /^\bE8:AC:AD\b/i, /^\b28:8C:B8\b/i, /^\b04:95:73\b/i,
+            /^\bD4:37:D7\b/i, /^\bE0:C3:F3\b/i, /^\bF4:6D:E2\b/i,
           ];
-          if (ZTEstbB700OUI.some((regex) => regex.test(event.target.value))) {
-            document.getElementById("mac-text").innerHTML = `<i class="bi bi-check-lg text-success"></i> Совпадение - ZTE STB ZXV10 B700`;
+
+          const ZTEstbB800oui = [
+            // ZXV10 B800 / B860  (Android TV / UHD STB)
+            /^\b20:89:84\b/i, /^\b28:5F:DB\b/i, /^\b30:CC:21\b/i, /^\b30:F3:1D\b/i,
+            /^\b4C:09:B4\b/i, /^\b4C:16:F1\b/i, /^\b60:14:66\b/i, /^\b64:13:6C\b/i,
+            /^\b74:4A:A4\b/i, /^\b7C:03:4C\b/i, /^\b8C:79:67\b/i, /^\b90:D8:F3\b/i,
+            /^\b94:A7:BC\b/i, /^\b98:6C:F5\b/i, /^\bA4:7E:39\b/i, /^\bB0:75:D5\b/i,
+            /^\bC4:A3:66\b/i, /^\bCC:7B:35\b/i, /^\bD8:74:95\b/i, /^\bE4:77:23\b/i,
+            /^\bEC:1D:7F\b/i, /^\bF0:84:C9\b/i, /^\bF8:DF:A8\b/i
+          ];
+          
+          if (ZTEstbB700oui.some((regex) => regex.test(event.target.value))) {
+            document.getElementById("mac-text").innerHTML = `<i class="bi bi-check-lg text-success"></i> Совпадение - ZTE STB ZXV10 B600 / B700`;
+          }
+
+          if (ZTEstbB800oui.some((regex) => regex.test(event.target.value))) {
+            document.getElementById("mac-text").innerHTML = `<i class="bi bi-check-lg text-success"></i> Совпадение - ZTE STB ZXV10 B800`;
           }
 
           // Regexp find ZTE OUI by patterns
-          const ZTEoui = [
-            /^\b28:DB:02\b/i, /^\b30:1F:48\b/i, /^\b48:13:18\b/i, /^\b00:15:EB\b/i, /^\b00:19:C6\b/i,
-            /^\b00:1E:73\b/i, /^\b00:22:93\b/i, /^\b38:46:08\b/i, /^\b84:74:2A\b/i, /^\b34:2D:0F\b/i
+          const zteOntOUI = [
+           // Old ont (ZXHN F609 / F660)
+           /^\b00:1E:73\b/i, /^\b00:22:93\b/i, /^\b00:25:12\b/i, /^\b04:4F:4C\b/i,
+           /^\b08:18:1A\b/i, /^\b10:C6:FC\b/i, /^\b14:60:80\b/i, /^\b18:68:6A\b/i,
+           /^\b24:7F:3C\b/i, /^\b2C:26:C5\b/i, /^\b2C:95:7F\b/i, /^\b34:37:59\b/i,
+           /^\b34:4B:50\b/i, /^\b34:DE:34\b/i, /^\b34:E0:CF\b/i, /^\b38:46:08\b/i,
+           /^\b3C:DA:2A\b/i, /^\b40:7D:0F\b/i, /^\b44:6A:2E\b/i, /^\b44:F4:36\b/i,
+           /^\b48:28:2F\b/i, /^\b50:0B:91\b/i, /^\b54:22:F8\b/i, /^\b54:BE:53\b/i,
+           /^\b58:52:8A\b/i, /^\b5C:B5:24\b/i, /^\b68:1A:B2\b/i, /^\b68:89:C1\b/i,
+           /^\b6C:8B:2F\b/i, /^\b70:9F:2D\b/i, /^\b74:B5:7E\b/i, /^\b78:31:2B\b/i,
+           /^\b78:96:82\b/i, /^\b7C:39:53\b/i, /^\b80:18:A7\b/i, /^\b84:74:2A\b/i,
+           /^\b84:A4:66\b/i, /^\b88:5D:FB\b/i, /^\b8C:E0:81\b/i, /^\b90:1D:27\b/i,
+           /^\b98:13:33\b/i, /^\b98:F4:28\b/i, /^\b9C:63:ED\b/i, /^\b9C:D2:4B\b/i,
+           /^\bA0:EC:80\b/i, /^\bA8:A6:68\b/i, /^\bAC:64:62\b/i, /^\bB4:98:42\b/i,
+           /^\bB4:B3:62\b/i, /^\bB8:05:AB\b/i, /^\bBC:75:74\b/i, /^\bC0:A3:64\b/i,
+           /^\bC8:64:C7\b/i, /^\bC8:7B:5B\b/i, /^\bCC:1A:FA\b/i, /^\bD0:15:4A\b/i,
+           /^\bD0:5B:A8\b/i, /^\bD4:37:D7\b/i, /^\bD4:76:EA\b/i, /^\bD8:55:A3\b/i,
+           /^\bDC:02:8E\b/i, /^\bE0:C3:F3\b/i, /^\bE8:B2:AC\b/i, /^\bEC:8A:4C\b/i,
+           /^\bF4:6D:E2\b/i, /^\bF4:B8:A7\b/i, /^\bFC:C8:97\b/i
           ];
-          if (ZTEoui.some((regex) => regex.test(event.target.value))) {
+
+          const zteDualBandOntOUI = [
+          // Dual-Band ONT (ZXHN F670L)
+           /^\b04:95:E6\b/i, /^\b08:3F:BC\b/i, /^\b0C:12:62\b/i, /^\b20:89:84\b/i,
+           /^\b28:5F:DB\b/i, /^\b30:CC:21\b/i, /^\b30:F3:1D\b/i, /^\b4C:09:B4\b/i,
+           /^\b4C:16:F1\b/i, /^\b4C:AC:0A\b/i, /^\b60:14:66\b/i, /^\b60:73:BC\b/i,
+           /^\b64:13:6C\b/i, /^\b74:4A:A4\b/i, /^\b7C:03:4C\b/i, /^\b8C:79:67\b/i,
+           /^\b90:D8:F3\b/i, /^\b94:A7:BC\b/i, /^\b98:6C:F5\b/i, /^\bA4:7E:39\b/i,
+           /^\bB0:75:D5\b/i, /^\bC4:A3:66\b/i, /^\bCC:7B:35\b/i, /^\bD8:74:95\b/i,
+           /^\bE4:77:23\b/i, /^\bEC:1D:7F\b/i, /^\bF0:84:C9\b/i, /^\bF8:DF:A8\b/i
+          ];
+
+          if (zteOntOUI.some((regex) => regex.test(event.target.value))) {
             document.getElementById("mac-text").innerHTML = `<i class="bi bi-check-lg text-success"></i> Совпадение - ZTE (Optical Network Terminal)`;
+          }
+  
+          if (zteDualBandOntOUI.some((regex) => regex.test(event.target.value))) {
+            document.getElementById("mac-text").innerHTML = `<i class="bi bi-check-lg text-success"></i> Совпадение - Dual-Band ZTE (Optical Network Terminal)`;
           }
 
           // Regexp find HUAWEI OUI by patterns
           const HUAWEIoui = [
-            /^\b00:E0:FC\b/i, /^\b00:46:4B\b/i, /^\b00:25:68\b/i, /^\b00:25:9E\b/i, /^\b04:F9:38\b/i,
-            /^\b08:19:A6\b/i, /^\b10:47:80\b/i, /^\b14:B9:68\b/i, /^\b18:C0:07\b/i, /^\b24:1A:E6\b/i,
-            /^\b04:33:89\b/i, /^\bE0:28:61\b/i
+            /^\b00:18:82\b/i, /^\b00:1E:10\b/i, /^\b00:25:68\b/i, /^\b00:25:9E\b/i,
+            /^\b00:46:4B\b/i, /^\b00:66:4B\b/i, /^\b00:E0:FC\b/i, /^\b04:02:1F\b/i,
+            /^\b04:25:C5\b/i, /^\b04:33:89\b/i, /^\b04:B0:E7\b/i, /^\b04:C0:6F\b/i,
+            /^\b04:F9:38\b/i, /^\b08:19:A6\b/i, /^\b08:63:61\b/i, /^\b08:7A:4C\b/i,
+            /^\b08:E8:4F\b/i, /^\b0C:37:DC\b/i, /^\b0C:45:BA\b/i, /^\b0C:96:BF\b/i,
+            /^\b10:1B:54\b/i, /^\b10:44:00\b/i, /^\b10:47:80\b/i, /^\b10:C6:1F\b/i,
+            /^\b14:A0:F8\b/i, /^\b14:B9:68\b/i, /^\b18:C5:8A\b/i, /^\b1C:1D:67\b/i,
+            /^\b1C:8E:5C\b/i, /^\b20:08:ED\b/i, /^\b20:0B:C7\b/i, /^\b20:2B:C1\b/i,
+            /^\b20:F3:A3\b/i, /^\b24:09:95\b/i, /^\b24:1F:A0\b/i, /^\b24:69:A5\b/i,
+            /^\b24:DB:AC\b/i, /^\b28:31:52\b/i, /^\b28:3C:E4\b/i, /^\b28:6E:D4\b/i,
+            /^\b2C:AB:00\b/i, /^\b30:87:30\b/i, /^\b30:D1:7E\b/i, /^\b34:00:A3\b/i,
+            /^\b34:6B:D3\b/i, /^\b34:CD:BE\b/i, /^\b38:F8:89\b/i, /^\b3C:DF:BD\b/i,
+            /^\b40:4D:8E\b/i, /^\b40:CB:A8\b/i, /^\b44:55:B1\b/i, /^\b48:00:31\b/i,
+            /^\b48:46:FB\b/i, /^\b48:62:76\b/i, /^\b48:DB:50\b/i, /^\b4C:1F:CC\b/i,
+            /^\b4C:54:99\b/i, /^\b4C:8B:EF\b/i, /^\b4C:B1:6C\b/i, /^\b50:01:6B\b/i,
+            /^\b50:9F:27\b/i, /^\b54:25:EA\b/i, /^\b54:39:DF\b/i, /^\b54:89:98\b/i,
+            /^\b54:A5:1B\b/i, /^\b58:1F:28\b/i, /^\b58:2A:F7\b/i, /^\b5C:4C:A9\b/i,
+            /^\b5C:7D:5E\b/i, /^\b5C:B3:95\b/i, /^\b5C:F9:6A\b/i, /^\b60:DE:44\b/i,
+            /^\b60:E7:01\b/i, /^\b64:16:F0\b/i, /^\b64:3E:8C\b/i, /^\b64:A6:51\b/i,
+            /^\b68:8F:84\b/i, /^\b68:A0:F6\b/i, /^\b6C:8D:C1\b/i, /^\b70:54:F5\b/i,
+            /^\b70:72:3C\b/i, /^\b70:7B:E8\b/i, /^\b70:A8:E3\b/i, /^\b74:88:2A\b/i,
+            /^\b74:A0:63\b/i, /^\b78:1D:BA\b/i, /^\b78:6A:89\b/i, /^\b78:D7:52\b/i,
+            /^\b7C:60:97\b/i, /^\b7C:A2:3E\b/i, /^\b80:13:82\b/i, /^\b80:38:BC\b/i,
+            /^\b80:71:7A\b/i, /^\b80:B6:86\b/i, /^\b80:FB:06\b/i, /^\b84:A8:E4\b/i,
+            /^\b84:DB:AC\b/i, /^\b88:28:B3\b/i, /^\b88:53:D4\b/i, /^\b88:86:03\b/i,
+            /^\b88:CE:FA\b/i, /^\b88:E3:AB\b/i, /^\b8C:34:FD\b/i, /^\b90:17:AC\b/i,
+            /^\b90:4E:2B\b/i, /^\b90:67:1C\b/i, /^\b94:04:9C\b/i, /^\b94:77:2B\b/i,
+            /^\b94:DB:DA\b/i, /^\b9C:28:EF\b/i, /^\b9C:37:F4\b/i, /^\b9C:C1:72\b/i,
+            /^\bA0:08:6F\b/i, /^\bA4:99:47\b/i, /^\bA4:BA:76\b/i, /^\bA4:C6:4F\b/i,
+            /^\bA8:C8:3A\b/i, /^\bAC:4E:91\b/i, /^\bAC:85:3D\b/i, /^\bAC:E2:15\b/i,
+            /^\bB0:5B:67\b/i, /^\bB4:15:13\b/i, /^\bB4:30:52\b/i, /^\bB8:BC:1B\b/i,
+            /^\bBC:25:E0\b/i, /^\bBC:76:70\b/i, /^\bC0:70:09\b/i, /^\bC4:05:28\b/i,
+            /^\bC4:07:2F\b/i, /^\bC4:F0:81\b/i, /^\bC8:14:79\b/i, /^\bC8:51:95\b/i,
+            /^\bC8:D1:5E\b/i, /^\bCC:53:B5\b/i, /^\bCC:A2:23\b/i, /^\bD0:2D:B3\b/i,
+            /^\bD0:7A:B5\b/i, /^\bD0:D0:4B\b/i, /^\bD4:40:F0\b/i, /^\bD4:6A:A8\b/i,
+            /^\bD4:6E:5C\b/i, /^\bD4:94:E8\b/i, /^\bD4:B1:10\b/i, /^\bD8:49:0B\b/i,
+            /^\bDC:D2:FC\b/i, /^\bE0:19:1D\b/i, /^\bE0:24:7F\b/i, /^\bE0:36:76\b/i,
+            /^\bE0:97:96\b/i, /^\bE4:35:C8\b/i, /^\bE4:68:A3\b/i, /^\bE4:C2:D1\b/i,
+            /^\bE8:08:8B\b/i, /^\bE8:BD:D1\b/i, /^\bE8:CC:8C\b/i, /^\bE8:CD:2D\b/i,
+            /^\bEC:23:3D\b/i, /^\bEC:38:8F\b/i, /^\bEC:CB:30\b/i, /^\bF0:2F:D8\b/i,
+            /^\bF4:55:9C\b/i, /^\bF4:8E:92\b/i, /^\bF4:9F:F3\b/i, /^\bF4:C7:14\b/i,
+            /^\bF4:DC:F9\b/i, /^\bF4:E3:FB\b/i, /^\bF8:01:13\b/i, /^\bF8:3D:FF\b/i,
+            /^\bF8:4A:BF\b/i, /^\bF8:98:B9\b/i, /^\bF8:E8:11\b/i, /^\bFC:48:EF\b/i
           ];
+          
           if (HUAWEIoui.some((regex) => regex.test(event.target.value))) {
             document.getElementById("mac-text").innerHTML = `<i class="bi bi-check-lg text-success"></i> Совпадение - HUAWEI (Optical Network Terminal)`;
-          }
-
-          // Regexp find Smart home gateway HUAWEI
-          const HUAWEIsmarthomeOUI = [
-            /^\b0C:45:BA\b/i, /^\bD0:EF:C1\b/i
-          ];
-          if (HUAWEIsmarthomeOUI.some((regex) => regex.test(event.target.value))) {
-            document.getElementById("mac-text").innerHTML = `<i class="bi bi-check-lg text-success"></i> Совпадение - Контроллер абонентский КА-001`;
           }
 
         } else {
@@ -2298,6 +2416,16 @@
           document.getElementById("input-mac").classList.add('is-invalid');
           return;
         }
+
+        // Update history list
+        if (historyList) {
+          if (historyList.length >= historyItems) {
+            historyList.shift();
+          }
+          historyList.push(searchQuery);
+          document.getElementById('historyList').innerHTML = historyList.map(item => `<li class="list-group-item list-group-item-action">${item}</li>`).join('');
+        }
+
         if (document.getElementById('btnradio-mac-1').checked) {
           if (document.getElementById('mac-checkbox-1').checked) {
             window.open(`https://macvendors.com/?search=${searchQuery}`, "_blank");
@@ -2445,6 +2573,15 @@
         }
 
         if (ipv4Regex.test(searchQuery) || domainRegex.test(searchQuery) || ipv6Regex.test(searchQuery)) {
+          // Update history list
+          if (historyList) {
+            if (historyList.length >= historyItems) {
+              historyList.shift();
+            }
+            historyList.push(searchQuery);
+            document.getElementById('historyList').innerHTML = historyList.map(item => `<li class="list-group-item list-group-item-action">${item}</li>`).join('');
+          }
+
           document.getElementById("whois-status").innerHTML = `<i class="bi bi-check-lg text-success"></i> <strong class="text-secondary">${searchQuery}</strong> - нажмите кнопку "Проверить" чтобы продолжить`;
           if (cgnatRegex.test(searchQuery)) {
             document.getElementById("whois-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> IP <strong class="text-secondary">${searchQuery}</strong> находится за <b><a href="https://ru.wikipedia.org/wiki/CGNAT" target="_blank">CGNAT</a><b>`;
@@ -2605,6 +2742,16 @@
           document.getElementById("input-blocklist").classList.remove('is-invalid');
           document.getElementById("input-blocklist").classList.add('is-valid');
           document.getElementById("blocklist-status").innerHTML = `<i class="bi bi-check-lg text-success"></i> <strong class="text-secondary">${searchQuery}</strong> - нажмите кнопку "Проверить" чтобы продолжить`;
+
+          // Update history list
+          if (historyList) {
+            if (historyList.length >= historyItems) {
+              historyList.shift();
+            }
+            historyList.push(searchQuery);
+            document.getElementById('historyList').innerHTML = historyList.map(item => `<li class="list-group-item list-group-item-action">${item}</li>`).join('');
+          }
+
           if (cgnatRegex.test(searchQuery)) {
             document.getElementById("blocklist-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> IP <strong class="text-secondary">${searchQuery}</strong> находится за <b><a href="https://ru.wikipedia.org/wiki/CGNAT" target="_blank">CGNAT</a><b>`;
           }
@@ -2729,6 +2876,16 @@
           document.getElementById("input-ping").classList.remove('is-invalid');
           document.getElementById("input-ping").classList.add('is-valid');
           document.getElementById("ping-status").innerHTML = `<i class="bi bi-check-lg text-success"></i> <strong class="text-secondary">${searchQuery}</strong> - нажмите кнопку "Проверить" чтобы продолжить`;
+
+          // Update history list
+          if (historyList) {
+            if (historyList.length >= historyItems) {
+              historyList.shift();
+            }
+            historyList.push(searchQuery);
+            document.getElementById('historyList').innerHTML = historyList.map(item => `<li class="list-group-item list-group-item-action">${item}</li>`).join('');
+          }
+
           if (cgnatRegex.test(searchQuery)) {
             document.getElementById("ping-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> IP <strong class="text-secondary">${searchQuery}</strong> находится за <b><a href="https://ru.wikipedia.org/wiki/CGNAT" target="_blank">CGNAT</a><b>`;
           }
@@ -2870,6 +3027,15 @@
           document.getElementById("input-domain").classList.remove('is-invalid');
           document.getElementById("input-domain").classList.add('is-valid');
           document.getElementById("domain-status").innerHTML = `<i class="bi bi-check-lg text-success"></i> <strong class="text-secondary">${searchQuery}</strong> - нажмите кнопку "Проверить" чтобы продолжить`;
+
+          // Update history list
+          if (historyList) {
+            if (historyList.length >= historyItems) {
+              historyList.shift();
+            }
+            historyList.push(searchQuery);
+            document.getElementById('historyList').innerHTML = historyList.map(item => `<li class="list-group-item list-group-item-action">${item}</li>`).join('');
+          }
         } else {
           document.getElementById("input-domain").classList.remove('is-valid');
           document.getElementById("input-domain").classList.add('is-invalid');
@@ -3075,6 +3241,16 @@
           document.getElementById("input-portcheck").classList.remove('is-invalid');
           document.getElementById("input-portcheck").classList.add('is-valid');
           document.getElementById("portcheck-status").innerHTML = `<i class="bi bi-check-lg text-success"></i> <strong class="text-secondary">${searchQuery}</strong> - нажмите кнопку "Проверить" чтобы продолжить`;
+
+          // Update history list
+          if (historyList) {
+            if (historyList.length >= historyItems) {
+              historyList.shift();
+            }
+            historyList.push(searchQuery);
+            document.getElementById('historyList').innerHTML = historyList.map(item => `<li class="list-group-item list-group-item-action">${item}</li>`).join('');
+          }
+
           if (cgnatRegex.test(searchQuery)) {
             document.getElementById("portcheck-status").innerHTML = `<i class="bi bi-exclamation-triangle-fill text-warning"></i> IP <strong class="text-secondary">${searchQuery}</strong> находится за <b><a href="https://ru.wikipedia.org/wiki/CGNAT" target="_blank">CGNAT</a><b>`;
           }
@@ -3144,7 +3320,26 @@
       //   })
       //   bsCollapseDNS.show();
       // });
-       
+      
+      // History list, copy item on click list-item
+      document.getElementById('historyList').addEventListener('click', (event) => {
+        const item = event.target.closest('.list-group-item');
+        if (item.dataset.copying) return;
+        var itemText = item.innerText.trim();
+  
+        navigator.clipboard.writeText(itemText).then(function () {
+          item.dataset.copying = 'true';
+          item.innerHTML = '<i class="bi bi-check text-success"></i> Скопировано ' + itemText;
+          item.classList.add('list-group-item-success');
+  
+          setTimeout(function () {
+            item.innerHTML = itemText;
+            item.classList.remove('list-group-item-success');
+            delete item.dataset.copying;
+          }, 1000);
+        });
+      });
+
       // Hide all bootstrap collapse function
       function hideAllCollapse() {
         const collapseElements = document.querySelectorAll('.collapse.show');
