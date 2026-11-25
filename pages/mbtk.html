@@ -52,6 +52,10 @@
       .category {
         font-weight: bold;
         font-size: large;
+        font-size: 1.2rem; 
+        -webkit-user-select: none; 
+        -ms-user-select: none;     
+        user-select: none;    
       }
       .answer {
         font-style: normal;
@@ -64,7 +68,10 @@
         font-weight: bold;
         /* color: #6e6e6e; */
         letter-spacing: -0.5px;
-        font-size: 1.1rem; 
+        font-size: 1.1rem;
+        -webkit-user-select: none; 
+        -ms-user-select: none;     
+        user-select: none;         
       }
       .article-quote {
         letter-spacing: -0.5px;
@@ -151,23 +158,23 @@
                     <table class="table table-striped-columns table-bordered">
                       <tbody>
                         <tr>
-                          <td class="h6"><strong class="text-primary">15</strong><span class="text-secondary">XXXXXXXXXX</span></td>
+                          <td><strong class="text-primary fs-5">15</strong><span class="text-secondary">XXXXXXXXXX</span></td>
                           <td>Гродненская</td>
                         </tr>
                         <tr>
-                          <td class="h6"><strong class="text-primary">16</strong><span class="text-secondary">XXXXXXXXXX</span></td>
+                          <td><strong class="text-primary fs-5">16</strong><span class="text-secondary">XXXXXXXXXX</span></td>
                           <td>Брестская</td>  
                         </tr>
                         <tr>
-                          <td class="h6"><strong class="text-primary">21</strong><span class="text-secondary">XXXXXXXXXX</span></td>
+                          <td><strong class="text-primary fs-5">21</strong><span class="text-secondary">XXXXXXXXXX</span></td>
                           <td>Витебская</td>
                         </tr>
                         <tr>
-                          <td class="h6"><strong class="text-primary">22</strong><span class="text-secondary">XXXXXXXXXX</span></td>
+                          <td><strong class="text-primary fs-5">22</strong><span class="text-secondary">XXXXXXXXXX</span></td>
                           <td>Могилевская</td>  
                         </tr>
                         <tr>
-                          <td class="h6"><strong class="text-primary">23</strong><span class="text-secondary">XXXXXXXXXX</span></td>
+                          <td><strong class="text-primary fs-5">23</strong><span class="text-secondary">XXXXXXXXXX</span></td>
                           <td>Гомельская</td>  
                         </tr>
                       </tbody>
@@ -392,7 +399,7 @@
 
               <div class="col-sm-8">
                 <div class="mb-0 text-secondary fs-3"><i class="nav-icon bi bi-person-badge"></i> MBTK </div>
-                <p>Последнее обновление шаблонов: <strong class="text-secondary">21/11/2026</strong> содержит ответов: <span id="totalQuestions"></span></p>
+                <p>Последнее обновление шаблонов: <strong class="text-secondary">25/11/2026</strong> содержит ответов: <span id="totalQuestions"></span></p>
               </div>
               <div class="col-sm-4">
                 <ol class="breadcrumb float-sm-end">
@@ -438,7 +445,7 @@
                       <input type="checkbox" class="form-check-input btn-check" name="btn-check-hideblocks" id="btn-toggle-hideblocks" autocomplete="off" checked>
                       <label class="btn btn-outline-primary" for="btn-toggle-hideblocks" title="Скрывать блоки таблицы при поиске"><i class="bi bi-file-earmark-excel" aria-hidden="true"></i></label>
 
-                      <button class="btn btn-outline-secondary bg-body" type="button" id="button-clean-search" title="Очистить поле"><i class="bi bi-eraser"></i></button>
+                      <button class="btn btn-outline-secondary bg-body" type="button" id="button-clean-search" title="Очистить поле"><i class="bi bi-backspace"></i></button>
 
                       <input
                         type="search"
@@ -583,7 +590,7 @@
                     <tr>
                       <td class="category">Перенаправление</td>
                       <td class="answer">
-                        <strong class="question">Перенаправление в офис продаж:</strong>
+                        <strong class="question">Перенаправление в <b style="color:blueviolet">офис продаж</b></strong>
                         <ul>
                           Здравствуйте. Перенаправим вашу заявку в <a href="https://beltelecom.by/feedback/services-point">офис продаж</a>, с Вами в рабочее время свяжется специалист и согласует все вопросы. Напишите, пожалуйста, телефон для связи.
                         </ul>
@@ -595,7 +602,7 @@
                         <ul>
                           Перенаправили ваше обращение в соответствующее подразделение, с Вами свяжется специалист в рабочее время и согласует все вопросы.
                         </ul>
-                        <strong class="subtitle text-muted">Сроки обработки заявок:</strong>
+                        <strong class="question text-muted">Сроки обработки заявок</strong>
                         <ul class="text-muted">
                           К сожалению, точное время сообщить не представляется возможным, так как оно зависит от количества заявок находящихся на службе, а также времени, необходимого для проведения предварительных проверок и принятия решения по каждому обращению.
                         </ul>
@@ -819,11 +826,11 @@
                       <tr>
                         <td class="category">Уточнение</td>
                         <td class="answer">
-                          <strong class="question">Уточнение данных <i class="bi bi-person-badge"></i></strong>
+                          <strong class="question">Уточнение данных <i class="bi bi-geo-alt-fill" style="color:brown"></i></strong>
                           <ul>
                             Здравствуйте. Подскажите, пожалуйста, номер договора или городского телефона (с кодом населённого пункта) или ФИО с полным адресом предоставления услуги?
                           </ul>
-                          <strong class="question">Уточнение контактного <i class="bi bi-telephone"></i></strong>
+                          <strong class="question">Уточнение контактного <i class="bi bi-telephone-plus-fill"></i></strong>
                           <ul>
                             Напишите, пожалуйста, контактный номер телефона, с Вами свяжется наш сотрудник для решения данного вопроса.
                           </ul>
@@ -984,6 +991,13 @@
                     <tr>
                       <td class="category">Замена оборудования</td>
                       <td class="answer">
+                        <strong class="question">Тестирование / замена оборудования в ОП либо мастером</strong>
+                        <ul>
+                          Здравствуйте. Для замены оборудования выданный ранее комплект не должен иметь видимых повреждений. 
+                          Оборудование можно заменить через офис продаж при обращении владельца с паспортом и комплектом оборудования, либо можем согласовать выезд мастера для замены имеющегося у Вас оборудования. 
+                          В случае выезда мастера, на момент прихода мастера дома необходимо быть владельцу договора с паспортом. Мастера назначаем на будние дни, сегодня на завтра или на последующие дни. 
+                          Выезд мастера возможен завтра с 13 до 17 или с 17 до 20 часов, далее в будние дни с 9 до 13, с 13 до 17 или с 17 до 20
+                        </ul>
                         <strong class="question">Замена оборудования мастером</strong>
                         <ul>
                           <p>
@@ -999,9 +1013,13 @@
                           При себе необходимо иметь паспорт и комплект оборудования. Замена оборудования производится только владельцу на которого было передано оборудование согласно акту-приема передачи.
                         </ul>
                         <strong class="question">Для юр.лиц. необходимы документы:</strong>
-                        <ul>
+                        <blockquote>
                           Необходимые документы для руководителя: документ, подтверждающий полномочия руководителя. Для доверенного лица: доверенность на предоставление интересов юридического лица и на получение материальных ценностей.
-                        </ul>
+                        </blockquote>
+
+                        <a href="#cat-dual-band" class="icon-link icon-link-hover">
+                          <i class="bi bi-arrow-return-right"></i> Шаблоны для замены на Двух-диапазонные модемы
+                        </a>
                       </td>
                     </tr>
                     <tr>
@@ -1107,7 +1125,7 @@
                         <ul>
                           Модем настраивается автоматически в течении 15-20 минут с момента подключения к сети. Обращайте внимание на индикацию PON. Когда PON загорится устойчиво и индикатор Internet начнет мигать - можно проверять работу услуги. На новых модемах может быть выключен wi-fi кнопкой на корпусе модема. Если индикатор wi-fi (он же WLAN, 2.4G, 5G) не горит, то необходимо включить вай-фай кнопкой на корпусе модема удерживая ее 5-7 секунд.
                         </ul>
-                        <strong class="subtitle text-danger">Необходим ресет</strong>
+                        <strong class="question text-danger">Необходим ресет</strong>
                         <ul>
                           Модем не синхронизируется со станцией, необходимо сделать ресет. На корпусе модема есть маленькое отверстие Reset. В зависимости от модели оно может быть расположено на боковой панели модема, либо с задней стороны где подключаются кабели.
                           Нажмите на него чем-либо тонким (иголка, булавка и т.п.) и удерживайте 5-10 секунд, пока не останется гореть только индикатор Power. После этого модем уйдет на перезагрузку. 
@@ -1718,12 +1736,12 @@
                       <td class="category">Модем не в сети</td>
                       <td class="answer">
                         <p>Здравствуйте. Модем не отображается в сети, необходимо проверить индикацию модема. Подскажите пожалуйста какие индикаторы горят на модеме?</p>
-                        <strong class="subtitle text-danger">Индикации нет:</strong>
+                        <strong class="question text-danger">Индикации нет:</strong>
                         <ul>
                           Если индикация отсутствует проверьте включен ли модем кнопкой на корпусе. Попробуйте переподключить блок питания, по возможности подключите модем в другую розетку. 
                           Если модем подключен не напрямую в электрическую розетку а через удлиннитель либо блок питания блока охраны - подключите модем для проверки напрямую.
                         </ul>
-                        <strong class="subtitle text-success">Индикация есть:</strong>
+                        <strong class="question text-success">Индикация есть:</strong>
                         <ul>
                           Уточните пожалуйста индикатор PON горит устойчиво либо мигает, и индикатор LOS мигает ли красным?
                         </ul>
@@ -1786,8 +1804,7 @@
                         
                       </td>
                     </tr>
-                    <tr>
-                      <td class="category">Заменить оборудование на двух-диапазонный модем</td>
+                      <td class="category" id="cat-dual-band">Заменить оборудование на двух-диапазонный модем</td>
                       <td class="answer">
                         <strong class="question"><b style="color:lawngreen">Тариф подходит</b> - оборудование в наличии есть</strong>
                         <ul>
@@ -1874,14 +1891,31 @@
                       </td>
                     </tr>
                     <tr>
-                      <td class="category">Ограничение доступа к веб-интерфейсу</td>
+                      <td class="category">Ограничение доступа к веб-интерфейсу / Вход в модем</td>
                       <td class="answer">
-                        <p>
-                        Здравствуйте. В настоящее время доступ к веб-интерфейсу терминала временно приостановлен. Если вам необходимо изменить настройки Wi-Fi, рекомендуем использовать ранее настроенную конфигурацию либо параметры, указанные на наклейке на обратной стороне терминала. Приносим извинения за возможные неудобства.
-                        </p>
-                        <p>
-                        РУП «Белтелеком» предоставляет абонентское оборудование (оптические терминалы ONT, ТВ-приставки ZALA) в безвозмездное пользование на время действия договора для гарантии технической совместимости и полного контроля над качеством связи Оборудование является собственностью РУП "Белтелеком", провайдер может ограничивать доступ к настройкам модема или терминала. Оборудование предоставляется клиенту настроенным под работу предоставляемых услуг. Если вам нужны дополнительные натсройки, возможен перевод терминала в режим моста (Bridge), и подключения собственного роутера. 
-                        </p>
+                        <strong class="question">Вход на HUAWEI и ZTE</strong>
+                        <ul>
+                          Здравствуйте. В настоящее время доступ к веб-интерфейсу терминала временно приостановлен. 
+                          В случае необходимости произвести дополнительные настройки, по вашему запросу произвели разблокировку доступа. Доступ автоматически заблокируется через полчаса!
+                          Вход в веб-интерфейс возможен под стандартными данными логин-пароль: <b class="text-danger">telecomadmin-admintelecom</b> для HUAWEI, и <b class="text-danger">admin-admin</b> для ZTE. Приносим извинения за возможные неудобства.
+                        </ul>
+                        <strong class="question">Вход на ПЮРК</strong>
+                        <ul>
+                          Здравствуйте. В настоящее время доступ к веб-интерфейсу терминала временно приостановлен. 
+                          Если вам необходимо изменить настройки, рекомендуем использовать ранее настроенную конфигурацию, стандартные данные для подключения к Wi-Fi указаны на наклейке с обратной стороны терминала. 
+                          Приносим извинения за возможные неудобства.
+                        </ul>
+                        <strong class="question">Вход на MA670</strong>
+                        <ul>
+                          Здравствуйте. В настоящее время доступ к веб-интерфейсу терминала временно ограничен. 
+                          Если вам необходимо изменить настройки, по вашему обращению разблокировали вход в настройки модема. Вход в веб-интерфейс будет доступен в течении получаса, после автоматически заблокируется. 
+                          Входить необходимо под учетной записью <b class="text-danger">Administrator</b>, и в качестве пароля ввести серийный номер модема указанный на наклейке снизу модема (Начинается с <b class="text-danger">DPDP</b>).
+                        </ul>
+                        <strong class="question">Перевод в bridge и устанавливать свой</strong>
+                        <ul>
+                          РУП «Белтелеком» предоставляет абонентское оборудование (оптические терминалы ONT, ТВ-приставки ZALA) в безвозмездное пользование на время действия договора для гарантии технической совместимости и полного контроля над качеством связи Оборудование является собственностью РУП "Белтелеком", провайдер может ограничивать доступ к настройкам модема или терминала. 
+                          Оборудование предоставляется клиенту настроенным под работу предоставляемых услуг. Если вам нужны дополнительные настройки, возможен перевод терминала в режим моста (Bridge), и подключения собственного роутера. 
+                        </ul>
                       </td>
                     </tr>
                   </tbody>
@@ -1937,19 +1971,6 @@
                       <td class="answer">
                         <p>
                           Здравствуйте. Найдите на задней или боковой панели модема кнопку с надписью WLAN или Wi-Fi. Нажмите ее и удерживайте около 5 секунд (на ZTE достаточно короткого нажатия). Дождитесь, пока на передней панели загорится и начнет гореть или мигать индикатор WLAN / Wi-Fi, а для двух-диапазонного модема индикаторы 2.4 и 5.
-                        </p>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="category">Вход в модем</td>
-                      <td class="answer">
-                        <p>
-                          Здравствуйте. Для входа в настройки модема его предварительно надо перезагрузить, доступ будет предоставлен на 3 часа. 
-                          В качестве данных для входа можете использовать <b class="text-danger">admin/admin</b> либо <b class="text-danger">telecomadmin/admintelecom</b>.
-                        </p>
-
-                        <p>
-                          В качестве данных для входа в настройки модема, можете использовать логин и пароль указанный на наклейке снизу модема, либо данные с инструкции на сайте <a href="https://beltelecom.by/help/checklist-for-settings">https://beltelecom.by/help/checklist-for-settings</a>.
                         </p>
                       </td>
                     </tr>
@@ -2292,6 +2313,23 @@
                       </td>
                     </tr>
                     <tr>
+                      <td class="category">Доступ заблокирован</td>
+                      <td class="answer">
+                        <strong class="question">Блокировка доступа при восстановлении пароля</strong>
+                        <ul>
+                          Здравствуйте. При превышении количества неудачных попыток восстановления пароля в «Мой Белтелеком» система автоматически устанавливает временную блокировку (на сутки).
+                          Необходимо попробовать произвести процедуру восстановления через сутки. Если ранее пробовали восстанавливать через приложение «Мой Белтелеком», можете попробовать воспользоваться веб-версией <a href="https://my.beltelecom.by">https://my.beltelecom.by</a>.
+                          сли какая-то операция в новой версии Кабинета пользователя вызывает затруднение, в настоящее время еще доступна старая версия: <a href="https://issaold.beltelecom.by/main.html">https://issaold.beltelecom.by/main.html</a>. 
+                        </ul>
+                        <strong class="question">Блокировка доступа из-за границы</strong>
+                        <ul>
+                          Здравствуйте. Доступ к личному кабинету ограничен из-за пределов Республики Беларусь.
+                          Вход также может не работать при включённом VPN и сторонних DNS. Попробуйте отключить VPN и войти через обычную сеть. 
+                          Для отдельных услуг, например SMART ZALA, ограничения доступа за пределами Беларуси предусмотрены условиями использования сервиса. (договор SMART ZALA)
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
                       <td class="category">Предложение по добавлению функции в КП</td>
                       <td class="answer">
                         <p>
@@ -2415,6 +2453,7 @@
                         </ul>
                         <strong class="question">Не приходит SMS оповещение</strong>
                         <ul>
+                          Возможно указан другой номер. СМС отправляется только на контактный номер, который зафиксирован в базе при заключении договора или позже добавлен в настройках личного кабинета.
                           Подскажите пожалуйста когда примерно в последний раз приходило SMS оповещение? Необходимо проверить в папке "Спам", возможно ошибочно сообщение попало туда.
                         </ul>
                         <strong class="question">Пришло SMS сообщение от Белтелеком с цифрами</strong>
@@ -4636,6 +4675,24 @@
         if (!searchPageInput.value.length) {
           document.getElementById('button-clean-search').click();
           document.getElementById("search-status").innerHTML = ``;
+        }
+        if (searchPageInput.value.length >= 2) {
+          event.preventDefault(); 
+          if (searchPageInput.value.trim() === '') {
+            searchPageInput.focus();
+            return;
+          }
+
+          if (document.getElementById('btn-toggle-hideblocks').checked) {
+            filterAllTables(searchPageInput.value);
+          }
+          
+          markContext = document.querySelector(".app-wrapper");
+          markInstance = new Mark(markContext);
+          markInstance.unmark();
+          markInstance.mark(searchPageInput.value); 
+
+          document.getElementById("search-status").innerHTML = `Для того чтобы скрыть результаты поиска нажмите ESC либо очистите поле поиска`;
         }
         document.getElementById("button-clean-search").classList.add('active');
       });
