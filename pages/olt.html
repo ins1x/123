@@ -46,6 +46,23 @@
     <!--begin::Custom-->
     <link rel="stylesheet" href="../css/custom.css" />
 
+    <!-- custom style only for this page -->
+    <style>
+      .card-title {
+        -webkit-user-select: none; 
+        -ms-user-select: none;     
+        user-select: none;        
+      }
+      .category {
+        font-weight: bold;
+        -webkit-user-select: none; 
+        -ms-user-select: none;     
+        user-select: none;
+        pointer-events: none; /* no-hover */
+      }
+    </style>
+    <!--end::Custom-->
+
     <!--begin::Color Mode Toggle-->
     <script src="../js/color-modes.js"></script>
     <!--end::Color Mode Toggle-->
@@ -231,6 +248,7 @@
           <div class="container-fluid">
             <!--begin::Row-->
             <div class="row">
+
               <div class="col-sm-6">
                 <h3 class="mb-0 text-secondary"><i class="nav-icon bi bi-terminal"></i> OLT CLI Cheatsheet </h3>
               </div>
@@ -254,9 +272,47 @@
         </div>
         <!--end::App Content Header-->
         <!--begin::App Content-->
-        <div class="app-content">
+        <div class="app-content overflow-x-hidden">
           <!--begin::Container-->
           <div class="container-fluid">
+            
+            <!-- Headline + search -->
+            <!-- <div class="row">
+              <div class="text-center mb-4">
+                <form
+                  class="row g-2 justify-content-center"
+                  role="search"
+                  onsubmit="event.preventDefault()"
+                >
+                  <div class="col-md-6 col-lg-8">
+                    <div class="input-group input-group-lg">                      
+                                            
+                      <input type="checkbox" class="form-check-input btn-check" name="btn-check-hideblocks" id="btn-toggle-hideblocks" autocomplete="off" checked>
+                      <label class="btn btn-outline-primary" for="btn-toggle-hideblocks" title="Скрывать блоки таблицы при поиске"><i class="bi bi-file-earmark-excel" aria-hidden="true"></i></label>
+
+                      <button class="btn btn-outline-secondary bg-body" type="button" id="button-clean-search" title="Очистить поле"><i class="bi bi-backspace"></i></button>
+
+                      <input
+                        type="search"
+                        id="olt-page-search"
+                        class="form-control"
+                        placeholder="Введите ключевые слова для поиска в таблицах"
+                        aria-label="Search on page"
+                      />
+
+                      <span class="input-group-text bg-body-secondary" style="min-width: 3em;">
+                        <i class="bi bi-search text-muted" aria-hidden="true"></i> 
+                      </span>
+                    </div>
+                  </div>
+                  
+                </form>
+              </div> -->
+              
+              <div id="search-status" class="form-text text-center fs-4">
+              </div>
+            </div>
+            <!--end::Row-->
 
             <ul class="nav nav-tabs nav-fill" id="cliTabs" role="tablist">
               <li class="nav-item" role="presentation">
@@ -307,7 +363,7 @@
                           <table class="table table-hover table-striped table-borderless">
                             <tbody>
                               <tr>
-                                <td>Подробная информация о ONT</td>
+                                <td class="category">Подробная информация о ONT</td>
                               </tr>
                               <tr>
                                 <td>
@@ -321,7 +377,7 @@
                               </tr>
     
                               <tr>
-                                <td>Статистика отключений</td>
+                                <td class="category">Статистика отключений</td>
                               </tr>
                               <tr>
                                 <td>
@@ -333,7 +389,7 @@
                               </tr>
     
                               <tr>
-                                <td>Список MAC</td>
+                                <td class="category">Список MAC</td>
                               </tr>
                               <tr>
                                 <td>
@@ -345,7 +401,7 @@
                               </tr>
     
                               <tr>
-                                <td>Статус Ethernet портов</td>
+                                <td class="category">Статус Ethernet портов</td>
                               </tr>
                               <tr>
                                 <td>
@@ -357,7 +413,7 @@
                               </tr>
 
                               <tr>
-                                <td>Проверить прошивку</td>
+                                <td class="category">Проверить прошивку</td>
                               </tr>
                               <tr>
                                 <td>
@@ -369,7 +425,7 @@
                               </tr>
 
                               <tr>
-                                <td>Оптические параметры ONT</td>
+                                <td class="category">Оптические параметры ONT</td>
                               </tr>
                               <tr>
                                 <td>
@@ -394,7 +450,7 @@
                           <table class="table table-hover table-striped table-borderless">
                             <tbody>
                               <tr>
-                                <td>Настройки WAN на ONT (Маршрутизация)</td>
+                                <td class="category">Настройки WAN на ONT (Маршрутизация)</td>
                               </tr>
                               <tr>
                                 <td>
@@ -406,7 +462,7 @@
                               </tr>
 
                               <tr>
-                                <td>Порт-маппинг по таблице роутинга</td>
+                                <td class="category">Порт-маппинг по таблице роутинга</td>
                               </tr>
                               <tr>
                                 <td>
@@ -418,7 +474,7 @@
                               </tr>
 
                               <tr>
-                                <td>Трафик по сервису</td>
+                                <td class="category">Трафик по сервису</td>
                               </tr>
                               <tr>
                                 <td>
@@ -432,7 +488,7 @@
                               </tr>
 
                               <tr>
-                                <td>Трафик (весь)</td>
+                                <td class="category">Трафик (весь)</td>
                               </tr>
                               <tr>
                                 <td>
@@ -460,7 +516,7 @@
                             <tbody>
 
                               <tr>
-                                <td>Статус WLAN</td>
+                                <td class="category">Статус WLAN</td>
                               </tr>
                               <tr>
                                 <td>
@@ -472,7 +528,7 @@
                               </tr>
 
                               <tr>
-                                <td>Состояние каналов wi-fi и кол-во подключенных</td>
+                                <td class="category">Состояние каналов wi-fi и кол-во подключенных</td>
                               </tr>
                               <tr>
                                 <td>
@@ -497,7 +553,7 @@
                           <table class="table table-hover table-striped table-borderless">
                             <tbody>
                               <tr>
-                                <td>Состояние абонентов по сплиттеру</td>
+                                <td class="category">Состояние абонентов по сплиттеру</td>
                               </tr>
                               <tr>
                                 <td>
@@ -509,7 +565,7 @@
                               </tr>
           
                               <tr>
-                                <td>Состояние абонентов по сплиттеру (статусы)</td>
+                                <td class="category">Состояние абонентов по сплиттеру (статусы)</td>
                               </tr>
                               <tr>
                                 <td>
@@ -521,7 +577,7 @@
                               </tr>
       
                               <tr>
-                                <td>Оптические параметры по всему блоку</td>
+                                <td class="category">Оптические параметры по всему блоку</td>
                               </tr>
                               <tr>
                                 <td>
@@ -546,7 +602,7 @@
                           <table class="table table-hover table-striped table-borderless">
                             <tbody>
                               <tr>
-                                <td>Пинг с OLT</td>
+                                <td class="category">Пинг с OLT</td>
                               </tr>
                               <tr>
                                 <td>
@@ -558,7 +614,7 @@
                               </tr>
 
                               <tr>
-                                <td>Пинг с модема</td>
+                                <td class="category">Пинг с модема</td>
                               </tr>
                               <tr>
                                 <td>
@@ -572,7 +628,7 @@
                               </tr>
           
                               <tr>
-                                <td>Таблица ARP</td>
+                                <td class="category">Таблица ARP</td>
                               </tr>
                               <tr>
                                 <td>
@@ -584,7 +640,7 @@
                               </tr>
 
                               <tr>
-                                <td>Трассировка с OLT</td>
+                                <td class="category">Трассировка с OLT</td>
                               </tr>
                               <tr>
                                 <td>
@@ -596,7 +652,7 @@
                               </tr>
 
                               <tr>
-                                <td>Поиск двойной регистрации IMS</td>
+                                <td class="category">Поиск двойной регистрации IMS</td>
                               </tr>
                               <tr>
                                 <td>
@@ -623,7 +679,7 @@
                           <table class="table table-hover table-striped table-borderless">
                             <tbody>
                               <tr>
-                                <td>Проверить состояние POTS(FXS) портов</td>
+                                <td class="category">Проверить состояние POTS(FXS) портов</td>
                               </tr>
                               <tr>
                                 <td>
@@ -635,7 +691,7 @@
                               </tr>
 
                               <tr>
-                                <td>Проверить статус регистрации IMS по сплиттеру</td>
+                                <td class="category">Проверить статус регистрации IMS по сплиттеру</td>
                               </tr>
                               <tr>
                                 <td>
@@ -685,7 +741,7 @@
                           <table class="table table-hover table-striped table-borderless">
                             <tbody>
                               <tr>
-                                <td>Поиск по серийному (SN)</td>
+                                <td class="category">Поиск по серийному (SN)</td>
                               </tr>
                               <tr>
                                 <td>
@@ -697,7 +753,7 @@
                               </tr>
     
                               <tr>
-                                <td>Поиск незарегистрированных</td>
+                                <td class="category">Поиск незарегистрированных</td>
                               </tr>
                               <tr>
                                 <td>
@@ -709,7 +765,7 @@
                               </tr>
 
                               <tr>
-                                <td>Поиск по определенному MAC</td>
+                                <td class="category">Поиск по определенному MAC</td>
                               </tr>
                               <tr>
                                 <td>
@@ -734,7 +790,7 @@
                           <table class="table table-hover table-striped table-borderless">
                             <tbody>
                               <tr>
-                                <td>Разрегистрация ONT</td>
+                                <td class="category">Разрегистрация ONT</td>
                               </tr>
                               <tr>
                                 <td>
@@ -752,7 +808,7 @@
                           <table class="table table-hover table-striped table-borderless">
                             <tbody>
                               <tr>
-                                <td>Регистрация ONT</td>
+                                <td class="category">Регистрация ONT</td>
                               </tr>
                               <tr>
                                 <td>
@@ -766,7 +822,7 @@
                               </tr>
                               
                               <tr>
-                                <td>Смена ONT без перерегистрации (Короткая)</td>
+                                <td class="category">Смена ONT без перерегистрации (Короткая)</td>
                               </tr>
                               <tr>
                                 <td>
@@ -791,7 +847,7 @@
                           <table class="table table-hover table-striped table-borderless">
                             <tbody>
                               <tr>
-                                <td>Список сервисов на порту</td>
+                                <td class="category">Список сервисов на порту</td>
                               </tr>
                               <tr>
                                 <td>
@@ -805,7 +861,7 @@
                               </tr>
     
                               <tr>
-                                <td>Отключить сервис по индексу</td>
+                                <td class="category">Отключить сервис по индексу</td>
                               </tr>
                               <tr>
                                 <td>
@@ -819,7 +875,7 @@
                               </tr>
 
                               <tr>
-                                <td>Информация о сервисе по индексу</td>
+                                <td class="category">Информация о сервисе по индексу</td>
                               </tr>
                               <tr>
                                 <td>
@@ -833,7 +889,7 @@
                               </tr>
 
                               <tr>
-                                <td>Отключить "зависший" сервис</td>
+                                <td class="category">Отключить "зависший" сервис</td>
                               </tr>
                               <tr>
                                 <td>
@@ -849,7 +905,7 @@
                               </tr>
 
                               <tr>
-                                <td>Отключить DHCP</td>
+                                <td class="category">Отключить DHCP</td>
                               </tr>
                               <tr>
                                 <td>
@@ -873,7 +929,7 @@
                           <table class="table table-hover table-striped table-borderless">
                             <tbody>
                               <tr>
-                                <td>Активировать ONT на порту</td>
+                                <td class="category">Активировать ONT на порту</td>
                               </tr>
                               <tr>
                                 <td>
@@ -885,7 +941,7 @@
                               </tr>
                               
                               <tr>
-                                <td>Деактивировать ONT на порту</td>
+                                <td class="category">Деактивировать ONT на порту</td>
                               </tr>
                               <tr>
                                 <td>
@@ -897,7 +953,7 @@
                               </tr>
 
                               <tr>
-                                <td>Активировать порт ETH</td>
+                                <td class="category">Активировать порт ETH</td>
                               </tr>
                               <tr>
                                 <td>
@@ -909,7 +965,7 @@
                               </tr>
 
                               <tr>
-                                <td>Отключить порт ETH</td>
+                                <td class="category">Отключить порт ETH</td>
                               </tr>
                               <tr>
                                 <td>
@@ -933,7 +989,7 @@
                           <table class="table table-hover table-striped table-borderless">
                             <tbody>
                               <tr>
-                                <td>Перезагрузка ONT</td>
+                                <td class="category">Перезагрузка ONT</td>
                               </tr>
                               <tr>
                                 <td>
@@ -945,7 +1001,7 @@
                               </tr>
                               
                               <tr>
-                                <td>Ресет (Полный сброс)</td>
+                                <td class="category">Ресет (Полный сброс)</td>
                               </tr>
                               <tr>
                                 <td>
@@ -969,7 +1025,7 @@
                           <table class="table table-hover table-striped table-borderless">
                             <tbody>
                               <tr>
-                                <td>Проверить Multicast</td>
+                                <td class="category">Проверить Multicast</td>
                               </tr>
                               <tr>
                                 <td>
@@ -981,7 +1037,7 @@
                               </tr>
                               
                               <tr>
-                                <td>Добавить Multicast</td>
+                                <td class="category">Добавить Multicast</td>
                               </tr>
                               <tr>
                                 <td>
@@ -995,7 +1051,7 @@
                               </tr>
 
                               <tr>
-                                <td>Прописать мультикаст на 4 STB</td>
+                                <td class="category">Прописать мультикаст на 4 STB</td>
                               </tr>
                               <tr>
                                 <td>
@@ -1009,7 +1065,7 @@
                               </tr>
 
                               <tr>
-                                <td>Удалить Multicast</td>
+                                <td class="category">Удалить Multicast</td>
                               </tr>
                               <tr>
                                 <td>
@@ -1047,7 +1103,7 @@
                           <table class="table table-hover table-striped table-borderless">
                             <tbody>
                               <tr>
-                                <td>Подробная информация и статистика отключений</td>
+                                <td class="category">Подробная информация и статистика отключений</td>
                               </tr>
                               <tr>
                                 <td>
@@ -1059,7 +1115,7 @@
                               </tr>
     
                               <tr>
-                                <td>Список MAC</td>
+                                <td class="category">Список MAC</td>
                               </tr>
                               <tr>
                                 <td>
@@ -1071,7 +1127,7 @@
                               </tr>
     
                               <tr>
-                                <td>Статус Ethernet портов</td>
+                                <td class="category">Статус Ethernet портов</td>
                               </tr>
                               <tr>
                                 <td>
@@ -1083,7 +1139,7 @@
                               </tr>
 
                               <tr>
-                                <td>Трафик</td>
+                                <td class="category">Трафик</td>
                               </tr>
                               <tr>
                                 <td>
@@ -1095,7 +1151,7 @@
                               </tr>
 
                               <tr>
-                                <td>Параметры оптической линии</td>
+                                <td class="category">Параметры оптической линии</td>
                               </tr>
                               <tr>
                                 <td>
@@ -1107,7 +1163,7 @@
                               </tr>
 
                               <tr>
-                                <td>Версия прошивки ONT и upTime</td>
+                                <td class="category">Версия прошивки ONT и upTime</td>
                               </tr>
                               <tr>
                                 <td>
@@ -1119,7 +1175,7 @@
                               </tr>
 
                               <tr>
-                                <td>Статус PPPoE</td>
+                                <td class="category">Статус PPPoE</td>
                               </tr>
                               <tr>
                                 <td>
@@ -1144,7 +1200,7 @@
                           <table class="table table-hover table-striped table-borderless">
                             <tbody>
                               <tr>
-                                <td>Активная конфигурация ONU</td>
+                                <td class="category">Активная конфигурация ONU</td>
                               </tr>
                               <tr>
                                 <td>
@@ -1156,7 +1212,7 @@
                               </tr>
           
                               <tr>
-                                <td>Активная конфигурация сервисов на порту</td>
+                                <td class="category">Активная конфигурация сервисов на порту</td>
                               </tr>
                               <tr>
                                 <td>
@@ -1181,7 +1237,7 @@
                           <table class="table table-hover table-striped table-borderless">
                             <tbody>
                               <tr>
-                                <td>Состояние абонентов по сплиттеру</td>
+                                <td class="category">Состояние абонентов по сплиттеру</td>
                               </tr>
                               <tr>
                                 <td>
@@ -1193,7 +1249,7 @@
                               </tr>
           
                               <tr>
-                                <td>Список оборудования по сплиттеру</td>
+                                <td class="category">Список оборудования по сплиттеру</td>
                               </tr>
                               <tr>
                                 <td>
@@ -1205,7 +1261,7 @@
                               </tr>
       
                               <tr>
-                                <td>Оптические параметры ONU на сплиттере</td>
+                                <td class="category">Оптические параметры ONU на сплиттере</td>
                               </tr>
                               <tr>
                                 <td>
@@ -1230,7 +1286,7 @@
                           <table class="table table-hover table-striped table-borderless">
                             <tbody>
                               <tr>
-                                <td>Пинг с OLT</td>
+                                <td class="category">Пинг с OLT</td>
                               </tr>
                               <tr>
                                 <td>
@@ -1242,7 +1298,7 @@
                               </tr>
           
                               <tr>
-                                <td>Таблица ARP</td>
+                                <td class="category">Таблица ARP</td>
                               </tr>
                               <tr>
                                 <td>
@@ -1254,7 +1310,7 @@
                               </tr>
       
                               <tr>
-                                <td>Трассировка</td>
+                                <td class="category">Трассировка</td>
                               </tr>
                               <tr>
                                 <td>
@@ -1266,7 +1322,7 @@
                               </tr>
                               
                               <tr>
-                                <td>Поиск двойной регистрации IMS</td>
+                                <td class="category">Поиск двойной регистрации IMS</td>
                               </tr>
                               <tr>
                                 <td>
@@ -1293,7 +1349,7 @@
                           <table class="table table-hover table-striped table-borderless">
                             <tbody>
                               <tr>
-                                <td>Настроить порт на INET</td>
+                                <td class="category">Настроить порт на INET</td>
                               </tr>
                               <tr>
                                 <td>
@@ -1309,7 +1365,7 @@
                               </tr>
           
                               <tr>
-                                <td>Настроить порт на IPTV + multicast</td>
+                                <td class="category">Настроить порт на IPTV + multicast</td>
                               </tr>
                               <tr>
                                 <td>
@@ -1328,7 +1384,7 @@
                               </tr>
 
                               <tr>
-                                <td>Удалить услуги с 4-го порта</td>
+                                <td class="category">Удалить услуги с 4-го порта</td>
                               </tr>
                               <tr>
                                 <td>
@@ -1358,7 +1414,7 @@
                           <table class="table table-hover table-striped table-borderless">
                             <tbody>
                               <tr>
-                                <td>Снять DHCP с 4-го порта</td>
+                                <td class="category">Снять DHCP с 4-го порта</td>
                               </tr>
                               <tr>
                                 <td>
@@ -1374,7 +1430,7 @@
                               </tr>
 
                               <tr>
-                                <td>Вернуть DHCP на 4-й порт</td>
+                                <td class="category">Вернуть DHCP на 4-й порт</td>
                               </tr>
                               <tr>
                                 <td>
@@ -1403,7 +1459,7 @@
                           <table class="table table-hover table-striped table-borderless">
                             <tbody>
                               <tr>
-                                <td>Статус регистрации IMS</td>
+                                <td class="category">Статус регистрации IMS</td>
                               </tr>
                               <tr>
                                 <td>
@@ -1415,7 +1471,7 @@
                               </tr>
 
                               <tr>
-                                <td>Настроить телефонию на порт</td>
+                                <td class="category">Настроить телефонию на порт</td>
                               </tr>
                               <tr>
                                 <td>
@@ -1431,7 +1487,7 @@
                               </tr>
 
                               <tr>
-                                <td>Настроить телефонию на порт (Вариант 2)</td>
+                                <td class="category">Настроить телефонию на порт (Вариант 2)</td>
                               </tr>
                               <tr>
                                 <td>
@@ -1445,7 +1501,7 @@
                               </tr>
 
                               <tr>
-                                <td>Снять телефонию</td>
+                                <td class="category">Снять телефонию</td>
                               </tr>
                               <tr>
                                 <td>
@@ -1497,7 +1553,7 @@
                           <table class="table table-hover table-striped table-borderless">
                             <tbody>
                               <tr>
-                                <td>Поиск по серийному (SN)</td>
+                                <td class="category">Поиск по серийному (SN)</td>
                               </tr>
                               <tr>
                                 <td>
@@ -1509,7 +1565,7 @@
                               </tr>
     
                               <tr>
-                                <td>Поиск незарегистрированных</td>
+                                <td class="category">Поиск незарегистрированных</td>
                               </tr>
                               <tr>
                                 <td>
@@ -1521,7 +1577,7 @@
                               </tr>
 
                               <tr>
-                                <td>Поиск по MAC</td>
+                                <td class="category">Поиск по MAC</td>
                               </tr>
                               <tr>
                                 <td>
@@ -1547,7 +1603,7 @@
                           <table class="table table-hover table-striped table-borderless">
                             <tbody>
                               <tr>
-                                <td>Разрегистрация ONU</td>
+                                <td class="category">Разрегистрация ONU</td>
                               </tr>
                               <tr>
                                 <td>
@@ -1566,7 +1622,7 @@
                           <table class="table table-hover table-striped table-borderless">
                             <tbody>
                               <tr>
-                                <td>Регистрация ONU</td>
+                                <td class="category">Регистрация ONU</td>
                               </tr>
                               <tr>
                                 <td>
@@ -1582,7 +1638,7 @@
                               </tr>
                               
                               <tr>
-                                <td>Смена ONU без перерегистрации (Короткая)</td>
+                                <td class="category">Смена ONU без перерегистрации (Короткая)</td>
                               </tr>
                               <tr>
                                 <td>
@@ -1609,7 +1665,7 @@
                           <table class="table table-hover table-striped table-borderless">
                             <tbody>
                               <tr>
-                                <td>Перевести в router</td>
+                                <td class="category">Перевести в router</td>
                               </tr>
                               <tr>
                                 <td>
@@ -1631,7 +1687,7 @@
                           <table class="table table-hover table-striped table-borderless">
                             <tbody>
                               <tr>
-                                <td>Перевести в bridge</td>
+                                <td class="category">Перевести в bridge</td>
                               </tr>
                               <tr>
                                 <td>
@@ -1661,7 +1717,7 @@
                           <table class="table table-hover table-striped table-borderless">
                             <tbody>
                               <tr>
-                                <td>Снять PPPoE</td>
+                                <td class="category">Снять PPPoE</td>
                               </tr>
                               <tr>
                                 <td>
@@ -1677,7 +1733,7 @@
                               </tr>
     
                               <tr>
-                                <td>Снять IMS</td>
+                                <td class="category">Снять IMS</td>
                               </tr>
                               <tr>
                                 <td>
@@ -1692,7 +1748,7 @@
                               </tr>
 
                               <tr>
-                                <td>Снять IMS (Вариант 2)</td>
+                                <td class="category">Снять IMS (Вариант 2)</td>
                               </tr>
                               <tr>
                                 <td>
@@ -1707,7 +1763,7 @@
                               </tr>
     
                               <tr>
-                                <td>Снять IPTV</td>
+                                <td class="category">Снять IPTV</td>
                               </tr>
                               <tr>
                                 <td>
@@ -1734,7 +1790,7 @@
                           <table class="table table-hover table-striped table-borderless">
                             <tbody>
                               <tr>
-                                <td>Активировать</td>
+                                <td class="category">Активировать</td>
                               </tr>
                               <tr>
                                 <td>
@@ -1749,7 +1805,7 @@
                               </tr>
     
                               <tr>
-                                <td>Деактивировать (отключить порт)</td>
+                                <td class="category">Деактивировать (отключить порт)</td>
                               </tr>
                               <tr>
                                 <td>
@@ -1776,7 +1832,7 @@
                           <table class="table table-hover table-striped table-borderless">
                             <tbody>
                               <tr>
-                                <td>Перезагрузка</td>
+                                <td class="category">Перезагрузка</td>
                               </tr>
                               <tr>
                                 <td>
@@ -1791,7 +1847,7 @@
                               </tr>
     
                               <tr>
-                                <td>Cброс ONT на заводские (Ресет)</td>
+                                <td class="category">Cброс ONT на заводские (Ресет)</td>
                               </tr>
                               <tr>
                                 <td>
@@ -1818,7 +1874,7 @@
                           <table class="table table-hover table-striped table-borderless">
                             <tbody>
                               <tr>
-                                <td>Проверить мультикаст на порту</td>
+                                <td class="category">Проверить мультикаст на порту</td>
                               </tr>
                               <tr>
                                 <td>
@@ -1830,7 +1886,7 @@
                               </tr>
 
                               <tr>
-                                <td>Проверить мультикаст (искать в списке)</td>
+                                <td class="category">Проверить мультикаст (искать в списке)</td>
                               </tr>
                               <tr>
                                 <td>
@@ -1842,7 +1898,7 @@
                               </tr>
     
                               <tr>
-                                <td>Добавить мультикаст</td>
+                                <td class="category">Добавить мультикаст</td>
                               </tr>
                               <tr>
                                 <td>
@@ -1856,7 +1912,7 @@
                               </tr>
 
                               <tr>
-                                <td>Удалить мультикаст</td>
+                                <td class="category">Удалить мультикаст</td>
                               </tr>
                               <tr>
                                 <td>
@@ -1882,7 +1938,7 @@
                           <table class="table table-hover table-striped table-borderless">
                             <tbody>
                               <tr>
-                                <td>Прописать управление по TR</td>
+                                <td class="category">Прописать управление по TR</td>
                               </tr>
                               <tr>
                                 <td>
@@ -2027,7 +2083,8 @@
         });
       });
       // End copy to clipboard function
-    </script>
+
+  </script>
   <!--end::page scripts-->
   </body>
   <!--end::Body-->
